@@ -1,7 +1,7 @@
-import { expect, test } from './fixtures';
+import { expect, openApp, test } from './fixtures';
 
-test('T-A01/T-A02: keyboard CRUD, search/filter/sort, counts, error and empty states use the root engine', async ({ page }) => {
-  await page.goto('/'); const app = page.locator('#task-app');
+test('T-A01/T-A02: keyboard CRUD, search/filter/sort, counts and validation use the root engine', async ({ page }) => {
+  await openApp(page); const app = page.locator('#task-app');
   await expect(app.getByTestId('task-summary')).toHaveText('전체 8 · 완료 0 · 남음 8');
   await app.getByRole('button', { name: '항목 추가', exact: true }).click(); await expect(app.getByRole('alert')).toContainText('이름');
   await page.keyboard.press('Alt+n'); await expect(app.getByLabel('새 항목', { exact: true })).toBeFocused();
@@ -17,6 +17,10 @@ test('T-A01/T-A02: keyboard CRUD, search/filter/sort, counts, error and empty st
   expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, 'ko')));
   await app.getByLabel('task-9 삭제').click(); await expect(app.getByLabel('task-9 이름')).toHaveCount(0);
   await expect(app.getByTestId('task-sync')).toHaveText('취소 가능한 동기화: 8개');
+});
+
+test('T-A01/T-A02/T-S03: batching, reorder, bulk deletion and empty state', async ({ page }) => {
+  await openApp(page); const app = page.locator('#task-app');
   await app.getByRole('button', { name: '+1 세 번', exact: true }).click(); await expect(app.getByLabel('Batching 카운트')).toHaveText('3');
   await app.getByRole('button', { name: '마지막 항목을 처음으로', exact: true }).click();
   await expect(app.locator('li').first()).toHaveAttribute('data-task-id', 'task-8');
@@ -26,7 +30,7 @@ test('T-A01/T-A02: keyboard CRUD, search/filter/sort, counts, error and empty st
 });
 
 test('T-A03/T-B03: repeated reset cancels timers/listeners and focused keyed input survives one move', async ({ page }) => {
-  await page.goto('/'); const app = page.locator('#task-app');
+  await openApp(page); const app = page.locator('#task-app');
   for (let i = 0; i < 4; i++) {
     await app.getByRole('button', { name: '1.5초 뒤 마지막 항목 이동' }).click();
     await page.getByRole('button', { name: '목록 앱 초기화' }).click();

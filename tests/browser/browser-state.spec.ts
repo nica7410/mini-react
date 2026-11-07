@@ -1,7 +1,7 @@
-import { expect, test } from './fixtures';
+import { expect, openApp, test } from './fixtures';
 
 async function probe(page: import('@playwright/test').Page) {
-  await page.goto('/');
+  await openApp(page);
   await page.evaluate(async () => {
     const modulePath = '/src/runtime/index.ts'; const { FunctionComponent, h, useState, useEffect } = await import(modulePath);
     const output = document.createElement('div'); output.id = 'selection-probe'; document.body.append(output);
@@ -69,7 +69,7 @@ test('T-B04: synthetic composition defers ancestor move and latest plan, preserv
 });
 
 test('T-B04: editor buttons are disabled throughout composition and re-enabled after end', async ({ page }) => {
-  await page.goto('/'); await page.locator('#test').dispatchEvent('compositionstart', { data: '' });
+  await openApp(page); await page.locator('#test').dispatchEvent('compositionstart', { data: '' });
   await expect(page.getByRole('button', { name: 'Patch', exact: true })).toBeDisabled();
   await expect(page.getByRole('button', { name: '뒤로가기' })).toBeDisabled();
   await page.locator('#test').dispatchEvent('compositionend', { data: '한' });

@@ -1,7 +1,7 @@
-import { expect, test } from './fixtures';
+import { expect, openApp, test } from './fixtures';
 
 test('T-Q01/T-Q02: Inspector reflects executor counts and highlights actual ref; replay/reset are deterministic', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   await page.getByRole('button', { name: '초기 상태에서 실행', exact: true }).click();
   await expect(page.locator('#lab-status')).toContainText('실제 이동 1');
   await expect(page.locator('[data-counter="movedRoots"]')).toHaveText('1');

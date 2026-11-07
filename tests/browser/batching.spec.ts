@@ -1,7 +1,7 @@
-import { expect, test } from './fixtures';
+import { expect, openApp, test } from './fixtures';
 
 test('T-S03/T-S05: real clicks batch three requests, while later clicks remain separate', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   await page.evaluate(async () => {
     const modulePath = '/src/runtime/index.ts'; const { FunctionComponent, h, useState } = await import(modulePath);
     const output = document.createElement('div'); output.id = 'batch-probe'; document.body.append(output);
@@ -17,7 +17,7 @@ test('T-S03/T-S05: real clicks batch three requests, while later clicks remain s
 });
 
 test('regression: capture setter cannot flush before the native parent bubble input handler', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   await page.evaluate(async () => {
     const modulePath = '/src/runtime/index.ts'; const { FunctionComponent, h, useState } = await import(modulePath);
     const output = document.createElement('div'); document.body.append(output);

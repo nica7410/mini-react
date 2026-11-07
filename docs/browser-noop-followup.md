@@ -10,6 +10,17 @@
 - 같은 HEAD의 기본 재실행: 29/29, 56.31초. 간헐성을 보존하며 과거 29/29 또는 이후 26/29를 서로 덮어쓰지 않는다.
 - 진단 fixture/reporter/server: 서버 listen·각 요청, browser navigation·DOM 준비·앱 초기화, 모든 Playwright action/expect 및 worker/순서를 별도 기록한다. 실패 screenshot/trace 유지. 상세 trace를 켠 worker 2와 1 비교는 각각 29/29, 65.35초 / 99.36초였다. trace 없는 최초 실행과 동일 계측 조건의 속도 비교로 해석하지 않는다.
 
+## 브라우저 실행 수정
+
+기본 worker 2, test timeout 30초, retry 0을 유지한다. worker 1은 Firefox CRUD를 19.78→14.58초로 줄였지만 전체 시간을 52% 늘렸고 cold 모듈 응답 최대 시간(약 1.5초)을 해소하지 않았다. 원인별로 준비/시나리오를 고친다.
+
+- 테스트 서버는 실제 HTTP로 앱·공통 엔진 모듈과 CSS/Vite client를 준비한 뒤 `/__browser_ready`를 200으로 바꾼다. 준비 실패는 서버 단계에서 드러나며 기존 Playwright 서버 준비 제한을 사용한다. 단순 HTML 200을 앱 모듈 준비로 간주하지 않는다.
+- 공통 `openApp`은 load와 루트 앱 초기화 확인을 서로 다른 step으로 기록한다. 초기 목록·History·오류 상태를 실제 DOM으로 확인한다.
+- 원래 CRUD 흐름의 모든 action/assertion을 유지하며, create/update/filter/search/sort/delete와 batching/reorder/bulk-delete/empty 검증을 별도 fresh page 테스트로 나눈다. 각 목적에 30초가 적용되며 테스트 전체 한도를 임의로 늘리지 않는다. 총 개수는 Chromium 20 + Firefox 11 = 31이 됐다.
+- 취소한 1.5초 타이머를 기다리는 기존 1.7초 wait는 해당 취소 계약의 관찰 구간으로 유지한다. 새 임의 sleep은 없다.
+
+수정 직후 기본 명령 31/31 PASS, typecheck PASS. [기록](validation/browser-stability/stabilized-before-engine/context.json). 엔진 수정 후 최종 3회 연속 전체 검증은 별도로 수행한다. CI도 같은 서버/준비 조건을 사용하고 진단 JSON을 artifact에 포함한다. 원격 실행은 하지 않았다.
+
 ## no-op 실험 사전 정의
 
 `scripts/build-noop.mjs`는 엔진/하네스 SHA 및 commit을 기록한 고정 production bundle을 만든다. 이미 있는 build/tag는 덮어쓰지 않는다. 별도 `--profile` 빌드에만 validation/equality/diff/preflight/DOM binding/host form·focus/evaluation span을 삽입한다. 중첩 span은 inclusive와 exclusive를 각각 기록하며 합산하지 않는다. 프로파일링 숫자는 최종 속도 비교에서 제외한다.

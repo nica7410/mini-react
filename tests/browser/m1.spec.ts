@@ -1,9 +1,9 @@
-import { expect, test } from './fixtures';
+import { expect, openApp, test } from './fixtures';
 
 test('M1 브라우저: 직접 편집 → Patch → 미확정 편집 → Undo/Redo', async ({ page, browser }) => {
   test.info().annotations.push({ type: 'browser-version', description: browser.version() });
   const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
-  await page.goto('/');
+  await openApp(page);
   const actual = page.locator('#actual'), editable = page.getByRole('textbox', { name: '테스트 영역', exact: true });
   await expect(page.getByRole('button', { name: '뒤로가기' })).toBeDisabled();
   await expect(editable).toHaveText(await actual.innerText(), { useInnerText: true });
@@ -25,7 +25,7 @@ test('M1 브라우저: 직접 편집 → Patch → 미확정 편집 → Undo/Red
 });
 
 test('M1 브라우저: 루트 State, 순수 자식, Memo, Effect, 초기화', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   await expect(page.getByLabel('카운트', { exact: true })).toHaveText('0');
   const originalInput = await page.getByRole('textbox', { name: '카운터 이름' }).elementHandle();
   await page.getByRole('textbox', { name: '카운터 이름' }).fill('민수');
@@ -40,7 +40,7 @@ test('M1 브라우저: 루트 State, 순수 자식, Memo, Effect, 초기화', as
 });
 
 test('M1 브라우저: 미지원 HTML 입력은 기존 화면을 유지하고 오류를 표시한다', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   const before = await page.locator('#test').innerHTML();
   await page.getByText('HTML로 구조·속성 편집하기', { exact: true }).click();
   await page.getByLabel('테스트 영역 HTML').fill('<img src=x onerror="document.title=123">');
@@ -52,7 +52,7 @@ test('M1 브라우저: 미지원 HTML 입력은 기존 화면을 유지하고 �
 
 test('M1 브라우저: 좁은 화면과 키보드로 조작할 수 있다', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto('/');
+  await openApp(page);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   const increase = page.getByRole('button', { name: '+1', exact: true });
   await increase.focus(); await page.keyboard.press('Enter');

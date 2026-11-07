@@ -1,7 +1,7 @@
-import { expect, test } from './fixtures';
+import { expect, openApp, test } from './fixtures';
 
 test('회귀: native input의 부모 bubble handler가 복원 전의 실제 입력값을 읽는다', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   await page.evaluate(async () => {
     const modulePath = '/src/runtime/index.ts'; const { FunctionComponent, h, useState } = await import(modulePath);
     const output = document.createElement('div'); document.body.append(output);
@@ -19,7 +19,7 @@ test('회귀: native input의 부모 bubble handler가 복원 전의 실제 입�
 });
 
 test('T-B01/T-P06: 실제 native 입력에서 controlled 거부/그룹 복원과 uncontrolled 보존', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   await page.evaluate(async () => {
     const modulePath = '/src/runtime/index.ts';
     const { FunctionComponent, h, useState } = await import(modulePath);
@@ -53,7 +53,7 @@ test('T-B01/T-P06: 실제 native 입력에서 controlled 거부/그룹 복원과
 });
 
 test('T-V02/T-H02: native 폼 편집과 History가 속성/live property를 복원한다', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   await page.getByText('HTML로 구조·속성 편집하기', { exact: true }).click();
   await page.getByLabel('테스트 영역 HTML').fill('<form><label>이름<input value="initial"></label><label>메모<textarea>before</textarea></label><label>첫째<input type="radio" name="pick" checked></label><label>둘째<input type="radio" name="pick"></label><label>선택<select multiple><option value="a" selected>A</option><option value="b">B</option></select></label></form>');
   await page.getByRole('button', { name: 'HTML을 테스트 영역에 반영' }).click();
@@ -72,7 +72,7 @@ test('T-V02/T-H02: native 폼 편집과 History가 속성/live property를 복�
 });
 
 test('T-V05: 실제 file 선택을 잃어버리는 snapshot으로 확정하지 않는다', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   await page.getByText('HTML로 구조·속성 편집하기', { exact: true }).click();
   await page.getByLabel('테스트 영역 HTML').fill('<input type="file" aria-label="파일">');
   await page.getByRole('button', { name: 'HTML을 테스트 영역에 반영' }).click();
@@ -85,7 +85,7 @@ test('T-V05: 실제 file 선택을 잃어버리는 snapshot으로 확정하지 �
 });
 
 test('T-E03: host 예외 후 초기화 버튼은 마지막 정상 History를 복구한다', async ({ page }) => {
-  await page.goto('/');
+  await openApp(page);
   await page.getByText('HTML로 구조·속성 편집하기', { exact: true }).click();
   const source = page.getByLabel('테스트 영역 HTML');
   await source.fill('<p>last committed</p>');

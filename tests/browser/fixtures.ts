@@ -1,4 +1,5 @@
 import { test as base, expect } from '@playwright/test';
+import type { Page } from '@playwright/test';
 
 // Diagnostics are independent from assertions and never retry an action.
 export const test = base.extend<{ diagnostics: void }>({
@@ -28,3 +29,12 @@ export const test = base.extend<{ diagnostics: void }>({
   }, { auto: true }],
 });
 export { expect };
+
+export async function openApp(page: Page) {
+  await test.step('Load the prepared application', async () => { await page.goto('/'); });
+  await test.step('Confirm root application initialization', async () => {
+    await expect(page.locator('#task-app').getByTestId('task-summary')).toHaveText('전체 8 · 완료 0 · 남음 8');
+    await expect(page.locator('#history-status')).toContainText('V0');
+    await expect(page.locator('#error')).toBeHidden();
+  });
+}

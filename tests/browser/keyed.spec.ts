@@ -1,8 +1,8 @@
-import { expect, test } from './fixtures';
+import { expect, openApp, test } from './fixtures';
 
 test('T-K01~K03: Chromium의 seed 200개에서 두 전략의 순서·identity·uncontrolled 입력 보존', async ({ page }) => {
   test.info().annotations.push({ type: 'seed', description: '539365639, 200 input pairs, each greedy/lis, 0..30 nodes' });
-  await page.goto('/');
+  await openApp(page);
   const result = await page.evaluate(async () => {
     const runtimePath = '/src/runtime/index.ts', resolvePath = '/src/runtime/resolve.ts', mountPath = '/src/core/mount.ts', diffPath = '/src/core/reconcile.ts', patchPath = '/src/core/patch.ts';
     const { h } = await import(runtimePath), { resolveExpression } = await import(resolvePath);

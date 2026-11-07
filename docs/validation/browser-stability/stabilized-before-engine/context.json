@@ -1,0 +1,101 @@
+{
+  "archivedAt": "2026-11-07T12:22:29.061Z",
+  "commit": "7757e3c7b0404d694daa845b6d3800993f3cc3e3",
+  "status": " M .github/workflows/ci.yml\n M playwright.config.ts\n M scripts/browser-server.mjs\n M tests/browser/batching.spec.ts\n M tests/browser/browser-state.spec.ts\n M tests/browser/fixtures.ts\n M tests/browser/inspector.spec.ts\n M tests/browser/keyed.spec.ts\n M tests/browser/m1.spec.ts\n M tests/browser/m3.spec.ts\n M tests/browser/tasks.spec.ts\n?? docs/bench/noop-baseline-before/\n?? docs/bench/noop-profile-before/\n?? docs/validation/browser-stability/stabilized-before-engine/\n?? tests/integration/noop-contracts.test.ts\n",
+  "stats": {
+    "startTime": "2026-11-07T12:20:26.518Z",
+    "duration": 67131.69399999999,
+    "expected": 31,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "config": {
+    "argv": [
+      "C:\\Users\\nica7\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "C:\\Github\\mini-react\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Github\\mini-react\\playwright.config.ts",
+    "rootDir": "C:/Github/mini-react/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Github/mini-react/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Github/mini-react/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Github/mini-react/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Github/mini-react/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "/(?:m1|tasks|browser-state)\\.spec\\.ts/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".validation/browser-results.json"
+        }
+      ],
+      [
+        "C:\\Github\\mini-react\\tests\\browser\\timingReporter.ts",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.62.1",
+    "workers": 2,
+    "webServer": {
+      "command": "node scripts/browser-server.mjs",
+      "url": "http://127.0.0.1:4173/__browser_ready",
+      "reuseExistingServer": false
+    }
+  }
+}

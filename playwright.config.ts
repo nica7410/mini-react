@@ -12,7 +12,7 @@ export default defineConfig({
   ],
   webServer: {
     command: 'node scripts/browser-server.mjs',
-    url: 'http://127.0.0.1:4173',
+    url: 'http://127.0.0.1:4173/__browser_ready',
     reuseExistingServer: false,
   },
 });
