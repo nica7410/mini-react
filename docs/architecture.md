@@ -51,6 +51,16 @@ key가 같아도 host tag, 컴포넌트 경계의 함수/type·key, 반환 root 
 
 preflight 거절은 DOM 쓰기 0회다. 실제 DOM API가 실행 도중 예외를 던지는 경우는 다르다. mount를 faulted로 표시하고 후속 쓰기를 막지만 이미 수행한 쓰기를 모두 rollback하지는 않는다. 편집기 복구는 마지막 정상 History로 두 mount를 다시 만든다. [실제 실패와 회귀](m3-correctness.md).
 
+### no-op 검증 비용과 캐시 경계
+
+후속 최적화에서는 preflight가 비교용 host 객체 두 개를 매 노드마다 복사하지 않는다. 같은 VNode 참조는 동등하고, 다른 참조는 기존과 같은 own host 필드를 직접 비교한다. identity/children 검사는 따로 유지한다. 명령 모의 실행과 **현재 DOM 객체·parent·형제 순서·양방향 binding 검사**는 매 commit에 수행한다. DOM 쓰기가 0이어도 외부에서 같은 HTML의 다른 Node를 끼워 넣으면 거절한다.
+
+`freezeTree`는 엔진이 소유한 plain object/array의 data property를 재귀 동결하고 그 증거를 WeakSet에 기록한다. `Object.isFrozen(outer)`만 보고 하위 객체까지 동결됐다고 가정하지 않는다. getter/setter나 사용자 정의 prototype이 있는 객체는 증명 집합에 넣지 않으며, 함수는 identity로 취급하고 함수 자체나 호출자의 props/state를 동결하지 않는다. 순환 데이터는 거절한다.
+
+트리 검증은 **검증을 성공한 동일 immutable VRoot 객체**에만 캐시한다. 캐시 키가 VNode/subtree가 아닌 전체 root이므로 형제 중복 key, form/radio 그룹, select/option 소유 문맥을 포함한다. 다른 root를 만들거나 부모 문맥을 바꾸면 전체 검사를 다시 한다. mutable·얕은 동결·accessor 데이터는 결과를 재사용하지 않는다. 고정된 HTML/폼 검증 정책 아래의 내부 데이터 캐시이며, DOM·MountView·PatchPlan·revision·binding에는 적용하지 않는다. WeakSet이므로 보관 수명이 끝난 snapshot을 강하게 붙잡지 않는다.
+
+필요한 view 갱신, dirty controlled 복원, Effect, focus/IME 단계는 그대로 실행한다. 이 비용은 최초 트리 생성 시 깊은 불변성 증명으로 일부 이동한다. 새 트리를 매번 만드는 경우의 생성 비용 증가와 실제 cycle 이득을 모두 [후속 측정](browser-noop-followup.md)에 기록한다.
+
 ## Root Hooks와 FIFO Batching
 
 `FunctionComponent`는 루트 함수, `hooks` 배열, mount/update/unmount를 소유한다. 매 render의 Hook 호출 순서가 슬롯을 결정한다. setter는 슬롯에 고정되어 있고 렌더 당시 값의 closure와 다르다. 그래서 `setCount(count + 1)` 세 번은 같은 값 대체 요청인 반면 `setCount(n => n + 1)` 세 번은 앞 후보값에 차례로 적용된다.
@@ -102,7 +112,7 @@ composition 중 대상/조상의 이동·삭제·교체·입력 방식을 바꾸
 | 입력 경계 | script/inline on*/위험 URL/iframe/SVG/MathML/Custom Element 등 거절. 범용 보안 sanitizer 제품 아님 |
 | 상태 불변성 | 개발 모드 plain object/array 동결 진단. class/Map/DOM 전체 불변성 보장 없음; production 호출자 계약 |
 | 오류 | preflight 거절은 쓰기 없음. 실제 host 예외는 faulted; 전체 transaction rollback 없음 |
-| 브라우저 | Chromium 전체 기능 19개, Firefox smoke 10개. Safari/WebKit·모바일 실기기 미검증 |
+| 브라우저 | Chromium 전체 기능 20개, Firefox smoke 11개. CRUD 시나리오 분리로 기존 19+10에서 증가. Safari/WebKit·모바일 실기기 미검증 |
 | 관찰 | 최근 100개 plan, 실행 전 이벤트 최대 1,000개; 생략 수 표시. 무제한 이력 아님 |
 | 제외 | 자식 Hooks, 외부 Store, Fiber/Concurrent, SSR/Hydration, Phase 2 Time Travel, keyed Fragment, Adaptive |
 

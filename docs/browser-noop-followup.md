@@ -21,6 +21,16 @@
 
 수정 직후 기본 명령 31/31 PASS, typecheck PASS. [기록](validation/browser-stability/stabilized-before-engine/context.json). 엔진 수정 후 최종 3회 연속 전체 검증은 별도로 수행한다. CI도 같은 서버/준비 조건을 사용하고 진단 JSON을 artifact에 포함한다. 원격 실행은 하지 않았다.
 
+최종 엔진으로 **기본 명령을 새 서버/브라우저에서 3회 연속** 통과했다. 31/31씩, skip/unexpected/flaky/retry 0. [검증·소스 hash](validation/noop-followup.json).
+
+| 실행 | 전체 초 | 서버 listen ms | 모듈 준비 완료 ms | Firefox CRUD ms | Firefox bulk/empty ms | 가장 긴 test ms |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 67.84 | 89.63 | 2,201.79 | 12,777 | 8,577 | 12,777 |
+| 2 | 67.57 | 102.58 | 2,333.32 | 12,016 | 7,976 | 12,016 |
+| 3 | 68.41 | 86.54 | 2,466.06 | 12,556 | 8,132 | 12,556 |
+
+서버 PID는 각각 104364/62328/105000이다. 30초 test 한도를 유지했고 실제 모듈 준비 비용을 숨기지 않았다. 약 2.2–2.5초를 서버 준비 단계에서 사용한다. 과거의 느린 Vite 응답 자체를 OS/엔진 결함으로 단정하지 않으며, 모든 환경에서 간헐성이 사라진다는 보장은 하지 않는다.
+
 ## no-op 실험 사전 정의
 
 `scripts/build-noop.mjs`는 엔진/하네스 SHA 및 commit을 기록한 고정 production bundle을 만든다. 이미 있는 build/tag는 덮어쓰지 않는다. 별도 `--profile` 빌드에만 validation/equality/diff/preflight/DOM binding/host form·focus/evaluation span을 삽입한다. 중첩 span은 inclusive와 exclusive를 각각 기록하며 합산하지 않는다. 프로파일링 숫자는 최종 속도 비교에서 제외한다.
@@ -40,3 +50,11 @@
 첫 개선은 `equalHostData`: 기존 preflight의 `{ ...hostData }` 두 객체와 노드별 함수를 만들지 않고 같은 own 필드를 직접 비교한다. 동일 VNode 참조는 즉시 동등하다. identity/children는 기존 별도 검사로 남고, 추가 own 필드도 기존처럼 비교한다. 캐시·revision·계획 신뢰 경로를 추가하지 않았다.
 
 관련 7파일 78개 테스트, typecheck와 production bundle 통과. 새 회귀는 두 종류 no-op, 동일 내용의 외부 Node 교체와 재캡처, mount/revision/위조 view/registry, 같은 화면의 Effect와 실패 후보 보존, handler 교체/제거 및 form 소유 정책을 확인한다. [paired smoke](bench/noop-host-compare/all-results.md)에서 10,000 stateful 6경로 median은 7–16% 낮았으나 표본 3개인 예비 결과다. 최종 3세션 검증 전에는 확정적 개선율로 사용하지 않는다.
+
+## 깊은 불변성에 한정한 검증 재사용
+
+두 번째 개선은 검증을 성공한 immutable **전체 VRoot**의 WeakSet 캐시다. 자세한 유효/무효 조건은 [아키텍처](architecture.md)의 no-op 절을 따른다. root 객체를 새로 만들면 radio/form/select 문맥도 다시 검사한다. 불변 데이터 증명 없이 `Object.isFrozen` 하나로 캐시하거나, subtree가 다른 부모로 옮겨도 검증을 생략하는 해법은 사용하지 않는다. PatchPlan/DOM binding을 신뢰하고 preflight를 건너뛰는 해법도 제외했다.
+
+전체 단위·통합 184/184(17파일), typecheck, production build를 통과했다. 추가 8개 검증 테스트는 얕은 freeze, mutable 자식, accessor, custom prototype, 함수 비동결과 새로운 radio/select 문맥을 확인한다.
+
+[두 개선을 적용한 paired smoke](bench/noop-immutable-compare/all-results.md)에서 10,000 stateful cycle median은 같은 참조 296.3→124.6ms, 동등한 새 트리 571.0→386.3ms, Memo 328.8→168.1ms, dirty controlled 285.5→134.1ms였다. **불리한 비용:** 새 트리 생성은 229.0→395.9ms로 증가했다. 깊은 불변성 증명이 최초 생성에 드는 비용이다. 생성과 cycle의 개별 median을 더해 총 median으로 표현하지 않으며, 최종 raw의 표본별 생성+cycle도 별도로 분석한다. 새 트리를 매번 만드는 앱 전체가 같은 비율로 빨라졌다는 주장은 하지 않는다. 이 예비 표본 역시 3개이며 최종 3세션 결과로 대체해 판단한다.

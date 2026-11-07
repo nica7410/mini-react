@@ -13,10 +13,28 @@ export function errorDiagnostic(error: unknown): Diagnostic {
 }
 
 // 엔진이 새로 소유한 트리만 동결한다. 사용자 props/state나 함수 객체는 동결하지 않는다.
+const immutableData = new WeakSet<object>();
+const freezing = new WeakSet<object>();
+export const isImmutableData = (value: object): boolean => immutableData.has(value);
 export function freezeTree<T>(value: T): T {
-  if (value && typeof value === 'object' && !Object.isFrozen(value)) {
-    for (const child of Object.values(value)) freezeTree(child);
-    Object.freeze(value);
+  if (value && typeof value === 'object' && !immutableData.has(value)) {
+    if (freezing.has(value)) throw new Error('순환 데이터는 VDOM에 사용할 수 없습니다.');
+    freezing.add(value);
+    try {
+      const prototype = Object.getPrototypeOf(value);
+      let stable = prototype === null || prototype === Object.prototype || (Array.isArray(value) && prototype === Array.prototype);
+      // Object.isFrozen(outer) alone does not prove nested immutability. Accessors and
+      // custom prototypes are never certified, even if the containing object is frozen.
+      for (const key of Reflect.ownKeys(value)) {
+        const property = Object.getOwnPropertyDescriptor(value, key)!;
+        if (!Object.hasOwn(property, 'value')) { stable = false; continue; }
+        const child = property.value;
+        freezeTree(child);
+        if (child && typeof child === 'object' && !immutableData.has(child)) stable = false;
+      }
+      Object.freeze(value);
+      if (stable) immutableData.add(value);
+    } finally { freezing.delete(value); }
   }
   return value;
 }

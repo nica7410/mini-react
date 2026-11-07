@@ -25,9 +25,8 @@ export function readDOM(container: ParentNode): Result<VRoot> {
     };
   }
   try {
-    const snapshot: VRoot = { kind: 'root', children: Array.from(container.childNodes, read) };
-    const valid = validateTree(snapshot);
-    return valid.ok ? ok(freezeTree(snapshot)) : valid;
+    const snapshot = freezeTree<VRoot>({ kind: 'root', children: Array.from(container.childNodes, read) });
+    return validateTree(snapshot);
   } catch (error) { return fail('CAPTURE_ERROR', error instanceof Error ? error.message : String(error)); }
 }
 

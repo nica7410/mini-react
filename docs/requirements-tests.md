@@ -1,6 +1,20 @@
 # 요구사항 · 테스트 · 완료 증거
 
-기능 소스 `3190268`, 2026-11-07 검증 기준이다. 테스트 ID는 명세의 계약 단위이며 테스트 함수 개수와 일대일 대응하지 않는다. 같은 계약을 여러 입력과 계층에서 확인한다. ID가 제목에 없더라도 아래에 정확한 의미와 파일을 연결했다. [M7 실행 요약·source hash](validation/m7.json), [단계별 기록](progress.md)을 함께 본다.
+최초 M8 기능 소스는 `3190268`이다. 이후 브라우저 안정화/no-op 후속 검증과 추가 7개 ID를 아래에 구분했다. 테스트 ID는 명세의 계약 단위이며 테스트 함수 개수와 일대일 대응하지 않는다. 같은 계약을 여러 입력과 계층에서 확인한다. ID가 제목에 없더라도 아래에 정확한 의미와 파일을 연결했다. [M7 당시 증거](validation/m7.json), [후속 검증](browser-noop-followup.md), [단계별 기록](progress.md)을 함께 본다.
+
+## no-op 후속 회귀 (추가 7개 ID, 전체 76개)
+
+| ID | 증명하는 동작 | 실제 테스트 |
+|---|---|---|
+| T-N01 | 같은 참조/동등한 새 VDOM의 no-op revision, snapshot 갱신, identity·uncontrolled 보존 | [no-op contracts](../tests/integration/noop-contracts.test.ts) |
+| T-N02 | 같은 내용의 외부 Node 교체 거절, 새 capture/adopt 후 재사용 | [no-op contracts](../tests/integration/noop-contracts.test.ts) |
+| T-N03 | no-op의 다른 mount/stale revision/위조 view/registry 거절 | [no-op contracts](../tests/integration/noop-contracts.test.ts), [anchor/parent 회귀](../tests/integration/plan-validation.test.ts) |
+| T-N04 | DOM이 같아도 Effect 실행, preflight 실패 후보 State/Effect 미확정, unmount 정리 | [no-op contracts](../tests/integration/noop-contracts.test.ts) |
+| T-N05 | no-op 이후 handler 교체/제거, 같은 노드의 폼 소유 변경 거절 | [no-op contracts](../tests/integration/noop-contracts.test.ts) |
+| T-N06 | mutable/얕은 freeze/accessor/prototype 경계, 깊은 동결 증명, 함수 비동결 | [immutable validation](../tests/unit/immutable-validation.test.ts) |
+| T-N07 | 공유 subtree를 새 root/form/radio/select 문맥에 놓을 때 다시 검증 | [immutable validation](../tests/unit/immutable-validation.test.ts) |
+
+기존 T-H04/H05, T-P06, T-K01~K07, T-B01~B04도 유지한다. 새 harness [12개 counts/oracle 회귀](../tests/integration/noop-benchmark.test.ts)는 controlled dirty·uncontrolled 보존·재배치·Effect·자원 정리를 별도 확인한다. 실제 Windows IME 수동 확인은 이전 사용자 보고이며, 이번 자동 검증과 시점을 혼동하지 않는다.
 
 ## 기능 ID
 

@@ -1,5 +1,5 @@
 import type { FormPolicy, Result, VNode, VRoot } from './types';
-import { fail, ok } from './vdom';
+import { fail, isImmutableData, ok } from './vdom';
 
 export const htmlTags = new Set(('a abbr address area article aside audio b bdi bdo blockquote br button canvas caption cite code col colgroup datalist dd del details dfn div dl dt em fieldset figcaption figure footer form h1 h2 h3 h4 h5 h6 header hgroup hr i img input ins kbd label legend li main map mark menu meter nav ol optgroup option output p picture pre progress q rp rt ruby s samp search section select small source span strong sub summary sup table tbody td textarea tfoot th thead time tr track u ul var video wbr').split(' '));
 export const voidTags = new Set('area br col hr img input source track wbr'.split(' '));
@@ -31,7 +31,11 @@ function styleProblem(name: string, value: string): boolean {
   }
   return false;
 }
+// A whole root includes radio/form/select and sibling-key context. Never cache a
+// subtree's validity independently of that context, nor a mutable/unknown root.
+const validatedRoots = new WeakSet<VRoot>();
 export function validateTree(tree: VRoot): Result<VRoot> {
+  if (validatedRoots.has(tree)) return ok(tree);
   let problem: string | null = null;
   let problemPath = 'root';
   const rootRadioGroups = new Set<string>();
@@ -100,5 +104,7 @@ export function validateTree(tree: VRoot): Result<VRoot> {
     });
   }
   children(tree.children, 'root');
-  return problem ? fail('INVALID_TREE', problem, problemPath) : ok(tree);
+  if (problem) return fail('INVALID_TREE', problem, problemPath);
+  if (isImmutableData(tree)) validatedRoots.add(tree);
+  return ok(tree);
 }

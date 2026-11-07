@@ -1,0 +1,342 @@
+{
+  "createdAt": "2026-11-07T12:36:29.708Z",
+  "status": "correctness-passed-benchmark-pending",
+  "branch": "phase1",
+  "sourceSha256": {
+    "src/app/counter.ts": "e56f050cddf03a2755938a1c28fe23db5137084b5f0bc4a60d36b7d6a7c24834",
+    "src/app/lab.ts": "f70943cb5849cc9894e4b42639c4fa2d248002f3051247ca2cda36a8708998f2",
+    "src/app/main.ts": "6a5c580b50be9cb4d0634b5e76d13faf337d80f6b6ba709fa57a5837223383a3",
+    "src/app/tasks.ts": "a872fb77fd2f619b375270ebe9c48c0c72ae6dbd48e5bfc6a05d32f4d3257dbb",
+    "src/bench/fixtures.ts": "225ab845cf80f2d6c70bf3e0eb02e71ad2ceca8f45fe5540a876d4a4325132c4",
+    "src/bench/harness.ts": "619428490ed4bc170d572ca90815c4ec772929dadb9ada07729fd370e10d679e",
+    "src/bench/noop.ts": "f76171ea93dacd59a088b8463d8ec47bf20e43ea44e1bc303c0742ef6141f45b",
+    "src/bench/noopProfile.ts": "69f0703131027bb8bfa6e73bd6e530ae2d375c661b205bd01df6bd6bd7a2dcbd",
+    "src/bench/page.ts": "2128ba6b96b2f8f33fabf91c569078481e58f0686e74bcf03c10f34016fba466",
+    "src/bench/statistics.ts": "9bbe2fea650668459bd0cb6b7b3add6f4e74a930b28593248b28875fc10fca12",
+    "src/core/capture.ts": "bb67da1eb02d36e28f1fd33876399695d19e7bd2c4bd37632cde947086946e8b",
+    "src/core/host/browserState.ts": "218603ca2a25629a388f1247ce08f9cb8675bc14755aad27e266934ede88ea77",
+    "src/core/host/events.ts": "1dee6410d07328fcd0384fe2572f45da33c6d0dbf291039ada158da7d5289ee8",
+    "src/core/host/forms.ts": "576d34c2f11bb60b05fa8524906a21b5f85c14eb5aa9e9c23839d6e0a1deb2e6",
+    "src/core/host/inputs.ts": "37d165382aff0209da74434fd7955ec87b82588fb60e21f138e4592bd8d8d82b",
+    "src/core/keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+    "src/core/mount.ts": "98db1dececa432877bc19efd765c706c009b762ab74754cebabf2c41e415a039",
+    "src/core/patch.ts": "77f8c59f94dfeb1ed0fd289c7523d98c05758ed51325308cfa1af1c2f19230ef",
+    "src/core/planValidation.ts": "ebb754eb4b3688abc3513b064fcadf9a0c29151c8e1c3d76ed2f4d2fde56fa31",
+    "src/core/reconcile.ts": "c8b971061b1cabaaba295041b3dfb960425b8d737c775c13522c861b094750ae",
+    "src/core/types.ts": "6cb4f8d46700baf0ee03a6311a258243dbcff396de225201d8f9784e16c17b62",
+    "src/core/validate.ts": "c18e2a2d219343128b385fed7f7442a283409e4d11c7a0e0d09b7e4431c6bf7d",
+    "src/core/vdom.ts": "9bae73fafb9a38683e7cf063f164b2471f53a69cef682b853e35c699a6fff9b4",
+    "src/editor/controller.ts": "839cf161c54e6554fd6e44843a104c3fdba3e27885e71d633e8196afba0dfeed",
+    "src/editor/history.ts": "3b111825709eea00f1318fe5e95bb2d822242e067d2b8b7f8dc3a6af672b277b",
+    "src/editor/inputPolicy.ts": "3a64b56b50354684097f6a1ac8f520373499a77fe1b3d853970b206d060428e3",
+    "src/observe/inspector.ts": "ff8e32e8e90ddeb026d1be9d22d3b388e66317a17aad3ae7c26c1da7e97a3af5",
+    "src/observe/recorder.ts": "2fac724581b0d57d7ff1882a564142cc26cc98620bda1cf4796d17a231375566",
+    "src/observe/trace.ts": "509b61c504c88078b3cfd243917aceb8e2bace996143995683bc3c4dc487d10b",
+    "src/runtime/FunctionComponent.ts": "8c9dcaba691544641e90a8da37af67138dc46b1d0d3795ff2bcec4ce4c2c48b6",
+    "src/runtime/expression.ts": "497e4d36029975216cc0924bb90d1c02f7df3c701122b9e764303a301169a031",
+    "src/runtime/hooks.ts": "7563a2fa137b281230754feafd9d2bb8673201690005aa76928a05fcc5ea8d3f",
+    "src/runtime/index.ts": "3935b4f807ac3b05a6404b3eaa38780239104403cb4299780f5706570734dc3e",
+    "src/runtime/resolve.ts": "9ec32a13e59682c4986f585ec77a259dab2db41e931ead5ba3b8d8d3d5b1db77",
+    "src/runtime/stateGuard.ts": "4fea31d3bc4f290e7e65683a8a812ab4c2a76f6c1dad1c77b7466d4abf96c369",
+    "src/runtime/updateQueue.ts": "adda868ec42fd02d33fd80a1c5e4b9b11ff72c88d3e6e55548ed981b44d06fbe",
+    "tests/browser/batching.spec.ts": "107a126e0db7946ee5bd8f8b9cbac71062efda5259936bcaaa317bb781cf5661",
+    "tests/browser/browser-state.spec.ts": "6f2d5b83364e8df4c3039c38fdd471e0bd3715bade6b648c359dc5a390471c01",
+    "tests/browser/fixtures.ts": "5a905c58d1af2f650af6e5d1e8db56250d4e547e505d3792c9db7024767d83d6",
+    "tests/browser/inspector.spec.ts": "688cb4796974e49ed4696f9a101a7c4591989f834dc5ad1b5a132232279b9fd4",
+    "tests/browser/keyed.spec.ts": "82a70dde977df72117c69bdbd94b5720c3a891f9259ba454c5f0a6074d8504cd",
+    "tests/browser/m1.spec.ts": "4028f10a3c2b984cfbac59308e18453a1f93a8bc939ec9d5c3fefbef6bc742c6",
+    "tests/browser/m3.spec.ts": "c9c97af3c346c13bb4e2fa2d34e4896fae195cca33333aeadb6433e10cd5ed3f",
+    "tests/browser/tasks.spec.ts": "6ce5809b0ab0ca1589ee8713eed44306b8f2dc43cfb16f38ee5d00eb0b49cd03",
+    "tests/browser/timingReporter.ts": "88a3aec3700575056d37bd4bf67afd9f6547419eb9b42c0a9b4335b49626c082",
+    "tests/fixtures/helpers.ts": "ab8459632242109aaa68b52e6624d1e6e6ae8b91aef50165ccb5862b39478aa5",
+    "tests/fixtures/keyed-model.ts": "adb3ac6a18c039daebcdcdc63f4376b664ba502f800df3d5dbb7e57b620d034b",
+    "tests/fixtures/sync-root.ts": "45ebff3848edb795566708fa68e2e762570bfbf54354c8afcfe3d811a98fff65",
+    "tests/integration/batching.test.ts": "c8b6e82292de87cfdedaceab431457b5ede99fe4ecadffa251f0d4e63f3d0aef",
+    "tests/integration/benchmark.test.ts": "d872eea41a25613d62a20981ee7de5ec8adee374ebefd80e1e11f447f1fd24ba",
+    "tests/integration/browser-state.test.ts": "2ece7bd8cce82a85c0d9f546ae811b254c90536d9b8e1b0853dc903d9871607c",
+    "tests/integration/forms.test.ts": "d15b0760737817f707d1e4d08937d1de0e824e9d2fa40194fcd3b55af67865aa",
+    "tests/integration/history.test.ts": "fc9d45ebcfb9b22930eb495d725cb4f58d54686055f0b08d894f6158463cdba7",
+    "tests/integration/hooks.test.ts": "567688ec3e0446e3be0def8d91d8a14495567458cfde68e6169dee5e31fb7b5d",
+    "tests/integration/keyed.test.ts": "0695a30e8d160458e64b34f305d5ed5d773444694dc2577c6eb357b213989f7d",
+    "tests/integration/noop-benchmark.test.ts": "a9e8340e4b76f27fdcdbd4e6532f99fee0ae244e3f81a08c165830b7bfcf9948",
+    "tests/integration/noop-contracts.test.ts": "f25dc060092c609cbe26ac36fb953c20cd6bafae4973a74d0063e76c5f3f7c8b",
+    "tests/integration/observe.test.ts": "a5809416be966309dd22a439edf563288e086abeee8bd7b97f7a0a4acc3ed7a5",
+    "tests/integration/patch.test.ts": "60b1f0a4ea5def0750e2c7a52ab13a42d7e827113c2d5708428fbbb4b394e5a5",
+    "tests/integration/plan-validation.test.ts": "175eab24cb60409e3f1e220aca5242759aaf7859169a8ebbdf0d61ac8d0265df",
+    "tests/integration/reuse.test.ts": "2bea18ecdf8f129222f3ec80f16799aaa4dc05fb2f4347058fe9aa750d70c96f",
+    "tests/unit/diff.test.ts": "33b7a044b6dee3b9375e773a74b6d91a931bbcb3d67718e9c0f6e91f3bc7bc21",
+    "tests/unit/immutable-validation.test.ts": "839072de64218467ac73cb8a5582e5087bfad9c390bc66f6590363d3fdd949b6",
+    "tests/unit/keyed-exhaustive.test.ts": "7b1d9f7eb112f021ce34fc43d97e5ec9cc6a1524e5a0dbffddf16ca7b7880c55",
+    "tests/unit/vdom.test.ts": "73a53f428f930530ec36827c69f95cc9c82b408082a621b56e262ae8d8ba7207"
+  },
+  "unit": {
+    "passed": 184,
+    "failed": 0,
+    "files": 17,
+    "artifact": "noop-unit.json.gz"
+  },
+  "typecheck": "passed",
+  "productionBuild": "passed",
+  "browser": [
+    {
+      "run": 1,
+      "stats": {
+        "startTime": "2026-11-07T12:31:43.340Z",
+        "duration": 67835.515,
+        "expected": 31,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "serverPid": 104364,
+      "server": [
+        {
+          "phase": "listening",
+          "atMs": 89.63470000000001
+        },
+        {
+          "phase": "ready",
+          "atMs": 2201.7929,
+          "warmupMs": 2111.3113999999996,
+          "modules": 34
+        }
+      ],
+      "maxTestMs": 12777,
+      "firstNavigations": [
+        {
+          "title": "T-S03/T-S05: real clicks batch three requests, while later clicks remain separate",
+          "steps": [
+            {
+              "title": "Load the prepared application",
+              "category": "test.step",
+              "durationMs": 276
+            },
+            {
+              "title": "Confirm root application initialization",
+              "category": "test.step",
+              "durationMs": 334
+            }
+          ]
+        },
+        {
+          "title": "regression: capture setter cannot flush before the native parent bubble input handler",
+          "steps": [
+            {
+              "title": "Load the prepared application",
+              "category": "test.step",
+              "durationMs": 291
+            },
+            {
+              "title": "Confirm root application initialization",
+              "category": "test.step",
+              "durationMs": 301
+            }
+          ]
+        }
+      ],
+      "firefoxCrud": [
+        {
+          "title": "T-A01/T-A02: keyboard CRUD, search/filter/sort, counts and validation use the root engine",
+          "durationMs": 12777
+        },
+        {
+          "title": "T-A01/T-A02/T-S03: batching, reorder, bulk deletion and empty state",
+          "durationMs": 8577
+        }
+      ],
+      "configuration": {
+        "workers": 2,
+        "projects": [
+          {
+            "name": "chromium",
+            "retries": 0,
+            "timeout": 30000
+          },
+          {
+            "name": "firefox",
+            "retries": 0,
+            "timeout": 30000
+          }
+        ]
+      },
+      "path": "docs/validation/browser-stability/final-1"
+    },
+    {
+      "run": 2,
+      "stats": {
+        "startTime": "2026-11-07T12:32:52.608Z",
+        "duration": 67567.33,
+        "expected": 31,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "serverPid": 62328,
+      "server": [
+        {
+          "phase": "listening",
+          "atMs": 102.58159999999998
+        },
+        {
+          "phase": "ready",
+          "atMs": 2333.3221,
+          "warmupMs": 2230.0696000000003,
+          "modules": 34
+        }
+      ],
+      "maxTestMs": 12016,
+      "firstNavigations": [
+        {
+          "title": "T-S03/T-S05: real clicks batch three requests, while later clicks remain separate",
+          "steps": [
+            {
+              "title": "Load the prepared application",
+              "category": "test.step",
+              "durationMs": 290
+            },
+            {
+              "title": "Confirm root application initialization",
+              "category": "test.step",
+              "durationMs": 311
+            }
+          ]
+        },
+        {
+          "title": "regression: capture setter cannot flush before the native parent bubble input handler",
+          "steps": [
+            {
+              "title": "Load the prepared application",
+              "category": "test.step",
+              "durationMs": 288
+            },
+            {
+              "title": "Confirm root application initialization",
+              "category": "test.step",
+              "durationMs": 323
+            }
+          ]
+        }
+      ],
+      "firefoxCrud": [
+        {
+          "title": "T-A01/T-A02: keyboard CRUD, search/filter/sort, counts and validation use the root engine",
+          "durationMs": 12016
+        },
+        {
+          "title": "T-A01/T-A02/T-S03: batching, reorder, bulk deletion and empty state",
+          "durationMs": 7976
+        }
+      ],
+      "configuration": {
+        "workers": 2,
+        "projects": [
+          {
+            "name": "chromium",
+            "retries": 0,
+            "timeout": 30000
+          },
+          {
+            "name": "firefox",
+            "retries": 0,
+            "timeout": 30000
+          }
+        ]
+      },
+      "path": "docs/validation/browser-stability/final-2"
+    },
+    {
+      "run": 3,
+      "stats": {
+        "startTime": "2026-11-07T12:34:01.591Z",
+        "duration": 68405.05900000001,
+        "expected": 31,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "serverPid": 105000,
+      "server": [
+        {
+          "phase": "listening",
+          "atMs": 86.53819999999999
+        },
+        {
+          "phase": "ready",
+          "atMs": 2466.0582,
+          "warmupMs": 2378.7812,
+          "modules": 34
+        }
+      ],
+      "maxTestMs": 12556,
+      "firstNavigations": [
+        {
+          "title": "regression: capture setter cannot flush before the native parent bubble input handler",
+          "steps": [
+            {
+              "title": "Load the prepared application",
+              "category": "test.step",
+              "durationMs": 294
+            },
+            {
+              "title": "Confirm root application initialization",
+              "category": "test.step",
+              "durationMs": 307
+            }
+          ]
+        },
+        {
+          "title": "T-S03/T-S05: real clicks batch three requests, while later clicks remain separate",
+          "steps": [
+            {
+              "title": "Load the prepared application",
+              "category": "test.step",
+              "durationMs": 287
+            },
+            {
+              "title": "Confirm root application initialization",
+              "category": "test.step",
+              "durationMs": 314
+            }
+          ]
+        }
+      ],
+      "firefoxCrud": [
+        {
+          "title": "T-A01/T-A02: keyboard CRUD, search/filter/sort, counts and validation use the root engine",
+          "durationMs": 12556
+        },
+        {
+          "title": "T-A01/T-A02/T-S03: batching, reorder, bulk deletion and empty state",
+          "durationMs": 8132
+        }
+      ],
+      "configuration": {
+        "workers": 2,
+        "projects": [
+          {
+            "name": "chromium",
+            "retries": 0,
+            "timeout": 30000
+          },
+          {
+            "name": "firefox",
+            "retries": 0,
+            "timeout": 30000
+          }
+        ]
+      },
+      "path": "docs/validation/browser-stability/final-3"
+    }
+  ],
+  "manualIME": {
+    "status": "historical-user-report-passed",
+    "date": "2026-11-07",
+    "browser": "not provided",
+    "scope": "previous Windows task-8 composition/move confirmation; current synthetic IME regression passed all three runs"
+  },
+  "benchmark": {
+    "status": "pending",
+    "baselineBuild": "baseline-v1",
+    "harnessCommit": "7757e3c"
+  }
+}

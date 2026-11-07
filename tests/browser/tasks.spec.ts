@@ -21,9 +21,12 @@ test('T-A01/T-A02: keyboard CRUD, search/filter/sort, counts and validation use 
 
 test('T-A01/T-A02/T-S03: batching, reorder, bulk deletion and empty state', async ({ page }) => {
   await openApp(page); const app = page.locator('#task-app');
+  // Preserve the original scenario's name-sort -> manual move transition.
+  await app.getByLabel('목록 정렬').selectOption('name');
   await app.getByRole('button', { name: '+1 세 번', exact: true }).click(); await expect(app.getByLabel('Batching 카운트')).toHaveText('3');
   await app.getByRole('button', { name: '마지막 항목을 처음으로', exact: true }).click();
   await expect(app.locator('li').first()).toHaveAttribute('data-task-id', 'task-8');
+  await expect(app.getByLabel('목록 정렬')).toHaveValue('manual');
   for (let i = 1; i <= 8; i++) await app.getByLabel(`task-${i} 삭제`).click();
   await expect(app.getByTestId('task-empty')).toContainText('목록이 비었습니다');
   await expect(app.getByRole('button', { name: '마지막 항목을 처음으로', exact: true })).toBeDisabled();

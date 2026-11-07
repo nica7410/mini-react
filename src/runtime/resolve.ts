@@ -84,9 +84,9 @@ export function evaluateExpression(value: RenderValue, previous: EvaluationState
     }, children);
   }
   const root = resolveOne(value, previous?.root, 'root');
-  const snapshot: VRoot = { kind: 'root', children: [root.vnode] };
+  const snapshot = freezeTree<VRoot>({ kind: 'root', children: [root.vnode] });
   unwrap(validateTree(snapshot));
-  return { snapshot: freezeTree(snapshot), nextState: { root }, componentExecutions, reusedExpressions };
+  return { snapshot, nextState: { root }, componentExecutions, reusedExpressions };
 }
 
 export function resolveExpression(value: RenderValue): VRoot { return evaluateExpression(value, null, false).snapshot; }
