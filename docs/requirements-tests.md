@@ -19,7 +19,7 @@
 | APP-01 | `app/tasks.ts`, root State + props 순수 자식 | T-A01~A03 |
 | Q-01 | `observe/recorder.ts`, `inspector.ts`, `app/lab.ts` | T-Q01~Q03 |
 | Q-02 | 실제 planner 전수/BFS/seed + 실제 DOM/browser | 아래 전체 테스트 대응, M4/M7 증거 |
-| Q-03 | `bench/harness.ts`, `fixtures.ts`, `scripts/benchmark.mjs` | [M6 방법과 결과 상태](m6-observability.md) |
+| Q-03 | `bench/harness.ts`, `fixtures.ts`, `scripts/benchmark.mjs` | [M6 방법](m6-observability.md), [전체 raw·그래프·해석](benchmark-results.md), [원본 감사](bench/m8-full/analysis.json) |
 | Q-04 | 로컬 데모·이 문서·아키텍처·설명·CI | [데모/명령](demo-and-explanation.md), `.github/workflows/ci.yml`; 원격 CI 실행 미수행 |
 
 ## DOM · Diff · Patch (16개 ID)

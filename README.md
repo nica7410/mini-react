@@ -7,7 +7,7 @@ Vanilla TypeScript로 만든 학습용 Mini React입니다. DOM 편집기와 루
 - **B안:** 지원되는 keyed 형제의 LIS 기본 경로와 Greedy 비교, FIFO microtask Batching, 같은 expression의 위치별 재사용, Inspector·seed 재실행·독립 benchmark.
 - **입력:** snapshot/controlled/uncontrolled, no-op 복원, focus/selection 보정, composition 충돌 plan 보류.
 
-최신 자동 검증은 **157개 단위·통합 + Chromium 19개 + Firefox 10개**, 타입 검사·production build 통과입니다. 실제 Windows 한글 IME는 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). 전체 benchmark와 M8 인수 진행 상태는 [진행 기록](docs/progress.md)을 기준으로 합니다. 팀 합의와 원격 CI 실행은 로컬 기술 검증과 별개입니다.
+최신 자동 검증은 **157개 단위·통합 + Chromium 19개 + Firefox 10개**, 타입 검사·production build 통과입니다. 실제 Windows 한글 IME는 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). 전체 benchmark 3세션의 **측정 51,480개 + counts 624개 + warm-up 10,140개**를 완료하고 원자료·통계를 대조했습니다. [M8 기술 인수](docs/m8-acceptance.md)를 충족했으며, [성능 결과](docs/benchmark-results.md)에 유리한 입력과 불리한 입력을 함께 공개했습니다. 팀 합의·팀원 연습/발표와 원격 CI 실행은 미확인입니다.
 
 ## 실행
 
@@ -65,6 +65,8 @@ pnpm trace:workflow
 | 설치·시연·핵심 질문·성과 표현 | [데모와 설명](docs/demo-and-explanation.md) |
 | 폼·focus·IME·브라우저 | [M7 검증](docs/m7-app-browser.md) |
 | 실험 방법·원본 | [M6 관찰·benchmark](docs/m6-observability.md) |
+| 전체 성능 결과·그래프·한계 | [실험 결과](docs/benchmark-results.md) |
+| 최종 기술 인수·외부 확인 구분 | [M8 인수](docs/m8-acceptance.md) |
 | 초기 구현의 역사적 기록 | [M0~M1](docs/m0-m1.md) |
 | 공통 엔진 / 루트 런타임 | `src/core/` / `src/runtime/` |
 | 편집기 / 앱 / 관찰 / 측정 | `src/editor/` / `src/app/` / `src/observe/` / `src/bench/` |

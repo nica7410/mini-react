@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "stage": "M8 final local technical acceptance",
+  "status": "technical-acceptance-satisfied",
+  "auditedAt": "2026-11-07T11:21:08.394Z",
+  "branch": "phase1",
+  "functionalCommit": "319026877cb6f391db096a4c179f6d1a0a71eb46",
+  "benchmarkCommit": "ebc8f461d2b2ca1c971502be687552185beda1b5",
+  "benchmarkResultsCommit": "0d1cfeaf633c46c8aa94fc1be08e482a0e0be72f",
+  "checks": {
+    "sourceAndTestHashes": 59,
+    "changedSources": [],
+    "unit": {
+      "passed": 157,
+      "failed": 0,
+      "success": true
+    },
+    "browser": {
+      "startTime": "2026-11-07T06:47:09.353Z",
+      "duration": 60323.992,
+      "expected": 29,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "featureIds": 15,
+    "testIds": 69,
+    "ci": {
+      "yaml": "passed",
+      "commands": "checked",
+      "pinnedActions": 4,
+      "remote": "not run"
+    },
+    "benchmark": {
+      "counts": 624,
+      "warmup": 10140,
+      "sample": 51480,
+      "conditions": 624,
+      "summaryMetrics": 4368,
+      "rawAndSummaryAgree": true,
+      "countsConsistentAcrossSessions": true,
+      "processes": 312,
+      "previewPortReleased": true
+    },
+    "changesSinceFunctionalCommit": "docs/scripts/CI only",
+    "documentation": {
+      "markdownFiles": 19,
+      "localLinks": 290,
+      "missingLinks": 0
+    },
+    "plots": {
+      "figures": 4,
+      "pngAndSvg": 8,
+      "visualReview": "passed",
+      "svgXml": "4 parsed",
+      "pngUnchangedAfterWhitespaceCleanup": true,
+      "metadata": "docs/bench/m8-full/plot-validation.json"
+    },
+    "preservedTestReports": "Both gzip and decompressed SHA-256 values match the recorded final source reports"
+  },
+  "demo": {
+    "at": "2026-11-07T11:17:23.244Z",
+    "url": "http://127.0.0.1:5173/",
+    "status": 200,
+    "title": "Mini React"
+  },
+  "realWindowsKoreanIME": {
+    "syntheticCompositionIsNotManualEvidence": true,
+    "status": "passed-user-reported",
+    "automatedUIAttempt": "Stopped by Computer Use: current browser URL could not be confidently determined",
+    "confirmedDate": "2026-11-07",
+    "evidence": "사용자 응답: 직접 확인 완료 — 문제 없음",
+    "scope": "Requested Windows Korean IME workflow: defer task-8 move during composition, move after composition end, no missing/duplicated characters or focus loss",
+    "environment": {
+      "ime": "Windows Korean IME, version unspecified",
+      "browser": "not provided",
+      "os": "user Windows environment"
+    },
+    "source": "User reply in the active Codex chat; independent of synthetic composition tests"
+  },
+  "externalConfirmation": {
+    "teamAgreement": "unconfirmed",
+    "otherCandidates": "not provided; current candidate provisionally selected",
+    "teamExplanationAndExercises": "unconfirmed",
+    "teamPresentation": "unconfirmed; favorable and unfavorable results supplied",
+    "remoteCI": "not run",
+    "pushPRDeployment": "not performed"
+  },
+  "verificationMode": "Preserved final test reports verified against unchanged source/test hashes; full production benchmark executed. Documentation-only edits did not trigger a redundant functional-suite rerun.",
+  "checklist": {
+    "path": "C:/Users/nica7/Desktop/리액트 조사/Mini_React_B안_구현명세_체크리스트.md",
+    "version": "1.6",
+    "sha256": "a9fb874d3161368ee7de919f2c2ade52d3307362ff0ebe9102c70059cb07bc5a"
+  }
+}

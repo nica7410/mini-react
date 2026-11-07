@@ -51,3 +51,7 @@ node scripts/check-benchmark-resources.mjs
 ```
 
 그래프 도구는 앱 의존성과 분리했다. Python 3.12와 `scripts/plot-requirements.txt`를 사용하며 현재 환경은 `.validation/plot-deps`에만 설치했다. 일반 재현은 Python 가상환경에서 `pip install -r scripts/plot-requirements.txt` 후 `python scripts/plot-benchmark.py docs/bench/my-full`이다. 완료된 실험의 원본 감사를 통과한 뒤 그래프를 만든다.
+
+## 최종 재실험 결과
+
+실행 commit `ebc8f46`의 `m8-full`은 전체 3세션·312개 조건 프로세스를 오류 없이 완료했다. 624 counts / 10,140 warm-up / 51,480 timing 행과 4,368개 구간 통계가 원본 감사에서 일치했다. 결과는 `0d1cfea`에 보존했다. [최종 보고서](benchmark-results.md)에서 이전 중단 자료와의 구분, 시간상 이득·불리한 입력, 남은 큰 목록 비용을 확인한다. 전체 재실험 통과가 모든 브라우저 내부 메모리 문제의 부재를 증명하지는 않는다.
