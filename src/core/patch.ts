@@ -1,5 +1,5 @@
 import type { CommitCounters, CommitResult, MountHandle, PatchPlan, Result, ViewNode } from './types';
-import { fail, ok } from './vdom';
+import { validatePlan } from './planValidation';
 import { clearEvents, setEvent } from './host/events';
 import { syncForm } from './host/forms';
 import { emitTrace } from '../observe/trace';
@@ -10,21 +10,7 @@ export const emptyCounters = (): CommitCounters => ({
   listenerAdds: 0, listenerRemoves: 0, skippedHostCalls: 0,
 });
 
-export function validatePlan(mount: MountHandle, plan: PatchPlan): Result<PatchPlan> {
-  if (mount.disposed || mount.faulted) return fail('MOUNT_UNAVAILABLE', '해제되었거나 오류 상태인 mount입니다.');
-  if (plan.mountId !== mount.id || plan.baseRevision !== mount.revision) return fail('STALE_PLAN', '다른 mount 또는 오래된 revision의 계획입니다.');
-  const refs = new Set(mount.nodes.keys());
-  let invalid = false;
-  function add(tree: ViewNode) { if (refs.has(tree.ref)) invalid = true; refs.add(tree.ref); tree.children.forEach(add); }
-  for (const op of plan.operations) if (op.kind === 'CREATE_SUBTREE') add(op.tree);
-  for (const op of plan.operations) {
-    if (op.kind === 'CREATE_SUBTREE') continue;
-    if (!refs.has(op.node)) invalid = true;
-    if ('parent' in op && !refs.has(op.parent)) invalid = true;
-    if ('anchor' in op && op.anchor !== null && !refs.has(op.anchor)) invalid = true;
-  }
-  return invalid ? fail('INVALID_REF', '계획에 중복 또는 없는 ref가 있습니다.') : ok(plan);
-}
+export { validatePlan } from './planValidation';
 
 export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
   const valid = validatePlan(mount, plan);

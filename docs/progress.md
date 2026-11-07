@@ -13,7 +13,7 @@
 | M0 | 기술 계약 준비, 팀 확인 대기 | [M0~M1](m0-m1.md) |
 | M1 | 현재 후보 구현·재검증 완료 | 705fde0; unit 52/browser 4/typecheck/build |
 | M2 | 현재 후보 잠정 선정 | [선정 기록](m2-selection.md); 다른 후보 비교 없음 |
-| M3 | 진행 중 | plan 사전 검증, 전체 폼·dirty 복원, 오류/자원 |
+| M3 | 진행 중 | [계획 사전 검증](m3-correctness.md) 62개 테스트 통과. 폼·dirty 복원과 오류/자원 검증 계속 |
 | M4 | 예정 | Greedy/LIS, 실제 planner 전수/seed/독립 oracle |
 | M5 | 예정 | FIFO microtask Batching, 위치별 expression 재사용 |
 | M6 | 예정 | 실제 Trace Inspector, 재현 benchmark/raw 결과 |
@@ -25,5 +25,6 @@
 | 해시 | 단계 | 목적·검증 |
 |---|---|---|
 | 705fde0 | M0~M1 | 공통 VDOM/Diff/Patch·History·루트 Hooks 기준 구현. 52+4 테스트, 타입·빌드 통과 |
+| 086aea9 | M2 | 현재 구현 잠정 선정과 M3 보완 목록. 다른 후보 비교·팀 합의 미수행 |
 
 M8 완료는 모든 필수 구현·검증 증거를 대조한 뒤 판단한다. 실제 IME나 팀 확인을 합성 이벤트·개발자 추정으로 대체하지 않는다.
