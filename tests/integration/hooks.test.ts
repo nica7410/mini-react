@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import { FunctionComponent, h, useEffect, useMemo, useState } from '../../src/runtime';
+import { h, useEffect, useMemo, useState } from '../../src/runtime';
+import { SyncRoot as FunctionComponent } from '../fixtures/sync-root';
 import type { StateSetter, TraceEvent } from '../../src/core/types';
 import { container } from '../fixtures/helpers';
 
@@ -83,7 +84,7 @@ describe('State 슬롯 / M1 동기 갱신', () => {
     root.mount(); const revision = root.host.revision;
     set(n => n + 1); set(n => n + 1); set(n => n + 1);
     expect(output.textContent).toBe('3'); expect(root.host.revision - revision).toBe(3);
-    // T-S03의 batching commit 1회는 M5에서 구현한다.
+    // 기본 microtask 모드의 commit 1회는 batching.test.ts에서 대조한다.
   });
   it('T-S07 (기본): Object.is no-op과 unmount 뒤 setter', () => {
     let set!: StateSetter<number>; const render = vi.fn(() => { const [n, s] = useState(NaN); set = s; return h('p', null, String(n)); });

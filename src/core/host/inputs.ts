@@ -7,10 +7,11 @@ function finishNativeInput(mount: MountHandle): void {
   if (mount.inputFallbackTimer !== undefined) {
     clearTimeout(mount.inputFallbackTimer); mount.inputFallbackTimer = undefined;
   }
-  if (!mount.inputFlushScheduled && mount.dirtyForms.size) {
+  if (!mount.inputFlushScheduled) {
     mount.inputFlushScheduled = true;
     queueMicrotask(() => {
       mount.inputFlushScheduled = false;
+      mount.nativeInputPending = false;
       if (!mount.disposed && !mount.faulted) mount.onHostInput?.();
     });
   }
@@ -20,14 +21,26 @@ function finishNativeInput(mount: MountHandle): void {
 // target의 capture listener에서 복원을 예약하면 사용자 bubble handler보다 먼저
 // value가 되돌아간다. 관리 영역의 bubble 끝에서 예약하고 전파 차단은 다음 task로 보완한다.
 export function attachInputBoundary(mount: MountHandle): () => void {
+  const begin = () => {
+    mount.nativeInputPending = true;
+    if (mount.inputFallbackTimer === undefined) mount.inputFallbackTimer = setTimeout(() => {
+      mount.inputFallbackTimer = undefined;
+      if (!mount.disposed && !mount.faulted) finishNativeInput(mount);
+    }, 0);
+  };
   const finish = () => finishNativeInput(mount);
+  mount.container.addEventListener('input', begin, true);
+  mount.container.addEventListener('change', begin, true);
   mount.container.addEventListener('input', finish);
   mount.container.addEventListener('change', finish);
   return () => {
+    mount.container.removeEventListener('input', begin, true);
+    mount.container.removeEventListener('change', begin, true);
     mount.container.removeEventListener('input', finish);
     mount.container.removeEventListener('change', finish);
     if (mount.inputFallbackTimer !== undefined) clearTimeout(mount.inputFallbackTimer);
     mount.inputFallbackTimer = undefined;
+    mount.nativeInputPending = false;
   };
 }
 

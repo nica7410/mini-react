@@ -47,7 +47,7 @@ it.each(['input', 'textarea'])('T-P06: handler 없는 controlled %s는 render/Ef
   const output = container(), root = new FunctionComponent(renderFn, {}, output);
   root.mount(); const input = output.firstElementChild as HTMLInputElement;
   input.value = 'native'; input.dispatchEvent(new Event('input', { bubbles: true }));
-  await Promise.resolve();
+  await Promise.resolve(); await Promise.resolve();
   expect(input.value).toBe('fixed'); expect(renderFn).toHaveBeenCalledTimes(1); expect(effect).toHaveBeenCalledTimes(1);
   expect(root.lastResult).toMatchObject({ status: 'committed', counters: { propertyWrites: 1 } });
   root.unmount();
@@ -60,9 +60,9 @@ it('T-P06/T-F07: setter의 Object.is no-op도 복원하고 explicit DOM no-op만
   });
   const output = container(), root = new FunctionComponent(renderFn, {}, output); root.mount();
   const input = output.firstElementChild as HTMLInputElement;
-  input.value = 'rejected'; input.dispatchEvent(new Event('input', { bubbles: true })); await Promise.resolve();
+  input.value = 'rejected'; input.dispatchEvent(new Event('input', { bubbles: true })); await Promise.resolve(); await Promise.resolve();
   expect(input.value).toBe('fixed'); expect(effect).toHaveBeenCalledTimes(1); expect(renderFn).toHaveBeenCalledTimes(1);
-  root.update(); expect(effect).toHaveBeenCalledTimes(2); expect(renderFn).toHaveBeenCalledTimes(2);
+  root.update(); await Promise.resolve(); expect(effect).toHaveBeenCalledTimes(2); expect(renderFn).toHaveBeenCalledTimes(2);
   root.unmount();
 });
 
@@ -73,7 +73,7 @@ it('T-P06: native checkbox/select 변경도 handler 없이 복원된다', async 
   ), {}, output);
   document.body.append(output); root.mount(); const checkbox = output.querySelector('input')!, select = output.querySelector('select')!;
   checkbox.click(); select.selectedIndex = 0; select.dispatchEvent(new Event('change', { bubbles: true }));
-  await Promise.resolve(); expect(checkbox.checked).toBe(true); expect(select.selectedIndex).toBe(1);
+  await Promise.resolve(); await Promise.resolve(); expect(checkbox.checked).toBe(true); expect(select.selectedIndex).toBe(1);
   root.unmount();
 });
 
@@ -84,7 +84,7 @@ it('T-P06: radio 클릭은 함께 바뀐 그룹의 controlled 노드까지 복�
   ), {}, output);
   document.body.append(output); root.mount(); const radios = output.querySelectorAll('input');
   radios[1].click(); expect(radios[1].checked).toBe(true);
-  await Promise.resolve(); expect(radios[0].checked).toBe(true); expect(radios[1].checked).toBe(false);
+  await Promise.resolve(); await Promise.resolve(); expect(radios[0].checked).toBe(true); expect(radios[1].checked).toBe(false);
   root.unmount();
 });
 
@@ -111,7 +111,7 @@ it('uncontrolled live 입력은 unrelated render와 default 변경으로 덮어�
     h('input', { attrs: { type: 'checkbox' }, form: { mode: 'uncontrolled', defaultChecked: true } }),
   ), {}, output);
   root.mount(); const [input, checkbox] = output.querySelectorAll('input');
-  input.value = 'typed'; checkbox.checked = false; unrelated++; initial = 'changed default'; root.update();
+  input.value = 'typed'; checkbox.checked = false; unrelated++; initial = 'changed default'; root.update(); root.flushForTest();
   expect(input.value).toBe('typed'); expect(checkbox.checked).toBe(false);
   expect(input.defaultValue).toBe('first'); expect(checkbox.defaultChecked).toBe(true);
   root.unmount();
@@ -120,7 +120,7 @@ it('uncontrolled live 입력은 unrelated render와 default 변경으로 덮어�
 it.each([true, false])('폼 소유 전환은 DOM 쓰기 전에 거절한다 (controlled=%s)', controlled => {
   let policy: FormPolicy = controlled ? { mode: 'controlled', value: 'first' } : { mode: 'uncontrolled', defaultValue: 'first' };
   const output = container(), root = new FunctionComponent(() => h('input', { form: policy }), {}, output);
-  root.mount(); policy = controlled ? { mode: 'uncontrolled' } : { mode: 'controlled', value: 'new' }; root.update();
+  root.mount(); policy = controlled ? { mode: 'uncontrolled' } : { mode: 'controlled', value: 'new' }; root.update(); root.flushForTest();
   expect(root.lastResult!.status).toBe('rejected'); expect((output.firstElementChild as HTMLInputElement).value).toBe('first');
   root.unmount();
 });
@@ -146,7 +146,7 @@ it('같은 value는 재대입하지 않고 observer·대기 복원을 unmount에
     return h('div', null, h('input', { form: { mode: 'controlled', value: 'fixed' } }), n);
   }, {}, output);
   root.mount(); const input = output.querySelector('input')!, setter = vi.spyOn(input, 'value', 'set');
-  set(1); expect(setter).not.toHaveBeenCalled(); setter.mockRestore();
+  set(1); root.flushForTest(); expect(setter).not.toHaveBeenCalled(); setter.mockRestore();
   input.value = 'native'; input.dispatchEvent(new Event('input')); root.unmount(); await Promise.resolve();
   expect(root.host.dirtyForms.size).toBe(0); expect(root.host.nodes.size).toBe(0);
   input.dispatchEvent(new Event('input')); await Promise.resolve(); expect(root.host.dirtyForms.size).toBe(0);

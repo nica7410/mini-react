@@ -1,4 +1,4 @@
-import type { CommitResult, Diagnostic, HookSlot, MountHandle, ReconcileStrategy, RenderValue, StateAction, StateUpdate, TraceSink } from '../core/types';
+import type { CommitResult, Diagnostic, HookSlot, MountHandle, ReconcileStrategy, RenderValue, StateAction, StateUpdate, TraceEvent, TraceSink } from '../core/types';
 import { createMount, disposeMount } from '../core/mount';
 import { diff } from '../core/reconcile';
 import { applySnapshot, emptyCounters } from '../core/patch';
@@ -6,10 +6,18 @@ import { errorDiagnostic } from '../core/vdom';
 import { emitTrace } from '../observe/trace';
 import { isComputing, pureComputation, renderWithHooks } from './hooks';
 import type { HookFrame } from './hooks';
-import { resolveExpression } from './resolve';
+import { evaluateExpression } from './resolve';
+import type { EvaluationState } from './resolve';
+import { foldStateUpdates } from './updateQueue';
 import { guardState } from './stateGuard';
 
-export interface RootOptions { readonly trace?: TraceSink; readonly onError?: (diagnostic: Diagnostic) => void; readonly reconcile?: ReconcileStrategy }
+export interface RootOptions {
+  readonly trace?: TraceSink;
+  readonly onError?: (diagnostic: Diagnostic) => void;
+  readonly reconcile?: ReconcileStrategy;
+  readonly batching?: 'sync' | 'microtask';
+  readonly reuseVNode?: boolean;
+}
 
 export class FunctionComponent<P> {
   readonly host: MountHandle;
@@ -24,6 +32,10 @@ export class FunctionComponent<P> {
   private busy = false;
   private halted = false;
   private explicitRequested = false;
+  private evaluation: EvaluationState | null = null;
+  private scheduled = false;
+  private scheduleGeneration = 0;
+  private consecutiveFlushes = 0;
 
   constructor(
     private readonly render: (props: Readonly<P>) => RenderValue,
@@ -34,12 +46,12 @@ export class FunctionComponent<P> {
     if (container.childNodes.length) throw new Error('Phase 2는 빈 전용 container에서 시작합니다.');
     this.host = createMount(container, options.trace);
     this.host.onHostInput = () => {
-      if (!this.busy && !this.halted && this.mounted && !this.disposed && this.host.dirtyForms.size) this.drain();
+      if (this.hasWork()) this.requestFlush();
     };
   }
   get hooks(): readonly HookSlot[] { return this.committedHooks; }
 
-  private trace(phase: 'enqueue' | 'render' | 'effect-cleanup' | 'effect-setup' | 'error', detail: Record<string, unknown>, hookIndex?: number): void {
+  private trace(phase: TraceEvent['phase'], detail: Record<string, unknown>, hookIndex?: number): void {
     emitTrace(this.options.trace, { causeIds: [], mountId: this.host.id, commitId: this.host.revision, phase, detail, hookIndex });
   }
   private report(error: unknown): void {
@@ -54,7 +66,7 @@ export class FunctionComponent<P> {
     const sequence = ++this.sequence;
     this.queue.push({ sequence, slot, action, causeId: `update-${sequence}` });
     this.trace('enqueue', { sequence, slot });
-    if (!this.busy && !this.halted && this.mounted) this.drain();
+    if (this.mounted) this.requestFlush();
   };
 
   mount(): CommitResult {
@@ -63,49 +75,59 @@ export class FunctionComponent<P> {
     this.started = true; this.busy = true;
     try { this.lastResult = this.perform(true, true); }
     finally { this.busy = false; }
-    if (!this.halted && this.queue.length) this.drain();
+    if (this.hasWork()) this.requestFlush();
     return this.lastResult!;
   }
   update(reason: 'state' | 'explicit' = 'explicit'): void {
     if (isComputing()) throw new Error('render 중 update는 허용하지 않습니다.');
     if (!this.started || this.disposed) throw new Error('mount된 루트만 update할 수 있습니다.');
-    if (reason === 'explicit') { this.halted = false; this.explicitRequested = true; }
-    if (!this.busy && !this.halted) this.drain();
+    if (reason === 'explicit') { this.halted = false; this.consecutiveFlushes = 0; this.explicitRequested = true; }
+    this.requestFlush();
   }
-  flushForTest(): void { if (!this.busy && !this.halted && !this.disposed) this.drain(); }
-
-  // M1: 외부 setter마다 동기 flush. Effect 중 요청은 현 commit이 끝난 뒤 처리한다.
-  private drain(): void {
+  flushForTest(): void {
+    this.scheduleGeneration++; this.scheduled = false;
+    if (!this.busy && !this.halted && !this.disposed) this.drain(true);
+  }
+  private hasWork(): boolean { return !!(this.queue.length || this.explicitRequested || this.host.dirtyForms.size); }
+  private requestFlush(): void {
+    if (this.busy || this.halted || this.disposed || !this.hasWork()) return;
+    if (this.options.batching === 'sync') { this.drain(true); return; }
+    if (this.scheduled || this.host.nativeInputPending) return;
+    this.scheduled = true;
+    const generation = ++this.scheduleGeneration;
+    queueMicrotask(() => {
+      if (generation !== this.scheduleGeneration || this.disposed) return;
+      this.scheduled = false;
+      if (!this.halted && !this.host.nativeInputPending) this.drain(false);
+    });
+  }
+  private drain(all: boolean): void {
     this.busy = true;
     try {
-      let iterations = 0;
-      while (!this.halted && !this.disposed && (this.queue.length || this.explicitRequested || this.host.dirtyForms.size)) {
-        if (++iterations > 50) { this.halted = true; this.report(new Error('연속 50회 초과 갱신을 중단했습니다.')); break; }
+      while (!this.halted && !this.disposed && this.hasWork()) {
+        if (++this.consecutiveFlushes > 50) { this.halted = true; this.report(new Error('연속 50회 초과 갱신을 중단했습니다.')); break; }
         const explicit = this.explicitRequested; this.explicitRequested = false;
         this.lastResult = this.perform(!this.mounted, explicit);
+        if (!all) break;
       }
-    } finally { this.busy = false; }
+    } finally {
+      this.busy = false;
+      if (!this.hasWork()) this.consecutiveFlushes = 0;
+    }
+    if (this.hasWork()) this.requestFlush();
   }
   private perform(mounting: boolean, explicit: boolean): CommitResult {
-    const pending = [...this.queue], endSequence = pending.at(-1)?.sequence ?? 0;
+    const pending = [...this.queue];
     const previous = this.committedHooks;
-    const candidate = previous.map(entry => ({ ...entry }));
     const changedEffects: number[] = [];
     const dirty = new Map(this.host.dirtyForms);
     const acknowledgeDirty = () => {
       for (const [ref, sequence] of dirty) if (this.host.dirtyForms.get(ref) === sequence) this.host.dirtyForms.delete(ref);
     };
     try {
-      pureComputation(() => {
-        for (const request of pending) {
-          const old = candidate[request.slot];
-          if (!old || old.kind !== 'state') throw new Error('업데이트의 state 슬롯이 없습니다.');
-          candidate[request.slot] = { ...old, value: guardState(typeof request.action === 'function' ? request.action(old.value) : request.action) };
-        }
-      });
-      const changed = candidate.some((entry, i) => entry.kind === 'state' && !Object.is(entry.value, (previous[i] as typeof entry).value));
+      const { candidate, changed, processedThrough: endSequence } = pureComputation(() => foldStateUpdates(previous, pending, guardState));
       if (!mounting && !explicit && !changed) {
-        const result = dirty.size ? applySnapshot(this.host, diff(this.host.view, this.host.view.snapshot, { strategy: this.options.reconcile, dirtyFormRefs: new Set(dirty.keys()) }))
+        const result = dirty.size ? applySnapshot(this.host, diff(this.host.view, this.host.view.snapshot, { strategy: this.options.reconcile, dirtyFormRefs: new Set(dirty.keys()), reuseVNode: this.options.reuseVNode }))
           : { status: 'noop', revision: this.host.revision, counters: emptyCounters() } as const;
         if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
         if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
@@ -113,14 +135,16 @@ export class FunctionComponent<P> {
         acknowledgeDirty();
         return result;
       }
-      const frame: HookFrame = { previous, candidate, mounting, enqueue: this.enqueue, changedEffects, index: 0 };
+      const frame: HookFrame = { previous, candidate, mounting, enqueue: this.enqueue, changedEffects, index: 0,
+        onMemo: (index, reused) => this.trace('memo', { reused }, index) };
       this.trace('render', { mounting, pending: pending.length });
       const expression = renderWithHooks(frame, () => this.render(this.props));
-      const snapshot = resolveExpression(expression);
-      const result = applySnapshot(this.host, diff(this.host.view, snapshot, { strategy: this.options.reconcile, dirtyFormRefs: new Set(dirty.keys()) }));
+      const evaluation = evaluateExpression(expression, this.evaluation, this.options.reuseVNode !== false, detail => this.trace('component', detail));
+      const result = applySnapshot(this.host, diff(this.host.view, evaluation.snapshot, { strategy: this.options.reconcile, dirtyFormRefs: new Set(dirty.keys()), reuseVNode: this.options.reuseVNode }));
       if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
       if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
       this.committedHooks = candidate;
+      this.evaluation = evaluation.nextState;
       this.mounted = true;
       this.queue = this.queue.filter(request => request.sequence > endSequence);
       acknowledgeDirty();
@@ -161,12 +185,13 @@ export class FunctionComponent<P> {
     if (this.disposed) return;
     if (isComputing()) throw new Error('render 중 unmount는 허용하지 않습니다.');
     this.disposed = true;
+    this.scheduleGeneration++; this.scheduled = false;
     for (const [index, slot] of this.committedHooks.entries()) if (slot.kind === 'effect' && slot.cleanup) {
       this.trace('effect-cleanup', {}, index);
       try { slot.cleanup(); } catch (error) { this.report(error); }
       slot.cleanup = undefined;
     }
-    this.queue = []; this.committedHooks = []; this.explicitRequested = false;
+    this.queue = []; this.committedHooks = []; this.evaluation = null; this.explicitRequested = false;
     disposeMount(this.host);
   }
 }

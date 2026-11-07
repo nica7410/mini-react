@@ -7,6 +7,7 @@ export interface HookFrame {
   readonly mounting: boolean;
   readonly enqueue: (slot: number, action: StateAction<unknown>) => void;
   readonly changedEffects: number[];
+  readonly onMemo?: (index: number, reused: boolean) => void;
   index: number;
 }
 let current: HookFrame | null = null;
@@ -55,10 +56,12 @@ export function useState<T>(initial: T | (() => T)): [T, StateSetter<T>] {
 export function useMemo<T>(factory: () => T, deps?: readonly unknown[]): T {
   const { frame, index, previous } = slot('memo');
   if (previous?.kind === 'memo' && !depsChanged(previous.deps, deps)) {
+    frame.onMemo?.(index, true);
     frame.candidate[index] = previous;
     return previous.value as T;
   }
   const value = pureComputation(factory);
+  frame.onMemo?.(index, false);
   frame.candidate[index] = { kind: 'memo', deps: copyDeps(deps), value };
   return value;
 }

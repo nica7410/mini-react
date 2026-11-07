@@ -16,5 +16,14 @@ export function h(type: string | PureComponent, props: any, ...children: RenderV
     return Object.freeze({ kind: 'component-expr', type, key: normalizeKey(key), props: Object.freeze(childProps) });
   }
   normalizeKey(props?.key);
-  return Object.freeze({ kind: 'element-expr', tag: type.toLowerCase(), props: { ...props }, children });
+  const input: ElementInputProps = props ?? {};
+  const ownedProps: ElementInputProps = Object.freeze({
+    ...input,
+    ...(input.attrs ? { attrs: Object.freeze({ ...input.attrs }) } : {}),
+    ...(input.style ? { style: Object.freeze(Object.fromEntries(Object.entries(input.style).map(([name, value]) => [name, typeof value === 'string' ? value : Object.freeze({ ...value })]))) } : {}),
+    ...(input.events ? { events: Object.freeze(Object.fromEntries(Object.entries(input.events).map(([name, value]) => [name, typeof value === 'function' ? value : Object.freeze({ ...value })]))) } : {}),
+    ...(input.form ? { form: Object.freeze({ ...input.form, ...(input.form.selectedIndices ? { selectedIndices: Object.freeze([...input.form.selectedIndices]) } : {}) }) } : {}),
+  });
+  const ownChildren = (values: readonly RenderValue[]): readonly RenderValue[] => Object.freeze(values.map(child => Array.isArray(child) ? ownChildren(child) : child));
+  return Object.freeze({ kind: 'element-expr', tag: type.toLowerCase(), props: ownedProps, children: ownChildren(children) });
 }

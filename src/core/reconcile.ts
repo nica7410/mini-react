@@ -19,6 +19,7 @@ export function diff(base: MountView, target: VRoot, options: DiffOptions = {}):
   const creates: PatchOp[] = [], removes: PatchOp[] = [], updates: PatchOp[] = [], placements: PatchOp[] = [], forms: PatchOp[] = [];
   const newRefs = new Set<string>();
   const reconciliations: ReconcileDecision[] = [];
+  let visitedNodes = 0, reusedSubtrees = 0;
   function create(vnode: VNode): ViewNode {
     const ref = `${base.mountId}/${id}/${++nextRef}`;
     newRefs.add(ref);
@@ -40,6 +41,21 @@ export function diff(base: MountView, target: VRoot, options: DiffOptions = {}):
   }
   function reconcileChildren(old: readonly ViewNode[], next: readonly VNode[], parent: string): ViewNode[] {
     function reconcileNode(previous: ViewNode | undefined, vnode: VNode): ViewNode {
+      visitedNodes++;
+      if (options.reuseVNode !== false && previous?.vnode === vnode) {
+        reusedSubtrees++;
+        // 표현식 재사용과 native controlled 입력의 복원은 별개다.
+        if (options.dirtyFormRefs?.size) {
+          const syncDirty = (node: ViewNode) => {
+            if (options.dirtyFormRefs!.has(node.ref) && node.vnode.kind === 'element' && node.vnode.form?.mode === 'controlled') {
+              forms.push({ kind: 'SYNC_FORM', node: node.ref, policy: node.vnode.form });
+            }
+            node.children.forEach(syncDirty);
+          };
+          syncDirty(previous);
+        }
+        return previous;
+      }
       if (!previous) {
         const tree = create(vnode);
         creates.push({ kind: 'CREATE_SUBTREE', tree });
@@ -86,7 +102,7 @@ export function diff(base: MountView, target: VRoot, options: DiffOptions = {}):
     return ok({
       id, mountId: base.mountId, baseRevision: base.revision, target,
       nextView: { ...base, revision: base.revision + (operations.length || !equalData(base.snapshot, target) ? 1 : 0), snapshot: target, children },
-      operations, reconciliations,
+      operations, reconciliations, visitedNodes, reusedSubtrees,
     });
   } catch (error) { return fail('DIFF_ERROR', error instanceof Error ? error.message : String(error)); }
 }

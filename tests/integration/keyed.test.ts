@@ -69,6 +69,6 @@ it('T-K07: 같은 외부 key와 host tag여도 내부 컴포넌트 key를 바꾸
   const Inner = () => h('p', { key: 'host' }, 'X');
   const Outer = () => h(Inner, { key: innerKey });
   const output = container(), root = new FunctionComponent(() => h(Outer, { key: 'outer' }), {}, output, { reconcile: 'lis' });
-  root.mount(); const previous = output.firstChild; innerKey = 'next'; root.update();
+  root.mount(); const previous = output.firstChild; innerKey = 'next'; root.update(); root.flushForTest();
   expect(output.firstChild).not.toBe(previous); expect(previous!.parentNode).toBeNull(); root.unmount();
 });

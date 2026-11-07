@@ -71,6 +71,7 @@ export interface MountHandle {
   readonly dirtyForms: Map<NodeRef, number>;
   inputSequence: number;
   inputFlushScheduled: boolean;
+  nativeInputPending: boolean;
   inputFallbackTimer?: ReturnType<typeof setTimeout>;
   disposeHostObservers?: () => void;
   onHostInput?: () => void;
@@ -95,6 +96,8 @@ export interface PatchPlan {
   readonly id: string; readonly mountId: string; readonly baseRevision: number;
   readonly target: VRoot; readonly nextView: MountView; readonly operations: readonly PatchOp[];
   readonly reconciliations: readonly ReconcileDecision[];
+  readonly visitedNodes: number;
+  readonly reusedSubtrees: number;
 }
 export type ReconcileStrategy = 'positional' | 'greedy' | 'lis';
 export interface ReconcileDecision {
@@ -111,6 +114,7 @@ export interface DiffOptions {
   readonly planId?: string;
   readonly strategy?: ReconcileStrategy;
   readonly dirtyFormRefs?: ReadonlySet<NodeRef>;
+  readonly reuseVNode?: boolean;
 }
 export interface CommitCounters {
   createdNodes: number; removedNodes: number; insertedRoots: number; movedRoots: number;

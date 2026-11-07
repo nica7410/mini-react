@@ -8,7 +8,7 @@ export function createMount(container: HTMLElement, trace?: TraceSink): MountHan
   const id = `mount-${++mountSequence}`, rootRef = `${id}/root`;
   const mount: MountHandle = {
     id, container, revision: 0, nextCaptureRef: 0, disposed: false, faulted: false, trace,
-    dirtyForms: new Map(), inputSequence: 0, inputFlushScheduled: false,
+    dirtyForms: new Map(), inputSequence: 0, inputFlushScheduled: false, nativeInputPending: false,
     view: { mountId: id, revision: 0, rootRef, snapshot: emptyRoot(), children: [] },
     nodes: new Map([[rootRef, container]]), refs: new WeakMap([[container, rootRef]]),
   };
