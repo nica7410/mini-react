@@ -14,6 +14,7 @@ export const snapshot = (html: string): VRoot => unwrap(readDOM(container(html))
 export function apply(mount: MountHandle, target: VRoot) {
   const result = applySnapshot(mount, diff(mount.view, target));
   if (result.status === 'faulted') throw result.error;
+  if (result.status === 'deferred') throw new Error('조합 때문에 보류된 계획입니다.');
   if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
   return result;
 }

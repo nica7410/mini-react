@@ -10,6 +10,7 @@ import type { HistoryState } from './history';
 function commitError(result: CommitResult): Result<void> {
   if (result.status === 'rejected') return { ok: false, diagnostics: result.diagnostics };
   if (result.status === 'faulted') return fail('COMMIT_FAULT', String(result.error));
+  if (result.status === 'deferred') return fail('COMPOSING', '입력 조합이 끝난 뒤 다시 시도하세요.');
   return ok(undefined);
 }
 
@@ -18,21 +19,28 @@ export class EditorController {
   test: MountHandle;
   history: HistoryState;
   faulted = false;
+  onCompositionChange?: () => void;
 
   constructor(actual: HTMLElement, test: HTMLElement, trace?: TraceSink, public strategy: ReconcileStrategy = DEFAULT_STRATEGY) {
     if (test.childNodes.length) throw new Error('초기 테스트 영역은 비어 있어야 합니다.');
     this.actual = createMount(actual, trace); this.test = createMount(test, trace);
+    this.bindComposition();
     const captured = unwrap(captureDOM(this.actual));
     unwrap(adoptCapture(this.actual, captured));
     unwrap(commitError(applySnapshot(this.test, this.plan(this.test, captured.snapshot))));
     this.history = createHistory(captured.snapshot);
   }
-  get canUndo(): boolean { return !this.faulted && this.history.cursor > 0; }
-  get canRedo(): boolean { return !this.faulted && this.history.cursor < this.history.entries.length - 1; }
+  get composing(): boolean { return !!(this.actual.composing.size || this.test.composing.size); }
+  get canUndo(): boolean { return !this.faulted && !this.composing && this.history.cursor > 0; }
+  get canRedo(): boolean { return !this.faulted && !this.composing && this.history.cursor < this.history.entries.length - 1; }
+  private bindComposition() {
+    this.actual.onCompositionChange = this.test.onCompositionChange = () => this.onCompositionChange?.();
+  }
   private plan(mount: MountHandle, snapshot: VRoot) { return diff(mount.view, snapshot, { strategy: this.strategy }); }
 
   patch(): Result<void> {
     if (this.faulted) return fail('EDITOR_FAULT', '초기화 후 다시 시도하세요.');
+    if (this.composing) return fail('COMPOSING', '입력 조합 중에는 Patch할 수 없습니다. 조합을 마친 뒤 다시 시도하세요.');
     const captured = captureDOM(this.test);
     if (!captured.ok) return captured;
     const result = commitError(applySnapshot(this.actual, this.plan(this.actual, captured.value.snapshot)));
@@ -44,6 +52,7 @@ export class EditorController {
   }
   travel(direction: 'undo' | 'redo'): Result<void> {
     if (this.faulted) return fail('EDITOR_FAULT', '초기화 후 다시 시도하세요.');
+    if (this.composing) return fail('COMPOSING', '입력 조합 중에는 이력을 이동할 수 없습니다.');
     const target = getHistoryTarget(this.history, direction);
     if (!target) return ok(undefined);
     const captured = captureDOM(this.test);
@@ -68,6 +77,7 @@ export class EditorController {
     const actual = this.actual.container, test = this.test.container, trace = this.actual.trace;
     disposeMount(this.actual); disposeMount(this.test);
     this.actual = createMount(actual, trace); this.test = createMount(test, trace);
+    this.bindComposition();
     const actualResult = commitError(applySnapshot(this.actual, this.plan(this.actual, snapshot)));
     if (!actualResult.ok) { this.faulted = true; return actualResult; }
     const testResult = commitError(applySnapshot(this.test, this.plan(this.test, snapshot)));

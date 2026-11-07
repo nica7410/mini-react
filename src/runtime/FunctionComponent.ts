@@ -41,6 +41,7 @@ export class FunctionComponent<P> {
   private scheduled = false;
   private scheduleGeneration = 0;
   private consecutiveFlushes = 0;
+  private blockedOnComposition = false;
 
   constructor(
     private readonly render: (props: Readonly<P>) => RenderValue,
@@ -53,6 +54,7 @@ export class FunctionComponent<P> {
     this.host.onHostInput = () => {
       if (this.hasWork()) this.requestFlush();
     };
+    this.host.onCompositionEnd = () => { this.blockedOnComposition = false; this.requestFlush(); };
   }
   get hooks(): readonly HookSlot[] { return this.committedHooks; }
 
@@ -71,6 +73,7 @@ export class FunctionComponent<P> {
     const sequence = ++this.sequence;
     const causeId = this.host.eventCause ?? `${this.host.id}:update-${sequence}`;
     this.queue.push({ sequence, slot, action, causeId });
+    this.blockedOnComposition = false;
     emitTrace(this.options.trace, { causeIds: [causeId], mountId: this.host.id, phase: 'enqueue', detail: { sequence, slot } });
     if (this.mounted) this.requestFlush();
   };
@@ -87,16 +90,16 @@ export class FunctionComponent<P> {
   update(reason: 'state' | 'explicit' = 'explicit'): void {
     if (isComputing()) throw new Error('render 중 update는 허용하지 않습니다.');
     if (!this.started || this.disposed) throw new Error('mount된 루트만 update할 수 있습니다.');
-    if (reason === 'explicit') { this.halted = false; this.consecutiveFlushes = 0; this.explicitRequested = true; }
+    if (reason === 'explicit') { this.halted = false; this.blockedOnComposition = false; this.consecutiveFlushes = 0; this.explicitRequested = true; }
     this.requestFlush();
   }
   flushForTest(): void {
     this.scheduleGeneration++; this.scheduled = false;
-    if (!this.busy && !this.halted && !this.disposed) this.drain(true);
+    if (!this.busy && !this.halted && !this.disposed && !this.blockedOnComposition) this.drain(true);
   }
   private hasWork(): boolean { return !!(this.queue.length || this.explicitRequested || this.host.dirtyForms.size); }
   private requestFlush(): void {
-    if (this.busy || this.halted || this.disposed || !this.hasWork()) return;
+    if (this.busy || this.halted || this.disposed || this.blockedOnComposition || !this.hasWork()) return;
     if (this.options.batching === 'sync') { this.drain(true); return; }
     if (this.scheduled || this.host.nativeInputPending) return;
     this.scheduled = true;
@@ -110,10 +113,13 @@ export class FunctionComponent<P> {
   private drain(all: boolean): void {
     this.busy = true;
     try {
-      while (!this.halted && !this.disposed && this.hasWork()) {
+      while (!this.halted && !this.disposed && !this.blockedOnComposition && this.hasWork()) {
         if (++this.consecutiveFlushes > 50) { this.halted = true; this.report(new Error('연속 50회 초과 갱신을 중단했습니다.')); break; }
         const explicit = this.explicitRequested; this.explicitRequested = false;
         this.lastResult = this.perform(!this.mounted, explicit);
+        if (this.lastResult.status === 'deferred') {
+          this.blockedOnComposition = true; this.explicitRequested ||= explicit; this.consecutiveFlushes = 0;
+        }
         if (!all) break;
       }
     } finally {
@@ -156,6 +162,7 @@ export class FunctionComponent<P> {
         if (!dirty.size) commitEnd = clock();
         if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
         if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
+        if (result.status === 'deferred') return result;
         this.queue = this.queue.filter(request => request.sequence > endSequence);
         acknowledgeDirty();
         return measure(result);
@@ -170,6 +177,7 @@ export class FunctionComponent<P> {
       const result = patch(evaluation.snapshot, dirty);
       if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
       if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
+      if (result.status === 'deferred') return result;
       this.committedHooks = candidate;
       this.evaluation = evaluation.nextState;
       this.mounted = true;

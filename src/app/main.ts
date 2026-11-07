@@ -5,14 +5,17 @@ import { FunctionComponent } from '../runtime';
 import { Counter } from './counter';
 import { createInspector } from '../observe/inspector';
 import { createLab } from './lab';
+import { TaskApp } from './tasks';
 
 const element = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
 const actual = element('actual'), test = element('test');
 const source = element<HTMLTextAreaElement>('html-source');
 const originalHTML = actual.innerHTML;
 const error = element('error'), status = element('history-status');
-const recorder = createInspector(element('inspector'), () => [editor.actual, editor.test, counter.host, ...(lab.mount ? [lab.mount] : [])]);
+const recorder = createInspector(element('inspector'), () => [editor.actual, editor.test, counter.host, tasks.host, ...(lab.mount ? [lab.mount] : [])]);
 let editor = new EditorController(actual, test, recorder);
+function observeEditor() { editor.onCompositionChange = () => refresh(editor.composing ? '입력 조합 중 · 완료 후 Patch/이력을 사용할 수 있습니다.' : '입력 조합 완료'); }
+observeEditor();
 
 function show(result: Result<void>, message: string): void {
   error.hidden = result.ok;
@@ -20,6 +23,8 @@ function show(result: Result<void>, message: string): void {
   if (result.ok) refresh(message);
 }
 function refresh(message = ''): void {
+  element<HTMLButtonElement>('patch').disabled = editor.composing || editor.faulted;
+  element<HTMLButtonElement>('apply-html').disabled = editor.composing || editor.faulted;
   element<HTMLButtonElement>('undo').disabled = !editor.canUndo;
   element<HTMLButtonElement>('redo').disabled = !editor.canRedo;
   updateStatus(message);
@@ -37,6 +42,7 @@ element('reset-editor').addEventListener('click', () => {
   editor.dispose();
   replaceEditorHTML(actual, originalHTML);
   editor = new EditorController(actual, test, recorder);
+  observeEditor();
   show({ ok: true, value: undefined }, '초기화 완료');
 });
 element('apply-html').addEventListener('click', () => show(replaceEditorHTML(test, source.value), '테스트 편집 미확정'));
@@ -54,6 +60,12 @@ function createCounter() {
   return root;
 }
 let counter = createCounter();
+function createTasks() {
+  const root = new FunctionComponent(TaskApp, {}, element('task-app'), { trace: recorder, onError: diagnostic => { error.hidden = false; error.textContent = diagnostic.message; } });
+  root.mount(); return root;
+}
+let tasks = createTasks();
 const lab = createLab(recorder);
 element('reset-counter').addEventListener('click', () => { counter.unmount(); counter = createCounter(); });
+element('reset-tasks').addEventListener('click', () => { tasks.unmount(); tasks = createTasks(); });
 refresh();

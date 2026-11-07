@@ -1,0 +1,48 @@
+{
+  "recordedAt": "2026-11-07T06:49:14.796Z",
+  "browser": "151.0.7922.34",
+  "headless": true,
+  "buildMode": "production",
+  "codeCommit": "c8db719d4994faa6c005fc43d01580f5ec837aa2",
+  "workingTreeStatus": "M index.html\n M package.json\n M playwright.config.ts\n M src/app/lab.ts\n M src/app/main.ts\n M src/app/style.css\n M src/bench/harness.ts\n M src/core/mount.ts\n M src/core/patch.ts\n M src/core/types.ts\n M src/editor/controller.ts\n M src/observe/recorder.ts\n M src/runtime/FunctionComponent.ts\n M tests/fixtures/helpers.ts\n?? docs/performance/\n?? scripts/performance-trace.mjs\n?? src/app/tasks.ts\n?? src/core/host/browserState.ts\n?? tests/browser/browser-state.spec.ts\n?? tests/browser/tasks.spec.ts\n?? tests/integration/browser-state.test.ts",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "inspectorEnabled": true,
+  "workflow": [
+    "type/add task",
+    "rename/toggle",
+    "move last task to first",
+    "batch +1 three times",
+    "editor HTML/Patch/Undo"
+  ],
+  "metrics": {
+    "Layout": {
+      "count": 27,
+      "totalDurationMs": 46.49
+    },
+    "UpdateLayoutTree": {
+      "count": 56,
+      "totalDurationMs": 15.272
+    },
+    "Paint": {
+      "count": 29,
+      "totalDurationMs": 30.937
+    },
+    "PrePaint": {
+      "count": 137,
+      "totalDurationMs": 9.194
+    },
+    "EventDispatch": {
+      "count": 314,
+      "totalDurationMs": 98.906
+    },
+    "FunctionCall": {
+      "count": 177,
+      "totalDurationMs": 127.007
+    }
+  },
+  "traceEventCount": 11845,
+  "interpretation": "Single browser workflow with Inspector enabled. Trace contains real style/layout/paint events. Categories can overlap; durations are not additive, not an input latency metric or a Greedy/LIS speed comparison."
+}

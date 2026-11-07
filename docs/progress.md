@@ -4,7 +4,7 @@
 
 - 목표: B안 명세 M8까지 기술 구현·검증·문서화 및 단계별 로컬 커밋.
 - 작업 시작 브랜치: **phase1**. 같은 브랜치에서 계속한다.
-- 현재 단계: **M6 Inspector·benchmark harness 검증 완료. 최종 시간 행렬을 남기고 M7 앱·브라우저 보호 진행**.
+- 현재 단계: **M7 앱·자동 브라우저 검증 완료. 실제 IME 응답 대기, 최종 benchmark와 M8 인수 문서 진행**.
 - 외부 확인: M0 팀 합의/일정, 다른 후보, 실제 한글 IME 수동 검증, 원격 CI 실행은 확인되지 않았다.
 - 원격 push/PR 병합/원격 배포는 요청 범위 밖이다. 최종 산출물은 로컬 데모와 재현 절차다.
 
@@ -17,7 +17,7 @@
 | M4 | Gate 통과, LIS 기본 활성화 | [M4 기록](m4-keyed.md): 113개 단위·통합, Chromium 10개, 전수/seed/BFS·400회 DOM smoke |
 | M5 | Gate 통과 | [M5 기록](m5-batching-reuse.md): 138개 단위·통합, Chromium 12개, 타입·빌드 통과 |
 | M6 | Inspector/harness 검증 완료, 전체 측정 대기 | [관찰 기록](m6-observability.md): 145+13 테스트, production smoke; 최종 엔진 전체 시간 행렬 필요 |
-| M7 | 예정 | 목록 앱, 두 브라우저, focus/selection/composition, 실제 IME |
+| M7 | 앱·자동 검사 통과, 실제 IME 대기 | [M7 기록](m7-app-browser.md): 157 unit/integration, Chromium 19 + Firefox 10, 실제 Performance trace |
 | M8 | 예정 | 기능·테스트 증거 매핑, CI, 재현·한계·성과 문서, 인수 감사 |
 
 ## 커밋 기록
@@ -31,5 +31,6 @@
 | 171f2ab | M4 | 동일 매칭/executor의 Greedy·LIS, 전수/독립 BFS/실제 DOM 검증 후 LIS 기본 활성화. 113+10 테스트 |
 | 5899203 | M5 | FIFO microtask Batching·위치별 expression 재사용·native input 경계. 138+12 테스트 |
 | 82af5b0 | M6 | 실제 Inspector·bounded Trace·seed/JSON 재실행. 142+13 테스트 |
+| c8db719 | M6 | counts/timing 분리·동일 old reset·원본/통계/환경 저장 harness. 145+13 테스트와 production smoke |
 
 M8 완료는 모든 필수 구현·검증 증거를 대조한 뒤 판단한다. 실제 IME나 팀 확인을 합성 이벤트·개발자 추정으로 대체하지 않는다.

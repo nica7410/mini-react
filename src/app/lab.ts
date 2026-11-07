@@ -19,6 +19,7 @@ export function createLab(trace: TraceSink) {
     const result = applySnapshot(mount, diff(mount.view, resolveExpression(rowsExpression(input.oldRows, input.payload)), { strategy: strategy() }));
     if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
     if (result.status === 'faulted') throw result.error;
+    if (result.status === 'deferred') throw new Error('조합이 끝난 뒤 재실행하세요.');
   }
   function safely(action: () => void) { try { action(); } catch (error) { status.textContent = `실행 오류: ${String(error)} · 입력 JSON을 보존했습니다.`; } }
   function run() {
@@ -26,6 +27,7 @@ export function createLab(trace: TraceSink) {
     const result = applySnapshot(mount!, diff(mount!.view, resolveExpression(rowsExpression(input.newRows, input.payload)), { strategy: strategy() }));
     if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
     if (result.status === 'faulted') throw result.error;
+    if (result.status === 'deferred') throw new Error('조합이 끝난 뒤 재실행하세요.');
     status.textContent = `${strategy()} · seed ${input.seed} · 실제 이동 ${result.counters.movedRoots} · 삽입 ${result.counters.insertedRoots} · 초기 상태에서 다시 실행했습니다.`;
   }
   get('lab-run').addEventListener('click', () => safely(run));

@@ -25,6 +25,7 @@ const ensure = (condition: unknown, message: string): void => { if (!condition) 
 function assertCommitted(result: CommitResult): void {
   if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
   if (result.status === 'faulted') throw result.error;
+  if (result.status === 'deferred') throw new Error('benchmark 중 composition 보류 발생');
 }
 function checksum(ids: readonly string[]): string {
   let hash = 2166136261;

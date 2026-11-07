@@ -14,6 +14,17 @@ select { font: inherit; max-width: 100%; border: 1px solid #bccbc3; border-radiu
 .patch-list { max-height: 300px; overflow: auto; padding-left: 24px; }
 .patch-list button { text-align: left; overflow-wrap: anywhere; font-size: 12px; margin-bottom: 5px; }
 .patch-highlight { position: fixed; pointer-events: none; z-index: 999; border: 3px solid #d75c29; background: #f9ba8a22; }
+.task-app-content form { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; }
+.task-filters { margin-top: 18px; }
+.task-list { list-style: none; padding: 0; margin: 16px 0; }
+.task-row { display: flex; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid #e2e9e4; }
+.task-row .task-name { flex: 1; min-width: 80px; }
+.task-row .task-name input { width: 100%; }
+.task-row .task-check { white-space: nowrap; display: flex; gap: 6px; align-items: center; }
+.task-row input[type=checkbox] { width: 18px; height: 18px; }
+.task-row.done .task-name input { color: #5d6c63; text-decoration: line-through; }
+.task-error { color: #a83225; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 650px) { .trace-counts { grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr) 40px; } }
 body { margin: 0; }
 main { width: min(1120px, calc(100% - 40px)); margin: 48px auto; }

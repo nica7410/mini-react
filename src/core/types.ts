@@ -78,6 +78,12 @@ export interface MountHandle {
   eventSequence: number;
   eventCause?: string;
   traceCauses: readonly string[];
+  readonly composing: Set<Node>;
+  readonly heldForms: Set<NodeRef>;
+  focusVersion: number;
+  compositionEndTimer?: ReturnType<typeof setTimeout>;
+  onCompositionEnd?: () => void;
+  onCompositionChange?: () => void;
   readonly trace?: TraceSink;
 }
 export interface CaptureResult {
@@ -127,10 +133,11 @@ export interface CommitCounters {
 export type CommitResult =
   | { readonly status: 'committed' | 'noop'; readonly revision: number; readonly counters: CommitCounters }
   | { readonly status: 'rejected'; readonly diagnostics: readonly Diagnostic[] }
+  | { readonly status: 'deferred'; readonly reason: 'composition'; readonly refs: readonly NodeRef[] }
   | { readonly status: 'faulted'; readonly error: unknown };
 export interface TraceEvent {
   readonly causeIds: readonly string[]; readonly mountId: string; readonly commitId?: number;
-  readonly phase: 'event' | 'enqueue' | 'render' | 'component' | 'memo' | 'diff' | 'patch' | 'effect-cleanup' | 'effect-setup' | 'error';
+  readonly phase: 'event' | 'enqueue' | 'render' | 'component' | 'memo' | 'diff' | 'patch' | 'deferred' | 'effect-cleanup' | 'effect-setup' | 'error';
   readonly nodeRef?: NodeRef; readonly hookIndex?: number;
   readonly detail: Readonly<Record<string, unknown>>;
 }

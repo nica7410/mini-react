@@ -4,6 +4,7 @@ import { clearEvents, setEvent } from './host/events';
 import { syncForm } from './host/forms';
 import { observeControlledInput } from './host/inputs';
 import { emitTrace } from '../observe/trace';
+import { compositionConflict, isComposing, restoreSelection, saveSelection } from './host/browserState';
 
 export const emptyCounters = (): CommitCounters => ({
   createdNodes: 0, removedNodes: 0, insertedRoots: 0, movedRoots: 0,
@@ -16,6 +17,12 @@ export { validatePlan } from './planValidation';
 export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
   const valid = validatePlan(mount, plan);
   if (!valid.ok) return { status: 'rejected', diagnostics: valid.diagnostics };
+  const conflicts = compositionConflict(mount, plan);
+  if (conflicts.length) {
+    emitTrace(mount.trace, { causeIds: mount.traceCauses, mountId: mount.id, phase: 'deferred', detail: { planId: plan.id, reason: 'composition', refs: conflicts } });
+    return { status: 'deferred', reason: 'composition', refs: conflicts };
+  }
+  const selection = saveSelection(mount);
   const counters = emptyCounters();
   const oldNodes = mount.trace?.detailed ? new Map(mount.nodes) : null;
   const initialForms: { element: HTMLElement; tree: ViewNode }[] = [];
@@ -44,7 +51,7 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
     for (const child of Array.from(node.childNodes)) release(child);
     clearEvents(node, counters);
     const ref = mount.refs.get(node);
-    if (ref) mount.nodes.delete(ref);
+    if (ref) { mount.nodes.delete(ref); mount.heldForms.delete(ref); mount.dirtyForms.delete(ref); }
     mount.refs.delete(node); counters.removedNodes++;
   }
   try {
@@ -74,7 +81,12 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
       }
     }
     for (const { element, tree } of initialForms) if (tree.vnode.kind === 'element' && tree.vnode.form) syncForm(element, tree.vnode.form, true, counters);
-    for (const op of plan.operations) if (op.kind === 'SYNC_FORM') syncForm(nodeAt(op.node) as HTMLElement, op.policy, false, counters);
+    for (const op of plan.operations) if (op.kind === 'SYNC_FORM') {
+      const element = nodeAt(op.node) as HTMLElement;
+      if (isComposing(mount, element)) { mount.heldForms.add(op.node); continue; }
+      syncForm(element, op.policy, false, counters);
+    }
+    restoreSelection(mount, selection);
     mount.view = plan.nextView; mount.revision = plan.nextView.revision;
     const status = plan.operations.length === 0 && plan.baseRevision === mount.revision ? 'noop' : 'committed';
     const identity = oldNodes ? [...mount.nodes].filter(([ref]) => ref !== mount.view.rootRef).map(([ref, node]) => ({

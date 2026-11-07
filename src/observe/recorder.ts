@@ -49,7 +49,7 @@ export class TraceRecorder implements TraceSink {
         const removed = this.runs.shift()!;
         if (this.current.get(removed.mountId) === removed) this.current.delete(removed.mountId);
       }
-    } else if (event.phase === 'patch' || event.phase === 'effect-setup' || event.phase === 'effect-cleanup' || event.phase === 'error') {
+    } else if (event.phase === 'patch' || event.phase === 'deferred' || event.phase === 'effect-setup' || event.phase === 'effect-cleanup' || event.phase === 'error') {
       const run = this.current.get(event.mountId);
       if (run) {
         if (event.phase === 'patch' || run.events.length < this.eventLimit + 2) run.events.push(safe); else run.omittedEvents++;
