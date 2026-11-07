@@ -1,0 +1,4149 @@
+{
+  "status": "passed",
+  "diagnosticOnly": true,
+  "auditedAt": "2026-11-07T13:34:17.144Z",
+  "note": "Approximate CPU self-sample attribution, weighted by inter-sample time and clipped to cycle marks. No nested-frame summation. Sampling/unminified diagnostic only, not precise function duration or proof of which V8 native operation caused a pause.",
+  "cycles": 60,
+  "results": [
+    {
+      "id": "form-update:baseline-v1:0",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 0,
+      "durationMs": 335.266,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 114.66600000000004
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 60.63399999999999
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 34.556
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 28.307
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 15.974000000000002
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 13.789
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 11.228
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 10.071
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 7.99
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1107,
+          "selfSampleMs": 7.603
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:1",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 1,
+      "durationMs": 347.626,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 120.84700000000004
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 75.01899999999999
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 33.573
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 22.192000000000004
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 18.168
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 16.133
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 15.718
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 12.962000000000002
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 8.046
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 5.986
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:2",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 2,
+      "durationMs": 435.892,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 109.75
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 92.56000000000002
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 61.88300000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 39.193999999999996
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 22.642
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 19.09
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 18.37
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 14.741
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 12.245
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 9.171
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:3",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 3,
+      "durationMs": 309.912,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 111.62599999999999
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 53.92900000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 22.866000000000003
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 17.335
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 17.225
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 17.058
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 16.471
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 14.879999999999999
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1107,
+          "selfSampleMs": 7.337999999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 7.196999999999999
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:4",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 4,
+      "durationMs": 307.04,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 94.95899999999997
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 64.97399999999999
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 33.397
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 28.354999999999993
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 19.641
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 13.014
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 10.186
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 9.401
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 9.334
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 5.487
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:5",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 5,
+      "durationMs": 316.63,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 105.81700000000002
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 65.27199999999999
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 28.493999999999996
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 20.355999999999998
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 19.573999999999998
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 17.717
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 16.186999999999998
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 12.027000000000001
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 11.282
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 4.694
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:6",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 6,
+      "durationMs": 314.012,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 118.68299999999999
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 67.184
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 18.313
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 16.958
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 16.598000000000003
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 15.827
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 10.334999999999999
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 10.096
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 8.757000000000001
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 8.641
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:7",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 7,
+      "durationMs": 325.756,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 121.306
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 55.178999999999995
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 38.086
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 17.259999999999998
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 15.043000000000001
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 14.581999999999997
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 13.085
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 11.049000000000001
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 9.710999999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 8.384
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:8",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 8,
+      "durationMs": 312.283,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 104.66300000000004
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 59.42700000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 41.57899999999999
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 17.063
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 16.589
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 12.761
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1107,
+          "selfSampleMs": 10.57
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 9.673000000000002
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 8.204
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 7.484
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:9",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 9,
+      "durationMs": 307.01,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 117.06600000000003
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 53.998
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 28.666
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 19.761
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 15.323
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 12.35
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 11.203
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 10.877
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 8.024000000000001
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 6.744
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:10",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 10,
+      "durationMs": 316.203,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 110.42799999999997
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 56.09500000000003
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 27.392000000000003
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 22.899999999999995
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 15.990000000000002
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 15.671999999999999
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 14.065
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 13.490999999999998
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 10.781
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 5.709
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:11",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 11,
+      "durationMs": 354.348,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 110.69600000000003
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 71.99900000000001
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 47.025
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 25.96
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 25.206
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 9.462
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 9.460999999999999
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 9.361
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 7.939
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 863,
+          "selfSampleMs": 7.56
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:12",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 12,
+      "durationMs": 309.436,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 119.51999999999998
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 55.596000000000004
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 25.927000000000003
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 20.953000000000003
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 16.877000000000002
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 14.308
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 13.025
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 10.345
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 5.529
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 4.745
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:13",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 13,
+      "durationMs": 309.603,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 107.52200000000002
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 58.034000000000006
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 25.359999999999996
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 25.118000000000002
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 17.514
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 13.407
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 11.75
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 11.001000000000001
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 7.898
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1107,
+          "selfSampleMs": 7.209999999999999
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:14",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 14,
+      "durationMs": 335.265,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 117.47800000000002
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 61.37800000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 27.607
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 20.867
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 17.303
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 13.902000000000001
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 12.863
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 11.661999999999999
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 9.292
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 7.834
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:15",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 15,
+      "durationMs": 318.344,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 109.66300000000001
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 60.73800000000001
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 22.615000000000002
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 18.189
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 16.604
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 15.519
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 13.006
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 11.89
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 9.818999999999999
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 9.139000000000001
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:16",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 16,
+      "durationMs": 307.719,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 96.51
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 62.952000000000005
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 29.223999999999997
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 16.894000000000002
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 16.393
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 14.604000000000003
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 14.132
+        },
+        {
+          "functionName": "RegExp: ^[a-z_][a-z0-9_.:-]*$",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 12.255999999999998
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 9.07
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 8.008
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:17",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 17,
+      "durationMs": 307.576,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 103.52199999999999
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 57.89900000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 32.891999999999996
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 19.139
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 16.691000000000003
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 14.886999999999999
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 14.102
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 10.017
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 8.612
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 8.59
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:18",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 18,
+      "durationMs": 309.946,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 119.01900000000005
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 59.309000000000005
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 21.625
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 19.714
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 16.8
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 12.987
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 11.348
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 10.892999999999999
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 9.386
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 6.218999999999999
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:19",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 19,
+      "durationMs": 307.113,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 110.34599999999999
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 57.802000000000014
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 32.732000000000006
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 18.142000000000003
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 16.247999999999998
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 13.606999999999998
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 11.016
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 10.284999999999998
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 6.871
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 6.715999999999999
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:20",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 20,
+      "durationMs": 314.869,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 98.05400000000002
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 57.99999999999999
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 30.767000000000003
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 20.383
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 17.761
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 16.5
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 16.374
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 15.918
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 6.561
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 497,
+          "selfSampleMs": 5.831
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:21",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 21,
+      "durationMs": 305.465,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 94.18900000000002
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 61.342000000000006
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 34.925999999999995
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 22.816999999999997
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 17.942
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 13.375000000000002
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 12.942999999999998
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 10.684999999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 8.754
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 8.336
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:22",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 22,
+      "durationMs": 326.893,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 91.79
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 55.72900000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 51.198
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 20.720999999999997
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 19.296999999999997
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 18.925
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 18.796000000000003
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 12.350000000000001
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 8.081
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 6.582
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:23",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 23,
+      "durationMs": 365.98,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 106.06600000000003
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 64.20299999999999
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 53.932
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 29.415999999999997
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 26.968
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 18.67
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 16.081
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 9.572999999999999
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 9.53
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 5.936
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:24",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 24,
+      "durationMs": 353.268,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 123.44200000000001
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 66.532
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 28.874
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 26.038
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 17.551000000000002
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 15.235000000000001
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 12.777999999999999
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 12.437999999999999
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 11.217999999999998
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 9.045
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:25",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 25,
+      "durationMs": 346.371,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 123.88000000000004
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 61.949
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 40.706999999999994
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 24.295999999999992
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 21.153
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 18.615999999999996
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 15.028
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 8.683
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 6.12
+        },
+        {
+          "functionName": "RegExp: ^[a-z_][a-z0-9_.:-]*$",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 6.009
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:26",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 26,
+      "durationMs": 343.26,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 101.16799999999996
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 64.00600000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 41.951
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 24.565999999999995
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 18.279
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 14.998000000000001
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 13.575999999999999
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 13.044
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 12.424999999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 863,
+          "selfSampleMs": 11.622
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:27",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 27,
+      "durationMs": 312.36,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 111.88000000000002
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 57.058
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 26.214000000000002
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 24.596
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 18.769000000000002
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 13.049000000000001
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 12.949
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 9.632
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 8.189
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 6.301
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:28",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 28,
+      "durationMs": 301.081,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 108.61399999999999
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 59.89499999999999
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 30.963
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 18.093
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 18.072000000000003
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 13.979
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 10.563
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 206,
+          "selfSampleMs": 8.017
+        },
+        {
+          "functionName": "compatible",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 214,
+          "selfSampleMs": 6.095000000000001
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 402,
+          "selfSampleMs": 5.072
+        }
+      ]
+    },
+    {
+      "id": "form-update:baseline-v1:29",
+      "path": "form-update",
+      "build": "baseline-v1",
+      "index": 29,
+      "durationMs": 299.302,
+      "topSelfSamples": [
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 448,
+          "selfSampleMs": 113.472
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 818,
+          "selfSampleMs": 61.998999999999995
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 446,
+          "selfSampleMs": 23.892
+        },
+        {
+          "functionName": "hostData",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1017,
+          "selfSampleMs": 17.555000000000003
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 843,
+          "selfSampleMs": 13.969999999999999
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 1010,
+          "selfSampleMs": 11.320999999999998
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 11.171
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 212,
+          "selfSampleMs": 10.635
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/baseline-v1/assets/noop-C1ueeXdI.js",
+          "line": 829,
+          "selfSampleMs": 8.826
+        },
+        {
+          "functionName": "RegExp: ^[a-z_][a-z0-9_.:-]*$",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 5.9750000000000005
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:0",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 0,
+      "durationMs": 183.413,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 62.642999999999994
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 31.626
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 20.678000000000004
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 19.505000000000003
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 10.592
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 8.046000000000001
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 7.9910000000000005
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 7.586000000000001
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 6.003
+        },
+        {
+          "functionName": "compatible",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 235,
+          "selfSampleMs": 4.506
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:1",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 1,
+      "durationMs": 188.576,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 64.693
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 26.727000000000004
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 22.253
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 16.951
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 15.027000000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 14.172999999999998
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 9.02
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 7.574
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 6.445
+        },
+        {
+          "functionName": "compatible",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 235,
+          "selfSampleMs": 2
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:2",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 2,
+      "durationMs": 162.232,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 64.047
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 21.714000000000002
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 16.123
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 15.979
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 13.983
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 7.1610000000000005
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 6.735
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 5.916
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 4.052
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 4.004
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:3",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 3,
+      "durationMs": 146.635,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 59.833
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 25.913999999999998
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 9.191
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 7.248000000000001
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 6.766
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 6.621
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 5.577999999999999
+        },
+        {
+          "functionName": "(program)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 4.729
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 4.1339999999999995
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 3.125
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:4",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 4,
+      "durationMs": 153.109,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 62.46199999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 20.413
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 14.124
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 11.584999999999999
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 11.514999999999999
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 7.866999999999999
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 6.042
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 6.015
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 3.979
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 884,
+          "selfSampleMs": 2.008
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:5",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 5,
+      "durationMs": 153.624,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 53.012
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 27.185000000000002
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 12.779000000000002
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 11.076
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 10.021
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 8.31
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 6.6
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 6.011
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 4.064
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 884,
+          "selfSampleMs": 4.003
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:6",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 6,
+      "durationMs": 141.854,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 53.912
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 22.397
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 10.655999999999999
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 10.46
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 9.176
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 7.238
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 5.726000000000001
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 5.569
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 4.619
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 3.141
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:7",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 7,
+      "durationMs": 152.016,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 58.726000000000006
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 24.079
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 13.129
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 13.000999999999998
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 11.956000000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 6.671
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 5.368
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 5.135
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 4.171
+        },
+        {
+          "functionName": "loadChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 897,
+          "selfSampleMs": 4.084
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:8",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 8,
+      "durationMs": 165.52,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 62.69300000000001
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 30.709
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 20.663000000000004
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 16.671
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 12.305000000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 5.032
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 3.083
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 3.015
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 520,
+          "selfSampleMs": 2.092
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 1.963
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:9",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 9,
+      "durationMs": 152.686,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 57.62999999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 29.560999999999996
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 14.505999999999998
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 13.891000000000002
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 10.265
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 5.861
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 5.538
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1057,
+          "selfSampleMs": 3.02
+        },
+        {
+          "functionName": "equalData",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 227,
+          "selfSampleMs": 3.013
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 2.127
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:10",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 10,
+      "durationMs": 146.808,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 59.21600000000001
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 27.946
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 17.195
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 11.053
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 9.146999999999998
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 8.305
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 4.032
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 3.9939999999999998
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 2.068
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 520,
+          "selfSampleMs": 1.997
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:11",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 11,
+      "durationMs": 150.984,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 59.99199999999998
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 28.232999999999997
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 16.136
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 14.532
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 9.377999999999998
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 6.268000000000001
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 5.72
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 4.197
+        },
+        {
+          "functionName": "loadChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 897,
+          "selfSampleMs": 1.622
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 1.513
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:12",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 12,
+      "durationMs": 137.321,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 50.03800000000001
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 25.759000000000004
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 14.004
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 11.947000000000001
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 10
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 5.984
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 4.011
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1057,
+          "selfSampleMs": 3.997
+        },
+        {
+          "functionName": "(program)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 2.1029999999999998
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 2.022
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:13",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 13,
+      "durationMs": 363.888,
+      "topSelfSamples": [
+        {
+          "functionName": "freezeTree",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 202,
+          "selfSampleMs": 195.50100000000006
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 59.67899999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 23.179000000000002
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 17.087
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 14.309000000000001
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 12.782
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 11.102
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 10.065000000000001
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 6.406000000000001
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 3.997
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:14",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 14,
+      "durationMs": 148.877,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 65.93599999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 24.763999999999996
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 15.592
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 11.974
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 5.2059999999999995
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 4.987
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 4.226
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 3.78
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 2.581
+        },
+        {
+          "functionName": "compatible",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 235,
+          "selfSampleMs": 2.011
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:15",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 15,
+      "durationMs": 154.687,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 59.57599999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 32.349999999999994
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 19.494
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 14.009
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 12.209
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 4.447
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 3.1029999999999998
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 2.128
+        },
+        {
+          "functionName": "(program)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 1.8609999999999998
+        },
+        {
+          "functionName": "loadChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 897,
+          "selfSampleMs": 1.522
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:16",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 16,
+      "durationMs": 189.316,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 67.05999999999999
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 31.457
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 24.945
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 17.121
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 12.055
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 8.719
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 6.971
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 5.599
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 5.484999999999999
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 1.999
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:17",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 17,
+      "durationMs": 337.867,
+      "topSelfSamples": [
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 151.31899999999996
+        },
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 67.47600000000003
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 34.185
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 24.965999999999998
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 18.215
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 9.339
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 8.976
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 8.959
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 3.553
+        },
+        {
+          "functionName": "equalHostData",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 843,
+          "selfSampleMs": 2.017
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:18",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 18,
+      "durationMs": 149.385,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 55.617000000000004
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 26.24
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 13.688999999999998
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 9.968
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 9.700999999999999
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 7.4990000000000006
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 6.64
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 3.551
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 3.536
+        },
+        {
+          "functionName": "loadChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 897,
+          "selfSampleMs": 3.025
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:19",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 19,
+      "durationMs": 156.356,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 59.254999999999995
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 23.696999999999996
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 15.609000000000002
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 12.809000000000001
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 9.369
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 7.981999999999999
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 6.522
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 4.036
+        },
+        {
+          "functionName": "loadChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 897,
+          "selfSampleMs": 3.991
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 3.511
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:20",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 20,
+      "durationMs": 154.382,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 61.32200000000002
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 34.313
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 11.524000000000001
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 11.434000000000001
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 10.036999999999999
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 6.103999999999999
+        },
+        {
+          "functionName": "loadChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 897,
+          "selfSampleMs": 4.068
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 3.985
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 3.645
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 3.5010000000000003
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:21",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 21,
+      "durationMs": 156.532,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 62.83099999999998
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 20.108999999999995
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 17.597
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 15.385000000000002
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 14.201999999999998
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 10.216
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 7.638999999999999
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 3.097
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 1.611
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 520,
+          "selfSampleMs": 1.516
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:22",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 22,
+      "durationMs": 141.168,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 56.12499999999998
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 26.984
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 10.416999999999998
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 9.08
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 6.036
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 6.010999999999999
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 4.56
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 4.515
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 3.997
+        },
+        {
+          "functionName": "(program)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 3.242
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:23",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 23,
+      "durationMs": 151.751,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 58.376000000000005
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 27.42000000000001
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 15.810000000000002
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 11.572
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 10.255999999999998
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 8.001
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 4.567
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 884,
+          "selfSampleMs": 3.966
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 3.106
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 2.053
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:24",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 24,
+      "durationMs": 196.33,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 75.071
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 31.023
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 17.861
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 16.842
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 13.566
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 9.623
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 9.6
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 7.07
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 5.938
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 520,
+          "selfSampleMs": 2.017
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:25",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 25,
+      "durationMs": 265.984,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 90.93800000000003
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 48.782
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 29.624000000000006
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 25.657
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 15.033999999999999
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 14.120000000000001
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 12.129
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 8.959
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 5.013
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 884,
+          "selfSampleMs": 4.547000000000001
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:26",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 26,
+      "durationMs": 155.703,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 60.16900000000001
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 28.926999999999996
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 15.868
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 14.556
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 11.393
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 4.149
+        },
+        {
+          "functionName": "loadChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 897,
+          "selfSampleMs": 3.099
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 520,
+          "selfSampleMs": 2.974
+        },
+        {
+          "functionName": "(program)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 2.698
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 2.652
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:27",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 27,
+      "durationMs": 153.999,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 60.62400000000001
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 16.713
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 15.172
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 12.093
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 10.068999999999999
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 8.876000000000001
+        },
+        {
+          "functionName": "attributeProblem",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 423,
+          "selfSampleMs": 8.122
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 6.657
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 5.962
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 4.571
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:28",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 28,
+      "durationMs": 154.969,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 58.04600000000001
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 30.192999999999998
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 13.398
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 12.903
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 8.576
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 7.977
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 5.715
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 5
+        },
+        {
+          "functionName": "compatible",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 235,
+          "selfSampleMs": 4
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 3.673
+        }
+      ]
+    },
+    {
+      "id": "form-update:candidate-v1:29",
+      "path": "form-update",
+      "build": "candidate-v1",
+      "index": 29,
+      "durationMs": 153.692,
+      "topSelfSamples": [
+        {
+          "functionName": "validatePlan",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 856,
+          "selfSampleMs": 56.096
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 471,
+          "selfSampleMs": 28.467000000000002
+        },
+        {
+          "functionName": "load",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 881,
+          "selfSampleMs": 19.978
+        },
+        {
+          "functionName": "(garbage collector)",
+          "url": "",
+          "line": 0,
+          "selfSampleMs": 13.251
+        },
+        {
+          "functionName": "compareChildren",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1048,
+          "selfSampleMs": 10.389999999999999
+        },
+        {
+          "functionName": "children",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 469,
+          "selfSampleMs": 9.068
+        },
+        {
+          "functionName": "requireNode",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 867,
+          "selfSampleMs": 8.585
+        },
+        {
+          "functionName": "compatible",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 235,
+          "selfSampleMs": 2.1319999999999997
+        },
+        {
+          "functionName": "commit",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 1135,
+          "selfSampleMs": 2.001
+        },
+        {
+          "functionName": "(anonymous)",
+          "url": "http://127.0.0.1:4177/candidate-v1/assets/noop-CAXNzgY0.js",
+          "line": 901,
+          "selfSampleMs": 1.531
+        }
+      ]
+    }
+  ]
+}

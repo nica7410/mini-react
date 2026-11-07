@@ -1,6 +1,6 @@
 {
   "createdAt": "2026-11-07T12:36:29.708Z",
-  "status": "correctness-passed-benchmark-pending",
+  "status": "passed",
   "branch": "phase1",
   "sourceSha256": {
     "src/app/counter.ts": "e56f050cddf03a2755938a1c28fe23db5137084b5f0bc4a60d36b7d6a7c24834",
@@ -335,8 +335,39 @@
     "scope": "previous Windows task-8 composition/move confirmation; current synthetic IME regression passed all three runs"
   },
   "benchmark": {
-    "status": "pending",
+    "status": "passed",
+    "directory": "docs/bench/noop-full",
     "baselineBuild": "baseline-v1",
-    "harnessCommit": "7757e3c"
-  }
+    "candidateBuild": "candidate-v1",
+    "harnessCommit": "7757e3c",
+    "sessions": 3,
+    "rawRows": 28728,
+    "counts": 288,
+    "warmups": 4680,
+    "samples": 23760,
+    "distributions": 2016,
+    "countsEqualAcrossBuildsAndSessions": true,
+    "adverseResults": "Fresh-tree creation+cycle regression and four higher cycle p95 comparisons retained in outcomes.json",
+    "diagnostics": [
+      "docs/bench/noop-tail-diagnostic",
+      "docs/bench/noop-cpu-diagnostic"
+    ]
+  },
+  "completedAt": "2026-11-07T13:35:54.030Z",
+  "functionalSourceCommit": "c4a2fe121067cb4ff448d88c475c9c98f55e75c8",
+  "currentSourceHashesVerified": 65,
+  "tooling": {
+    "at": "2026-11-07T13:11:23.449Z",
+    "rawAuditPositive": "passed",
+    "changedSummaryMedian": "rejected before acceptance",
+    "replayArchive": "both manifests/artifact hashes verified; 6 files restored in isolated directory",
+    "fullRawAudit": "passed",
+    "plotPairsVerified": 3,
+    "traceIntervalsVerified": 280,
+    "cpuCyclesVerified": 60
+  },
+  "historicalBenchmarkPreserved": [
+    "docs/bench/m8-full",
+    "docs/bench/m7-full"
+  ]
 }

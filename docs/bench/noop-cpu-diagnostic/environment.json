@@ -1,0 +1,46 @@
+{
+  "startedAt": "2026-11-07T13:31:28.876Z",
+  "status": "passed",
+  "diagnosticOnly": true,
+  "cpuProfile": true,
+  "paths": [
+    "form-update"
+  ],
+  "sourceRun": "noop-full",
+  "scriptSha256": "6cf2a5dd9308133537606fa8133e337622d9c910481d076ce85db4c4efd332cf",
+  "policy": "Separate production builds with cycle/generation User Timing marks; CDP V8/GC tracing. Optional CPU sampling uses unminified copies for function names. NOT speed-comparison data. Five warmups and thirty samples, paired alternating order, fresh browser per condition, original harness oracle and cleanup.",
+  "categories": "v8,devtools.timeline,blink.user_timing,disabled-by-default-v8.gc",
+  "builds": [
+    {
+      "tag": "baseline-v1",
+      "commit": "7757e3c7b0404d694daa845b6d3800993f3cc3e3",
+      "originalEngineHash": "1e42089a7970b7458b24377d2242c035abbcc10cee8d368f239ac9e0dbbd5ff1",
+      "originalHarnessHash": "1028db69131c6fdc4a5497bf214d4715f4fae925f2d63e47946cbe883b83c7ff",
+      "artifacts": {
+        "assets/noop-C1ueeXdI.js": "b99fbe520dfff1a00b416d3c0b064566e47a5b3354738f06b435125bb44ee4f0",
+        "noop.html": "bf6a4f026f6baf4a49be6088325e1a4e4c13878a6e1f29ec2e6d3d8fa89c20f1"
+      }
+    },
+    {
+      "tag": "candidate-v1",
+      "commit": "c4a2fe121067cb4ff448d88c475c9c98f55e75c8",
+      "originalEngineHash": "fffff850c0f88407a6eb0f5da5d466809cb3e8bf19071827120d0955c396bc3c",
+      "originalHarnessHash": "1028db69131c6fdc4a5497bf214d4715f4fae925f2d63e47946cbe883b83c7ff",
+      "artifacts": {
+        "assets/noop-CAXNzgY0.js": "47c7d3fbd7b85d3fd7f1446273ed57293b85d4af2a45bbe9b0de4a9897ef98cf",
+        "noop.html": "14196da00553623f3b2534733e5da92934e9e8ab851d72c01162e89c79c7f93e"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "path": "form-update",
+      "startedAt": "2026-11-07T13:31:31.400Z",
+      "pid": 64844,
+      "browser": "151.0.7922.34",
+      "status": "passed",
+      "endedAt": "2026-11-07T13:32:49.693Z"
+    }
+  ],
+  "endedAt": "2026-11-07T13:32:49.879Z"
+}

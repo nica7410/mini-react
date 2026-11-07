@@ -1,0 +1,50 @@
+{
+  "startedAt": "2026-11-07T13:25:48.863Z",
+  "status": "passed",
+  "diagnosticOnly": true,
+  "sourceRun": "noop-full",
+  "scriptSha256": "f25d8332fe59c1ce8ab82522fa11c67ad40267181a6fc59873b06d383ba1b6bd",
+  "policy": "Separate production builds with cycle/generation User Timing marks; CDP V8/GC tracing. NOT speed-comparison data. Five warmups and thirty samples, paired alternating order, fresh browser per condition, original harness oracle and cleanup.",
+  "categories": "v8,devtools.timeline,blink.user_timing,disabled-by-default-v8.gc",
+  "builds": [
+    {
+      "tag": "baseline-v1",
+      "commit": "7757e3c7b0404d694daa845b6d3800993f3cc3e3",
+      "originalEngineHash": "1e42089a7970b7458b24377d2242c035abbcc10cee8d368f239ac9e0dbbd5ff1",
+      "originalHarnessHash": "1028db69131c6fdc4a5497bf214d4715f4fae925f2d63e47946cbe883b83c7ff",
+      "artifacts": {
+        "assets/noop-D4bflHer.js": "28b008a555bb9a6a974275365619aa7b1c7e75b8f9d8a92bf00ba86e801c6457",
+        "noop.html": "c13ba531d5c3d3b87f79885041f8fad723ce0177501e032795064bae2f85ebc9"
+      }
+    },
+    {
+      "tag": "candidate-v1",
+      "commit": "c4a2fe121067cb4ff448d88c475c9c98f55e75c8",
+      "originalEngineHash": "fffff850c0f88407a6eb0f5da5d466809cb3e8bf19071827120d0955c396bc3c",
+      "originalHarnessHash": "1028db69131c6fdc4a5497bf214d4715f4fae925f2d63e47946cbe883b83c7ff",
+      "artifacts": {
+        "assets/noop-CxDYLdu0.js": "a11d94de5444a60d10af17f0d5bcccb798b5cc334897a5c70509c7be57069a04",
+        "noop.html": "529a4fb4741e74e4be8e60828066ee5790e6e8b0eae48794180494be08ddd440"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "path": "form-update",
+      "startedAt": "2026-11-07T13:25:51.238Z",
+      "pid": 98284,
+      "browser": "151.0.7922.34",
+      "status": "passed",
+      "endedAt": "2026-11-07T13:27:06.128Z"
+    },
+    {
+      "path": "reorder",
+      "startedAt": "2026-11-07T13:27:06.303Z",
+      "pid": 106748,
+      "browser": "151.0.7922.34",
+      "status": "passed",
+      "endedAt": "2026-11-07T13:28:46.956Z"
+    }
+  ],
+  "endedAt": "2026-11-07T13:28:47.146Z"
+}

@@ -7,7 +7,7 @@ const directory = process.argv[2];
 if (!directory) throw new Error('Usage: node scripts/analyze-noop.mjs docs/bench/tag');
 const env = JSON.parse(readFileSync(`${directory}/environment.json`));
 assert.equal(env.status, 'passed');
-const all = [], groups = new Map(), countRows = [], profiles = new Map();
+const all = [], groups = new Map(), countRows = [], profiles = new Map(), creationCycles = new Map();
 for (let session = 1; session <= env.sessions; session++) {
   const rows = gunzipSync(readFileSync(`${directory}/session-${session}.jsonl.gz`)).toString().trim().split('\n').map(JSON.parse);
   const expected = new Set();
@@ -40,6 +40,13 @@ for (let session = 1; session <= env.sessions; session++) {
       } else assert.equal(row.counts, null);
     }
     if (row.sampleKind === 'sample') {
+      if (['same-ref', 'equal-fresh', 'reorder'].includes(row.input.path)) {
+        const key = [session, row.input.path, row.input.size, row.input.payload, row.build].join(',');
+        if (!creationCycles.has(key)) creationCycles.set(key, []);
+        // Two disjoint engine intervals, combined PER SAMPLE before calculating quantiles.
+        // Mount/reset/seed/oracle are excluded; this is not an event-to-paint interval.
+        creationCycles.get(key).push(row.timings.expressionMs + row.timings.scheduledCycleMs);
+      }
       for (const [metric, value] of Object.entries(row.timings)) {
         const groupKey = [session, row.input.path, row.input.size, row.input.payload, row.build, metric].join(',');
         if (!groups.has(groupKey)) groups.set(groupKey, { values: [], hidden: 0, unfocused: 0 });
@@ -72,11 +79,43 @@ if (env.builds.length === 2) for (let session = 1; session <= env.sessions; sess
     medianReductionPercent: baseline.median ? 100 * (1 - candidate.median / baseline.median) : null,
     p95ReductionPercent: baseline.p95 ? 100 * (1 - candidate.p95 / baseline.p95) : null });
 }
+const creationAndCycle = [...creationCycles].map(([key, values]) => ({ key, ...distribution(values) }));
+if (env.builds.length === 2) {
+  const rows = comparisons.map(row => ({ session: row.session, path: row.path, size: row.size, payload: row.payload,
+    baselineMedian: row.baseline.median, candidateMedian: row.candidate.median,
+    baselineP95: row.baseline.p95, candidateP95: row.candidate.p95,
+    medianReductionPercent: row.medianReductionPercent, p95ReductionPercent: row.p95ReductionPercent }));
+  const combined = creationAndCycle.filter(row => row.key.endsWith(`,${env.builds[0].tag}`) && !row.key.includes(',same-ref,')).map(baseline => {
+    const key = baseline.key.slice(0, -env.builds[0].tag.length);
+    const candidate = creationAndCycle.find(row => row.key === key + env.builds[1].tag); assert(candidate);
+    return { key: key.slice(0, -1), baseline, candidate,
+      medianIncreasePercent: baseline.median ? 100 * (candidate.median / baseline.median - 1) : null,
+      p95IncreasePercent: baseline.p95 ? 100 * (candidate.p95 / baseline.p95 - 1) : null };
+  });
+  writeFileSync(`${directory}/outcomes.json`, JSON.stringify({
+    note: 'All adverse comparisons retained. 0.00001ms tolerance only excludes floating-point roundoff; it is NOT a materiality/noise threshold.',
+    medianHigher: rows.filter(row => row.candidateMedian > row.baselineMedian + .00001),
+    p95Higher: rows.filter(row => row.candidateP95 > row.baselineP95 + .00001), creationAndCycle: combined,
+  }, null, 2));
+}
+writeFileSync(`${directory}/creation-and-cycle.json`, JSON.stringify({
+  definition: 'Target expression/VDOM generation + diff/commit, summed per sample from two non-overlapping intervals. Excludes initial mount, live seeding, oracle and paint. Never sum medians.',
+  distributions: creationAndCycle,
+}, null, 2));
+if (!env.profiled) {
+  const references = new Map();
+  for (const row of countRows) {
+    const key = [row.input.path, row.input.size, row.input.payload].join(',');
+    if (references.has(key)) assert.deepEqual(row.counts, references.get(key), `Work counts changed across builds/session: ${key}`);
+    else references.set(key, row.counts);
+  }
+}
 const audit = { auditedAt: new Date().toISOString(), status: 'passed', profiled: env.profiled, sessions: env.sessions,
   rawRows: all.length, counts: countRows.length, warmups: all.filter(row => row.sampleKind === 'warmup').length,
   samples: all.filter(row => row.sampleKind === 'sample').length, distributions: computed.length,
   hidden: all.filter(row => row.visibility !== 'visible').length, unfocused: all.filter(row => !row.focused).length,
   buildCommits: env.builds.map(b => ({ tag: b.tag, commit: b.commit, engineHash: b.engineHash, harnessHash: b.harnessHash })),
+  countsEqualAcrossBuildsAndSessions: !env.profiled,
   comparisons,
 };
 writeFileSync(`${directory}/analysis.json`, JSON.stringify(audit, null, 2));
@@ -86,5 +125,14 @@ const lines = ['# no-op 동일 조건 비교', '', `각 세션 별 분포. core�
   '| 세션 | 경로 | payload | 크기 | n | baseline median | candidate median | median 감소 % | baseline IQR | candidate IQR | baseline p95 | candidate p95 |',
   '|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|'];
 for (const row of comparisons) lines.push(`| ${row.session} | ${row.path} | ${row.payload} | ${row.size} | ${row.baseline.n} | ${fmt(row.baseline.median)} | ${fmt(row.candidate.median)} | ${row.medianReductionPercent === null ? '해상도 아래' : fmt(row.medianReductionPercent)} | ${fmt(row.baseline.iqr)} | ${fmt(row.candidate.iqr)} | ${fmt(row.baseline.p95)} | ${fmt(row.candidate.p95)} |`);
+if (env.builds.length === 2) {
+  lines.push('', '## 새 표현 생성 비용까지 포함한 별도 합산', '', '각 raw 표본의 서로 겹치지 않는 expressionMs+scheduledCycleMs를 먼저 합산한 분포다. 위 표의 median끼리 더한 값이 아니다. 초기 mount/준비/oracle/paint는 포함하지 않는다.', '',
+    '| 세션 | 경로 | payload | 크기 | n | baseline median | candidate median | baseline p95 | candidate p95 |', '|---:|---|---|---:|---:|---:|---:|---:|---:|');
+  for (const row of comparisons.filter(row => ['equal-fresh', 'reorder'].includes(row.path))) {
+    const a = creationAndCycle.find(r => r.key === [row.session, row.path, row.size, row.payload, env.builds[0].tag].join(','));
+    const b = creationAndCycle.find(r => r.key === [row.session, row.path, row.size, row.payload, env.builds[1].tag].join(','));
+    lines.push(`| ${row.session} | ${row.path} | ${row.payload} | ${row.size} | ${a.n} | ${fmt(a.median)} | ${fmt(b.median)} | ${fmt(a.p95)} | ${fmt(b.p95)} |`);
+  }
+}
 writeFileSync(`${directory}/all-results.md`, lines.join('\n') + '\n');
 console.log(JSON.stringify({ ...audit, comparisons: comparisons.length }));
