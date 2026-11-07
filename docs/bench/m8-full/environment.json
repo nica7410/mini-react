@@ -1,0 +1,122 @@
+{
+  "startedAt": "2026-11-07T08:15:58.022Z",
+  "smoke": false,
+  "seed": 539365639,
+  "sessions": 3,
+  "sizes": [
+    10,
+    100,
+    1000,
+    10000
+  ],
+  "scenarios": [
+    "noop",
+    "one-change",
+    "prepend",
+    "delete-middle",
+    "last-to-front",
+    "first-to-back",
+    "reverse",
+    "adjacent",
+    "swap-ends",
+    "shuffle",
+    "mixed"
+  ],
+  "payloads": [
+    "light",
+    "stateful"
+  ],
+  "axes": [
+    "keyed",
+    "batching",
+    "reuse"
+  ],
+  "sampleDeadlineMs": 120000,
+  "buildMode": "production vite preview",
+  "codeCommit": "ebc8f461d2b2ca1c971502be687552185beda1b5",
+  "branch": "phase1",
+  "workingTreeStatus": "",
+  "sourceSha256": {
+    "app/counter.ts": "e56f050cddf03a2755938a1c28fe23db5137084b5f0bc4a60d36b7d6a7c24834",
+    "app/lab.ts": "f70943cb5849cc9894e4b42639c4fa2d248002f3051247ca2cda36a8708998f2",
+    "app/main.ts": "6a5c580b50be9cb4d0634b5e76d13faf337d80f6b6ba709fa57a5837223383a3",
+    "app/tasks.ts": "a872fb77fd2f619b375270ebe9c48c0c72ae6dbd48e5bfc6a05d32f4d3257dbb",
+    "bench/fixtures.ts": "225ab845cf80f2d6c70bf3e0eb02e71ad2ceca8f45fe5540a876d4a4325132c4",
+    "bench/harness.ts": "619428490ed4bc170d572ca90815c4ec772929dadb9ada07729fd370e10d679e",
+    "bench/page.ts": "2128ba6b96b2f8f33fabf91c569078481e58f0686e74bcf03c10f34016fba466",
+    "bench/statistics.ts": "9bbe2fea650668459bd0cb6b7b3add6f4e74a930b28593248b28875fc10fca12",
+    "core/capture.ts": "af2432cc03584b3cef77f1d99a75af57fb34ae0697aa12200022bb13d275f0b8",
+    "core/host/browserState.ts": "218603ca2a25629a388f1247ce08f9cb8675bc14755aad27e266934ede88ea77",
+    "core/host/events.ts": "1dee6410d07328fcd0384fe2572f45da33c6d0dbf291039ada158da7d5289ee8",
+    "core/host/forms.ts": "576d34c2f11bb60b05fa8524906a21b5f85c14eb5aa9e9c23839d6e0a1deb2e6",
+    "core/host/inputs.ts": "37d165382aff0209da74434fd7955ec87b82588fb60e21f138e4592bd8d8d82b",
+    "core/keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+    "core/mount.ts": "98db1dececa432877bc19efd765c706c009b762ab74754cebabf2c41e415a039",
+    "core/patch.ts": "77f8c59f94dfeb1ed0fd289c7523d98c05758ed51325308cfa1af1c2f19230ef",
+    "core/planValidation.ts": "8e6153a907ea3d56aab7237f36fca7815600749ab845b945fc2a724dc386f3f7",
+    "core/reconcile.ts": "c8b971061b1cabaaba295041b3dfb960425b8d737c775c13522c861b094750ae",
+    "core/types.ts": "6cb4f8d46700baf0ee03a6311a258243dbcff396de225201d8f9784e16c17b62",
+    "core/validate.ts": "6199d15d2dcf739dc4a71390b1b878c2b7609106cc4557509fee59603a5ca41e",
+    "core/vdom.ts": "fa9fd68049e403641cb6eed389f72602d3fcc75a916fb529e0e70a4c7d9750dc",
+    "editor/controller.ts": "839cf161c54e6554fd6e44843a104c3fdba3e27885e71d633e8196afba0dfeed",
+    "editor/history.ts": "3b111825709eea00f1318fe5e95bb2d822242e067d2b8b7f8dc3a6af672b277b",
+    "editor/inputPolicy.ts": "3a64b56b50354684097f6a1ac8f520373499a77fe1b3d853970b206d060428e3",
+    "observe/inspector.ts": "ff8e32e8e90ddeb026d1be9d22d3b388e66317a17aad3ae7c26c1da7e97a3af5",
+    "observe/recorder.ts": "2fac724581b0d57d7ff1882a564142cc26cc98620bda1cf4796d17a231375566",
+    "observe/trace.ts": "509b61c504c88078b3cfd243917aceb8e2bace996143995683bc3c4dc487d10b",
+    "runtime/FunctionComponent.ts": "8c9dcaba691544641e90a8da37af67138dc46b1d0d3795ff2bcec4ce4c2c48b6",
+    "runtime/expression.ts": "497e4d36029975216cc0924bb90d1c02f7df3c701122b9e764303a301169a031",
+    "runtime/hooks.ts": "7563a2fa137b281230754feafd9d2bb8673201690005aa76928a05fcc5ea8d3f",
+    "runtime/index.ts": "3935b4f807ac3b05a6404b3eaa38780239104403cb4299780f5706570734dc3e",
+    "runtime/resolve.ts": "27444eee1c8145addf32dda0d034a9f4d3a073a5da1105d4274affbb895cf865",
+    "runtime/stateGuard.ts": "4fea31d3bc4f290e7e65683a8a812ab4c2a76f6c1dad1c77b7466d4abf96c369",
+    "runtime/updateQueue.ts": "adda868ec42fd02d33fd80a1c5e4b9b11ff72c88d3e6e55548ed981b44d06fbe"
+  },
+  "node": "v24.22.1",
+  "os": {
+    "platform": "win32",
+    "release": "10.0.19045",
+    "version": "Windows 10 Pro",
+    "arch": "x64"
+  },
+  "cpu": "Intel(R) Core(TM) i7-10875H CPU @ 2.30GHz",
+  "logicalCPUs": 16,
+  "ramBytes": 16958476288,
+  "powerScheme": "���� ����ǥ GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (���� ����)",
+  "headless": true,
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "timingDetailTrace": false,
+  "timingInspector": false,
+  "browserLifecycle": "fresh Chromium process for every condition within each of three default independent sessions; variants share only that condition process",
+  "transport": "Playwright WebSocket on 127.0.0.1; protocol/reset outside measured intervals",
+  "failurePolicy": "deadline or assertion aborts the entire run; no automatic sample retries or outlier removal; partial raw and failure retained",
+  "resetPolicy": "dispose and recreate old DOM before every variant/sample; fixtures/reset/oracle outside measured intervals",
+  "intervals": {
+    "captureMs": "standalone capture of seeded old DOM, keyed axis only; excluded from flush",
+    "renderMs": "root + child resolve, runtime axes only",
+    "diffMs": "prepared VDOM to plan including validation",
+    "commitMs": "plan preflight + host writes; no later browser paint",
+    "flushMs": "FIFO processing through commit completion; effects excluded",
+    "effectMs": "cleanup/setup loop",
+    "scheduledCycleMs": "enqueue through next microtask for runtime axes; diff+commit for keyed; no paint claim"
+  },
+  "repetitions": {
+    "normal": {
+      "warmup": 20,
+      "samples": 100
+    },
+    "stress": {
+      "warmup": 5,
+      "samples": 30
+    }
+  },
+  "scope": "default keyed: all 11 presets; batching: three pure +1 actions; reuse: one unrelated root update with stable memo expression; selected axes/payloads/scenarios are explicit above",
+  "flags": "visibility and focus recorded per run; OS load/power changes cannot be completely controlled; background samples are retained and flagged",
+  "endedAt": "2026-11-07T11:10:14.192Z",
+  "status": "passed",
+  "countRuns": 624,
+  "measuredValues": 360360
+}

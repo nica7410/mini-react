@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-07T11:15:16.604Z",
+  "python": "3.12.14",
+  "matplotlib": "3.11.2",
+  "script": "scripts/plot-benchmark.py",
+  "scriptSha256": "cd1a419e54072d1e6f0c187875d2a98a8311e4fbc4fa697455a2a61946123072",
+  "validation": "All four final PNGs opened and inspected: titles, axis labels, square/circle markers, per-session medians/IQR/p95, lower-left legends and captions readable; SVG counterparts generated from the same figures.",
+  "files": {
+    "keyed-light.png": {
+      "bytes": 130957,
+      "sha256": "18cac00fd13aefcb5a27f2c11f5f3af9402dcaf1f470fdf2953ea9bb161585f9"
+    },
+    "keyed-light.svg": {
+      "bytes": 124905,
+      "sha256": "cc6e9c9b9b047617185c9c4d529dc9a6f2d65a279e0d8e098546a2a061580ea6"
+    },
+    "keyed-stateful.png": {
+      "bytes": 132109,
+      "sha256": "b01b978ec51d2eb5d68bb5fe0f14280326617494544f9bd41d5323f36a44ed77"
+    },
+    "keyed-stateful.svg": {
+      "bytes": 124908,
+      "sha256": "ebe1da2c286103b64d9f258a64f847473c37bc1cbbb292f048ac3c5e32eda3d6"
+    },
+    "runtime-light.png": {
+      "bytes": 119109,
+      "sha256": "cde55d948bbc68168996acec381f5c279ec276ecf4cf55f4a383457543d4e2e7"
+    },
+    "runtime-light.svg": {
+      "bytes": 93159,
+      "sha256": "7e1720fcebc80e4cf03594e9d725fb7042ed0ab5a199f6efdf50f78104eb5201"
+    },
+    "runtime-stateful.png": {
+      "bytes": 128391,
+      "sha256": "1675c918521c1f05420ddfe36d1565d7560fa3014056e351a6ea8d17831aa408"
+    },
+    "runtime-stateful.svg": {
+      "bytes": 100296,
+      "sha256": "7f278d33b94f7f80e1526da1a998e64463237b31cc25a9f087d64fec3a26f26b"
+    }
+  },
+  "svgValidation": "Four XML files parsed after trailing whitespace normalization; all PNG SHA-256 values unchanged from visual review."
+}
