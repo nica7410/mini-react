@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "scope": "M0 technical contracts / M1 local independent candidate; not full B-plan completion",
+  "verifiedAt": "2026-11-07T14:25:33.178000+09:00",
+  "timezone": "Asia/Seoul",
+  "git": {
+    "branch": "phase1",
+    "startingCommit": "bdea95c",
+    "implementationUncommitted": true
+  },
+  "environment": {
+    "os": "Windows",
+    "osRelease": "10",
+    "node": "24.22.1",
+    "pnpm": "11.25.0",
+    "chromium": "151.0.7922.34",
+    "devDependencies": {
+      "@playwright/test": "1.62.1",
+      "@types/node": "26.6.6",
+      "jsdom": "31.0.0",
+      "typescript": "7.0.2",
+      "vite": "8.3.6",
+      "vitest": "5.1.0"
+    }
+  },
+  "checks": {
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "exitCode": 0
+    },
+    "unitIntegration": {
+      "command": "pnpm test --reporter=default --reporter=json --outputFile.json=.validation/unit-results.json",
+      "passed": 52,
+      "failed": 0,
+      "skipped": 0,
+      "files": 5,
+      "sourceReport": ".validation/unit-results.json"
+    },
+    "browser": {
+      "command": "pnpm test:browser",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "sourceReport": ".validation/browser-results.json",
+      "cases": [
+        {
+          "title": "M1 브라우저: 직접 편집 → Patch → 미확정 편집 → Undo/Redo",
+          "status": "expected",
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "151.0.7922.34"
+            }
+          ]
+        },
+        {
+          "title": "M1 브라우저: 루트 State, 순수 자식, Memo, Effect, 초기화",
+          "status": "expected",
+          "annotations": []
+        },
+        {
+          "title": "M1 브라우저: 미지원 HTML 입력은 기존 화면을 유지하고 오류를 표시한다",
+          "status": "expected",
+          "annotations": []
+        },
+        {
+          "title": "M1 브라우저: 좁은 화면과 키보드로 조작할 수 있다",
+          "status": "expected",
+          "annotations": []
+        }
+      ]
+    },
+    "build": {
+      "command": "pnpm build",
+      "exitCode": 0
+    }
+  },
+  "m1RequiredTestIds": [
+    "T-V01",
+    "T-D01",
+    "T-H01",
+    "T-C01",
+    "T-S01",
+    "T-F01",
+    "T-M01"
+  ],
+  "notVerifiedOrImplemented": [
+    "team agreement and schedule",
+    "other candidate selection",
+    "keyed Greedy/LIS",
+    "microtask batching",
+    "expression reuse",
+    "full form/focus/selection/IME contracts",
+    "Inspector and benchmark",
+    "list application",
+    "secondary browser",
+    "manual Korean IME",
+    "CI and deployment"
+  ],
+  "sourceSha256": {
+    "index.html": "a3d567f1f17f2abc3a1cd35db8326f315b637e42cc104d13d7f42904d752e977",
+    "package.json": "5e8f96967d537719d9320c0a81c145557a128df8f1eb981b58c607d05abbddcd",
+    "playwright.config.ts": "5408458ceab9ff1fee5f2041749e9bd7647689f0481f4ca61699c941c74ab4e9",
+    "pnpm-lock.yaml": "2057fbbf450943c652548e72ea06ea539c9b20a044e373f55c2c7b7d1e16681c",
+    "src/app/counter.ts": "e56f050cddf03a2755938a1c28fe23db5137084b5f0bc4a60d36b7d6a7c24834",
+    "src/app/main.ts": "0a158cb0c3c261e1d6a9fe85aa5d07aeb19ba9a040d7bc07adbb813766772c01",
+    "src/app/style.css": "3cbb4a618c4d92424ad5f9b4d843bdf640139e7293342ed782b479ce0b0836be",
+    "src/core/capture.ts": "91c03cc0688a1e29ebb12e2738a67e4f98f268afb0aa9c4e907c0d72f9b25db7",
+    "src/core/host/events.ts": "935335d806a471422390a30d6e66ab8d30ffc70e3a7e62a8e9e021095b746721",
+    "src/core/host/forms.ts": "206c6cee3ee4d1b449d90a5546f36674c0f35a37e18207849f77fa9bb3297bd3",
+    "src/core/mount.ts": "ac5595f176936e09b418f76fa963399950ce31d66d79f127ce1a6f08099d6295",
+    "src/core/patch.ts": "2a49c6a97321779eb8723fd8c189332667834663f296be0362f0dc7dde78b312",
+    "src/core/reconcile.ts": "7e0273c6e896f63c5636bb2e03a7ebf612cce9cf00bf8d672017859493bb2a67",
+    "src/core/types.ts": "e3dd5547435d2605b8372d93bb835b51287407bdf10707e02157aa1a56fa6cb1",
+    "src/core/validate.ts": "747ca5c7182e2589a9e92f744eb674d38450e4cdc4d08279206a69c8bb2b9584",
+    "src/core/vdom.ts": "fa9fd68049e403641cb6eed389f72602d3fcc75a916fb529e0e70a4c7d9750dc",
+    "src/editor/controller.ts": "09989a7d44df87c441b683f3d92647649ebb8d3c352afd407014fdcbc79a6953",
+    "src/editor/history.ts": "3b111825709eea00f1318fe5e95bb2d822242e067d2b8b7f8dc3a6af672b277b",
+    "src/editor/inputPolicy.ts": "3a64b56b50354684097f6a1ac8f520373499a77fe1b3d853970b206d060428e3",
+    "src/observe/trace.ts": "509b61c504c88078b3cfd243917aceb8e2bace996143995683bc3c4dc487d10b",
+    "src/runtime/expression.ts": "a0e6f974ec559b418a20b2955816ff90b8a345546926475d20499622083d9f50",
+    "src/runtime/FunctionComponent.ts": "74e26a04d2d586aac66ea1c6a351a51630ab747484cdebdb98804c864cb74a4a",
+    "src/runtime/hooks.ts": "f74e95d80c3cbab95723a9cf16f9c8ab54f66563755a12f063256ddfcb0cd212",
+    "src/runtime/index.ts": "3935b4f807ac3b05a6404b3eaa38780239104403cb4299780f5706570734dc3e",
+    "src/runtime/resolve.ts": "f8693f571a90bbd6856edd7878a230d3d48713061f93d5ae4fa916b0ba74a6c0",
+    "tests/browser/m1.spec.ts": "b70503234d6b2703116692821f9c8b974d4840308f50a9c6a298f8aab702d91e",
+    "tests/fixtures/helpers.ts": "8fce5dcd1f42002c2f47258048cdab7d1541ec6105cd5fb7fcc3ec27e27d0c4a",
+    "tests/integration/history.test.ts": "edf8b44a2ec2bcbbb8571a2e386c7487af11cfcb7545e0dc8c63e92d57539458",
+    "tests/integration/hooks.test.ts": "d972ab0c99404cadcb3ae16d5b5560e0df668d267a08e0a33bb3d2249b1ef315",
+    "tests/integration/patch.test.ts": "2e81d47f1681e71ce6ca23deeb4fc11c52ca60079fdc1eeef9a421fa6e940eeb",
+    "tests/unit/diff.test.ts": "33b7a044b6dee3b9375e773a74b6d91a931bbcb3d67718e9c0f6e91f3bc7bc21",
+    "tests/unit/vdom.test.ts": "457f926b8431724cdb3d125192b38108113996a02468e69ff0e2e5b89db91e62",
+    "tsconfig.json": "8665b6b6b1f5314f854e4659bfef23cf3747031bc647352909dfc7674ce60840",
+    "vitest.config.ts": "bc9916e26fd72b7971e67e930d18be927dda501e6ca3ac36b8b6fa42a0f07420"
+  }
+}

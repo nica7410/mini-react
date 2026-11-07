@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini React · M1</title>
+    <link rel="stylesheet" href="/src/app/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="eyebrow">MINI REACT / ENGINE LAB</span>
+        <h1>작은 엔진, 같은 갱신 경로.</h1>
+        <p>DOM 편집과 루트 State가 하나의 VDOM → Diff → Patch로 이어집니다.</p>
+        <p class="scope">M1 · 위치 기반 Diff · 동기 State 갱신</p>
+      </header>
+      <p id="error" role="alert" hidden></p>
+      <section aria-labelledby="phase1-title">
+        <div class="section-heading">
+          <div><span class="eyebrow">01 / DOM → VDOM</span><h2 id="phase1-title">편집하고, 변경분만 적용하기</h2></div>
+          <div class="toolbar">
+            <button id="patch" class="primary">Patch</button>
+            <button id="undo">뒤로가기</button>
+            <button id="redo">앞으로가기</button>
+            <button id="reset-editor">편집기 초기화</button>
+          </div>
+        </div>
+        <p id="history-status" role="status" aria-live="polite"></p>
+        <div class="panes">
+          <div class="pane"><h3 class="pane-title">실제 영역 <small>확정된 화면</small></h3>
+            <div id="actual" class="canvas"><article data-key="sample"><h3>오늘의 학습</h3><p>테스트 영역에서 이 문장을 수정해 보세요.</p><ul><li>DOM을 VDOM으로 읽기</li><li>바뀐 부분만 Patch하기</li></ul></article></div>
+          </div>
+          <div class="pane"><h3 class="pane-title">테스트 영역 <small>텍스트 직접 편집 가능</small></h3>
+            <div id="test" class="canvas" contenteditable="plaintext-only" role="textbox" aria-label="테스트 영역" aria-multiline="true" spellcheck="false"></div>
+          </div>
+        </div>
+        <details>
+          <summary>HTML로 구조·속성 편집하기</summary>
+          <label for="html-source">테스트 영역 HTML</label>
+          <textarea id="html-source" rows="6" spellcheck="false"></textarea>
+          <div class="toolbar"><button id="apply-html">HTML을 테스트 영역에 반영</button><button id="read-html">현재 테스트 HTML 읽기</button></div>
+          <p class="hint">반영 후 Patch를 눌러 확정합니다. script·inline 이벤트·위험한 URL·미지원 태그는 연결 전에 거절합니다.</p>
+        </details>
+      </section>
+      <section aria-labelledby="phase2-title">
+        <span class="eyebrow">02 / STATE → VDOM</span>
+        <h2 id="phase2-title">루트 Hooks로 다시 그리기</h2>
+        <p>루트가 두 State를 보관합니다. 자식은 props로 요약을 만들고, useMemo는 두 배 값을 계산하며, Effect는 문서 제목을 동기화합니다.</p>
+        <div id="counter" class="counter"></div>
+        <button id="reset-counter">컴포넌트 초기화</button>
+      </section>
+      <footer>이번 단계: 공통 엔진의 최소 동작 검증. Keyed Greedy/LIS·Batching·IME 보호는 후속 단계입니다.</footer>
+    </main>
+    <script type="module" src="/src/app/main.ts"></script>
+  </body>
+</html>
