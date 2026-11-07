@@ -11,6 +11,22 @@ interface PlannedNode {
   last: string | null;
 }
 
+// Compare the same host projection as before, without two temporary spread objects per node.
+// Identity and children are checked separately; extra own fields remain part of the comparison.
+function equalHostData(a: VNode, b: VNode): boolean {
+  if (a === b) return true;
+  if (a.kind !== b.kind) return false;
+  if (a.kind !== 'element' || b.kind !== 'element') return a.kind !== 'element' && b.kind !== 'element' && a.text === b.text;
+  let left = 0, right = 0;
+  const aa = a as unknown as Record<string, unknown>, bb = b as unknown as Record<string, unknown>;
+  for (const key in aa) if (Object.hasOwn(aa, key) && key !== 'identity' && key !== 'children') {
+    left++;
+    if (!Object.hasOwn(bb, key) || !equalData(aa[key], bb[key])) return false;
+  }
+  for (const key in bb) if (Object.hasOwn(bb, key) && key !== 'identity' && key !== 'children') right++;
+  return left === right;
+}
+
 // Patch의 preflight. DOM 쓰기 없이 현재 구조와 명령을 검증한다.
 // 형제 연결은 이중 연결 목록으로 모의 실행해, 재배치마다 배열을 검색/복사하지 않는다.
 export function validatePlan(mount: MountHandle, plan: PatchPlan): Result<PatchPlan> {
@@ -136,11 +152,7 @@ export function validatePlan(mount: MountHandle, plan: PatchPlan): Result<PatchP
         visited.add(tree.ref);
         const actual = requireNode(tree.ref), before = original.get(tree.ref);
         if (before && !compatible(before, tree.vnode)) throw new Error('호환되지 않는 identity를 재사용했습니다.');
-        const hostData = (vnode: VNode) => {
-          if (vnode.kind === 'element') { const { identity: _identity, children: _children, ...rest } = vnode; return rest; }
-          return { kind: vnode.kind, text: vnode.text };
-        };
-        if (!actual.vnode || !equalData(hostData(actual.vnode), hostData(tree.vnode))) throw new Error('계획의 host 값이 nextView와 다릅니다.');
+        if (!actual.vnode || !equalHostData(actual.vnode, tree.vnode)) throw new Error('계획의 host 값이 nextView와 다릅니다.');
         const vnodeChildren = tree.vnode.kind === 'element' ? tree.vnode.children : [];
         if (tree.children.length !== vnodeChildren.length || tree.children.some((child, i) => !equalData(child.vnode, vnodeChildren[i]))) throw new Error('nextView의 VNode와 자식 view가 다릅니다.');
         compareChildren(tree.ref, tree.children);

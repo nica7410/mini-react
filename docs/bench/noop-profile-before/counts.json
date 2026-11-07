@@ -1,0 +1,1870 @@
+[
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "light",
+      "path": "same-ref",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 0,
+      "diffMs": 4.300000190734863,
+      "commitMs": 17.40000009536743,
+      "flushMs": 21.700000286102295,
+      "effectMs": 0,
+      "scheduledCycleMs": 21.700000286102295
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 5.400000095367432,
+          "selfMs": 5.400000095367432
+        },
+        "equality": {
+          "calls": 12007,
+          "inclusiveMs": 4,
+          "selfMs": 4
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 4.200000286102295,
+          "selfMs": 0.09999990463256836
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 3.5999999046325684,
+          "selfMs": 3.5999999046325684
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 17.40000009536743,
+          "selfMs": 8.500000476837158
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 17.40000009536743,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "light",
+      "path": "equal-fresh",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 10.5,
+      "renderMs": 0,
+      "diffMs": 14.5,
+      "commitMs": 20.5,
+      "flushMs": 35,
+      "effectMs": 0,
+      "scheduledCycleMs": 35.09999990463257
+    },
+    "counts": null,
+    "profile": {
+      "generation": {
+        "treeValidation": {
+          "calls": 1,
+          "inclusiveMs": 1.8000001907348633,
+          "selfMs": 1.8000001907348633
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 9.400000095367432,
+          "selfMs": 7.599999904632568
+        }
+      },
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 5.600000381469727,
+          "selfMs": 5.600000381469727
+        },
+        "equality": {
+          "calls": 15007,
+          "inclusiveMs": 13,
+          "selfMs": 13
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 14.400000095367432,
+          "selfMs": 5.69999885559082
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 2.8000001907348633,
+          "selfMs": 2.8000001907348633
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 20.5,
+          "selfMs": 7.8000006675720215
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 20.5,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "light",
+      "path": "memo-unrelated",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 3.5,
+      "diffMs": 4.299999713897705,
+      "commitMs": 17.100000381469727,
+      "flushMs": 25.100000381469727,
+      "effectMs": 0,
+      "scheduledCycleMs": 25.40000009536743
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 4,
+          "inclusiveMs": 8.40000057220459,
+          "selfMs": 8.40000057220459
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 3.5,
+          "selfMs": 0.2999997138977051
+        },
+        "equality": {
+          "calls": 12028,
+          "inclusiveMs": 4.899998664855957,
+          "selfMs": 4.899998664855957
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 4.299999713897705,
+          "selfMs": 0.39999961853027344
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 2.700000286102295,
+          "selfMs": 2.700000286102295
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 17,
+          "selfMs": 8.100000858306885
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 17.100000381469727,
+          "selfMs": 0.10000038146972656
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "controlled": "fixed",
+      "effectSetups": 1,
+      "effectCleanups": 1
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "light",
+      "path": "dirty-controlled",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 0,
+      "diffMs": 5.599999904632568,
+      "commitMs": 17,
+      "flushMs": 22.699999809265137,
+      "effectMs": 0,
+      "scheduledCycleMs": 22.90000009536743
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 7.099999904632568,
+          "selfMs": 7.099999904632568
+        },
+        "equality": {
+          "calls": 12021,
+          "inclusiveMs": 4.30000114440918,
+          "selfMs": 4.30000114440918
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 5.599999904632568,
+          "selfMs": 0.5999999046325684
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 2.6999998092651367,
+          "selfMs": 2.6999998092651367
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 16.90000009536743,
+          "selfMs": 7.799999237060547
+        },
+        "hostFormsFocus": {
+          "calls": 4,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 17,
+          "selfMs": 0.09999990463256836
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "controlled": "fixed",
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "light",
+      "path": "reorder",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 9.5,
+      "renderMs": 0,
+      "diffMs": 12.699999809265137,
+      "commitMs": 18.300000190734863,
+      "flushMs": 31,
+      "effectMs": 0,
+      "scheduledCycleMs": 31
+    },
+    "counts": null,
+    "profile": {
+      "generation": {
+        "treeValidation": {
+          "calls": 1,
+          "inclusiveMs": 1.5,
+          "selfMs": 1.5
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 8.5,
+          "selfMs": 7
+        }
+      },
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 5.299999713897705,
+          "selfMs": 5.299999713897705
+        },
+        "equality": {
+          "calls": 15005,
+          "inclusiveMs": 6.999999523162842,
+          "selfMs": 6.999999523162842
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 12.599999904632568,
+          "selfMs": 7.200000762939453
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 3.299999713897705,
+          "selfMs": 3.299999713897705
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 18.199999809265137,
+          "selfMs": 8
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 18.300000190734863,
+          "selfMs": 0.10000038146972656
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "light",
+      "path": "form-update",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 3.700000286102295,
+      "diffMs": 4.199999809265137,
+      "commitMs": 15.200000286102295,
+      "flushMs": 23.100000381469727,
+      "effectMs": 0,
+      "scheduledCycleMs": 23.40000009536743
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 4,
+          "inclusiveMs": 8.400000095367432,
+          "selfMs": 8.400000095367432
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 3.5999999046325684,
+          "selfMs": 0.19999980926513672
+        },
+        "equality": {
+          "calls": 12026,
+          "inclusiveMs": 3.700000286102295,
+          "selfMs": 3.700000286102295
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 4.199999809265137,
+          "selfMs": 0.40000009536743164
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 2.5999999046325684,
+          "selfMs": 2.5999999046325684
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 15.099999904632568,
+          "selfMs": 7.59999942779541
+        },
+        "hostFormsFocus": {
+          "calls": 4,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 15.200000286102295,
+          "selfMs": 0.10000038146972656
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "controlled": "1",
+      "effectSetups": 1,
+      "effectCleanups": 1
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "stateful",
+      "path": "same-ref",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 0,
+      "diffMs": 11.699999809265137,
+      "commitMs": 40.90000009536743,
+      "flushMs": 52.59999990463257,
+      "effectMs": 0,
+      "scheduledCycleMs": 52.59999990463257
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 15,
+          "selfMs": 15
+        },
+        "equality": {
+          "calls": 32007,
+          "inclusiveMs": 11.69999885559082,
+          "selfMs": 11.69999885559082
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 11.699999809265137,
+          "selfMs": 0.2999997138977051
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 7.900000095367432,
+          "selfMs": 7.900000095367432
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 40.90000009536743,
+          "selfMs": 17.70000123977661
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 40.90000009536743,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "stateful",
+      "path": "equal-fresh",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 25.90000009536743,
+      "renderMs": 0,
+      "diffMs": 37.30000019073486,
+      "commitMs": 48.799999713897705,
+      "flushMs": 86.09999990463257,
+      "effectMs": 0,
+      "scheduledCycleMs": 86.2000002861023
+    },
+    "counts": null,
+    "profile": {
+      "generation": {
+        "treeValidation": {
+          "calls": 1,
+          "inclusiveMs": 5.200000286102295,
+          "selfMs": 5.200000286102295
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 23.5,
+          "selfMs": 18.299999713897705
+        }
+      },
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 12.900000095367432,
+          "selfMs": 12.900000095367432
+        },
+        "equality": {
+          "calls": 46007,
+          "inclusiveMs": 30.60000228881836,
+          "selfMs": 30.60000228881836
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 37.30000019073486,
+          "selfMs": 16.29999828338623
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 8,
+          "selfMs": 8
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 48.799999713897705,
+          "selfMs": 18.299999237060547
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 48.799999713897705,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "stateful",
+      "path": "memo-unrelated",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 4.900000095367432,
+      "diffMs": 10.800000190734863,
+      "commitMs": 41,
+      "flushMs": 56.80000019073486,
+      "effectMs": 0,
+      "scheduledCycleMs": 57.19999980926514
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 4,
+          "inclusiveMs": 20.09999942779541,
+          "selfMs": 20.09999942779541
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 4.799999713897705,
+          "selfMs": 0
+        },
+        "equality": {
+          "calls": 32028,
+          "inclusiveMs": 10.299999237060547,
+          "selfMs": 10.299999237060547
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 10.800000190734863,
+          "selfMs": 0.3000001907348633
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 7.400000095367432,
+          "selfMs": 7.400000095367432
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 40.90000009536743,
+          "selfMs": 18.400001049041748
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0.09999990463256836,
+          "selfMs": 0.09999990463256836
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 41,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "controlled": "fixed",
+      "effectSetups": 1,
+      "effectCleanups": 1
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "stateful",
+      "path": "dirty-controlled",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 0,
+      "diffMs": 11.400000095367432,
+      "commitMs": 40.5,
+      "flushMs": 51.90000009536743,
+      "effectMs": 0,
+      "scheduledCycleMs": 52.200000286102295
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 15.199999809265137,
+          "selfMs": 15.199999809265137
+        },
+        "equality": {
+          "calls": 32021,
+          "inclusiveMs": 9.199999809265137,
+          "selfMs": 9.199999809265137
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 11.400000095367432,
+          "selfMs": 0.5
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 6.800000190734863,
+          "selfMs": 6.800000190734863
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 40.299999713897705,
+          "selfMs": 20
+        },
+        "hostFormsFocus": {
+          "calls": 4,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 40.5,
+          "selfMs": 0.20000028610229492
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "controlled": "fixed",
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "stateful",
+      "path": "reorder",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 26.399999618530273,
+      "renderMs": 0,
+      "diffMs": 31.699999809265137,
+      "commitMs": 43,
+      "flushMs": 74.69999980926514,
+      "effectMs": 0,
+      "scheduledCycleMs": 74.69999980926514
+    },
+    "counts": null,
+    "profile": {
+      "generation": {
+        "treeValidation": {
+          "calls": 1,
+          "inclusiveMs": 5.5,
+          "selfMs": 5.5
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 24,
+          "selfMs": 18.5
+        }
+      },
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 12.800000190734863,
+          "selfMs": 12.800000190734863
+        },
+        "equality": {
+          "calls": 46005,
+          "inclusiveMs": 20.499998569488525,
+          "selfMs": 20.499998569488525
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 31.699999809265137,
+          "selfMs": 17.000000476837158
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 7,
+          "selfMs": 7
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 43,
+          "selfMs": 17.40000057220459
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 43,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 1000,
+      "payload": "stateful",
+      "path": "form-update",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 7.799999713897705,
+      "diffMs": 19.100000381469727,
+      "commitMs": 53,
+      "flushMs": 80.10000038146973,
+      "effectMs": 0,
+      "scheduledCycleMs": 80.5
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 4,
+          "inclusiveMs": 33.5,
+          "selfMs": 33.5
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 7.699999809265137,
+          "selfMs": 0.19999980926513672
+        },
+        "equality": {
+          "calls": 32026,
+          "inclusiveMs": 10.000001430511475,
+          "selfMs": 10.000001430511475
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 19.100000381469727,
+          "selfMs": 0.7000002861022949
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 10.100000381469727,
+          "selfMs": 10.100000381469727
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 52.89999961853027,
+          "selfMs": 25.199997901916504
+        },
+        "hostFormsFocus": {
+          "calls": 4,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 53,
+          "selfMs": 0.10000038146972656
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 1000,
+      "retainedIdentities": 1000,
+      "controlled": "1",
+      "effectSetups": 1,
+      "effectCleanups": 1
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "light",
+      "path": "same-ref",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 0,
+      "diffMs": 31.5,
+      "commitMs": 140.40000009536743,
+      "flushMs": 171.90000009536743,
+      "effectMs": 0,
+      "scheduledCycleMs": 171.90000009536743
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 43.59999990463257,
+          "selfMs": 43.59999990463257
+        },
+        "equality": {
+          "calls": 120007,
+          "inclusiveMs": 35.599995613098145,
+          "selfMs": 35.599995613098145
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 31.40000009536743,
+          "selfMs": 0.3000001907348633
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 24,
+          "selfMs": 24
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 140.30000019073486,
+          "selfMs": 68.20000457763672
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 140.40000009536743,
+          "selfMs": 0.09999990463256836
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "light",
+      "path": "equal-fresh",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 83.90000009536743,
+      "renderMs": 0,
+      "diffMs": 115.30000019073486,
+      "commitMs": 170.89999961853027,
+      "flushMs": 286.19999980926514,
+      "effectMs": 0,
+      "scheduledCycleMs": 286.19999980926514
+    },
+    "counts": null,
+    "profile": {
+      "generation": {
+        "treeValidation": {
+          "calls": 1,
+          "inclusiveMs": 15.199999809265137,
+          "selfMs": 15.199999809265137
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 71.90000009536743,
+          "selfMs": 56.700000286102295
+        }
+      },
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 43.09999990463257,
+          "selfMs": 43.09999990463257
+        },
+        "equality": {
+          "calls": 150007,
+          "inclusiveMs": 108.79999780654907,
+          "selfMs": 108.79999780654907
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 115.19999980926514,
+          "selfMs": 47.39999961853027
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 23.09999990463257,
+          "selfMs": 23.09999990463257
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 170.89999961853027,
+          "selfMs": 63.70000219345093
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 170.89999961853027,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "light",
+      "path": "memo-unrelated",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 19.59999990463257,
+      "diffMs": 29.90000009536743,
+      "commitMs": 140.80000019073486,
+      "flushMs": 190.30000019073486,
+      "effectMs": 0,
+      "scheduledCycleMs": 190.7999997138977
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 4,
+          "inclusiveMs": 61.69999980926514,
+          "selfMs": 61.69999980926514
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 19.5,
+          "selfMs": 0.20000028610229492
+        },
+        "equality": {
+          "calls": 120028,
+          "inclusiveMs": 33.500003814697266,
+          "selfMs": 33.500003814697266
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 29.90000009536743,
+          "selfMs": 0.2999997138977051
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 25.09999990463257,
+          "selfMs": 25.09999990463257
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 140.80000019073486,
+          "selfMs": 69.39999675750732
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 140.80000019073486,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "controlled": "fixed",
+      "effectSetups": 1,
+      "effectCleanups": 1
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "light",
+      "path": "dirty-controlled",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 0,
+      "diffMs": 34.59999990463257,
+      "commitMs": 147.7999997138977,
+      "flushMs": 182.5,
+      "effectMs": 0,
+      "scheduledCycleMs": 182.7999997138977
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 46.299999713897705,
+          "selfMs": 46.299999713897705
+        },
+        "equality": {
+          "calls": 120021,
+          "inclusiveMs": 37.60000705718994,
+          "selfMs": 37.60000705718994
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 34.59999990463257,
+          "selfMs": 1.0999999046325684
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 29.59999990463257,
+          "selfMs": 29.59999990463257
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 147.69999980926514,
+          "selfMs": 67.69999313354492
+        },
+        "hostFormsFocus": {
+          "calls": 4,
+          "inclusiveMs": 0.09999990463256836,
+          "selfMs": 0.09999990463256836
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 147.7999997138977,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "controlled": "fixed",
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "light",
+      "path": "reorder",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 83.40000009536743,
+      "renderMs": 0,
+      "diffMs": 98.30000019073486,
+      "commitMs": 155.80000019073486,
+      "flushMs": 254.10000038146973,
+      "effectMs": 0,
+      "scheduledCycleMs": 254.10000038146973
+    },
+    "counts": null,
+    "profile": {
+      "generation": {
+        "treeValidation": {
+          "calls": 1,
+          "inclusiveMs": 17.399999618530273,
+          "selfMs": 17.399999618530273
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 72.2000002861023,
+          "selfMs": 54.80000066757202
+        }
+      },
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 45.10000038146973,
+          "selfMs": 45.10000038146973
+        },
+        "equality": {
+          "calls": 150005,
+          "inclusiveMs": 63.80000591278076,
+          "selfMs": 63.80000591278076
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 98.30000019073486,
+          "selfMs": 52.599995613098145
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 25.09999990463257,
+          "selfMs": 25.09999990463257
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 155.69999980926514,
+          "selfMs": 67.3999981880188
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 155.80000019073486,
+          "selfMs": 0.10000038146972656
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "light",
+      "path": "form-update",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 20.300000190734863,
+      "diffMs": 29.300000190734863,
+      "commitMs": 141.69999980926514,
+      "flushMs": 191.40000009536743,
+      "effectMs": 0,
+      "scheduledCycleMs": 191.69999980926514
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 4,
+          "inclusiveMs": 61.69999980926514,
+          "selfMs": 61.69999980926514
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 20.300000190734863,
+          "selfMs": 0.20000028610229492
+        },
+        "equality": {
+          "calls": 120026,
+          "inclusiveMs": 38.39999961853027,
+          "selfMs": 38.39999961853027
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 29.300000190734863,
+          "selfMs": 0.40000009536743164
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 26.59999990463257,
+          "selfMs": 26.59999990463257
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 141.5,
+          "selfMs": 63.80000066757202
+        },
+        "hostFormsFocus": {
+          "calls": 4,
+          "inclusiveMs": 0.09999990463256836,
+          "selfMs": 0.09999990463256836
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 141.69999980926514,
+          "selfMs": 0.09999990463256836
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "controlled": "1",
+      "effectSetups": 1,
+      "effectCleanups": 1
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "stateful",
+      "path": "same-ref",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 0,
+      "diffMs": 96.30000019073486,
+      "commitMs": 405,
+      "flushMs": 501.30000019073486,
+      "effectMs": 0,
+      "scheduledCycleMs": 501.30000019073486
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 133.39999914169312,
+          "selfMs": 133.39999914169312
+        },
+        "equality": {
+          "calls": 320007,
+          "inclusiveMs": 101.90000009536743,
+          "selfMs": 101.90000009536743
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 96.30000019073486,
+          "selfMs": 0.20000076293945312
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 73.90000009536743,
+          "selfMs": 73.90000009536743
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 405,
+          "selfMs": 191.90000009536743
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 405,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "stateful",
+      "path": "equal-fresh",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 234.19999980926514,
+      "renderMs": 0,
+      "diffMs": 339.09999990463257,
+      "commitMs": 470.90000009536743,
+      "flushMs": 810,
+      "effectMs": 0,
+      "scheduledCycleMs": 810
+    },
+    "counts": null,
+    "profile": {
+      "generation": {
+        "treeValidation": {
+          "calls": 1,
+          "inclusiveMs": 38.59999990463257,
+          "selfMs": 38.59999990463257
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 202.09999990463257,
+          "selfMs": 163.5
+        }
+      },
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 123.59999990463257,
+          "selfMs": 123.59999990463257
+        },
+        "equality": {
+          "calls": 460007,
+          "inclusiveMs": 314.40000009536743,
+          "selfMs": 314.40000009536743
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 339.09999990463257,
+          "selfMs": 129.40000104904175
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 66.90000009536743,
+          "selfMs": 66.90000009536743
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 470.90000009536743,
+          "selfMs": 175.69999885559082
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 470.90000009536743,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "stateful",
+      "path": "memo-unrelated",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 48.700000286102295,
+      "diffMs": 82,
+      "commitMs": 365.69999980926514,
+      "flushMs": 496.5,
+      "effectMs": 0,
+      "scheduledCycleMs": 496.8999996185303
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 4,
+          "inclusiveMs": 168.69999980926514,
+          "selfMs": 168.69999980926514
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 48.700000286102295,
+          "selfMs": 0.10000038146972656
+        },
+        "equality": {
+          "calls": 320028,
+          "inclusiveMs": 95.2000036239624,
+          "selfMs": 95.2000036239624
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 82,
+          "selfMs": 0.5
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 65.40000009536743,
+          "selfMs": 65.40000009536743
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 365.5,
+          "selfMs": 166.2999963760376
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0.09999990463256836,
+          "selfMs": 0.09999990463256836
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 365.69999980926514,
+          "selfMs": 0.09999990463256836
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "controlled": "fixed",
+      "effectSetups": 1,
+      "effectCleanups": 1
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "stateful",
+      "path": "dirty-controlled",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 0,
+      "diffMs": 106.40000009536743,
+      "commitMs": 374.09999990463257,
+      "flushMs": 480.5,
+      "effectMs": 0,
+      "scheduledCycleMs": 481
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 142.7999997138977,
+          "selfMs": 142.7999997138977
+        },
+        "equality": {
+          "calls": 320021,
+          "inclusiveMs": 94.5999984741211,
+          "selfMs": 94.5999984741211
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 106.40000009536743,
+          "selfMs": 2.1000003814697266
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 71.90000009536743,
+          "selfMs": 71.90000009536743
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 374,
+          "selfMs": 169.00000143051147
+        },
+        "hostFormsFocus": {
+          "calls": 4,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 374.09999990463257,
+          "selfMs": 0.09999990463256836
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "controlled": "fixed",
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "stateful",
+      "path": "reorder",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 234.5,
+      "renderMs": 0,
+      "diffMs": 270.80000019073486,
+      "commitMs": 422.80000019073486,
+      "flushMs": 693.6000003814697,
+      "effectMs": 0,
+      "scheduledCycleMs": 693.7000002861023
+    },
+    "counts": null,
+    "profile": {
+      "generation": {
+        "treeValidation": {
+          "calls": 1,
+          "inclusiveMs": 48.40000009536743,
+          "selfMs": 48.40000009536743
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 199.7000002861023,
+          "selfMs": 151.30000019073486
+        }
+      },
+      "cycle": {
+        "treeValidation": {
+          "calls": 3,
+          "inclusiveMs": 121.59999990463257,
+          "selfMs": 121.59999990463257
+        },
+        "equality": {
+          "calls": 460005,
+          "inclusiveMs": 191.00000143051147,
+          "selfMs": 191.00000143051147
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 270.69999980926514,
+          "selfMs": 133.69999885559082
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 73.69999980926514,
+          "selfMs": 73.69999980926514
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 422.80000019073486,
+          "selfMs": 173.5
+        },
+        "hostFormsFocus": {
+          "calls": 3,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 422.80000019073486,
+          "selfMs": 0
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "build": "baseline-profile-v1",
+    "input": {
+      "size": 10000,
+      "payload": "stateful",
+      "path": "form-update",
+      "seed": 539365639,
+      "mode": "profile"
+    },
+    "timings": {
+      "expressionMs": 0,
+      "renderMs": 61,
+      "diffMs": 84.69999980926514,
+      "commitMs": 380.40000009536743,
+      "flushMs": 526.0999999046326,
+      "effectMs": 0,
+      "scheduledCycleMs": 526.5
+    },
+    "counts": null,
+    "profile": {
+      "generation": {},
+      "cycle": {
+        "treeValidation": {
+          "calls": 4,
+          "inclusiveMs": 186.7000002861023,
+          "selfMs": 186.7000002861023
+        },
+        "vdomEvaluation": {
+          "calls": 1,
+          "inclusiveMs": 60.90000009536743,
+          "selfMs": 0.09999990463256836
+        },
+        "equality": {
+          "calls": 320026,
+          "inclusiveMs": 95.00000524520874,
+          "selfMs": 95.00000524520874
+        },
+        "diff": {
+          "calls": 1,
+          "inclusiveMs": 84.59999990463257,
+          "selfMs": 0.5999999046325684
+        },
+        "domBinding": {
+          "calls": 1,
+          "inclusiveMs": 70,
+          "selfMs": 70
+        },
+        "preflight": {
+          "calls": 1,
+          "inclusiveMs": 380.19999980926514,
+          "selfMs": 173.29999446868896
+        },
+        "hostFormsFocus": {
+          "calls": 4,
+          "inclusiveMs": 0,
+          "selfMs": 0
+        },
+        "commit": {
+          "calls": 1,
+          "inclusiveMs": 380.40000009536743,
+          "selfMs": 0.20000028610229492
+        }
+      }
+    },
+    "validation": {
+      "checkedRows": 10000,
+      "retainedIdentities": 10000,
+      "controlled": "1",
+      "effectSetups": 1,
+      "effectCleanups": 1
+    },
+    "visibility": "visible",
+    "focused": true
+  }
+]
