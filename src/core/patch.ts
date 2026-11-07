@@ -17,6 +17,7 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
   const valid = validatePlan(mount, plan);
   if (!valid.ok) return { status: 'rejected', diagnostics: valid.diagnostics };
   const counters = emptyCounters();
+  const oldNodes = mount.trace?.detailed ? new Map(mount.nodes) : null;
   const initialForms: { element: HTMLElement; tree: ViewNode }[] = [];
   const nodeAt = (ref: string): Node => {
     const node = mount.nodes.get(ref);
@@ -33,7 +34,7 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
       for (const [name, value] of Object.entries(vnode.attrs)) { element.setAttribute(name, value); counters.attributeWrites++; }
       for (const [name, style] of Object.entries(vnode.style)) { element.style.setProperty(name, style.value, style.priority); counters.styleWrites++; }
       observeControlledInput(mount, element, tree.ref, vnode, counters);
-      for (const [name, binding] of Object.entries(vnode.events)) setEvent(element, name, binding, counters);
+      for (const [name, binding] of Object.entries(vnode.events)) setEvent(element, name, binding, counters, mount, tree.ref);
       for (const child of tree.children) element.appendChild(create(child));
       if (vnode.form) initialForms.push({ element, tree });
     }
@@ -60,7 +61,7 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
         case 'REMOVE_ATTR': (nodeAt(op.node) as Element).removeAttribute(op.name); counters.attributeWrites++; break;
         case 'SET_STYLE': (nodeAt(op.node) as HTMLElement).style.setProperty(op.name, op.value.value, op.value.priority); counters.styleWrites++; break;
         case 'REMOVE_STYLE': (nodeAt(op.node) as HTMLElement).style.removeProperty(op.name); counters.styleWrites++; break;
-        case 'SET_EVENT': setEvent(nodeAt(op.node) as Element, op.name, op.binding, counters); break;
+        case 'SET_EVENT': setEvent(nodeAt(op.node) as Element, op.name, op.binding, counters, mount, op.node); break;
         case 'PLACE_BEFORE': {
           const node = nodeAt(op.node), parent = nodeAt(op.parent), anchor = op.anchor === null ? null : nodeAt(op.anchor);
           if (anchor && anchor.parentNode !== parent) throw new Error('anchor가 parent의 직접 자식이 아닙니다.');
@@ -76,7 +77,10 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
     for (const op of plan.operations) if (op.kind === 'SYNC_FORM') syncForm(nodeAt(op.node) as HTMLElement, op.policy, false, counters);
     mount.view = plan.nextView; mount.revision = plan.nextView.revision;
     const status = plan.operations.length === 0 && plan.baseRevision === mount.revision ? 'noop' : 'committed';
-    emitTrace(mount.trace, { causeIds: [], mountId: mount.id, commitId: mount.revision, phase: 'patch', detail: { planId: plan.id, status, ...counters } });
+    const identity = oldNodes ? [...mount.nodes].filter(([ref]) => ref !== mount.view.rootRef).map(([ref, node]) => ({
+      ref, reused: oldNodes.get(ref) === node, kind: node.nodeType, tag: node.nodeType === 1 ? (node as Element).localName : null,
+    })) : undefined;
+    emitTrace(mount.trace, { causeIds: mount.traceCauses, mountId: mount.id, commitId: mount.revision, phase: 'patch', detail: { planId: plan.id, status, ...counters, ...(identity ? { identity } : {}) } });
     return { status, revision: mount.revision, counters };
   } catch (error) {
     mount.faulted = true;
@@ -86,6 +90,10 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
 
 export function applySnapshot(mount: MountHandle, plan: Result<PatchPlan>): CommitResult {
   if (!plan.ok) return { status: 'rejected', diagnostics: plan.diagnostics };
-  emitTrace(mount.trace, { causeIds: [], mountId: mount.id, phase: 'diff', detail: { planId: plan.value.id, operations: plan.value.operations.length, reconciliations: plan.value.reconciliations, visitedNodes: plan.value.visitedNodes, reusedSubtrees: plan.value.reusedSubtrees } });
+  emitTrace(mount.trace, { causeIds: mount.traceCauses, mountId: mount.id, phase: 'diff', detail: {
+    planId: plan.value.id, operations: plan.value.operations.length, reconciliations: plan.value.reconciliations,
+    visitedNodes: plan.value.visitedNodes, reusedSubtrees: plan.value.reusedSubtrees,
+    ...(mount.trace?.detailed ? { before: mount.view.children, after: plan.value.nextView.children, patches: plan.value.operations } : {}),
+  } });
   return commit(mount, plan.value);
 }

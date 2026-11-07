@@ -75,6 +75,9 @@ export interface MountHandle {
   inputFallbackTimer?: ReturnType<typeof setTimeout>;
   disposeHostObservers?: () => void;
   onHostInput?: () => void;
+  eventSequence: number;
+  eventCause?: string;
+  traceCauses: readonly string[];
   readonly trace?: TraceSink;
 }
 export interface CaptureResult {
@@ -131,7 +134,7 @@ export interface TraceEvent {
   readonly nodeRef?: NodeRef; readonly hookIndex?: number;
   readonly detail: Readonly<Record<string, unknown>>;
 }
-export interface TraceSink { emit(event: TraceEvent): void }
+export interface TraceSink { readonly detailed?: boolean; emit(event: TraceEvent): void }
 export type StateAction<T> = T | ((previous: T) => T);
 export type StateSetter<T> = (action: StateAction<T>) => void;
 export type Deps = readonly unknown[] | undefined;

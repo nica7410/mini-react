@@ -16,7 +16,7 @@
 | M3 | 기본 정확성 Gate 통과 | [M3 기록](m3-correctness.md): 95개 단위·통합, Chromium 9개, 타입·빌드 통과 |
 | M4 | Gate 통과, LIS 기본 활성화 | [M4 기록](m4-keyed.md): 113개 단위·통합, Chromium 10개, 전수/seed/BFS·400회 DOM smoke |
 | M5 | Gate 통과 | [M5 기록](m5-batching-reuse.md): 138개 단위·통합, Chromium 12개, 타입·빌드 통과 |
-| M6 | 예정 | 실제 Trace Inspector, 재현 benchmark/raw 결과 |
+| M6 | Inspector 검증 완료, benchmark 진행 | [관찰 기록](m6-observability.md): 142+13 테스트; raw 시간 결과는 아직 없음 |
 | M7 | 예정 | 목록 앱, 두 브라우저, focus/selection/composition, 실제 IME |
 | M8 | 예정 | 기능·테스트 증거 매핑, CI, 재현·한계·성과 문서, 인수 감사 |
 
@@ -29,5 +29,6 @@
 | 2683c0d | M3 | DOM 쓰기 전 Patch 계획의 구조/순서/대상 검증. 62개 테스트와 타입 검사 통과 |
 | c36cead | M3 | 폼 소유·native 입력 복원 순서·fault 복구·불변 state 진단. 95+9 테스트, 타입·빌드 통과 |
 | 171f2ab | M4 | 동일 매칭/executor의 Greedy·LIS, 전수/독립 BFS/실제 DOM 검증 후 LIS 기본 활성화. 113+10 테스트 |
+| 5899203 | M5 | FIFO microtask Batching·위치별 expression 재사용·native input 경계. 138+12 테스트 |
 
 M8 완료는 모든 필수 구현·검증 증거를 대조한 뒤 판단한다. 실제 IME나 팀 확인을 합성 이벤트·개발자 추정으로 대체하지 않는다.

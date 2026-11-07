@@ -52,7 +52,7 @@ export class FunctionComponent<P> {
   get hooks(): readonly HookSlot[] { return this.committedHooks; }
 
   private trace(phase: TraceEvent['phase'], detail: Record<string, unknown>, hookIndex?: number): void {
-    emitTrace(this.options.trace, { causeIds: [], mountId: this.host.id, commitId: this.host.revision, phase, detail, hookIndex });
+    emitTrace(this.options.trace, { causeIds: this.host.traceCauses, mountId: this.host.id, commitId: this.host.revision, phase, detail, hookIndex });
   }
   private report(error: unknown): void {
     const diagnostic = errorDiagnostic(error);
@@ -64,8 +64,9 @@ export class FunctionComponent<P> {
     if (isComputing()) throw new Error('render/updater/Memo/자식 평가 중에는 setter를 호출할 수 없습니다.');
     if (this.disposed) { this.report(new Error('unmount된 루트의 setter를 무시했습니다.')); return; }
     const sequence = ++this.sequence;
-    this.queue.push({ sequence, slot, action, causeId: `update-${sequence}` });
-    this.trace('enqueue', { sequence, slot });
+    const causeId = this.host.eventCause ?? `${this.host.id}:update-${sequence}`;
+    this.queue.push({ sequence, slot, action, causeId });
+    emitTrace(this.options.trace, { causeIds: [causeId], mountId: this.host.id, phase: 'enqueue', detail: { sequence, slot } });
     if (this.mounted) this.requestFlush();
   };
 
@@ -118,6 +119,7 @@ export class FunctionComponent<P> {
   }
   private perform(mounting: boolean, explicit: boolean): CommitResult {
     const pending = [...this.queue];
+    this.host.traceCauses = [...new Set(pending.map(request => request.causeId))];
     const previous = this.committedHooks;
     const changedEffects: number[] = [];
     const dirty = new Map(this.host.dirtyForms);
@@ -179,6 +181,8 @@ export class FunctionComponent<P> {
     } catch (error) {
       this.halted = true; this.report(error);
       return { status: 'rejected', diagnostics: [errorDiagnostic(error)] };
+    } finally {
+      this.host.traceCauses = [];
     }
   }
   unmount(): void {

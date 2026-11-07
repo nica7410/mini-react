@@ -12,7 +12,7 @@
         <span class="eyebrow">MINI REACT / ENGINE LAB</span>
         <h1>작은 엔진, 같은 갱신 경로.</h1>
         <p>DOM 편집과 루트 State가 하나의 VDOM → Diff → Patch로 이어집니다.</p>
-        <p class="scope">M4 · Keyed LIS / 위치 기반 fallback · 동기 State 갱신</p>
+        <p class="scope">Keyed LIS · FIFO Batching · 명시적 Memo · 실제 실행 기록</p>
       </header>
       <p id="error" role="alert" hidden></p>
       <section aria-labelledby="phase1-title">
@@ -49,7 +49,32 @@
         <div id="counter" class="counter"></div>
         <button id="reset-counter">컴포넌트 초기화</button>
       </section>
-      <footer>현재 단계: Keyed Greedy/LIS 정확성 검증. Batching·Inspector·IME 보호는 후속 단계입니다.</footer>
+      <section aria-labelledby="lab-title">
+        <span class="eyebrow">03 / RECONCILIATION LAB</span>
+        <h2 id="lab-title">같은 입력, 다른 이동 계획</h2>
+        <p>매번 같은 초기 목록을 만든 뒤 실행합니다. 이동 수와 시간 성능은 별개의 지표입니다.</p>
+        <div class="toolbar lab-controls">
+          <label>전략 <select id="lab-strategy"><option value="lis">LIS</option><option value="greedy">Greedy</option></select></label>
+          <label>입력 <select id="lab-scenario">
+            <option value="last-to-front">마지막 → 처음</option><option value="noop">no-op</option><option value="one-change">한 항목 수정</option>
+            <option value="prepend">맨 앞 삽입</option><option value="delete-middle">중간 삭제</option><option value="first-to-back">처음 → 마지막</option>
+            <option value="reverse">역순</option><option value="adjacent">인접 교환</option><option value="swap-ends">양끝 교환</option>
+            <option value="shuffle">seed 순열</option><option value="mixed">10% 혼합</option>
+          </select></label>
+          <label>개수 <input id="lab-size" type="number" min="2" max="10000" value="8"></label>
+          <label>seed <input id="lab-seed" type="number" value="539365639"></label>
+          <label>내용 <select id="lab-payload"><option value="light">텍스트</option><option value="stateful">입력·checkbox·중첩</option></select></label>
+          <button id="lab-run" class="primary">초기 상태에서 실행</button><button id="lab-reset">실험 초기화</button>
+        </div>
+        <p id="lab-status" role="status"></p>
+        <div id="lab-output" class="lab-output"></div>
+        <details><summary>입력 JSON 저장·실패 입력 재실행</summary>
+          <label for="lab-json">재실행할 입력 JSON</label><textarea id="lab-json" rows="6" spellcheck="false"></textarea>
+          <div class="toolbar"><button id="lab-import">JSON 입력 재실행</button><button id="lab-export">입력 JSON 저장</button></div>
+        </details>
+      </section>
+      <section aria-labelledby="inspector-title"><span class="eyebrow">04 / INSPECTOR</span><h2 id="inspector-title">엔진이 실제로 수행한 작업</h2><div id="inspector"></div></section>
+      <footer>현재 단계: Batching·명시적 재사용·실행 관찰. 실제 IME와 시간 성능은 검증 기록의 범위를 따릅니다.</footer>
     </main>
     <script type="module" src="/src/app/main.ts"></script>
   </body>

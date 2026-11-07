@@ -3,13 +3,16 @@ import { EditorController } from '../editor/controller';
 import { replaceEditorHTML } from '../editor/inputPolicy';
 import { FunctionComponent } from '../runtime';
 import { Counter } from './counter';
+import { createInspector } from '../observe/inspector';
+import { createLab } from './lab';
 
 const element = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
 const actual = element('actual'), test = element('test');
 const source = element<HTMLTextAreaElement>('html-source');
 const originalHTML = actual.innerHTML;
 const error = element('error'), status = element('history-status');
-let editor = new EditorController(actual, test);
+const recorder = createInspector(element('inspector'), () => [editor.actual, editor.test, counter.host, ...(lab.mount ? [lab.mount] : [])]);
+let editor = new EditorController(actual, test, recorder);
 
 function show(result: Result<void>, message: string): void {
   error.hidden = result.ok;
@@ -33,7 +36,7 @@ element('reset-editor').addEventListener('click', () => {
   if (editor.faulted) { show(editor.recover(), '마지막 정상 버전에서 복구'); return; }
   editor.dispose();
   replaceEditorHTML(actual, originalHTML);
-  editor = new EditorController(actual, test);
+  editor = new EditorController(actual, test, recorder);
   show({ ok: true, value: undefined }, '초기화 완료');
 });
 element('apply-html').addEventListener('click', () => show(replaceEditorHTML(test, source.value), '테스트 편집 미확정'));
@@ -44,11 +47,13 @@ test.addEventListener('drop', event => event.preventDefault());
 
 function createCounter() {
   const root = new FunctionComponent(Counter, {}, element('counter'), {
+    trace: recorder,
     onError: diagnostic => { error.hidden = false; error.textContent = diagnostic.message; },
   });
   root.mount();
   return root;
 }
 let counter = createCounter();
+const lab = createLab(recorder);
 element('reset-counter').addEventListener('click', () => { counter.unmount(); counter = createCounter(); });
 refresh();

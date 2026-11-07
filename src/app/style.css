@@ -1,5 +1,20 @@
 :root { font-family: Inter, "Segoe UI", "Malgun Gothic", sans-serif; color: #17262c; background: #f5f7f5; font-synthesis: none; line-height: 1.65; }
 * { box-sizing: border-box; }
+select { font: inherit; max-width: 100%; border: 1px solid #bccbc3; border-radius: 5px; padding: 6px; background: #fff; }
+.lab-controls input { max-width: 140px; }
+.lab-output { max-height: 260px; overflow: auto; border-block: 1px solid #d8e0dc; }
+.fixture-list { margin: 10px 0; }
+.fixture-list li { padding: 3px 0; }
+.trace-tree { padding-left: 15px; overflow-wrap: anywhere; }
+.trace-tree details { margin: 0; }
+#inspector { overflow-wrap: anywhere; min-width: 0; }
+#inspector pre { max-height: 320px; overflow: auto; white-space: pre-wrap; font-size: 12px; }
+.trace-counts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr) 40px); gap: 3px 10px; font-size: 12px; }
+.trace-counts dd { margin: 0; font-weight: bold; }
+.patch-list { max-height: 300px; overflow: auto; padding-left: 24px; }
+.patch-list button { text-align: left; overflow-wrap: anywhere; font-size: 12px; margin-bottom: 5px; }
+.patch-highlight { position: fixed; pointer-events: none; z-index: 999; border: 3px solid #d75c29; background: #f9ba8a22; }
+@media (max-width: 650px) { .trace-counts { grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr) 40px; } }
 body { margin: 0; }
 main { width: min(1120px, calc(100% - 40px)); margin: 48px auto; }
 header { padding-bottom: 28px; }
