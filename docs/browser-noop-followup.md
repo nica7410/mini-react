@@ -1,6 +1,6 @@
 # 브라우저 안정화와 no-op 비용 재검토
 
-시작: phase1 / `9f3f3d3`, clean. 기존 M0–M8 및 `m8-full`을 보존하고 별도 후속 검증으로 진행한다. 이 문서는 아직 진행 중이다.
+시작: phase1 / `9f3f3d3`, clean. 기존 M0–M8 및 `m8-full`을 보존하고 별도 후속 검증으로 진행한다. 기능 수정·정확성·3세션 비교와 원본 감사를 완료했다.
 
 ## 실패 원본과 재현
 
@@ -19,7 +19,7 @@
 - 원래 CRUD 흐름의 모든 action/assertion을 유지하며, create/update/filter/search/sort/delete와 batching/reorder/bulk-delete/empty 검증을 별도 fresh page 테스트로 나눈다. 각 목적에 30초가 적용되며 테스트 전체 한도를 임의로 늘리지 않는다. 총 개수는 Chromium 20 + Firefox 11 = 31이 됐다.
 - 취소한 1.5초 타이머를 기다리는 기존 1.7초 wait는 해당 취소 계약의 관찰 구간으로 유지한다. 새 임의 sleep은 없다.
 
-수정 직후 기본 명령 31/31 PASS, typecheck PASS. [기록](validation/browser-stability/stabilized-before-engine/context.json). 엔진 수정 후 최종 3회 연속 전체 검증은 별도로 수행한다. CI도 같은 서버/준비 조건을 사용하고 진단 JSON을 artifact에 포함한다. 원격 실행은 하지 않았다.
+수정 직후 기본 명령 31/31 PASS, typecheck PASS. [기록](validation/browser-stability/stabilized-before-engine/context.json). 엔진 수정 후 최종 3회 연속 전체 검증도 아래 기록처럼 완료했다. CI도 같은 서버/준비 조건을 사용하고 진단 JSON을 artifact에 포함한다. 원격 실행은 하지 않았다.
 
 최종 엔진으로 **기본 명령을 새 서버/브라우저에서 3회 연속** 통과했다. 31/31씩, skip/unexpected/flaky/retry 0. [검증·소스 hash](validation/noop-followup.json).
 
@@ -30,6 +30,8 @@
 | 3 | 68.41 | 86.54 | 2,466.06 | 12,556 | 8,132 | 12,556 |
 
 서버 PID는 각각 104364/62328/105000이다. 30초 test 한도를 유지했고 실제 모듈 준비 비용을 숨기지 않았다. 약 2.2–2.5초를 서버 준비 단계에서 사용한다. 과거의 느린 Vite 응답 자체를 OS/엔진 결함으로 단정하지 않으며, 모든 환경에서 간헐성이 사라진다는 보장은 하지 않는다.
+
+이전 실패와 같은 첫 Chromium batching test의 browser navigation은 195.6/211.8/197.9ms, 앱 준비 mark는 navigation 시작 후 181.1/188.4/180.7ms였다. mark는 모듈 로딩과 초기화가 끝난 관찰 시각이며 순수 앱 CPU 시간은 아니다. action/expect 시간은 `browser-timings.json`, 각 모듈의 request timing과 navigation/ready mark는 `browser-results.json`의 diagnostics attachment에 있다. 서버 표의 ms는 서버 스크립트 초기화 기준이며 Node 실행 파일 생성 시간만 따로 측정한 값은 아니다.
 
 ## no-op 실험 사전 정의
 
@@ -58,3 +60,13 @@
 전체 단위·통합 184/184(17파일), typecheck, production build를 통과했다. 추가 8개 검증 테스트는 얕은 freeze, mutable 자식, accessor, custom prototype, 함수 비동결과 새로운 radio/select 문맥을 확인한다.
 
 [두 개선을 적용한 paired smoke](bench/noop-immutable-compare/all-results.md)에서 10,000 stateful cycle median은 같은 참조 296.3→124.6ms, 동등한 새 트리 571.0→386.3ms, Memo 328.8→168.1ms, dirty controlled 285.5→134.1ms였다. **불리한 비용:** 새 트리 생성은 229.0→395.9ms로 증가했다. 깊은 불변성 증명이 최초 생성에 드는 비용이다. 생성과 cycle의 개별 median을 더해 총 median으로 표현하지 않으며, 최종 raw의 표본별 생성+cycle도 별도로 분석한다. 새 트리를 매번 만드는 앱 전체가 같은 비율로 빨라졌다는 주장은 하지 않는다. 이 예비 표본 역시 3개이며 최종 3세션 결과로 대체해 판단한다.
+
+## 최종 성능 검증과 채택 범위
+
+고정 baseline-v1(7757e3c)와 candidate-v1(c4a2fe1)을 동일 하네스로 3세션 비교했다. 측정 23,760개 / 전체 raw 28,728개 / 통계 2,016개가 재계산과 일치했고 counts와 oracle도 모두 통과했다. 47.03분 동안 조건별 새 Chromium 144개를 사용했으며 측정 중 전체 테스트·빌드를 병행하지 않았다. [최종 보고서·전체 표·그림](benchmark-results.md), [감사](bench/noop-full/analysis.json).
+
+10,000 stateful의 cycle median 감소율은 같은 참조 59.8–61.7%, 새 동등 트리 29.0–31.8%, Memo 53.0–54.1%, dirty controlled 57.8–59.4%였다. 생성까지 포함하면 새 동등 트리는 4.7–4.9%, 재배치는 2.7–17.5% 느려졌다. cycle p95는 폼 S1/S2에서 6.2%/5.6%, 재배치 S2에서 8.9% 증가했다. 작은 목록의 해상도 수준 차이와 모든 불리한 결과도 유지한다.
+
+별도 trace에서는 일부 긴 재배치에 MajorGC/weak 처리가 겹쳤으며, CPU sampling은 폼 render의 긴 표본에서 freezeTree 등록 비용도 확인했다. 원본의 모든 지연을 GC로 단정하지 않는다. 최초 증명·대용량 수거 비용과 계속 O(n)인 DOM 검사라는 한계가 남는다. [진단](bench/noop-tail-diagnostic/analysis.json), [CPU 근거](bench/noop-cpu-diagnostic/cpu-analysis.json).
+
+채택한 변경은 참조/Memo를 실제로 재사용하는 큰 목록에서 반복 검증을 줄인다. 새로운 트리를 매번 만드는 경우의 전체 속도 개선, 모든 p95 개선, React 대비 우위나 paint 개선으로 확대 해석하지 않는다. 잘못된 plan·현재 DOM 검사를 건너뛰는 빠른 경로는 추가하지 않았다. 원격 CI·팀원 활동·새 실제 IME 환경 검증은 수행한 것으로 기록하지 않는다.

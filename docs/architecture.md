@@ -1,6 +1,6 @@
 # 공통 엔진 구조와 지원 계약
 
-최종 기능 소스 기준은 `3190268`이다. 이후 문서·CI·실험 결과의 커밋은 별도로 [진행 기록](progress.md)에 남긴다. API 타입의 원본은 [types.ts](../src/core/types.ts)다.
+최초 M8 기능 소스는 `3190268`, no-op 후속 기능 소스는 `c4a2fe1`이다. 문서·CI·실험 결과의 커밋은 별도로 [진행 기록](progress.md)에 남긴다. API 타입의 원본은 [types.ts](../src/core/types.ts)다.
 
 ## 두 Phase, 하나의 쓰기 경로
 
@@ -59,7 +59,7 @@ preflight 거절은 DOM 쓰기 0회다. 실제 DOM API가 실행 도중 예외�
 
 트리 검증은 **검증을 성공한 동일 immutable VRoot 객체**에만 캐시한다. 캐시 키가 VNode/subtree가 아닌 전체 root이므로 형제 중복 key, form/radio 그룹, select/option 소유 문맥을 포함한다. 다른 root를 만들거나 부모 문맥을 바꾸면 전체 검사를 다시 한다. mutable·얕은 동결·accessor 데이터는 결과를 재사용하지 않는다. 고정된 HTML/폼 검증 정책 아래의 내부 데이터 캐시이며, DOM·MountView·PatchPlan·revision·binding에는 적용하지 않는다. WeakSet이므로 보관 수명이 끝난 snapshot을 강하게 붙잡지 않는다.
 
-필요한 view 갱신, dirty controlled 복원, Effect, focus/IME 단계는 그대로 실행한다. 이 비용은 최초 트리 생성 시 깊은 불변성 증명으로 일부 이동한다. 새 트리를 매번 만드는 경우의 생성 비용 증가와 실제 cycle 이득을 모두 [후속 측정](browser-noop-followup.md)에 기록한다.
+필요한 view 갱신, dirty controlled 복원, Effect, focus/IME 단계는 그대로 실행한다. 이 비용은 최초 트리 생성 시 깊은 불변성 증명으로 일부 이동한다. 새 트리를 매번 만드는 경우의 생성 비용 증가와 실제 cycle 이득을 모두 [후속 측정](benchmark-results.md)에 기록했다. 별도 CPU 진단은 일부 긴 render에서 freezeTree 등록 비용을, trace는 일부 긴 재배치에서 GC/weak 처리 비용을 확인했다. WeakSet이 강한 참조를 남기지 않는다는 성질과 관리·수거 비용이 없다는 주장은 다르다.
 
 ## Root Hooks와 FIFO Batching
 

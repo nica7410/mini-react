@@ -7,7 +7,7 @@ Vanilla TypeScript로 만든 학습용 Mini React입니다. DOM 편집기와 루
 - **B안:** 지원되는 keyed 형제의 LIS 기본 경로와 Greedy 비교, FIFO microtask Batching, 같은 expression의 위치별 재사용, Inspector·seed 재실행·독립 benchmark.
 - **입력:** snapshot/controlled/uncontrolled, no-op 복원, focus/selection 보정, composition 충돌 plan 보류.
 
-최신 자동 검증은 **157개 단위·통합 + Chromium 19개 + Firefox 10개**, 타입 검사·production build 통과입니다. 실제 Windows 한글 IME는 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). 전체 benchmark 3세션의 **측정 51,480개 + counts 624개 + warm-up 10,140개**를 완료하고 원자료·통계를 대조했습니다. [M8 기술 인수](docs/m8-acceptance.md)를 충족했으며, [성능 결과](docs/benchmark-results.md)에 유리한 입력과 불리한 입력을 함께 공개했습니다. 팀 합의·팀원 연습/발표와 원격 CI 실행은 미확인입니다.
+최신 자동 검증은 **184개 단위·통합 + Chromium 20개 + Firefox 11개**, 브라우저 전체 3회 연속·타입 검사·production build 통과입니다. 실제 Windows 한글 IME는 이전 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). 최초 M8 benchmark의 **측정 51,480개**와 원자료는 당시 코드의 결과로 보존합니다. 후속 no-op 비교도 **3세션·측정 23,760개**를 감사했습니다. 큰 재사용 경로의 갱신 비용은 줄었고, 새 트리 생성 비용과 일부 p95 악화는 보고서에 공개했습니다. [브라우저 안정화·후속 검증](docs/browser-noop-followup.md), [성능 결과](docs/benchmark-results.md), [인수 상태](docs/m8-acceptance.md)를 참고하세요. 팀 활동과 원격 CI 실행은 미확인입니다.
 
 ## 실행
 
@@ -51,7 +51,7 @@ pnpm bench --tag=my-full-run
 pnpm trace:workflow
 ```
 
-브라우저 테스트는 포트 **4173**, benchmark/Performance trace는 **4175**를 사용합니다. 기존 서버와 공유하지 않으며 자동으로 종료합니다. benchmark와 trace는 동시에 실행하지 마세요. 전체 benchmark는 매 표본의 DOM 준비·검증까지 포함해 시간이 오래 걸립니다. `--sizes=10,100 --sessions=1 --tag=quick-check`로 좁혀 확인할 수 있지만 이를 전체 검증으로 기록하지 않습니다.
+브라우저 테스트는 포트 **4173**, 기존 benchmark/Performance trace는 **4175**, no-op 비교/진단은 **4177**을 사용합니다. 기존 서버와 공유하지 않으며 자동으로 종료합니다. benchmark와 trace는 동시에 실행하지 마세요. 전체 benchmark는 매 표본의 DOM 준비·검증까지 포함해 시간이 오래 걸립니다. `--sizes=10,100 --sessions=1 --tag=quick-check`로 좁혀 확인할 수 있지만 이를 전체 검증으로 기록하지 않습니다.
 
 [CI 설정](.github/workflows/ci.yml)은 같은 검사 명령을 실행하도록 구성했습니다. 원격 push·CI 실행·배포는 이 작업에서 수행하지 않았습니다. 로컬 성공이 Linux 원격 CI 성공을 뜻하지 않습니다.
 

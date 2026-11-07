@@ -140,5 +140,6 @@
 | native target capture microtask가 부모 bubble보다 먼저 복원 → 관리 container bubble 경계까지 지연 | `m3.spec.ts` 부모 bubble, `batching.spec.ts` capture setter 회귀 |
 | Effect setup/cleanup 도중 unmount의 정리 누락·중복 가능 경로 → 소유 상태와 teardown 순서 처리 | `hooks.test.ts` setup/cleanup 중 unmount 각 1회 |
 | 브라우저 8 workers에서 Firefox CRUD timeout → assertion/제한 유지, 기본 workers 2 | 전체 29/29 재실행; [M7 기록](m7-app-browser.md) |
+| 이후 기본 2 workers에서도 Chromium 초기 Vite 응답/Firefox 전체 CRUD timeout → 실제 모듈 준비 조건, 목적별 시나리오 분리 | 31/31 × 3회 연속, timeout 30초/retry 0 유지; [후속 기록](browser-noop-followup.md) |
 
-이 표는 실제 회귀를 설명한다. 마지막 행은 기능 결함 수정이나 속도 개선 성과로 계산하지 않는다. 테스트 수 157/29와 전수 모델 입력 수를 더해 “수만 개 브라우저 테스트”로 표현하지 않는다.
+이 표는 실제 회귀를 설명한다. 브라우저 실행 정책 보완은 엔진 기능 결함 수정이나 앱 속도 개선 성과로 계산하지 않는다. 현재 184개 단위·통합/31개 브라우저와 전수 모델 입력 수를 더해 “수만 개 브라우저 테스트”로 표현하지 않는다.

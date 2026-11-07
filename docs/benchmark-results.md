@@ -1,142 +1,119 @@
-# B안 전체 benchmark 결과
+# 성능 결과: 브라우저 안정화와 no-op 후속 개선
 
-**최종 전체 실행과 원자료 감사 PASS.** 정확성은 유지했지만 LIS의 시간 이득은 입력에 따라 달랐다. Batching과 명시적 expression 재사용은 이번 비교 패턴에서 반복 작업과 median 시간을 줄였다. 아래 결과와 한계를 함께 읽는다.
+현재 기능 소스는 **c4a2fe1**이다. 같은 하네스로 3독립 세션을 실행해 대규모 no-op의 **갱신 구간** 감소를 확인했다. 다만 **새 VDOM 생성까지 포함하면 더 느린 조건이 있고**, 폼 변경·재배치의 일부 p95도 악화됐다. 이 두 한계를 포함해 해석한다.
 
-## 확인한 결과
+최초 M8의 Greedy/LIS·Batching·expression 재사용 실험은 [당시 보고서](benchmark-results-m8.md)와 [m8-full 원본](bench/m8-full/environment.json)에 보존했다. 그 기능 소스는 3190268이며 새 코드의 결과로 바꾸지 않았다. m7-full의 과거 실패 원본도 그대로 남아 있다.
 
-전체 **3세션 / 312개 조건 쌍 / 624개 옵션별 조건**을 통과했다. counts **624**, warm-up **10,140**, 측정 **51,480**으로 총 **62,244행**이다. 4,368개 구간 통계를 raw에서 재계산해 모두 일치했고, 표본 누락·중복 index가 없었다. 페이지 flag는 hidden 0 / unfocused 0이었다. 현재 기능 소스 hash도 측정 시점과 일치한다.
+## 비교 버전과 환경
 
-[감사 JSON](bench/m8-full/analysis.json) · [전체 104개 비교의 세션별 표](bench/m8-full/all-results.md) · [전체 구간 CSV](bench/m8-full/summary.csv) · [작업 횟수](bench/m8-full/counts.json). 옵션별 counts는 세 세션 사이에도 모두 일치했다.
+| 항목 | 값 |
+|---|---|
+| 기준선 | baseline-v1 / 7757e3c; 엔진은 후속 목표 시작 9f3f3d3과 동일 |
+| 개선 | candidate-v1 / c4a2fe1; host 비교 할당 제거 + 증명된 불변 전체 root 검증 재사용 |
+| 엔진 SHA256 전 → 후 | 1e42089a7970b7458b24377d2242c035abbcc10cee8d368f239ac9e0dbbd5ff1 → fffff850c0f88407a6eb0f5da5d466809cb3e8bf19071827120d0955c396bc3c |
+| 동일 하네스 SHA256 | 1028db69131c6fdc4a5497bf214d4715f4fae925f2d63e47946cbe883b83c7ff |
+| 실행 | 2026-11-07 21:38:30–22:25:31 KST, 47.03분 |
+| 환경 | Node 24.22.1, Windows 10 Pro 19045 x64, i7-10875H / 16 logical CPU / 15.79 GiB, Chromium 151.0.7922.34 headless 1280×900 |
+| 빌드 | Vite production / minify oxc / 고정 asset SHA; static HTTP, HMR 없음 |
+| 전원·부하 | 균형 조정, 설정 변경 없음. 전체 테스트·빌드 동시 실행 없음. 문서와 가벼운 분석은 병행. OS background/열 상태는 완전 통제하지 못함 |
 
-### Keyed: 이동 수 감소와 시간 결과
+[환경·빌드·원본 SHA](bench/noop-full/environment.json), [로컬 조건](bench/noop-full/local-conditions.json). 각 세션에서 48개 조건마다 새 Chromium을 띄웠다. 엔진별 page/module realm, 표본별 fresh mount/DOM, seed 539365639, paired 교대 순서와 세션 2의 조건 역순을 사용했다. 모든 측정은 visible/focused였고 실패·자동 재시도·표본 제거는 없었다.
 
-아래는 stateful payload의 대표 조건이다. 시간은 **diff+commit median(ms)**이며 각 칸은 **Greedy → LIS**다. 이동 열은 실제 movedRoots이며, 이 표의 plannedMoves도 각각 같은 수였다. 두 카운터를 같은 지표로 정의한 것은 아니다.
+10/100/1,000/10,000 × light/stateful × 6경로 × 3세션이다. 일반 조건은 엔진별 warm-up 20 + 측정 100, 10,000개는 5 + 30이다. counts를 별도로 실행했다. **counts 288 + warm-up 4,680 + 측정 23,760 = raw 28,728개**, 구간 통계 **2,016개**를 원본에서 재계산했다. [감사](bench/noop-full/analysis.json)는 조건 누락/중복·oracle·통계 일치·세션/엔진 간 counts 일치를 확인한다.
 
-| 크기 | 입력 | 실제 이동 G→L | 세션 1 | 세션 2 | 세션 3 |
-|---:|---|---:|---:|---:|---:|
-| 10 | noop | 0 → 0 | 0.60 → 0.60 | 0.65 → 0.70 | 0.70 → 0.70 |
-| 10 | last-to-front | 9 → 1 | 0.50 → 0.40 | 0.50 → 0.50 | 0.60 → 0.50 |
-| 10 | reverse | 9 → 9 | 0.50 → 0.50 | 0.50 → 0.60 | 0.50 → 0.60 |
-| 1,000 | noop | 0 → 0 | 64.70 → 63.95 | 64.60 → 64.60 | 65.35 → 66.30 |
-| 1,000 | last-to-front | 999 → 1 | 56.20 → 52.90 | 57.55 → 54.10 | 57.20 → 54.75 |
-| 1,000 | mixed | 896 → 841 | 59.40 → 62.15 | 61.15 → 61.35 | 62.90 → 65.00 |
-| 10,000 | noop | 0 → 0 | 685.35 → 677.10 | 742.10 → 710.50 | 672.05 → 664.70 |
-| 10,000 | last-to-front | 9,999 → 1 | 558.55 → 533.95 | 602.50 → 572.05 | 549.40 → 511.30 |
-| 10,000 | reverse | 9,999 → 9,999 | 558.15 → 576.40 | 604.40 → 619.65 | 556.75 → 551.65 |
-| 10,000 | shuffle | 9,990 → 9,803 | 648.35 → 669.90 | 670.95 → 660.80 | 618.30 → 603.85 |
-| 10,000 | mixed | 8,994 → 8,829 | 715.40 → 689.40 | 738.40 → 689.40 | 619.80 → 620.10 |
+core cycle은 diff+commit, runtime cycle은 enqueue→다음 microtask다. render/diff/commit/flush는 중첩 구간이므로 모두 더하지 않는다. target 표현/VDOM 생성은 core cycle 밖의 별도 구간이다. mount/reset/사용자 입력 seed/정답 검사/프로세스 시작은 측정 밖이다. dirty controlled는 이미 관찰한 live 값/dirty map을 준비해 같은 State setter로 복원한다. native 이벤트 순서는 별도 브라우저 테스트가 확인한다. 기존 fixture/핵심 cycle 경계는 공유하지만 이 하네스는 기존 m8의 capture 단계를 포함하지 않으므로 두 보고서의 절대 시간을 직접 전후 비교하지 않는다. paint 측정은 아니다.
 
-- **유리한 예:** 10,000개 마지막→처음에서 실제 이동은 9,999→1이고, 세션별 median은 4.4% / 5.1% / 6.9% 낮았다. 이동 횟수 비율과 시간 비율은 크게 다르다. 이 경우에도 세션 2의 p95는 809.94→818.15ms로 높아졌으므로 모든 지연 지표가 개선됐다고 할 수 없다.
-- **불리한 예:** 1,000개 mixed는 이동 896→841에도 median이 세 세션 모두 높았다. 역순은 두 전략 모두 n−1번 이동하며 시간의 방향도 세션에 따라 바뀌었다. 작은 목록에서는 동률과 분포 겹침이 많다.
-- **남은 비용:** 10,000개 stateful no-op은 DOM 쓰기·이동이 0이지만 LIS의 diff+commit median이 664.70–710.50ms였다. Diff 방문은 80,001개이고, 구간별 median은 diff 301.55–318.00ms / commit 365.20–389.20ms다. 각 구간 median을 더하면 전체 median이 된다는 뜻은 아니다. 검증을 포함하는 현재 경로의 대규모 비용이 남아 있으며, 세부 hotspot은 이 계측만으로 확정하지 않는다.
+## 갱신 시간
 
-따라서 이 결과는 제한 모델의 최소 이동 정확성과 일부 입력의 비용 감소를 보여 준다. 고성능 범용 UI 엔진, 모든 입력의 시간 우위, React 대비 우위를 입증하지 않는다. 0에 가까운 차이와 반올림 뒤의 동률을 과도하게 해석하지 않는다.
+10,000개 stateful 목록. 아래 모든 셀은 **S1 / S2 / S3**, 단위 ms, 감소율은 해당 세션 쌍의 median 기준이다. 세션을 한 분포로 합치지 않았다.
 
-### Batching과 동일 expression 재사용
+| 경로 | 기준선 median | 개선 median | 감소율 |
+|---|---|---|---|
+| 같은 VDOM 참조 | 288.60 / 323.10 / 275.10 | 115.95 / 123.80 / 105.65 | 59.82 / 61.68 / 61.60% |
+| 동등한 새 VDOM | 557.40 / 582.15 / 503.50 | 379.90 / 406.85 / 357.40 | 31.84 / 30.11 / 29.02% |
+| Memo + 무관한 루트 State | 322.40 / 348.05 / 317.10 | 151.60 / 161.40 / 145.50 | 52.98 / 53.63 / 54.12% |
+| 같은 State + dirty controlled | 278.15 / 304.60 / 260.55 | 113.90 / 128.60 / 105.80 | 59.05 / 57.78 / 59.39% |
+| 마지막 행 → 처음 | 414.55 / 430.65 / 382.60 | 255.25 / 290.80 / 236.70 | 38.43 / 32.47 / 38.13% |
+| controlled 값 변경 | 316.65 / 373.70 / 296.45 | 155.40 / 185.00 / 140.95 | 50.92 / 50.50 / 52.45% |
 
-아래 시간은 **enqueue부터 다음 microtask까지 median(ms)**다. stateful payload이며 Batching은 sync→microtask, reuse는 off→on이다. keyed 표와 측정 경계가 다르다.
+네 no-op 경로의 큰 stateful cycle median은 세 세션 모두 감소했다. 같은 참조 약 60–62%, 동등한 새 트리 약 29–32%, Memo 약 53–54%, dirty controlled 약 58–59%다. 두 회귀 경로의 중앙값도 감소했다. 전체 144개 조건/세션 비교에서 median 증가 사례는 없었으나 작은 값의 동일/미세한 차이를 확정적 향상으로 해석하지 않는다.
 
-| 축 | 크기 | 세션 1 | 세션 2 | 세션 3 |
-|---|---:|---:|---:|---:|
-| batching | 10 | 1.00 → 0.40 | 1.10 → 0.50 | 1.40 → 0.50 |
-| reuse | 10 | 0.80 → 0.50 | 0.80 → 0.40 | 0.90 → 0.50 |
-| batching | 1,000 | 106.50 → 39.55 | 110.75 → 39.80 | 112.20 → 40.90 |
-| reuse | 1,000 | 81.40 → 37.55 | 87.15 → 39.25 | 90.95 → 42.50 |
-| batching | 10,000 | 1182.50 → 410.60 | 1206.35 → 424.25 | 1103.30 → 376.40 |
-| reuse | 10,000 | 820.55 → 417.75 | 807.35 → 422.90 | 768.15 → 377.00 |
+**10/100/1,000/10,000의 두 payload·모든 경로·각 세션 median/IQR/p95/n**은 [전체 표](bench/noop-full/all-results.md), [CSV](bench/noop-full/summary.csv), [통계 JSON](bench/noop-full/summary.json)에 있다. 특히 10개 목록은 0.1ms 수준 해상도와 잡음의 영향을 크게 받으므로 큰 백분율만 인용하지 않는다.
 
-Batching은 최종 +3을 유지하며 root 실행·commit·Effect setup/cleanup을 각각 3→1회로 줄였다. 재사용은 같은 expression과 위치에서 자식 실행 1→0회, Diff 방문은 stateful 1,000개에서 8,004→4개로 줄였다. 두 옵션 모두 DOM 결과·live 입력의 정답을 유지했다. light/stateful과 네 크기를 합친 각 축의 8개 비교에서 후보 median이 세 세션 모두 낮았지만, 한 번의 순수 업데이트 패턴에 대한 결과이지 모든 앱 동작의 일반적 속도 배수는 아니다.
+![light: 세션별 median/IQR/p95](bench/noop-full/cycles-light.png)
 
-### 그래프
+![stateful: 세션별 median/IQR/p95](bench/noop-full/cycles-stateful.png)
 
-사각형/원형은 세션 median, 세로 막대는 Q1–Q3, 작은 가로선은 p95다. 패널마다 y축 범위가 다르다. 세션을 합쳐 하나의 큰 표본으로 취급하지 않는다. 그래프 밖의 조건도 전체 표와 CSV에 남겼다.
+## 불리한 결과: 새 트리 생성과 p95
 
-| 비교 | PNG | 편집·확대용 SVG |
+불변성을 안전하게 증명하는 최초 순회/descriptor 검사/동결/WeakSet 등록에 비용이 든다. **각 raw 표본의 expressionMs + cycleMs를 먼저 합한 뒤** quantile을 계산했다. 두 median을 더한 값이 아니며, initial mount와 paint는 여전히 제외한다.
+
+| 10,000개 조건 | 기준선 생성+cycle median (S1/S2/S3) | 개선 median (S1/S2/S3) | 증가율 |
+|---|---|---|---|
+| light / 동등한 새 VDOM | 256.55 / 242.30 / 228.10 | 270.05 / 253.60 / 240.60 | +5.26 / 4.66 / 5.48% |
+| light / 마지막 행 → 처음 | 205.90 / 208.75 / 193.10 | 242.30 / 237.50 / 214.85 | +17.68 / 13.77 / 11.26% |
+| stateful / 동등한 새 VDOM | 753.65 / 801.35 / 703.85 | 788.85 / 839.65 / 738.60 | +4.67 / 4.78 / 4.94% |
+| stateful / 마지막 행 → 처음 | 635.00 / 648.20 / 564.90 | 651.95 / 761.50 / 604.00 | +2.67 / 17.48 / 6.92% |
+
+새 트리를 매번 만드는 이 두 core 경로의 10,000개 합산 median은 모든 세션에서 악화됐다. 큰 stateful 새 동등 트리는 약 4.7–4.9%, 재배치는 약 2.7–17.5% 느렸다. 생성+cycle p95도 모든 큰 조건에서 증가했다. 예를 들어 S2 stateful 새 동등 트리는 **946.67→1,726.04ms**, S1 stateful 재배치는 **684.98→1,340.64ms**였다. [표본별 합산 분포](bench/noop-full/creation-and-cycle.json), [모든 불리한 비교](bench/noop-full/outcomes.json)를 보존했다.
+
+![새 트리 생성 비용을 포함한 비교](bench/noop-full/creation-and-cycle.png)
+
+cycle 자체의 p95가 증가한 사례도 모두 공개한다.
+
+| 조건 | 기준선 → 개선 p95 ms | 증가율 |
 |---|---|---|
-| keyed / light | [PNG](bench/m8-full/keyed-light.png) | [SVG](bench/m8-full/keyed-light.svg) |
-| keyed / stateful | [PNG](bench/m8-full/keyed-stateful.png) | [SVG](bench/m8-full/keyed-stateful.svg) |
-| runtime / light | [PNG](bench/m8-full/runtime-light.png) | [SVG](bench/m8-full/runtime-light.svg) |
-| runtime / stateful | [PNG](bench/m8-full/runtime-stateful.png) | [SVG](bench/m8-full/runtime-stateful.svg) |
+| S1 / 10,000 / stateful / controlled 값 변경 | 363.92 → 386.56 | 6.22% |
+| S2 / 10,000 / stateful / 마지막 행 → 처음 | 518.75 → 565.18 | 8.95% |
+| S2 / 10,000 / stateful / controlled 값 변경 | 476.70 → 503.39 | 5.60% |
+| S3 / 10 / stateful / 동등한 새 VDOM | 1.10 → 1.20 | 9.09% |
 
-## 측정 환경과 원본
+10개 새 트리의 0.10ms 차이는 해상도 수준이다. 10,000개 폼/재배치의 증가를 같은 이유로 무시하지 않는다. 원본의 느린 폼 표본은 주로 render에서, 재배치는 diff 또는 commit에서 지연됐다. 별도 GC/CPU trace 진단 결과는 다음 절에 기록했다. 최종 3세션의 불리한 원본은 대체·제거하지 않는다.
 
-- 실행: **2026-11-07 17:15:58–20:10:14 KST**, 준비·검증을 포함한 전체 경과 약 174.27분.
-- Windows 10 Pro 10.0.19045 x64, Intel Core i7-10875H, 논리 CPU 16개, OS 보고 RAM 15.79 GiB.
-- Node 24.22.1, Chromium 151.0.7922.34, headless, viewport 1280×900, Vite production preview.
-- 측정 commit `ebc8f461d2b2ca1c971502be687552185beda1b5`, 시작 working tree clean, branch `phase1`. 기능 소스는 `3190268`과 동일하며 raw 환경에 source SHA-256을 보존했다.
-- 전원 scheme은 환경 JSON에 GUID를 기록했다. 출력된 한국어 이름은 인코딩 손상으로 신뢰하지 않는다. 실행 중 전원 정책을 바꾸지 않았다.
+### 긴 지연 표본의 별도 진단
 
-[전체 환경](bench/m8-full/environment.json) · [세션 1 메타데이터](bench/m8-full/session-1.json) · [세션 2](bench/m8-full/session-2.json) · [세션 3](bench/m8-full/session-3.json). 각 세션은 104개 소유 Chromium 프로세스를 사용했고 모두 passed로 종료했다.
+정식 측정 종료 후, 같은 commit의 소스를 SHA로 대조해 복사하고 cycle/생성 User Timing mark만 넣은 별도 production build를 만들었다. 각 조건 5 warm-up + 30 측정, 원래 oracle/정리 절차를 유지했다. CDP trace와 뒤이은 unminified CPU sampling은 진단용이며 정식 3세션과 합치지 않는다. [trace 감사](bench/noop-tail-diagnostic/analysis.json), [CPU/GC 감사](bench/noop-cpu-diagnostic/analysis.json), [CPU self sample](bench/noop-cpu-diagnostic/cpu-analysis.json).
 
-원본 gzip JSONL: [세션 1](bench/m8-full/session-1.jsonl.gz) · [세션 2](bench/m8-full/session-2.jsonl.gz) · [세션 3](bench/m8-full/session-3.jsonl.gz). 실패한 이전 실행은 별도로 보존했으며 이 통계에 합치지 않았다.
+- 재배치 진단의 개선 엔진 index 22는 cycle **446.54ms** 중 renderer main thread의 GC 관련 구간 합집합이 **214.37ms**였다. 그 안의 MajorGC 194.11ms, weak 처리 117.02ms는 겹치는 하위 구간이므로 더하지 않는다. 생성 index 6도 **873.98ms** 중 GC 206.41ms가 관찰됐다. 큰 임시 트리와 약한 참조의 수거가 일부 긴 지연에 기여한다.
+- 폼 변경 진단의 개선 엔진 index 28은 **354.86ms** 중 GC가 **11.83ms**뿐이었다. 따라서 모든 긴 지연을 GC 탓으로 돌리지 않았다. 뒤이은 CPU 진단에서 index 13의 cycle **363.89ms** / render 253.10ms 중 **freezeTree self sample 약 195.50ms**, GC 관련 구간 12.17ms가 확인됐다. 같은 진단 index 17에는 GC 156.57ms도 관찰됐다. render 내부의 불변성 증명·등록과 GC를 구별할 근거다.
+- CPU 숫자는 1ms 요청 간격의 샘플에 구간을 대응시킨 근사값이다. freezeTree의 어느 V8 native 작업(예: WeakSet 테이블 관리)이 지연을 만들었는지까지 확정하지 않았다. 별도 진단의 p95는 본 측정보다 낮았고 긴 지연의 발생 표본도 달랐다. **추적하지 않은 본 측정의 개별 표본을 사후에 GC/특정 함수로 단정하지 않는다.** OS 부하나 JIT의 모든 영향도 분리하지 못했다.
 
-## 재현과 다시 읽기
+매 표본 fresh mount를 만드는 하네스는 많은 객체를 준비한다. 준비 자체는 cycle 밖이지만 이후 수거가 cycle 안에 발생할 수 있으며 강제 GC로 이를 제거하지 않았다. 이 생명주기 조건과 모든 느린 원본을 함께 보존한다. 재현은 `node scripts/diagnose-noop-tails.mjs unique-tail-tag`, CPU는 `node scripts/diagnose-noop-tails.mjs unique-cpu-tag --cpu --paths=form-update`, 분석은 각각 `analyze-noop-tails.mjs`와 `analyze-noop-cpu.mjs`에 결과 디렉터리를 넘긴다. mark의 누락/중복·trace/측정 시계·GC 겹침 계산·CPU 표본 시간 합계를 검사했다. API는 [Chrome DevTools Tracing](https://chromedevtools.github.io/devtools-protocol/tot/Tracing/)을 사용한다.
 
-```sh
-pnpm install --frozen-lockfile
-pnpm exec playwright install chromium
-pnpm build
-pnpm bench --tag=my-full-run
-node scripts/analyze-benchmark.mjs docs/bench/my-full-run
-python -m pip install -r scripts/plot-requirements.txt
-python scripts/plot-benchmark.py docs/bench/my-full-run
+## 병목과 구현 원리
+
+별도 계측 build로 validation/equality/diff/preflight/DOM binding/host·form·focus/evaluation의 inclusive/self 시간을 구분했다. 계측 표본은 진단용이며 위 속도 감소율에는 섞지 않았다. [전](bench/noop-profile-before/profile-summary.json) / [후](bench/noop-profile-after/profile-summary.json). 10,000 stateful에서 같은 참조여도 전에는 전체 트리 검증이 반복됐다. treeValidation self median은 같은 참조 130.3ms→해상도 미만, 새 동등 트리 120.8→해상도 미만(cycle 안), Memo 178.5→45.3, dirty 133.2→해상도 미만이었다. 함수 진입 횟수는 3/4회로 남으며 **전체 순회가 재사용되는 것**이다. 생성 시 처음 받는 트리는 여전히 검증한다. DOM binding 검사 약 66–77ms는 남았다. 이 입력의 host/form/focus 시간은 작았으며 일부는 측정 해상도 이하였다.
+
+1. **host 비교의 임시 객체 제거 (8b302de).** preflight에서 두 spread 객체와 노드별 함수를 만들던 작업을 own 필드 직접 비교로 바꿨다. 추가 own 필드, identity/children와 실제 DOM 검사는 유지한다. 독립 [paired smoke](bench/noop-host-compare/all-results.md)의 큰 조건 median은 7–16% 감소했지만 n=3 예비 결과로만 남긴다.
+2. **증명된 불변 전체 root만 검증 재사용 (c4a2fe1).** 엔진 소유 normalized VDOM의 plain object/array를 재귀 동결하고 data descriptor의 자식까지 안정성을 증명한 뒤 WeakSet에 등록한다. 검증 성공한 전체 VRoot만 캐시한다. shallow freeze, accessor, custom prototype, mutable 외부 객체는 증명 없이 재사용하지 않는다. 새 root는 radio/select/form과 sibling key 문맥을 다시 검사한다. 함수는 opaque identity로 취급하고 동결하지 않는다. 객체가 수거되면 WeakSet 항목도 남지 않는다.
+
+두 번째 변경은 실제로 재사용되는 큰 목록 경로의 반복 검증을 줄이는 대신 최초 생성 비용을 늘린다. 이 적용 범위를 근거로 채택했으며 모든 렌더의 총시간을 줄이는 최적화라고 주장하지 않는다. 불변성 확인 없는 Object.isFrozen 캐시, subtree 검증 결과의 부모 간 재사용, DOM 쓰기 0을 이유로 preflight/폼/Effect를 생략하는 방법은 제외했다. 깊은 소유권 증명과 대용량 수거 비용은 후속 개선 과제로 남는다.
+
+DOM 검사 자체는 계속 O(n)이다. 내용이 같은 외부 Node 교체도 mount binding 검사가 거절한다. revision/mount/anchor/parent/plan 시뮬레이션과 History 재캡처를 유지하고, 성공한 commit 뒤에만 후보 State/Memo/Effect를 확정한다. 렌더 no-op의 Effect와 render 없는 dirty 복원도 구별한다. [캐시 유효 조건](architecture.md), [T-N01–T-N07 반례](requirements-tests.md).
+
+## 작업량과 정확성
+
+두 엔진·세 세션의 counts가 모두 같다. 10,000 stateful 기준 같은 참조/dirty는 Diff visited 1, Memo/폼은 5, 새 트리/재배치는 80,001이다. 같거나 유지한 subtree는 재사용하고 모든 경로가 commit 1회다. 새/제거/insert Node와 listener 교체는 0, 재배치만 move 1회, dirty는 property 1회, Memo는 text 1회, 폼 변경은 property 1+text 1이다. runtime Memo/폼은 root 실행 1·child 0·Effect cleanup/setup 각 1, 같은 State dirty는 render/Effect 0이다. [counts 원본](bench/noop-full/counts.json). 내부 검증 순회/할당 감소는 이 DOM 카운터의 감소와 구별한다.
+
+정확성은 **184/184 단위·통합, typecheck/build PASS**, 기본 브라우저 **31/31 × 새 서버/브라우저 3회 연속**(67.84/67.57/68.41초), skip/flaky/unexpected/retry 0으로 확인했다. worker 2/30초 제한/retry 0을 유지했다. 이전 26/29 실패와 29/29 통과는 [원인·수정·반복 검증](browser-noop-followup.md)에 구분 보존했다. 실제 Windows IME는 이전 사용자 확인 PASS이며 이번 자동 IME 회귀와 구별한다. 브라우저명·버전은 미제공이다. [검증·소스 hash](validation/noop-followup.json).
+
+## 원본과 재현
+
+- [S1 raw gzip](bench/noop-full/session-1.jsonl.gz), [S2](bench/noop-full/session-2.jsonl.gz), [S3](bench/noop-full/session-3.jsonl.gz): counts/warm-up/모든 측정·oracle 포함. 세션별 JSON은 process/version/시작·종료/상태를 기록한다.
+- [고정 build archive](bench/noop-full/builds.json.gz): 두 엔진의 HTML/JS와 manifest. restore는 SHA를 검사하며 다른 파일을 덮어쓰지 않는다. 현재 코드를 과거 기준선인 것처럼 다시 빌드하지 않는다.
+- [감사](bench/noop-full/analysis.json), [전체 수치](bench/noop-full/all-results.md), [불리한 조건](bench/noop-full/outcomes.json), [그림 검증](bench/noop-full/plot-validation.json).
+
+저장소 루트에서 의존성 설치 후, 다른 테스트/빌드와 동시에 실행하지 않는다. 새 tag를 사용해야 하며 기존 tag는 보존을 위해 거절한다.
+
+```powershell
+node scripts/restore-noop-builds.mjs docs/bench/noop-full/builds.json.gz --verify-only
+node scripts/restore-noop-builds.mjs docs/bench/noop-full/builds.json.gz
+node scripts/benchmark-noop.mjs --builds=baseline-v1,candidate-v1 --tag=my-noop-replay
+node scripts/analyze-noop.mjs docs/bench/my-noop-replay
+# matplotlib이 설치된 Python 사용
+python scripts/plot-noop.py docs/bench/my-noop-replay
+# 짧은 확인만 필요할 때; 정식 3세션 검증을 대신하지 않음
+node scripts/benchmark-noop.mjs --builds=baseline-v1,candidate-v1 --tag=my-noop-smoke --smoke
 ```
 
-Windows에서 pnpm이 PATH에 없다면 [README](../README.md)의 `scripts/pnpm.ps1`을 사용한다. 그래프 의존성은 Python 가상환경에 설치한다. 이번 그래프는 Python 3.12.14 / Matplotlib 3.11.2로 만들었고 앱 의존성과 분리했다. 보관된 결과의 분석·그래프만 다시 만들 때는 벤치마크를 다시 실행할 필요 없이 보관 폴더에 분석·그래프 명령만 적용한다. 기존 결과 폴더를 덮어쓰지 않도록 새 tag를 사용한다.
-
-다른 시점·기기에서 같은 숫자까지 재현됨을 보장하지 않는다. 우선 원본의 조건/표본 수/정답을 확인하고, 같은 환경·입력의 세션별 분포를 비교한다.
-
-## 무엇을 비교했는가
-
-| 축 | 기준 → 비교 옵션 | 고정한 조건 | 수행한 작업 |
-|---|---|---|---|
-| keyed | Greedy → LIS | 공통 key/type 매칭과 Patch executor | 11개 목록 변경 시나리오 |
-| Batching | sync → microtask | LIS, expression 재사용 on | 순수한 `+1` 요청 3개, 최종값 `3` |
-| expression 재사용 | off → on | LIS, microtask | 같은 Memo expression을 유지한 채 무관한 루트 상태 1회 갱신 |
-
-두 runtime 축의 입력에는 State를 다시 바꾸는 Effect를 섞지 않았다. Effect는 상태 변경에 따른 cleanup/setup만 실행한다. Batching의 중간 render·commit·Effect 횟수 차이는 의도한 동작이다. 자동 shallow memo, Adaptive 임계값, 가상 스크롤, React와의 속도 비교는 실험하지 않았다.
-
-크기는 **10 / 100 / 1,000 / 10,000개**, payload는 다음 두 가지다. fixture 생성, DOM 준비와 정답 검사는 시간 구간 밖에서 수행한다.
-
-- `light`: 항목마다 `li > span > text`.
-- `stateful`: 위 구조에 `div`와 uncontrolled 텍스트 input·checkbox·`strong > text`를 추가한다. 갱신 전 input을 `typed:row-ID`, checkbox를 checked로 바꾸어 사용자 입력 상태를 만든다. 신규 항목의 기본값과 유지한 항목의 live 값을 구별해 검사한다.
-
-keyed 입력은 no-op, 단일 내용 변경, 맨 앞 삽입, 중간 삭제, 마지막→처음, 처음→마지막, 역순, 인접 교환, 양 끝 교환, seeded shuffle, mixed다. mixed는 기존 항목의 10%를 삭제하고 같은 수의 새 항목을 넣은 뒤 섞는다. seed는 **539365639**다. [실제 fixture](../src/bench/fixtures.ts)와 [계측·정답 검사](../src/bench/harness.ts)를 재현의 기준으로 삼는다.
-
-## 반복·격리·정답 검사
-
-일반 크기는 조건/옵션/세션마다 **warm-up 20 + 측정 100**, 10,000개 stress는 **warm-up 5 + 측정 30**이다. 각 옵션에는 별도의 counts 실행 1회가 있다. 전체 조건을 순차 3세션 반복하고 세션별 통계를 보존한다.
-
-각 `(크기, payload, 축, 시나리오)`마다 새 Chromium 프로세스를 사용한다. 두 옵션의 실행 순서는 고정 seed로 paired 무작위화한다. 매 옵션·표본마다 이전 mount를 해제하고 같은 old DOM을 새로 만든다. 프로세스 준비와 Playwright 왕복은 엔진 시간에 포함하지 않는다. Inspector는 측정 페이지에 없고, 상세 Trace는 counts 실행에만 켠다. 기본 host counter 증가는 두 옵션에 공통이다.
-
-매 실행 뒤 전체 항목 수·순서·속성·텍스트, 기존 Node 객체 identity, 새 노드의 구별, 삭제된 노드의 부재, 입력 value·checked를 검사한다. runtime 축은 최종 숫자도 검사한다. raw의 checksum은 이 검사 결과를 요약하며 전체 정답 검사의 대체물이 아니다.
-
-assertion 또는 호출 제한 초과는 전체 실행을 중단하고 실패 입력과 부분 원본을 남긴다. 느린 표본 자동 재시도·이상치 제거·결과에 따른 시나리오 제외는 하지 않는다. 각 표본의 visibility/focus flag도 보존한다. headless 페이지의 flag는 실제 사용자 화면의 foreground 상태나 OS 유휴 상태를 보증하지 않는다.
-
-## 시간은 어디까지인가
-
-| 지표 | 포함 범위 | 읽을 때 주의할 점 |
-|---|---|---|
-| captureMs | keyed 축의 seeded old DOM 캡처 | 별도 구간이며 flush에 더해진 값이 아님 |
-| renderMs | runtime 루트와 자식 표현 평가 | keyed 축의 대상 표현 준비는 측정 밖 |
-| diffMs | VDOM 비교·검증·Patch 계획 | DOM 쓰기 전까지 |
-| commitMs | 계획 preflight와 host 쓰기 | 이후 layout/paint 완료 시간 아님 |
-| flushMs | runtime FIFO 처리부터 commit 종료 | Effect 제외; sync 축은 여러 flush의 합 |
-| effectMs | cleanup/setup loop | 앱의 임의 외부 비동기 작업 시간 아님 |
-| scheduledCycleMs | keyed: diff+commit; runtime: enqueue부터 다음 microtask까지 | 두 축의 범위가 다르며 paint·전체 입력 지연이 아님 |
-
-해당 축에서 수행하지 않는 구간은 0으로 저장한다. 서로 겹치는 구간을 모두 더해 총시간을 만들지 않는다. 긴 전체 실행 시간에는 수만 번의 fresh DOM 준비·정답 검사·프로세스 기동이 포함되므로, 이를 사용자 동작 한 번의 지연으로 해석하지 않는다.
-
-실제 앱 작업의 layout/paint 등은 [별도 Performance trace](performance/chromium-workflow.json)에서 확인한다. 이 trace는 Greedy/LIS 속도 비교 자료가 아니며, 중첩된 trace category 시간도 단순 합산하지 않는다.
-
-## 원본·통계·그래프 인수
-
-완료된 gzip JSONL의 조건·옵션·seed·표본 수·index 중복·동일 초기 상태를 검사했고, counts와 median/Q1/Q3/IQR/p95/min/max를 원본에서 재계산해 일치를 확인했다. [분석 코드](../scripts/analyze-benchmark.mjs)와 [그래프 코드](../scripts/plot-benchmark.py)를 사용한다.
-
-그래프는 세션별 median, Q1–Q3, p95를 보여 준다. 정해 둔 대표 조건을 그리되 전체 크기·시나리오의 결과는 별도 표와 CSV에 모두 남긴다. 작은 값의 동률·측정 해상도·세션 간 변동을 함께 읽고, median 방향만으로 통계적 유의성이나 모든 환경의 우위를 주장하지 않는다.
-
-## 중단 기록과 범위
-
-최초 `m7-full`은 Windows Chromium의 할당 실패로 중단했다. [실패 원본·제한된 자원 진단·실행기 보완](benchmark-runner-recovery.md)을 보존했다. 현재 `m8-full`은 변경한 프로세스 수명 정책으로 전체 조건을 다시 실행한 자료이며, 이전 부분 표본을 합쳐 완성하지 않는다. 정확한 메모리 압력 원인을 확정한 것은 아니다.
-
-측정 중 엔진과 production build는 고정했다. 문서 작성과 가벼운 파일 확인은 공존했고 OS의 다른 작업·전원·열 상태를 완전히 통제하지 않았다. 이 결과의 해석 범위는 기록된 Windows/Chromium 환경, fixture와 옵션에 한정한다. 이동 횟수 감소를 같은 비율의 브라우저 전체 속도 향상으로 바꾸어 표현하지 않는다.
+새 엔진은 `node scripts/build-noop.mjs unique-tag`, 별도 profile은 `node scripts/build-noop.mjs unique-profile-tag --profile`로 만들 수 있다. 이때 전후 하네스 hash가 같아야 직접 비교한다. 결과는 이 Windows/Chromium·fixture·반복 정책의 CPU/동기 JS 구간이며 React 대비 우위, paint 완료, 모든 환경/브라우저의 성능 향상을 뜻하지 않는다.

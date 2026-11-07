@@ -1,5 +1,15 @@
 # M8 최종 인수 기록
 
+## 후속 재검토 상태
+
+최초 M8 인수 이후의 재검토에서 기본 브라우저 실행은 26/29(timeout 3건)이었다. 그 기록과 당시 29/29를 모두 보존한다. 현재 기능 `c4a2fe1`은 **184/184 단위·통합, Chromium 20+Firefox 11의 전체 3회 연속, typecheck/build PASS**다. timeout 증가/skip/retry 없이 서버 모듈 준비와 CRUD 시나리오 분리를 적용했다. [후속 검증·65개 소스 hash](validation/noop-followup.json), [원인·수정·캐시 불변식](browser-noop-followup.md).
+
+no-op 후속 검증도 **동일 하네스 3세션 / 측정 23,760개 / raw 28,728개 / 통계 2,016개 감사 PASS**다. 결과 커밋은 dbdc4de다. 10,000 stateful 네 no-op 경로의 cycle median은 29–62% 줄었지만, 새 트리 생성+cycle은 약 5% 느려졌고 재배치는 3–17% 느려진 세션이 있다. 폼/재배치 일부 p95 증가도 별도 GC/CPU 진단과 함께 공개했다. [현행 성능 결과·재현](benchmark-results.md), [전체 조건](bench/noop-full/all-results.md), [불리한 결과](bench/noop-full/outcomes.json).
+
+후속 목표의 기술 검증 조건을 충족했다. 검사 생략·timeout 증가·skip/retry로 통과시키지 않았다. 최초 생성/불변성 등록·GC 비용과 O(n) DOM 검사가 남으며 모든 갱신의 총시간 개선을 뜻하지 않는다. 아래 표는 최초 9f3f3d3 인수의 역사적 기록이다. 실제 Windows IME는 이전 사용자 확인이며 이번 합성 회귀와 구별한다.
+
+## 최초 인수 스냅샷
+
 **요청된 B안의 기술 구현·로컬 검증·문서화 인수 조건을 충족했다.** M0 팀 확인, 다른 후보 비교, 팀원 설명/연습/실제 발표와 원격 CI는 별도 미확인 상태다. 기능 존재·검증 통과·실행 가능한 로컬 데모·원리 설명과 전체 benchmark 근거를 대조했다.
 
 ## 최종 기술 증거
@@ -13,13 +23,13 @@
 | 실제 Windows 한글 IME | 사용자 직접 확인 PASS, 브라우저명·버전 미제공 | 요청된 task-8 지연 이동/조합 종료/문자·focus 보존 흐름에 “직접 확인 완료 — 문제 없음” 응답 |
 | 검증 상태와 현재 코드 일치 | 소스·테스트 hash 59개 일치, 기능 commit 이후 docs/scripts/CI만 변경 | [최종 감사](validation/m8.json) |
 | 요구사항 추적 | 기능 15개·테스트 ID 69개 연결 | [대응표](requirements-tests.md) |
-| 전체 benchmark | 3세션, counts 624 / warm-up 10,140 / timing 51,480 | [최종 결과](benchmark-results.md) |
+| 전체 benchmark | 3세션, counts 624 / warm-up 10,140 / timing 51,480 | [당시 최종 결과](benchmark-results-m8.md) |
 | 원자료·통계 | 624 옵션별 조건·4,368 구간 재계산 일치, hidden/unfocused 0, 세션 간 counts 일치 | [감사](bench/m8-full/analysis.json) |
 | 그래프 | 4개 비교 그림, PNG/SVG 각각 생성·검토 | [그림 검증](bench/m8-full/plot-validation.json) |
 | 로컬 데모 | HTTP 200, Mini React 페이지 | [README](../README.md), [시연 절차](demo-and-explanation.md) |
 | CI 구성 | YAML·명령·4개 Action SHA 검사 PASS | [workflow](../.github/workflows/ci.yml); 원격 실행 미수행 |
 
-기능 테스트를 문서 수정마다 반복한 것으로 기록하지 않는다. 보관한 최종 테스트 결과와 현재 소스의 일치를 확인했고, benchmark는 같은 기능 소스의 production build로 실제 전체 실행했다. [M8 사전 감사](validation/m8-preflight.json)는 당시 진행 중 상태를 보존한 역사적 기록이다.
+기능 테스트를 문서 수정마다 반복한 것으로 기록하지 않는다. 보관한 당시 최종 테스트 결과와 9f3f3d3의 소스 일치를 확인했고, benchmark는 그 기능 소스의 production build로 실제 전체 실행했다. [M8 사전 감사](validation/m8-preflight.json)는 당시 진행 중 상태를 보존한 역사적 기록이다.
 
 ## 실험 인수와 한계
 
