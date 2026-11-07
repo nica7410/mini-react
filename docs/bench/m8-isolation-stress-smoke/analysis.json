@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "codeCommit": "07b6f27006c1edee2009145bda9eae76d5902bce",
+  "sourceHashesMatchCurrent": true,
+  "changedSources": [],
+  "rawHashes": {
+    "session-1.jsonl.gz": "4420ad2fc344a916fae2c8364ea98a37ae0b251038775ff9b58a4f47f03453cb"
+  },
+  "runTotals": {
+    "counts": 2,
+    "warmup": 2,
+    "sample": 6
+  },
+  "conditions": 2,
+  "summaryMetrics": 14,
+  "hidden": 0,
+  "unfocused": 0,
+  "rawAndSummaryAgree": true,
+  "comparisonMetric": "scheduledCycleMs: keyed diff+commit; runtime enqueue through next microtask; excludes later paint",
+  "comparisons": [
+    {
+      "axis": "keyed",
+      "size": 10000,
+      "payload": "stateful",
+      "scenario": "mixed",
+      "baseline": "greedy",
+      "candidate": "lis",
+      "direction": "lower-all-sessions",
+      "sessions": [
+        {
+          "session": 1,
+          "baseline": {
+            "key": "1,keyed,10000,stateful,mixed,greedy,scheduledCycleMs",
+            "n": 3,
+            "median": 672.0999999046326,
+            "q1": 645.25,
+            "q3": 790.1500000953674,
+            "iqr": 144.90000009536743,
+            "p95": 884.5900002479552,
+            "min": 618.4000000953674,
+            "max": 908.2000002861023,
+            "hidden": 0,
+            "unfocused": 0
+          },
+          "candidate": {
+            "key": "1,keyed,10000,stateful,mixed,lis,scheduledCycleMs",
+            "n": 3,
+            "median": 637.8000001907349,
+            "q1": 623.2000000476837,
+            "q3": 738.2500002384186,
+            "iqr": 115.05000019073486,
+            "p95": 818.6100002765655,
+            "min": 608.5999999046326,
+            "max": 838.7000002861023,
+            "hidden": 0,
+            "unfocused": 0
+          },
+          "medianDifferenceMs": -34.299999713897705,
+          "ratio": 0.9489659281077746,
+          "baselineCounts": {
+            "createdNodes": 8000,
+            "removedNodes": 8000,
+            "insertedRoots": 1000,
+            "movedRoots": 8994,
+            "textWrites": 0,
+            "attributeWrites": 5000,
+            "styleWrites": 0,
+            "propertyWrites": 1000,
+            "listenerAdds": 0,
+            "listenerRemoves": 0,
+            "skippedHostCalls": 2000,
+            "plannedMoves": 8994,
+            "visitedNodes": 73001,
+            "commits": 1,
+            "rootExecutions": 0,
+            "childExecutions": 0,
+            "reusedExpressions": 0,
+            "memoCalculations": 0,
+            "memoReuses": 0,
+            "effectSetups": 0,
+            "effectCleanups": 0
+          },
+          "candidateCounts": {
+            "createdNodes": 8000,
+            "removedNodes": 8000,
+            "insertedRoots": 1000,
+            "movedRoots": 8829,
+            "textWrites": 0,
+            "attributeWrites": 5000,
+            "styleWrites": 0,
+            "propertyWrites": 1000,
+            "listenerAdds": 0,
+            "listenerRemoves": 0,
+            "skippedHostCalls": 2000,
+            "plannedMoves": 8829,
+            "visitedNodes": 73001,
+            "commits": 1,
+            "rootExecutions": 0,
+            "childExecutions": 0,
+            "reusedExpressions": 0,
+            "memoCalculations": 0,
+            "memoReuses": 0,
+            "effectSetups": 0,
+            "effectCleanups": 0
+          }
+        }
+      ]
+    }
+  ]
+}

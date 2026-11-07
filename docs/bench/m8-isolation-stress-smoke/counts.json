@@ -1,0 +1,96 @@
+[
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 0,
+    "input": {
+      "axis": "keyed",
+      "size": 10000,
+      "payload": "stateful",
+      "scenario": "mixed",
+      "seed": 539365639,
+      "variant": "lis",
+      "mode": "counts"
+    },
+    "timings": null,
+    "counts": {
+      "createdNodes": 8000,
+      "removedNodes": 8000,
+      "insertedRoots": 1000,
+      "movedRoots": 8829,
+      "textWrites": 0,
+      "attributeWrites": 5000,
+      "styleWrites": 0,
+      "propertyWrites": 1000,
+      "listenerAdds": 0,
+      "listenerRemoves": 0,
+      "skippedHostCalls": 2000,
+      "plannedMoves": 8829,
+      "visitedNodes": 73001,
+      "commits": 1,
+      "rootExecutions": 0,
+      "childExecutions": 0,
+      "reusedExpressions": 0,
+      "memoCalculations": 0,
+      "memoReuses": 0,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "validation": {
+      "initialOrder": "4bc443f1",
+      "finalOrder": "4e15145e",
+      "reusedRoots": 9000,
+      "checkedRows": 10000
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  {
+    "session": 1,
+    "sampleKind": "counts",
+    "index": -2,
+    "orderPosition": 1,
+    "input": {
+      "axis": "keyed",
+      "size": 10000,
+      "payload": "stateful",
+      "scenario": "mixed",
+      "seed": 539365639,
+      "variant": "greedy",
+      "mode": "counts"
+    },
+    "timings": null,
+    "counts": {
+      "createdNodes": 8000,
+      "removedNodes": 8000,
+      "insertedRoots": 1000,
+      "movedRoots": 8994,
+      "textWrites": 0,
+      "attributeWrites": 5000,
+      "styleWrites": 0,
+      "propertyWrites": 1000,
+      "listenerAdds": 0,
+      "listenerRemoves": 0,
+      "skippedHostCalls": 2000,
+      "plannedMoves": 8994,
+      "visitedNodes": 73001,
+      "commits": 1,
+      "rootExecutions": 0,
+      "childExecutions": 0,
+      "reusedExpressions": 0,
+      "memoCalculations": 0,
+      "memoReuses": 0,
+      "effectSetups": 0,
+      "effectCleanups": 0
+    },
+    "validation": {
+      "initialOrder": "4bc443f1",
+      "finalOrder": "4e15145e",
+      "reusedRoots": 9000,
+      "checkedRows": 10000
+    },
+    "visibility": "visible",
+    "focused": true
+  }
+]

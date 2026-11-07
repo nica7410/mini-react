@@ -11,30 +11,43 @@ import { distribution } from '../src/bench/statistics.ts';
 const args = new Map(process.argv.slice(2).map(arg => { const [key, value = 'true'] = arg.replace(/^--/, '').split('='); return [key, value]; }));
 const smoke = args.has('smoke'), seed = Number(args.get('seed') ?? 539365639);
 const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000,10000')).split(',').map(Number);
+const allScenarios = ['noop', 'one-change', 'prepend', 'delete-middle', 'last-to-front', 'first-to-back', 'reverse', 'adjacent', 'swap-ends', 'shuffle', 'mixed'];
+const scenarios = (args.get('scenarios') ?? allScenarios.join(',')).split(',');
+const payloads = (args.get('payloads') ?? 'light,stateful').split(',');
+const axes = (args.get('axes') ?? 'keyed,batching,reuse').split(',');
+const sampleDeadlineMs = Number(args.get('timeout-ms') ?? 120000);
 const sessions = Number(args.get('sessions') ?? (smoke ? 1 : 3));
 const tag = args.get('tag') ?? `${smoke ? 'smoke' : 'full'}-${new Date().toISOString().replace(/[:.]/g, '-')}`;
 if (!/^[a-zA-Z0-9_-]+$/.test(tag) || !Number.isInteger(sessions) || sessions < 1 || !Number.isInteger(seed) || sizes.some(n => !Number.isInteger(n) || n < 2 || n > 10000)) throw new Error('Invalid benchmark arguments');
+if (!Number.isInteger(sampleDeadlineMs) || sampleDeadlineMs < 1 || scenarios.some(s => !allScenarios.includes(s)) || payloads.some(s => !['light', 'stateful'].includes(s)) || axes.some(s => !['keyed', 'batching', 'reuse'].includes(s)) || [sizes, scenarios, payloads, axes].some(list => new Set(list).size !== list.length)) throw new Error('Invalid benchmark selection/deadline');
 const outputDir = path.resolve('docs/bench', tag), temporary = path.resolve('.validation/benchmark', tag);
 if (existsSync(outputDir)) throw new Error(`Refusing to overwrite existing benchmark ${outputDir}`);
 mkdirSync(outputDir, { recursive: true }); mkdirSync(temporary, { recursive: true });
 const command = (name, parameters) => { try { return execFileSync(name, parameters, { encoding: 'utf8', windowsHide: true }).trim(); } catch (error) { return `unavailable: ${error.message}`; } };
 const sources = Object.fromEntries(readdirSync('src', { recursive: true }).filter(name => name.endsWith('.ts')).sort().map(name => [name.replaceAll('\\', '/'), createHash('sha256').update(readFileSync(path.join('src', name))).digest('hex')]));
-const environment = { startedAt: new Date().toISOString(), smoke, seed, sessions, sizes, buildMode: 'production vite preview',
+const environment = { startedAt: new Date().toISOString(), smoke, seed, sessions, sizes, scenarios, payloads, axes, sampleDeadlineMs, buildMode: 'production vite preview',
   codeCommit: command('git', ['rev-parse', 'HEAD']), branch: command('git', ['branch', '--show-current']), workingTreeStatus: command('git', ['status', '--short']),
   sourceSha256: sources, node: process.version, os: { platform: os.platform(), release: os.release(), version: os.version(), arch: os.arch() },
   cpu: os.cpus()[0]?.model, logicalCPUs: os.cpus().length, ramBytes: os.totalmem(),
   powerScheme: process.platform === 'win32' ? command('powercfg', ['/getactivescheme']) : 'not queried',
   headless: true, viewport: { width: 1280, height: 900 }, timingDetailTrace: false, timingInspector: false,
+  browserLifecycle: 'fresh Chromium process for every condition within each of three default independent sessions; variants share only that condition process',
+  transport: 'Playwright WebSocket on 127.0.0.1; protocol/reset outside measured intervals',
+  failurePolicy: 'deadline or assertion aborts the entire run; no automatic sample retries or outlier removal; partial raw and failure retained',
   resetPolicy: 'dispose and recreate old DOM before every variant/sample; fixtures/reset/oracle outside measured intervals',
   intervals: { captureMs: 'standalone capture of seeded old DOM, keyed axis only; excluded from flush', renderMs: 'root + child resolve, runtime axes only', diffMs: 'prepared VDOM to plan including validation', commitMs: 'plan preflight + host writes; no later browser paint', flushMs: 'FIFO processing through commit completion; effects excluded', effectMs: 'cleanup/setup loop', scheduledCycleMs: 'enqueue through next microtask for runtime axes; diff+commit for keyed; no paint claim' },
   repetitions: { normal: { warmup: smoke ? 1 : 20, samples: smoke ? 3 : 100 }, stress: { warmup: smoke ? 1 : 5, samples: smoke ? 3 : 30 } },
-  scope: 'keyed: all 11 presets; batching: three pure +1 actions; reuse: one unrelated root update with stable memo expression; both payloads at each size',
+  scope: 'default keyed: all 11 presets; batching: three pure +1 actions; reuse: one unrelated root update with stable memo expression; selected axes/payloads/scenarios are explicit above',
   flags: 'visibility and focus recorded per run; OS load/power changes cannot be completely controlled; background samples are retained and flagged',
 };
 writeFileSync(path.join(outputDir, 'environment.json'), JSON.stringify(environment, null, 2));
 function random(value) { let state = value >>> 0 || 1; return () => { state ^= state << 13; state ^= state >>> 17; state ^= state << 5; return (state >>> 0) / 0x100000000; }; }
-const scenarios = ['noop', 'one-change', 'prepend', 'delete-middle', 'last-to-front', 'first-to-back', 'reverse', 'adjacent', 'swap-ends', 'shuffle', 'mixed'];
 const groups = new Map(), countRows = [];
+async function boundedOperation(promise, label = 'sample', deadlineMs = sampleDeadlineMs) {
+  let timer;
+  try { return await Promise.race([promise, new Promise((_, reject) => { timer = setTimeout(() => reject(new Error(`${label} did not return within ${deadlineMs}ms; aborting the run without retry`)), deadlineMs); })]); }
+  finally { clearTimeout(timer); }
+}
 function collect(row) {
   if (row.sampleKind === 'counts') { countRows.push(row); return; }
   if (row.sampleKind !== 'sample') return;
@@ -47,37 +60,56 @@ function collect(row) {
 const server = await preview({ preview: { host: '127.0.0.1', port: 4175, strictPort: true } });
 try {
   for (let session = 1; session <= sessions; session++) {
-    const browser = await chromium.launch({ headless: true });
-    const context = await browser.newContext({ viewport: environment.viewport });
-    const page = await context.newPage(); await page.goto('http://127.0.0.1:4175/benchmark.html'); await page.bringToFront();
-    await page.waitForFunction(() => !!window.miniReactBenchmark);
-    const sessionEnvironment = { session, browser: await browser.version(), startedAt: new Date().toISOString(), userAgent: await page.evaluate(() => navigator.userAgent) };
+    const sessionEnvironment = { session, startedAt: new Date().toISOString(), processes: [] };
     const rawPath = path.join(temporary, `session-${session}.jsonl`), next = random(seed ^ session);
     writeFileSync(rawPath, '');
-    console.log(`session ${session}/${sessions} Chromium ${sessionEnvironment.browser}`);
+    console.log(`session ${session}/${sessions}: fresh Chromium per condition`);
     try {
-      for (const size of sizes) for (const payload of ['light', 'stateful']) for (const axis of ['keyed', 'batching', 'reuse']) {
+      for (const size of sizes) for (const payload of payloads) for (const axis of axes) {
         for (const scenario of axis === 'keyed' ? scenarios : ['noop']) {
-          const variants = axis === 'keyed' ? ['greedy', 'lis'] : axis === 'batching' ? ['sync', 'microtask'] : ['off', 'on'];
-          const policy = size === 10000 ? environment.repetitions.stress : environment.repetitions.normal;
-          const start = Date.now();
-          for (let index = -policy.warmup - 1; index < policy.samples; index++) {
-            const sampleKind = index === -policy.warmup - 1 ? 'counts' : index < 0 ? 'warmup' : 'sample';
-            const order = next() < .5 ? [...variants] : [...variants].reverse();
-            for (const [orderPosition, variant] of order.entries()) {
-              const input = { axis, size, payload, scenario, seed, variant, mode: sampleKind === 'counts' ? 'counts' : 'timing' };
-              let result;
-              try { result = await page.evaluate(input => window.miniReactBenchmark.run(input), input); }
-              catch (error) { writeFileSync(path.join(outputDir, `failure-session-${session}.json`), JSON.stringify({ input, session, index, error: String(error), environment: sessionEnvironment }, null, 2)); throw error; }
-              const row = { session, sampleKind, index, orderPosition, ...result }; appendFileSync(rawPath, `${JSON.stringify(row)}\n`); collect(row);
+          const processEnvironment = { size, payload, axis, scenario, startedAt: new Date().toISOString() };
+          sessionEnvironment.processes.push(processEnvironment);
+          const browserServer = await chromium.launchServer({ headless: true, host: '127.0.0.1', timeout: 30000 });
+          processEnvironment.pid = browserServer.process().pid;
+          try {
+            const browser = await chromium.connect(browserServer.wsEndpoint(), { timeout: 30000 });
+            processEnvironment.browser = browser.version();
+            const page = await boundedOperation((async () => {
+              const context = await browser.newContext({ viewport: environment.viewport });
+              const page = await context.newPage(); page.setDefaultTimeout(30000); page.setDefaultNavigationTimeout(30000);
+              await page.goto('http://127.0.0.1:4175/benchmark.html'); await page.bringToFront();
+              await page.waitForFunction(() => !!window.miniReactBenchmark);
+              processEnvironment.userAgent = await page.evaluate(() => navigator.userAgent);
+              return page;
+            })(), 'page preparation', 30000);
+            const variants = axis === 'keyed' ? ['greedy', 'lis'] : axis === 'batching' ? ['sync', 'microtask'] : ['off', 'on'];
+            const policy = size === 10000 ? environment.repetitions.stress : environment.repetitions.normal;
+            const start = Date.now();
+            for (let index = -policy.warmup - 1; index < policy.samples; index++) {
+              const sampleKind = index === -policy.warmup - 1 ? 'counts' : index < 0 ? 'warmup' : 'sample';
+              const order = next() < .5 ? [...variants] : [...variants].reverse();
+              for (const [orderPosition, variant] of order.entries()) {
+                const input = { axis, size, payload, scenario, seed, variant, mode: sampleKind === 'counts' ? 'counts' : 'timing' };
+                let result;
+                try { result = await boundedOperation(page.evaluate(input => window.miniReactBenchmark.run(input), input)); }
+                catch (error) { writeFileSync(path.join(outputDir, `failure-session-${session}.json`), JSON.stringify({ input, session, index, error: String(error), environment: processEnvironment }, null, 2)); throw error; }
+                const row = { session, sampleKind, index, orderPosition, ...result }; appendFileSync(rawPath, `${JSON.stringify(row)}\n`); collect(row);
+              }
             }
+            console.log(`session ${session} ${axis}/${payload}/${size}/${scenario} verified ${(Date.now() - start) / 1000}s`);
+            processEnvironment.status = 'passed';
+          } finally {
+            processEnvironment.endedAt = new Date().toISOString();
+            // Own process only; bounded sample failure cannot hang graceful page teardown.
+            await browserServer.kill();
           }
-          console.log(`session ${session} ${axis}/${payload}/${size}/${scenario} verified ${(Date.now() - start) / 1000}s`);
         }
       }
-    } finally { sessionEnvironment.endedAt = new Date().toISOString(); await browser.close(); }
-    writeFileSync(path.join(outputDir, `session-${session}.jsonl.gz`), gzipSync(readFileSync(rawPath)));
-    writeFileSync(path.join(outputDir, `session-${session}.json`), JSON.stringify(sessionEnvironment, null, 2));
+    } finally {
+      sessionEnvironment.endedAt = new Date().toISOString();
+      writeFileSync(path.join(outputDir, `session-${session}.jsonl.gz`), gzipSync(readFileSync(rawPath)));
+      writeFileSync(path.join(outputDir, `session-${session}.json`), JSON.stringify(sessionEnvironment, null, 2));
+    }
   }
   const summary = [...groups].map(([key, group]) => ({ key, ...distribution(group.values), hidden: group.hidden, unfocused: group.unfocused }));
   writeFileSync(path.join(outputDir, 'summary.json'), JSON.stringify(summary, null, 2));
@@ -88,4 +120,8 @@ try {
   environment.measuredValues = summary.reduce((sum, group) => sum + group.n, 0);
   writeFileSync(path.join(outputDir, 'environment.json'), JSON.stringify(environment, null, 2));
   console.log(`BENCHMARK_COMPLETE ${outputDir}`);
+} catch (error) {
+  environment.endedAt = new Date().toISOString(); environment.status = 'failed'; environment.error = String(error);
+  writeFileSync(path.join(outputDir, 'environment.json'), JSON.stringify(environment, null, 2));
+  throw error;
 } finally { await new Promise(resolve => server.httpServer.close(resolve)); }

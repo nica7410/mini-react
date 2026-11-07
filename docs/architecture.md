@@ -5,10 +5,9 @@
 ## 두 Phase, 하나의 쓰기 경로
 
 ```text
-Phase 1: 실제/편집 DOM → capture → 불변 VRoot ─┐
-                                             ├→ diff(MountView, target) → PatchPlan → commit
-Phase 2: FIFO 후보 State → 루트 함수 → h 표현식 ┘                                      ↓
-                                    → resolve → VRoot                       mount별 실제 Node
+Phase 1: 실제/편집 DOM → capture → VRoot
+Phase 2: FIFO 후보 State → 루트 함수 → h 표현식 → resolve → VRoot
+두 Phase의 VRoot → diff(MountView, target) → PatchPlan → commit → mount별 실제 Node
 ```
 
 `h()`는 DOM을 만들거나 컴포넌트를 즉시 실행하지 않는다. resolver가 순수 자식을 평가하고 정규화한다. DOM을 읽지 않는 Diff는 필요한 명령을 만들고, Patch executor만 일반 엔진 갱신을 실제 DOM에 적용한다. 편집기의 직접 DOM 편집은 명시적인 입력이며 다음 capture/adopt에서 다시 연결한다. Inspector의 화면과 overlay는 관리 대상 DOM 밖에 있다.
@@ -98,7 +97,7 @@ composition 중 대상/조상의 이동·삭제·교체·입력 방식을 바꾸
 | 폼 | input/textarea/select/option/optgroup, checkbox/radio, multiple. 소유 모드 전환·이중 소유 거절 |
 | radio | Phase 1은 각 영역 내부 form 필요; 외부 `form` 연결 거절 |
 | file | 빈 file input만 snapshot 가능. 선택 파일·controlled file 복원 미지원 |
-| 이벤트 | native 이름·Event·capture/bubble. passive/once/React SyntheticEvent API 없음 |
+| 이벤트 | Phase 2의 native 이름·Event·capture/bubble. passive/once/React SyntheticEvent API 없음. Phase 1 DOM 캡처는 외부 코드가 등록한 listener를 직렬화·복원하지 않음 |
 | focus/IME | 검증된 입력 범위에 한함. contenteditable Range·의미론적 caret mapping·모든 IME 보장 없음 |
 | 입력 경계 | script/inline on*/위험 URL/iframe/SVG/MathML/Custom Element 등 거절. 범용 보안 sanitizer 제품 아님 |
 | 상태 불변성 | 개발 모드 plain object/array 동결 진단. class/Map/DOM 전체 불변성 보장 없음; production 호출자 계약 |

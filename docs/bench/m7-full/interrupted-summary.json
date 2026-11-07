@@ -1,0 +1,45 @@
+{
+  "status": "interrupted; excluded from final timing comparisons",
+  "completedRows": 20602,
+  "totals": {
+    "counts": 204,
+    "warmup": 3360,
+    "sample": 17038
+  },
+  "lastCompletedRow": {
+    "session": 1,
+    "sampleKind": "sample",
+    "index": 28,
+    "orderPosition": 1,
+    "input": {
+      "axis": "keyed",
+      "size": 10000,
+      "payload": "stateful",
+      "scenario": "mixed",
+      "seed": 539365639,
+      "variant": "lis",
+      "mode": "timing"
+    },
+    "timings": {
+      "renderMs": 0,
+      "diffMs": 284,
+      "commitMs": 494.19999980926514,
+      "flushMs": 778.1999998092651,
+      "effectMs": 0,
+      "captureMs": 408.6000003814697,
+      "scheduledCycleMs": 778.1999998092651
+    },
+    "counts": null,
+    "validation": {
+      "initialOrder": "4bc443f1",
+      "finalOrder": "4e15145e",
+      "reusedRoots": 9000,
+      "checkedRows": 10000
+    },
+    "visibility": "visible",
+    "focused": true
+  },
+  "rawPreserved": true,
+  "engineCorrectnessFailuresReported": 0,
+  "experimentCompleted": false
+}
