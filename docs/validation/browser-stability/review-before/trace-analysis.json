@@ -1,0 +1,980 @@
+[
+  {
+    "test": "batching-regression-captur-45112-parent-bubble-input-handler-chromium",
+    "files": [
+      "resources/src@2a5eeffd771da79e35e3142d578aeac66e7420bc.txt",
+      "resources/830a330949dbb4f1f5123e136c0b3d917aeffd6b",
+      "test.trace",
+      "0-trace.trace",
+      "0-trace.network",
+      "resources/page@54c878eb3eab8223f4b77f27532c8f65-1794051338053.jpeg",
+      "resources/page@54c878eb3eab8223f4b77f27532c8f65-1794051363404.jpeg",
+      "resources/ca1e8c54fe344dd9d7039d4df7e8aae3674b75ad.html",
+      "resources/c83ffbde9df550511409fb53589dce83f6c146e5.css",
+      "0-trace.stacks"
+    ],
+    "slowestActions": [
+      {
+        "api": "pw:api",
+        "ms": 29847.1,
+        "params": {
+          "url": "/",
+          "waitUntil": "load"
+        },
+        "error": true
+      },
+      {
+        "api": "hook",
+        "ms": 629.8,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 321.8,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 319.4,
+        "params": {
+          "handleSIGINT": "false",
+          "tracesDir": "C:\\Github\\mini-react\\test-results\\.playwright-artifacts-1\\traces",
+          "artifactsDir": "C:\\Github\\mini-react\\test-results\\.playwright-artifacts-1",
+          "headless": "true",
+          "ignoreDefaultArgs": "undefined",
+          "ignoreAllDefaultArgs": "false",
+          "env": "undefined"
+        },
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 272.5,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 270.5,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "newPage",
+        "ms": 266.8,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "hook",
+        "ms": 165.7,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 140.1,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "hook",
+        "ms": 77.5,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 69.5,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 23.3,
+        "params": {},
+        "error": false
+      }
+    ],
+    "slowestRequests": [
+      {
+        "url": "http://127.0.0.1:4173/@vite/client",
+        "time": 22677.652,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 22668.784,
+          "receive": 8.868
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/style.css",
+        "time": 22600.347,
+        "timings": {
+          "dns": 0.007,
+          "connect": 0.584,
+          "ssl": 1.662,
+          "send": 0,
+          "wait": 22591.071,
+          "receive": 7.023
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/main.ts",
+        "time": 11436.992,
+        "timings": {
+          "dns": 0.008,
+          "connect": 0.303,
+          "ssl": 1.37,
+          "send": 0,
+          "wait": 11428.764,
+          "receive": 6.547
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/counter.ts",
+        "time": 11203.046999999999,
+        "timings": {
+          "dns": 0.008,
+          "connect": 1.637,
+          "ssl": 2.709,
+          "send": 0,
+          "wait": 11196.005,
+          "receive": 2.688
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/runtime/index.ts",
+        "time": 11200.541,
+        "timings": {
+          "dns": 0.007,
+          "connect": 1.297,
+          "ssl": 2.404,
+          "send": 0,
+          "wait": 11194.496,
+          "receive": 2.337
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/editor/controller.ts",
+        "time": 11194.886,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 11193.855,
+          "receive": 1.031
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/editor/inputPolicy.ts",
+        "time": 11193.179,
+        "timings": {
+          "dns": 0.022,
+          "connect": 1.769,
+          "ssl": 2.932,
+          "send": 0,
+          "wait": 11186.497,
+          "receive": 1.959
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/",
+        "time": 2557.713,
+        "timings": {
+          "dns": 2.549,
+          "connect": 1.072,
+          "ssl": 5.016,
+          "send": 0,
+          "wait": 2546.607,
+          "receive": 2.469
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/observe/inspector.ts",
+        "time": 41.306999999999995,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 37.873,
+          "receive": 3.434
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/lab.ts",
+        "time": 18.322,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 14.358,
+          "receive": 3.964
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/tasks.ts",
+        "time": 18.139,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 13.708,
+          "receive": 4.431
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/core/capture.ts",
+        "time": -1,
+        "timings": {
+          "send": -1,
+          "wait": -1,
+          "receive": -1
+        },
+        "status": -1
+      }
+    ],
+    "lastActions": [
+      {
+        "api": "fixture",
+        "ms": 0.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 0.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 0.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "hook",
+        "ms": 165.7,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 69.5,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 0.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "hook",
+        "ms": 77.5,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "newPage",
+        "ms": 266.8,
+        "params": {},
+        "error": false
+      }
+    ]
+  },
+  {
+    "test": "batching-T-S03-T-S05-real--78c90-ater-clicks-remain-separate-chromium",
+    "files": [
+      "resources/src@2a5eeffd771da79e35e3142d578aeac66e7420bc.txt",
+      "resources/5740ce0db904e9a43168b9372f33ad26b8cb442f",
+      "test.trace",
+      "0-trace.trace",
+      "0-trace.network",
+      "resources/page@7d2106f3b17c1df39dc57f7637fc6f11-1794051338052.jpeg",
+      "resources/page@7d2106f3b17c1df39dc57f7637fc6f11-1794051363403.jpeg",
+      "resources/ca1e8c54fe344dd9d7039d4df7e8aae3674b75ad.html",
+      "resources/c83ffbde9df550511409fb53589dce83f6c146e5.css",
+      "0-trace.stacks"
+    ],
+    "slowestActions": [
+      {
+        "api": "pw:api",
+        "ms": 29847.0,
+        "params": {
+          "url": "/",
+          "waitUntil": "load"
+        },
+        "error": true
+      },
+      {
+        "api": "hook",
+        "ms": 616.8,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 308.9,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 306.6,
+        "params": {
+          "handleSIGINT": "false",
+          "tracesDir": "C:\\Github\\mini-react\\test-results\\.playwright-artifacts-0\\traces",
+          "artifactsDir": "C:\\Github\\mini-react\\test-results\\.playwright-artifacts-0",
+          "headless": "true",
+          "ignoreDefaultArgs": "undefined",
+          "ignoreAllDefaultArgs": "false",
+          "env": "undefined"
+        },
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 275.2,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 273.5,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "newPage",
+        "ms": 270.5,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "hook",
+        "ms": 164.7,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 141.4,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "hook",
+        "ms": 73.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 68.1,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 20.9,
+        "params": {},
+        "error": false
+      }
+    ],
+    "slowestRequests": [
+      {
+        "url": "http://127.0.0.1:4173/@vite/client",
+        "time": 22690.29,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 22681.123,
+          "receive": 9.167
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/style.css",
+        "time": 22600.604,
+        "timings": {
+          "dns": 0.009,
+          "connect": 0.876,
+          "ssl": 2.001,
+          "send": 0,
+          "wait": 22591.542,
+          "receive": 6.176
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/main.ts",
+        "time": 11437.146999999999,
+        "timings": {
+          "dns": 0.01,
+          "connect": 0.448,
+          "ssl": 1.544,
+          "send": 0,
+          "wait": 11428.827,
+          "receive": 6.318
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/counter.ts",
+        "time": 11202.448,
+        "timings": {
+          "dns": 0.008,
+          "connect": 1.21,
+          "ssl": 2.307,
+          "send": 0,
+          "wait": 11196.244,
+          "receive": 2.679
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/runtime/index.ts",
+        "time": 11200.501,
+        "timings": {
+          "dns": 0.009,
+          "connect": 1.199,
+          "ssl": 2.358,
+          "send": 0,
+          "wait": 11194.805,
+          "receive": 2.13
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/editor/controller.ts",
+        "time": 11195.126,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 11194.217,
+          "receive": 0.909
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/editor/inputPolicy.ts",
+        "time": 11193.604000000001,
+        "timings": {
+          "dns": 0.024,
+          "connect": 1.577,
+          "ssl": 2.714,
+          "send": 0,
+          "wait": 11187.573,
+          "receive": 1.716
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/",
+        "time": 2560.1859999999997,
+        "timings": {
+          "dns": 2.549,
+          "connect": 1.037,
+          "ssl": 4.981,
+          "send": 0,
+          "wait": 2549.198,
+          "receive": 2.421
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/observe/inspector.ts",
+        "time": 40.716,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 37.439,
+          "receive": 3.277
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/lab.ts",
+        "time": 18.747,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 15.372,
+          "receive": 3.375
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/tasks.ts",
+        "time": 18.466,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 14.738,
+          "receive": 3.728
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/core/capture.ts",
+        "time": -1,
+        "timings": {
+          "send": -1,
+          "wait": -1,
+          "receive": -1
+        },
+        "status": -1
+      }
+    ],
+    "lastActions": [
+      {
+        "api": "fixture",
+        "ms": 0.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 0.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 0.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "hook",
+        "ms": 164.7,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 68.1,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 0.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "hook",
+        "ms": 73.0,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "newPage",
+        "ms": 270.5,
+        "params": {},
+        "error": false
+      }
+    ]
+  },
+  {
+    "test": "tasks-T-A01-T-A02-keyboard-3bdcc--states-use-the-root-engine-firefox",
+    "files": [
+      "resources/src@5a5503cceab1d1d11d19eeee66744557f6c2cc71.txt",
+      "resources/ebfdb2211b22492c0e7abdd1ebce48207a0d34a4",
+      "test.trace",
+      "0-trace.trace",
+      "0-trace.network",
+      "resources/page@f6c753d5361fbda0e072ada5f5aa3f50-1794051432277.jpeg",
+      "resources/page@f6c753d5361fbda0e072ada5f5aa3f50-1794051432325.jpeg",
+      "resources/page@f6c753d5361fbda0e072ada5f5aa3f50-1794051432393.jpeg",
+      "resources/page@f6c753d5361fbda0e072ada5f5aa3f50-1794051432422.jpeg",
+      "resources/page@f6c753d5361fbda0e072ada5f5aa3f50-1794051432478.jpeg",
+      "resources/page@f6c753d5361fbda0e072ada5f5aa3f50-1794051432529.jpeg",
+      "resources/page@f6c753d5361fbda0e072ada5f5aa3f50-1794051432581.jpeg"
+    ],
+    "slowestActions": [
+      {
+        "api": "pw:api",
+        "ms": 1895.6,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-9 완료\"i",
+          "strict": "true"
+        },
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 1830.8,
+        "params": {
+          "key": "Enter"
+        },
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 1509.9,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-2 삭제\"i",
+          "strict": "true"
+        },
+        "error": false
+      },
+      {
+        "api": "expect",
+        "ms": 1381.8,
+        "params": {
+          "expected": "브라우저 검증"
+        },
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 1310.1,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-1 삭제\"i",
+          "strict": "true"
+        },
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 1305.1,
+        "params": {
+          "selector": "#task-app >> internal:label=\"새 항목\"s",
+          "value": "브라우저 검증",
+          "strict": "true"
+        },
+        "error": false
+      },
+      {
+        "api": "check",
+        "ms": 1297.9,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-9 완료\"i",
+          "strict": true
+        },
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 1237.5,
+        "params": {
+          "url": "/",
+          "waitUntil": "load"
+        },
+        "error": false
+      },
+      {
+        "api": "click",
+        "ms": 1211.9,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-2 삭제\"i",
+          "strict": true
+        },
+        "error": false
+      },
+      {
+        "api": "hook",
+        "ms": 1180.3,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "fixture",
+        "ms": 1167.3,
+        "params": {},
+        "error": false
+      },
+      {
+        "api": "pw:api",
+        "ms": 1137.1,
+        "params": {
+          "selector": "#task-app >> internal:label=\"완료 필터\"i",
+          "options": "[Object]",
+          "strict": "true"
+        },
+        "error": false
+      }
+    ],
+    "slowestRequests": [
+      {
+        "url": "http://127.0.0.1:4173/src/app/main.ts",
+        "time": 45.966,
+        "timings": {
+          "dns": 0.028,
+          "connect": 0.785,
+          "ssl": 32.729,
+          "send": 0,
+          "wait": 12.357,
+          "receive": 0.067
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/style.css",
+        "time": 43.838,
+        "timings": {
+          "dns": 0.067,
+          "connect": 0.642,
+          "ssl": 31.391,
+          "send": 0,
+          "wait": 11.64,
+          "receive": 0.098
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/",
+        "time": 42.309000000000005,
+        "timings": {
+          "dns": 0.143,
+          "connect": 0.737,
+          "ssl": 35.636,
+          "send": 0,
+          "wait": 5.658,
+          "receive": 0.135
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/observe/inspector.ts",
+        "time": 32.81100000000001,
+        "timings": {
+          "dns": 0.25,
+          "connect": 0.37,
+          "ssl": 30.84,
+          "send": 0,
+          "wait": 1.267,
+          "receive": 0.084
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/runtime/index.ts",
+        "time": 32.190999999999995,
+        "timings": {
+          "dns": 0.03,
+          "connect": 0.554,
+          "ssl": 30.054,
+          "send": 0,
+          "wait": 1.515,
+          "receive": 0.038
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/@vite/client",
+        "time": 11.318999999999999,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 10.75,
+          "receive": 0.569
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/runtime/hooks.ts",
+        "time": 2.99,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 2.833,
+          "receive": 0.157
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/core/planValidation.ts",
+        "time": 2.602,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 2.506,
+          "receive": 0.096
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/app/lab.ts",
+        "time": 2.443,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 2.372,
+          "receive": 0.071
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/core/host/forms.ts",
+        "time": 2.125,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 1.926,
+          "receive": 0.199
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/core/vdom.ts",
+        "time": 2.124,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 1.66,
+          "receive": 0.464
+        },
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4173/src/core/patch.ts",
+        "time": 2.045,
+        "timings": {
+          "dns": -1,
+          "connect": -1,
+          "ssl": -1,
+          "send": 0,
+          "wait": 1.986,
+          "receive": 0.059
+        },
+        "status": 200
+      }
+    ],
+    "lastActions": [
+      {
+        "api": "click",
+        "ms": 1211.9,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-2 삭제\"i",
+          "strict": true
+        },
+        "error": false
+      },
+      {
+        "api": "click",
+        "ms": 425.7,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-3 삭제\"i",
+          "strict": true
+        },
+        "error": false
+      },
+      {
+        "api": "click",
+        "ms": 374.6,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-4 삭제\"i",
+          "strict": true
+        },
+        "error": false
+      },
+      {
+        "api": "click",
+        "ms": 359.4,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-5 삭제\"i",
+          "strict": true
+        },
+        "error": false
+      },
+      {
+        "api": "click",
+        "ms": 302.0,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-6 삭제\"i",
+          "strict": true
+        },
+        "error": false
+      },
+      {
+        "api": "click",
+        "ms": 245.4,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-7 삭제\"i",
+          "strict": true
+        },
+        "error": false
+      },
+      {
+        "api": "click",
+        "ms": 235.9,
+        "params": {
+          "selector": "#task-app >> internal:label=\"task-8 삭제\"i",
+          "strict": true
+        },
+        "error": false
+      },
+      {
+        "api": "expect",
+        "ms": 85.2,
+        "params": {
+          "selector": "#task-app >> internal:testid=[data-testid=\"task-empty\"s]",
+          "expression": "to.have.text",
+          "expectedText": [
+            {
+              "string": "목록이 비었습니다",
+              "matchSubstring": true,
+              "normalizeWhiteSpace": true
+            }
+          ],
+          "expectedValue": {
+            "value": {
+              "v": "undefined"
+            },
+            "handles": []
+          },
+          "isNot": false,
+          "timeout": 5000
+        },
+        "error": false
+      }
+    ]
+  }
+]

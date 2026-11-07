@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('T-Q01/T-Q02: Inspector reflects executor counts and highlights actual ref; replay/reset are deterministic', async ({ page }) => {
   await page.goto('/');

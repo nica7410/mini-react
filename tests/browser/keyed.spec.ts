@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('T-K01~K03: Chromium의 seed 200개에서 두 전략의 순서·identity·uncontrolled 입력 보존', async ({ page }) => {
   test.info().annotations.push({ type: 'seed', description: '539365639, 200 input pairs, each greedy/lis, 0..30 nodes' });

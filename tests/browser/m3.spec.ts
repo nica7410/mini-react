@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('회귀: native input의 부모 bubble handler가 복원 전의 실제 입력값을 읽는다', async ({ page }) => {
   await page.goto('/');

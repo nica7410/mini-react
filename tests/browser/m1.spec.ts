@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('M1 브라우저: 직접 편집 → Patch → 미확정 편집 → Undo/Redo', async ({ page, browser }) => {
   test.info().annotations.push({ type: 'browser-version', description: browser.version() });

@@ -1,0 +1,277 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: tasks.spec.ts >> T-A01/T-A02: keyboard CRUD, search/filter/sort, counts, error and empty states use the root engine
+- Location: tests\browser\tasks.spec.ts:3:1
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - text: MINI REACT / ENGINE LAB
+    - heading "작은 엔진, 같은 갱신 경로." [level=1] [ref=e4]
+    - paragraph [ref=e5]: DOM 편집과 루트 State가 하나의 VDOM → Diff → Patch로 이어집니다.
+    - paragraph [ref=e6]: Keyed LIS · FIFO Batching · 명시적 Memo · 실제 실행 기록
+  - region [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - text: 01 / DOM → VDOM
+        - heading "편집하고, 변경분만 적용하기" [level=2] [ref=e10]
+      - generic [ref=e11]:
+        - button "Patch" [ref=e12] [cursor=pointer]
+        - button "뒤로가기" [disabled] [ref=e13]
+        - button "앞으로가기" [disabled] [ref=e14]
+        - button "편집기 초기화" [ref=e15] [cursor=pointer]
+    - status [ref=e16]: V0 · 이력 1/1
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - heading "실제 영역 확정된 화면" [level=3] [ref=e19]:
+          - text: 실제 영역
+          - generic [ref=e20]: 확정된 화면
+        - article [ref=e22]:
+          - heading "오늘의 학습" [level=3] [ref=e23]
+          - paragraph [ref=e24]: 테스트 영역에서 이 문장을 수정해 보세요.
+          - list [ref=e25]:
+            - listitem [ref=e26]: DOM을 VDOM으로 읽기
+            - listitem [ref=e27]: 바뀐 부분만 Patch하기
+      - generic [ref=e28]:
+        - heading "테스트 영역 텍스트 직접 편집 가능" [level=3] [ref=e29]:
+          - text: 테스트 영역
+          - generic [ref=e30]: 텍스트 직접 편집 가능
+        - textbox "테스트 영역" [ref=e31]:
+          - article [ref=e32]:
+            - heading "오늘의 학습" [level=3] [ref=e33]
+            - paragraph [ref=e34]: 테스트 영역에서 이 문장을 수정해 보세요.
+            - list [ref=e35]:
+              - listitem [ref=e36]: DOM을 VDOM으로 읽기
+              - listitem [ref=e37]: 바뀐 부분만 Patch하기
+    - group [ref=e38]:
+      - generic "HTML로 구조·속성 편집하기" [ref=e39] [cursor=pointer]
+  - region [ref=e40]:
+    - text: 02 / STATE → VDOM
+    - heading "루트 Hooks로 다시 그리기" [level=2] [ref=e41]
+    - paragraph [ref=e42]: 루트가 두 State를 보관합니다. 자식은 props로 요약을 만들고, useMemo는 두 배 값을 계산하며, Effect는 문서 제목을 동기화합니다.
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - text: 이름
+        - textbox "카운터 이름" [ref=e46]: Jungle
+      - status "카운트" [ref=e47]: "0"
+      - generic [ref=e48]:
+        - button "−1" [ref=e49] [cursor=pointer]
+        - button "+1" [ref=e50] [cursor=pointer]
+        - button "0으로" [ref=e51] [cursor=pointer]
+      - paragraph [ref=e52]: Jungle의 카운트 0 · 두 배 0
+    - button "컴포넌트 초기화" [ref=e53] [cursor=pointer]
+  - region [ref=e54]:
+    - text: 03 / ROOT STATE APP
+    - generic [ref=e55]:
+      - heading "작은 학습 목록" [level=2] [ref=e56]
+      - button "목록 앱 초기화" [ref=e57] [cursor=pointer]
+    - paragraph [ref=e58]: 추가·이름 수정·완료·검색·정렬을 하나의 루트 State로 처리합니다.
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - text: 새 항목
+          - textbox "새 항목" [ref=e63]:
+            - /placeholder: 학습할 내용을 입력하세요
+        - button "항목 추가" [ref=e64] [cursor=pointer]
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - text: 검색
+          - searchbox "항목 검색" [ref=e67]
+        - generic [ref=e68]:
+          - text: 필터
+          - combobox "완료 필터" [ref=e69]:
+            - option "전체" [selected]
+            - option "진행 중"
+            - option "완료"
+        - generic [ref=e70]:
+          - text: 정렬
+          - combobox "목록 정렬" [ref=e71]:
+            - option "직접 순서" [selected]
+            - option "이름순"
+            - option "미완료 우선"
+      - paragraph [ref=e72]: 전체 0 · 완료 0 · 남음 0
+      - paragraph [ref=e73]: "취소 가능한 동기화: 0개"
+      - list "학습 항목 목록"
+      - status [ref=e74]: 목록이 비었습니다. 새 항목을 추가하세요.
+      - generic [ref=e75]:
+        - button "+1 세 번" [ref=e76] [cursor=pointer]
+        - status "Batching 카운트" [ref=e77]: "3"
+        - button "마지막 항목을 처음으로" [disabled] [ref=e78]
+        - button "1.5초 뒤 마지막 항목 이동" [disabled] [ref=e79]
+      - paragraph [ref=e80]: "Alt+N: 새 항목 입력. 지연 이동을 누른 뒤 마지막 항목에서 한글을 조합해 보세요. 조합 중 충돌하는 이동은 끝난 뒤 적용합니다."
+  - region [ref=e81]:
+    - text: 03 / RECONCILIATION LAB
+    - heading "같은 입력, 다른 이동 계획" [level=2] [ref=e82]
+    - paragraph [ref=e83]: 매번 같은 초기 목록을 만든 뒤 실행합니다. 이동 수와 시간 성능은 별개의 지표입니다.
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - text: 전략
+        - combobox "전략" [ref=e86]:
+          - option "LIS" [selected]
+          - option "Greedy"
+      - generic [ref=e87]:
+        - text: 입력
+        - combobox "입력" [ref=e88]:
+          - option "마지막 → 처음" [selected]
+          - option "no-op"
+          - option "한 항목 수정"
+          - option "맨 앞 삽입"
+          - option "중간 삭제"
+          - option "처음 → 마지막"
+          - option "역순"
+          - option "인접 교환"
+          - option "양끝 교환"
+          - option "seed 순열"
+          - option "10% 혼합"
+      - generic [ref=e89]:
+        - text: 개수
+        - spinbutton "개수" [ref=e90]: "8"
+      - generic [ref=e91]:
+        - text: seed
+        - spinbutton "seed" [ref=e92]: "539365639"
+      - generic [ref=e93]:
+        - text: 내용
+        - combobox "내용" [ref=e94]:
+          - option "텍스트" [selected]
+          - option "입력·checkbox·중첩"
+      - button "초기 상태에서 실행" [ref=e95] [cursor=pointer]
+      - button "실험 초기화" [ref=e96] [cursor=pointer]
+    - status
+    - list [ref=e98]:
+      - listitem [ref=e99]: 항목 0
+      - listitem [ref=e100]: 항목 1
+      - listitem [ref=e101]: 항목 2
+      - listitem [ref=e102]: 항목 3
+      - listitem [ref=e103]: 항목 4
+      - listitem [ref=e104]: 항목 5
+      - listitem [ref=e105]: 항목 6
+      - listitem [ref=e106]: 항목 7
+    - group [ref=e107]:
+      - generic "입력 JSON 저장·실패 입력 재실행" [ref=e108] [cursor=pointer]
+  - region [ref=e109]:
+    - text: 04 / INSPECTOR
+    - heading "엔진이 실제로 수행한 작업" [level=2] [ref=e110]
+    - generic [ref=e111]:
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - text: 기록
+          - checkbox "기록" [checked] [ref=e114]
+        - combobox "Inspector 실행 선택" [ref=e115]:
+          - option "최신 실행 자동 선택" [selected]
+          - option "#41 mount-4 plan-41"
+          - option "#40 mount-4 plan-40"
+          - option "#39 mount-4 plan-39"
+          - option "#38 mount-4 plan-38"
+          - option "#37 mount-4 plan-37"
+          - option "#36 mount-4 plan-36"
+          - option "#35 mount-4 plan-35"
+          - option "#34 mount-4 plan-34"
+          - option "#33 mount-4 plan-33"
+          - option "#32 mount-4 plan-32"
+          - option "#31 mount-4 plan-31"
+          - option "#30 mount-4 plan-30"
+          - option "#29 mount-4 plan-29"
+          - option "#28 mount-4 plan-28"
+          - option "#27 mount-4 plan-27"
+          - option "#26 mount-4 plan-26"
+          - option "#25 mount-4 plan-25"
+          - option "#24 mount-4 plan-24"
+          - option "#23 mount-4 plan-23"
+          - option "#22 mount-4 plan-22"
+          - option "#21 mount-4 plan-21"
+          - option "#20 mount-4 plan-20"
+          - option "#19 mount-4 plan-19"
+          - option "#18 mount-4 plan-18"
+          - option "#17 mount-4 plan-17"
+          - option "#16 mount-4 plan-16"
+          - option "#15 mount-4 plan-15"
+          - option "#14 mount-4 plan-14"
+          - option "#13 mount-4 plan-13"
+          - option "#12 mount-4 plan-12"
+          - option "#11 mount-4 plan-11"
+          - option "#10 mount-4 plan-10"
+          - option "#9 mount-4 plan-9"
+          - option "#8 mount-4 plan-8"
+          - option "#7 mount-4 plan-7"
+          - option "#6 mount-4 plan-6"
+          - option "#5 mount-4 plan-5"
+          - option "#4 mount-5 plan-4"
+          - option "#3 mount-4 plan-3"
+          - option "#2 mount-3 plan-2"
+          - option "#1 mount-2 plan-1"
+        - button "기록 지우기" [ref=e116] [cursor=pointer]
+        - button "Trace JSON 저장" [ref=e117] [cursor=pointer]
+      - status [ref=e118]: 최근 실행 41/100 · 로그는 DOM 객체를 보관하지 않습니다.
+      - generic [ref=e119]:
+        - paragraph [ref=e120]: "#41 mount-4 · committed · 생략 로그 0"
+        - generic [ref=e121]:
+          - term [ref=e122]: createdNodes
+          - definition [ref=e123]: "0"
+          - term [ref=e124]: removedNodes
+          - definition [ref=e125]: "0"
+          - term [ref=e126]: insertedRoots
+          - definition [ref=e127]: "0"
+          - term [ref=e128]: movedRoots
+          - definition [ref=e129]: "0"
+          - term [ref=e130]: textWrites
+          - definition [ref=e131]: "1"
+          - term [ref=e132]: attributeWrites
+          - definition [ref=e133]: "0"
+          - term [ref=e134]: styleWrites
+          - definition [ref=e135]: "0"
+          - term [ref=e136]: propertyWrites
+          - definition [ref=e137]: "0"
+          - term [ref=e138]: listenerAdds
+          - definition [ref=e139]: "0"
+          - term [ref=e140]: listenerRemoves
+          - definition [ref=e141]: "0"
+          - term [ref=e142]: skippedHostCalls
+          - definition [ref=e143]: "0"
+        - generic [ref=e144]:
+          - group [ref=e145]:
+            - generic "이전 VDOM" [ref=e146] [cursor=pointer]
+          - group [ref=e147]:
+            - generic "이후 VDOM" [ref=e148] [cursor=pointer]
+        - group [ref=e149]:
+          - generic "Patch 9개 · 비교 진입 47 · subtree 재사용 1" [ref=e150] [cursor=pointer]
+          - list [ref=e151]:
+            - listitem [ref=e152]:
+              - button "SET_EVENT · mount-4/plan-3/2 · parent=— · anchor=끝/해당 없음" [ref=e153] [cursor=pointer]
+            - listitem [ref=e154]:
+              - button "SET_EVENT · mount-4/plan-3/5 · parent=— · anchor=끝/해당 없음" [ref=e155] [cursor=pointer]
+            - listitem [ref=e156]:
+              - button "SET_EVENT · mount-4/plan-3/12 · parent=— · anchor=끝/해당 없음" [ref=e157] [cursor=pointer]
+            - listitem [ref=e158]:
+              - button "SET_EVENT · mount-4/plan-3/15 · parent=— · anchor=끝/해당 없음" [ref=e159] [cursor=pointer]
+            - listitem [ref=e160]:
+              - button "SET_EVENT · mount-4/plan-3/24 · parent=— · anchor=끝/해당 없음" [ref=e161] [cursor=pointer]
+            - listitem [ref=e162]:
+              - button "SET_TEXT · mount-4/plan-3/34 · parent=— · anchor=끝/해당 없음" [ref=e163] [cursor=pointer]
+            - listitem [ref=e164]:
+              - button "SET_EVENT · mount-4/plan-3/118 · parent=— · anchor=끝/해당 없음" [ref=e165] [cursor=pointer]
+            - listitem [ref=e166]:
+              - button "SET_EVENT · mount-4/plan-3/122 · parent=— · anchor=끝/해당 없음" [ref=e167] [cursor=pointer]
+            - listitem [ref=e168]:
+              - button "SET_EVENT · mount-4/plan-3/124 · parent=— · anchor=끝/해당 없음" [ref=e169] [cursor=pointer]
+        - group [ref=e170]:
+          - generic "keyed 경로와 fallback 이유" [ref=e171] [cursor=pointer]
+        - group [ref=e172]:
+          - generic "DOM 객체 재사용 검사" [ref=e173] [cursor=pointer]
+        - group [ref=e174]:
+          - generic "상태 요청 → Render/Memo → Diff/Patch → Effect 순서" [ref=e175] [cursor=pointer]
+  - generic [ref=e176]: "현재 단계: Batching·명시적 재사용·실행 관찰. 실제 IME와 시간 성능은 검증 기록의 범위를 따릅니다."
+```

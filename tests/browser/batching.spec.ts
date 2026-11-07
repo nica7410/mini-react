@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('T-S03/T-S05: real clicks batch three requests, while later clicks remain separate', async ({ page }) => {
   await page.goto('/');

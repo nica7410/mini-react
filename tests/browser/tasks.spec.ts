@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('T-A01/T-A02: keyboard CRUD, search/filter/sort, counts, error and empty states use the root engine', async ({ page }) => {
   await page.goto('/'); const app = page.locator('#task-app');
