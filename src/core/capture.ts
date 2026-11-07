@@ -12,7 +12,7 @@ export function readDOM(container: ParentNode): Result<VRoot> {
     const element = node as HTMLElement;
     if (element.namespaceURI !== 'http://www.w3.org/1999/xhtml') throw new Error('HTML namespace만 지원합니다.');
     if (element.shadowRoot) throw new Error('Shadow DOM은 지원하지 않습니다.');
-    const attrs: Record<string, string> = {};
+    const attrs: Record<string, string> = Object.create(null);
     for (const attr of element.attributes) if (attr.name !== 'style') attrs[attr.name] = attr.value;
     const style: Record<string, StyleValue> = {};
     for (const name of element.style) style[name] = {

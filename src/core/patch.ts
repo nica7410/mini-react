@@ -2,6 +2,7 @@ import type { CommitCounters, CommitResult, MountHandle, PatchPlan, Result, View
 import { validatePlan } from './planValidation';
 import { clearEvents, setEvent } from './host/events';
 import { syncForm } from './host/forms';
+import { observeControlledInput } from './host/inputs';
 import { emitTrace } from '../observe/trace';
 
 export const emptyCounters = (): CommitCounters => ({
@@ -31,6 +32,7 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
       const element = node as HTMLElement;
       for (const [name, value] of Object.entries(vnode.attrs)) { element.setAttribute(name, value); counters.attributeWrites++; }
       for (const [name, style] of Object.entries(vnode.style)) { element.style.setProperty(name, style.value, style.priority); counters.styleWrites++; }
+      observeControlledInput(mount, element, tree.ref, vnode, counters);
       for (const [name, binding] of Object.entries(vnode.events)) setEvent(element, name, binding, counters);
       for (const child of tree.children) element.appendChild(create(child));
       if (vnode.form) initialForms.push({ element, tree });

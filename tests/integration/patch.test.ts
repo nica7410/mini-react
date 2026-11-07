@@ -70,4 +70,36 @@ describe('P1-02 / 위치 기반 Diff + host Patch', () => {
     expect(() => apply(mount, resolveExpression(h('div', null, h('i', { key: 1 }), h('i', { key: '1' }))))).toThrow(/중복/);
     expect(root.textContent).toBe('old');
   });
+  it('T-D03: 삭제+ref 이동+수정을 한 계획에서 실행한다', () => {
+    const { root, mount } = render(snapshot('<p data-key="a">A</p><p data-key="b">B</p><p data-key="c">C</p>'));
+    const [a, b, c] = mount.view.children, originalB = root.childNodes[1], originalC = root.childNodes[2];
+    const target = snapshot('<p data-key="c">C</p><p data-key="b">changed</p><i data-key="d">D</i>');
+    const generated = unwrap(diff(mount.view, target));
+    const d = generated.nextView.children[2], nextB = target.children[1];
+    if (nextB.kind !== 'element') throw new Error('fixture');
+    const children = [
+      { ...c, vnode: target.children[0] },
+      { ...b, vnode: nextB, children: [{ ...b.children[0], vnode: nextB.children[0] }] }, d,
+    ];
+    const result = commit(mount, {
+      ...generated, nextView: { ...generated.nextView, children },
+      operations: [
+        { kind: 'CREATE_SUBTREE', tree: d },
+        { kind: 'REMOVE_SUBTREE', node: a.ref, parent: mount.view.rootRef },
+        { kind: 'SET_TEXT', node: b.children[0].ref, value: 'changed' },
+        { kind: 'PLACE_BEFORE', placement: 'insert', node: d.ref, parent: mount.view.rootRef, anchor: null },
+        { kind: 'PLACE_BEFORE', placement: 'move', node: b.ref, parent: mount.view.rootRef, anchor: d.ref },
+      ],
+    });
+    expect(result).toMatchObject({ status: 'committed', counters: { createdNodes: 2, removedNodes: 2, insertedRoots: 1, movedRoots: 1, textWrites: 1 } });
+    expect(root.childNodes[0]).toBe(originalC); expect(root.childNodes[1]).toBe(originalB);
+    expect(unwrap(readDOM(root))).toEqual(target); expect(mount.nodes.has(a.ref)).toBe(false);
+  });
+  it('T-P05: subtree 내부 생성/삭제 수와 root 배치 수를 구분한다', () => {
+    const { mount } = render(snapshot(''));
+    const tree = snapshot(`<div>${Array.from({ length: 100 }, (_, i) => `<span>${i}</span>`).join('')}</div>`);
+    const created = apply(mount, tree);
+    expect(created.counters).toMatchObject({ createdNodes: 201, insertedRoots: 1, movedRoots: 0 });
+    expect(apply(mount, snapshot('')).counters).toMatchObject({ removedNodes: 201, createdNodes: 0 });
+  });
 });

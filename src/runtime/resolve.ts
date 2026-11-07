@@ -25,7 +25,8 @@ export function resolveExpression(value: RenderValue): VRoot {
       };
     }
     if (expr.kind !== 'element-expr') throw new Error('잘못된 render 결과입니다.');
-    const attrs: Record<string, string> = {}, style: Record<string, StyleValue> = {}, events: Record<string, EventBinding> = {};
+    if (expr.props.form?.selectedIndices !== undefined && !Array.isArray(expr.props.form.selectedIndices)) throw new Error('selectedIndices는 index 배열이어야 합니다.');
+    const attrs: Record<string, string> = Object.create(null), style: Record<string, StyleValue> = {}, events: Record<string, EventBinding> = {};
     for (const [rawName, input] of Object.entries(expr.props.attrs ?? {})) {
       const name = rawName.toLowerCase();
       if (input === null || input === undefined) continue;
@@ -40,7 +41,8 @@ export function resolveExpression(value: RenderValue): VRoot {
     return {
       kind: 'element', identity: identity(normalizeKey(expr.props.key)), tag: expr.tag,
       attrs, style, events,
-      form: expr.props.form ? { ...expr.props.form, ...(expr.props.form.selectedIndices ? { selectedIndices: [...expr.props.form.selectedIndices] } : {}) } : null,
+      form: expr.props.form ? { ...expr.props.form, ...(expr.props.form.selectedIndices ? { selectedIndices: [...expr.props.form.selectedIndices] } : {}) }
+        : ['input', 'textarea', 'select'].includes(expr.tag) ? { mode: 'uncontrolled' } : null,
       children: flatten(expr.children),
     };
   }

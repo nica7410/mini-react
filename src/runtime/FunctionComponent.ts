@@ -7,6 +7,7 @@ import { emitTrace } from '../observe/trace';
 import { isComputing, pureComputation, renderWithHooks } from './hooks';
 import type { HookFrame } from './hooks';
 import { resolveExpression } from './resolve';
+import { guardState } from './stateGuard';
 
 export interface RootOptions { readonly trace?: TraceSink; readonly onError?: (diagnostic: Diagnostic) => void }
 
@@ -32,6 +33,9 @@ export class FunctionComponent<P> {
   ) {
     if (container.childNodes.length) throw new Error('Phase 2는 빈 전용 container에서 시작합니다.');
     this.host = createMount(container, options.trace);
+    this.host.onHostInput = () => {
+      if (!this.busy && !this.halted && this.mounted && !this.disposed && this.host.dirtyForms.size) this.drain();
+    };
   }
   get hooks(): readonly HookSlot[] { return this.committedHooks; }
 
@@ -75,7 +79,7 @@ export class FunctionComponent<P> {
     this.busy = true;
     try {
       let iterations = 0;
-      while (!this.halted && !this.disposed && (this.queue.length || this.explicitRequested)) {
+      while (!this.halted && !this.disposed && (this.queue.length || this.explicitRequested || this.host.dirtyForms.size)) {
         if (++iterations > 50) { this.halted = true; this.report(new Error('연속 50회 초과 갱신을 중단했습니다.')); break; }
         const explicit = this.explicitRequested; this.explicitRequested = false;
         this.lastResult = this.perform(!this.mounted, explicit);
@@ -87,29 +91,39 @@ export class FunctionComponent<P> {
     const previous = this.committedHooks;
     const candidate = previous.map(entry => ({ ...entry }));
     const changedEffects: number[] = [];
+    const dirty = new Map(this.host.dirtyForms);
+    const acknowledgeDirty = () => {
+      for (const [ref, sequence] of dirty) if (this.host.dirtyForms.get(ref) === sequence) this.host.dirtyForms.delete(ref);
+    };
     try {
       pureComputation(() => {
         for (const request of pending) {
           const old = candidate[request.slot];
           if (!old || old.kind !== 'state') throw new Error('업데이트의 state 슬롯이 없습니다.');
-          candidate[request.slot] = { ...old, value: typeof request.action === 'function' ? request.action(old.value) : request.action };
+          candidate[request.slot] = { ...old, value: guardState(typeof request.action === 'function' ? request.action(old.value) : request.action) };
         }
       });
       const changed = candidate.some((entry, i) => entry.kind === 'state' && !Object.is(entry.value, (previous[i] as typeof entry).value));
       if (!mounting && !explicit && !changed) {
+        const result = dirty.size ? applySnapshot(this.host, diff(this.host.view, this.host.view.snapshot, { dirtyFormRefs: new Set(dirty.keys()) }))
+          : { status: 'noop', revision: this.host.revision, counters: emptyCounters() } as const;
+        if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
+        if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
         this.queue = this.queue.filter(request => request.sequence > endSequence);
-        return { status: 'noop', revision: this.host.revision, counters: emptyCounters() };
+        acknowledgeDirty();
+        return result;
       }
       const frame: HookFrame = { previous, candidate, mounting, enqueue: this.enqueue, changedEffects, index: 0 };
       this.trace('render', { mounting, pending: pending.length });
       const expression = renderWithHooks(frame, () => this.render(this.props));
       const snapshot = resolveExpression(expression);
-      const result = applySnapshot(this.host, diff(this.host.view, snapshot));
+      const result = applySnapshot(this.host, diff(this.host.view, snapshot, { dirtyFormRefs: new Set(dirty.keys()) }));
       if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
       if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
       this.committedHooks = candidate;
       this.mounted = true;
       this.queue = this.queue.filter(request => request.sequence > endSequence);
+      acknowledgeDirty();
       // 모든 이전 cleanup을 먼저 처리하고, 새 setup을 Hook 순서로 처리한다.
       // cleanup에서 unmount해도 같은 cleanup이 두 번 실행되지 않게 먼저 분리한다.
       for (const index of changedEffects) {

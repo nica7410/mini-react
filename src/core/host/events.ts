@@ -1,4 +1,5 @@
 import type { CommitCounters, EventBinding } from '../types';
+import { releaseInputObserver } from './inputs';
 
 interface Listener { binding: EventBinding; wrapper: EventListener }
 const listeners = new WeakMap<Element, Map<string, Listener>>();
@@ -24,6 +25,7 @@ export function setEvent(element: Element, name: string, binding: EventBinding |
 }
 
 export function clearEvents(node: Node, counts?: CommitCounters): void {
+  releaseInputObserver(node, counts);
   if (node.nodeType !== 1) return;
   const element = node as Element;
   const entries = listeners.get(element);

@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { EditorController } from '../../src/editor/controller';
 import { captureDOM } from '../../src/core/capture';
 import { unwrap } from '../../src/core/vdom';
@@ -71,5 +71,17 @@ describe('P1-05 / 두 mount와 VDOM History', () => {
     test.innerHTML = '<p data-key="same">a</p><p data-key="same">b</p>';
     expect(editor.patch().ok).toBe(false); expect(editor.history).toBe(old);
     expect(actual.querySelector('p')!.textContent).toBe('A');
+  });
+  it('T-E03: fault 후 마지막 정상 History에서 두 mount를 복구한다', () => {
+    const { actual, test, editor } = setup(); editAndPatch(editor, 'committed');
+    const history = editor.history, previousMount = editor.actual;
+    test.append(document.createElement('hr'));
+    const insert = vi.spyOn(actual, 'insertBefore').mockImplementation(() => { throw new Error('host failure'); });
+    expect(editor.patch().ok).toBe(false); expect(editor.faulted).toBe(true); expect(editor.history).toBe(history);
+    insert.mockRestore(); expect(editor.recover().ok).toBe(true);
+    expect(editor.faulted).toBe(false); expect(previousMount.disposed).toBe(true);
+    expect(actual.innerHTML).toBe(test.innerHTML); expect(actual.querySelector('hr')).toBeNull();
+    expect(actual.querySelector('p')!.textContent).toBe('committed'); expect(editor.history).toBe(history);
+    editAndPatch(editor, 'after recovery'); expect(actual.querySelector('p')!.textContent).toBe('after recovery');
   });
 });

@@ -14,8 +14,8 @@ function commitError(result: CommitResult): Result<void> {
 }
 
 export class EditorController {
-  readonly actual: MountHandle;
-  readonly test: MountHandle;
+  actual: MountHandle;
+  test: MountHandle;
   history: HistoryState;
   faulted = false;
 
@@ -61,6 +61,17 @@ export class EditorController {
     if (!testResult.ok) { this.faulted = true; return testResult; }
     this.history = moveHistoryCursor(this.history, target.version);
     return ok(undefined);
+  }
+  recover(): Result<void> {
+    const snapshot = this.history.entries[this.history.cursor].snapshot;
+    const actual = this.actual.container, test = this.test.container, trace = this.actual.trace;
+    disposeMount(this.actual); disposeMount(this.test);
+    this.actual = createMount(actual, trace); this.test = createMount(test, trace);
+    const actualResult = commitError(applySnapshot(this.actual, diff(this.actual.view, snapshot)));
+    if (!actualResult.ok) { this.faulted = true; return actualResult; }
+    const testResult = commitError(applySnapshot(this.test, diff(this.test.view, snapshot)));
+    this.faulted = !testResult.ok;
+    return testResult;
   }
   dispose(): void { disposeMount(this.actual); disposeMount(this.test); }
 }

@@ -113,6 +113,15 @@ describe('State 슬롯 / M1 동기 갱신', () => {
     const nested = new FunctionComponent(() => { useMemo(() => useState(1), []); return null; }, {}, container());
     expect(nested.mount().status).toBe('rejected');
   });
+  it('T-S07: 개발 모드 plain state 직접 mutation을 진단하고 과거 값을 보존한다', () => {
+    let set!: StateSetter<{ count: number }>;
+    const initial = { count: 0 }, output = container();
+    const root = new FunctionComponent(() => { const [value, setter] = useState(initial); set = setter; return h('p', null, value.count); }, {}, output);
+    root.mount(); expect(Object.isFrozen(initial)).toBe(true);
+    set(value => { value.count++; return value; });
+    expect(root.lastResult!.status).toBe('rejected'); expect(initial.count).toBe(0); expect(output.textContent).toBe('0');
+    root.unmount();
+  });
 });
 
 describe('Effect와 Memo 최소 계약', () => {
@@ -192,5 +201,34 @@ describe('Effect와 Memo 최소 계약', () => {
     root.mount(); deps[0] = 2; fail = true; root.update();
     expect(output.textContent).toBe('2'); expect(root.hooks[0]).toMatchObject({ value: 2, deps: [1] });
     fail = false; root.update(); expect(output.textContent).toBe('4'); expect(factory).toHaveBeenCalledTimes(3);
+  });
+  it('T-F05: setup 예외와 Promise 반환은 진단하고 다른 Effect와 이미 끝난 commit을 유지한다', async () => {
+    const good = vi.fn(), output = container();
+    const root = new FunctionComponent(() => {
+      useEffect(() => { throw new Error('setup failed'); }, []);
+      useEffect((() => Promise.resolve()) as unknown as () => void, []);
+      useEffect(good, []); return h('p', null, 'committed');
+    }, {}, output);
+    expect(root.mount().status).toBe('committed'); await Promise.resolve();
+    expect(root.errors).toHaveLength(2); expect(good).toHaveBeenCalledTimes(1); expect(output.textContent).toBe('committed');
+    root.unmount();
+  });
+  it('T-F06: 반복 mount/unmount에서 앱 Effect listener와 오래된 setter가 남지 않는다', () => {
+    const render = vi.fn(() => {
+      const [n, set] = useState(0);
+      useEffect(() => { const listener = () => set(value => value + 1); window.addEventListener('probe', listener); return () => window.removeEventListener('probe', listener); }, []);
+      return h('p', null, n);
+    });
+    for (let i = 0; i < 3; i++) {
+      const output = container(), root = new FunctionComponent(render, {}, output); root.mount();
+      window.dispatchEvent(new Event('probe')); expect(output.textContent).toBe('1'); root.unmount();
+      window.dispatchEvent(new Event('probe')); expect(root.errors).toHaveLength(0);
+    }
+    expect(render).toHaveBeenCalledTimes(6);
+  });
+  it('deps 길이 변경은 commit 전에 오류가 된다', () => {
+    let deps = [1]; const output = container();
+    const root = new FunctionComponent(() => { useEffect(() => undefined, deps); return h('p', null, deps.length); }, {}, output);
+    root.mount(); deps = [1, 2]; root.update(); expect(root.lastResult!.status).toBe('rejected'); expect(output.textContent).toBe('1'); root.unmount();
   });
 });

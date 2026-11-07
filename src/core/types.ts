@@ -68,6 +68,12 @@ export interface MountHandle {
   revision: number; view: MountView;
   readonly nodes: Map<NodeRef, Node>; readonly refs: WeakMap<Node, NodeRef>;
   nextCaptureRef: number; disposed: boolean; faulted: boolean;
+  readonly dirtyForms: Map<NodeRef, number>;
+  inputSequence: number;
+  inputFlushScheduled: boolean;
+  inputFallbackTimer?: ReturnType<typeof setTimeout>;
+  disposeHostObservers?: () => void;
+  onHostInput?: () => void;
   readonly trace?: TraceSink;
 }
 export interface CaptureResult {
@@ -90,7 +96,11 @@ export interface PatchPlan {
   readonly target: VRoot; readonly nextView: MountView; readonly operations: readonly PatchOp[];
 }
 // M1은 위치 기반 경로만 공개한다. Greedy/LIS 옵션은 M4에서 추가한다.
-export interface DiffOptions { readonly planId?: string; readonly strategy?: 'positional' }
+export interface DiffOptions {
+  readonly planId?: string;
+  readonly strategy?: 'positional';
+  readonly dirtyFormRefs?: ReadonlySet<NodeRef>;
+}
 export interface CommitCounters {
   createdNodes: number; removedNodes: number; insertedRoots: number; movedRoots: number;
   textWrites: number; attributeWrites: number; styleWrites: number; propertyWrites: number;

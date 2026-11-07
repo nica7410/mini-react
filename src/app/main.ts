@@ -19,14 +19,18 @@ function show(result: Result<void>, message: string): void {
 function refresh(message = ''): void {
   element<HTMLButtonElement>('undo').disabled = !editor.canUndo;
   element<HTMLButtonElement>('redo').disabled = !editor.canRedo;
+  updateStatus(message);
+  source.value = test.innerHTML;
+}
+function updateStatus(message: string): void {
   const entry = editor.history.entries[editor.history.cursor];
   status.textContent = `V${entry.version} · 이력 ${editor.history.cursor + 1}/${editor.history.entries.length}${message ? ` · ${message}` : ''}`;
-  source.value = test.innerHTML;
 }
 element('patch').addEventListener('click', () => show(editor.patch(), 'Patch 완료'));
 element('undo').addEventListener('click', () => show(editor.travel('undo'), '이전 버전 복원'));
 element('redo').addEventListener('click', () => show(editor.travel('redo'), '다음 버전 복원'));
 element('reset-editor').addEventListener('click', () => {
+  if (editor.faulted) { show(editor.recover(), '마지막 정상 버전에서 복구'); return; }
   editor.dispose();
   replaceEditorHTML(actual, originalHTML);
   editor = new EditorController(actual, test);
@@ -34,7 +38,7 @@ element('reset-editor').addEventListener('click', () => {
 });
 element('apply-html').addEventListener('click', () => show(replaceEditorHTML(test, source.value), '테스트 편집 미확정'));
 element('read-html').addEventListener('click', () => { source.value = test.innerHTML; });
-test.addEventListener('input', () => { status.textContent = '테스트 편집 미확정 · Patch로 실제 영역에 적용하세요.'; });
+test.addEventListener('input', () => { updateStatus('테스트 편집 미확정 · Patch로 실제 영역에 적용하세요.'); });
 // plaintext-only는 브라우저의 HTML 붙여넣기를 텍스트로 제한한다. 파일/외부 drag 삽입은 사용하지 않는다.
 test.addEventListener('drop', event => event.preventDefault());
 

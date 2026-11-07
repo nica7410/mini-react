@@ -1,4 +1,5 @@
 import type { Deps, EffectSetup, HookSlot, StateAction, StateSetter } from '../core/types';
+import { guardState } from './stateGuard';
 
 export interface HookFrame {
   readonly previous: readonly HookSlot[];
@@ -43,7 +44,7 @@ export function useState<T>(initial: T | (() => T)): [T, StateSetter<T>] {
   const { frame, index } = slot('state');
   let entry = frame.candidate[index];
   if (!entry) {
-    const value = typeof initial === 'function' ? pureComputation(initial as () => T) : initial;
+    const value = guardState(typeof initial === 'function' ? pureComputation(initial as () => T) : initial);
     const enqueue = frame.enqueue;
     entry = { kind: 'state', value, setter: (action: StateAction<T>) => enqueue(index, action as StateAction<unknown>) };
     frame.candidate[index] = entry;

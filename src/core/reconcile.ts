@@ -21,7 +21,7 @@ export function diff(base: MountView, target: VRoot, options: DiffOptions = {}):
     return { ref, vnode, children: vnode.kind === 'element' ? vnode.children.map(create) : [] };
   }
   function elementChanges(old: VElement, next: VElement, ref: string) {
-    if (old.form && next.form && old.form.mode !== next.form.mode) throw new Error('같은 노드의 폼 소유 모드는 변경할 수 없습니다.');
+    if (['input', 'textarea', 'select'].includes(next.tag) && (old.form?.mode ?? 'uncontrolled') !== (next.form?.mode ?? 'uncontrolled')) throw new Error('같은 노드의 폼 소유 모드는 변경할 수 없습니다.');
     for (const name of Object.keys(old.attrs)) if (!Object.hasOwn(next.attrs, name)) updates.push({ kind: 'REMOVE_ATTR', node: ref, name });
     for (const [name, value] of Object.entries(next.attrs)) if (old.attrs[name] !== value) updates.push({ kind: 'SET_ATTR', node: ref, name, value });
     for (const name of Object.keys(old.style)) if (!Object.hasOwn(next.style, name)) updates.push({ kind: 'REMOVE_STYLE', node: ref, name });
@@ -29,7 +29,8 @@ export function diff(base: MountView, target: VRoot, options: DiffOptions = {}):
     for (const name of new Set([...Object.keys(old.events), ...Object.keys(next.events)])) {
       if (!equalData(old.events[name], next.events[name])) updates.push({ kind: 'SET_EVENT', node: ref, name, binding: next.events[name] ?? null });
     }
-    if (next.form && (!equalData(old.form, next.form) || !equalData(old.children, next.children) || !equalData(old.attrs, next.attrs))) {
+    if (next.form && (!equalData(old.form, next.form) || !equalData(old.children, next.children) || !equalData(old.attrs, next.attrs)
+      || (next.form.mode === 'controlled' && options.dirtyFormRefs?.has(ref)))) {
       forms.push({ kind: 'SYNC_FORM', node: ref, policy: next.form });
     }
   }

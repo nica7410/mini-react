@@ -4,7 +4,7 @@
 
 - 목표: B안 명세 M8까지 기술 구현·검증·문서화 및 단계별 로컬 커밋.
 - 작업 시작 브랜치: **phase1**. 같은 브랜치에서 계속한다.
-- 현재 단계: **M3 정확성 보완 중**.
+- 현재 단계: **M3 기본 정확성 통과, M4 Keyed Greedy/LIS 시작**.
 - 외부 확인: M0 팀 합의/일정, 다른 후보, 실제 한글 IME 수동 검증, 원격 CI 실행은 확인되지 않았다.
 - 원격 push/PR 병합/원격 배포는 요청 범위 밖이다. 최종 산출물은 로컬 데모와 재현 절차다.
 
@@ -13,7 +13,7 @@
 | M0 | 기술 계약 준비, 팀 확인 대기 | [M0~M1](m0-m1.md) |
 | M1 | 현재 후보 구현·재검증 완료 | 705fde0; unit 52/browser 4/typecheck/build |
 | M2 | 현재 후보 잠정 선정 | [선정 기록](m2-selection.md); 다른 후보 비교 없음 |
-| M3 | 진행 중 | [계획 사전 검증](m3-correctness.md) 62개 테스트 통과. 폼·dirty 복원과 오류/자원 검증 계속 |
+| M3 | 기본 정확성 Gate 통과 | [M3 기록](m3-correctness.md): 95개 단위·통합, Chromium 9개, 타입·빌드 통과 |
 | M4 | 예정 | Greedy/LIS, 실제 planner 전수/seed/독립 oracle |
 | M5 | 예정 | FIFO microtask Batching, 위치별 expression 재사용 |
 | M6 | 예정 | 실제 Trace Inspector, 재현 benchmark/raw 결과 |
@@ -26,5 +26,6 @@
 |---|---|---|
 | 705fde0 | M0~M1 | 공통 VDOM/Diff/Patch·History·루트 Hooks 기준 구현. 52+4 테스트, 타입·빌드 통과 |
 | 086aea9 | M2 | 현재 구현 잠정 선정과 M3 보완 목록. 다른 후보 비교·팀 합의 미수행 |
+| 2683c0d | M3 | DOM 쓰기 전 Patch 계획의 구조/순서/대상 검증. 62개 테스트와 타입 검사 통과 |
 
 M8 완료는 모든 필수 구현·검증 증거를 대조한 뒤 판단한다. 실제 IME나 팀 확인을 합성 이벤트·개발자 추정으로 대체하지 않는다.

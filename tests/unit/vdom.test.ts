@@ -61,10 +61,15 @@ describe('P1-01 / 공통 VDOM', () => {
     root.innerHTML = '<p>B</p>';
     expect(adoptCapture(mount, second).ok).toBe(false);
   });
-  it.each(['<script>alert(1)</script>', '<img onerror="alert(1)">', '<a href="java&#10;script:alert(1)">x</a>', '<svg></svg>', '<x-custom></x-custom>', '<iframe></iframe>', '<div style="background:url(https://example.com)"></div>'])('T-V05 (M1 경계): 연결 전에 거절 %j', html => {
+  it.each(['<script>alert(1)</script>', '<img onerror="alert(1)">', '<a href="java&#10;script:alert(1)">x</a>', '<svg></svg>', '<x-custom></x-custom>', '<iframe></iframe>', '<img srcset="javascript:alert(1) 1x">'])('T-V05: 연결 전에 거절 %j', html => {
     const root = container('<p>safe</p>');
     expect(parseEditorHTML(document, html).ok).toBe(false);
     expect(replaceEditorHTML(root, html).ok).toBe(false);
     expect(root.innerHTML).toBe('<p>safe</p>');
+  });
+  it('T-V05: 안전한 CSS URL/srcset은 허용하고 이스케이프한 위험 CSS URL은 거절한다', () => {
+    expect(parseEditorHTML(document, '<img srcset="/small.png 1x, https://example.com/large.png 2x" style="background-image:url(/bg.png)">').ok).toBe(true);
+    expect(() => resolveExpression(h('div', { style: { 'background-image': 'url("\\6a avascript:alert(1)")' } }))).toThrow(/CSS/);
+    expect(() => resolveExpression(h('div', { style: { '--image': 'url("javascript:bad")' } }))).toThrow(/CSS/);
   });
 });
