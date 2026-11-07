@@ -1,4 +1,4 @@
-import type { CommitResult, Diagnostic, HookSlot, MountHandle, RenderValue, StateAction, StateUpdate, TraceSink } from '../core/types';
+import type { CommitResult, Diagnostic, HookSlot, MountHandle, ReconcileStrategy, RenderValue, StateAction, StateUpdate, TraceSink } from '../core/types';
 import { createMount, disposeMount } from '../core/mount';
 import { diff } from '../core/reconcile';
 import { applySnapshot, emptyCounters } from '../core/patch';
@@ -9,7 +9,7 @@ import type { HookFrame } from './hooks';
 import { resolveExpression } from './resolve';
 import { guardState } from './stateGuard';
 
-export interface RootOptions { readonly trace?: TraceSink; readonly onError?: (diagnostic: Diagnostic) => void }
+export interface RootOptions { readonly trace?: TraceSink; readonly onError?: (diagnostic: Diagnostic) => void; readonly reconcile?: ReconcileStrategy }
 
 export class FunctionComponent<P> {
   readonly host: MountHandle;
@@ -105,7 +105,7 @@ export class FunctionComponent<P> {
       });
       const changed = candidate.some((entry, i) => entry.kind === 'state' && !Object.is(entry.value, (previous[i] as typeof entry).value));
       if (!mounting && !explicit && !changed) {
-        const result = dirty.size ? applySnapshot(this.host, diff(this.host.view, this.host.view.snapshot, { dirtyFormRefs: new Set(dirty.keys()) }))
+        const result = dirty.size ? applySnapshot(this.host, diff(this.host.view, this.host.view.snapshot, { strategy: this.options.reconcile, dirtyFormRefs: new Set(dirty.keys()) }))
           : { status: 'noop', revision: this.host.revision, counters: emptyCounters() } as const;
         if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
         if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
@@ -117,7 +117,7 @@ export class FunctionComponent<P> {
       this.trace('render', { mounting, pending: pending.length });
       const expression = renderWithHooks(frame, () => this.render(this.props));
       const snapshot = resolveExpression(expression);
-      const result = applySnapshot(this.host, diff(this.host.view, snapshot, { dirtyFormRefs: new Set(dirty.keys()) }));
+      const result = applySnapshot(this.host, diff(this.host.view, snapshot, { strategy: this.options.reconcile, dirtyFormRefs: new Set(dirty.keys()) }));
       if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
       if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
       this.committedHooks = candidate;

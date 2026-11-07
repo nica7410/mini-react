@@ -94,11 +94,22 @@ export type PatchOp =
 export interface PatchPlan {
   readonly id: string; readonly mountId: string; readonly baseRevision: number;
   readonly target: VRoot; readonly nextView: MountView; readonly operations: readonly PatchOp[];
+  readonly reconciliations: readonly ReconcileDecision[];
 }
-// M1은 위치 기반 경로만 공개한다. Greedy/LIS 옵션은 M4에서 추가한다.
+export type ReconcileStrategy = 'positional' | 'greedy' | 'lis';
+export interface ReconcileDecision {
+  readonly parent: NodeRef;
+  readonly strategy: ReconcileStrategy;
+  readonly reason: 'keyed' | 'positional-requested' | 'missing-key' | 'mixed-node-kinds';
+  readonly usedLIS: boolean;
+  readonly reused: number;
+  readonly inserts: number;
+  readonly removes: number;
+  readonly moves: number;
+}
 export interface DiffOptions {
   readonly planId?: string;
-  readonly strategy?: 'positional';
+  readonly strategy?: ReconcileStrategy;
   readonly dirtyFormRefs?: ReadonlySet<NodeRef>;
 }
 export interface CommitCounters {

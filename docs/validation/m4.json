@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "stage": "M4",
+  "branch": "phase1",
+  "baseCommit": "c36cead",
+  "unitRunAt": "2026-11-07T15:04:48.997000+09:00",
+  "browserRunAt": "2026-11-07T06:04:49.334Z",
+  "checks": {
+    "unitIntegration": {
+      "passed": 113,
+      "failed": 0,
+      "files": 9
+    },
+    "chromium": {
+      "passed": 10,
+      "failed": 0,
+      "version": "151.0.7922.34",
+      "keyedInputPairs": 200,
+      "strategyRuns": 400
+    },
+    "typecheck": {
+      "exitCode": 0
+    },
+    "build": {
+      "exitCode": 0
+    }
+  },
+  "actualProductionPlannerModelCounts": {
+    "permutations": 46233,
+    "bfsStates": 5913,
+    "partialPairs": 4225,
+    "randomPairs": 10000,
+    "seed": 539365639
+  },
+  "defaultStrategy": "lis",
+  "performanceClaim": "Verified move counts and correctness only; elapsed browser speed not measured.",
+  "sourceSha256": {
+    "src/app/counter.ts": "e56f050cddf03a2755938a1c28fe23db5137084b5f0bc4a60d36b7d6a7c24834",
+    "src/app/main.ts": "c46930ddf7d92e98e7923adae1a82f9c7182c0c13a058a0ba266d4adadb4da51",
+    "src/core/capture.ts": "af2432cc03584b3cef77f1d99a75af57fb34ae0697aa12200022bb13d275f0b8",
+    "src/core/host/events.ts": "a7bc9f25e57b5cd6eec18b8697e0ff1dcbf66c1f6c348487d89cbc6fd478fe12",
+    "src/core/host/forms.ts": "576d34c2f11bb60b05fa8524906a21b5f85c14eb5aa9e9c23839d6e0a1deb2e6",
+    "src/core/host/inputs.ts": "8584d9a0c5fd8178928004eec0e51de93f51ece6003adec4310ffdf92f36b40e",
+    "src/core/keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+    "src/core/mount.ts": "55e4d88649e45b5c1305e89e4449e14c607772d6cd16d5690f9f7fcd90860486",
+    "src/core/patch.ts": "24b7455b5d1c2751712f4bb0331017e6be83c95b9b18f7b7268ef38fadf57e37",
+    "src/core/planValidation.ts": "8e6153a907ea3d56aab7237f36fca7815600749ab845b945fc2a724dc386f3f7",
+    "src/core/reconcile.ts": "388ec0f8335316fc6f6d721545c7f409d639e862a3b6284f136555c80d8fbcfe",
+    "src/core/types.ts": "e56c7d7ad6e1bb4121ce5717b0ba56c6384154735a59aa954c3844d8404713bb",
+    "src/core/validate.ts": "6199d15d2dcf739dc4a71390b1b878c2b7609106cc4557509fee59603a5ca41e",
+    "src/core/vdom.ts": "fa9fd68049e403641cb6eed389f72602d3fcc75a916fb529e0e70a4c7d9750dc",
+    "src/editor/controller.ts": "f7c782c8a349dd0cbbc74019da44f6a3188ea6286fc71d4554eb0ebdbab50547",
+    "src/editor/history.ts": "3b111825709eea00f1318fe5e95bb2d822242e067d2b8b7f8dc3a6af672b277b",
+    "src/editor/inputPolicy.ts": "3a64b56b50354684097f6a1ac8f520373499a77fe1b3d853970b206d060428e3",
+    "src/observe/trace.ts": "509b61c504c88078b3cfd243917aceb8e2bace996143995683bc3c4dc487d10b",
+    "src/runtime/expression.ts": "a0e6f974ec559b418a20b2955816ff90b8a345546926475d20499622083d9f50",
+    "src/runtime/FunctionComponent.ts": "bbf40826fec57de07c2318333cafd14ce301a138c7c33c97f95b05419281c411",
+    "src/runtime/hooks.ts": "52c5a3cb94e0caf108a245e9679b2b3bbe03113d311ea70614824a6ce393483e",
+    "src/runtime/index.ts": "3935b4f807ac3b05a6404b3eaa38780239104403cb4299780f5706570734dc3e",
+    "src/runtime/resolve.ts": "1915032806c01a567195842c179246cb4301a4f858bbf2ab43ccfa6ca0ce4d71",
+    "src/runtime/stateGuard.ts": "4fea31d3bc4f290e7e65683a8a812ab4c2a76f6c1dad1c77b7466d4abf96c369",
+    "tests/browser/keyed.spec.ts": "a119d4d400d411be390420e0fa3486c9f4707d89c4c2fb3664390f5125fca5f8",
+    "tests/browser/m1.spec.ts": "b70503234d6b2703116692821f9c8b974d4840308f50a9c6a298f8aab702d91e",
+    "tests/browser/m3.spec.ts": "fb992970e0ff25d6a08742cc9542d347763e8f859f299f702375b2e236c13257",
+    "tests/fixtures/helpers.ts": "8fce5dcd1f42002c2f47258048cdab7d1541ec6105cd5fb7fcc3ec27e27d0c4a",
+    "tests/fixtures/keyed-model.ts": "adb3ac6a18c039daebcdcdc63f4376b664ba502f800df3d5dbb7e57b620d034b",
+    "tests/integration/forms.test.ts": "d3dfcfd397b670b57b8c82fb69ec7280d684289588a387c91be4fed036c32b91",
+    "tests/integration/history.test.ts": "fc9d45ebcfb9b22930eb495d725cb4f58d54686055f0b08d894f6158463cdba7",
+    "tests/integration/hooks.test.ts": "0dc67fd9e0aab7d2df98cdc466a2a3a2f8f33858599db4d935a0094d244ca9af",
+    "tests/integration/keyed.test.ts": "98274e52c6f3338c160827fb7af57bd88fbc7c9d0683fa8bcad8110ae8691617",
+    "tests/integration/patch.test.ts": "60b1f0a4ea5def0750e2c7a52ab13a42d7e827113c2d5708428fbbb4b394e5a5",
+    "tests/integration/plan-validation.test.ts": "175eab24cb60409e3f1e220aca5242759aaf7859169a8ebbdf0d61ac8d0265df",
+    "tests/unit/diff.test.ts": "33b7a044b6dee3b9375e773a74b6d91a931bbcb3d67718e9c0f6e91f3bc7bc21",
+    "tests/unit/keyed-exhaustive.test.ts": "7b1d9f7eb112f021ce34fc43d97e5ec9cc6a1524e5a0dbffddf16ca7b7880c55",
+    "tests/unit/vdom.test.ts": "73a53f428f930530ec36827c69f95cc9c82b408082a621b56e262ae8d8ba7207"
+  }
+}

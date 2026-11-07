@@ -1,10 +1,11 @@
 # Krafton Jungle W11 · Mini React
 
-Vanilla TypeScript로 구현한 Mini React 엔진입니다. 현재 M3 정확성 보완까지 진행했으며, DOM 편집기와 루트 함수형 컴포넌트가 **동일한 VDOM → Diff → Patch**를 사용합니다. 전체 진행 상황은 [진행 기록](docs/progress.md)에서 확인할 수 있습니다.
+Vanilla TypeScript로 구현한 Mini React 엔진입니다. 현재 M4 Keyed Greedy/LIS까지 진행했으며, DOM 편집기와 루트 함수형 컴포넌트가 **동일한 VDOM → Diff → Patch**를 사용합니다. 전체 진행 상황은 [진행 기록](docs/progress.md)에서 확인할 수 있습니다.
 
 - Phase 1: 최초 DOM 캡처, 실제/테스트 영역, 텍스트·HTML 편집, Patch, VDOM History, Undo/Redo, 초기화.
 - Phase 2: `FunctionComponent`, 루트 `hooks` 배열, `useState` / `useEffect` / `useMemo`, props만 받는 순수 자식, 카운터 데모.
-- 현재는 위치 기반 Diff와 동기 State 갱신입니다. M3에서 Patch 사전 검증, 폼 소유·controlled 입력 복원, 오류 복구를 보완했습니다. Keyed Greedy/LIS, microtask Batching, expression 재사용, Inspector, 목록 앱, IME 보호는 후속 단계입니다.
+- 같은 부모의 직접 자식이 모두 고유 key를 가진 element라면 LIS가 기본입니다. Greedy 비교 경로를 유지하며, 공백/텍스트/누락 key는 위치 기반 Diff로 처리합니다. State 갱신은 현재 동기식입니다.
+- M3의 Patch 사전 검증, 폼 소유·controlled 입력 복원, 오류 복구를 유지합니다. microtask Batching, expression 재사용, Inspector, 목록 앱, IME 보호는 후속 단계입니다.
 
 ## 실행
 

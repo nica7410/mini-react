@@ -1,7 +1,7 @@
-import type { CommitResult, MountHandle, Result, TraceSink } from '../core/types';
+import type { CommitResult, MountHandle, ReconcileStrategy, Result, TraceSink, VRoot } from '../core/types';
 import { createMount, disposeMount } from '../core/mount';
 import { adoptCapture, captureDOM } from '../core/capture';
-import { diff } from '../core/reconcile';
+import { DEFAULT_STRATEGY, diff } from '../core/reconcile';
 import { applySnapshot, validatePlan } from '../core/patch';
 import { fail, ok, unwrap } from '../core/vdom';
 import { createHistory, getHistoryTarget, moveHistoryCursor, pushHistory } from './history';
@@ -19,22 +19,23 @@ export class EditorController {
   history: HistoryState;
   faulted = false;
 
-  constructor(actual: HTMLElement, test: HTMLElement, trace?: TraceSink) {
+  constructor(actual: HTMLElement, test: HTMLElement, trace?: TraceSink, public strategy: ReconcileStrategy = DEFAULT_STRATEGY) {
     if (test.childNodes.length) throw new Error('초기 테스트 영역은 비어 있어야 합니다.');
     this.actual = createMount(actual, trace); this.test = createMount(test, trace);
     const captured = unwrap(captureDOM(this.actual));
     unwrap(adoptCapture(this.actual, captured));
-    unwrap(commitError(applySnapshot(this.test, diff(this.test.view, captured.snapshot))));
+    unwrap(commitError(applySnapshot(this.test, this.plan(this.test, captured.snapshot))));
     this.history = createHistory(captured.snapshot);
   }
   get canUndo(): boolean { return !this.faulted && this.history.cursor > 0; }
   get canRedo(): boolean { return !this.faulted && this.history.cursor < this.history.entries.length - 1; }
+  private plan(mount: MountHandle, snapshot: VRoot) { return diff(mount.view, snapshot, { strategy: this.strategy }); }
 
   patch(): Result<void> {
     if (this.faulted) return fail('EDITOR_FAULT', '초기화 후 다시 시도하세요.');
     const captured = captureDOM(this.test);
     if (!captured.ok) return captured;
-    const result = commitError(applySnapshot(this.actual, diff(this.actual.view, captured.value.snapshot)));
+    const result = commitError(applySnapshot(this.actual, this.plan(this.actual, captured.value.snapshot)));
     if (!result.ok) { this.faulted = this.actual.faulted; return result; }
     const adopted = adoptCapture(this.test, captured.value);
     if (!adopted.ok) { this.faulted = true; return adopted; }
@@ -49,7 +50,7 @@ export class EditorController {
     if (!captured.ok) return captured;
     const adopted = adoptCapture(this.test, captured.value);
     if (!adopted.ok) return adopted;
-    const actualPlan = diff(this.actual.view, target.snapshot), testPlan = diff(this.test.view, target.snapshot);
+    const actualPlan = this.plan(this.actual, target.snapshot), testPlan = this.plan(this.test, target.snapshot);
     if (!actualPlan.ok) return actualPlan;
     if (!testPlan.ok) return testPlan;
     const actualValid = validatePlan(this.actual, actualPlan.value), testValid = validatePlan(this.test, testPlan.value);
@@ -67,9 +68,9 @@ export class EditorController {
     const actual = this.actual.container, test = this.test.container, trace = this.actual.trace;
     disposeMount(this.actual); disposeMount(this.test);
     this.actual = createMount(actual, trace); this.test = createMount(test, trace);
-    const actualResult = commitError(applySnapshot(this.actual, diff(this.actual.view, snapshot)));
+    const actualResult = commitError(applySnapshot(this.actual, this.plan(this.actual, snapshot)));
     if (!actualResult.ok) { this.faulted = true; return actualResult; }
-    const testResult = commitError(applySnapshot(this.test, diff(this.test.view, snapshot)));
+    const testResult = commitError(applySnapshot(this.test, this.plan(this.test, snapshot)));
     this.faulted = !testResult.ok;
     return testResult;
   }

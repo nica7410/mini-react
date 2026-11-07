@@ -86,6 +86,6 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
 
 export function applySnapshot(mount: MountHandle, plan: Result<PatchPlan>): CommitResult {
   if (!plan.ok) return { status: 'rejected', diagnostics: plan.diagnostics };
-  emitTrace(mount.trace, { causeIds: [], mountId: mount.id, phase: 'diff', detail: { planId: plan.value.id, strategy: 'positional', operations: plan.value.operations.length } });
+  emitTrace(mount.trace, { causeIds: [], mountId: mount.id, phase: 'diff', detail: { planId: plan.value.id, operations: plan.value.operations.length, reconciliations: plan.value.reconciliations } });
   return commit(mount, plan.value);
 }

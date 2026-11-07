@@ -1,8 +1,10 @@
-import type { DiffOptions, MountView, PatchOp, PatchPlan, Result, VElement, VNode, VRoot, ViewNode } from './types';
-import { compatible, equalData, fail, ok } from './vdom';
+import type { DiffOptions, MountView, PatchOp, PatchPlan, ReconcileDecision, ReconcileStrategy, Result, VElement, VNode, VRoot, ViewNode } from './types';
+import { compatible, equalData, fail, ok, unwrap } from './vdom';
 import { validateTree } from './validate';
+import { keyedEligibility, planKeyedChildren } from './keyed';
 
 let planSequence = 0;
+export const DEFAULT_STRATEGY: ReconcileStrategy = 'lis';
 
 // 순수 planner: 이 모듈은 DOM 객체/API를 읽지 않는다.
 export function diff(base: MountView, target: VRoot, options: DiffOptions = {}): Result<PatchPlan> {
@@ -10,11 +12,13 @@ export function diff(base: MountView, target: VRoot, options: DiffOptions = {}):
   if (!validBase.ok) return validBase;
   const valid = validateTree(target);
   if (!valid.ok) return valid;
-  if (options.strategy && options.strategy !== 'positional') return fail('UNSUPPORTED_STRATEGY', 'M1은 positional만 지원합니다.');
+  const strategy = options.strategy ?? DEFAULT_STRATEGY;
+  if (!['positional', 'greedy', 'lis'].includes(strategy)) return fail('UNSUPPORTED_STRATEGY', '지원하지 않는 재배치 전략입니다.');
   const id = options.planId ?? `plan-${++planSequence}`;
   let nextRef = 0;
   const creates: PatchOp[] = [], removes: PatchOp[] = [], updates: PatchOp[] = [], placements: PatchOp[] = [], forms: PatchOp[] = [];
   const newRefs = new Set<string>();
+  const reconciliations: ReconcileDecision[] = [];
   function create(vnode: VNode): ViewNode {
     const ref = `${base.mountId}/${id}/${++nextRef}`;
     newRefs.add(ref);
@@ -35,10 +39,8 @@ export function diff(base: MountView, target: VRoot, options: DiffOptions = {}):
     }
   }
   function reconcileChildren(old: readonly ViewNode[], next: readonly VNode[], parent: string): ViewNode[] {
-    const result = next.map((vnode, index): ViewNode => {
-      const previous = old[index];
-      if (!previous || !compatible(previous.vnode, vnode)) {
-        if (previous) removes.push({ kind: 'REMOVE_SUBTREE', node: previous.ref, parent });
+    function reconcileNode(previous: ViewNode | undefined, vnode: VNode): ViewNode {
+      if (!previous) {
         const tree = create(vnode);
         creates.push({ kind: 'CREATE_SUBTREE', tree });
         return tree;
@@ -51,11 +53,30 @@ export function diff(base: MountView, target: VRoot, options: DiffOptions = {}):
         updates.push({ kind: vnode.kind === 'text' ? 'SET_TEXT' : 'SET_COMMENT', node: previous.ref, value: vnode.text });
       }
       return { ref: previous.ref, vnode, children: [] };
-    });
-    for (let i = next.length; i < old.length; i++) removes.push({ kind: 'REMOVE_SUBTREE', node: old[i].ref, parent });
+    }
+    const eligibility = strategy === 'positional' ? 'positional-requested' : keyedEligibility(old, next);
+    let result: ViewNode[], moved = new Set<number>();
+    if (eligibility === 'keyed' && strategy !== 'positional') {
+      const keyed = unwrap(planKeyedChildren(old, next, strategy));
+      result = keyed.slots.map(slot => reconcileNode(slot.previous, slot.vnode));
+      for (const node of keyed.removedRefs) removes.push({ kind: 'REMOVE_SUBTREE', node, parent });
+      moved = new Set(keyed.moveNewIndices);
+      reconciliations.push({ parent, strategy, reason: 'keyed', usedLIS: keyed.usedLIS, reused: next.length - keyed.insertNewIndices.length,
+        inserts: keyed.insertNewIndices.length, removes: keyed.removedRefs.length, moves: moved.size });
+    } else {
+      let removed = 0, inserted = 0;
+      result = next.map((vnode, index) => {
+        const previous = old[index];
+        if (previous && compatible(previous.vnode, vnode)) return reconcileNode(previous, vnode);
+        if (previous) { removes.push({ kind: 'REMOVE_SUBTREE', node: previous.ref, parent }); removed++; }
+        inserted++; return reconcileNode(undefined, vnode);
+      });
+      for (let i = next.length; i < old.length; i++) { removes.push({ kind: 'REMOVE_SUBTREE', node: old[i].ref, parent }); removed++; }
+      reconciliations.push({ parent, strategy: 'positional', reason: eligibility, usedLIS: false, reused: next.length - inserted, inserts: inserted, removes: removed, moves: 0 });
+    }
     // 오른쪽부터 배치하면 신규 anchor도 사용 시점에 부모에 연결되어 있다.
-    for (let i = result.length - 1; i >= 0; i--) if (newRefs.has(result[i].ref)) {
-      placements.push({ kind: 'PLACE_BEFORE', placement: 'insert', node: result[i].ref, parent, anchor: result[i + 1]?.ref ?? null });
+    for (let i = result.length - 1; i >= 0; i--) if (newRefs.has(result[i].ref) || moved.has(i)) {
+      placements.push({ kind: 'PLACE_BEFORE', placement: newRefs.has(result[i].ref) ? 'insert' : 'move', node: result[i].ref, parent, anchor: result[i + 1]?.ref ?? null });
     }
     return result;
   }
@@ -65,7 +86,7 @@ export function diff(base: MountView, target: VRoot, options: DiffOptions = {}):
     return ok({
       id, mountId: base.mountId, baseRevision: base.revision, target,
       nextView: { ...base, revision: base.revision + (operations.length || !equalData(base.snapshot, target) ? 1 : 0), snapshot: target, children },
-      operations,
+      operations, reconciliations,
     });
   } catch (error) { return fail('DIFF_ERROR', error instanceof Error ? error.message : String(error)); }
 }
