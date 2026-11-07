@@ -17,6 +17,11 @@ export interface RootOptions {
   readonly reconcile?: ReconcileStrategy;
   readonly batching?: 'sync' | 'microtask';
   readonly reuseVNode?: boolean;
+  readonly onMeasure?: (measurement: RuntimeMeasurement) => void;
+}
+export interface RuntimeMeasurement {
+  readonly renderMs: number; readonly diffMs: number; readonly commitMs: number;
+  readonly flushMs: number; readonly effectMs: number;
 }
 
 export class FunctionComponent<P> {
@@ -118,6 +123,23 @@ export class FunctionComponent<P> {
     if (this.hasWork()) this.requestFlush();
   }
   private perform(mounting: boolean, explicit: boolean): CommitResult {
+    const clock = () => this.options.onMeasure ? performance.now() : 0;
+    const flushStart = clock();
+    let renderMs = 0, diffMs = 0, commitMs = 0, effectMs = 0, commitEnd = flushStart;
+    const measure = (result: CommitResult): CommitResult => {
+      if (this.options.onMeasure && (result.status === 'committed' || result.status === 'noop')) {
+        const measurement = { renderMs, diffMs, commitMs, flushMs: commitEnd - flushStart, effectMs };
+        try { this.options.onMeasure(measurement); } catch { /* 계측은 실행 의미를 바꾸지 않는다. */ }
+      }
+      return result;
+    };
+    const patch = (snapshot: typeof this.host.view.snapshot, dirty: ReadonlyMap<string, number>) => {
+      const diffStart = clock();
+      const plan = diff(this.host.view, snapshot, { strategy: this.options.reconcile, dirtyFormRefs: new Set(dirty.keys()), reuseVNode: this.options.reuseVNode });
+      const commitStart = clock(); diffMs = commitStart - diffStart;
+      const result = applySnapshot(this.host, plan); commitEnd = clock(); commitMs = commitEnd - commitStart;
+      return result;
+    };
     const pending = [...this.queue];
     this.host.traceCauses = [...new Set(pending.map(request => request.causeId))];
     const previous = this.committedHooks;
@@ -129,20 +151,23 @@ export class FunctionComponent<P> {
     try {
       const { candidate, changed, processedThrough: endSequence } = pureComputation(() => foldStateUpdates(previous, pending, guardState));
       if (!mounting && !explicit && !changed) {
-        const result = dirty.size ? applySnapshot(this.host, diff(this.host.view, this.host.view.snapshot, { strategy: this.options.reconcile, dirtyFormRefs: new Set(dirty.keys()), reuseVNode: this.options.reuseVNode }))
+        const result = dirty.size ? patch(this.host.view.snapshot, dirty)
           : { status: 'noop', revision: this.host.revision, counters: emptyCounters() } as const;
+        if (!dirty.size) commitEnd = clock();
         if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
         if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
         this.queue = this.queue.filter(request => request.sequence > endSequence);
         acknowledgeDirty();
-        return result;
+        return measure(result);
       }
       const frame: HookFrame = { previous, candidate, mounting, enqueue: this.enqueue, changedEffects, index: 0,
         onMemo: (index, reused) => this.trace('memo', { reused }, index) };
       this.trace('render', { mounting, pending: pending.length });
+      const renderStart = clock();
       const expression = renderWithHooks(frame, () => this.render(this.props));
       const evaluation = evaluateExpression(expression, this.evaluation, this.options.reuseVNode !== false, detail => this.trace('component', detail));
-      const result = applySnapshot(this.host, diff(this.host.view, evaluation.snapshot, { strategy: this.options.reconcile, dirtyFormRefs: new Set(dirty.keys()), reuseVNode: this.options.reuseVNode }));
+      renderMs = clock() - renderStart;
+      const result = patch(evaluation.snapshot, dirty);
       if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));
       if (result.status === 'faulted') { this.halted = true; this.report(result.error); return result; }
       this.committedHooks = candidate;
@@ -150,6 +175,7 @@ export class FunctionComponent<P> {
       this.mounted = true;
       this.queue = this.queue.filter(request => request.sequence > endSequence);
       acknowledgeDirty();
+      const effectStart = clock();
       // 모든 이전 cleanup을 먼저 처리하고, 새 setup을 Hook 순서로 처리한다.
       // cleanup에서 unmount해도 같은 cleanup이 두 번 실행되지 않게 먼저 분리한다.
       for (const index of changedEffects) {
@@ -177,7 +203,8 @@ export class FunctionComponent<P> {
           }
         } catch (error) { this.report(error); }
       }
-      return result;
+      effectMs = clock() - effectStart;
+      return measure(result);
     } catch (error) {
       this.halted = true; this.report(error);
       return { status: 'rejected', diagnostics: [errorDiagnostic(error)] };

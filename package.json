@@ -12,7 +12,9 @@
     "test:watch": "vitest",
     "test:browser": "playwright test",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "bench": "node scripts/benchmark.mjs",
+    "bench:smoke": "node scripts/benchmark.mjs --smoke"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",
