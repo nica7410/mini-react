@@ -1,6 +1,6 @@
 # M7 목록 앱 · 브라우저 상태 보호
 
-2026-11-07: 앱과 자동 브라우저 검증은 완료했다. **실제 Windows 한글 IME 확인은 사용자 응답 대기**이며 M7 전체 Gate를 완료로 표시하지 않는다.
+2026-11-07: 앱·자동 브라우저 검증과 사용자 직접 Windows 한글 IME 확인을 완료했다. M7의 필수 검증을 충족했다. 수동 검증의 브라우저명·버전은 제공되지 않았으므로 특정 브라우저의 IME 호환성 인증으로 확대하지 않는다.
 
 ## 목록 앱
 
@@ -33,7 +33,7 @@ commit 전에 관리 영역의 activeElement/ref와 지원 input/textarea의 ran
 | Firefox 153.0 (Playwright build 1538) | 10/10 smoke PASS |
 | typecheck / production build | PASS / PASS |
 | M7 신규 자동 검증 | CRUD·필터·정렬·집계·키보드·빈 상태·오류·reset, focus/selection/clamp, 합성 composition, timer/listener 정리 |
-| 실제 Windows 한글 IME | **미확인 — 수동 응답 대기** |
+| 실제 Windows 한글 IME | **사용자 직접 확인 PASS** — 아래 요청 절차에서 “직접 확인 완료 — 문제 없음”; 브라우저명/버전 미제공 |
 
 `browser-state.test.ts`는 이동/삭제/교체/type/disabled/hidden/style의 7개 충돌에서 전체 DOM 쓰기·state·Effect가 보류되는지 검사한다. 추가 FIFO 요청 보존, 취소된 후보, 최신 render 재계산, no-op 폼 복원, editor 직접 호출 거절, unmount timer 정리를 확인했다.
 
@@ -52,6 +52,8 @@ production 앱에서 실제 키보드/클릭 흐름(추가→수정/완료→재
 1. `pnpm dev` 후 Chrome/Edge에서 `http://127.0.0.1:5173`을 열고 목록 앱을 초기화한다.
 2. `1.5초 뒤 마지막 항목 이동`을 누른 뒤 마지막 `task-8 이름`을 선택하고 Windows 한글 IME로 `한글조합확인`을 입력한다.
 3. 마지막 글자를 조합 중인 채 이동 시각을 지난다. 조합 중에는 행이 이동하지 않아야 한다. 오른쪽 화살표로 조합을 끝내면 같은 입력 노드가 맨 앞으로 이동해야 한다.
-4. 글자 누락/중복, 조합의 불필요한 중단, focus 손실을 확인한다. 새 항목 입력·검색도 한글로 확인한다. 브라우저 버전/OS/IME와 관찰 결과를 기록한다.
+4. 글자 누락/중복, 조합의 불필요한 중단, focus 손실을 확인한다. 브라우저 버전/OS/IME와 관찰 결과를 기록한다.
 
-Windows Computer Use 도구는 현재 Chrome URL을 충분히 확인하지 못해 UI 조작을 중단했다. 이후 Windows 입력 조작을 진행하지 않았고 사용자에게 위 직접 검증을 요청했다. 아직 응답이 없으므로 실제 IME PASS를 주장하지 않는다. 합성 composition PASS는 이 항목을 대신하지 않는다.
+Windows Computer Use 도구는 현재 Chrome URL을 충분히 확인하지 못해 UI 조작을 중단했다. 이후 Windows 입력 조작을 진행하지 않았고 사용자에게 위 직접 검증을 요청했다. 사용자는 2026-11-07 이 채팅에서 **“직접 확인 완료 — 문제 없음”**으로 답했다. 요청은 조합 중 행 이동 보류, 조합 종료 뒤 앞으로 이동, 글자 누락/중복·focus 손실 유무를 포함했다. 이것이 T-B05의 수동 증거이며 합성 composition 결과와 구분한다.
+
+환경은 사용자 Windows 환경과 요청한 한글 IME이며 브라우저명·버전/IME 세부 버전은 미제공이다. 이 수동 결과로 새 항목·검색의 모든 한글 입력 흐름, 다른 IME/OS/브라우저까지 검증했다고 주장하지 않는다.

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "stage": "M8 preflight",
+  "date": "2026-11-07T07:10:03.466Z",
+  "branch": "phase1",
+  "functionalCommit": "319026877cb6f391db096a4c179f6d1a0a71eb46",
+  "checks": {
+    "ciYaml": "parsed with bundled YAML parser; triggers, permissions, commands and four SHA pins verified",
+    "remoteCI": "not run",
+    "requirementsTestIds": 69,
+    "missingDocumentLinks": 0,
+    "unchangedM7SourceAndTestHashes": 59,
+    "benchmarkAnalysisSmoke": {
+      "counts": 52,
+      "warmup": 52,
+      "samples": 156,
+      "conditions": 52,
+      "summaryMetrics": 364,
+      "rawAndSummaryAgree": true
+    },
+    "plotPython": "syntax parsed; plotting awaits completed benchmark and local matplotlib",
+    "fullBenchmark": "running; not yet accepted"
+  },
+  "reports": {
+    "final-unit.json.gz": {
+      "originalFile": ".validation/m7-unit-initial.json",
+      "rawSha256": "f22a50f8f1150ff3185619fa42ddb41cb5c1f04eaafc32574370bcb265ca6f08",
+      "gzipSha256": "27433dc0b8e33b5746a64baf96272dad887c0709dd9cbeb8fc4e23733b0ece92"
+    },
+    "final-browser.json.gz": {
+      "originalFile": ".validation/browser-results.json",
+      "rawSha256": "6cd0e73355a349b2dd01c1b8ca19b88482140f5029a7a9a9177c4f9375f0103e",
+      "gzipSha256": "c5491a83939772a74f143bc69a1b00b0acaef115174c802474763a3fde466517"
+    }
+  }
+}

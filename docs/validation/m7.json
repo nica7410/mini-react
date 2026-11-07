@@ -3,7 +3,7 @@
   "stage": "M7",
   "branch": "phase1",
   "baseCommit": "c8db719",
-  "unitRunAt": "2026-11-07T06:42:02.8930000+00:00",
+  "unitRunAt": "2026-11-07T15:42:02.893+09:00",
   "browserRunAt": "2026-11-07T06:47:09.353Z",
   "checks": {
     "browser": {
@@ -32,8 +32,17 @@
     },
     "realWindowsKoreanIME": {
       "syntheticCompositionIsNotManualEvidence": true,
-      "status": "pending-user-verification",
-      "automatedUIAttempt": "Stopped by Computer Use: current browser URL could not be confidently determined"
+      "status": "passed-user-reported",
+      "automatedUIAttempt": "Stopped by Computer Use: current browser URL could not be confidently determined",
+      "confirmedDate": "2026-11-07",
+      "evidence": "사용자 응답: 직접 확인 완료 — 문제 없음",
+      "scope": "Requested Windows Korean IME workflow: defer task-8 move during composition, move after composition end, no missing/duplicated characters or focus loss",
+      "environment": {
+        "ime": "Windows Korean IME, version unspecified",
+        "browser": "not provided",
+        "os": "user Windows environment"
+      },
+      "source": "User reply in the active Codex chat; independent of synthetic composition tests"
     },
     "unitIntegration": {
       "passed": 157,

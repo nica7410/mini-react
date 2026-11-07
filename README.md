@@ -1,56 +1,72 @@
 # Krafton Jungle W11 · Mini React
 
-Vanilla TypeScript로 구현한 Mini React 엔진입니다. 현재 M4 Keyed Greedy/LIS까지 진행했으며, DOM 편집기와 루트 함수형 컴포넌트가 **동일한 VDOM → Diff → Patch**를 사용합니다. 전체 진행 상황은 [진행 기록](docs/progress.md)에서 확인할 수 있습니다.
+Vanilla TypeScript로 만든 학습용 Mini React입니다. DOM 편집기와 루트 함수형 컴포넌트가 **같은 VDOM → Diff → Patch**를 사용합니다. 안정적인 DOM identity, FIFO Batching, Greedy/LIS 비교와 실제 실행 Inspector를 구현했습니다. React 호환 라이브러리는 아닙니다.
 
-- Phase 1: 최초 DOM 캡처, 실제/테스트 영역, 텍스트·HTML 편집, Patch, VDOM History, Undo/Redo, 초기화.
-- Phase 2: `FunctionComponent`, 루트 `hooks` 배열, `useState` / `useEffect` / `useMemo`, props만 받는 순수 자식, 카운터 데모.
-- 같은 부모의 직접 자식이 모두 고유 key를 가진 element라면 LIS가 기본입니다. Greedy 비교 경로를 유지하며, 공백/텍스트/누락 key는 위치 기반 Diff로 처리합니다. State 갱신은 현재 동기식입니다.
-- M3의 Patch 사전 검증, 폼 소유·controlled 입력 복원, 오류 복구를 유지합니다. microtask Batching, expression 재사용, Inspector, 목록 앱, IME 보호는 후속 단계입니다.
+- **Phase 1:** DOM 캡처, 실제/테스트 영역, 직접·HTML 편집, 부분 Patch, 불변 VDOM History, Undo/Redo, 오류 복구.
+- **Phase 2:** `FunctionComponent`, 루트 `hooks`, `useState` / `useEffect` / `useMemo`, props만 받는 순수 자식, 목록 관리 앱.
+- **B안:** 지원되는 keyed 형제의 LIS 기본 경로와 Greedy 비교, FIFO microtask Batching, 같은 expression의 위치별 재사용, Inspector·seed 재실행·독립 benchmark.
+- **입력:** snapshot/controlled/uncontrolled, no-op 복원, focus/selection 보정, composition 충돌 plan 보류.
+
+최신 자동 검증은 **157개 단위·통합 + Chromium 19개 + Firefox 10개**, 타입 검사·production build 통과입니다. 실제 Windows 한글 IME는 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). 전체 benchmark와 M8 인수 진행 상태는 [진행 기록](docs/progress.md)을 기준으로 합니다. 팀 합의와 원격 CI 실행은 로컬 기술 검증과 별개입니다.
 
 ## 실행
 
-Node **24.15.0 이상**, pnpm **11.25.0**. 직접 의존성 버전과 `pnpm-lock.yaml`을 고정했습니다. React/Vue 등 UI 프레임워크 의존성은 없습니다.
+Node **24.15.0 이상**(검증 환경 24.22.1), pnpm **11.25.0**. 의존성과 lockfile을 고정했으며 외부 UI 프레임워크를 사용하지 않습니다.
 
 ```sh
 pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-기본 주소는 `http://127.0.0.1:5173`입니다. 현재 Windows 셸처럼 pnpm이 PATH에 없다면, 프로젝트 루트에서 이미 설치된 Codex runtime을 이용할 수 있습니다.
+브라우저에서 [로컬 데모](http://127.0.0.1:5173)를 엽니다. pnpm이 PATH에 없는 현재 Windows 환경은 설치된 Codex runtime을 찾는 보조 실행기를 사용할 수 있습니다.
 
 ```powershell
 .\scripts\pnpm.ps1 install --frozen-lockfile
 .\scripts\pnpm.ps1 dev
 ```
 
-아래 모든 `pnpm` 명령도 같은 방식으로 `.\scripts\pnpm.ps1`로 바꿔 실행할 수 있습니다. 다른 컴퓨터의 일반 pnpm 환경에서는 이 보조 스크립트가 필요 없습니다.
+아래 `pnpm` 명령에도 같은 대체가 가능합니다. 다른 컴퓨터에 일반 pnpm이 설치되어 있으면 보조 실행기가 필요 없습니다.
 
-## 검증
+## 데모에서 확인할 것
+
+1. 편집기의 테스트 영역을 수정하고 Patch합니다. 추가 편집을 확정하지 않은 채 Undo한 뒤 두 영역이 같은 과거 snapshot으로 돌아오는지 봅니다.
+2. 목록 앱에서 추가·이름 수정·완료·검색·정렬을 사용합니다. `+1 세 번`은 최종 +3이며 기본 모드에서 한 번 commit합니다.
+3. 실험실에서 8개 항목의 마지막→처음 이동을 LIS/Greedy로 각각 실행합니다. Inspector에서 계획과 실제 DOM 이동 **1회/7회**, 유지된 객체 identity, ref/anchor를 확인합니다.
+
+[상세 데모·실패 재현·원리 설명](docs/demo-and-explanation.md)에 발표 순서와 작은 변경 연습이 있습니다.
+
+## 검증과 측정
 
 ```sh
 pnpm typecheck
 pnpm test
-pnpm exec playwright install chromium
+pnpm exec playwright install chromium firefox
 pnpm test:browser
 pnpm build
 pnpm preview
+
+# production build 뒤 실행; 전체 측정은 다른 테스트와 동시에 실행하지 않음
+pnpm bench:smoke
+pnpm bench --tag=my-full-run
+pnpm trace:workflow
 ```
 
-브라우저 테스트는 전용 포트 4173에서 Vite를 시작하고 종료합니다. 기존 서버와 섞지 않으므로 포트 4173은 비워 두세요. 단위·통합 테스트는 실제 엔진 모듈을 사용하며, 순수 Diff 테스트는 DOM 없는 Node 환경에서 실행합니다.
+브라우저 테스트는 포트 **4173**, benchmark/Performance trace는 **4175**를 사용합니다. 기존 서버와 공유하지 않으며 자동으로 종료합니다. benchmark와 trace는 동시에 실행하지 마세요. 전체 benchmark는 매 표본의 DOM 준비·검증까지 포함해 시간이 오래 걸립니다. `--sizes=10,100 --sessions=1 --tag=quick-check`로 좁혀 확인할 수 있지만 이를 전체 검증으로 기록하지 않습니다.
 
-[M0~M1 구현·검증 기록](docs/m0-m1.md)에 테스트 ID, 구현 원리, 확인된 한계와 팀 확인 항목이 있습니다. [검증 결과 요약](docs/validation/m0-m1.json)은 해당 실행의 증거이며, 이후 코드 변경에 대한 자동 보증은 아닙니다.
+[CI 설정](.github/workflows/ci.yml)은 같은 검사 명령을 실행하도록 구성했습니다. 원격 push·CI 실행·배포는 이 작업에서 수행하지 않았습니다. 로컬 성공이 Linux 원격 CI 성공을 뜻하지 않습니다.
 
-## 구조
+## 문서와 코드
 
-```text
-src/core/       불변 VDOM, DOM 캡처, mount binding, 순수 Diff, Patch/host
-src/runtime/    h(), 순수 자식 평가, FunctionComponent, 루트 Hooks
-src/editor/     입력 검사, 두 영역 controller, VDOM History
-src/observe/    선택적 TraceSink 진입점
-src/app/        편집기 조작 UI와 카운터 예제
-tests/         공통 fixtures, unit, integration, Chromium 기능 테스트
-```
+| 목적 | 문서/경로 |
+|---|---|
+| 단계·커밋·완료 여부 | [진행 기록](docs/progress.md) |
+| 요구사항과 테스트 근거 | [기능·테스트 대응표](docs/requirements-tests.md) |
+| 엔진 구조·알고리즘·지원 한계 | [아키텍처](docs/architecture.md) |
+| 설치·시연·핵심 질문·성과 표현 | [데모와 설명](docs/demo-and-explanation.md) |
+| 폼·focus·IME·브라우저 | [M7 검증](docs/m7-app-browser.md) |
+| 실험 방법·원본 | [M6 관찰·benchmark](docs/m6-observability.md) |
+| 초기 구현의 역사적 기록 | [M0~M1](docs/m0-m1.md) |
+| 공통 엔진 / 루트 런타임 | `src/core/` / `src/runtime/` |
+| 편집기 / 앱 / 관찰 / 측정 | `src/editor/` / `src/app/` / `src/observe/` / `src/bench/` |
 
-`h()`는 표현식만 만들고 DOM 생성과 컴포넌트 실행을 하지 않습니다. `resolveExpression()`이 루트 결과와 순수 자식을 Host VDOM으로 바꿉니다. `diff()`는 DOM 없는 `MountView`를 비교하고, `commit()`이 mount별 `ref → Node` 연결을 통해 필요한 변경만 적용합니다.
-
-설정 참고: [Vite 시작 안내](https://vite.dev/guide/), [Vitest 시작 안내](https://vitest.dev/guide/), [Playwright 테스트 서버 설정](https://playwright.dev/docs/test-webserver).
+State와 Hooks는 각 루트에만 있습니다. 루트 간 상태 공유, 자식 Hooks, Fiber/동시성, SSR, keyed Fragment, 전체 HTML/SVG 지원은 범위 밖입니다. 예상하지 못한 DOM API 예외의 완전한 rollback도 제공하지 않습니다.

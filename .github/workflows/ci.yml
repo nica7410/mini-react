@@ -1,0 +1,45 @@
+name: Mini React checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24.22.1'
+          package-manager-cache: false
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6
+        with:
+          run_install: false
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test --reporter=default --reporter=json --outputFile=.validation/unit-results.json
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium firefox
+      - run: pnpm test:browser
+      - name: Keep test evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: test-evidence
+          include-hidden-files: true
+          if-no-files-found: ignore
+          retention-days: 14
+          path: |
+            .validation/unit-results.json
+            .validation/browser-results.json
+            test-results/
