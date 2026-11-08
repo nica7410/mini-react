@@ -1,0 +1,31 @@
+[
+  {
+    "Name": "typecheck",
+    "StartedAt": "2026-11-08T12:00:16.1524341Z",
+    "EndedAt": "2026-11-08T12:00:17.8957231Z",
+    "ExitCode": 0,
+    "Arguments": [
+      "typecheck"
+    ]
+  },
+  {
+    "Name": "unit",
+    "StartedAt": "2026-11-08T12:00:17.9313857Z",
+    "EndedAt": "2026-11-08T12:00:23.5115955Z",
+    "ExitCode": 0,
+    "Arguments": [
+      "test",
+      "--reporter=json",
+      "--outputFile=docs/validation/task-e3-correctness/unit.json"
+    ]
+  },
+  {
+    "Name": "build",
+    "StartedAt": "2026-11-08T12:00:23.5158931Z",
+    "EndedAt": "2026-11-08T12:00:25.9583533Z",
+    "ExitCode": 0,
+    "Arguments": [
+      "build"
+    ]
+  }
+]

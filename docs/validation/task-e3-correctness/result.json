@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "recordedAt": "2026-11-08T12:00:26.019Z",
+  "sourceSha256": "8c5997462c233fa2e64ad1163b1d4564e54a3f10bf11435a3f35f4b5357deb46",
+  "testSha256": "bae6c01b44f32864448f8192b50e65f5dd78f76337dc367c3eb76ea94784277d",
+  "summaries": {
+    "red": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "pending": 0,
+      "todo": 0,
+      "sha256": "59709459d27abfc1c22d8887d952b1748e18d7e77931f991f893f638e47b1ec0"
+    },
+    "targeted": {
+      "total": 19,
+      "passed": 19,
+      "failed": 0,
+      "pending": 0,
+      "todo": 0,
+      "sha256": "eee388e791c52590433336ac5f6b0c63558f8ff12db41979c24ecdf404f978cc"
+    },
+    "unit": {
+      "total": 203,
+      "passed": 203,
+      "failed": 0,
+      "pending": 0,
+      "todo": 0,
+      "sha256": "6d9c7ac8eb23d1bfaa4e293979bb9e597a16a9f290ab2e8500511e5a8be70888"
+    }
+  },
+  "commands": [
+    {
+      "Name": "typecheck",
+      "StartedAt": "2026-11-08T12:00:16.1524341Z",
+      "EndedAt": "2026-11-08T12:00:17.8957231Z",
+      "ExitCode": 0,
+      "Arguments": [
+        "typecheck"
+      ]
+    },
+    {
+      "Name": "unit",
+      "StartedAt": "2026-11-08T12:00:17.9313857Z",
+      "EndedAt": "2026-11-08T12:00:23.5115955Z",
+      "ExitCode": 0,
+      "Arguments": [
+        "test",
+        "--reporter=json",
+        "--outputFile=docs/validation/task-e3-correctness/unit.json"
+      ]
+    },
+    {
+      "Name": "build",
+      "StartedAt": "2026-11-08T12:00:23.5158931Z",
+      "EndedAt": "2026-11-08T12:00:25.9583533Z",
+      "ExitCode": 0,
+      "Arguments": [
+        "build"
+      ]
+    }
+  ],
+  "note": "Candidate correctness only. Two old-E2 failures preserved. Performance and final browser acceptance are pending."
+}

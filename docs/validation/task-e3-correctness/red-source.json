@@ -1,0 +1,8 @@
+{
+  "startedAt": "2026-11-08T11:59:03.223Z",
+  "head": "dfd20dc2e67897588e265646cc5ece13bcfb71ae",
+  "engine": "Unchanged E2 freeze/proof implementation",
+  "sourceSha256": "9bae73fafb9a38683e7cf063f164b2471f53a69cef682b853e35c699a6fff9b4",
+  "testSha256": "bae6c01b44f32864448f8192b50e65f5dd78f76337dc367c3eb76ea94784277d",
+  "command": "scripts/pnpm.ps1 exec vitest run tests/unit/immutable-proof-regression.test.ts --reporter=json --outputFile=docs/validation/task-e3-correctness/red.json"
+}
