@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "reviewedAt": "2026-11-08T17:12:05.437Z",
+  "files": [
+    {
+      "file": "comparison-a1-e1-e2.png",
+      "sha256": "291af1c87722f24688a2925edd0639e8d8d8bbd8777ca1ccdcaafa0ec639e20a",
+      "width": 2240,
+      "height": 1440,
+      "visualReview": "Displayed and inspected: all three sessions, negative/positive changes, labels, legends and full uncut axes readable. Large adverse S1 points retained."
+    },
+    {
+      "file": "comparison-a1-e1-e3.png",
+      "sha256": "6e4120ed35b2e86af3d9dd756c356e589f3aa357b89a09a464ae5dbaae556dc7",
+      "width": 2240,
+      "height": 1440,
+      "visualReview": "Displayed and inspected: all three sessions, negative/positive changes, labels, legends and full uncut axes readable. Large adverse S1 points retained."
+    },
+    {
+      "file": "comparison-a1-e2-e3.png",
+      "sha256": "6503ec3753a1e9726e5bfa32544d2a6d1b273bbdaff8473a086e1bbca5796820",
+      "width": 2240,
+      "height": 1440,
+      "visualReview": "Displayed and inspected: all three sessions, negative/positive changes, labels, legends and full uncut axes readable. Large adverse S1 points retained."
+    },
+    {
+      "file": "comparison-e3-a0-a1.png",
+      "sha256": "a71921a2d4c081bc31901b85f580c92f5fdb42d2c9d554cf682821fe557127c8",
+      "width": 2240,
+      "height": 1440,
+      "visualReview": "Displayed and inspected: all three sessions, negative/positive changes, labels, legends and full uncut axes readable. Large adverse S1 points retained."
+    }
+  ],
+  "graphPointsIndependentlyChecked": 480,
+  "statisticsAuditSha256": "8f185d529279a7654c6bae0f6e56f3adc3ff199fcba5675ee1ff813e462a6905",
+  "plotValuesSha256": "94ffc7b5ee36826cdcf5718978ef0913301cd75c8d01379f525892d5add5f89c",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "backend": "Agg"
+  },
+  "note": "Visual review and independent raw-value audit are distinct checks. PNG/SVG files match the generator metadata; no axis clipping or removal of adverse observations."
+}

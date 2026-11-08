@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-11-08T12:10:35.574Z",
+  "status": "definitions verified from unchanged harness",
+  "boundaryDefinition": "../task-matrix-v1/measurement-boundaries.json",
+  "boundaryDefinitionSha256": "7a1c7b95358d5d32057d697514531c9b1c51c890f9b4fb6032b94bb782e88d67",
+  "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+  "comparisonDefinition": "../../task-app-engine-candidate.md",
+  "builds": [
+    "task-e1-a1-v1",
+    "task-e2-a1-v1",
+    "task-e3-a0-v1",
+    "task-e3-a1-v1"
+  ],
+  "note": "The boundary addendum applies to all four candidate-run builds without changing clocks, adapters, source, seed, gates or sample policy. No formal candidate results reviewed at this point."
+}

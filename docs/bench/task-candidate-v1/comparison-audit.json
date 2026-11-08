@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "createdAt": "2026-11-08T17:09:39.759Z",
+  "scriptSha256": "3bc63319d5a2ce0ee890ca33f409a9497bb113e44b350a8163164c38f5f5dc73",
+  "environmentSha256": "19a9cece8be81512234d05673b0a500bf323b9b63781ef4ff3c277f100ab08bf",
+  "summarySha256": "f56b476d3b8b031b36859132633a26433f3b64084b15b826eca9e4e55d07b22b",
+  "pairs": [
+    {
+      "kind": "engine",
+      "label": "A1: E1 -> E2",
+      "before": "task-e1-a1-v1",
+      "after": "task-e2-a1-v1"
+    },
+    {
+      "kind": "engine",
+      "label": "A1: E1 -> E3",
+      "before": "task-e1-a1-v1",
+      "after": "task-e3-a1-v1"
+    },
+    {
+      "kind": "engine",
+      "label": "A1: E2 -> E3",
+      "before": "task-e2-a1-v1",
+      "after": "task-e3-a1-v1"
+    },
+    {
+      "kind": "app",
+      "label": "E3: A0 -> A1",
+      "before": "task-e3-a0-v1",
+      "after": "task-e3-a1-v1"
+    }
+  ],
+  "contrasts": 8016,
+  "decisionConditions": 204,
+  "amortizationPoints": 29700,
+  "note": "Lifecycle trajectories include initialization and warm-up; these correlated points are not an IID sample distribution. Gate failures and low-n tails are retained; final policy needs interpretation and prescribed supplementary sessions."
+}

@@ -13,6 +13,21 @@
 
 입력창 draft나 카운터가 바뀌면 루트 함수는 실행된다. `visible`과 `rowActions`가 그대로이므로 목록 useMemo는 이전 표현 객체를 반환한다. 엔진은 그 표현의 이전 VNode 평가 결과를 사용하고 TaskRow 함수를 다시 호출하지 않는다. 실제 DOM binding, PatchPlan, dirty 입력 복원과 Effect 처리는 각자의 기존 절차를 따른다. 따라서 행 함수 실행이 0회여도 전체 갱신이 O(1)이 된다는 뜻은 아니다.
 
+```mermaid
+flowchart TD
+  A[루트 State 갱신] --> B[루트 함수와 Hooks 실행]
+  B --> C{visible 또는 rowActions 변경?}
+  C -- 아니오 --> D[기존 목록 expression 반환]
+  D --> E[이전 VNode 평가 결과 재사용]
+  C -- 예 --> F[새 목록 expression 생성]
+  F --> G[TaskRow 평가와 VNode 생성]
+  E --> H[공통 VDOM → Diff → Patch 경로]
+  G --> H
+  H --> I[기존 입력 보호와 Effect 규칙 적용]
+```
+
+그림에서 생략되는 것은 기존 목록의 표현 생성·자식 평가다. 공통 경로에 필요한 문맥 검증, 실제 DOM binding·plan 검증과 폼 처리는 유지한다.
+
 항목을 수정하면 `setItems(previous => ...)`가 새로운 items 배열을 만든다. 그 결과 visible과 목록 표현이 새로 계산되고 필요한 자식 평가·Diff·Patch를 수행한다. 자동 props 비교나 자식 Hook은 추가하지 않았다. 이 구현은 목록 전체 표현의 재사용이며, 항목 하나를 수정했을 때 나머지 행을 자동으로 memo하는 구현은 아니다.
 
 콜백을 오래 보관하려면 오래된 State를 읽지 않아야 한다. 예를 들어 rename은 특정 render의 items를 캡처하지 않고, 함수형 updater가 받는 `previous`를 변환한다. rename → toggle → rename을 같은 turn에 실행하면 두 번째 action은 첫 번째 action의 후보 상태를, 세 번째 action은 두 번째 후보 상태를 받는다. 기존 FIFO Batching과 안정된 setter 계약을 그대로 사용한다.

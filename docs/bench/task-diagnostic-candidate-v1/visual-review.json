@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "reviewedAt": "2026-11-08T17:34:12.345Z",
+  "diagnosticAuditSha256": "78c77c56cc4e683043df89034fca7048d83f7ee6b54258a1d4a5db7d84eb60b0",
+  "files": [
+    {
+      "file": "task-e3-a1-v1-10000-visual-counter.png",
+      "sha256": "70c8c0e9255c812b6133d9a60d788edd6ef87460abfb5552da83dcde050f5ddc",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "file": "task-e3-a1-v1-10000-visual-move.png",
+      "sha256": "242e402e96aa39e77c23b3df187d995dad112ba61909e6e44deb403a61c9cb8e",
+      "width": 1280,
+      "height": 900
+    }
+  ],
+  "observations": [
+    "Counter screenshot at the lower viewport shows value 9 after three +3 actions; row inputs, checked state and action buttons are readable.",
+    "Move screenshot shows the top viewport, 10000 total rows and the moved rows; input fields and labels are readable. The complete row/model assertions were separately performed by the harness."
+  ],
+  "note": "Two existing PNG files actually displayed and visually inspected. Viewport screenshots are not proof of physical display completion, all 10000 row contents, focus preservation or manual IME."
+}

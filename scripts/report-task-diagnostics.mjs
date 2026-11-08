@@ -34,7 +34,7 @@ for (const result of results.filter(result => result.cpu)) {
 }
 rows.push('', '원본에 음수 timeDelta가 있는 경우 모든 timestamp/sample 쌍을 함께 정렬한다. 표본 삭제·재시도·missing sample 보간은 하지 않는다. 각 표본은 정렬 후 직전 구간을 가중치로 받으며 표시한 창과의 교집합만 합산한다. 모든 창의 전체 시간과 self 합계를 검산했다. 1ms sampling 근사이므로 정확한 함수 실행 시간이 아니다.', '',
   '## 보유 heap과 DOM 수명', '',
-  '각 checkpoint 직전 강제 GC를 수행한 별도 단일 궤적이다. reuse:CRUD 1:1을 먼저, 10:1을 나중에 같은 앱에서 실행했다. 두 엔진의 초기 데이터와 순서는 같다. JS used heap은 프로세스 RSS가 아니며 해제 후 남은 값만으로 객체 누수를 단정하지 않는다. JIT/runtime/내부 자료구조의 구분에는 별도 소유 경로 증거가 필요하다.', '',
+  '각 checkpoint 직전 강제 GC를 수행한 별도 단일 궤적이다. reuse:CRUD 1:1을 먼저, 10:1을 나중에 같은 앱에서 실행했다. 비교군의 초기 데이터와 순서는 같다. JS used heap은 프로세스 RSS가 아니며 해제 후 남은 값만으로 객체 누수를 단정하지 않는다. JIT/runtime/내부 자료구조의 구분에는 별도 소유 경로 증거가 필요하다.', '',
   '| build / 크기 | 전 / mount 후 / 마지막 작업 후 / dispose 후 MiB | DOM nodes 전→dispose | listeners 전→dispose |', '|---|---:|---:|---:|');
 const memoryRows = [];
 for (const result of results.filter(result => result.memory)) {

@@ -1,0 +1,197 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-11-08T17:36:04.782Z",
+  "report": "docs/task-app-engine-candidate.md",
+  "reportSha256": "54025bf513f04c35c1b436c4102cc500315d308bccf9b5921ad47549fffe85c9",
+  "scriptSha256": "f8614713f038c26322d1d90b61e384ea83cbf198eba6eeb37e4a8c7287744ff8",
+  "statisticsAuditSha256": "8f185d529279a7654c6bae0f6e56f3adc3ff199fcba5675ee1ff813e462a6905",
+  "policyAuditSha256": "d02a64977f59d7a2d285ccd02a93b292d1630cffed7d5cc563225363186bf872",
+  "diagnosticReportSha256": "58f2e8f684f5f3e62d6bf5dcef988c50b2ad19721a2ea5e4470dced51afcac95",
+  "percentageRows": 4,
+  "memoryRows": 3,
+  "cpuExamples": 4,
+  "visualExamples": 4,
+  "gates": [
+    {
+      "comparison": "A1: E1 -> E3",
+      "inspected": 68,
+      "exceeded": 5
+    },
+    {
+      "comparison": "E3: A0 -> A1",
+      "inspected": 68,
+      "exceeded": 6
+    }
+  ],
+  "sourceRows": [
+    {
+      "before": "1,persistent,counter,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "1,persistent,counter,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -194.7500000037253,
+          "percent": -49.22279792812463
+        },
+        "p95": {
+          "ms": -202.04000000022336,
+          "percent": -47.98423008875032
+        }
+      }
+    },
+    {
+      "before": "2,persistent,counter,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "2,persistent,counter,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -204.14999999850988,
+          "percent": -45.121007845915805
+        },
+        "p95": {
+          "ms": -206.2299999985844,
+          "percent": -42.82139927945696
+        }
+      }
+    },
+    {
+      "before": "3,persistent,counter,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "3,persistent,counter,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -217.7500000037253,
+          "percent": -46.55264564483704
+        },
+        "p95": {
+          "ms": -216.7699999973177,
+          "percent": -43.78882301195925
+        }
+      }
+    },
+    {
+      "before": "1,persistent,search,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "1,persistent,search,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 538.5500000007451,
+          "percent": 67.86164314544632
+        },
+        "p95": {
+          "ms": 857.7600000012666,
+          "percent": 89.91571973721666
+        }
+      }
+    },
+    {
+      "before": "2,persistent,search,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "2,persistent,search,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 9.25,
+          "percent": 0.9528224145064268
+        },
+        "p95": {
+          "ms": 71.01499999575321,
+          "percent": 6.098299276988839
+        }
+      }
+    },
+    {
+      "before": "3,persistent,search,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "3,persistent,search,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 3.449999999254942,
+          "percent": 0.3511271690247231
+        },
+        "p95": {
+          "ms": 60.75500000566217,
+          "percent": 5.162619761278209
+        }
+      }
+    },
+    {
+      "before": "1,persistent,sort,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "1,persistent,sort,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 1922.1000000014901,
+          "percent": 62.96805896818463
+        },
+        "p95": {
+          "ms": 1656.384999998666,
+          "percent": 32.49116557518934
+        }
+      }
+    },
+    {
+      "before": "2,persistent,sort,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "2,persistent,sort,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 37.80000000074506,
+          "percent": 1.3004214328973918
+        },
+        "p95": {
+          "ms": 36.18000000417214,
+          "percent": 1.061429732476249
+        }
+      }
+    },
+    {
+      "before": "3,persistent,sort,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "3,persistent,sort,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -33.19999999552965,
+          "percent": -1.1231773739147632
+        },
+        "p95": {
+          "ms": 17.589999995752805,
+          "percent": 0.5112807304926692
+        }
+      }
+    },
+    {
+      "before": "1,persistent,move,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "1,persistent,move,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -114.34999999776483,
+          "percent": -10.057167985731297
+        },
+        "p95": {
+          "ms": -106.30999999716869,
+          "percent": -7.336935892197505
+        }
+      }
+    },
+    {
+      "before": "2,persistent,move,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "2,persistent,move,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -7.799999997019768,
+          "percent": -0.7307818426042112
+        },
+        "p95": {
+          "ms": 120.66499999389043,
+          "percent": 10.024840901453548
+        }
+      }
+    },
+    {
+      "before": "3,persistent,move,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "3,persistent,move,10000,task-e3-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -26.300000000745058,
+          "percent": -2.430234707140333
+        },
+        "p95": {
+          "ms": 215.95499999001572,
+          "percent": 17.69492025296424
+        }
+      }
+    }
+  ],
+  "note": "Candidate overview checked against the independent per-session statistical audit and separate diagnostic report. No timing/profiling distributions pooled."
+}

@@ -1,0 +1,85 @@
+{
+  "timeOrigin": 1794159053978.6,
+  "marks": [
+    {
+      "name": "task-diag:visual-start:0",
+      "startTime": 4539,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:4",
+      "startTime": 5018.0999999940395,
+      "detail": {
+        "renderMs": 78,
+        "diffMs": 146.39999999850988,
+        "commitMs": 253.69999999552965,
+        "flushMs": 478.19999999552965,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:visual-commit:0",
+      "startTime": 5018.19999999553,
+      "detail": null
+    },
+    {
+      "name": "task-diag:visual-start:1",
+      "startTime": 5224.0999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:5",
+      "startTime": 5685.5,
+      "detail": {
+        "renderMs": 73.10000000149012,
+        "diffMs": 149.5,
+        "commitMs": 238.60000000149012,
+        "flushMs": 461.30000000447035,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:visual-commit:1",
+      "startTime": 5685.5999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:visual-start:2",
+      "startTime": 5973.0999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:6",
+      "startTime": 6464.39999999851,
+      "detail": {
+        "renderMs": 83.70000000298023,
+        "diffMs": 146.29999999701977,
+        "commitMs": 261.1000000014901,
+        "flushMs": 491.1000000014901,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:visual-commit:2",
+      "startTime": 6464.5,
+      "detail": null
+    }
+  ],
+  "longtasks": [
+    {
+      "startTime": 4538.5999999940395,
+      "duration": 583,
+      "name": "self"
+    },
+    {
+      "startTime": 5223.89999999851,
+      "duration": 597,
+      "name": "self"
+    },
+    {
+      "startTime": 5973.0999999940395,
+      "duration": 586,
+      "name": "self"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "createdAt": "2026-11-08T17:10:44.552Z",
+  "engine": "E3",
+  "totals": [
+    {
+      "comparison": "A1: E1 -> E3",
+      "conditions": 68,
+      "medianExceeded": 3,
+      "p95Exceeded": 4,
+      "anyExceeded": 5
+    },
+    {
+      "comparison": "E3: A0 -> A1",
+      "conditions": 68,
+      "medianExceeded": 5,
+      "p95Exceeded": 4,
+      "anyExceeded": 6
+    }
+  ],
+  "reuseConditions": [
+    "A1: E1 -> E3,persistent,draft,1000,workload",
+    "A1: E1 -> E3,persistent,counter,1000,workload",
+    "A1: E1 -> E3,persistent,equal,1000,workload",
+    "A1: E1 -> E3,persistent,draft,10000,workload",
+    "A1: E1 -> E3,persistent,counter,10000,workload",
+    "A1: E1 -> E3,persistent,equal,10000,workload",
+    "E3: A0 -> A1,persistent,draft,1000,workload",
+    "E3: A0 -> A1,persistent,counter,1000,workload",
+    "E3: A0 -> A1,persistent,equal,1000,workload",
+    "E3: A0 -> A1,persistent,draft,10000,workload",
+    "E3: A0 -> A1,persistent,counter,10000,workload",
+    "E3: A0 -> A1,persistent,equal,10000,workload"
+  ],
+  "exceededConditions": [
+    "A1: E1 -> E3,persistent,crud,1000,action-3-toggle",
+    "A1: E1 -> E3,persistent,search,10000,workload",
+    "A1: E1 -> E3,persistent,sort,10000,workload",
+    "A1: E1 -> E3,persistent,move,10000,workload",
+    "A1: E1 -> E3,persistent,crud,10000,action-3-toggle",
+    "E3: A0 -> A1,persistent,search,100,workload",
+    "E3: A0 -> A1,persistent,filter,100,workload",
+    "E3: A0 -> A1,persistent,dirty,100,workload",
+    "E3: A0 -> A1,persistent,crud,1000,action-3-toggle",
+    "E3: A0 -> A1,persistent,search,10000,workload",
+    "E3: A0 -> A1,persistent,sort,10000,workload"
+  ],
+  "inputDecisionsSha256": "df827ac68ff4a6dcb9de95d89c1659dcee2a6248847b194965d27e6bf7b00df0",
+  "statisticsAuditSha256": "8f185d529279a7654c6bae0f6e56f3adc3ff199fcba5675ee1ff813e462a6905",
+  "scriptSha256": "97911c4cd1bb8ed9a53367387fa03ae4de80c8be707e19d18a5304c0516b2a97",
+  "policyAuditSha256": "d02a64977f59d7a2d285ccd02a93b292d1630cffed7d5cc563225363186bf872",
+  "reportSha256": "b8a55cfaba6de7da2b290d27e9aa65c6c48ee9c9aed52da06c039b0830561f1d",
+  "note": "All gate-exceeding conditions from the independently audited input were rendered. This is evidence formatting, not an adoption decision."
+}

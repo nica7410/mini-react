@@ -1,0 +1,188 @@
+{
+  "status": "planned, not executed; final policy selection remains separate",
+  "createdAt": "2026-11-08T17:12:05.348Z",
+  "engine": "E3",
+  "sourceRun": "task-candidate-v1",
+  "sourceEnvironmentSha256": "19a9cece8be81512234d05673b0a500bf323b9b63781ef4ff3c277f100ab08bf",
+  "sourceDecisionsSha256": "df827ac68ff4a6dcb9de95d89c1659dcee2a6248847b194965d27e6bf7b00df0",
+  "statisticsAuditSha256": "8f185d529279a7654c6bae0f6e56f3adc3ff199fcba5675ee1ff813e462a6905",
+  "policyAuditSha256": "d02a64977f59d7a2d285ccd02a93b292d1630cffed7d5cc563225363186bf872",
+  "plannerSha256": "8096c02c8a9e9053ca3748c7aaf18026e07013d254448e832c02df00ef480944",
+  "comparisons": [
+    "A1: E1 -> E3",
+    "E3: A0 -> A1"
+  ],
+  "inspectedConditions": 136,
+  "selectedConditions": [
+    {
+      "key": "A1: E1 -> E3,persistent,crud,1000,action-3-toggle",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 0,
+      "affectedSessions": [
+        2
+      ]
+    },
+    {
+      "key": "A1: E1 -> E3,persistent,search,10000,workload",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        1
+      ]
+    },
+    {
+      "key": "A1: E1 -> E3,persistent,sort,10000,workload",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        1
+      ]
+    },
+    {
+      "key": "A1: E1 -> E3,persistent,move,10000,workload",
+      "medianGateExceedances": 0,
+      "p95GateExceedances": 2,
+      "affectedSessions": [
+        2,
+        3
+      ]
+    },
+    {
+      "key": "A1: E1 -> E3,persistent,crud,10000,action-3-toggle",
+      "medianGateExceedances": 0,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        1
+      ]
+    },
+    {
+      "key": "E3: A0 -> A1,persistent,search,100,workload",
+      "medianGateExceedances": 2,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "key": "E3: A0 -> A1,persistent,filter,100,workload",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 0,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "E3: A0 -> A1,persistent,dirty,100,workload",
+      "medianGateExceedances": 0,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "E3: A0 -> A1,persistent,crud,1000,action-3-toggle",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        2
+      ]
+    },
+    {
+      "key": "E3: A0 -> A1,persistent,search,10000,workload",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        1
+      ]
+    },
+    {
+      "key": "E3: A0 -> A1,persistent,sort,10000,workload",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 0,
+      "affectedSessions": [
+        1
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "tag": "task-candidate-v1-tail-persistent-1000-v1",
+      "regime": "persistent",
+      "size": 1000,
+      "workloads": [
+        "crud"
+      ],
+      "reasons": [
+        "A1: E1 -> E3,persistent,crud,1000,action-3-toggle",
+        "E3: A0 -> A1,persistent,crud,1000,action-3-toggle"
+      ],
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=task-candidate-v1-tail-persistent-1000-v1",
+        "--builds=task-e1-a1-v1,task-e2-a1-v1,task-e3-a0-v1,task-e3-a1-v1",
+        "--sizes=1000",
+        "--regimes=persistent",
+        "--workloads=crud",
+        "--sessions=3",
+        "--supplement"
+      ]
+    },
+    {
+      "tag": "task-candidate-v1-tail-persistent-10000-v1",
+      "regime": "persistent",
+      "size": 10000,
+      "workloads": [
+        "search",
+        "sort",
+        "move",
+        "crud"
+      ],
+      "reasons": [
+        "A1: E1 -> E3,persistent,search,10000,workload",
+        "A1: E1 -> E3,persistent,sort,10000,workload",
+        "A1: E1 -> E3,persistent,move,10000,workload",
+        "A1: E1 -> E3,persistent,crud,10000,action-3-toggle",
+        "E3: A0 -> A1,persistent,search,10000,workload",
+        "E3: A0 -> A1,persistent,sort,10000,workload"
+      ],
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=task-candidate-v1-tail-persistent-10000-v1",
+        "--builds=task-e1-a1-v1,task-e2-a1-v1,task-e3-a0-v1,task-e3-a1-v1",
+        "--sizes=10000",
+        "--regimes=persistent",
+        "--workloads=search,sort,move,crud",
+        "--sessions=3",
+        "--supplement"
+      ]
+    },
+    {
+      "tag": "task-candidate-v1-tail-persistent-100-v1",
+      "regime": "persistent",
+      "size": 100,
+      "workloads": [
+        "search",
+        "filter",
+        "dirty"
+      ],
+      "reasons": [
+        "E3: A0 -> A1,persistent,search,100,workload",
+        "E3: A0 -> A1,persistent,filter,100,workload",
+        "E3: A0 -> A1,persistent,dirty,100,workload"
+      ],
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=task-candidate-v1-tail-persistent-100-v1",
+        "--builds=task-e1-a1-v1,task-e2-a1-v1,task-e3-a0-v1,task-e3-a1-v1",
+        "--sizes=100",
+        "--regimes=persistent",
+        "--workloads=search,filter,dirty",
+        "--sessions=3",
+        "--supplement"
+      ]
+    }
+  ],
+  "note": "All median/p95 gate exceedances for the proposed final engine and its app pair are retained, including initialization/lifecycle and individual CRUD actions. One exceeding session is sufficient, covering mixed tail pass/fail judgments. Workload reruns also retain all subordinate actions; all original comparators, warm-ups, harness, seed and oracles stay fixed. Three new sessions each with n=180; no pooling with initial runs. This plan is not an adoption or a claim that nonselected conditions improved."
+}

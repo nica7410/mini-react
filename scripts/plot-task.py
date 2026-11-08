@@ -8,6 +8,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import numpy as np
 
 directory = Path(sys.argv[1])
 with gzip.open(directory / "contrasts.json.gz", "rt", encoding="utf-8") as stream:
@@ -15,7 +16,8 @@ with gzip.open(directory / "contrasts.json.gz", "rt", encoding="utf-8") as strea
 metadata = json.loads((directory / "comparison-audit.json").read_text(encoding="utf-8"))
 assert metadata["status"] == "passed"
 comparisons = [pair["label"] for pair in metadata["pairs"]
-               if pair["label"] == "E2: A0 -> A1" or pair["label"].startswith("A1: E1 ->") or pair["label"].startswith("A1: E2 ->")]
+               if (pair["label"].endswith(": A0 -> A1") and not pair["label"].startswith(("E0:", "E1:")))
+               or pair["label"].startswith("A1: E1 ->") or pair["label"].startswith("A1: E2 ->")]
 workloads = ["draft", "counter", "search", "filter", "sort", "move", "crud", "dirty", "equal", "fresh+init"]
 colors = {1: "#2463a5", 2: "#c56c11", 3: "#21855b"}
 artifacts = []
@@ -65,6 +67,7 @@ for comparison in comparisons:
     artifacts.append({"comparison": comparison, "files": files, "points": plotted})
 result = {"sourceSha256": hashlib.sha256((directory / "contrasts.json.gz").read_bytes()).hexdigest(),
           "scriptSha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), "figures": artifacts,
+          "runtime": {"python": sys.version, "matplotlib": matplotlib.__version__, "numpy": np.__version__, "backend": matplotlib.get_backend()},
           "note": "All session series shown, unclipped linear axes. Missing conditions stay missing. Quantiles are recomputed from raw by audit-task-statistics.mjs; graph values are recorded individually."}
 (directory / "plot-values.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
 print(json.dumps({"figures": len(artifacts), "points": sum(len(item["points"]) for item in artifacts)}))

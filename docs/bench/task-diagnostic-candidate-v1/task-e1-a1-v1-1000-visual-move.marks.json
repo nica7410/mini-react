@@ -1,0 +1,118 @@
+{
+  "timeOrigin": 1794159045231.9,
+  "marks": [
+    {
+      "name": "task-diag:visual-start:0",
+      "startTime": 505.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:4",
+      "startTime": 806.2000000029802,
+      "detail": {
+        "renderMs": 123.5,
+        "diffMs": 122.5,
+        "commitMs": 52.70000000298023,
+        "flushMs": 299,
+        "effectMs": 0.10000000149011612
+      }
+    },
+    {
+      "name": "task-diag:visual-commit:0",
+      "startTime": 806.2999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:5",
+      "startTime": 846.7999999970198,
+      "detail": {
+        "renderMs": 0,
+        "diffMs": 0,
+        "commitMs": 0,
+        "flushMs": 0,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:visual-start:1",
+      "startTime": 887.7000000029802,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:6",
+      "startTime": 1021.6000000014901,
+      "detail": {
+        "renderMs": 49.899999998509884,
+        "diffMs": 44,
+        "commitMs": 39.600000001490116,
+        "flushMs": 133.60000000149012,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:visual-commit:1",
+      "startTime": 1021.7000000029802,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:7",
+      "startTime": 1062.6000000014901,
+      "detail": {
+        "renderMs": 0,
+        "diffMs": 0,
+        "commitMs": 0,
+        "flushMs": 0,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:visual-start:2",
+      "startTime": 1103.7999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:8",
+      "startTime": 1246.5,
+      "detail": {
+        "renderMs": 37.399999998509884,
+        "diffMs": 51.899999998509884,
+        "commitMs": 53.100000001490116,
+        "flushMs": 142.5,
+        "effectMs": 0.10000000149011612
+      }
+    },
+    {
+      "name": "task-diag:visual-commit:2",
+      "startTime": 1246.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:9",
+      "startTime": 1295.7999999970198,
+      "detail": {
+        "renderMs": 0,
+        "diffMs": 0,
+        "commitMs": 0,
+        "flushMs": 0.09999999403953552,
+        "effectMs": 0
+      }
+    }
+  ],
+  "longtasks": [
+    {
+      "startTime": 504,
+      "duration": 328,
+      "name": "self"
+    },
+    {
+      "startTime": 887.6000000014901,
+      "duration": 157,
+      "name": "self"
+    },
+    {
+      "startTime": 1103.7000000029802,
+      "duration": 171,
+      "name": "self"
+    }
+  ]
+}

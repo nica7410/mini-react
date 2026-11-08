@@ -1,0 +1,275 @@
+{
+  "note": "Persistent lifecycle includes initialization and warm-up costs. Trajectory points are NOT independent steady-state samples.",
+  "rows": [
+    {
+      "session": 1,
+      "key": "persistent,draft,10000,task-e3-a1-v1",
+      "index": -1,
+      "sampleKind": "warmup",
+      "cpu": 1418.6000000052154,
+      "updates": 1,
+      "initialCpuMs": 1196.1000000052154,
+      "amortizedCpuMs": 1418.6000000052154
+    },
+    {
+      "session": 1,
+      "key": "persistent,draft,10000,task-e3-a1-v1",
+      "index": 0,
+      "sampleKind": "sample",
+      "cpu": 1619.9000000059605,
+      "updates": 2,
+      "initialCpuMs": 1196.1000000052154,
+      "amortizedCpuMs": 809.9500000029802
+    },
+    {
+      "session": 1,
+      "key": "persistent,draft,10000,task-e3-a1-v1",
+      "index": 1,
+      "sampleKind": "sample",
+      "cpu": 1820.5000000037253,
+      "updates": 3,
+      "initialCpuMs": 1196.1000000052154,
+      "amortizedCpuMs": 606.8333333345751
+    },
+    {
+      "session": 1,
+      "key": "persistent,counter,10000,task-e3-a1-v1",
+      "index": -1,
+      "sampleKind": "warmup",
+      "cpu": 1398.0999999940395,
+      "updates": 1,
+      "initialCpuMs": 1173.6999999955297,
+      "amortizedCpuMs": 1398.0999999940395
+    },
+    {
+      "session": 1,
+      "key": "persistent,counter,10000,task-e3-a1-v1",
+      "index": 0,
+      "sampleKind": "sample",
+      "cpu": 1602.6999999955297,
+      "updates": 2,
+      "initialCpuMs": 1173.6999999955297,
+      "amortizedCpuMs": 801.3499999977648
+    },
+    {
+      "session": 1,
+      "key": "persistent,counter,10000,task-e3-a1-v1",
+      "index": 1,
+      "sampleKind": "sample",
+      "cpu": 1804.9999999962747,
+      "updates": 3,
+      "initialCpuMs": 1173.6999999955297,
+      "amortizedCpuMs": 601.6666666654249
+    },
+    {
+      "session": 1,
+      "key": "persistent,search,10000,task-e3-a1-v1",
+      "index": -1,
+      "sampleKind": "warmup",
+      "cpu": 1344.3999999985099,
+      "updates": 1,
+      "initialCpuMs": 1188.5999999977648,
+      "amortizedCpuMs": 1344.3999999985099
+    },
+    {
+      "session": 1,
+      "key": "persistent,search,10000,task-e3-a1-v1",
+      "index": 0,
+      "sampleKind": "sample",
+      "cpu": 1980.8999999985099,
+      "updates": 2,
+      "initialCpuMs": 1188.5999999977648,
+      "amortizedCpuMs": 990.4499999992549
+    },
+    {
+      "session": 1,
+      "key": "persistent,search,10000,task-e3-a1-v1",
+      "index": 1,
+      "sampleKind": "sample",
+      "cpu": 2881.099999997765,
+      "updates": 3,
+      "initialCpuMs": 1188.5999999977648,
+      "amortizedCpuMs": 960.3666666659216
+    },
+    {
+      "session": 1,
+      "key": "persistent,filter,10000,task-e3-a1-v1",
+      "index": -1,
+      "sampleKind": "warmup",
+      "cpu": 1335.7999999970198,
+      "updates": 1,
+      "initialCpuMs": 1177.5999999977648,
+      "amortizedCpuMs": 1335.7999999970198
+    },
+    {
+      "session": 1,
+      "key": "persistent,filter,10000,task-e3-a1-v1",
+      "index": 0,
+      "sampleKind": "sample",
+      "cpu": 1902.5999999977648,
+      "updates": 2,
+      "initialCpuMs": 1177.5999999977648,
+      "amortizedCpuMs": 951.2999999988824
+    },
+    {
+      "session": 1,
+      "key": "persistent,filter,10000,task-e3-a1-v1",
+      "index": 1,
+      "sampleKind": "sample",
+      "cpu": 2802.599999997765,
+      "updates": 3,
+      "initialCpuMs": 1177.5999999977648,
+      "amortizedCpuMs": 934.1999999992549
+    },
+    {
+      "session": 1,
+      "key": "persistent,sort,10000,task-e3-a1-v1",
+      "index": -1,
+      "sampleKind": "warmup",
+      "cpu": 1360.4999999962747,
+      "updates": 1,
+      "initialCpuMs": 1205.199999999255,
+      "amortizedCpuMs": 1360.4999999962747
+    },
+    {
+      "session": 1,
+      "key": "persistent,sort,10000,task-e3-a1-v1",
+      "index": 0,
+      "sampleKind": "sample",
+      "cpu": 3646.599999997765,
+      "updates": 2,
+      "initialCpuMs": 1205.199999999255,
+      "amortizedCpuMs": 1823.2999999988824
+    },
+    {
+      "session": 1,
+      "key": "persistent,sort,10000,task-e3-a1-v1",
+      "index": 1,
+      "sampleKind": "sample",
+      "cpu": 6425.29999999702,
+      "updates": 3,
+      "initialCpuMs": 1205.199999999255,
+      "amortizedCpuMs": 2141.7666666656733
+    },
+    {
+      "session": 1,
+      "key": "persistent,move,10000,task-e3-a1-v1",
+      "index": -1,
+      "sampleKind": "warmup",
+      "cpu": 2168.5000000037253,
+      "updates": 1,
+      "initialCpuMs": 1180.9000000059605,
+      "amortizedCpuMs": 2168.5000000037253
+    },
+    {
+      "session": 1,
+      "key": "persistent,move,10000,task-e3-a1-v1",
+      "index": 0,
+      "sampleKind": "sample",
+      "cpu": 3195.10000000149,
+      "updates": 2,
+      "initialCpuMs": 1180.9000000059605,
+      "amortizedCpuMs": 1597.550000000745
+    },
+    {
+      "session": 1,
+      "key": "persistent,move,10000,task-e3-a1-v1",
+      "index": 1,
+      "sampleKind": "sample",
+      "cpu": 4283.900000002235,
+      "updates": 3,
+      "initialCpuMs": 1180.9000000059605,
+      "amortizedCpuMs": 1427.9666666674118
+    },
+    {
+      "session": 1,
+      "key": "persistent,crud,10000,task-e3-a1-v1",
+      "index": -1,
+      "sampleKind": "warmup",
+      "cpu": 5643.400000009686,
+      "updates": 1,
+      "initialCpuMs": 1263.1000000014901,
+      "amortizedCpuMs": 5643.400000009686
+    },
+    {
+      "session": 1,
+      "key": "persistent,crud,10000,task-e3-a1-v1",
+      "index": 0,
+      "sampleKind": "sample",
+      "cpu": 9866.80000000447,
+      "updates": 2,
+      "initialCpuMs": 1263.1000000014901,
+      "amortizedCpuMs": 4933.400000002235
+    },
+    {
+      "session": 1,
+      "key": "persistent,crud,10000,task-e3-a1-v1",
+      "index": 1,
+      "sampleKind": "sample",
+      "cpu": 14223.60000000894,
+      "updates": 3,
+      "initialCpuMs": 1263.1000000014901,
+      "amortizedCpuMs": 4741.20000000298
+    },
+    {
+      "session": 1,
+      "key": "persistent,dirty,10000,task-e3-a1-v1",
+      "index": -1,
+      "sampleKind": "warmup",
+      "cpu": 1361.800000000745,
+      "updates": 1,
+      "initialCpuMs": 1207.300000000745,
+      "amortizedCpuMs": 1361.800000000745
+    },
+    {
+      "session": 1,
+      "key": "persistent,dirty,10000,task-e3-a1-v1",
+      "index": 0,
+      "sampleKind": "sample",
+      "cpu": 1504.4000000022352,
+      "updates": 2,
+      "initialCpuMs": 1207.300000000745,
+      "amortizedCpuMs": 752.2000000011176
+    },
+    {
+      "session": 1,
+      "key": "persistent,dirty,10000,task-e3-a1-v1",
+      "index": 1,
+      "sampleKind": "sample",
+      "cpu": 1636.9000000022352,
+      "updates": 3,
+      "initialCpuMs": 1207.300000000745,
+      "amortizedCpuMs": 545.6333333340784
+    },
+    {
+      "session": 1,
+      "key": "persistent,equal,10000,task-e3-a1-v1",
+      "index": -1,
+      "sampleKind": "warmup",
+      "cpu": 1388.0999999977648,
+      "updates": 1,
+      "initialCpuMs": 1168.8999999985099,
+      "amortizedCpuMs": 1388.0999999977648
+    },
+    {
+      "session": 1,
+      "key": "persistent,equal,10000,task-e3-a1-v1",
+      "index": 0,
+      "sampleKind": "sample",
+      "cpu": 1591.3999999985099,
+      "updates": 2,
+      "initialCpuMs": 1168.8999999985099,
+      "amortizedCpuMs": 795.6999999992549
+    },
+    {
+      "session": 1,
+      "key": "persistent,equal,10000,task-e3-a1-v1",
+      "index": 1,
+      "sampleKind": "sample",
+      "cpu": 1787.1000000014901,
+      "updates": 3,
+      "initialCpuMs": 1168.8999999985099,
+      "amortizedCpuMs": 595.7000000004967
+    }
+  ]
+}

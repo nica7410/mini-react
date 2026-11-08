@@ -38,10 +38,26 @@ E0/E1/E2 × A0/A1의 10개 작은 조건 smoke는 120개 측정 작업/168개 ac
 
 기존 no-op 성능 보고서는 [역사적 사본](benchmark-results-noop.md)에 원문을 보존했다. 시작 시 파일과 사본의 SHA-256은 모두 `6292559a91d65b6bf9e6730979f5d1bb3e5898efff9823ab623871c8a5b6d75b`다. 줄바꿈까지 동일한 원본 gzip과 Git 출처는 [보존 영수증](validation/task-app-previous-report.json)에 있다. 현행 보고서를 새 결과로 갱신하더라도 이전 원문·원자료를 대체하지 않는다.
 
+## D — 증명 보관 방식 수정, 정식 비교 감사 완료·진단/보충 진행
+
+단계 C의 결과를 `dfd20dc`에 커밋한 뒤, `src/core/vdom.ts`만 바꾼 E3 후보 `ff9e24e`를 만들었다. 동결 이후의 최종 구조를 검사하고 자식 증명을 boolean으로 전달하며, 장기 인증을 모든 보조 객체 대신 명시적인 인수와 VNode/root 경계에 보관한다. 전체 root의 문맥 검증 캐시와 실제 DOM/plan/폼/Effect 검사는 유지한다. [후보 원리와 비교 정의](task-app-engine-candidate.md).
+
+변경 전 E2에서 Proxy 반례 두 개가 실제 실패했다. 원본 실패를 보존했고, 수정 후 관련 19/19·전체 단위/통합 203/203·typecheck/build를 통과했다. 작은 40개 조건과 10,000개 stress 10개 조건의 oracle·통계 검산도 통과했다. 이 수치를 최종 전체 브라우저 인수로 바꿔 부르지 않는다.
+
+`task-candidate-v1`은 2026-11-08 21:04부터 2026-11-09 02:08 KST까지 실행했다. 고정 A1에서 E1/E2/E3를 비교하고, E3 A0도 함께 실행해 후보 엔진에서의 앱 효과를 따로 확인했다. 원래 4크기·모든 작업·persistent/fresh·3세션·60/30 표본 정책을 유지했다. 측정 중 기능 소스·하네스·runner·사전 기준을 수정하지 않았고 테스트/build/profiling도 병행하지 않았다.
+
+세 세션 각각 160개 조건, 전체 480개 조건의 수집과 종료가 통과했다. raw 32,196행, 측정 작업 27,360회/action 38,880개, 통계·비교 각 8,016개, 누적 경로 29,700점, 그림 480점을 독립 재계산했다. 네 PNG를 실제로 확인했고 PNG/SVG hash도 일치했다. 새 판정 감사 도구는 비교 누락·중복과 모든 사전 gate를 확인하며, 의도적으로 뒤집은 p95 판정도 거절했다. 먼저 기존 E3 작은 smoke에서 도구를 확인한 뒤 정식 결과에 적용했다. [통계 감사](bench/task-candidate-v1/statistics-audit.json), [판정 감사](bench/task-candidate-v1/policy-audit.json), [그림 확인](bench/task-candidate-v1/plot-validation.json).
+
+반복 재사용의 median 목표는 충족했지만 엔진 비교 5개·앱 비교 6개 조건이 사전 범위를 한 번 이상 넘었다. 특히 S1 stress 검색/정렬, 이동 p95, CRUD 하위 toggle과 작은 입력 복원을 제외하지 않았다. [모든 초과 조건](bench/task-candidate-v1/policy-review-e3.md), [보충 계획](bench/task-candidate-v1/tail-supplement-plan-e3.json). 같은 네 비교군의 새 3세션 n=180 보충 대상은 100개 search/filter/dirty, 1,000개 CRUD, 10,000개 search/sort/move/CRUD다. 원래 표본과 합치지 않는다.
+
+정식 수집 종료 뒤 `task-diagnostic-candidate-v1`에서 고정 A1의 E1/E2/E3 CPU·할당·GC·메모리·Paint 진단 36개 조건의 수집·분석·기능 소스 hash 감사를 완료했다. E3는 E2보다 동결·증명 self 비중과 보유 heap이 줄었지만 allocation 추정량은 줄지 않았고, dispose 뒤 heap은 E1보다 컸다. 정의한 Paint 경계의 move에서도 불리한 관측을 보존했다. [진단 결과](bench/task-diagnostic-candidate-v1/diagnostics.md), [후보 해석](task-app-engine-candidate.md). 보충 실행과 최종 캐시 정책 선택은 남아 있다. 프로파일링을 정식 timing과 병행하지 않았다.
+
 ## 남은 단계
+
+원본 체크리스트는 진행 상태 **v1.10**으로 갱신했다. 첫 정식 비교와 진단, 후보 정확성·새 정식 비교·분리 진단의 완료 근거를 반영했으며 최종 정책·보충·전체 브라우저 인수는 아직 미완료다. [버전·전후 SHA-256·압축 사본](validation/task-checklist-candidate.json)을 이전 영수증과 함께 보존한다. 실제 Desktop 원본은 저장소 밖에 있다.
 
 입력 방식의 범위: 벤치마크는 실제 TaskApp에 프로그램으로 DOM Event와 HTMLElement.click을 전달한다. native value/checked 준비와 dirty/equal probe는 하네스에 명시되어 있다. 물리 키보드 입력부터의 지연, trusted 사용자 이벤트의 전체 경로, 실제 IME 검증을 대신하지 않는다. [측정 경계 보완 기록](bench/task-matrix-v1/measurement-boundaries.json)을 정식 결과와 함께 해석한다.
 
 - C: 6조합 × 3세션, 원자료·표·그래프 감사와 별도 진단은 완료. 단계별 결과 커밋에 보존한다.
-- D: 확인한 생성/등록/GC 비용에 대한 후보 또는 적용 범위 조정, 고정 A1 재비교와 필요한 p95 보충.
+- D: 후보의 정식 3세션·원자료/판정/그림 감사와 별도 진단 36개는 완료. 계획한 새 n=180 보충과 최종 정책 선택은 남음.
 - E: 최종 소스에서 전체 단위·통합·타입·build·기본 브라우저 3회, 문서/원본 체크리스트·hash/커밋/clean 감사.

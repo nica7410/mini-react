@@ -7,7 +7,7 @@ Vanilla TypeScript로 만든 학습용 Mini React입니다. DOM 편집기와 루
 - **B안:** 지원되는 keyed 형제의 LIS 기본 경로와 Greedy 비교, FIFO microtask Batching, 같은 expression의 위치별 재사용, Inspector·seed 재실행·독립 benchmark.
 - **입력:** snapshot/controlled/uncontrolled, no-op 복원, focus/selection 보정, composition 충돌 plan 보류.
 
-현재 실제 TaskApp의 목록 표현·콜백 재사용을 개선하고, E0/E1/E2 엔진과 변경 전후 앱의 여섯 조합을 비교하는 후속 작업을 진행 중입니다. 앱 변경의 관련 단위·통합 64개, Chromium·Firefox TaskApp 8개, typecheck/build는 통과했습니다. 엔진 정책 선택 뒤의 최종 전체 검증과 성능 판정은 아직 완료하지 않았습니다. [후속 진행](docs/task-app-followup.md), [앱 원리](docs/task-app-reuse.md)를 참고하세요.
+현재 실제 TaskApp의 목록 표현·콜백 재사용을 개선하는 후속 작업을 진행 중입니다. E0/E1/E2 × 변경 전후 앱의 정식 3세션 비교 720개 조건과 별도 진단 24개 조건을 완료했습니다. E3 후보는 단위·통합 203개, typecheck/build와 기존 비교군을 포함한 새 정식 3세션 480개 조건·원자료 감사·별도 진단 36개를 통과했습니다. 초과 조건의 보충, 최종 정책·전체 브라우저 3회 인수는 남아 있습니다. [후속 진행](docs/task-app-followup.md), [앱 원리](docs/task-app-reuse.md), [첫 비교 결과](docs/task-app-baseline-results.md), [후보 정의·회귀 조건](docs/task-app-engine-candidate.md)를 참고하세요.
 
 이전 no-op 기능 소스의 자동 검증은 **184개 단위·통합 + Chromium 20개 + Firefox 11개**, 브라우저 전체 3회 연속 통과입니다. 최초 M8의 측정 51,480개와 후속 no-op의 3세션·측정 23,760개는 각각 당시 코드의 결과로 보존합니다. 실제 Windows 한글 IME는 이전 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). [역사적 후속 검증](docs/browser-noop-followup.md), [성능 결과](docs/benchmark-results.md), [인수 상태](docs/m8-acceptance.md)를 참고하세요. 팀 활동과 원격 CI 실행은 미확인입니다.
 
@@ -53,7 +53,7 @@ pnpm bench --tag=my-full-run
 pnpm trace:workflow
 ```
 
-브라우저 테스트는 포트 **4173**, 기존 benchmark/Performance trace는 **4175**, no-op 비교/진단은 **4177**을 사용합니다. 기존 서버와 공유하지 않으며 자동으로 종료합니다. benchmark와 trace는 동시에 실행하지 마세요. 전체 benchmark는 매 표본의 DOM 준비·검증까지 포함해 시간이 오래 걸립니다. `--sizes=10,100 --sessions=1 --tag=quick-check`로 좁혀 확인할 수 있지만 이를 전체 검증으로 기록하지 않습니다.
+브라우저 테스트는 포트 **4173**, 기존 benchmark/Performance trace는 **4175**, no-op 비교/진단은 **4177**, 실제 TaskApp 정식 비교는 **4178**, TaskApp 분리 진단은 **4179**를 사용합니다. 기존 서버와 공유하지 않으며 자동으로 종료합니다. benchmark와 테스트·build·trace는 동시에 실행하지 마세요. 전체 benchmark는 매 표본의 DOM 준비·검증까지 포함해 시간이 오래 걸립니다. `--sizes=10,100 --sessions=1 --tag=quick-check`로 좁혀 확인할 수 있지만 이를 전체 검증으로 기록하지 않습니다. 실제 TaskApp 비교의 고정 소스·재현 절차는 [사전 계획](docs/task-app-comparison-plan.md)에 있습니다.
 
 [CI 설정](.github/workflows/ci.yml)은 같은 검사 명령을 실행하도록 구성했습니다. 원격 push·CI 실행·배포는 이 작업에서 수행하지 않았습니다. 로컬 성공이 Linux 원격 CI 성공을 뜻하지 않습니다.
 

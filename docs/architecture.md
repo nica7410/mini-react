@@ -57,6 +57,8 @@ preflight 거절은 DOM 쓰기 0회다. 실제 DOM API가 실행 도중 예외�
 
 `freezeTree`는 엔진이 소유한 plain object/array의 data property를 재귀 동결하고 그 증거를 WeakSet에 기록한다. `Object.isFrozen(outer)`만 보고 하위 객체까지 동결됐다고 가정하지 않는다. getter/setter나 사용자 정의 prototype이 있는 객체는 증명 집합에 넣지 않으며, 함수는 identity로 취급하고 함수 자체나 호출자의 props/state를 동결하지 않는다. 순환 데이터는 거절한다.
 
+현재 E3 후보 `ff9e24e`는 먼저 각 객체를 동결한 뒤 최종 prototype/descriptor를 검사한다. Proxy의 동결 전 상태로 증명하지 않으며, 자식 증명은 boolean으로 전달한다. 모든 보조 객체를 깊게 검사하되 장기 인증은 명시적인 freezeTree 인수와 VNode/root 경계에만 보관한다. 임시 재귀 Set은 finally에서 제거한다. 이는 [기존 두 반례를 수정한 후보](task-app-engine-candidate.md)이며 성능 채택 판단은 새 비교가 끝난 뒤 기록한다.
+
 트리 검증은 **검증을 성공한 동일 immutable VRoot 객체**에만 캐시한다. 캐시 키가 VNode/subtree가 아닌 전체 root이므로 형제 중복 key, form/radio 그룹, select/option 소유 문맥을 포함한다. 다른 root를 만들거나 부모 문맥을 바꾸면 전체 검사를 다시 한다. mutable·얕은 동결·accessor 데이터는 결과를 재사용하지 않는다. 고정된 HTML/폼 검증 정책 아래의 내부 데이터 캐시이며, DOM·MountView·PatchPlan·revision·binding에는 적용하지 않는다. WeakSet이므로 보관 수명이 끝난 snapshot을 강하게 붙잡지 않는다.
 
 필요한 view 갱신, dirty controlled 복원, Effect, focus/IME 단계는 그대로 실행한다. 이 비용은 최초 트리 생성 시 깊은 불변성 증명으로 일부 이동한다. 새 트리를 매번 만드는 경우의 생성 비용 증가와 실제 cycle 이득을 모두 [후속 측정](benchmark-results.md)에 기록했다. 별도 CPU 진단은 일부 긴 render에서 freezeTree 등록 비용을, trace는 일부 긴 재배치에서 GC/weak 처리 비용을 확인했다. WeakSet이 강한 참조를 남기지 않는다는 성질과 관리·수거 비용이 없다는 주장은 다르다.

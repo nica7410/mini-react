@@ -46,7 +46,7 @@ try {
   assert.equal(unit.exitCode, 0);
   const unitReport = JSON.parse(readFileSync(unitFile));
   assert.equal(unitReport.numFailedTests, 0); assert.equal(unitReport.numPendingTests, 0); assert.equal(unitReport.numTodoTests, 0);
-  assert.equal(unitReport.numPassedTests, unitReport.numTotalTests); assert(unitReport.numTotalTests >= 199);
+  assert.equal(unitReport.numPassedTests, unitReport.numTotalTests); assert(unitReport.numTotalTests >= 203);
   result.unit = { passed: unitReport.numPassedTests, total: unitReport.numTotalTests, files: unitReport.testResults.length, pending: unitReport.numPendingTests, todo: unitReport.numTodoTests };
   console.log(`VALIDATION unit ${unitReport.numPassedTests} PASS`); save();
   const production = run('build', ['build']); assert.equal(production.exitCode, 0);

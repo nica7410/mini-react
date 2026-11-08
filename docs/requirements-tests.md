@@ -12,6 +12,8 @@
 | T-A05 | 유지한 콜백의 최신 FIFO State 처리, 수정·완료·삭제·추가 이후 identity·live value·focus·selection | [TaskApp reuse](../tests/integration/task-reuse.test.ts), [실제 브라우저](../tests/browser/tasks.spec.ts) |
 | 실제 앱 측정 oracle | 9개 작업의 독립 모델·순서·입력 복원·key identity·실제 Effect 후속 갱신, 중첩 시간 합산 방지 | [TaskApp benchmark](../tests/integration/task-benchmark.test.ts), [사전 비교 계획](task-app-comparison-plan.md) |
 
+E3 후보 `ff9e24e`는 T-N06의 Proxy 동결 전 prototype과 동결 중 자식 교체 반례를 수정했다. 변경 전 두 실패, 수정 후 관련 19개·전체 203개·타입·build의 새 실행은 [후보 정확성 기록](validation/task-e3-correctness/result.json)에 있다. 최종 성능 정책 및 전체 브라우저 인수는 별도다.
+
 ## no-op 후속 회귀 (당시 추가 7개 ID, 전체 76개)
 
 | ID | 증명하는 동작 | 실제 테스트 |
@@ -21,7 +23,7 @@
 | T-N03 | no-op의 다른 mount/stale revision/위조 view/registry 거절 | [no-op contracts](../tests/integration/noop-contracts.test.ts), [anchor/parent 회귀](../tests/integration/plan-validation.test.ts) |
 | T-N04 | DOM이 같아도 Effect 실행, preflight 실패 후보 State/Effect 미확정, unmount 정리 | [no-op contracts](../tests/integration/noop-contracts.test.ts) |
 | T-N05 | no-op 이후 handler 교체/제거, 같은 노드의 폼 소유 변경 거절 | [no-op contracts](../tests/integration/noop-contracts.test.ts) |
-| T-N06 | mutable/얕은 freeze/accessor/prototype 경계, 깊은 동결 증명, 함수 비동결 | [immutable validation](../tests/unit/immutable-validation.test.ts) |
+| T-N06 | mutable/얕은 freeze/accessor/prototype 경계, Proxy의 최종 구조 증명, 순환·재진입·오류 후 재시도, 함수 비동결 | [immutable validation](../tests/unit/immutable-validation.test.ts), [proof regression](../tests/unit/immutable-proof-regression.test.ts) |
 | T-N07 | 공유 subtree를 새 root/form/radio/select 문맥에 놓을 때 다시 검증 | [immutable validation](../tests/unit/immutable-validation.test.ts) |
 
 기존 T-H04/H05, T-P06, T-K01~K07, T-B01~B04도 유지한다. 새 harness [12개 counts/oracle 회귀](../tests/integration/noop-benchmark.test.ts)는 controlled dirty·uncontrolled 보존·재배치·Effect·자원 정리를 별도 확인한다. 실제 Windows IME 수동 확인은 이전 사용자 보고이며, 이번 자동 검증과 시점을 혼동하지 않는다.
@@ -151,5 +153,6 @@
 | Effect setup/cleanup 도중 unmount의 정리 누락·중복 가능 경로 → 소유 상태와 teardown 순서 처리 | `hooks.test.ts` setup/cleanup 중 unmount 각 1회 |
 | 브라우저 8 workers에서 Firefox CRUD timeout → assertion/제한 유지, 기본 workers 2 | 전체 29/29 재실행; [M7 기록](m7-app-browser.md) |
 | 이후 기본 2 workers에서도 Chromium 초기 Vite 응답/Firefox 전체 CRUD timeout → 실제 모듈 준비 조건, 목적별 시나리오 분리 | 31/31 × 3회 연속, timeout 30초/retry 0 유지; [후속 기록](browser-noop-followup.md) |
+| Proxy가 동결 전 prototype을 숨기거나 동결 중 children 참조를 교체 → 동결 후 최종 descriptor·prototype 증명 | `immutable-proof-regression.test.ts`: 기존 E2에서 두 실패를 재현하고 E3에서 통과. [실패 원문](validation/task-e3-correctness/red.json) |
 
 이 표는 실제 회귀를 설명한다. 브라우저 실행 정책 보완은 엔진 기능 결함 수정이나 앱 속도 개선 성과로 계산하지 않는다. 이전 no-op 검증의 184개 단위·통합/31개 브라우저와 전수 모델 입력 수를 더해 “수만 개 브라우저 테스트”로 표현하지 않는다. 이번 최종 선택 코드의 전체 검증은 별도 실행 기록에 연결한다.
