@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "preservedAt": "2026-11-08T20:59:53.303Z",
+  "executionStatus": "stopped-rejected-candidate",
+  "preservationIntegrity": "passed",
+  "environmentSha256": "901cb07c675fde55df31e8cf1c9ad82de4c86761bd0b7dc45c25b932492387c6",
+  "terminationReceiptSha256": "214fb4e011c886d6f6f11c19cebfb3f0edf2df5b7cabe9ed6073c95699001c1c",
+  "scriptSha256": "0cf32fff1d8b8e70c434150da10db9bb61581b453353605b2865cafdfde520be",
+  "sessions": [
+    {
+      "session": 1,
+      "completed": true,
+      "rawBytes": 4563935,
+      "rawSha256": "cb6a76c2af7646f45791e90f9a10073a9eb8cfb1028c874843b0861a3862b870",
+      "archive": "session-1.jsonl.gz",
+      "archiveSha256": "c147a6fa5cb7858f9aecae8ad5524b4a15acadb95a9b8b40e3b0adfdbcfea0ef",
+      "rows": 2992,
+      "counts": {
+        "counts": 16,
+        "initialization": 16,
+        "warmup": 80,
+        "sample": 2880
+      },
+      "measuredActions": 5760,
+      "recordedPassedProcesses": 16,
+      "missingPlannedRows": 0
+    },
+    {
+      "session": 2,
+      "completed": false,
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive": "session-2.partial.jsonl.gz",
+      "archiveSha256": "9e72928e7a01615b4cf090daa617b4ca9d68531748f887f323f695eb4ca3ef63",
+      "rows": 0,
+      "counts": {},
+      "measuredActions": 0,
+      "recordedPassedProcesses": 0,
+      "missingPlannedRows": 2992
+    }
+  ],
+  "interpretation": "Only archive equality, row identities/completeness and existing runner process statuses were checked here. No statistics, policy PASS or three-session tail conclusion is produced. Every complete and partial raw record is retained; the original environment file remains unchanged.",
+  "monitoring": "After candidate rejection, a lightweight PowerShell file/process boundary watcher ran once per second during the final part of session 1. These stopped data are not used for adoption or cross-run performance claims."
+}

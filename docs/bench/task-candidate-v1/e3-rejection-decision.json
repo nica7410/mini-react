@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "decidedAt": "2026-11-08T20:43:16Z",
+  "decision": "Reject E3 with the current A1 as the general final policy",
+  "sourceRun": "task-candidate-v1",
+  "confirmatoryRun": "task-candidate-v1-tail-persistent-1000-v1",
+  "reason": "The 1000-row CRUD supplement completed all three independent n=180 sessions. E3 A0 to A1 toggle exceeded both preregistered app gates in all three sessions; E1 to E3 A1 also retained engine gate violations. Additional stress or small-list samples cannot reverse this failed general-adoption decision.",
+  "confirmatoryAppToggleMedianPercent": [44.02, 14.94, 13.37],
+  "confirmatoryAppToggleP95Percent": [61.26, 29.73, 29.57],
+  "confirmatoryPolicyAudit": "../task-candidate-v1-tail-persistent-1000-v1/policy-audit.json",
+  "confirmatoryDecisionsSha256": "a400ecdcf8d972248090a553cbc923e058899d248b02bceaecf348541ba38c46",
+  "originalSupplementPlan": "tail-supplement-plan-e3.json",
+  "executionChange": {
+    "stressRun": "task-candidate-v1-tail-persistent-10000-v1",
+    "stopAfter": "Complete first session, then stop and preserve the complete session plus any partial next-session raw data",
+    "unstartedRun": "task-candidate-v1-tail-persistent-100-v1",
+    "unstartedRunStatus": "Not executed because this candidate has already been rejected",
+    "interpretation": "Incomplete stress and unexecuted small-list supplements do not satisfy the three-session tail policy and are never PASS evidence. Their unresolved gates stay unresolved. The initial complete three-session comparison and the complete 1000-row supplement remain separate and unchanged. This is candidate rejection, not a retry or selection of favorable samples."
+  },
+  "nextWork": "Separate fixed E3 A0/A1 diagnosis, then implement and validate a conservative cache scope or uncached policy. Do not relax the preregistered gates or leave this rejected candidate as the final default."
+}

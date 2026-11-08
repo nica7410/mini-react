@@ -1,0 +1,12 @@
+{
+  "stoppedAt": "2026-11-08T20:59:18.8860057Z",
+  "reason": "E3 general policy rejected by completed 1000-row three-session supplement",
+  "boundary": "Session 1 complete, session 2 raw created",
+  "runner": {
+    "command": "\"C:\\Users\\nica7\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe\" scripts/benchmark-task.mjs --tag=task-candidate-v1-tail-persistent-10000-v1 --builds=task-e1-a1-v1,task-e2-a1-v1,task-e3-a0-v1,task-e3-a1-v1 --sizes=10000 --regimes=persistent --workloads=search,sort,move,crud --sessions=3 --supplement",
+    "pid": 2472
+  },
+  "stoppedDescendants": [],
+  "environmentFileIntentionallyRetainsRunnerStatus": "running; see termination-receipt.json for actual incomplete status",
+  "interpretation": "Stopped, not PASS. Preserve every complete and partial raw file. No retry or favorable-sample selection."
+}

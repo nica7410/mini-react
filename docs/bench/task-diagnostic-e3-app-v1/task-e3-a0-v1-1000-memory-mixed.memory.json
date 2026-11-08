@@ -1,0 +1,159 @@
+{
+  "points": [
+    {
+      "label": "before mount",
+      "heap": {
+        "usedSize": 1138992,
+        "totalSize": 2154496,
+        "embedderHeapUsedSize": 329080,
+        "backingStorageSize": 92380
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 20,
+        "jsEventListeners": 13
+      }
+    },
+    {
+      "label": "after mount",
+      "heap": {
+        "usedSize": 8469228,
+        "totalSize": 9867264,
+        "embedderHeapUsedSize": 20221872,
+        "backingStorageSize": 117110
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 15116,
+        "jsEventListeners": 7038
+      }
+    },
+    {
+      "label": "reuse 1:crud 1, cycle 1",
+      "heap": {
+        "usedSize": 9572368,
+        "totalSize": 12226560,
+        "embedderHeapUsedSize": 20369240,
+        "backingStorageSize": 117125
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 15116,
+        "jsEventListeners": 7038
+      }
+    },
+    {
+      "label": "reuse 1:crud 1, cycle 2",
+      "heap": {
+        "usedSize": 9622668,
+        "totalSize": 12226560,
+        "embedderHeapUsedSize": 20380208,
+        "backingStorageSize": 117125
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 15116,
+        "jsEventListeners": 7038
+      }
+    },
+    {
+      "label": "reuse 1:crud 1, cycle 3",
+      "heap": {
+        "usedSize": 9728576,
+        "totalSize": 12750848,
+        "embedderHeapUsedSize": 20105408,
+        "backingStorageSize": 117125
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 15116,
+        "jsEventListeners": 7038
+      }
+    },
+    {
+      "label": "reuse 1:crud 1, cycle 4",
+      "heap": {
+        "usedSize": 9731568,
+        "totalSize": 11702272,
+        "embedderHeapUsedSize": 20432024,
+        "backingStorageSize": 117125
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 15116,
+        "jsEventListeners": 7038
+      }
+    },
+    {
+      "label": "reuse 10:crud 1, cycle 1",
+      "heap": {
+        "usedSize": 10804948,
+        "totalSize": 12488704,
+        "embedderHeapUsedSize": 20125536,
+        "backingStorageSize": 117125
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 15116,
+        "jsEventListeners": 7038
+      }
+    },
+    {
+      "label": "reuse 10:crud 1, cycle 2",
+      "heap": {
+        "usedSize": 10846944,
+        "totalSize": 12226560,
+        "embedderHeapUsedSize": 20471384,
+        "backingStorageSize": 117125
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 15116,
+        "jsEventListeners": 7038
+      }
+    },
+    {
+      "label": "reuse 10:crud 1, cycle 3",
+      "heap": {
+        "usedSize": 10849040,
+        "totalSize": 12226560,
+        "embedderHeapUsedSize": 20330728,
+        "backingStorageSize": 117125
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 15116,
+        "jsEventListeners": 7038
+      }
+    },
+    {
+      "label": "reuse 10:crud 1, cycle 4",
+      "heap": {
+        "usedSize": 10853020,
+        "totalSize": 12488704,
+        "embedderHeapUsedSize": 20164696,
+        "backingStorageSize": 117125
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 15116,
+        "jsEventListeners": 7038
+      }
+    },
+    {
+      "label": "after dispose",
+      "heap": {
+        "usedSize": 4081700,
+        "totalSize": 5566464,
+        "embedderHeapUsedSize": 1304696,
+        "backingStorageSize": 93232
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 20,
+        "jsEventListeners": 13
+      }
+    }
+  ],
+  "note": "Forced-GC retained heap and DOM counters, one diagnostic trajectory. No assertion of zero growth or exact allocation count. Ratios run sequentially on the same app; both engines use the same order."
+}

@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-11-08T18:11:01.065Z",
+  "command": [
+    "node",
+    "scripts/report-task-policy.mjs",
+    "docs/bench/task-candidate-v1-tail-persistent-1000-v1",
+    "E3"
+  ],
+  "exitCode": 1,
+  "error": "AssertionError: Usage: node scripts/report-task-policy.mjs run-tag E3",
+  "classification": "report CLI argument error; collection and preceding raw/statistical/policy audits passed",
+  "correction": "Pass the run tag, not its directory. Re-run only report generation."
+}

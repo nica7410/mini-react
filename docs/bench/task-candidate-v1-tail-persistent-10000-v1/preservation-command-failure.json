@@ -1,0 +1,9 @@
+{
+  "recordedAt": "2026-11-08T20:59:52.531Z",
+  "command": "node scripts/preserve-stopped-task-run.mjs docs/bench/task-candidate-v1-tail-persistent-10000-v1",
+  "exitCode": 1,
+  "error": "AssertionError: Unexpected or duplicate retained row at preserve-stopped-task-run.mjs:42:5",
+  "cause": "The new preservation helper serialized a null initialization index as an empty string via Array.join, while the expected key used the literal null. This is a helper key-format error, not a benchmark failure or duplicate sample.",
+  "originalHelperSha256": "26a1419ee32a914203f718851d60a43e11d947750a1bfbd8362eab1731f61edf",
+  "correction": "Serialize row.index explicitly with String; retain the same exact uniqueness/completeness assertions. Rerun only artifact preservation, not the benchmark."
+}

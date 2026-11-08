@@ -1,0 +1,497 @@
+{
+  "timeOrigin": 1794171635666.1,
+  "marks": [
+    {
+      "name": "task-diag:start:initialization:0",
+      "startTime": 158,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:1",
+      "startTime": 170.09999999403954,
+      "detail": {
+        "renderMs": 5.9000000059604645,
+        "diffMs": 0.6999999955296516,
+        "commitMs": 4.600000001490116,
+        "flushMs": 11.399999998509884,
+        "effectMs": 0.20000000298023224
+      }
+    },
+    {
+      "name": "task-diag:flush:2",
+      "startTime": 330.3999999985099,
+      "detail": {
+        "renderMs": 100.20000000298023,
+        "diffMs": 7.899999998509884,
+        "commitMs": 51.100000001490116,
+        "flushMs": 159.20000000298023,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:flush:3",
+      "startTime": 551,
+      "detail": {
+        "renderMs": 23.200000002980232,
+        "diffMs": 0.29999999701976776,
+        "commitMs": 46.20000000298023,
+        "flushMs": 69.89999999850988,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:initialization:0",
+      "startTime": 551.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-sort:4",
+      "startTime": 619.0999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:5",
+      "startTime": 653.5999999940395,
+      "detail": {
+        "renderMs": 0,
+        "diffMs": 1.1999999955296516,
+        "commitMs": 32.400000005960464,
+        "flushMs": 33.70000000298023,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-sort:4",
+      "startTime": 653.6999999955297,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-sort:6",
+      "startTime": 667.3999999985099,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:7",
+      "startTime": 936.2999999970198,
+      "detail": {
+        "renderMs": 93.29999999701977,
+        "diffMs": 30.700000002980232,
+        "commitMs": 144.39999999850988,
+        "flushMs": 268.5,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-sort:6",
+      "startTime": 936.5999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-sort:8",
+      "startTime": 975.7999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:9",
+      "startTime": 1222.0999999940395,
+      "detail": {
+        "renderMs": 83.90000000596046,
+        "diffMs": 28.399999998509884,
+        "commitMs": 133.5,
+        "flushMs": 245.80000000447035,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-sort:8",
+      "startTime": 1222.0999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-sort:10",
+      "startTime": 1263.6999999955297,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:11",
+      "startTime": 1597.8999999985099,
+      "detail": {
+        "renderMs": 77.09999999403954,
+        "diffMs": 29.100000001490116,
+        "commitMs": 227.60000000149012,
+        "flushMs": 333.79999999701977,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-sort:10",
+      "startTime": 1598.0999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-sort:12",
+      "startTime": 1698.7999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:13",
+      "startTime": 2053,
+      "detail": {
+        "renderMs": 182.40000000596046,
+        "diffMs": 41.099999994039536,
+        "commitMs": 130.40000000596046,
+        "flushMs": 353.90000000596046,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-sort:12",
+      "startTime": 2053.0999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:14",
+      "startTime": 2087.1999999955297,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:15",
+      "startTime": 2313.5,
+      "detail": {
+        "renderMs": 79.60000000149012,
+        "diffMs": 26.19999999552965,
+        "commitMs": 120.30000000447035,
+        "flushMs": 226.20000000298023,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:14",
+      "startTime": 2313.6999999955297,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:16",
+      "startTime": 2352.7999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:17",
+      "startTime": 2577.2999999970198,
+      "detail": {
+        "renderMs": 64.29999999701977,
+        "diffMs": 31.200000002980232,
+        "commitMs": 128.89999999850988,
+        "flushMs": 224.39999999850988,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:16",
+      "startTime": 2577.39999999851,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:18",
+      "startTime": 2606.39999999851,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:19",
+      "startTime": 2817.1999999955297,
+      "detail": {
+        "renderMs": 70.10000000149012,
+        "diffMs": 23.200000002980232,
+        "commitMs": 117.19999999552965,
+        "flushMs": 210.5,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:18",
+      "startTime": 2817.2999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:20",
+      "startTime": 2853.0999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:21",
+      "startTime": 3090.89999999851,
+      "detail": {
+        "renderMs": 66.5,
+        "diffMs": 46.100000001490116,
+        "commitMs": 124.69999999552965,
+        "flushMs": 237.29999999701977,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:20",
+      "startTime": 3091,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:22",
+      "startTime": 3122.7999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:23",
+      "startTime": 3348.6999999955297,
+      "detail": {
+        "renderMs": 81.39999999850988,
+        "diffMs": 28.600000001490116,
+        "commitMs": 115.79999999701977,
+        "flushMs": 225.79999999701977,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:22",
+      "startTime": 3348.7999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:24",
+      "startTime": 3391.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:25",
+      "startTime": 3602.2999999970198,
+      "detail": {
+        "renderMs": 65.70000000298023,
+        "diffMs": 29.5,
+        "commitMs": 115.5,
+        "flushMs": 210.70000000298023,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:24",
+      "startTime": 3602.39999999851,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:26",
+      "startTime": 3632.89999999851,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:27",
+      "startTime": 3840.7999999970198,
+      "detail": {
+        "renderMs": 66.30000000447035,
+        "diffMs": 25.799999997019768,
+        "commitMs": 115.60000000149012,
+        "flushMs": 207.70000000298023,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:26",
+      "startTime": 3841,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:28",
+      "startTime": 3876.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:29",
+      "startTime": 4115.69999999553,
+      "detail": {
+        "renderMs": 88,
+        "diffMs": 31.5,
+        "commitMs": 119.5,
+        "flushMs": 239,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:28",
+      "startTime": 4115.79999999702,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:30",
+      "startTime": 4148.19999999553,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:31",
+      "startTime": 4365.29999999702,
+      "detail": {
+        "renderMs": 72.60000000149012,
+        "diffMs": 28.200000002980232,
+        "commitMs": 116.29999999701977,
+        "flushMs": 217.10000000149012,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:30",
+      "startTime": 4365.29999999702,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:32",
+      "startTime": 4402.19999999553,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:33",
+      "startTime": 4620.79999999702,
+      "detail": {
+        "renderMs": 64.5,
+        "diffMs": 27.399999998509884,
+        "commitMs": 126.39999999850988,
+        "flushMs": 218.29999999701977,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:32",
+      "startTime": 4620.79999999702,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:34",
+      "startTime": 4661.5999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:35",
+      "startTime": 4896.29999999702,
+      "detail": {
+        "renderMs": 67.70000000298023,
+        "diffMs": 19.69999999552965,
+        "commitMs": 147,
+        "flushMs": 234.39999999850988,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:34",
+      "startTime": 4896.29999999702,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-sort:36",
+      "startTime": 4929,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:37",
+      "startTime": 5161.79999999702,
+      "detail": {
+        "renderMs": 80.10000000149012,
+        "diffMs": 28.200000002980232,
+        "commitMs": 124.39999999850988,
+        "flushMs": 232.70000000298023,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-sort:36",
+      "startTime": 5161.89999999851,
+      "detail": null
+    }
+  ],
+  "longtasks": [
+    {
+      "startTime": 154,
+      "duration": 176,
+      "name": "self"
+    },
+    {
+      "startTime": 480.59999999403954,
+      "duration": 92,
+      "name": "self"
+    },
+    {
+      "startTime": 664.5999999940395,
+      "duration": 280,
+      "name": "self"
+    },
+    {
+      "startTime": 970.5999999940395,
+      "duration": 255,
+      "name": "self"
+    },
+    {
+      "startTime": 1261.0999999940395,
+      "duration": 353,
+      "name": "self"
+    },
+    {
+      "startTime": 1688.6999999955297,
+      "duration": 367,
+      "name": "self"
+    },
+    {
+      "startTime": 2085.0999999940395,
+      "duration": 232,
+      "name": "self"
+    },
+    {
+      "startTime": 2350.7999999970198,
+      "duration": 229,
+      "name": "self"
+    },
+    {
+      "startTime": 2602.7999999970198,
+      "duration": 219,
+      "name": "self"
+    },
+    {
+      "startTime": 2850.1999999955297,
+      "duration": 244,
+      "name": "self"
+    },
+    {
+      "startTime": 3120.2999999970198,
+      "duration": 233,
+      "name": "self"
+    },
+    {
+      "startTime": 3386.7999999970198,
+      "duration": 219,
+      "name": "self"
+    },
+    {
+      "startTime": 3629.6999999955297,
+      "duration": 218,
+      "name": "self"
+    },
+    {
+      "startTime": 3871.7999999970198,
+      "duration": 247,
+      "name": "self"
+    },
+    {
+      "startTime": 4143.89999999851,
+      "duration": 226,
+      "name": "self"
+    },
+    {
+      "startTime": 4398.69999999553,
+      "duration": 224,
+      "name": "self"
+    },
+    {
+      "startTime": 4658.5999999940395,
+      "duration": 243,
+      "name": "self"
+    },
+    {
+      "startTime": 4926.19999999553,
+      "duration": 238,
+      "name": "self"
+    }
+  ]
+}

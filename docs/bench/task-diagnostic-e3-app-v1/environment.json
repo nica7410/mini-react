@@ -1,0 +1,249 @@
+{
+  "startedAt": "2026-11-08T20:59:59.829Z",
+  "status": "passed",
+  "diagnosticOnly": true,
+  "sourceRun": "task-candidate-v1",
+  "smoke": false,
+  "sizes": [
+    1000
+  ],
+  "modes": [
+    "cpu",
+    "memory"
+  ],
+  "repetitions": 12,
+  "cpuWarmup": 5,
+  "builds": [
+    {
+      "tag": "task-e3-a0-v1",
+      "original": {
+        "tag": "task-e3-a0-v1",
+        "engineCommit": "ff9e24e1a4486e0589fc29c1b6483fabeb884e50",
+        "appCommit": "4d5a66f4dc9af5b65813bb6026018ff5bb49a243",
+        "styleCommit": "4d5a66f4dc9af5b65813bb6026018ff5bb49a243",
+        "createdAt": "2026-11-08T12:01:42.001Z",
+        "engineHash": "8474eccbd9c630c829d942b68cb11d7c5f99d4fb3f2e21d75437594c7f74212e",
+        "appHash": "3a65ef055819b5de0433cf811365d83e54b4e3a693971a66f8c71ad348c378f8",
+        "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+        "dependencyHash": "ea8b1a2bcae3a1230d67321ff39dcb4037f0bc176b32684ade4d1cee29724f21",
+        "groups": {
+          "engine": {
+            "src/core/capture.ts": "bb67da1eb02d36e28f1fd33876399695d19e7bd2c4bd37632cde947086946e8b",
+            "src/core/host/browserState.ts": "218603ca2a25629a388f1247ce08f9cb8675bc14755aad27e266934ede88ea77",
+            "src/core/host/events.ts": "1dee6410d07328fcd0384fe2572f45da33c6d0dbf291039ada158da7d5289ee8",
+            "src/core/host/forms.ts": "576d34c2f11bb60b05fa8524906a21b5f85c14eb5aa9e9c23839d6e0a1deb2e6",
+            "src/core/host/inputs.ts": "37d165382aff0209da74434fd7955ec87b82588fb60e21f138e4592bd8d8d82b",
+            "src/core/keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+            "src/core/mount.ts": "98db1dececa432877bc19efd765c706c009b762ab74754cebabf2c41e415a039",
+            "src/core/patch.ts": "77f8c59f94dfeb1ed0fd289c7523d98c05758ed51325308cfa1af1c2f19230ef",
+            "src/core/planValidation.ts": "ebb754eb4b3688abc3513b064fcadf9a0c29151c8e1c3d76ed2f4d2fde56fa31",
+            "src/core/reconcile.ts": "c8b971061b1cabaaba295041b3dfb960425b8d737c775c13522c861b094750ae",
+            "src/core/types.ts": "6cb4f8d46700baf0ee03a6311a258243dbcff396de225201d8f9784e16c17b62",
+            "src/core/validate.ts": "c18e2a2d219343128b385fed7f7442a283409e4d11c7a0e0d09b7e4431c6bf7d",
+            "src/core/vdom.ts": "8c5997462c233fa2e64ad1163b1d4564e54a3f10bf11435a3f35f4b5357deb46",
+            "src/observe/inspector.ts": "ff8e32e8e90ddeb026d1be9d22d3b388e66317a17aad3ae7c26c1da7e97a3af5",
+            "src/observe/recorder.ts": "2fac724581b0d57d7ff1882a564142cc26cc98620bda1cf4796d17a231375566",
+            "src/observe/trace.ts": "509b61c504c88078b3cfd243917aceb8e2bace996143995683bc3c4dc487d10b",
+            "src/runtime/FunctionComponent.ts": "8c9dcaba691544641e90a8da37af67138dc46b1d0d3795ff2bcec4ce4c2c48b6",
+            "src/runtime/expression.ts": "497e4d36029975216cc0924bb90d1c02f7df3c701122b9e764303a301169a031",
+            "src/runtime/hooks.ts": "7563a2fa137b281230754feafd9d2bb8673201690005aa76928a05fcc5ea8d3f",
+            "src/runtime/index.ts": "3935b4f807ac3b05a6404b3eaa38780239104403cb4299780f5706570734dc3e",
+            "src/runtime/resolve.ts": "9ec32a13e59682c4986f585ec77a259dab2db41e931ead5ba3b8d8d3d5b1db77",
+            "src/runtime/stateGuard.ts": "4fea31d3bc4f290e7e65683a8a812ab4c2a76f6c1dad1c77b7466d4abf96c369",
+            "src/runtime/updateQueue.ts": "adda868ec42fd02d33fd80a1c5e4b9b11ff72c88d3e6e55548ed981b44d06fbe"
+          },
+          "app": {
+            "src/app/tasks.ts": "a872fb77fd2f619b375270ebe9c48c0c72ae6dbd48e5bfc6a05d32f4d3257dbb",
+            "src/app/style.css": "6ff1e004f62403a3c997cea8fbea6c1f0c7deb42161cb59aad4d5ef141283526"
+          },
+          "dependencies": {
+            "package.json": "dfe52536553fa789514ae8196dde93297c5fe64a6fe4922e1d24f5ec5452f5d8",
+            "pnpm-lock.yaml": "2057fbbf450943c652548e72ea06ea539c9b20a044e373f55c2c7b7d1e16681c"
+          },
+          "harness": {
+            "task-bench.html": "d12e6a1e091f0f5053a89d25106aebf0cbcc613102a7bbf848dfd803fb3ed181",
+            "src/bench/task-app.ts": "03412f7d24d7a621b0d1a80392bf7406e7c920cc329de4ea3be191b81b0d290c",
+            "src/bench/task-model.ts": "90a16dc23b18a49fdd69d1f07398c6bb483bf58e1b4d78e418eb969b416a09f1"
+          },
+          "tooling": {
+            "scripts/build-task.mjs": "6371d17460d119d008e5dee6bcee6f7c5aef37ffa3388ff9aa8acdbeb41b0fe6",
+            "scripts/benchmark-task.mjs": "db8d7aa124c383e27beac039f87ae26b25fd5f4dc4e7bf11f68c8fdff9e097af",
+            "docs/task-app-comparison-plan.md": "a8a31034c2988af1ae4c94f4a8f7bb7a8a8c49302b520c2a307c02006e871012"
+          }
+        },
+        "node": "v24.22.1",
+        "vite": "8.3.6",
+        "mode": "production",
+        "minify": "oxc",
+        "sourcePolicy": "Exact Git objects for engine/app/CSS/dependencies; current common harness copied. No checkout changes, no app source transformation.",
+        "artifacts": {
+          "assets/task-bench-Ctw5MEzL.js": "f45e5926bf7b1bcf6103fd82f86aced80e48995454859e9dd005c0cbd6cb1140",
+          "assets/task-bench-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+          "task-bench.html": "e9910b1f35f75ad5bce69ba37d9bb458188c4ee5d89663d4b442fdf4e4823f1e"
+        }
+      },
+      "sourceHashes": {
+        "src/core/capture.ts": "bb67da1eb02d36e28f1fd33876399695d19e7bd2c4bd37632cde947086946e8b",
+        "src/core/host/browserState.ts": "218603ca2a25629a388f1247ce08f9cb8675bc14755aad27e266934ede88ea77",
+        "src/core/host/events.ts": "1dee6410d07328fcd0384fe2572f45da33c6d0dbf291039ada158da7d5289ee8",
+        "src/core/host/forms.ts": "576d34c2f11bb60b05fa8524906a21b5f85c14eb5aa9e9c23839d6e0a1deb2e6",
+        "src/core/host/inputs.ts": "37d165382aff0209da74434fd7955ec87b82588fb60e21f138e4592bd8d8d82b",
+        "src/core/keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+        "src/core/mount.ts": "98db1dececa432877bc19efd765c706c009b762ab74754cebabf2c41e415a039",
+        "src/core/patch.ts": "77f8c59f94dfeb1ed0fd289c7523d98c05758ed51325308cfa1af1c2f19230ef",
+        "src/core/planValidation.ts": "ebb754eb4b3688abc3513b064fcadf9a0c29151c8e1c3d76ed2f4d2fde56fa31",
+        "src/core/reconcile.ts": "c8b971061b1cabaaba295041b3dfb960425b8d737c775c13522c861b094750ae",
+        "src/core/types.ts": "6cb4f8d46700baf0ee03a6311a258243dbcff396de225201d8f9784e16c17b62",
+        "src/core/validate.ts": "c18e2a2d219343128b385fed7f7442a283409e4d11c7a0e0d09b7e4431c6bf7d",
+        "src/core/vdom.ts": "8c5997462c233fa2e64ad1163b1d4564e54a3f10bf11435a3f35f4b5357deb46",
+        "src/observe/inspector.ts": "ff8e32e8e90ddeb026d1be9d22d3b388e66317a17aad3ae7c26c1da7e97a3af5",
+        "src/observe/recorder.ts": "2fac724581b0d57d7ff1882a564142cc26cc98620bda1cf4796d17a231375566",
+        "src/observe/trace.ts": "509b61c504c88078b3cfd243917aceb8e2bace996143995683bc3c4dc487d10b",
+        "src/runtime/FunctionComponent.ts": "8c9dcaba691544641e90a8da37af67138dc46b1d0d3795ff2bcec4ce4c2c48b6",
+        "src/runtime/expression.ts": "497e4d36029975216cc0924bb90d1c02f7df3c701122b9e764303a301169a031",
+        "src/runtime/hooks.ts": "7563a2fa137b281230754feafd9d2bb8673201690005aa76928a05fcc5ea8d3f",
+        "src/runtime/index.ts": "3935b4f807ac3b05a6404b3eaa38780239104403cb4299780f5706570734dc3e",
+        "src/runtime/resolve.ts": "9ec32a13e59682c4986f585ec77a259dab2db41e931ead5ba3b8d8d3d5b1db77",
+        "src/runtime/stateGuard.ts": "4fea31d3bc4f290e7e65683a8a812ab4c2a76f6c1dad1c77b7466d4abf96c369",
+        "src/runtime/updateQueue.ts": "adda868ec42fd02d33fd80a1c5e4b9b11ff72c88d3e6e55548ed981b44d06fbe",
+        "src/app/tasks.ts": "a872fb77fd2f619b375270ebe9c48c0c72ae6dbd48e5bfc6a05d32f4d3257dbb",
+        "src/app/style.css": "6ff1e004f62403a3c997cea8fbea6c1f0c7deb42161cb59aad4d5ef141283526",
+        "package.json": "dfe52536553fa789514ae8196dde93297c5fe64a6fe4922e1d24f5ec5452f5d8",
+        "pnpm-lock.yaml": "2057fbbf450943c652548e72ea06ea539c9b20a044e373f55c2c7b7d1e16681c",
+        "task-bench.html": "d12e6a1e091f0f5053a89d25106aebf0cbcc613102a7bbf848dfd803fb3ed181",
+        "src/bench/task-app.ts": "d1f167f34a1035d5835e1ca071e01a7b4de3bb44e1fddbaf54b568f3520b5ee2",
+        "src/bench/task-model.ts": "90a16dc23b18a49fdd69d1f07398c6bb483bf58e1b4d78e418eb969b416a09f1"
+      },
+      "artifactHashes": {
+        "assets/task-bench-DyhoiD0y.js": "e40cdc5f77cf6561d587432ade743ec4e1f9e0fcfd0c7abe7dfc714047a2ffc4",
+        "assets/task-bench-DyhoiD0y.js.map": "58909460669c8edb0abd9c1e9c27ce2ee9029e723cf6993d76aded2abec5a208",
+        "assets/task-bench-t7QYDKEP.css": "6ff1e004f62403a3c997cea8fbea6c1f0c7deb42161cb59aad4d5ef141283526",
+        "task-bench.html": "82dadaba29b7262e4458d711385387f071f71933cc8fbad078682631f63562b3"
+      },
+      "minify": false,
+      "sourcemap": true,
+      "modification": "Only diagnostic harness inserts UserTiming/flush marks and a direct real counter/move dispatch with oracle after frame opportunity. Actual engine/app sources unchanged."
+    },
+    {
+      "tag": "task-e3-a1-v1",
+      "original": {
+        "tag": "task-e3-a1-v1",
+        "engineCommit": "ff9e24e1a4486e0589fc29c1b6483fabeb884e50",
+        "appCommit": "5ed7f3485cfd924b44383996164e0ce3b89d6a58",
+        "styleCommit": "4d5a66f4dc9af5b65813bb6026018ff5bb49a243",
+        "createdAt": "2026-11-08T12:01:40.586Z",
+        "engineHash": "8474eccbd9c630c829d942b68cb11d7c5f99d4fb3f2e21d75437594c7f74212e",
+        "appHash": "221da911183359db10c1412138896deb53557461ca632a4fa2f30d4666d5ef45",
+        "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+        "dependencyHash": "ea8b1a2bcae3a1230d67321ff39dcb4037f0bc176b32684ade4d1cee29724f21",
+        "groups": {
+          "engine": {
+            "src/core/capture.ts": "bb67da1eb02d36e28f1fd33876399695d19e7bd2c4bd37632cde947086946e8b",
+            "src/core/host/browserState.ts": "218603ca2a25629a388f1247ce08f9cb8675bc14755aad27e266934ede88ea77",
+            "src/core/host/events.ts": "1dee6410d07328fcd0384fe2572f45da33c6d0dbf291039ada158da7d5289ee8",
+            "src/core/host/forms.ts": "576d34c2f11bb60b05fa8524906a21b5f85c14eb5aa9e9c23839d6e0a1deb2e6",
+            "src/core/host/inputs.ts": "37d165382aff0209da74434fd7955ec87b82588fb60e21f138e4592bd8d8d82b",
+            "src/core/keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+            "src/core/mount.ts": "98db1dececa432877bc19efd765c706c009b762ab74754cebabf2c41e415a039",
+            "src/core/patch.ts": "77f8c59f94dfeb1ed0fd289c7523d98c05758ed51325308cfa1af1c2f19230ef",
+            "src/core/planValidation.ts": "ebb754eb4b3688abc3513b064fcadf9a0c29151c8e1c3d76ed2f4d2fde56fa31",
+            "src/core/reconcile.ts": "c8b971061b1cabaaba295041b3dfb960425b8d737c775c13522c861b094750ae",
+            "src/core/types.ts": "6cb4f8d46700baf0ee03a6311a258243dbcff396de225201d8f9784e16c17b62",
+            "src/core/validate.ts": "c18e2a2d219343128b385fed7f7442a283409e4d11c7a0e0d09b7e4431c6bf7d",
+            "src/core/vdom.ts": "8c5997462c233fa2e64ad1163b1d4564e54a3f10bf11435a3f35f4b5357deb46",
+            "src/observe/inspector.ts": "ff8e32e8e90ddeb026d1be9d22d3b388e66317a17aad3ae7c26c1da7e97a3af5",
+            "src/observe/recorder.ts": "2fac724581b0d57d7ff1882a564142cc26cc98620bda1cf4796d17a231375566",
+            "src/observe/trace.ts": "509b61c504c88078b3cfd243917aceb8e2bace996143995683bc3c4dc487d10b",
+            "src/runtime/FunctionComponent.ts": "8c9dcaba691544641e90a8da37af67138dc46b1d0d3795ff2bcec4ce4c2c48b6",
+            "src/runtime/expression.ts": "497e4d36029975216cc0924bb90d1c02f7df3c701122b9e764303a301169a031",
+            "src/runtime/hooks.ts": "7563a2fa137b281230754feafd9d2bb8673201690005aa76928a05fcc5ea8d3f",
+            "src/runtime/index.ts": "3935b4f807ac3b05a6404b3eaa38780239104403cb4299780f5706570734dc3e",
+            "src/runtime/resolve.ts": "9ec32a13e59682c4986f585ec77a259dab2db41e931ead5ba3b8d8d3d5b1db77",
+            "src/runtime/stateGuard.ts": "4fea31d3bc4f290e7e65683a8a812ab4c2a76f6c1dad1c77b7466d4abf96c369",
+            "src/runtime/updateQueue.ts": "adda868ec42fd02d33fd80a1c5e4b9b11ff72c88d3e6e55548ed981b44d06fbe"
+          },
+          "app": {
+            "src/app/tasks.ts": "1751a643ae8f5f3f802b8cae3cb9286fc2c0ec79a23938cf331b4821f12556e5",
+            "src/app/style.css": "6ff1e004f62403a3c997cea8fbea6c1f0c7deb42161cb59aad4d5ef141283526"
+          },
+          "dependencies": {
+            "package.json": "dfe52536553fa789514ae8196dde93297c5fe64a6fe4922e1d24f5ec5452f5d8",
+            "pnpm-lock.yaml": "2057fbbf450943c652548e72ea06ea539c9b20a044e373f55c2c7b7d1e16681c"
+          },
+          "harness": {
+            "task-bench.html": "d12e6a1e091f0f5053a89d25106aebf0cbcc613102a7bbf848dfd803fb3ed181",
+            "src/bench/task-app.ts": "03412f7d24d7a621b0d1a80392bf7406e7c920cc329de4ea3be191b81b0d290c",
+            "src/bench/task-model.ts": "90a16dc23b18a49fdd69d1f07398c6bb483bf58e1b4d78e418eb969b416a09f1"
+          },
+          "tooling": {
+            "scripts/build-task.mjs": "6371d17460d119d008e5dee6bcee6f7c5aef37ffa3388ff9aa8acdbeb41b0fe6",
+            "scripts/benchmark-task.mjs": "db8d7aa124c383e27beac039f87ae26b25fd5f4dc4e7bf11f68c8fdff9e097af",
+            "docs/task-app-comparison-plan.md": "a8a31034c2988af1ae4c94f4a8f7bb7a8a8c49302b520c2a307c02006e871012"
+          }
+        },
+        "node": "v24.22.1",
+        "vite": "8.3.6",
+        "mode": "production",
+        "minify": "oxc",
+        "sourcePolicy": "Exact Git objects for engine/app/CSS/dependencies; current common harness copied. No checkout changes, no app source transformation.",
+        "artifacts": {
+          "assets/task-bench-DW608K_d.js": "1fafebd71bc8cc87d172512824412cde64631c3a175302301acbb1dc9ab78d03",
+          "assets/task-bench-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+          "task-bench.html": "673b818b346745f6a9856cbf2a4be31d43f71894a62572121218966ce505a0da"
+        }
+      },
+      "sourceHashes": {
+        "src/core/capture.ts": "bb67da1eb02d36e28f1fd33876399695d19e7bd2c4bd37632cde947086946e8b",
+        "src/core/host/browserState.ts": "218603ca2a25629a388f1247ce08f9cb8675bc14755aad27e266934ede88ea77",
+        "src/core/host/events.ts": "1dee6410d07328fcd0384fe2572f45da33c6d0dbf291039ada158da7d5289ee8",
+        "src/core/host/forms.ts": "576d34c2f11bb60b05fa8524906a21b5f85c14eb5aa9e9c23839d6e0a1deb2e6",
+        "src/core/host/inputs.ts": "37d165382aff0209da74434fd7955ec87b82588fb60e21f138e4592bd8d8d82b",
+        "src/core/keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+        "src/core/mount.ts": "98db1dececa432877bc19efd765c706c009b762ab74754cebabf2c41e415a039",
+        "src/core/patch.ts": "77f8c59f94dfeb1ed0fd289c7523d98c05758ed51325308cfa1af1c2f19230ef",
+        "src/core/planValidation.ts": "ebb754eb4b3688abc3513b064fcadf9a0c29151c8e1c3d76ed2f4d2fde56fa31",
+        "src/core/reconcile.ts": "c8b971061b1cabaaba295041b3dfb960425b8d737c775c13522c861b094750ae",
+        "src/core/types.ts": "6cb4f8d46700baf0ee03a6311a258243dbcff396de225201d8f9784e16c17b62",
+        "src/core/validate.ts": "c18e2a2d219343128b385fed7f7442a283409e4d11c7a0e0d09b7e4431c6bf7d",
+        "src/core/vdom.ts": "8c5997462c233fa2e64ad1163b1d4564e54a3f10bf11435a3f35f4b5357deb46",
+        "src/observe/inspector.ts": "ff8e32e8e90ddeb026d1be9d22d3b388e66317a17aad3ae7c26c1da7e97a3af5",
+        "src/observe/recorder.ts": "2fac724581b0d57d7ff1882a564142cc26cc98620bda1cf4796d17a231375566",
+        "src/observe/trace.ts": "509b61c504c88078b3cfd243917aceb8e2bace996143995683bc3c4dc487d10b",
+        "src/runtime/FunctionComponent.ts": "8c9dcaba691544641e90a8da37af67138dc46b1d0d3795ff2bcec4ce4c2c48b6",
+        "src/runtime/expression.ts": "497e4d36029975216cc0924bb90d1c02f7df3c701122b9e764303a301169a031",
+        "src/runtime/hooks.ts": "7563a2fa137b281230754feafd9d2bb8673201690005aa76928a05fcc5ea8d3f",
+        "src/runtime/index.ts": "3935b4f807ac3b05a6404b3eaa38780239104403cb4299780f5706570734dc3e",
+        "src/runtime/resolve.ts": "9ec32a13e59682c4986f585ec77a259dab2db41e931ead5ba3b8d8d3d5b1db77",
+        "src/runtime/stateGuard.ts": "4fea31d3bc4f290e7e65683a8a812ab4c2a76f6c1dad1c77b7466d4abf96c369",
+        "src/runtime/updateQueue.ts": "adda868ec42fd02d33fd80a1c5e4b9b11ff72c88d3e6e55548ed981b44d06fbe",
+        "src/app/tasks.ts": "1751a643ae8f5f3f802b8cae3cb9286fc2c0ec79a23938cf331b4821f12556e5",
+        "src/app/style.css": "6ff1e004f62403a3c997cea8fbea6c1f0c7deb42161cb59aad4d5ef141283526",
+        "package.json": "dfe52536553fa789514ae8196dde93297c5fe64a6fe4922e1d24f5ec5452f5d8",
+        "pnpm-lock.yaml": "2057fbbf450943c652548e72ea06ea539c9b20a044e373f55c2c7b7d1e16681c",
+        "task-bench.html": "d12e6a1e091f0f5053a89d25106aebf0cbcc613102a7bbf848dfd803fb3ed181",
+        "src/bench/task-app.ts": "d1f167f34a1035d5835e1ca071e01a7b4de3bb44e1fddbaf54b568f3520b5ee2",
+        "src/bench/task-model.ts": "90a16dc23b18a49fdd69d1f07398c6bb483bf58e1b4d78e418eb969b416a09f1"
+      },
+      "artifactHashes": {
+        "assets/task-bench-8Hu1255D.js": "e9210511de02f8e627ebfb85f8bb5b9c5fa1cf7f53b9f9f0d7aa4f23b15e37da",
+        "assets/task-bench-8Hu1255D.js.map": "65c9592d019d007919a2e7797d84dff682320f25cc89fced60e1b1744d238abc",
+        "assets/task-bench-t7QYDKEP.css": "6ff1e004f62403a3c997cea8fbea6c1f0c7deb42161cb59aad4d5ef141283526",
+        "task-bench.html": "df4d7e62657eb1dd1fb494b9f895d839bc1fd66cc9e13e50d123233d231969b6"
+      },
+      "minify": false,
+      "sourcemap": true,
+      "modification": "Only diagnostic harness inserts UserTiming/flush marks and a direct real counter/move dispatch with oracle after frame opportunity. Actual engine/app sources unchanged."
+    }
+  ],
+  "sourceEnvironmentSha256": "19a9cece8be81512234d05673b0a500bf323b9b63781ef4ff3c277f100ab08bf",
+  "scriptSha256": "d9e12ba26d424721de39171d91c4ad9ee490b4a2804c641fc7450b1d1c9842f2",
+  "seed": 539365639,
+  "port": 4179,
+  "headless": true,
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "policy": "Separate processes from formal timing. CPU sampling 1ms plus allocation sampling 32768B, GC trace and longtask observer are diagnostic overhead. Allocation profile includes collected objects and is estimated, not exact allocated bytes. Forced GC only in the memory diagnostic; retained JS heap is not process RSS. Visual oracle is after frame opportunity; actual trace Paint completion is a rendering boundary, not physical display presentation. No automatic retry or discarded slow samples.",
+  "endedAt": "2026-11-08T21:01:28.425Z"
+}

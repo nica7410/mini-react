@@ -10,9 +10,9 @@
 | 4. 비교 설계·기준선 | [사전 계획](task-app-comparison-plan.md), [첫 정식 실행 출처](bench/task-matrix-v1/environment.json). E0/E1/E2 × A0/A1를 같은 실제 앱·하네스·seed로 고정. | 완료 |
 | 5. 앱 표현 재사용 | 5ed7f34의 목록 표현·행 콜백 Memo, 함수형 최신 State updater. [관련 64개/TaskApp 브라우저 8개 검증](validation/task-app-b/result.json), [설명](task-app-reuse.md). 실행 횟수와 시간은 분리. | 구현·단계 검증 완료 |
 | 6. 세 버전 비교 | 720개 조건·3세션과 [통계 감사](bench/task-matrix-v1/statistics-audit.json). [첫 결과](task-app-baseline-results.md), [분리 진단](bench/task-diagnostic-baseline-v1/diagnostics.md). adverse/fresh/CRUD 하위 action 포함. | 완료 |
-| 7. 생성 비용·p95와 최종 정책 | E3 ff9e24e의 증명 순서/보관 범위 수정, [변경 전 실패와 후보 검증](validation/task-e3-correctness/result.json). 새 480개 조건의 [통계](bench/task-candidate-v1/statistics-audit.json)·[판정 감사](bench/task-candidate-v1/policy-audit.json)와 [분리 진단 36개](bench/task-diagnostic-candidate-v1/diagnostic-audit.json) 완료. [11개 조건 보충 계획](bench/task-candidate-v1/tail-supplement-plan-e3.json), 보충 뒤 정책 결정 필요. | 진행 중 |
+| 7. 생성 비용·p95와 최종 정책 | E3 ff9e24e의 증명 순서/보관 범위 수정과 [후보 검증](validation/task-e3-correctness/result.json). 새 480개 조건 및 진단 36개를 감사했다. [1,000개 새 3세션 n=180 보충](task-app-tail-results.md)에서도 회귀가 남아 E3/A1 일반 채택을 기각했다. stress 보충은 첫 세션 뒤 중단·보존했고 작은 보충은 미실행이다. 고정 E3 A0/A1 진단 8개도 완료했으며 보수적인 정책 조정과 새 검증이 남음. | 진행 중 |
 | 8. 최종 재검증 | 선택한 최종 기능 소스의 typecheck·전체 unit/integration·production build·기본 Chromium/Firefox 전체 3회와 source/hash 연결. worker 2, timeout 30초, retry 0. | 미실행 |
-| 9. 단계별 커밋 | 6c3fa1f → 5ed7f34 → dfd20dc → ff9e24e. 후보 증거·최종 정책·인수 결과 커밋은 남음. | 진행 중 |
+| 9. 단계별 커밋 | 6c3fa1f → 5ed7f34 → dfd20dc → ff9e24e → 93bc38c. 후보 기각 증거·최종 정책·인수 결과 커밋은 후속 git log로 연결. | 진행 중 |
 | 10. 문서·원본 체크리스트 | [현행 보고서](benchmark-results.md), [진행](progress.md), 아키텍처/요구사항/인수/README를 진행 상태로 갱신. [외부 체크리스트 v1.10 영수증](validation/task-checklist-candidate.json)은 저장소 밖 원본과 정확한 gzip 사본의 hash를 연결. 최종 버전은 남음. | 진행 중 |
 | 11. 종료 조건 | 최종 정책·새 전체 검증·원자료 감사·체크리스트·단계별 커밋·clean을 모두 확인한 뒤에만 완료. | 미완료 |
 

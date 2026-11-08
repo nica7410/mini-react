@@ -1,0 +1,30 @@
+{
+  "createdAt": "2026-11-08T21:04:09.857Z",
+  "sourceSummarySha256": "d7df74dc6ee3bd6531b0376f3ca72da6a2cb6eb4a7aa00d5200a4c39b69218db",
+  "method": "Select audited sample-primary-toggle windows of each CPU CRUD case; sum disjoint primary window lengths and same-window GC category overlaps; read weighted self/inclusive function samples without adding nested functions.",
+  "rows": [
+    {
+      "build": "task-e3-a0-v1",
+      "size": 1000,
+      "actions": 12,
+      "primaryWindowsMs": 1321.0249999999999,
+      "proofSelfMs": 343.4739999999999,
+      "gcCategoryOverlapMs": 94.13799999999999,
+      "evaluateInclusiveMs": 656.9119999999997,
+      "diffInclusiveMs": 223.07100000000014,
+      "commitInclusiveMs": 301.07000000000016
+    },
+    {
+      "build": "task-e3-a1-v1",
+      "size": 1000,
+      "actions": 12,
+      "primaryWindowsMs": 1763.122,
+      "proofSelfMs": 416.04099999999977,
+      "gcCategoryOverlapMs": 131.8,
+      "evaluateInclusiveMs": 875.6170000000006,
+      "diffInclusiveMs": 298.053,
+      "commitInclusiveMs": 419.82599999999974
+    }
+  ],
+  "interpretation": "Instrumented diagnosis only. A1 toggle is slower here too, but time differences span proof, evaluation, diff and commit. GC overlap does not explain the whole elapsed difference. This does not establish exact allocation ownership or prove one function caused the formal regression. The separate memory trajectory has lower post-dispose heap for A1 than A0; do not call this an A1-specific object leak."
+}
