@@ -1,0 +1,21 @@
+{
+  "note": "Persistent lifecycle includes initialization and warm-up costs. Trajectory points are NOT independent steady-state samples.",
+  "rows": [
+    {
+      "session": 1,
+      "key": "persistent,equal,10000,task-e0-a0-v1",
+      "index": 0,
+      "cpu": 3844.5,
+      "updates": 2,
+      "amortizedCpuMs": 1922.25
+    },
+    {
+      "session": 1,
+      "key": "persistent,equal,10000,task-e0-a0-v1",
+      "index": 1,
+      "cpu": 4902.299999999814,
+      "updates": 3,
+      "amortizedCpuMs": 1634.0999999999378
+    }
+  ]
+}

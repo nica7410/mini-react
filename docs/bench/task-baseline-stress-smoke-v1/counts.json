@@ -1,0 +1,284 @@
+[
+  {
+    "session": 1,
+    "size": 10000,
+    "regime": "persistent",
+    "workload": "equal",
+    "build": "task-e0-a0-v1",
+    "orderPosition": 0,
+    "sampleKind": "counts",
+    "index": 0,
+    "initialization": {
+      "elapsedMs": 3261.5,
+      "cpuMs": 2116.499999999767,
+      "flushes": [
+        {
+          "expressionMs": 0.8000000000465661,
+          "vdomMs": 2.5,
+          "renderMs": 3.300000000046566,
+          "diffMs": 0.5,
+          "commitMs": 3.5,
+          "flushMs": 7.399999999906868,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 5.300000000046566,
+          "vdomMs": 331.39999999990687,
+          "renderMs": 336.69999999995343,
+          "diffMs": 146.30000000004657,
+          "commitMs": 518.0999999998603,
+          "flushMs": 1001.0999999998603,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 5.899999999906868,
+          "vdomMs": 420.20000000018626,
+          "renderMs": 426.10000000009313,
+          "diffMs": 338.29999999981374,
+          "commitMs": 343.60000000009313,
+          "flushMs": 1108,
+          "effectMs": 0
+        }
+      ],
+      "counts": {
+        "createdNodes": 100047,
+        "removedNodes": 0,
+        "insertedRoots": 9993,
+        "movedRoots": 0,
+        "textWrites": 2,
+        "attributeWrites": 120032,
+        "styleWrites": 0,
+        "propertyWrites": 13342,
+        "listenerAdds": 70016,
+        "listenerRemoves": 0,
+        "skippedHostCalls": 6671,
+        "rootExecutions": 3,
+        "childExecutions": 20010,
+        "taskRowExecutions": 20008,
+        "visitedNodes": 110166,
+        "reusedSubtrees": 1,
+        "commits": 3,
+        "effectSetups": 4,
+        "effectCleanups": 1
+      },
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "result": {
+      "workload": "equal",
+      "index": 0,
+      "actions": [
+        {
+          "action": {
+            "kind": "equal"
+          },
+          "timings": null,
+          "followups": null,
+          "counts": {
+            "primary": {
+              "createdNodes": 0,
+              "removedNodes": 0,
+              "insertedRoots": 0,
+              "movedRoots": 0,
+              "textWrites": 0,
+              "attributeWrites": 0,
+              "styleWrites": 0,
+              "propertyWrites": 0,
+              "listenerAdds": 0,
+              "listenerRemoves": 0,
+              "skippedHostCalls": 0,
+              "rootExecutions": 1,
+              "childExecutions": 10000,
+              "taskRowExecutions": 10000,
+              "visitedNodes": 100046,
+              "reusedSubtrees": 1,
+              "commits": 1,
+              "effectSetups": 0,
+              "effectCleanups": 0
+            },
+            "total": {
+              "createdNodes": 0,
+              "removedNodes": 0,
+              "insertedRoots": 0,
+              "movedRoots": 0,
+              "textWrites": 0,
+              "attributeWrites": 0,
+              "styleWrites": 0,
+              "propertyWrites": 0,
+              "listenerAdds": 0,
+              "listenerRemoves": 0,
+              "skippedHostCalls": 0,
+              "rootExecutions": 1,
+              "childExecutions": 10000,
+              "taskRowExecutions": 10000,
+              "visitedNodes": 100046,
+              "reusedSubtrees": 1,
+              "commits": 1,
+              "effectSetups": 0,
+              "effectCleanups": 0
+            }
+          },
+          "validation": {
+            "checkedRows": 10000,
+            "stateRows": 10000,
+            "retainedIdentities": 10000,
+            "counter": 0,
+            "nextId": 10001,
+            "syncedTotal": 10000
+          }
+        }
+      ],
+      "visibility": "visible",
+      "focused": true,
+      "totalCpuMs": null
+    },
+    "disposed": true
+  },
+  {
+    "session": 1,
+    "size": 10000,
+    "regime": "fresh",
+    "workload": "equal",
+    "build": "task-e0-a0-v1",
+    "orderPosition": 0,
+    "sampleKind": "counts",
+    "index": 0,
+    "initialization": {
+      "elapsedMs": 2953.8000000000466,
+      "cpuMs": 1962,
+      "flushes": [
+        {
+          "expressionMs": 0.8999999999068677,
+          "vdomMs": 2.2000000001862645,
+          "renderMs": 3.1000000000931323,
+          "diffMs": 0.6000000000931323,
+          "commitMs": 3.800000000046566,
+          "flushMs": 7.800000000046566,
+          "effectMs": 0.09999999986030161
+        },
+        {
+          "expressionMs": 5.599999999860302,
+          "vdomMs": 333.10000000009313,
+          "renderMs": 338.69999999995343,
+          "diffMs": 141.89999999990687,
+          "commitMs": 487.80000000004657,
+          "flushMs": 968.5,
+          "effectMs": 0.10000000009313226
+        },
+        {
+          "expressionMs": 5.5,
+          "vdomMs": 357.69999999995343,
+          "renderMs": 363.19999999995343,
+          "diffMs": 278.30000000004657,
+          "commitMs": 343.89999999990687,
+          "flushMs": 985.5,
+          "effectMs": 0
+        }
+      ],
+      "counts": {
+        "createdNodes": 100047,
+        "removedNodes": 0,
+        "insertedRoots": 9993,
+        "movedRoots": 0,
+        "textWrites": 2,
+        "attributeWrites": 120032,
+        "styleWrites": 0,
+        "propertyWrites": 13342,
+        "listenerAdds": 70016,
+        "listenerRemoves": 0,
+        "skippedHostCalls": 6671,
+        "rootExecutions": 3,
+        "childExecutions": 20010,
+        "taskRowExecutions": 20008,
+        "visitedNodes": 110166,
+        "reusedSubtrees": 1,
+        "commits": 3,
+        "effectSetups": 4,
+        "effectCleanups": 1
+      },
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "result": {
+      "workload": "equal",
+      "index": 0,
+      "actions": [
+        {
+          "action": {
+            "kind": "equal"
+          },
+          "timings": null,
+          "followups": null,
+          "counts": {
+            "primary": {
+              "createdNodes": 0,
+              "removedNodes": 0,
+              "insertedRoots": 0,
+              "movedRoots": 0,
+              "textWrites": 0,
+              "attributeWrites": 0,
+              "styleWrites": 0,
+              "propertyWrites": 0,
+              "listenerAdds": 0,
+              "listenerRemoves": 0,
+              "skippedHostCalls": 0,
+              "rootExecutions": 1,
+              "childExecutions": 10000,
+              "taskRowExecutions": 10000,
+              "visitedNodes": 100046,
+              "reusedSubtrees": 1,
+              "commits": 1,
+              "effectSetups": 0,
+              "effectCleanups": 0
+            },
+            "total": {
+              "createdNodes": 0,
+              "removedNodes": 0,
+              "insertedRoots": 0,
+              "movedRoots": 0,
+              "textWrites": 0,
+              "attributeWrites": 0,
+              "styleWrites": 0,
+              "propertyWrites": 0,
+              "listenerAdds": 0,
+              "listenerRemoves": 0,
+              "skippedHostCalls": 0,
+              "rootExecutions": 1,
+              "childExecutions": 10000,
+              "taskRowExecutions": 10000,
+              "visitedNodes": 100046,
+              "reusedSubtrees": 1,
+              "commits": 1,
+              "effectSetups": 0,
+              "effectCleanups": 0
+            }
+          },
+          "validation": {
+            "checkedRows": 10000,
+            "stateRows": 10000,
+            "retainedIdentities": 10000,
+            "counter": 0,
+            "nextId": 10001,
+            "syncedTotal": 10000
+          }
+        }
+      ],
+      "visibility": "visible",
+      "focused": true,
+      "totalCpuMs": null
+    },
+    "disposed": true
+  }
+]

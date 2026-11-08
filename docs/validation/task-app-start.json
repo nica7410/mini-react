@@ -1,0 +1,94 @@
+{
+  "startedAt": "2026-11-08",
+  "branch": "phase1",
+  "head": "4d5a66f4dc9af5b65813bb6026018ff5bb49a243",
+  "workingTreeAtStart": "clean",
+  "documents": [
+    {
+      "file": "C:/Users/nica7/Desktop/리액트 조사/w11_미니리액트_요구사항.txt",
+      "sha256": "f80781c46e67ac0146780edc4665491bd987d882d88ded46c9fbd9aeb0c8a638"
+    },
+    {
+      "file": "C:/Users/nica7/Desktop/리액트 조사/Mini_React_B안_구현명세_체크리스트.md",
+      "sha256": "7a31192032451e56fe437c7c52eb530d301cb3c2583d4e41d1d05208aa4547fb"
+    },
+    {
+      "file": "docs/architecture.md",
+      "sha256": "4433a024b8476e817f777e8d336115c488f6794698fbcc0c35e806b683f04dc6"
+    },
+    {
+      "file": "docs/requirements-tests.md",
+      "sha256": "920cbb67144020cb42cedb2d241d30726780e99af06e2351279a114e700707c7"
+    },
+    {
+      "file": "docs/benchmark-results.md",
+      "sha256": "6292559a91d65b6bf9e6730979f5d1bb3e5898efff9823ab623871c8a5b6d75b"
+    },
+    {
+      "file": "docs/benchmark-results-m8.md",
+      "sha256": "d9c5793bcd41cff3990ae841d9f3c6812fdecf3122a5f214bd09768b119e113c"
+    },
+    {
+      "file": "docs/browser-noop-followup.md",
+      "sha256": "aede36a43efec2c85d8d18f2dde1fbbf25add110afa78a3d519b5fd0344cdb68"
+    },
+    {
+      "file": "docs/m8-acceptance.md",
+      "sha256": "da16626a1cae313871337dd49191e07e67a8f98d29a740bdaab12365e7b5516a"
+    },
+    {
+      "file": "docs/progress.md",
+      "sha256": "3af2482746c4a1a805bc8533e44875ec39bdbc88f97a26b09ce605dab496d043"
+    }
+  ],
+  "definitions": [
+    {
+      "name": "E0",
+      "engineCommit": "7757e3c7b0404d694daa845b6d3800993f3cc3e3",
+      "appCommit": "4d5a66f4dc9af5b65813bb6026018ff5bb49a243",
+      "engineHash": "1e42089a7970b7458b24377d2242c035abbcc10cee8d368f239ac9e0dbbd5ff1",
+      "appHash": "3a65ef055819b5de0433cf811365d83e54b4e3a693971a66f8c71ad348c378f8",
+      "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+      "dependencyHash": "ea8b1a2bcae3a1230d67321ff39dcb4037f0bc176b32684ade4d1cee29724f21"
+    },
+    {
+      "name": "E1",
+      "engineCommit": "8b302de1df71e01f295c6af1a7ee9ae783d05e0b",
+      "appCommit": "4d5a66f4dc9af5b65813bb6026018ff5bb49a243",
+      "engineHash": "316644555d301258a51b84b03940f5319a21cbecc82154dfda03062fceb48f87",
+      "appHash": "3a65ef055819b5de0433cf811365d83e54b4e3a693971a66f8c71ad348c378f8",
+      "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+      "dependencyHash": "ea8b1a2bcae3a1230d67321ff39dcb4037f0bc176b32684ade4d1cee29724f21"
+    },
+    {
+      "name": "E2",
+      "engineCommit": "c4a2fe121067cb4ff448d88c475c9c98f55e75c8",
+      "appCommit": "4d5a66f4dc9af5b65813bb6026018ff5bb49a243",
+      "engineHash": "fffff850c0f88407a6eb0f5da5d466809cb3e8bf19071827120d0955c396bc3c",
+      "appHash": "3a65ef055819b5de0433cf811365d83e54b4e3a693971a66f8c71ad348c378f8",
+      "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+      "dependencyHash": "ea8b1a2bcae3a1230d67321ff39dcb4037f0bc176b32684ade4d1cee29724f21"
+    }
+  ],
+  "sourceDifference": {
+    "E0_E1": "planValidation.ts host projection object removal only",
+    "E1_E2": "capture.ts / validate.ts / vdom.ts / resolve.ts: deep immutable certificate and whole-root validation reuse"
+  },
+  "validation": {
+    "typecheck": "passed",
+    "taskHarnessUnitTests": 11,
+    "browserSmoke": "task-baseline-smoke-v1: 3 engines x 10 conditions PASS; task-baseline-stress-smoke-v1: E0/A0 equal persistent+fresh 10000 PASS",
+    "audit": "all raw/model/sums/source hashes/count equality checks passed"
+  },
+  "harnessSources": {
+    "src/bench/task-app.ts": "03412f7d24d7a621b0d1a80392bf7406e7c920cc329de4ea3be191b81b0d290c",
+    "src/bench/task-model.ts": "90a16dc23b18a49fdd69d1f07398c6bb483bf58e1b4d78e418eb969b416a09f1",
+    "tests/integration/task-benchmark.test.ts": "30947df49a1d082975d1a5ce0a1da898b753503159f4ca4e0936b987a35165c5",
+    "scripts/build-task.mjs": "6371d17460d119d008e5dee6bcee6f7c5aef37ffa3388ff9aa8acdbeb41b0fe6",
+    "scripts/benchmark-task.mjs": "db8d7aa124c383e27beac039f87ae26b25fd5f4dc4e7bf11f68c8fdff9e097af",
+    "scripts/analyze-task.mjs": "28020b7a796b137cea987b538b2a1ae1762202de538ba5aaaad5bda92ddae09e",
+    "docs/task-app-comparison-plan.md": "a8a31034c2988af1ae4c94f4a8f7bb7a8a8c49302b520c2a307c02006e871012",
+    "task-bench.html": "d12e6a1e091f0f5053a89d25106aebf0cbcc613102a7bbf848dfd803fb3ed181"
+  },
+  "historicalResults": "184 unit and 31 browser were previous-goal results, not a new full validation"
+}
