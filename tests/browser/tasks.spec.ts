@@ -49,3 +49,24 @@ test('T-A03/T-B03: repeated reset cancels timers/listeners and focused keyed inp
   await app.screenshot({ path: '.validation/task-app-mobile.png' });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
+
+test('T-A04/T-A05: stable list preserves focused draft and retained rows while handlers use current State', async ({ page }) => {
+  await openApp(page); const app = page.locator('#task-app');
+  const name = app.getByLabel('task-1 이름'), original = await name.elementHandle();
+  await name.fill('첫 이름'); await app.getByLabel('task-1 완료').check();
+  await name.fill('최신 이름'); await app.getByLabel('task-2 삭제').click();
+  await expect(name).toHaveValue('최신 이름'); await expect(app.getByLabel('task-1 완료')).toBeChecked();
+  const draft = app.getByLabel('새 항목', { exact: true }); await draft.fill('임시 입력');
+  await draft.evaluate((node: HTMLInputElement) => node.setSelectionRange(1, 3));
+  // No explicit focus change: isolate preservation during an unrelated update.
+  await app.getByRole('button', { name: '+1 세 번', exact: true }).dispatchEvent('click');
+  await expect(app.getByLabel('Batching 카운트')).toHaveText('3'); await expect(draft).toBeFocused();
+  expect(await draft.evaluate((node: HTMLInputElement) => [node.selectionStart, node.selectionEnd])).toEqual([1, 3]);
+  expect(await name.evaluate((node, previous) => node === previous, original)).toBe(true);
+  await draft.fill('새 항목'); await app.getByRole('button', { name: '항목 추가', exact: true }).click();
+  await app.getByLabel('task-9 이름').fill('추가 후 수정'); await app.getByLabel('task-9 완료').check();
+  await expect(app.getByTestId('task-summary')).toHaveText('전체 8 · 완료 2 · 남음 6');
+  await app.getByLabel('task-9 삭제').click();
+  await expect(app.getByTestId('task-summary')).toHaveText('전체 7 · 완료 1 · 남음 6');
+  await expect(page.locator('#error')).toBeHidden(); await original?.dispose();
+});

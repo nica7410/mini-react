@@ -57,9 +57,15 @@ export function TaskApp() {
     const timer = setTimeout(() => { setSort('manual'); setItems(moveLast); }, 1500);
     return () => clearTimeout(timer);
   }, [delayedMove]);
-  const rename = (id: string, label: string) => setItems(previous => previous.map(item => item.id === id ? { ...item, label } : item));
-  const toggle = (id: string) => setItems(previous => previous.map(item => item.id === id ? { ...item, done: !item.done } : item));
-  const remove = (id: string) => setItems(previous => previous.filter(item => item.id !== id));
+  // State setters keep their identity. Functional actions read the latest FIFO
+  // candidate, so these callbacks do not capture a particular items array.
+  const rowActions = useMemo(() => ({
+    rename: (id: string, label: string) => setItems(previous => previous.map(item => item.id === id ? { ...item, label } : item)),
+    toggle: (id: string) => setItems(previous => previous.map(item => item.id === id ? { ...item, done: !item.done } : item)),
+    remove: (id: string) => setItems(previous => previous.filter(item => item.id !== id)),
+  }), [setItems]);
+  const list = useMemo(() => h('ul', { attrs: { class: 'task-list', 'aria-label': '학습 항목 목록' } },
+    visible.map(item => h(TaskRow, { key: item.id, item, ...rowActions }))), [visible, rowActions]);
   const add = (event: Event) => {
     event.preventDefault(); const label = draft.trim();
     if (!label) { setError('추가할 항목 이름을 입력하세요.'); return; }
@@ -80,7 +86,7 @@ export function TaskApp() {
     ),
     summary,
     h('p', { attrs: { class: 'hint', 'data-testid': 'task-sync' } }, `취소 가능한 동기화: ${syncedTotal === null ? '대기' : `${syncedTotal}개`}`),
-    h('ul', { attrs: { class: 'task-list', 'aria-label': '학습 항목 목록' } }, visible.map(item => h(TaskRow, { key: item.id, item, rename, toggle, remove }))),
+    list,
     !visible.length ? h('p', { attrs: { role: 'status', 'data-testid': 'task-empty' } }, items.length ? '검색·필터에 맞는 항목이 없습니다.' : '목록이 비었습니다. 새 항목을 추가하세요.') : null,
     h('div', { attrs: { class: 'toolbar' } },
       h('button', { attrs: { type: 'button' }, events: { click: () => { setBatchCount(n => n + 1); setBatchCount(n => n + 1); setBatchCount(n => n + 1); } } }, '+1 세 번'),

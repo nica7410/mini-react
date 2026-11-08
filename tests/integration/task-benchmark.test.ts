@@ -20,7 +20,7 @@ describe('actual TaskApp measurement adapter and oracle', () => {
       if (workload === 'counter') {
         expect(second.actions[0].validation.counter).toBe(6);
         expect(first.actions[0].counts!.primary.rootExecutions).toBe(1);
-        expect(first.actions[0].counts!.primary.taskRowExecutions).toBe(10);
+        expect(first.actions[0].counts!.primary.taskRowExecutions).toBe(0);
       }
     } finally { app.dispose(); output.remove(); }
     expect(output.childNodes.length).toBe(0);

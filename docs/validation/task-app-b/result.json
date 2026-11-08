@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-08T03:39:27.120Z",
+  "status": "implementation-correctness-passed-performance-pending",
+  "unitPassed": 64,
+  "browser": {
+    "startTime": "2026-11-08T03:37:02.347Z",
+    "duration": 64414.066,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "workers": 2,
+  "typecheck": "passed",
+  "productionBuild": "passed",
+  "sourceSha256": {
+    "src/app/tasks.ts": "1751a643ae8f5f3f802b8cae3cb9286fc2c0ec79a23938cf331b4821f12556e5",
+    "tests/browser/tasks.spec.ts": "739ae2a29b22e30be168deade78cb837e1c7b19c009e788ccbcfa478b816117a",
+    "tests/integration/task-reuse.test.ts": "2d2d5c9f9a91c94a37cbc6bc831e7a837a143156704c0a9c28304adc36e8e0d4",
+    "tests/integration/task-benchmark.test.ts": "d429b61731e20e282ba68ff1f33a477063163a7c5e38f4b549efaeaad8eb8774"
+  },
+  "counts": "10 seeded rows: draft/counter/equal primary TaskRow executions 10 -> 0 with reuse on; off remains 10; State/forms/Effect sequence equal",
+  "manualIME": "previous user report only; not rerun"
+}
