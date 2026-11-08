@@ -1,0 +1,34 @@
+{
+  "status": "in progress; E3 rejected, E4 correctness passed; final comparison and acceptance pending",
+  "updatedAt": "2026-11-08T21:15:24.561Z",
+  "externalPath": "C:/Users/nica7/Desktop/리액트 조사/Mini_React_B안_구현명세_체크리스트.md",
+  "version": "1.11",
+  "beforeSha256": "ade7ac917dfef275f08f57c841f7377b20b1a8b67250fe7563355edf7e1fda69",
+  "afterSha256": "be6f67b546aacd96790f44b6a76ae5fd2d1ea334a19a07df3ca8f0061846ac8e",
+  "archives": {
+    "before": "docs/validation/task-checklist-v1.10.md.gz",
+    "after": "docs/validation/task-checklist-v1.11.md.gz"
+  },
+  "previousReceipt": "docs/validation/task-checklist-candidate.json",
+  "candidateFunctionalCommit": "2a21ec782af790faf881a5125a5e68fe17a2fee3",
+  "appCommit": "5ed7f3485cfd924b44383996164e0ce3b89d6a58",
+  "evidence": {
+    "tailStatistics": "docs/bench/task-candidate-v1-tail-persistent-1000-v1/statistics-audit.json",
+    "tailPolicy": "docs/bench/task-candidate-v1-tail-persistent-1000-v1/policy-audit.json",
+    "rejection": "docs/bench/task-candidate-v1/e3-rejection-decision.json",
+    "stoppedRaw": "docs/bench/task-candidate-v1-tail-persistent-10000-v1/stopped-run-inventory.json",
+    "appDiagnostics": "docs/bench/task-diagnostic-e3-app-v1/diagnostic-audit.json",
+    "appDiagnosticReport": "docs/bench/task-diagnostic-e3-app-v1/diagnostic-report-audit.json",
+    "candidateCorrectness": "docs/validation/task-e4-correctness/result.json"
+  },
+  "evidenceSha256": {
+    "tailStatistics": "98307788964b41a02cdfa09d107ecc5d70f78dab35d04cb2044c0697da93c527",
+    "tailPolicy": "3d8670798dce0aa9b7e849357e06602874fbd464b98177793a7a9b2099100f6e",
+    "rejection": "bbabc81e7c7afe574c1357dce164c5bd1b6467ff3ec299ca8fe87e4a9a227f69",
+    "stoppedRaw": "d947048cc28a0156ae2faa6c0c5e28ec7674694a0d874034b285e4cc27588c9f",
+    "appDiagnostics": "fe0361bee002b7b773402870ddde73d669f374e46f0696eb5b31840102351823",
+    "appDiagnosticReport": "eb23bb4ca820ccff669455f83e1bea1d6b4142e841658267068bec1386fa359f",
+    "candidateCorrectness": "ac4f3bd41100c02465d3fba8b09133ca23415f9cdf570df6bafcc0c20863bdbe"
+  },
+  "note": "Desktop original is outside Git. Repository stores exact snapshots and version/hash evidence; earlier history, incomplete supplements, previous manual IME and unperformed external activities remain distinct."
+}

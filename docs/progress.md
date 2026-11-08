@@ -15,10 +15,10 @@
 | A | 완료, 6c3fa1f | 세 엔진 Git 소스 고정, 사전 반복·채택 기준, 실제 TaskApp/모델 하네스, baseline smoke |
 | B | 구현·관련 정확성 검증 완료, 5ed7f34 | 루트 useMemo의 목록 표현·함수형 callback, [64개 테스트/앱 browser 8개](validation/task-app-b/result.json) |
 | C | 완료, dfd20dc | task-matrix-v1의 720/720 조건, raw 48,294 / 측정 작업 41,040 / 통계 12,024 / 그래프 240점 검산 통과. 진단 24/24, 진단 smoke 최초 분석 실패와 수정도 보존. [첫 결과 해석](task-app-baseline-results.md) |
-| D | E3/A1 일반 채택 기각, 정책 조정 진행 | Proxy 반례·관련 19/전체 203/type/build 통과. 정식 480개 조건과 별도 진단 36개는 93bc38c에 보존. [1,000개의 새 3세션 n=180 보충](task-app-tail-results.md)에서도 toggle 회귀가 반복됐다. 10,000개 보충은 첫 세션 완료 뒤 중단·전량 보존했고 100개 보충은 미실행이다. 고정 E3 A0/A1 별도 진단과 적용 범위 조정 후 최종 인수 필요 |
+| D | E3/A1 일반 채택 기각, E4 정식 비교 준비 | E3 기각·완료/중단 보충과 A0/A1 진단 8개는 642746e에 보존. [E4 2a21ec7](task-app-bounded-candidate.md)는 호출당 새 인증 최대 64개로 보관 범위를 제한하며, 관련 14/전체 205/type/build와 작은 40개·stress 10개 smoke 원자료 감사를 통과했다. task-candidate-v2의 고정 A1 엔진 비교·E4 A0/A1 새 3세션 및 최종 인수는 남음 |
 | E | 최종 코드 결정 뒤 예정 | 전체 unit/integration/type/build, 기본 Chromium+Firefox fresh 3회, 원본·문서·외부 체크리스트 hash·clean 감사 |
 
-저장소 밖 원본 체크리스트는 **v1.10(진행 중)**로 갱신했다. 완료된 A~C와 E3의 후보 정확성·정식 비교·분리 진단을 표시하고, 최종 정책·tail 보충·전체 브라우저 인수는 미완료로 남겼다. v1.8~v1.10의 정확한 압축 사본과 SHA-256·외부 경로는 [현재 영수증](validation/task-checklist-candidate.json) 및 연결된 이전 영수증에 있다. 원본 Desktop 파일 자체가 Git 커밋에 포함되는 것은 아니다. [목표 항목별 대조](task-app-completion-audit.md)도 최종 인수 전 상태로 유지한다.
+저장소 밖 원본 체크리스트는 **v1.11(진행 중)**로 갱신했다. E3 일반 채택 기각, 완료한 1,000개 보충, 중단한 stress/미실행 작은 보충, E4 후보의 정확성 검증을 구분했다. 최종 정책·새 정식 비교·전체 브라우저 인수는 미완료다. v1.8~v1.11의 정확한 압축 사본과 SHA-256·외부 경로는 [현재 영수증](validation/task-checklist-bounded-candidate.json) 및 연결된 이전 영수증에 있다. 원본 Desktop 파일 자체가 Git 커밋에 포함되는 것은 아니다. [목표 항목별 대조](task-app-completion-audit.md)도 최종 인수 전 상태로 유지한다.
 
 아래 M0–M8 및 no-op 후속 완료 수치는 해당 시점의 역사적 검증이다. 현재 A1 이후 최종 검증 결과로 재인용하지 않는다.
 

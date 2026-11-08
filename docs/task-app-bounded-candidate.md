@@ -33,3 +33,11 @@ E3와 E4가 서로 다른 정식 실행에 있으면 그 절대 시간이나 개
 2026-11-09 06:08~06:09 KST에 실행했다. 기존 E3는 새 상한 테스트에서 인증 386개로 실패했고, late accessor 검사는 통과했다. 원본 [실패 기록](validation/task-e4-correctness/red.json)과 로그·JSON을 보존했다. E4는 불변성 관련 14개, 전체 단위/통합 205개, typecheck, production build를 모두 통과했다. [명령·시간·결과·소스 hash](validation/task-e4-correctness/result.json).
 
 검증한 `src/core/vdom.ts` SHA-256은 `006f83c927aa7c713423e322333e14b5902fbf0bd1d4fb696eb2409198e55899`, 새 테스트는 `6a1f9fad64e1c3cdd134a8bd11191e997b42f6711bc96cd82dc7fa165b7bcdfb`다. 이 단계는 정식 성능 결과나 최종 기본 브라우저 3회 인수가 아니다.
+
+기능 commit은 `2a21ec782af790faf881a5125a5e68fe17a2fee3`, E4 engine hash는 `9b75615d34ee58b34a59ea9504a7a7fc293fe7522c90b32b9c8e5f1b785a4997`다. A0/A1과 공통 하네스 hash는 기존 비교와 같다. 작은 네 비교군의 40개 조건(80개 측정 작업/112개 action)과 E4 A1의 10,000개 10개 조건(20개 작업/28개 action)을 실행하고 원자료·통계·판정 감사를 통과했다. [작은 smoke](bench/task-e4-smoke-v1/analysis.json), [stress smoke](bench/task-e4-stress-smoke-v1/analysis.json). n=2 smoke의 시간을 채택 근거로 사용하지 않는다.
+
+정식 실행 tag는 `task-candidate-v2`이며 아래 명령으로 새 세션을 수집한다. 이 문서에 기록한 준비·smoke 결과는 정식 3세션 완료를 뜻하지 않는다.
+
+```powershell
+node scripts/benchmark-task.mjs --tag=task-candidate-v2 --builds=task-e1-a1-v1,task-e2-a1-v1,task-e4-a0-v1,task-e4-a1-v1
+```

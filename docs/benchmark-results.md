@@ -14,6 +14,7 @@
 | E1 | 8b302de | host 비교용 임시 객체 제거 | 316644555d301258a51b84b03940f5319a21cbecc82154dfda03062fceb48f87 |
 | E2 | c4a2fe1 | 깊은 불변성 증명·전체 root 검증 캐시 | fffff850c0f88407a6eb0f5da5d466809cb3e8bf19071827120d0955c396bc3c |
 | E3 후보 | ff9e24e | 동결 후 증명·VNode/root 중심 인증 보관 | 8474eccbd9c630c829d942b68cb11d7c5f99d4fb3f2e21d75437594c7f74212e |
+| E4 후보 | 2a21ec7 | E3 정확성 유지·호출당 새 인증 최대 64개 보관, 정식 비교 준비 | 9b75615d34ee58b34a59ea9504a7a7fc293fe7522c90b32b9c8e5f1b785a4997 |
 | A0 | 4d5a66f | 시작 시 실제 TaskApp | 3a65ef055819b5de0433cf811365d83e54b4e3a693971a66f8c71ad348c378f8 |
 | A1 | 5ed7f34 | 루트 Memo의 목록 표현·함수형 callback 재사용 | 221da911183359db10c1412138896deb53557461ca632a4fa2f30d4666d5ef45 |
 
