@@ -4,7 +4,7 @@
 
 ## 실제 TaskApp 표현 재사용 후속
 
-앱 소스 `5ed7f34`에 T-A04/A05를 추가했다(계약 ID 전체 78개). 관련 단위·통합 64개와 Chromium·Firefox TaskApp 8개, typecheck/build는 통과했다. 이는 범위를 좁힌 단계 B 검증이며, 엔진 정책 선택 뒤의 최종 전체 검증은 아직 진행 중이다. [단계 B 실행 근거](validation/task-app-b/result.json), [앱 변경 원리](task-app-reuse.md), [비교·최종 검증 진행](task-app-followup.md).
+앱 소스 `5ed7f34`에 T-A04/A05를 추가했다(당시 계약 ID 78개). 관련 단위·통합 64개와 Chromium·Firefox TaskApp 8개, typecheck/build는 통과했다. 이는 범위를 좁힌 단계 B 검증이며, 엔진 정책 선택 뒤의 최종 전체 검증은 아직 진행 중이다. [단계 B 실행 근거](validation/task-app-b/result.json), [앱 변경 원리](task-app-reuse.md), [비교·최종 검증 진행](task-app-followup.md).
 
 | ID / 측정 계약 | 증명하는 동작 | 실제 테스트 |
 |---|---|---|
@@ -13,6 +13,8 @@
 | 실제 앱 측정 oracle | 9개 작업의 독립 모델·순서·입력 복원·key identity·실제 Effect 후속 갱신, 중첩 시간 합산 방지 | [TaskApp benchmark](../tests/integration/task-benchmark.test.ts), [사전 비교 계획](task-app-comparison-plan.md) |
 
 E3 후보 `ff9e24e`는 T-N06의 Proxy 동결 전 prototype과 동결 중 자식 교체 반례를 수정했다. 변경 전 두 실패, 수정 후 관련 19개·전체 203개·타입·build의 새 실행은 [후보 정확성 기록](validation/task-e3-correctness/result.json)에 있다. 최종 성능 정책 및 전체 브라우저 인수는 별도다.
+
+E4 후보는 인증 보관 상한과 한도 이후의 완전한 검사를 확인하는 T-N08을 추가했다(현재 계약 ID 79개). E3에서 새 상한 반례가 실패했고 E4의 불변성 관련 14개·전체 단위/통합 205개·typecheck/build는 통과했다. [변경 전 실패](validation/task-e4-correctness/red.json), [후보 검증](validation/task-e4-correctness/result.json). 최종 성능 및 전체 브라우저 인수를 대신하는 수치가 아니다.
 
 ## no-op 후속 회귀 (당시 추가 7개 ID, 전체 76개)
 
@@ -25,6 +27,7 @@ E3 후보 `ff9e24e`는 T-N06의 Proxy 동결 전 prototype과 동결 중 자식 
 | T-N05 | no-op 이후 handler 교체/제거, 같은 노드의 폼 소유 변경 거절 | [no-op contracts](../tests/integration/noop-contracts.test.ts) |
 | T-N06 | mutable/얕은 freeze/accessor/prototype 경계, Proxy의 최종 구조 증명, 순환·재진입·오류 후 재시도, 함수 비동결 | [immutable validation](../tests/unit/immutable-validation.test.ts), [proof regression](../tests/unit/immutable-proof-regression.test.ts) |
 | T-N07 | 공유 subtree를 새 root/form/radio/select 문맥에 놓을 때 다시 검증 | [immutable validation](../tests/unit/immutable-validation.test.ts) |
+| T-N08 | 큰 트리의 새 인증 보관 상한, 한도 이후 깊은 동결 및 accessor 인증 거절 | [retention budget](../tests/unit/immutable-retention-budget.test.ts) |
 
 기존 T-H04/H05, T-P06, T-K01~K07, T-B01~B04도 유지한다. 새 harness [12개 counts/oracle 회귀](../tests/integration/noop-benchmark.test.ts)는 controlled dirty·uncontrolled 보존·재배치·Effect·자원 정리를 별도 확인한다. 실제 Windows IME 수동 확인은 이전 사용자 보고이며, 이번 자동 검증과 시점을 혼동하지 않는다.
 

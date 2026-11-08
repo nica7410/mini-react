@@ -57,7 +57,7 @@ preflight 거절은 DOM 쓰기 0회다. 실제 DOM API가 실행 도중 예외�
 
 `freezeTree`는 엔진이 소유한 plain object/array의 data property를 재귀 동결하고 그 증거를 WeakSet에 기록한다. `Object.isFrozen(outer)`만 보고 하위 객체까지 동결됐다고 가정하지 않는다. getter/setter나 사용자 정의 prototype이 있는 객체는 증명 집합에 넣지 않으며, 함수는 identity로 취급하고 함수 자체나 호출자의 props/state를 동결하지 않는다. 순환 데이터는 거절한다.
 
-현재 E3 후보 `ff9e24e`는 먼저 각 객체를 동결한 뒤 최종 prototype/descriptor를 검사한다. Proxy의 동결 전 상태로 증명하지 않으며, 자식 증명은 boolean으로 전달한다. 모든 보조 객체를 깊게 검사하되 장기 인증은 명시적인 freezeTree 인수와 VNode/root 경계에만 보관한다. 임시 재귀 Set은 finally에서 제거한다. 이는 [기존 두 반례를 수정한 후보](task-app-engine-candidate.md)이며 성능 채택 판단은 새 비교가 끝난 뒤 기록한다.
+E3 `ff9e24e`부터 먼저 각 객체를 동결한 뒤 최종 prototype/descriptor를 검사한다. Proxy의 동결 전 상태로 증명하지 않으며, 자식 증명은 boolean으로 전달한다. 모든 보조 객체를 깊게 검사하되 장기 인증은 명시적인 freezeTree 인수와 VNode/root 경계에만 보관한다. 임시 재귀 Set은 finally에서 제거한다. [E3의 일반 채택은 추가 측정 뒤 기각](task-app-tail-results.md)했으며, 현재 [E4 후보](task-app-bounded-candidate.md)는 이 정확성 수정을 유지하면서 freezeTree 한 번당 **새 인증 최대 64개**만 보관한다. 한도 소진은 깊은 검사 종료를 뜻하지 않는다. 외부 kind나 예약된 슬롯만으로 인증하지 않고 모든 하위 증명 성공 뒤 등록한다. 앱·작업 이름에 따른 예외나 기능 제한은 없으며 성능 정책 채택은 새 비교 뒤 결정한다.
 
 트리 검증은 **검증을 성공한 동일 immutable VRoot 객체**에만 캐시한다. 캐시 키가 VNode/subtree가 아닌 전체 root이므로 형제 중복 key, form/radio 그룹, select/option 소유 문맥을 포함한다. 다른 root를 만들거나 부모 문맥을 바꾸면 전체 검사를 다시 한다. mutable·얕은 동결·accessor 데이터는 결과를 재사용하지 않는다. 고정된 HTML/폼 검증 정책 아래의 내부 데이터 캐시이며, DOM·MountView·PatchPlan·revision·binding에는 적용하지 않는다. WeakSet이므로 보관 수명이 끝난 snapshot을 강하게 붙잡지 않는다.
 

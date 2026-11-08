@@ -1,0 +1,27 @@
+{
+  "status": "observed",
+  "startedAt": "2026-11-08T21:08:10.270Z",
+  "endedAt": "2026-11-08T21:08:28.383Z",
+  "head": "642746eda70df9225a61e7973a659cfe66bded24",
+  "functionalEngine": "ff9e24e",
+  "sourceSha256": "8c5997462c233fa2e64ad1163b1d4564e54a3f10bf11435a3f35f4b5357deb46",
+  "testSha256": "6a1f9fad64e1c3cdd134a8bd11191e997b42f6711bc96cd82dc7fa165b7bcdfb",
+  "args": [
+    "test",
+    "tests/unit/immutable-retention-budget.test.ts",
+    "--reporter=json",
+    "--outputFile=.validation/task-e4-red.json"
+  ],
+  "exitCode": 1,
+  "passed": 1,
+  "failed": 1,
+  "total": 2,
+  "failures": [
+    {
+      "name": "T-N08: a wide tree is fully frozen while retained proof metadata stays bounded",
+      "failures": [
+        "AssertionError: expected 386 to be less than or equal to 64\n    at C:/Github/mini-react/tests/unit/immutable-retention-budget.test.ts:24:48\n    at file:///C:/Github/mini-react/node_modules/.pnpm/vitest@5.1.0_@types+node@26_89321a21957fe0f99f8915e25c7b5973/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:1632:35\n    at file:///C:/Github/mini-react/node_modules/.pnpm/vitest@5.1.0_@types+node@26_89321a21957fe0f99f8915e25c7b5973/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:2801:26\n    at file:///C:/Github/mini-react/node_modules/.pnpm/vitest@5.1.0_@types+node@26_89321a21957fe0f99f8915e25c7b5973/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3338:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///C:/Github/mini-react/node_modules/.pnpm/vitest@5.1.0_@types+node@26_89321a21957fe0f99f8915e25c7b5973/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3333:10)\n    at file:///C:/Github/mini-react/node_modules/.pnpm/vitest@5.1.0_@types+node@26_89321a21957fe0f99f8915e25c7b5973/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3318:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///C:/Github/mini-react/node_modules/.pnpm/vitest@5.1.0_@types+node@26_89321a21957fe0f99f8915e25c7b5973/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3276:10)\n    at file:///C:/Github/mini-react/node_modules/.pnpm/vitest@5.1.0_@types+node@26_89321a21957fe0f99f8915e25c7b5973/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3922:64"
+      ]
+    }
+  ]
+}

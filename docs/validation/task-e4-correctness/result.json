@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "startedAt": "2026-11-08T21:09:08.566Z",
+  "startingHead": "642746eda70df9225a61e7973a659cfe66bded24",
+  "sourceSha256": "006f83c927aa7c713423e322333e14b5902fbf0bd1d4fb696eb2409198e55899",
+  "testSha256": "6a1f9fad64e1c3cdd134a8bd11191e997b42f6711bc96cd82dc7fa165b7bcdfb",
+  "commands": [
+    {
+      "name": "targeted",
+      "args": [
+        "test",
+        "tests/unit/immutable-retention-budget.test.ts",
+        "tests/unit/immutable-proof-regression.test.ts",
+        "tests/unit/immutable-validation.test.ts",
+        "tests/unit/noop",
+        "--reporter=json",
+        "--outputFile=.validation/task-e4-targeted.json"
+      ],
+      "startedAt": "2026-11-08T21:09:08.608Z",
+      "endedAt": "2026-11-08T21:09:11.222Z",
+      "exitCode": 0,
+      "tests": {
+        "passed": 14,
+        "failed": 0,
+        "pending": 0,
+        "total": 14
+      }
+    },
+    {
+      "name": "typecheck",
+      "args": [
+        "typecheck"
+      ],
+      "startedAt": "2026-11-08T21:09:11.225Z",
+      "endedAt": "2026-11-08T21:09:12.650Z",
+      "exitCode": 0
+    },
+    {
+      "name": "unit",
+      "args": [
+        "test",
+        "--reporter=json",
+        "--outputFile=.validation/task-e4-unit.json"
+      ],
+      "startedAt": "2026-11-08T21:09:12.652Z",
+      "endedAt": "2026-11-08T21:09:20.411Z",
+      "exitCode": 0,
+      "tests": {
+        "passed": 205,
+        "failed": 0,
+        "pending": 0,
+        "total": 205
+      }
+    },
+    {
+      "name": "build",
+      "args": [
+        "build"
+      ],
+      "startedAt": "2026-11-08T21:09:20.416Z",
+      "endedAt": "2026-11-08T21:09:23.792Z",
+      "exitCode": 0
+    }
+  ],
+  "endedAt": "2026-11-08T21:09:23.793Z"
+}
