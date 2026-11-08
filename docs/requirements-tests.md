@@ -2,7 +2,17 @@
 
 최초 M8 기능 소스는 `3190268`이다. 이후 브라우저 안정화/no-op 후속 검증과 추가 7개 ID를 아래에 구분했다. 테스트 ID는 명세의 계약 단위이며 테스트 함수 개수와 일대일 대응하지 않는다. 같은 계약을 여러 입력과 계층에서 확인한다. ID가 제목에 없더라도 아래에 정확한 의미와 파일을 연결했다. [M7 당시 증거](validation/m7.json), [후속 검증](browser-noop-followup.md), [단계별 기록](progress.md)을 함께 본다.
 
-## no-op 후속 회귀 (추가 7개 ID, 전체 76개)
+## 실제 TaskApp 표현 재사용 후속
+
+앱 소스 `5ed7f34`에 T-A04/A05를 추가했다(계약 ID 전체 78개). 관련 단위·통합 64개와 Chromium·Firefox TaskApp 8개, typecheck/build는 통과했다. 이는 범위를 좁힌 단계 B 검증이며, 엔진 정책 선택 뒤의 최종 전체 검증은 아직 진행 중이다. [단계 B 실행 근거](validation/task-app-b/result.json), [앱 변경 원리](task-app-reuse.md), [비교·최종 검증 진행](task-app-followup.md).
+
+| ID / 측정 계약 | 증명하는 동작 | 실제 테스트 |
+|---|---|---|
+| T-A04 | draft/counter/equal에서 행 평가 생략, reuse on/off의 State·입력·Effect 결과 일치 | [TaskApp reuse](../tests/integration/task-reuse.test.ts) |
+| T-A05 | 유지한 콜백의 최신 FIFO State 처리, 수정·완료·삭제·추가 이후 identity·live value·focus·selection | [TaskApp reuse](../tests/integration/task-reuse.test.ts), [실제 브라우저](../tests/browser/tasks.spec.ts) |
+| 실제 앱 측정 oracle | 9개 작업의 독립 모델·순서·입력 복원·key identity·실제 Effect 후속 갱신, 중첩 시간 합산 방지 | [TaskApp benchmark](../tests/integration/task-benchmark.test.ts), [사전 비교 계획](task-app-comparison-plan.md) |
+
+## no-op 후속 회귀 (당시 추가 7개 ID, 전체 76개)
 
 | ID | 증명하는 동작 | 실제 테스트 |
 |---|---|---|
@@ -142,4 +152,4 @@
 | 브라우저 8 workers에서 Firefox CRUD timeout → assertion/제한 유지, 기본 workers 2 | 전체 29/29 재실행; [M7 기록](m7-app-browser.md) |
 | 이후 기본 2 workers에서도 Chromium 초기 Vite 응답/Firefox 전체 CRUD timeout → 실제 모듈 준비 조건, 목적별 시나리오 분리 | 31/31 × 3회 연속, timeout 30초/retry 0 유지; [후속 기록](browser-noop-followup.md) |
 
-이 표는 실제 회귀를 설명한다. 브라우저 실행 정책 보완은 엔진 기능 결함 수정이나 앱 속도 개선 성과로 계산하지 않는다. 현재 184개 단위·통합/31개 브라우저와 전수 모델 입력 수를 더해 “수만 개 브라우저 테스트”로 표현하지 않는다.
+이 표는 실제 회귀를 설명한다. 브라우저 실행 정책 보완은 엔진 기능 결함 수정이나 앱 속도 개선 성과로 계산하지 않는다. 이전 no-op 검증의 184개 단위·통합/31개 브라우저와 전수 모델 입력 수를 더해 “수만 개 브라우저 테스트”로 표현하지 않는다. 이번 최종 선택 코드의 전체 검증은 별도 실행 기록에 연결한다.

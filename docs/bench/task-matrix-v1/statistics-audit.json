@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "auditedAt": "2026-11-08T11:58:34.596Z",
+  "scriptSha256": "2f43d969a4c6df3ab077d7e388812777d25cd7c1b924d9d04e62d92f29950b29",
+  "summarySha256": "a8fbfb57eed36b94fd54011cd81a55e0f64f20fb4b86d0d60120882943089e10",
+  "distributions": 12024,
+  "csvRows": 12024,
+  "markdownRows": 792,
+  "contrastsChecked": 18036,
+  "comparisonCsvRows": 1296,
+  "comparisonMarkdownRows": 1296,
+  "amortizationChecked": 66825,
+  "graphPointsChecked": 240,
+  "independentQuantiles": true,
+  "corruptedP95Rejected": true,
+  "duplicateSummaryRejected": true,
+  "note": "All samples retained; independently recomputed interpolation, complete-action sums, per-session quantiles, source-group hashes, tables, contrasts and cumulative trajectories. Browser semantic assertions are separately audited by analyze-task.mjs and the frozen harness source."
+}

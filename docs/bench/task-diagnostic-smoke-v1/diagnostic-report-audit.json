@@ -1,0 +1,157 @@
+{
+  "status": "passed",
+  "createdAt": "2026-11-08T11:48:25.238Z",
+  "scriptSha256": "8aae3a2af48b05b138c7ca8a444fd4769653c2abc3d5b103dadf73b716d9e374",
+  "sourceSummarySha256": "8c7a44b83a95ad72c74bcdf46f73b1ad74e4a3616f444d59c74836ab31043429",
+  "reportSha256": "1199f67fc91f112a2dd8ab0f871971c6bbb6d3b90fe89203198bf779749700b1",
+  "cpuRows": [
+    {
+      "name": "task-e1-a1-v1-10-cpu-counter",
+      "totalMs": 4.004,
+      "freezeSelfMs": 0,
+      "freezePercent": 0,
+      "validationInclusiveMs": 0,
+      "primaryGcCategoryMs": 0,
+      "allocationEstimatedBytes": 4825496,
+      "longtasks": 0,
+      "windows": 2,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e1-a1-v1-10-cpu-sort",
+      "totalMs": 10.964,
+      "freezeSelfMs": 1.456,
+      "freezePercent": 13.279824881430132,
+      "validationInclusiveMs": 0,
+      "primaryGcCategoryMs": 1.022,
+      "allocationEstimatedBytes": 6003728,
+      "longtasks": 0,
+      "windows": 2,
+      "negativeDeltas": 1
+    },
+    {
+      "name": "task-e1-a1-v1-10-cpu-crud",
+      "totalMs": 39.771,
+      "freezeSelfMs": 1.388,
+      "freezePercent": 3.489980136280204,
+      "validationInclusiveMs": 7.046,
+      "primaryGcCategoryMs": 4.606,
+      "allocationEstimatedBytes": 24985504,
+      "longtasks": 0,
+      "windows": 10,
+      "negativeDeltas": 2
+    },
+    {
+      "name": "task-e2-a1-v1-10-cpu-counter",
+      "totalMs": 9.983,
+      "freezeSelfMs": 1.9540000000000002,
+      "freezePercent": 19.573274566763498,
+      "validationInclusiveMs": 0,
+      "primaryGcCategoryMs": 0,
+      "allocationEstimatedBytes": 4516168,
+      "longtasks": 0,
+      "windows": 2,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e2-a1-v1-10-cpu-sort",
+      "totalMs": 17.369000000000003,
+      "freezeSelfMs": 3.229,
+      "freezePercent": 18.590592434797625,
+      "validationInclusiveMs": 0,
+      "primaryGcCategoryMs": 1.427,
+      "allocationEstimatedBytes": 5746596,
+      "longtasks": 0,
+      "windows": 2,
+      "negativeDeltas": 1
+    },
+    {
+      "name": "task-e2-a1-v1-10-cpu-crud",
+      "totalMs": 34.822,
+      "freezeSelfMs": 1.892,
+      "freezePercent": 5.433346734822813,
+      "validationInclusiveMs": 2.408,
+      "primaryGcCategoryMs": 5.76,
+      "allocationEstimatedBytes": 21087692,
+      "longtasks": 0,
+      "windows": 10,
+      "negativeDeltas": 4
+    }
+  ],
+  "memoryRows": [
+    {
+      "name": "task-e1-a1-v1-10-memory-mixed",
+      "usedBytes": [
+        1138308,
+        1742888,
+        1983868,
+        1859036
+      ],
+      "nodes": [
+        20,
+        20
+      ],
+      "listeners": [
+        13,
+        13
+      ]
+    },
+    {
+      "name": "task-e2-a1-v1-10-memory-mixed",
+      "usedBytes": [
+        1138824,
+        1779316,
+        2052552,
+        1932668
+      ],
+      "nodes": [
+        20,
+        266
+      ],
+      "listeners": [
+        13,
+        13
+      ]
+    }
+  ],
+  "visualRows": [
+    {
+      "name": "task-e1-a1-v1-10-visual-counter",
+      "commitMs": [
+        2.231
+      ],
+      "paintMs": [
+        3.106
+      ]
+    },
+    {
+      "name": "task-e1-a1-v1-10-visual-move",
+      "commitMs": [
+        3.232
+      ],
+      "paintMs": [
+        4.085
+      ]
+    },
+    {
+      "name": "task-e2-a1-v1-10-visual-counter",
+      "commitMs": [
+        4.96
+      ],
+      "paintMs": [
+        6.859
+      ]
+    },
+    {
+      "name": "task-e2-a1-v1-10-visual-move",
+      "commitMs": [
+        4.041
+      ],
+      "paintMs": [
+        5.269
+      ]
+    }
+  ],
+  "primarySelfAndWindowAccounting": true,
+  "note": "Report values derived from the archived audited summary; CPU and retained-heap/visual boundaries are intentionally separate."
+}

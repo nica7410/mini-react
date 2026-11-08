@@ -1,6 +1,6 @@
 # 공통 엔진 구조와 지원 계약
 
-최초 M8 기능 소스는 `3190268`, no-op 후속 기능 소스는 `c4a2fe1`이다. 문서·CI·실험 결과의 커밋은 별도로 [진행 기록](progress.md)에 남긴다. API 타입의 원본은 [types.ts](../src/core/types.ts)다.
+최초 M8 기능 소스는 `3190268`, no-op 후속 엔진 소스는 `c4a2fe1`이다. 실제 TaskApp의 표현 재사용 변경은 `5ed7f34`이며, 현재 엔진 정책 재측정과 최종 전체 검증은 진행 중이다. 문서·CI·실험 결과의 커밋은 별도로 [진행 기록](progress.md)에 남긴다. API 타입의 원본은 [types.ts](../src/core/types.ts)다.
 
 ## 두 Phase, 하나의 쓰기 경로
 
@@ -81,6 +81,10 @@ sync 비교 모드는 외부 setter마다 flush한다. 순수 action의 최종 S
 
 재사용은 검증을 없애지 않는다. 안전성 검사는 여전히 전체 트리를 방문할 수 있으므로 `visitedNodes` 감소를 전체 시간 감소와 같다고 해석하지 않는다.
 
+실제 TaskApp은 루트에서 `[setItems]`에 의존하는 rename/toggle/remove 콜백 묶음과 `[visible, rowActions]`에 의존하는 목록 표현을 useMemo로 보관한다. 콜백은 `setItems(previous => ...)`로 최신 FIFO 후보 상태를 읽는다. 따라서 draft·카운터만 바뀌면 루트는 실행해도 기존 TaskRow는 다시 평가하지 않는다. items·검색·필터·정렬이 바뀌면 목록 표현을 새로 만들고 자식을 평가한다. 모든 행의 props를 자동 비교하는 정책은 아니다.
+
+추가 callback은 draft·nextId를 읽으므로 render별 closure를 유지한다. items 변경의 기존 40ms Effect와 총개수 동기화도 유지하며, 그 후속 render에서 동일 목록 표현을 재사용한다. Hook은 루트의 고정 순서에만 있고 자식은 props 순수 함수다. [앱 원리·실행 횟수 근거](task-app-reuse.md), [실제 앱 비교 경계](task-app-followup.md)를 참고한다.
+
 ## History와 입력 상태
 
 Undo/Redo 직전에 편집 영역의 **현재 DOM**을 다시 capture/adopt한다. 이력의 V1만 old로 쓰면 사용자가 아직 Patch하지 않은 X를 Diff가 모르므로 X가 남을 수 있다. 실제 현재 DOM에서 선택한 과거 snapshot으로 Diff하므로 잔여 노드 없이 두 영역이 동기화된다. no-op은 새 버전을 만들지 않고 Undo 뒤 새 Patch는 미래 이력을 버린다.
@@ -112,7 +116,7 @@ composition 중 대상/조상의 이동·삭제·교체·입력 방식을 바꾸
 | 입력 경계 | script/inline on*/위험 URL/iframe/SVG/MathML/Custom Element 등 거절. 범용 보안 sanitizer 제품 아님 |
 | 상태 불변성 | 개발 모드 plain object/array 동결 진단. class/Map/DOM 전체 불변성 보장 없음; production 호출자 계약 |
 | 오류 | preflight 거절은 쓰기 없음. 실제 host 예외는 faulted; 전체 transaction rollback 없음 |
-| 브라우저 | Chromium 전체 기능 20개, Firefox smoke 11개. CRUD 시나리오 분리로 기존 19+10에서 증가. Safari/WebKit·모바일 실기기 미검증 |
+| 브라우저 | 이전 no-op 전체 검증은 Chromium 20개+Firefox 11개. 이번 앱 회귀 추가 후 기본 구성은 21개+12개이며 최종 전체 재검증은 진행 중. Safari/WebKit·모바일 실기기 미검증 |
 | 관찰 | 최근 100개 plan, 실행 전 이벤트 최대 1,000개; 생략 수 표시. 무제한 이력 아님 |
 | 제외 | 자식 Hooks, 외부 Store, Fiber/Concurrent, SSR/Hydration, Phase 2 Time Travel, keyed Fragment, Adaptive |
 

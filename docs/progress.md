@@ -2,11 +2,23 @@
 
 이 문서는 현재 진행 상태를 기록한다. [M0~M1 기록](m0-m1.md)은 당시 검증의 역사적 스냅샷으로 보존한다.
 
-- 목표: B안 명세 M8 및 브라우저 안정화/no-op 후속 개선의 구현·검증·문서화와 단계별 로컬 커밋.
+- 목표: 실제 TaskApp 표현 재사용과 E0/E1/E2 × A0/A1 비교, 측정에 따른 생성 비용·캐시 정책 개선, 최종 재검증·문서화·단계별 로컬 커밋.
 - 작업 시작 브랜치: **phase1**. 같은 브랜치에서 계속한다.
-- 현재 단계: **브라우저 안정화/no-op 후속 기술 검증 완료. 기능 소스 c4a2fe1의 184개 테스트·전체 브라우저 31개×3회·타입·빌드 통과. 동일 하네스 3세션의 측정 23,760개·통계 2,016개 감사 PASS. 생성 비용 증가와 일부 p95 악화도 공개했다.** 기존 m8-full 결과는 과거 기능 소스의 실험으로 보존한다.
+- 현재 단계: **TaskApp 후속 작업 진행 중. 시작 phase1 / 4d5a66f(clean), A1 앱 변경 5ed7f34. 관련 64개 테스트·앱 브라우저 8개·타입·build 통과. 여섯 조합의 정식 3세션·원자료 감사와 별도 진단 24개 조건을 완료했다. 엔진 후보 검증과 최종 인수는 아직 완료하지 않았다.** [사전 계획](task-app-comparison-plan.md), [작업 기록](task-app-followup.md), [앱 변경 원리](task-app-reuse.md).
 - 외부 확인: M0 팀 합의/일정, 다른 후보, 팀원 설명/변경 연습, 원격 CI 실행은 확인되지 않았다. 실제 IME는 사용자 직접 확인 PASS이며 브라우저명·버전은 미제공이다.
 - 원격 push/PR 병합/원격 배포는 요청 범위 밖이다. 최종 산출물은 로컬 데모와 재현 절차다.
+
+## 실제 앱 후속 작업
+
+| 단계 | 상태 | 증거 |
+|---|---|---|
+| A | 완료, 6c3fa1f | 세 엔진 Git 소스 고정, 사전 반복·채택 기준, 실제 TaskApp/모델 하네스, baseline smoke |
+| B | 구현·관련 정확성 검증 완료, 5ed7f34 | 루트 useMemo의 목록 표현·함수형 callback, [64개 테스트/앱 browser 8개](validation/task-app-b/result.json) |
+| C | 3세션·원자료 감사·별도 진단 완료 | task-matrix-v1의 720/720 조건, raw 48,294 / 측정 작업 41,040 / 통계 12,024 / 그래프 240점 검산 통과. 진단 24/24, 진단 smoke 최초 분석 실패와 수정도 보존. [첫 결과 해석](task-app-baseline-results.md) |
+| D | 후보 검증 예정 | 관찰한 깊은 증명·보조 객체 등록 비용을 줄이는 후보, 고정 A1 재비교와 필요한 tail 보충 |
+| E | 최종 코드 결정 뒤 예정 | 전체 unit/integration/type/build, 기본 Chromium+Firefox fresh 3회, 원본·문서·외부 체크리스트 hash·clean 감사 |
+
+아래 M0–M8 및 no-op 후속 완료 수치는 해당 시점의 역사적 검증이다. 현재 A1 이후 최종 검증 결과로 재인용하지 않는다.
 
 | 단계 | 실제 상태 | 증거/남은 조건 |
 |---|---|---|
@@ -18,7 +30,7 @@
 | M5 | Gate 통과 | [M5 기록](m5-batching-reuse.md): 138개 단위·통합, Chromium 12개, 타입·빌드 통과 |
 | M6 | 전체 Gate 통과 | [관찰 기록](m6-observability.md), [최초 M8 결과](benchmark-results-m8.md): 3세션, timing 51,480개, 원본/통계 일치. 초기 할당 실패 보존 |
 | M7 | 필수 검증 충족 | [M7 기록](m7-app-browser.md): 157 unit/integration, Chromium 19 + Firefox 10, 실제 Performance trace, 사용자 IME 확인 |
-| M8 | 기술 인수 충족, 외부 확인 별도 | [최종 인수](m8-acceptance.md), [기능·76개 테스트 ID](requirements-tests.md), [구조/한계](architecture.md), [데모/설명](demo-and-explanation.md). 원격 CI·팀원 활동은 미확인 |
+| M8 | 기술 인수 충족, 외부 확인 별도 | [최종 인수](m8-acceptance.md), [기능·테스트 ID 대응표](requirements-tests.md), [구조/한계](architecture.md), [데모/설명](demo-and-explanation.md). 원격 CI·팀원 활동은 미확인 |
 
 ## 커밋 기록
 
@@ -32,7 +44,7 @@
 | c4a2fe1 | 깊은 불변성이 증명된 전체 root의 검증 재사용. 전체 184개·브라우저 31/31×3 fresh runs·typecheck/build 통과. 생성 비용 증가도 보존, 최종 3세션 비교는 dbdc4de에서 인수 |
 | dbdc4de | 전후 고정 build·3세션 raw/통계/그림·GC/CPU 진단 인수. 28,728 raw / 23,760 timing / 2,016 통계 일치. 생성+cycle 및 p95 악화 보존, 65개 현재 소스 hash 일치 |
 
-최종 문서 커밋은 이 기록 뒤의 git log에서 확인한다. 후속 원본/분석은 [성능 보고서](benchmark-results.md)와 [검증 JSON](validation/noop-followup.json)에 연결했다.
+최종 문서 커밋은 이 기록 뒤의 git log에서 확인한다. 당시 no-op 원본/분석은 [역사적 성능 보고서](benchmark-results-noop.md)와 [검증 JSON](validation/noop-followup.json)에 연결했다.
 
 이하 표는 최초 M0–M8의 역사적 기록이다.
 

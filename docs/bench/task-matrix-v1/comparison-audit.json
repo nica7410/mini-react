@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "createdAt": "2026-11-08T11:58:32.954Z",
+  "scriptSha256": "3bc63319d5a2ce0ee890ca33f409a9497bb113e44b350a8163164c38f5f5dc73",
+  "environmentSha256": "c723b6eb55f53fa692f142b26da5e065cd0751bcc8ac39b86e78c71ee1ad85f9",
+  "summarySha256": "a8fbfb57eed36b94fd54011cd81a55e0f64f20fb4b86d0d60120882943089e10",
+  "pairs": [
+    {
+      "kind": "app",
+      "label": "E0: A0 -> A1",
+      "before": "task-e0-a0-v1",
+      "after": "task-e0-a1-v1"
+    },
+    {
+      "kind": "engine",
+      "label": "A0: E0 -> E1",
+      "before": "task-e0-a0-v1",
+      "after": "task-e1-a0-v1"
+    },
+    {
+      "kind": "engine",
+      "label": "A0: E0 -> E2",
+      "before": "task-e0-a0-v1",
+      "after": "task-e2-a0-v1"
+    },
+    {
+      "kind": "engine",
+      "label": "A1: E0 -> E1",
+      "before": "task-e0-a1-v1",
+      "after": "task-e1-a1-v1"
+    },
+    {
+      "kind": "engine",
+      "label": "A1: E0 -> E2",
+      "before": "task-e0-a1-v1",
+      "after": "task-e2-a1-v1"
+    },
+    {
+      "kind": "app",
+      "label": "E1: A0 -> A1",
+      "before": "task-e1-a0-v1",
+      "after": "task-e1-a1-v1"
+    },
+    {
+      "kind": "engine",
+      "label": "A0: E1 -> E2",
+      "before": "task-e1-a0-v1",
+      "after": "task-e2-a0-v1"
+    },
+    {
+      "kind": "engine",
+      "label": "A1: E1 -> E2",
+      "before": "task-e1-a1-v1",
+      "after": "task-e2-a1-v1"
+    },
+    {
+      "kind": "app",
+      "label": "E2: A0 -> A1",
+      "before": "task-e2-a0-v1",
+      "after": "task-e2-a1-v1"
+    }
+  ],
+  "contrasts": 18036,
+  "decisionConditions": 272,
+  "amortizationPoints": 66825,
+  "note": "Lifecycle trajectories include initialization and warm-up; these correlated points are not an IID sample distribution. Gate failures and low-n tails are retained; final policy needs interpretation and prescribed supplementary sessions."
+}

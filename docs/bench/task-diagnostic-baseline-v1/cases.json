@@ -1,0 +1,1418 @@
+[
+  {
+    "name": "task-e1-a1-v1-1000-cpu-counter",
+    "mode": "cpu",
+    "size": 1000,
+    "build": "task-e1-a1-v1",
+    "workload": "counter",
+    "startedAt": "2026-11-08T11:30:44.047Z",
+    "status": "passed",
+    "pid": 16996,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "counter",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 362.70000000298023,
+      "cpuMs": 239.40000000223517,
+      "flushes": [
+        {
+          "expressionMs": 1.300000000745058,
+          "vdomMs": 3.199999999254942,
+          "renderMs": 4.5,
+          "diffMs": 2,
+          "commitMs": 3.300000000745058,
+          "flushMs": 9.900000002235174,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 1.1000000014901161,
+          "vdomMs": 52,
+          "renderMs": 53.100000001490116,
+          "diffMs": 19.199999999254942,
+          "commitMs": 62.399999998509884,
+          "flushMs": 134.69999999925494,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.29999999701976776,
+          "vdomMs": 23.400000002235174,
+          "renderMs": 23.699999999254942,
+          "diffMs": 28.199999999254942,
+          "commitMs": 42.80000000074506,
+          "flushMs": 94.69999999925494,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:30:47.138Z"
+  },
+  {
+    "name": "task-e1-a1-v1-1000-cpu-sort",
+    "mode": "cpu",
+    "size": 1000,
+    "build": "task-e1-a1-v1",
+    "workload": "sort",
+    "startedAt": "2026-11-08T11:30:47.281Z",
+    "status": "passed",
+    "pid": 16900,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "sort",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 546.5999999977648,
+      "cpuMs": 390.3999999947846,
+      "flushes": [
+        {
+          "expressionMs": 2.2999999970197678,
+          "vdomMs": 6.700000002980232,
+          "renderMs": 9,
+          "diffMs": 6.600000001490116,
+          "commitMs": 11.199999999254942,
+          "flushMs": 27.399999998509884,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 2.899999998509884,
+          "vdomMs": 147.30000000074506,
+          "renderMs": 150.19999999925494,
+          "diffMs": 47.5,
+          "commitMs": 80.5,
+          "flushMs": 278.3999999985099,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 0.19999999925494194,
+          "vdomMs": 18.5,
+          "renderMs": 18.699999999254942,
+          "diffMs": 25.200000002980232,
+          "commitMs": 40.399999998509884,
+          "flushMs": 84.39999999850988,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:30:55.892Z"
+  },
+  {
+    "name": "task-e1-a1-v1-1000-cpu-crud",
+    "mode": "cpu",
+    "size": 1000,
+    "build": "task-e1-a1-v1",
+    "workload": "crud",
+    "startedAt": "2026-11-08T11:30:56.025Z",
+    "status": "passed",
+    "pid": 1548,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "crud",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 440.8999999985099,
+      "cpuMs": 301.8999999985099,
+      "flushes": [
+        {
+          "expressionMs": 1.2999999970197678,
+          "vdomMs": 3.900000002235174,
+          "renderMs": 5.199999999254942,
+          "diffMs": 2.400000002235174,
+          "commitMs": 3.699999999254942,
+          "flushMs": 11.5,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 1.7000000029802322,
+          "vdomMs": 70.39999999850988,
+          "renderMs": 72.10000000149012,
+          "diffMs": 35.600000001490116,
+          "commitMs": 103,
+          "flushMs": 210.80000000074506,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 0.10000000149011612,
+          "vdomMs": 17.899999998509884,
+          "renderMs": 18,
+          "diffMs": 24.400000002235174,
+          "commitMs": 37,
+          "flushMs": 79.40000000223517,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:31:14.827Z"
+  },
+  {
+    "name": "task-e2-a1-v1-1000-cpu-counter",
+    "mode": "cpu",
+    "size": 1000,
+    "build": "task-e2-a1-v1",
+    "workload": "counter",
+    "startedAt": "2026-11-08T11:31:15.045Z",
+    "status": "passed",
+    "pid": 4092,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "counter",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 363.69999999925494,
+      "cpuMs": 237.10000000149012,
+      "flushes": [
+        {
+          "expressionMs": 1.199999999254942,
+          "vdomMs": 5.399999998509884,
+          "renderMs": 6.599999997764826,
+          "diffMs": 0.3999999985098839,
+          "commitMs": 3.199999999254942,
+          "flushMs": 10.5,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 2.099999997764826,
+          "vdomMs": 112.40000000223517,
+          "renderMs": 114.5,
+          "diffMs": 9,
+          "commitMs": 59.099999997764826,
+          "flushMs": 182.69999999925494,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 0.09999999776482582,
+          "vdomMs": 14.600000001490116,
+          "renderMs": 14.699999999254942,
+          "diffMs": 0.30000000074505806,
+          "commitMs": 28.699999999254942,
+          "flushMs": 43.69999999925494,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:31:17.027Z"
+  },
+  {
+    "name": "task-e2-a1-v1-1000-cpu-sort",
+    "mode": "cpu",
+    "size": 1000,
+    "build": "task-e2-a1-v1",
+    "workload": "sort",
+    "startedAt": "2026-11-08T11:31:17.192Z",
+    "status": "passed",
+    "pid": 20460,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "sort",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 378.6000000014901,
+      "cpuMs": 232.5,
+      "flushes": [
+        {
+          "expressionMs": 1.300000000745058,
+          "vdomMs": 6,
+          "renderMs": 7.300000000745058,
+          "diffMs": 0.5,
+          "commitMs": 3.800000000745058,
+          "flushMs": 11.800000000745058,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 2.100000001490116,
+          "vdomMs": 91.39999999850988,
+          "renderMs": 93.5,
+          "diffMs": 8.800000000745058,
+          "commitMs": 61.80000000074506,
+          "flushMs": 164.19999999925494,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 0,
+          "vdomMs": 23.699999999254942,
+          "renderMs": 23.699999999254942,
+          "diffMs": 0.4000000022351742,
+          "commitMs": 32.19999999925494,
+          "flushMs": 56.400000002235174,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:31:23.967Z"
+  },
+  {
+    "name": "task-e2-a1-v1-1000-cpu-crud",
+    "mode": "cpu",
+    "size": 1000,
+    "build": "task-e2-a1-v1",
+    "workload": "crud",
+    "startedAt": "2026-11-08T11:31:24.109Z",
+    "status": "passed",
+    "pid": 19556,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "crud",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 413,
+      "cpuMs": 270.6000000014901,
+      "flushes": [
+        {
+          "expressionMs": 1.300000000745058,
+          "vdomMs": 7.99999999627471,
+          "renderMs": 9.299999997019768,
+          "diffMs": 1.4000000022351742,
+          "commitMs": 9.099999997764826,
+          "flushMs": 20.599999997764826,
+          "effectMs": 0.30000000074505806
+        },
+        {
+          "expressionMs": 2.899999998509884,
+          "vdomMs": 122.5,
+          "renderMs": 125.39999999850988,
+          "diffMs": 11.100000001490116,
+          "commitMs": 65.19999999925494,
+          "flushMs": 201.80000000074506,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 0.19999999925494194,
+          "vdomMs": 16.700000002980232,
+          "renderMs": 16.900000002235174,
+          "diffMs": 0.5999999977648258,
+          "commitMs": 30.300000000745058,
+          "flushMs": 47.80000000074506,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:31:41.850Z"
+  },
+  {
+    "name": "task-e1-a1-v1-10000-cpu-counter",
+    "mode": "cpu",
+    "size": 10000,
+    "build": "task-e1-a1-v1",
+    "workload": "counter",
+    "startedAt": "2026-11-08T11:31:42.033Z",
+    "status": "passed",
+    "pid": 20080,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "counter",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 3931.10000000149,
+      "cpuMs": 2647.5000000037253,
+      "flushes": [
+        {
+          "expressionMs": 1.300000000745058,
+          "vdomMs": 3.399999998509884,
+          "renderMs": 4.699999999254942,
+          "diffMs": 0.8000000007450581,
+          "commitMs": 5.5,
+          "flushMs": 11.100000001490116,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 10.5,
+          "vdomMs": 771.2000000029802,
+          "renderMs": 781.7000000029802,
+          "diffMs": 260.29999999701977,
+          "commitMs": 1002.8000000007451,
+          "flushMs": 2044.800000000745,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 0.10000000149011612,
+          "vdomMs": 105.59999999776483,
+          "renderMs": 105.69999999925494,
+          "diffMs": 161,
+          "commitMs": 324.5,
+          "flushMs": 591.3999999985099,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:32:00.666Z"
+  },
+  {
+    "name": "task-e1-a1-v1-10000-cpu-sort",
+    "mode": "cpu",
+    "size": 10000,
+    "build": "task-e1-a1-v1",
+    "workload": "sort",
+    "startedAt": "2026-11-08T11:32:00.948Z",
+    "status": "passed",
+    "pid": 10040,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "sort",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 4080.39999999851,
+      "cpuMs": 2714.699999999255,
+      "flushes": [
+        {
+          "expressionMs": 1,
+          "vdomMs": 2.600000001490116,
+          "renderMs": 3.600000001490116,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 7.200000002980232,
+          "flushMs": 11.800000000745058,
+          "effectMs": 0.19999999925494194
+        },
+        {
+          "expressionMs": 10.900000002235174,
+          "vdomMs": 631.5999999977648,
+          "renderMs": 642.5,
+          "diffMs": 423.69999999925494,
+          "commitMs": 1043.2000000029802,
+          "flushMs": 2109.5,
+          "effectMs": 0.30000000074505806
+        },
+        {
+          "expressionMs": 0.19999999925494194,
+          "vdomMs": 110.19999999925494,
+          "renderMs": 110.39999999850988,
+          "diffMs": 165.30000000074506,
+          "commitMs": 317.0999999977648,
+          "flushMs": 592.8999999985099,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:33:09.711Z"
+  },
+  {
+    "name": "task-e1-a1-v1-10000-cpu-crud",
+    "mode": "cpu",
+    "size": 10000,
+    "build": "task-e1-a1-v1",
+    "workload": "crud",
+    "startedAt": "2026-11-08T11:33:09.870Z",
+    "status": "passed",
+    "pid": 10116,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "crud",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 3751.10000000149,
+      "cpuMs": 2271.2999999970198,
+      "flushes": [
+        {
+          "expressionMs": 0.8999999985098839,
+          "vdomMs": 2.7000000029802322,
+          "renderMs": 3.600000001490116,
+          "diffMs": 0.6999999992549419,
+          "commitMs": 3.2000000029802322,
+          "flushMs": 7.700000002980232,
+          "effectMs": 0.19999999925494194
+        },
+        {
+          "expressionMs": 6.800000000745058,
+          "vdomMs": 541.1999999992549,
+          "renderMs": 548,
+          "diffMs": 228.40000000223517,
+          "commitMs": 889.5999999977648,
+          "flushMs": 1666.0999999977648,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.10000000149011612,
+          "vdomMs": 117.39999999850988,
+          "renderMs": 117.5,
+          "diffMs": 164.80000000074506,
+          "commitMs": 314.8999999985099,
+          "flushMs": 597.2999999970198,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:35:41.729Z"
+  },
+  {
+    "name": "task-e2-a1-v1-10000-cpu-counter",
+    "mode": "cpu",
+    "size": 10000,
+    "build": "task-e2-a1-v1",
+    "workload": "counter",
+    "startedAt": "2026-11-08T11:35:41.878Z",
+    "status": "passed",
+    "pid": 2528,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "counter",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 3774,
+      "cpuMs": 2479.7000000029802,
+      "flushes": [
+        {
+          "expressionMs": 1.699999999254942,
+          "vdomMs": 5,
+          "renderMs": 6.699999999254942,
+          "diffMs": 0.6999999992549419,
+          "commitMs": 6.5,
+          "flushMs": 14.199999999254942,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 9.400000002235174,
+          "vdomMs": 956.2999999970198,
+          "renderMs": 965.6999999992549,
+          "diffMs": 134.70000000298023,
+          "commitMs": 1036.5999999977648,
+          "flushMs": 2137.099999997765,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 0.4000000022351742,
+          "vdomMs": 106.09999999776483,
+          "renderMs": 106.5,
+          "diffMs": 0.4000000022351742,
+          "commitMs": 221.30000000074506,
+          "flushMs": 328.20000000298023,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:35:55.619Z"
+  },
+  {
+    "name": "task-e2-a1-v1-10000-cpu-sort",
+    "mode": "cpu",
+    "size": 10000,
+    "build": "task-e2-a1-v1",
+    "workload": "sort",
+    "startedAt": "2026-11-08T11:35:55.767Z",
+    "status": "passed",
+    "pid": 19220,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "sort",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 4060.199999999255,
+      "cpuMs": 2791.60000000149,
+      "flushes": [
+        {
+          "expressionMs": 2.099999997764826,
+          "vdomMs": 7.5,
+          "renderMs": 9.599999997764826,
+          "diffMs": 1.300000000745058,
+          "commitMs": 10.900000002235174,
+          "flushMs": 22.200000002980232,
+          "effectMs": 0.5999999977648258
+        },
+        {
+          "expressionMs": 12.399999998509884,
+          "vdomMs": 1327.9000000022352,
+          "renderMs": 1340.300000000745,
+          "diffMs": 168.69999999925494,
+          "commitMs": 944.3000000007451,
+          "flushMs": 2453.5,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.10000000149011612,
+          "vdomMs": 95.80000000074506,
+          "renderMs": 95.90000000223517,
+          "diffMs": 0.29999999701976776,
+          "commitMs": 218.90000000223517,
+          "flushMs": 315.30000000074506,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:37:12.826Z"
+  },
+  {
+    "name": "task-e2-a1-v1-10000-cpu-crud",
+    "mode": "cpu",
+    "size": 10000,
+    "build": "task-e2-a1-v1",
+    "workload": "crud",
+    "startedAt": "2026-11-08T11:37:13.005Z",
+    "status": "passed",
+    "pid": 11928,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "crud",
+      "index": 11
+    },
+    "initialization": {
+      "elapsedMs": 3771.699999999255,
+      "cpuMs": 2486.39999999851,
+      "flushes": [
+        {
+          "expressionMs": 1.5,
+          "vdomMs": 4.5,
+          "renderMs": 6,
+          "diffMs": 0.5999999977648258,
+          "commitMs": 5,
+          "flushMs": 11.899999998509884,
+          "effectMs": 0.30000000074505806
+        },
+        {
+          "expressionMs": 8.599999997764826,
+          "vdomMs": 1471.4000000022352,
+          "renderMs": 1480,
+          "diffMs": 95.80000000074506,
+          "commitMs": 553.1999999992549,
+          "flushMs": 2129,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 0.4000000022351742,
+          "vdomMs": 114.19999999925494,
+          "renderMs": 114.60000000149012,
+          "diffMs": 0.3999999985098839,
+          "commitMs": 230.10000000149012,
+          "flushMs": 345.1000000014901,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:39:53.472Z"
+  },
+  {
+    "name": "task-e1-a1-v1-1000-memory-mixed",
+    "mode": "memory",
+    "size": 1000,
+    "build": "task-e1-a1-v1",
+    "workload": "mixed",
+    "startedAt": "2026-11-08T11:39:53.674Z",
+    "status": "passed",
+    "pid": 3340,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "crud",
+      "index": 3
+    },
+    "initialization": {
+      "elapsedMs": 399,
+      "cpuMs": 267.5000000037253,
+      "flushes": [
+        {
+          "expressionMs": 1.699999999254942,
+          "vdomMs": 4.699999999254942,
+          "renderMs": 6.399999998509884,
+          "diffMs": 1.3999999985098839,
+          "commitMs": 7,
+          "flushMs": 15.300000000745058,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 1.1000000014901161,
+          "vdomMs": 63.100000001490116,
+          "renderMs": 64.20000000298023,
+          "diffMs": 17.799999997019768,
+          "commitMs": 54.70000000298023,
+          "flushMs": 136.80000000074506,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.10000000149011612,
+          "vdomMs": 16.399999998509884,
+          "renderMs": 16.5,
+          "diffMs": 34,
+          "commitMs": 64.69999999925494,
+          "flushMs": 115.30000000074506,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:40:06.847Z"
+  },
+  {
+    "name": "task-e2-a1-v1-1000-memory-mixed",
+    "mode": "memory",
+    "size": 1000,
+    "build": "task-e2-a1-v1",
+    "workload": "mixed",
+    "startedAt": "2026-11-08T11:40:07.006Z",
+    "status": "passed",
+    "pid": 6396,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "crud",
+      "index": 3
+    },
+    "initialization": {
+      "elapsedMs": 325.29999999701977,
+      "cpuMs": 209.0000000037253,
+      "flushes": [
+        {
+          "expressionMs": 0.8999999985098839,
+          "vdomMs": 3.2000000029802322,
+          "renderMs": 4.100000001490116,
+          "diffMs": 0.3999999985098839,
+          "commitMs": 3.800000000745058,
+          "flushMs": 8.400000002235174,
+          "effectMs": 0.19999999925494194
+        },
+        {
+          "expressionMs": 1.199999999254942,
+          "vdomMs": 76.30000000074506,
+          "renderMs": 77.5,
+          "diffMs": 5.800000000745058,
+          "commitMs": 41.899999998509884,
+          "flushMs": 125.30000000074506,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.10000000149011612,
+          "vdomMs": 30.099999997764826,
+          "renderMs": 30.199999999254942,
+          "diffMs": 0.19999999925494194,
+          "commitMs": 44.600000001490116,
+          "flushMs": 75.10000000149012,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:40:18.538Z"
+  },
+  {
+    "name": "task-e1-a1-v1-10000-memory-mixed",
+    "mode": "memory",
+    "size": 10000,
+    "build": "task-e1-a1-v1",
+    "workload": "mixed",
+    "startedAt": "2026-11-08T11:40:18.680Z",
+    "status": "passed",
+    "pid": 18288,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "crud",
+      "index": 3
+    },
+    "initialization": {
+      "elapsedMs": 3573,
+      "cpuMs": 1741.9999999962747,
+      "flushes": [
+        {
+          "expressionMs": 1,
+          "vdomMs": 2.399999998509884,
+          "renderMs": 3.399999998509884,
+          "diffMs": 0.8000000007450581,
+          "commitMs": 3.5,
+          "flushMs": 7.899999998509884,
+          "effectMs": 0.19999999925494194
+        },
+        {
+          "expressionMs": 8.699999999254942,
+          "vdomMs": 420,
+          "renderMs": 428.69999999925494,
+          "diffMs": 158.10000000149012,
+          "commitMs": 622,
+          "flushMs": 1208.8999999985099,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.09999999776482582,
+          "vdomMs": 90.90000000223517,
+          "renderMs": 91,
+          "diffMs": 156,
+          "commitMs": 277.8999999985099,
+          "flushMs": 525,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:41:57.224Z"
+  },
+  {
+    "name": "task-e2-a1-v1-10000-memory-mixed",
+    "mode": "memory",
+    "size": 10000,
+    "build": "task-e2-a1-v1",
+    "workload": "mixed",
+    "startedAt": "2026-11-08T11:41:57.407Z",
+    "status": "passed",
+    "pid": 6364,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "step",
+      "workload": "crud",
+      "index": 3
+    },
+    "initialization": {
+      "elapsedMs": 3535.099999997765,
+      "cpuMs": 1797.300000000745,
+      "flushes": [
+        {
+          "expressionMs": 1,
+          "vdomMs": 4,
+          "renderMs": 5,
+          "diffMs": 1,
+          "commitMs": 2.800000000745058,
+          "flushMs": 8.900000002235174,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 6.099999997764826,
+          "vdomMs": 823.6000000014901,
+          "renderMs": 829.6999999992549,
+          "diffMs": 57.80000000074506,
+          "commitMs": 605.3999999985099,
+          "flushMs": 1493.699999999255,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.09999999776482582,
+          "vdomMs": 98.30000000074506,
+          "renderMs": 98.39999999850988,
+          "diffMs": 0.30000000074505806,
+          "commitMs": 195.80000000074506,
+          "flushMs": 294.6000000014901,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:43:28.673Z"
+  },
+  {
+    "name": "task-e1-a1-v1-1000-visual-counter",
+    "mode": "visual",
+    "size": 1000,
+    "build": "task-e1-a1-v1",
+    "workload": "counter",
+    "startedAt": "2026-11-08T11:43:28.868Z",
+    "status": "passed",
+    "pid": 14592,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "visual",
+      "workload": "counter",
+      "index": 2
+    },
+    "initialization": {
+      "elapsedMs": 349.19999999925494,
+      "cpuMs": 221.19999999925494,
+      "flushes": [
+        {
+          "expressionMs": 1,
+          "vdomMs": 4.299999997019768,
+          "renderMs": 5.299999997019768,
+          "diffMs": 1.699999999254942,
+          "commitMs": 8.600000001490116,
+          "flushMs": 15.900000002235174,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 1,
+          "vdomMs": 53,
+          "renderMs": 54,
+          "diffMs": 21.899999998509884,
+          "commitMs": 57.19999999925494,
+          "flushMs": 133.19999999925494,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.10000000149011612,
+          "vdomMs": 17.399999998509884,
+          "renderMs": 17.5,
+          "diffMs": 27,
+          "commitMs": 27.399999998509884,
+          "flushMs": 72,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:43:30.421Z"
+  },
+  {
+    "name": "task-e1-a1-v1-1000-visual-move",
+    "mode": "visual",
+    "size": 1000,
+    "build": "task-e1-a1-v1",
+    "workload": "move",
+    "startedAt": "2026-11-08T11:43:30.726Z",
+    "status": "passed",
+    "pid": 15376,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "visual",
+      "workload": "move",
+      "index": 2
+    },
+    "initialization": {
+      "elapsedMs": 399.5,
+      "cpuMs": 247.0000000037253,
+      "flushes": [
+        {
+          "expressionMs": 1.5,
+          "vdomMs": 3.2999999970197678,
+          "renderMs": 4.799999997019768,
+          "diffMs": 2.699999999254942,
+          "commitMs": 3.600000001490116,
+          "flushMs": 11.300000000745058,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 2.600000001490116,
+          "vdomMs": 56.80000000074506,
+          "renderMs": 59.400000002235174,
+          "diffMs": 19.699999999254942,
+          "commitMs": 66.09999999776483,
+          "flushMs": 145.89999999850988,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 0.30000000074505806,
+          "vdomMs": 22.199999999254942,
+          "renderMs": 22.5,
+          "diffMs": 34.599999997764826,
+          "commitMs": 32.30000000074506,
+          "flushMs": 89.60000000149012,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:43:32.863Z"
+  },
+  {
+    "name": "task-e2-a1-v1-1000-visual-counter",
+    "mode": "visual",
+    "size": 1000,
+    "build": "task-e2-a1-v1",
+    "workload": "counter",
+    "startedAt": "2026-11-08T11:43:33.133Z",
+    "status": "passed",
+    "pid": 19744,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "visual",
+      "workload": "counter",
+      "index": 2
+    },
+    "initialization": {
+      "elapsedMs": 417,
+      "cpuMs": 252,
+      "flushes": [
+        {
+          "expressionMs": 2.199999999254942,
+          "vdomMs": 6.199999999254942,
+          "renderMs": 8.399999998509884,
+          "diffMs": 0.5,
+          "commitMs": 4.799999997019768,
+          "flushMs": 14,
+          "effectMs": 0.19999999925494194
+        },
+        {
+          "expressionMs": 3.100000001490116,
+          "vdomMs": 112.09999999776483,
+          "renderMs": 115.19999999925494,
+          "diffMs": 7.199999999254942,
+          "commitMs": 53,
+          "flushMs": 175.5,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 0.09999999776482582,
+          "vdomMs": 18,
+          "renderMs": 18.099999997764826,
+          "diffMs": 0.19999999925494194,
+          "commitMs": 43.80000000074506,
+          "flushMs": 62.19999999925494,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:43:34.411Z"
+  },
+  {
+    "name": "task-e2-a1-v1-1000-visual-move",
+    "mode": "visual",
+    "size": 1000,
+    "build": "task-e2-a1-v1",
+    "workload": "move",
+    "startedAt": "2026-11-08T11:43:34.615Z",
+    "status": "passed",
+    "pid": 19188,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "visual",
+      "workload": "move",
+      "index": 2
+    },
+    "initialization": {
+      "elapsedMs": 701.3000000007451,
+      "cpuMs": 454.9000000022352,
+      "flushes": [
+        {
+          "expressionMs": 2.100000001490116,
+          "vdomMs": 9.49999999627471,
+          "renderMs": 11.599999997764826,
+          "diffMs": 1,
+          "commitMs": 10.400000002235174,
+          "flushMs": 23.400000002235174,
+          "effectMs": 0.19999999925494194
+        },
+        {
+          "expressionMs": 2.599999997764826,
+          "vdomMs": 202.80000000074506,
+          "renderMs": 205.39999999850988,
+          "diffMs": 16,
+          "commitMs": 130.10000000149012,
+          "flushMs": 351.69999999925494,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.20000000298023224,
+          "vdomMs": 18.799999997019768,
+          "renderMs": 19,
+          "diffMs": 0.30000000074505806,
+          "commitMs": 60.30000000074506,
+          "flushMs": 79.60000000149012,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 1000,
+        "stateRows": 1000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 1001,
+        "syncedTotal": 1000
+      }
+    },
+    "endedAt": "2026-11-08T11:43:37.093Z"
+  },
+  {
+    "name": "task-e1-a1-v1-10000-visual-counter",
+    "mode": "visual",
+    "size": 10000,
+    "build": "task-e1-a1-v1",
+    "workload": "counter",
+    "startedAt": "2026-11-08T11:43:37.428Z",
+    "status": "passed",
+    "pid": 12348,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "visual",
+      "workload": "counter",
+      "index": 2
+    },
+    "initialization": {
+      "elapsedMs": 3850.699999999255,
+      "cpuMs": 2277.199999999255,
+      "flushes": [
+        {
+          "expressionMs": 1.699999999254942,
+          "vdomMs": 6.699999999254942,
+          "renderMs": 8.399999998509884,
+          "diffMs": 2,
+          "commitMs": 7.199999999254942,
+          "flushMs": 18,
+          "effectMs": 0.19999999925494194
+        },
+        {
+          "expressionMs": 19.100000001490116,
+          "vdomMs": 527,
+          "renderMs": 546.1000000014901,
+          "diffMs": 211.19999999925494,
+          "commitMs": 976.8000000007451,
+          "flushMs": 1734.300000000745,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 0.10000000149011612,
+          "vdomMs": 96.09999999776483,
+          "renderMs": 96.19999999925494,
+          "diffMs": 148.60000000149012,
+          "commitMs": 279.80000000074506,
+          "flushMs": 524.6000000014901,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:43:44.857Z"
+  },
+  {
+    "name": "task-e1-a1-v1-10000-visual-move",
+    "mode": "visual",
+    "size": 10000,
+    "build": "task-e1-a1-v1",
+    "workload": "move",
+    "startedAt": "2026-11-08T11:43:45.019Z",
+    "status": "passed",
+    "pid": 5960,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "visual",
+      "workload": "move",
+      "index": 2
+    },
+    "initialization": {
+      "elapsedMs": 3720.199999999255,
+      "cpuMs": 2210.0999999940395,
+      "flushes": [
+        {
+          "expressionMs": 1,
+          "vdomMs": 2.5,
+          "renderMs": 3.5,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 3.399999998509884,
+          "flushMs": 7.699999999254942,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 6.5,
+          "vdomMs": 442,
+          "renderMs": 448.5,
+          "diffMs": 203.09999999776483,
+          "commitMs": 1023.5,
+          "flushMs": 1675.0999999977648,
+          "effectMs": 0.19999999925494194
+        },
+        {
+          "expressionMs": 0.30000000074505806,
+          "vdomMs": 105.60000000149012,
+          "renderMs": 105.90000000223517,
+          "diffMs": 148.79999999701977,
+          "commitMs": 272.30000000074506,
+          "flushMs": 527,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:43:54.562Z"
+  },
+  {
+    "name": "task-e2-a1-v1-10000-visual-counter",
+    "mode": "visual",
+    "size": 10000,
+    "build": "task-e2-a1-v1",
+    "workload": "counter",
+    "startedAt": "2026-11-08T11:43:54.772Z",
+    "status": "passed",
+    "pid": 17364,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "visual",
+      "workload": "counter",
+      "index": 2
+    },
+    "initialization": {
+      "elapsedMs": 3713.60000000149,
+      "cpuMs": 2490.800000000745,
+      "flushes": [
+        {
+          "expressionMs": 1.5,
+          "vdomMs": 3.899999998509884,
+          "renderMs": 5.399999998509884,
+          "diffMs": 0.5,
+          "commitMs": 4.800000000745058,
+          "flushMs": 10.800000000745058,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 8.599999997764826,
+          "vdomMs": 820.6000000014901,
+          "renderMs": 829.1999999992549,
+          "diffMs": 161.30000000074506,
+          "commitMs": 1192.0999999977648,
+          "flushMs": 2182.699999999255,
+          "effectMs": 0
+        },
+        {
+          "expressionMs": 0.09999999776482582,
+          "vdomMs": 89.10000000149012,
+          "renderMs": 89.19999999925494,
+          "diffMs": 0.19999999925494194,
+          "commitMs": 207.80000000074506,
+          "flushMs": 297.30000000074506,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:44:01.207Z"
+  },
+  {
+    "name": "task-e2-a1-v1-10000-visual-move",
+    "mode": "visual",
+    "size": 10000,
+    "build": "task-e2-a1-v1",
+    "workload": "move",
+    "startedAt": "2026-11-08T11:44:01.360Z",
+    "status": "passed",
+    "pid": 14620,
+    "browser": "151.0.7922.34",
+    "lastInput": {
+      "action": "visual",
+      "workload": "move",
+      "index": 2
+    },
+    "initialization": {
+      "elapsedMs": 2882.60000000149,
+      "cpuMs": 1670.0000000037253,
+      "flushes": [
+        {
+          "expressionMs": 1.0999999977648258,
+          "vdomMs": 3.100000001490116,
+          "renderMs": 4.199999999254942,
+          "diffMs": 0.5,
+          "commitMs": 4,
+          "flushMs": 8.800000000745058,
+          "effectMs": 0.10000000149011612
+        },
+        {
+          "expressionMs": 8.5,
+          "vdomMs": 815.5999999977648,
+          "renderMs": 824.0999999977648,
+          "diffMs": 59.5,
+          "commitMs": 458.9000000022352,
+          "flushMs": 1342.6000000014901,
+          "effectMs": 0.09999999776482582
+        },
+        {
+          "expressionMs": 0.5,
+          "vdomMs": 111.30000000074506,
+          "renderMs": 111.80000000074506,
+          "diffMs": 0.30000000074505806,
+          "commitMs": 206.30000000074506,
+          "flushMs": 318.4000000022352,
+          "effectMs": 0
+        }
+      ],
+      "counts": null,
+      "validation": {
+        "checkedRows": 10000,
+        "stateRows": 10000,
+        "retainedIdentities": 0,
+        "counter": 0,
+        "nextId": 10001,
+        "syncedTotal": 10000
+      }
+    },
+    "endedAt": "2026-11-08T11:44:12.439Z"
+  }
+]

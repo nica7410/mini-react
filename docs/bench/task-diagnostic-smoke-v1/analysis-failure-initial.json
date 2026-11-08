@@ -1,0 +1,77 @@
+{
+  "recordedAt": "2026-11-08T11:29:59.735Z",
+  "collectionStatus": "passed",
+  "initialAnalysisStatus": "failed",
+  "initialAnalyzerSha256": "11e5396e9c7b414c34eb89d9c6803e78b849fb11af90ea3b0d2f92f7464423e6",
+  "failure": "CPU sample accounting: sample-primary-sort",
+  "firstCase": "task-e1-a1-v1-10-cpu-sort",
+  "firstWindowElapsedUs": 5325,
+  "incorrectUnsortedAccountedUs": 5336,
+  "cases": [
+    {
+      "case": "task-e1-a1-v1-10-cpu-counter",
+      "negativeTimeDeltas": []
+    },
+    {
+      "case": "task-e1-a1-v1-10-cpu-sort",
+      "negativeTimeDeltas": [
+        {
+          "index": 67,
+          "deltaUs": -11
+        }
+      ]
+    },
+    {
+      "case": "task-e1-a1-v1-10-cpu-crud",
+      "negativeTimeDeltas": [
+        {
+          "index": 145,
+          "deltaUs": -73
+        },
+        {
+          "index": 526,
+          "deltaUs": -15
+        }
+      ]
+    },
+    {
+      "case": "task-e2-a1-v1-10-cpu-counter",
+      "negativeTimeDeltas": []
+    },
+    {
+      "case": "task-e2-a1-v1-10-cpu-sort",
+      "negativeTimeDeltas": [
+        {
+          "index": 69,
+          "deltaUs": -19
+        }
+      ]
+    },
+    {
+      "case": "task-e2-a1-v1-10-cpu-crud",
+      "negativeTimeDeltas": [
+        {
+          "index": 69,
+          "deltaUs": -53
+        },
+        {
+          "index": 437,
+          "deltaUs": -38
+        },
+        {
+          "index": 484,
+          "deltaUs": -27
+        },
+        {
+          "index": 551,
+          "deltaUs": -8
+        }
+      ]
+    }
+  ],
+  "methodReferences": [
+    "https://raw.githubusercontent.com/ChromeDevTools/devtools-protocol/master/json/js_protocol.json",
+    "https://raw.githubusercontent.com/ChromeDevTools/devtools-frontend/main/front_end/models/cpu_profile/CPUProfileDataModel.ts"
+  ],
+  "resolution": "Reconstruct absolute timestamps from all original deltas, sort timestamp/sample pairs together, then build non-overlapping weighted intervals. Keep raw profiles and all samples; do not rerun or discard the diagnostic collection."
+}

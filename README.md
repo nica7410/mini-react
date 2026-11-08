@@ -7,7 +7,9 @@ Vanilla TypeScript로 만든 학습용 Mini React입니다. DOM 편집기와 루
 - **B안:** 지원되는 keyed 형제의 LIS 기본 경로와 Greedy 비교, FIFO microtask Batching, 같은 expression의 위치별 재사용, Inspector·seed 재실행·독립 benchmark.
 - **입력:** snapshot/controlled/uncontrolled, no-op 복원, focus/selection 보정, composition 충돌 plan 보류.
 
-최신 자동 검증은 **184개 단위·통합 + Chromium 20개 + Firefox 11개**, 브라우저 전체 3회 연속·타입 검사·production build 통과입니다. 실제 Windows 한글 IME는 이전 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). 최초 M8 benchmark의 **측정 51,480개**와 원자료는 당시 코드의 결과로 보존합니다. 후속 no-op 비교도 **3세션·측정 23,760개**를 감사했습니다. 큰 재사용 경로의 갱신 비용은 줄었고, 새 트리 생성 비용과 일부 p95 악화는 보고서에 공개했습니다. [브라우저 안정화·후속 검증](docs/browser-noop-followup.md), [성능 결과](docs/benchmark-results.md), [인수 상태](docs/m8-acceptance.md)를 참고하세요. 팀 활동과 원격 CI 실행은 미확인입니다.
+현재 실제 TaskApp의 목록 표현·콜백 재사용을 개선하고, E0/E1/E2 엔진과 변경 전후 앱의 여섯 조합을 비교하는 후속 작업을 진행 중입니다. 앱 변경의 관련 단위·통합 64개, Chromium·Firefox TaskApp 8개, typecheck/build는 통과했습니다. 엔진 정책 선택 뒤의 최종 전체 검증과 성능 판정은 아직 완료하지 않았습니다. [후속 진행](docs/task-app-followup.md), [앱 원리](docs/task-app-reuse.md)를 참고하세요.
+
+이전 no-op 기능 소스의 자동 검증은 **184개 단위·통합 + Chromium 20개 + Firefox 11개**, 브라우저 전체 3회 연속 통과입니다. 최초 M8의 측정 51,480개와 후속 no-op의 3세션·측정 23,760개는 각각 당시 코드의 결과로 보존합니다. 실제 Windows 한글 IME는 이전 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). [역사적 후속 검증](docs/browser-noop-followup.md), [성능 결과](docs/benchmark-results.md), [인수 상태](docs/m8-acceptance.md)를 참고하세요. 팀 활동과 원격 CI 실행은 미확인입니다.
 
 ## 실행
 

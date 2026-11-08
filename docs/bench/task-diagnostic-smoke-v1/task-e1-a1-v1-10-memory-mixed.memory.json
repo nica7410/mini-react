@@ -1,0 +1,75 @@
+{
+  "points": [
+    {
+      "label": "before mount",
+      "heap": {
+        "usedSize": 1138308,
+        "totalSize": 2154496,
+        "embedderHeapUsedSize": 329256,
+        "backingStorageSize": 91289
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 20,
+        "jsEventListeners": 13
+      }
+    },
+    {
+      "label": "after mount",
+      "heap": {
+        "usedSize": 1742888,
+        "totalSize": 2416640,
+        "embedderHeapUsedSize": 685504,
+        "backingStorageSize": 92400
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 266,
+        "jsEventListeners": 108
+      }
+    },
+    {
+      "label": "reuse 1:crud 1, cycle 1",
+      "heap": {
+        "usedSize": 1926564,
+        "totalSize": 2678784,
+        "embedderHeapUsedSize": 699128,
+        "backingStorageSize": 92362
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 266,
+        "jsEventListeners": 108
+      }
+    },
+    {
+      "label": "reuse 10:crud 1, cycle 1",
+      "heap": {
+        "usedSize": 1983868,
+        "totalSize": 2678784,
+        "embedderHeapUsedSize": 702368,
+        "backingStorageSize": 92362
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 266,
+        "jsEventListeners": 108
+      }
+    },
+    {
+      "label": "after dispose",
+      "heap": {
+        "usedSize": 1859036,
+        "totalSize": 2678784,
+        "embedderHeapUsedSize": 409392,
+        "backingStorageSize": 92141
+      },
+      "dom": {
+        "documents": 1,
+        "nodes": 20,
+        "jsEventListeners": 13
+      }
+    }
+  ],
+  "note": "Forced-GC retained heap and DOM counters, one diagnostic trajectory. No assertion of zero growth or exact allocation count. Ratios run sequentially on the same app; both engines use the same order."
+}

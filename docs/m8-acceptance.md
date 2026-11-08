@@ -1,10 +1,14 @@
 # M8 최종 인수 기록
 
+## 현재 TaskApp 후속 작업 상태
+
+2026-11-08의 TaskApp 표현 재사용·세 엔진 비교 목표는 진행 중이다. 앱 변경 `5ed7f34`의 관련 단위·통합 64개와 TaskApp 브라우저 8개, typecheck/build는 통과했지만 최종 엔진 정책·전체 재검증·최종 인수 완료를 뜻하지 않는다. [현재 진행과 증거](task-app-followup.md)를 따른다. 아래 no-op/M8 기록은 각 당시 소스의 역사적 인수 결과로 보존한다.
+
 ## 후속 재검토 상태
 
-최초 M8 인수 이후의 재검토에서 기본 브라우저 실행은 26/29(timeout 3건)이었다. 그 기록과 당시 29/29를 모두 보존한다. 현재 기능 `c4a2fe1`은 **184/184 단위·통합, Chromium 20+Firefox 11의 전체 3회 연속, typecheck/build PASS**다. timeout 증가/skip/retry 없이 서버 모듈 준비와 CRUD 시나리오 분리를 적용했다. [후속 검증·65개 소스 hash](validation/noop-followup.json), [원인·수정·캐시 불변식](browser-noop-followup.md).
+최초 M8 인수 이후의 재검토에서 기본 브라우저 실행은 26/29(timeout 3건)이었다. 그 기록과 당시 29/29를 모두 보존한다. 당시 기능 `c4a2fe1`은 **184/184 단위·통합, Chromium 20+Firefox 11의 전체 3회 연속, typecheck/build PASS**다. timeout 증가/skip/retry 없이 서버 모듈 준비와 CRUD 시나리오 분리를 적용했다. [후속 검증·65개 소스 hash](validation/noop-followup.json), [원인·수정·캐시 불변식](browser-noop-followup.md).
 
-no-op 후속 검증도 **동일 하네스 3세션 / 측정 23,760개 / raw 28,728개 / 통계 2,016개 감사 PASS**다. 결과 커밋은 dbdc4de다. 10,000 stateful 네 no-op 경로의 cycle median은 29–62% 줄었지만, 새 트리 생성+cycle은 약 5% 느려졌고 재배치는 3–17% 느려진 세션이 있다. 폼/재배치 일부 p95 증가도 별도 GC/CPU 진단과 함께 공개했다. [현행 성능 결과·재현](benchmark-results.md), [전체 조건](bench/noop-full/all-results.md), [불리한 결과](bench/noop-full/outcomes.json).
+no-op 후속 검증도 **동일 하네스 3세션 / 측정 23,760개 / raw 28,728개 / 통계 2,016개 감사 PASS**다. 결과 커밋은 dbdc4de다. 10,000 stateful 네 no-op 경로의 cycle median은 29–62% 줄었지만, 새 트리 생성+cycle은 약 5% 느려졌고 재배치는 3–17% 느려진 세션이 있다. 폼/재배치 일부 p95 증가도 별도 GC/CPU 진단과 함께 공개했다. [당시 no-op 성능 결과·재현](benchmark-results-noop.md), [전체 조건](bench/noop-full/all-results.md), [불리한 결과](bench/noop-full/outcomes.json).
 
 후속 목표의 기술 검증 조건을 충족했다. 검사 생략·timeout 증가·skip/retry로 통과시키지 않았다. 최초 생성/불변성 등록·GC 비용과 O(n) DOM 검사가 남으며 모든 갱신의 총시간 개선을 뜻하지 않는다. 아래 표는 최초 9f3f3d3 인수의 역사적 기록이다. 실제 Windows IME는 이전 사용자 확인이며 이번 합성 회귀와 구별한다.
 

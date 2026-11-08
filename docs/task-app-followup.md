@@ -14,10 +14,34 @@ Git 객체의 엔진/앱/의존성과 공통 harness를 별도 경로에 복사�
 
 루트 useMemo로 rowActions를 [setItems]에, 목록 표현을 [visible, rowActions]에 의존시켰다. 콜백은 items를 캡처하지 않고 함수형 updater의 최신 FIFO 후보를 사용한다. add는 draft/nextId를 사용하는 기존 render별 closure를 유지한다. 자식 Hook이나 함수 props 무시 비교는 추가하지 않았다.
 
-관련 64개 테스트와 typecheck/production build, Chromium/Firefox TaskApp 8개 테스트를 통과했다. 10개 seeded row의 draft/counter/explicit render는 reuse on에서 행 실행 0, off에서 10회이며 State/DOM/입력/Effect sequence는 같다. 연속 rename/toggle/delete와 +1×3의 최신 상태·setter identity도 검증했다. [증거](validation/task-app-b/result.json). 실제 시간 감소는 아직 판정하지 않았다.
+관련 64개 테스트와 typecheck/production build, Chromium/Firefox TaskApp 8개 테스트를 통과했다. 10개 seeded row의 draft/counter/explicit render는 reuse on에서 행 실행 0, off에서 10회이며 State/DOM/입력/Effect sequence는 같다. 연속 rename/toggle/delete와 +1×3의 최신 상태·setter identity도 검증했다. [증거](validation/task-app-b/result.json). 정식 시간 결과는 아래 C에 기록하며, 최종 정책 채택과는 구분한다.
+
+## C — 정식 비교·원자료 감사·분리 진단 완료
+
+E0/E1/E2 × A0/A1의 10개 작은 조건 smoke는 120개 측정 작업/168개 action, A1 E2의 10,000개 모든 작업 smoke는 20개 측정 작업/28개 action의 oracle 및 원본 감사를 통과했다. [6조합 smoke](bench/task-matrix-smoke-v1/analysis.json), [A1 stress smoke](bench/task-app-stress-smoke-v1/analysis.json). 작은 smoke 표본을 성능 채택 근거로 사용하지 않는다.
+
+`task-matrix-v1`은 2026-11-08 12:44~20:24 KST에 사전 계획의 3세션을 실행했다. 모든 조합의 production asset과 source archive를 먼저 고정했으며 측정 중 하네스·앱·엔진은 변경하지 않았다. 별도 테스트/build/profiler도 병행하지 않았고 문서 및 사후 분석 도구만 준비했다.
+
+세 세션은 각각 15:04, 17:29, 20:24 KST에 240/240 조건을 통과했다. 전체 720건의 성공·종료·정리, 실패 0, 압축 원자료 저장과 실행 exit 0을 확인했다. raw 48,294행 = counts 720 + 초기화 648 + warm-up 5,886 + 측정 작업 41,040이며 측정 action은 58,320개다. [실행 환경](bench/task-matrix-v1/environment.json), [원자료 감사](bench/task-matrix-v1/analysis.json).
+
+통계 도구는 같은 엔진의 A0/A1, 같은 앱의 E0/E1/E2를 짝지어 비교했다. 초기화와 warm-up을 포함한 누적 비용은 독립 표본 분포와 분리했다. 정식 측정 종료 뒤 도구 구문 검사와 두 smoke 원자료 검산을 통과한 다음, 전체 통계 12,024개·비교 18,036개·누적 경로 66,825점·그래프 240점을 독립 재계산했다. CSV/Markdown의 누락·중복과 변조된 p95 검출도 통과했다. 두 PNG의 축·라벨·범례·세션 표시를 실제로 확인했다. [통계 감사](bench/task-matrix-v1/statistics-audit.json), [첫 결과 해석](task-app-baseline-results.md).
+
+경계 해석: raw의 `totalCpuMs`는 첫 처리와 겹치지 않는 후속 flush/Effect의 **경과 시간 합계**이며 OS 스레드 CPU 시간이 아니다. `initialization.cpuMs`는 실제 기본 mount·데이터 주입·동기화에서 발생한 flush/Effect 구간의 합이다. 독립 모델 준비, 초기 데이터 복사, root 생성자와 dispose 전체 시간까지 포함한 앱 프로세스 총비용을 뜻하지 않는다. fresh lifecycle도 이 정의의 초기화와 갱신을 합한 값이다. VDOM 생성·정규화·검증은 render에 포함되며 최적화 후보에서 이를 계측 구간 밖으로 옮기지 않는다.
+
+하네스 코드 재검토로 더 정확히 구분한 경계: `primaryMs`는 **dispatch closure 진입 직전부터 첫 flush/Effect 뒤 microtask까지**다. counter/move의 버튼 검색, delete의 대상 검색, add의 form 검색, dirty의 기존 setter 조회가 이 closure 안에 들어 있다. 입력·검색·이름 수정·필터·정렬·완료 변경의 대상 조회와 native value 준비는 clock 밖이다. 따라서 `primaryMs`/`totalCpuMs`를 순수 엔진 CPU 또는 실제 이벤트 전달 시각부터의 지연이라고 부르지 않는다. 같은 작업·데이터·하네스를 사용한 비교에는 이 보조 비용도 모두 포함한다. render/diff/commit은 별도의 내부 구간이며, 향후 직접 click→Paint 진단은 버튼 조회를 먼저 마치므로 절대 시간을 이 표본과 합치거나 그대로 대조하지 않는다. 이 보완은 결과 수치를 분석하기 전 소스 확인으로 기록했으며 고정 하네스와 채택 기준은 변경하지 않았다.
+
+누적 비용의 `updateCount`는 작업 묶음의 반복 횟수다. CRUD 한 묶음은 사용자 action 5개이고 나머지는 1개다. root render나 flush 횟수와 같지 않다. 비용 회수 시점은 같은 작업·세션의 두 누적 경로끼리 비교하며, 초기화와 warm-up을 포함한 관찰 구간의 교차점으로만 설명한다.
+
+진단 도구는 고정 소스의 별도 unminified production 사본에서 CPU/할당 sampling, GC/longtask, forced-GC retained heap, 실제 Paint trace를 수집했다. 작은 진단 12개, 1,000/10,000개 진단 24개 조건 모두 수집·분석을 통과했다. [진단 결과](bench/task-diagnostic-baseline-v1/diagnostics.md). 진단의 계측 비용을 정식 시간 결과와 합치지 않는다. 새 트리의 동결·증명과 보유 heap 비용이 관찰돼 이 범위에 한해 후보를 검토한다.
+
+진단 smoke의 최초 분석은 CPU sample accounting 검사에서 실패했다. Chrome 원자료에 음수 timeDelta가 있어 기존 순서 그대로 구간을 더하면 5.325ms 창이 5.336ms로 중복 합산됐다. 원본·실패 기록을 보존하고, 모든 delta로 절대 timestamp를 복원한 뒤 timestamp/sample 쌍을 함께 정렬하도록 수정했다. 이후 12개 조건의 모든 표시 구간 합계가 일치했다. [실패·수정 근거](bench/task-diagnostic-smoke-v1/analysis-failure-initial.json), [수정 후 감사](bench/task-diagnostic-smoke-v1/diagnostic-audit.json). [CDP 정의](https://raw.githubusercontent.com/ChromeDevTools/devtools-protocol/master/json/js_protocol.json)와 [DevTools의 쌍 정렬](https://raw.githubusercontent.com/ChromeDevTools/devtools-frontend/main/front_end/models/cpu_profile/CPUProfileDataModel.ts)을 확인했다. 자체 가중치는 정렬된 표본의 직전 구간을 사용하는 근사이며 DevTools UI의 모든 집계 방식과 동일하다는 뜻은 아니다.
+
+기존 no-op 성능 보고서는 [역사적 사본](benchmark-results-noop.md)에 원문을 보존했다. 시작 시 파일과 사본의 SHA-256은 모두 `6292559a91d65b6bf9e6730979f5d1bb3e5898efff9823ab623871c8a5b6d75b`다. 줄바꿈까지 동일한 원본 gzip과 Git 출처는 [보존 영수증](validation/task-app-previous-report.json)에 있다. 현행 보고서를 새 결과로 갱신하더라도 이전 원문·원자료를 대체하지 않는다.
 
 ## 남은 단계
 
-- C: 6조합 × 사전 조건 × 3세션, 원본 감사와 앱/엔진 효과 분리.
+입력 방식의 범위: 벤치마크는 실제 TaskApp에 프로그램으로 DOM Event와 HTMLElement.click을 전달한다. native value/checked 준비와 dirty/equal probe는 하네스에 명시되어 있다. 물리 키보드 입력부터의 지연, trusted 사용자 이벤트의 전체 경로, 실제 IME 검증을 대신하지 않는다. [측정 경계 보완 기록](bench/task-matrix-v1/measurement-boundaries.json)을 정식 결과와 함께 해석한다.
+
+- C: 6조합 × 3세션, 원자료·표·그래프 감사와 별도 진단은 완료. 단계별 결과 커밋에 보존한다.
 - D: 확인한 생성/등록/GC 비용에 대한 후보 또는 적용 범위 조정, 고정 A1 재비교와 필요한 p95 보충.
 - E: 최종 소스에서 전체 단위·통합·타입·build·기본 브라우저 3회, 문서/원본 체크리스트·hash/커밋/clean 감사.

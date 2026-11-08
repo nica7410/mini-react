@@ -1,0 +1,331 @@
+{
+  "status": "passed",
+  "createdAt": "2026-11-08T11:48:25.320Z",
+  "scriptSha256": "8aae3a2af48b05b138c7ca8a444fd4769653c2abc3d5b103dadf73b716d9e374",
+  "sourceSummarySha256": "fea4bb60c20432dcf6342809c867427e68879931a493091dfdddc12b31b3159f",
+  "reportSha256": "6b697d848412691d07feda51dc5d28374406e2cb38712cf1bd8280ea068ff318",
+  "cpuRows": [
+    {
+      "name": "task-e1-a1-v1-1000-cpu-counter",
+      "totalMs": 1014.3639999999984,
+      "freezeSelfMs": 0,
+      "freezePercent": 0,
+      "validationInclusiveMs": 655.984,
+      "primaryGcCategoryMs": 25.133000000000003,
+      "allocationEstimatedBytes": 541698644,
+      "longtasks": 19,
+      "windows": 12,
+      "negativeDeltas": 1
+    },
+    {
+      "name": "task-e1-a1-v1-1000-cpu-sort",
+      "totalMs": 4053.6370000000043,
+      "freezeSelfMs": 178.85799999999995,
+      "freezePercent": 4.41228457308831,
+      "validationInclusiveMs": 665.6650000000003,
+      "primaryGcCategoryMs": 177.17299999999997,
+      "allocationEstimatedBytes": 1255548408,
+      "longtasks": 19,
+      "windows": 12,
+      "negativeDeltas": 1
+    },
+    {
+      "name": "task-e1-a1-v1-1000-cpu-crud",
+      "totalMs": 6546.9479999999985,
+      "freezeSelfMs": 532.482,
+      "freezePercent": 8.133285921928815,
+      "validationInclusiveMs": 2065.3839999999996,
+      "primaryGcCategoryMs": 334.344,
+      "allocationEstimatedBytes": 6118128460,
+      "longtasks": 85,
+      "windows": 60,
+      "negativeDeltas": 3
+    },
+    {
+      "name": "task-e2-a1-v1-1000-cpu-counter",
+      "totalMs": 345.7280000000002,
+      "freezeSelfMs": 0.361,
+      "freezePercent": 0.10441734542761935,
+      "validationInclusiveMs": 102.048,
+      "primaryGcCategoryMs": 4.313000000000001,
+      "allocationEstimatedBytes": 274430804,
+      "longtasks": 4,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e2-a1-v1-1000-cpu-sort",
+      "totalMs": 3091.2380000000016,
+      "freezeSelfMs": 739.2439999999998,
+      "freezePercent": 23.914172897719276,
+      "validationInclusiveMs": 127.82300000000001,
+      "primaryGcCategoryMs": 200.191,
+      "allocationEstimatedBytes": 1209756224,
+      "longtasks": 18,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e2-a1-v1-1000-cpu-crud",
+      "totalMs": 6675.1089999999995,
+      "freezeSelfMs": 2275.291,
+      "freezePercent": 34.08619994070509,
+      "validationInclusiveMs": 539.851,
+      "primaryGcCategoryMs": 446.18100000000004,
+      "allocationEstimatedBytes": 5114432144,
+      "longtasks": 72,
+      "windows": 60,
+      "negativeDeltas": 1
+    },
+    {
+      "name": "task-e1-a1-v1-10000-cpu-counter",
+      "totalMs": 6343.421999999986,
+      "freezeSelfMs": 0,
+      "freezePercent": 0,
+      "validationInclusiveMs": 3849.2040000000025,
+      "primaryGcCategoryMs": 125.966,
+      "allocationEstimatedBytes": 4952007648,
+      "longtasks": 19,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e1-a1-v1-10000-cpu-sort",
+      "totalMs": 38664.58299999983,
+      "freezeSelfMs": 1219.1939999999995,
+      "freezePercent": 3.1532578535762426,
+      "validationInclusiveMs": 4137.4109999999955,
+      "primaryGcCategoryMs": 1650.304,
+      "allocationEstimatedBytes": 10929309260,
+      "longtasks": 19,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e1-a1-v1-10000-cpu-crud",
+      "totalMs": 63905.39800000019,
+      "freezeSelfMs": 4997.041,
+      "freezePercent": 7.819434909082306,
+      "validationInclusiveMs": 19755.50099999999,
+      "primaryGcCategoryMs": 4945.640999999999,
+      "allocationEstimatedBytes": 54918291720,
+      "longtasks": 87,
+      "windows": 60,
+      "negativeDeltas": 4
+    },
+    {
+      "name": "task-e2-a1-v1-10000-cpu-counter",
+      "totalMs": 3436.879,
+      "freezeSelfMs": 0.353,
+      "freezePercent": 0.010270946402244593,
+      "validationInclusiveMs": 930.6339999999998,
+      "primaryGcCategoryMs": 94.607,
+      "allocationEstimatedBytes": 2371895700,
+      "longtasks": 19,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e2-a1-v1-10000-cpu-sort",
+      "totalMs": 44322.43999999967,
+      "freezeSelfMs": 9395.457000000013,
+      "freezePercent": 21.197968794136973,
+      "validationInclusiveMs": 1039.1339999999998,
+      "primaryGcCategoryMs": 1914.3499999999997,
+      "allocationEstimatedBytes": 10802140032,
+      "longtasks": 19,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e2-a1-v1-10000-cpu-crud",
+      "totalMs": 72876.03100000006,
+      "freezeSelfMs": 25038.648000000016,
+      "freezePercent": 34.357864522012726,
+      "validationInclusiveMs": 4846.682999999999,
+      "primaryGcCategoryMs": 8800.867999999995,
+      "allocationEstimatedBytes": 47227475380,
+      "longtasks": 87,
+      "windows": 60,
+      "negativeDeltas": 7
+    }
+  ],
+  "memoryRows": [
+    {
+      "name": "task-e1-a1-v1-1000-memory-mixed",
+      "usedBytes": [
+        1138308,
+        8150616,
+        8684004,
+        1949040
+      ],
+      "nodes": [
+        20,
+        20
+      ],
+      "listeners": [
+        13,
+        13
+      ]
+    },
+    {
+      "name": "task-e2-a1-v1-1000-memory-mixed",
+      "usedBytes": [
+        1138824,
+        9314360,
+        12909852,
+        6149744
+      ],
+      "nodes": [
+        20,
+        20
+      ],
+      "listeners": [
+        13,
+        13
+      ]
+    },
+    {
+      "name": "task-e1-a1-v1-10000-memory-mixed",
+      "usedBytes": [
+        1138308,
+        65665132,
+        68270784,
+        2013476
+      ],
+      "nodes": [
+        20,
+        20
+      ],
+      "listeners": [
+        13,
+        13
+      ]
+    },
+    {
+      "name": "task-e2-a1-v1-10000-memory-mixed",
+      "usedBytes": [
+        1138824,
+        73895436,
+        135443940,
+        69121560
+      ],
+      "nodes": [
+        20,
+        20
+      ],
+      "listeners": [
+        13,
+        13
+      ]
+    }
+  ],
+  "visualRows": [
+    {
+      "name": "task-e1-a1-v1-1000-visual-counter",
+      "commitMs": [
+        63.828,
+        53.618,
+        50.488
+      ],
+      "paintMs": [
+        73.779,
+        60.661,
+        67.266
+      ]
+    },
+    {
+      "name": "task-e1-a1-v1-1000-visual-move",
+      "commitMs": [
+        173.769,
+        119.886,
+        197.198
+      ],
+      "paintMs": [
+        207.367,
+        141.331,
+        252.638
+      ]
+    },
+    {
+      "name": "task-e2-a1-v1-1000-visual-counter",
+      "commitMs": [
+        30.227,
+        31.581,
+        24.735
+      ],
+      "paintMs": [
+        40.933,
+        44.713,
+        37.3
+      ]
+    },
+    {
+      "name": "task-e2-a1-v1-1000-visual-move",
+      "commitMs": [
+        176.799,
+        219.199,
+        135.008
+      ],
+      "paintMs": [
+        204.247,
+        244.163,
+        170.187
+      ]
+    },
+    {
+      "name": "task-e1-a1-v1-10000-visual-counter",
+      "commitMs": [
+        484.29,
+        474.53,
+        465.668
+      ],
+      "paintMs": [
+        587.977,
+        571.684,
+        566.65
+      ]
+    },
+    {
+      "name": "task-e1-a1-v1-10000-visual-move",
+      "commitMs": [
+        1140.977,
+        1073.758,
+        1069.295
+      ],
+      "paintMs": [
+        1385.443,
+        1304.9,
+        1313.702
+      ]
+    },
+    {
+      "name": "task-e2-a1-v1-10000-visual-counter",
+      "commitMs": [
+        290.16,
+        249.233,
+        256.31
+      ],
+      "paintMs": [
+        399.794,
+        347.787,
+        352.216
+      ]
+    },
+    {
+      "name": "task-e2-a1-v1-10000-visual-move",
+      "commitMs": [
+        1294.286,
+        1377.727,
+        1423.632
+      ],
+      "paintMs": [
+        1576.128,
+        1621.479,
+        1666.027
+      ]
+    }
+  ],
+  "primarySelfAndWindowAccounting": true,
+  "note": "Report values derived from the archived audited summary; CPU and retained-heap/visual boundaries are intentionally separate."
+}

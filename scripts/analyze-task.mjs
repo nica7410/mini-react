@@ -9,6 +9,9 @@ const directory = process.argv[2];
 assert(directory, 'Usage: node scripts/analyze-task.mjs docs/bench/tag');
 const env = JSON.parse(readFileSync(`${directory}/environment.json`)); assert.equal(env.status, 'passed');
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
+assert.equal(sha(readFileSync('docs/task-app-comparison-plan.md')), env.planSha256, 'Preregistered comparison plan changed');
+assert.equal(sha(readFileSync('scripts/benchmark-task.mjs')), env.runnerSha256, 'Timing runner differs from recorded source');
+assert.equal(sha(readFileSync('src/bench/task-model.ts')), env.builds[0].groups.harness['src/bench/task-model.ts'], 'Audit model differs from frozen harness');
 for (const build of env.builds) {
   const archive = JSON.parse(gunzipSync(readFileSync(`${directory}/${build.tag}.sources.json.gz`)));
   assert.deepEqual(archive.manifest, build);
@@ -20,11 +23,18 @@ for (const build of bundle.builds) for (const [file, hash] of Object.entries(bui
 const byTag = new Map(env.builds.map(build => [build.tag, build]));
 const groups = new Map(), countRows = [], lifecycles = [], summaries = [];
 let rawRows = 0, measuredWorkloads = 0, measuredActions = 0, warmups = 0, initializations = 0;
+let browserVersion = null;
 function collect(key, value) { assert(Number.isFinite(value) && value >= 0, `Invalid timing ${key}`); if (!groups.has(key)) groups.set(key, []); groups.get(key).push(value); }
 const close = (a, b, message) => assert(Math.abs(a - b) < .00001, message);
 for (let session = 1; session <= env.sessions; session++) {
   const rows = gunzipSync(readFileSync(`${directory}/session-${session}.jsonl.gz`)).toString().trim().split('\n').map(JSON.parse);
   const processes = JSON.parse(readFileSync(`${directory}/session-${session}.json`)).processes;
+  for (const process of processes) {
+    assert.equal(typeof process.browser, 'string'); assert(process.browser.length > 0);
+    browserVersion ??= process.browser; assert.equal(process.browser, browserVersion, 'Browser version changed between conditions/sessions');
+    assert(Number.isInteger(process.pid) && process.pid > 0);
+    assert(Date.parse(process.endedAt) >= Date.parse(process.startedAt), 'Invalid process lifecycle timestamps');
+  }
   const expected = new Set(), models = new Map(), accumulated = new Map();
   for (const size of env.sizes) for (const regime of env.regimes) for (const workload of env.workloads.filter(w => regime === 'persistent' || w === 'equal')) for (const build of env.builds) {
     const key = [regime, workload, size, build.tag].join(',');
@@ -36,10 +46,16 @@ for (let session = 1; session <= env.sessions; session++) {
   }
   for (const row of rows) {
     rawRows++; assert.equal(row.session, session); assert(byTag.has(row.build));
+    if (row.initialization) {
+      const init = row.initialization;
+      for (const value of [init.cpuMs, init.elapsedMs, ...init.flushes.flatMap(flush => Object.values(flush))]) assert(Number.isFinite(value) && value >= 0, 'Invalid initialization time');
+      close(init.cpuMs, init.flushes.reduce((sum, flush) => sum + flush.flushMs + flush.effectMs, 0), 'Initialization CPU');
+      assert(init.elapsedMs + 1 >= init.cpuMs);
+    }
     const key = [row.regime, row.workload, row.size, row.build].join(',');
     assert(expected.delete(`${key},${row.sampleKind},${row.index}`), 'Unexpected/duplicate row');
     if (row.sampleKind === 'initialization') {
-      initializations++; models.set(key, initialTaskModel(row.size, env.seed)); accumulated.set(key, { cpu: row.initialization.cpuMs, updates: 0 });
+      initializations++; models.set(key, initialTaskModel(row.size, env.seed)); accumulated.set(key, { cpu: row.initialization.cpuMs, updates: 0, initialCpuMs: row.initialization.cpuMs });
       assert.equal(row.initialization.validation.stateRows, row.size); continue;
     }
     const counting = row.sampleKind === 'counts';
@@ -78,6 +94,7 @@ for (let session = 1; session <= env.sessions; session++) {
     const cumulative = row.regime === 'fresh' ? { cpu: row.initialization.cpuMs, updates: 0 } : accumulated.get(key); assert(cumulative);
     cumulative.cpu += total; cumulative.updates++; close(row.lifecycleCpuMs, cumulative.cpu, 'Lifecycle CPU');
     close(row.amortizedCpuMs, cumulative.cpu / cumulative.updates, 'Amortization'); assert.equal(row.updateCount, cumulative.updates);
+    if (row.regime === 'persistent') lifecycles.push({ session, key, index: row.index, sampleKind: row.sampleKind, ...cumulative, amortizedCpuMs: row.amortizedCpuMs });
     if (row.sampleKind === 'sample') {
       measuredWorkloads++; collect([session, key, 'workload', 'totalCpuMs'].join(','), total);
       if (row.regime === 'fresh') {
@@ -85,7 +102,6 @@ for (let session = 1; session <= env.sessions; session++) {
         collect([session, key, 'initialization', 'cpuMs'].join(','), row.initialization.cpuMs);
         collect([session, key, 'initialization', 'elapsedMs'].join(','), row.initialization.elapsedMs);
       }
-      if (row.regime === 'persistent') lifecycles.push({ session, key, index: row.index, ...cumulative, amortizedCpuMs: row.amortizedCpuMs });
     }
   }
   assert.equal(expected.size, 0, 'Missing rows');
@@ -107,7 +123,9 @@ const table = ['# TaskApp — 세션별 전체 작업 결과', '', '단위 ms. s
 for (const row of summaries.filter(r => /,(workload|lifecycle),totalCpuMs$/.test(r.key))) table.push(`| ${row.key.replace(',totalCpuMs', '')} | ${row.n} | ${row.median.toFixed(3)} | ${row.iqr.toFixed(3)} | ${row.p95.toFixed(3)} |`);
 writeFileSync(`${directory}/all-results.md`, table.join('\n') + '\n');
 const audit = { status: 'passed', auditedAt: new Date().toISOString(), sessions: env.sessions, smoke: env.smoke, rawRows,
+  scriptSha256: sha(readFileSync('scripts/analyze-task.mjs')), modelSha256: sha(readFileSync('src/bench/task-model.ts')),
   counts: countRows.length, initializations, warmups, measuredWorkloads, measuredActions, distributions: summaries.length,
-  sourceAndBuildHashes: 'passed', noMissingOrDuplicateRows: true, sameAppCountsEqualAcrossEnginesAndSessions: true,
+  sourceAndBuildHashes: 'passed', fixedPlanAndRunnerHashes: true, browserVersion, sameBrowserAcrossConditionsAndSessions: true,
+  noMissingOrDuplicateRows: true, sameAppCountsEqualAcrossEnginesAndSessions: true,
   actualModelStateAndVisibleCounts: 'passed', disjointAndLifecycleSums: 'passed', hidden: 0, unfocused: 0 };
 writeFileSync(`${directory}/analysis.json`, JSON.stringify(audit, null, 2)); console.log(JSON.stringify(audit));

@@ -1,0 +1,38 @@
+{
+  "timeOrigin": 1794137253567.3,
+  "marks": [
+    {
+      "name": "task-diag:visual-start:0",
+      "startTime": 226,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:4",
+      "startTime": 230,
+      "detail": {
+        "renderMs": 1.5999999977648258,
+        "diffMs": 0.6000000014901161,
+        "commitMs": 0.8999999985098839,
+        "flushMs": 3.199999999254942,
+        "effectMs": 0.19999999925494194
+      }
+    },
+    {
+      "name": "task-diag:visual-commit:0",
+      "startTime": 230.10000000149012,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:5",
+      "startTime": 272.80000000074506,
+      "detail": {
+        "renderMs": 0,
+        "diffMs": 0,
+        "commitMs": 0,
+        "flushMs": 0.30000000074505806,
+        "effectMs": 0
+      }
+    }
+  ],
+  "longtasks": []
+}

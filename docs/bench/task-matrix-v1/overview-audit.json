@@ -1,0 +1,352 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-11-08T11:58:34.882Z",
+  "report": "docs/task-app-baseline-results.md",
+  "reportSha256": "740613dd06270b3c649f42ad2d7e26c622d4d7c1c22f6246062e5129e6eda5fa",
+  "scriptSha256": "9743d74a3a039acdd6c15469797702e9722ae5211d0350b4273960aae13364df",
+  "contrastsSha256": "f4324946994091b7705e8262b352d852c67cff817a95b02583cf5d70d2cb43c6",
+  "percentageRows": 8,
+  "gateRows": 4,
+  "phaseRows": 6,
+  "sourceRows": [
+    {
+      "before": "1,persistent,counter,10000,task-e2-a0-v1,workload,totalCpuMs",
+      "after": "1,persistent,counter,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -729.1499999999069,
+          "percent": -78.78444084277763
+        },
+        "p95": {
+          "ms": -2048.16999999946,
+          "percent": -90.70143857013665
+        }
+      }
+    },
+    {
+      "before": "2,persistent,counter,10000,task-e2-a0-v1,workload,totalCpuMs",
+      "after": "2,persistent,counter,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -713.7999999988824,
+          "percent": -78.69033182660958
+        },
+        "p95": {
+          "ms": -2045.9649999998508,
+          "percent": -90.99163004995468
+        }
+      }
+    },
+    {
+      "before": "3,persistent,counter,10000,task-e2-a0-v1,workload,totalCpuMs",
+      "after": "3,persistent,counter,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -876.6999999992549,
+          "percent": -78.26979733948278
+        },
+        "p95": {
+          "ms": -2814.3849999997765,
+          "percent": -90.71257973333228
+        }
+      }
+    },
+    {
+      "before": "1,persistent,crud,10000,task-e2-a0-v1,workload,totalCpuMs",
+      "after": "1,persistent,crud,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -3349.650000004098,
+          "percent": -44.05666147142738
+        },
+        "p95": {
+          "ms": -2380.1749999978583,
+          "percent": -28.373974871783336
+        }
+      }
+    },
+    {
+      "before": "2,persistent,crud,10000,task-e2-a0-v1,workload,totalCpuMs",
+      "after": "2,persistent,crud,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -3416.449999999255,
+          "percent": -44.64926324042546
+        },
+        "p95": {
+          "ms": -2434.9500000012104,
+          "percent": -29.13567572225748
+        }
+      }
+    },
+    {
+      "before": "3,persistent,crud,10000,task-e2-a0-v1,workload,totalCpuMs",
+      "after": "3,persistent,crud,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -4450.94999999553,
+          "percent": -45.38937299547081
+        },
+        "p95": {
+          "ms": -2890.004999995791,
+          "percent": -26.741440787445026
+        }
+      }
+    },
+    {
+      "before": "1,persistent,sort,10000,task-e2-a0-v1,workload,totalCpuMs",
+      "after": "1,persistent,sort,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 107.25000000046566,
+          "percent": 3.7622998263724616
+        },
+        "p95": {
+          "ms": -10.27500000055852,
+          "percent": -0.3179603501295203
+        }
+      }
+    },
+    {
+      "before": "2,persistent,sort,10000,task-e2-a0-v1,workload,totalCpuMs",
+      "after": "2,persistent,sort,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 77.3999999994412,
+          "percent": 2.4935567010121673
+        },
+        "p95": {
+          "ms": 1639.3799999985854,
+          "percent": 49.45630285940186
+        }
+      }
+    },
+    {
+      "before": "3,persistent,sort,10000,task-e2-a0-v1,workload,totalCpuMs",
+      "after": "3,persistent,sort,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 213.0499999988824,
+          "percent": 6.550245192197934
+        },
+        "p95": {
+          "ms": -600.9250000005591,
+          "percent": -13.213023378547273
+        }
+      }
+    },
+    {
+      "before": "1,persistent,counter,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "1,persistent,counter,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -197,
+          "percent": -50.08262361763146
+        },
+        "p95": {
+          "ms": -261.3549999999814,
+          "percent": -55.45053359637306
+        }
+      }
+    },
+    {
+      "before": "2,persistent,counter,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "2,persistent,counter,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -184.0499999988824,
+          "percent": -48.774347422569
+        },
+        "p95": {
+          "ms": -195.45499999914315,
+          "percent": -49.10806261128149
+        }
+      }
+    },
+    {
+      "before": "3,persistent,counter,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "3,persistent,counter,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -222.65000000037253,
+          "percent": -47.7738440081572
+        },
+        "p95": {
+          "ms": -264.4150000005961,
+          "percent": -47.85272187646844
+        }
+      }
+    },
+    {
+      "before": "1,persistent,search,1000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "1,persistent,search,1000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 8.649999999674037,
+          "percent": 10.692212607736828
+        },
+        "p95": {
+          "ms": 29.204999999725246,
+          "percent": 28.035902850821202
+        }
+      }
+    },
+    {
+      "before": "2,persistent,search,1000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "2,persistent,search,1000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 13.349999999627471,
+          "percent": 16.09403254906281
+        },
+        "p95": {
+          "ms": 33.85999999940395,
+          "percent": 30.244294582494845
+        }
+      }
+    },
+    {
+      "before": "3,persistent,search,1000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "3,persistent,search,1000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 18,
+          "percent": 18.395503321480366
+        },
+        "p95": {
+          "ms": 33.63500000201164,
+          "percent": 28.200721054909227
+        }
+      }
+    },
+    {
+      "before": "1,persistent,search,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "1,persistent,search,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 113.6000000005588,
+          "percent": 13.815749467999172
+        },
+        "p95": {
+          "ms": 208.76999999927352,
+          "percent": 21.18868556457054
+        }
+      }
+    },
+    {
+      "before": "2,persistent,search,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "2,persistent,search,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 110.75000000186265,
+          "percent": 13.945728137262536
+        },
+        "p95": {
+          "ms": 186.49500000067053,
+          "percent": 19.398374237518755
+        }
+      }
+    },
+    {
+      "before": "3,persistent,search,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "3,persistent,search,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 118.34999999962747,
+          "percent": 11.806075115937498
+        },
+        "p95": {
+          "ms": 286.7500000029802,
+          "percent": 23.329699297316076
+        }
+      }
+    },
+    {
+      "before": "1,persistent,move,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "1,persistent,move,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 83.6999999997206,
+          "percent": 9.548254620085238
+        },
+        "p95": {
+          "ms": 694.160000000194,
+          "percent": 71.14810050686025
+        }
+      }
+    },
+    {
+      "before": "2,persistent,move,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "2,persistent,move,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 115.95000000018626,
+          "percent": 12.17962184875907
+        },
+        "p95": {
+          "ms": 372.439999999757,
+          "percent": 23.897260515655503
+        }
+      }
+    },
+    {
+      "before": "3,persistent,move,10000,task-e1-a1-v1,workload,totalCpuMs",
+      "after": "3,persistent,move,10000,task-e2-a1-v1,workload,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": 100.90000000223517,
+          "percent": 9.115136185236272
+        },
+        "p95": {
+          "ms": 1303.6049999972806,
+          "percent": 103.63838007974931
+        }
+      }
+    },
+    {
+      "before": "1,fresh,equal,10000,task-e1-a1-v1,lifecycle,totalCpuMs",
+      "after": "1,fresh,equal,10000,task-e2-a1-v1,lifecycle,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -261.3999999994412,
+          "percent": -16.276970017728697
+        },
+        "p95": {
+          "ms": -163.8850000014529,
+          "percent": -8.502199672190025
+        }
+      }
+    },
+    {
+      "before": "2,fresh,equal,10000,task-e1-a1-v1,lifecycle,totalCpuMs",
+      "after": "2,fresh,equal,10000,task-e2-a1-v1,lifecycle,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -295.6000000005588,
+          "percent": -18.14109055205898
+        },
+        "p95": {
+          "ms": 13.115000001341514,
+          "percent": 0.6951143242496016
+        }
+      }
+    },
+    {
+      "before": "3,fresh,equal,10000,task-e1-a1-v1,lifecycle,totalCpuMs",
+      "after": "3,fresh,equal,10000,task-e2-a1-v1,lifecycle,totalCpuMs",
+      "delta": {
+        "median": {
+          "ms": -323.4500000011176,
+          "percent": -16.33173441055883
+        },
+        "p95": {
+          "ms": 514.7149999991061,
+          "percent": 22.84403751155397
+        }
+      }
+    }
+  ],
+  "diagnosticReportSha256": "19b034452b56777649bb3f0ab41e9e1bb6af8133f14b15c7ba4ddd5c266c8678",
+  "diagnosticExamplesChecked": true,
+  "note": "Overview percentages and gate counts checked against independently audited per-session distributions; phase tables and selected absolute-time/diagnostic examples also checked."
+}

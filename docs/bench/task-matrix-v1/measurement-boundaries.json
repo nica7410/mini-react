@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUTC": "2026-11-08 07:56:22 UTC",
+  "kind": "Measurement-boundary clarification from frozen source inspection; no timing source or preregistered gate changed",
+  "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+  "source": "src/bench/task-app.ts / createTaskBenchmark.action",
+  "inputMethodClarifiedAtUTC": "2026-11-08 10:50:42 UTC",
+  "inputMethod": "Programmatic DOM Event dispatch and HTMLElement.click with native value/checked preparation, plus the explicitly documented dirty/equal probes. This exercises actual TaskApp handlers in a real browser; it is not a physical keyboard or trusted-user-event latency measurement, and does not test a native IME.",
+  "primaryMs": "Immediately before dispatch() closure entry through primary flush/Effect and the following microtask. Includes target lookup for counter, move, delete, add, and existing setter lookup for dirty. It does not start at a separately recorded native event-delivery timestamp.",
+  "includedAdapterWork": {
+    "counter": "querySelectorAll(button), array conversion and text lookup",
+    "move": "querySelectorAll(button), array conversion and text lookup",
+    "delete": "querySelector of the target button",
+    "add": "querySelector of the form",
+    "dirty": "existing State slot/setter lookup"
+  },
+  "outsidePrimary": "Independent model update, identity map, focus/selection preparation and oracle. Input/search/rename/filter/sort/toggle target lookup and native value/checked preparation are outside.",
+  "totalCpuMs": "Elapsed primary window plus disjoint follow-up flush/effect windows; not OS thread CPU time or pure engine-only execution. Explicit 40ms timer delay excluded. Nested phase intervals not added.",
+  "settledMs": "Same dispatch-closure start through the actual asynchronous Effect follow-up, including the deliberate timer delay and any included dispatch-helper lookup; ends before the semantic oracle.",
+  "initialization": "cpuMs sums actual mount, data-injection and sync-follow-up flush/effect intervals. Model construction, data-copy/dispatch overhead, root constructor and complete disposal cost are not included in this sum.",
+  "initializationElapsedMs": "Starts immediately before the default app mount and ends after the sync follow-up, before the oracle. Includes data copy/dispatch and actual timer waits; excludes earlier independent-model/root construction and later disposal.",
+  "updateCount": "Workload cycles; CRUD has five user actions, other workloads one. Not root-render or flush count.",
+  "visualDiagnostics": "A separate direct click boundary with the trigger located before the clock. Do not pool or directly equate its absolute latency with formal primaryMs.",
+  "interpretation": "All six combinations use the same frozen harness and definitions. Comparisons include this common adapter overhead; report internal render/diff/commit separately. Do not relabel formal totals as pure engine or physical display latency.",
+  "resultsReviewedForThisClarification": false
+}
