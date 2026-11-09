@@ -1,0 +1,164 @@
+{
+  "directory": "docs/bench/followup-dirty-restore-final/followup-dirty-restore-final-5-counter-10",
+  "before": "task-e9-a2-v1",
+  "after": "dr-cand-e9-a2",
+  "kind": "engine",
+  "rows": [
+    {
+      "session": 1,
+      "section": "workload",
+      "order": [
+        "task-e9-a2-v1",
+        "dr-cand-e9-a2"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.9000000059604645,
+        "iqr": 0.20000000298023224,
+        "p95": 1.1000000089406967,
+        "min": 0.5999999940395355,
+        "max": 2
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.8250000067055225,
+        "iqr": 0.1250000037252903,
+        "p95": 1.1000000089406967,
+        "min": 0.5999999940395355,
+        "max": 2.300000011920929
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 2,
+      "section": "workload",
+      "order": [
+        "dr-cand-e9-a2",
+        "task-e9-a2-v1"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.9000000059604645,
+        "iqr": 0.20000000298023224,
+        "p95": 1.0049999997019752,
+        "min": 0.5,
+        "max": 1.4000000059604645
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.9000000059604645,
+        "iqr": 0.20000000298023224,
+        "p95": 1.2000000029802322,
+        "min": 0.5,
+        "max": 2.0999999940395355
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0.19500000327825706,
+          "deltaPct": 19.4029854065754,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 3,
+      "section": "workload",
+      "order": [
+        "task-e9-a2-v1",
+        "dr-cand-e9-a2"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.8999999910593033,
+        "iqr": 0.19999998807907104,
+        "p95": 1.2000000029802322,
+        "min": 0.5,
+        "max": 1.6000000089406967
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.9000000059604645,
+        "iqr": 0.20000000298023224,
+        "p95": 1.2000000029802322,
+        "min": 0.5,
+        "max": 1.5
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    }
+  ]
+}

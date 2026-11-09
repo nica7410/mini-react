@@ -1,0 +1,185 @@
+{
+  "startedAt": "2026-11-09T11:44:35.907Z",
+  "deadlineAt": "2026-11-09T11:56:35.907Z",
+  "budgetMs": 720000,
+  "status": "passed",
+  "runs": [
+    {
+      "id": 1,
+      "kind": "engine",
+      "workload": "dirty",
+      "size": 100,
+      "builds": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "tag": "followup-dirty-restore-final-1-dirty-100",
+      "status": "passed",
+      "startedAt": "2026-11-09T11:44:35.909Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-dirty-restore-final-1-dirty-100",
+        "--builds=task-e9-a0-v1,dr-cand-e9-a0",
+        "--sizes=100",
+        "--workloads=dirty",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=11.999966666666667",
+        "--deadline-epoch-ms=1794225395907"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T11:44:47.097Z"
+    },
+    {
+      "id": 2,
+      "kind": "engine",
+      "workload": "dirty",
+      "size": 100,
+      "builds": [
+        "task-e9-a2-v1",
+        "dr-cand-e9-a2"
+      ],
+      "tag": "followup-dirty-restore-final-2-dirty-100",
+      "status": "passed",
+      "startedAt": "2026-11-09T11:44:47.098Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-dirty-restore-final-2-dirty-100",
+        "--builds=dr-cand-e9-a2,task-e9-a2-v1",
+        "--sizes=100",
+        "--workloads=dirty",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=11.813483333333334",
+        "--deadline-epoch-ms=1794225395907"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T11:44:57.278Z"
+    },
+    {
+      "id": 3,
+      "kind": "app",
+      "workload": "dirty",
+      "size": 100,
+      "builds": [
+        "dr-cand-e9-a0",
+        "dr-cand-e9-a2"
+      ],
+      "tag": "followup-dirty-restore-final-3-dirty-100",
+      "status": "passed",
+      "startedAt": "2026-11-09T11:44:57.279Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-dirty-restore-final-3-dirty-100",
+        "--builds=dr-cand-e9-a0,dr-cand-e9-a2",
+        "--sizes=100",
+        "--workloads=dirty",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=11.6438",
+        "--deadline-epoch-ms=1794225395907"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T11:45:06.958Z"
+    },
+    {
+      "id": 4,
+      "kind": "engine",
+      "workload": "equal",
+      "size": 100,
+      "builds": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "tag": "followup-dirty-restore-final-4-equal-100",
+      "status": "passed",
+      "startedAt": "2026-11-09T11:45:06.960Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-dirty-restore-final-4-equal-100",
+        "--builds=dr-cand-e9-a0,task-e9-a0-v1",
+        "--sizes=100",
+        "--workloads=equal",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=11.48245",
+        "--deadline-epoch-ms=1794225395907"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T11:45:26.892Z"
+    },
+    {
+      "id": 5,
+      "kind": "engine",
+      "workload": "counter",
+      "size": 10,
+      "builds": [
+        "task-e9-a2-v1",
+        "dr-cand-e9-a2"
+      ],
+      "tag": "followup-dirty-restore-final-5-counter-10",
+      "status": "passed",
+      "startedAt": "2026-11-09T11:45:26.893Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-dirty-restore-final-5-counter-10",
+        "--builds=task-e9-a2-v1,dr-cand-e9-a2",
+        "--sizes=10",
+        "--workloads=counter",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=11.150233333333333",
+        "--deadline-epoch-ms=1794225395907"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T11:45:34.382Z"
+    },
+    {
+      "id": 6,
+      "kind": "engine",
+      "workload": "crud",
+      "size": 10,
+      "builds": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "tag": "followup-dirty-restore-final-6-crud-10",
+      "status": "passed",
+      "startedAt": "2026-11-09T11:45:34.383Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-dirty-restore-final-6-crud-10",
+        "--builds=dr-cand-e9-a0,task-e9-a0-v1",
+        "--sizes=10",
+        "--workloads=crud",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=11.0254",
+        "--deadline-epoch-ms=1794225395907"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T11:49:14.969Z"
+    }
+  ],
+  "endedAt": "2026-11-09T11:49:14.970Z",
+  "elapsedMs": 279063,
+  "overrunMs": 0
+}

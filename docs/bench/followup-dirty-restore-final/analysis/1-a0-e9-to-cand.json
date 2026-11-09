@@ -1,0 +1,632 @@
+{
+  "directory": "docs/bench/followup-dirty-restore-final/followup-dirty-restore-final-1-dirty-100",
+  "before": "task-e9-a0-v1",
+  "after": "dr-cand-e9-a0",
+  "kind": "engine",
+  "rows": [
+    {
+      "session": 1,
+      "section": "workload",
+      "order": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 2.2999999970197678,
+        "q1": 2.0999999940395355,
+        "q3": 2.599999997764826,
+        "iqr": 0.5000000037252903,
+        "p95": 3.9150000050663896,
+        "min": 1.8999999910593033,
+        "max": 10.400000005960464
+      },
+      "after": {
+        "n": 180,
+        "median": 1.5,
+        "q1": 1.4000000059604645,
+        "q3": 1.7000000029802322,
+        "iqr": 0.29999999701976776,
+        "p95": 2,
+        "min": 1.2000000029802322,
+        "max": 2.9000000059604645
+      },
+      "gate": {
+        "median": {
+          "deltaMs": -0.7999999970197678,
+          "deltaPct": -34.78260861114653,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": -1.9150000050663896,
+          "deltaPct": -48.91443173916204,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0.7999999970197678,
+        "medianDropPct": 34.78260861114653,
+        "met": true
+      },
+      "validations": 360
+    },
+    {
+      "session": 1,
+      "section": "diffMs",
+      "order": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0.8999999910593033,
+        "q1": 0.7999999970197678,
+        "q3": 1,
+        "iqr": 0.20000000298023224,
+        "p95": 1.5050000004470332,
+        "min": 0.699999988079071,
+        "max": 3.5
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.9000000059604645,
+        "iqr": 0.20000000298023224,
+        "p95": 1.199999988079071,
+        "min": 0.5999999940395355,
+        "max": 1.699999988079071
+      },
+      "gate": {
+        "median": {
+          "deltaMs": -0.09999999403953552,
+          "deltaPct": -11.111110559216247,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": -0.30500001236796215,
+          "deltaPct": -20.26578154666893,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0.09999999403953552,
+        "medianDropPct": 11.111110559216247,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 1,
+      "section": "commitMs",
+      "order": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 1.3000000044703484,
+        "q1": 1.2000000029802322,
+        "q3": 1.5999999940395355,
+        "iqr": 0.3999999910593033,
+        "p95": 2.5,
+        "min": 1,
+        "max": 6.699999988079071
+      },
+      "after": {
+        "n": 180,
+        "median": 0.6999999955296516,
+        "q1": 0.5999999940395355,
+        "q3": 0.7000000029802322,
+        "iqr": 0.10000000894069672,
+        "p95": 0.9050000056624395,
+        "min": 0.5,
+        "max": 1.4000000059604645
+      },
+      "gate": {
+        "median": {
+          "deltaMs": -0.6000000089406967,
+          "deltaPct": -46.15384668288146,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": -1.5949999943375603,
+          "deltaPct": -63.799999773502414,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0.6000000089406967,
+        "medianDropPct": 46.15384668288146,
+        "met": true
+      },
+      "validations": 360
+    },
+    {
+      "session": 1,
+      "section": "renderEffectFollowupMs",
+      "order": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "after": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": null,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 2,
+      "section": "workload",
+      "order": [
+        "dr-cand-e9-a0",
+        "task-e9-a0-v1"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 2.0999999940395355,
+        "q1": 2,
+        "q3": 2.2999999970197678,
+        "iqr": 0.29999999701976776,
+        "p95": 2.7999999970197678,
+        "min": 1.7000000029802322,
+        "max": 4.200000002980232
+      },
+      "after": {
+        "n": 180,
+        "median": 1.6000000089406967,
+        "q1": 1.5,
+        "q3": 1.9000000059604645,
+        "iqr": 0.4000000059604645,
+        "p95": 3,
+        "min": 1.2999999970197678,
+        "max": 4.5
+      },
+      "gate": {
+        "median": {
+          "deltaMs": -0.4999999850988388,
+          "deltaPct": -23.809523167523665,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0.20000000298023224,
+          "deltaPct": 7.142857256896643,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0.4999999850988388,
+        "medianDropPct": 23.809523167523665,
+        "met": true
+      },
+      "validations": 360
+    },
+    {
+      "session": 2,
+      "section": "diffMs",
+      "order": [
+        "dr-cand-e9-a0",
+        "task-e9-a0-v1"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.8999999910593033,
+        "iqr": 0.19999998807907104,
+        "p95": 1.0999999940395355,
+        "min": 0.5999999940395355,
+        "max": 1.9000000059604645
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 1,
+        "iqr": 0.29999999701976776,
+        "p95": 1.6049999944865687,
+        "min": 0.5999999940395355,
+        "max": 2.300000011920929
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0.5050000004470332,
+          "deltaPct": 45.90909119849348,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 2,
+      "section": "commitMs",
+      "order": [
+        "dr-cand-e9-a0",
+        "task-e9-a0-v1"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 1.25,
+        "q1": 1.199999988079071,
+        "q3": 1.3999999910593033,
+        "iqr": 0.20000000298023224,
+        "p95": 1.7000000029802322,
+        "min": 1,
+        "max": 2.5999999940395355
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7000000029802322,
+        "q1": 0.699999988079071,
+        "q3": 0.8999999910593033,
+        "iqr": 0.20000000298023224,
+        "p95": 1.5,
+        "min": 0.5,
+        "max": 2.0999999940395355
+      },
+      "gate": {
+        "median": {
+          "deltaMs": -0.5499999970197678,
+          "deltaPct": -43.99999976158142,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": -0.20000000298023224,
+          "deltaPct": -11.764706037036275,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0.5499999970197678,
+        "medianDropPct": 43.99999976158142,
+        "met": true
+      },
+      "validations": 360
+    },
+    {
+      "session": 2,
+      "section": "renderEffectFollowupMs",
+      "order": [
+        "dr-cand-e9-a0",
+        "task-e9-a0-v1"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "after": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": null,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 3,
+      "section": "workload",
+      "order": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 2.0999999940395355,
+        "q1": 2,
+        "q3": 2.2999999970197678,
+        "iqr": 0.29999999701976776,
+        "p95": 2.7000000029802322,
+        "min": 1.7000000029802322,
+        "max": 3.7000000029802322
+      },
+      "after": {
+        "n": 180,
+        "median": 1.5,
+        "q1": 1.3999999910593033,
+        "q3": 1.5999999940395355,
+        "iqr": 0.20000000298023224,
+        "p95": 1.7999999970197678,
+        "min": 1.2999999970197678,
+        "max": 2.8999999910593033
+      },
+      "gate": {
+        "median": {
+          "deltaMs": -0.5999999940395355,
+          "deltaPct": -28.57142836869168,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": -0.9000000059604645,
+          "deltaPct": -33.333333517298286,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0.5999999940395355,
+        "medianDropPct": 28.57142836869168,
+        "met": true
+      },
+      "validations": 360
+    },
+    {
+      "session": 3,
+      "section": "diffMs",
+      "order": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.8999999910593033,
+        "iqr": 0.19999998807907104,
+        "p95": 1.0999999940395355,
+        "min": 0.5999999940395355,
+        "max": 1.800000011920929
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.8250000067055225,
+        "iqr": 0.1250000037252903,
+        "p95": 1,
+        "min": 0.5999999940395355,
+        "max": 1.6000000089406967
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": -0.09999999403953552,
+          "deltaPct": -9.090908598308719,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 3,
+      "section": "commitMs",
+      "order": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 1.2000000029802322,
+        "q1": 1.199999988079071,
+        "q3": 1.3999999910593033,
+        "iqr": 0.20000000298023224,
+        "p95": 1.699999988079071,
+        "min": 1,
+        "max": 2
+      },
+      "after": {
+        "n": 180,
+        "median": 0.699999988079071,
+        "q1": 0.5999999940395355,
+        "q3": 0.7000000029802322,
+        "iqr": 0.10000000894069672,
+        "p95": 0.800000011920929,
+        "min": 0.5,
+        "max": 1.300000011920929
+      },
+      "gate": {
+        "median": {
+          "deltaMs": -0.5000000149011612,
+          "deltaPct": -41.66666780494981,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": -0.8999999761581421,
+          "deltaPct": -52.94117543936599,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0.5000000149011612,
+        "medianDropPct": 41.66666780494981,
+        "met": true
+      },
+      "validations": 360
+    },
+    {
+      "session": 3,
+      "section": "renderEffectFollowupMs",
+      "order": [
+        "task-e9-a0-v1",
+        "dr-cand-e9-a0"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "after": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 1,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 2,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": null,
+        "met": false
+      },
+      "validations": 360
+    }
+  ]
+}

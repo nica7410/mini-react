@@ -1,0 +1,49 @@
+START 1 engine persistent/dirty/100 task-e9-a0-v1 vs dr-cand-e9-a0; 12.00 min left
+S1 persistent/dirty/100 task-e9-a0-v1 PASS
+S1 persistent/dirty/100 dr-cand-e9-a0 PASS
+S2 persistent/dirty/100 dr-cand-e9-a0 PASS
+S2 persistent/dirty/100 task-e9-a0-v1 PASS
+S3 persistent/dirty/100 task-e9-a0-v1 PASS
+S3 persistent/dirty/100 dr-cand-e9-a0 PASS
+TASK_COMPLETE docs/bench/followup-dirty-restore-final-1-dirty-100
+START 2 engine persistent/dirty/100 dr-cand-e9-a2 vs task-e9-a2-v1; 11.81 min left
+S1 persistent/dirty/100 dr-cand-e9-a2 PASS
+S1 persistent/dirty/100 task-e9-a2-v1 PASS
+S2 persistent/dirty/100 task-e9-a2-v1 PASS
+S2 persistent/dirty/100 dr-cand-e9-a2 PASS
+S3 persistent/dirty/100 dr-cand-e9-a2 PASS
+S3 persistent/dirty/100 task-e9-a2-v1 PASS
+TASK_COMPLETE docs/bench/followup-dirty-restore-final-2-dirty-100
+START 3 app persistent/dirty/100 dr-cand-e9-a0 vs dr-cand-e9-a2; 11.64 min left
+S1 persistent/dirty/100 dr-cand-e9-a0 PASS
+S1 persistent/dirty/100 dr-cand-e9-a2 PASS
+S2 persistent/dirty/100 dr-cand-e9-a2 PASS
+S2 persistent/dirty/100 dr-cand-e9-a0 PASS
+S3 persistent/dirty/100 dr-cand-e9-a0 PASS
+S3 persistent/dirty/100 dr-cand-e9-a2 PASS
+TASK_COMPLETE docs/bench/followup-dirty-restore-final-3-dirty-100
+START 4 engine persistent/equal/100 dr-cand-e9-a0 vs task-e9-a0-v1; 11.48 min left
+S1 persistent/equal/100 dr-cand-e9-a0 PASS
+S1 persistent/equal/100 task-e9-a0-v1 PASS
+S2 persistent/equal/100 task-e9-a0-v1 PASS
+S2 persistent/equal/100 dr-cand-e9-a0 PASS
+S3 persistent/equal/100 dr-cand-e9-a0 PASS
+S3 persistent/equal/100 task-e9-a0-v1 PASS
+TASK_COMPLETE docs/bench/followup-dirty-restore-final-4-equal-100
+START 5 engine persistent/counter/10 task-e9-a2-v1 vs dr-cand-e9-a2; 11.15 min left
+S1 persistent/counter/10 task-e9-a2-v1 PASS
+S1 persistent/counter/10 dr-cand-e9-a2 PASS
+S2 persistent/counter/10 dr-cand-e9-a2 PASS
+S2 persistent/counter/10 task-e9-a2-v1 PASS
+S3 persistent/counter/10 task-e9-a2-v1 PASS
+S3 persistent/counter/10 dr-cand-e9-a2 PASS
+TASK_COMPLETE docs/bench/followup-dirty-restore-final-5-counter-10
+START 6 engine persistent/crud/10 dr-cand-e9-a0 vs task-e9-a0-v1; 11.03 min left
+S1 persistent/crud/10 dr-cand-e9-a0 PASS
+S1 persistent/crud/10 task-e9-a0-v1 PASS
+S2 persistent/crud/10 task-e9-a0-v1 PASS
+S2 persistent/crud/10 dr-cand-e9-a0 PASS
+S3 persistent/crud/10 dr-cand-e9-a0 PASS
+S3 persistent/crud/10 task-e9-a0-v1 PASS
+TASK_COMPLETE docs/bench/followup-dirty-restore-final-6-crud-10
+FINISH passed; 279.1 s
