@@ -1,0 +1,286 @@
+{
+  "recordedAt": "2026-11-09T11:44:30.509Z",
+  "candidateTree": {
+    "baseCommit": "a1b070f0a56fa783926be1d540370080f06edc27",
+    "patch": "research/dirty-restore/candidate.patch",
+    "patchSha256": "1e0294706638803dc3fe4bc74a8c868a08bcac9ca3a87779e2d0fa8d13329b3e",
+    "planValidationBefore": "ebb754eb4b3688abc3513b064fcadf9a0c29151c8e1c3d76ed2f4d2fde56fa31",
+    "planValidationAfter": "66e5b4b28248d0f043a8d99dd254f4d673ee5a19a60d4d0dd7dfc7e920dac2db",
+    "researchTestSha256": "22d15e40205c263e4af0cf022808e0a256b19357409639726aefcaf314f71f5e",
+    "createdAt": "2026-11-09T11:43:59.759Z"
+  },
+  "testedSource": {
+    "planValidationAsTested": "66e5b4b28248d0f043a8d99dd254f4d673ee5a19a60d4d0dd7dfc7e920dac2db",
+    "equalsFixedBuilds": true,
+    "history": "First pass (typecheck, vitest 266, browser 16) ran on a CRLF copy 9859d6d2… written by git apply under core.autocrlf=true; LF-normalized identical. After review, the tree was rebuilt with core.autocrlf=false and typecheck + vitest were rerun on the LF source (this record). Browser specs were not rerun; they ran once on the CRLF copy, whose code is identical apart from line endings, and the JS bundle built from either is byte-identical (32bcd9c6…)."
+  },
+  "typecheck": {
+    "command": "tsc --noEmit -p tsconfig.json (candidate tree)",
+    "exitCode": 0
+  },
+  "unitIntegration": {
+    "command": "vitest run (candidate tree, E9 tests + research test)",
+    "passed": 268,
+    "failed": 0,
+    "pending": 0,
+    "total": 268,
+    "research": [
+      {
+        "title": "valid zero-dirty plans: candidate and general path agree, eligibility as expected",
+        "status": "passed"
+      },
+      {
+        "title": "valid one-dirty plans: candidate and general path agree, eligibility as expected",
+        "status": "passed"
+      },
+      {
+        "title": "valid many-dirty plans: candidate and general path agree, eligibility as expected",
+        "status": "passed"
+      },
+      {
+        "title": "duplicate SYNC_FORM commands on one node: last policy wins in both paths",
+        "status": "passed"
+      },
+      {
+        "title": "uncontrolled user value survives a restore of controlled fields",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"missing ref\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"root ref\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"text node ref\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"other field ref\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"wrong policy value\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"uncontrolled policy\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"extra non-form op\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView revision\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView mount\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView snapshot\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView swapped siblings\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView missing child\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView extra child\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView duplicate ref\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView child vnode\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView vnode children\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"nextView identity only\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"stale revision\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"other mount\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"disposed mount\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"far sibling removed\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"far sibling replaced\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"far siblings reordered\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"far siblings swapped head\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"far extra text\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"far node type\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"reverse ref\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"registry extra\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"registry missing\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"current view duplicate ref\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"current vnode children\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "broken plan/state \"current view vs vnode\": both paths reject before any DOM write",
+        "status": "passed"
+      },
+      {
+        "title": "same-State restore through FunctionComponent: no render/Effect, focus and selection kept, all controlled kinds restored",
+        "status": "passed"
+      },
+      {
+        "title": "composition holds the dirty value and restores it after compositionend",
+        "status": "passed"
+      },
+      {
+        "title": "a dirty sequence created during the restore is not acknowledged by that restore",
+        "status": "passed"
+      },
+      {
+        "title": "explicit update and a real State change keep their behaviour with a dirty field",
+        "status": "passed"
+      }
+    ]
+  },
+  "browser": {
+    "command": "playwright test tests/browser/browser-state.spec.ts tests/browser/tasks.spec.ts --project=chromium --project=firefox (candidate tree, once)",
+    "passed": 16,
+    "failed": 0,
+    "servedCandidateFile": true,
+    "note": "Synthetic composition events only; no real Korean IME check."
+  },
+  "productionBuild": {
+    "command": "vite build (candidate tree)",
+    "status": "passed"
+  },
+  "fixedBuilds": [
+    {
+      "tag": "dr-cand-e9-a0",
+      "engineCommit": "a1b070f0a56fa783926be1d540370080f06edc27",
+      "appCommit": "9b523238cdc3545c46a61fa6ba6f2a5220941df1",
+      "patches": [
+        {
+          "file": "research/dirty-restore/candidate.patch",
+          "sha256": "1e0294706638803dc3fe4bc74a8c868a08bcac9ca3a87779e2d0fa8d13329b3e"
+        }
+      ],
+      "engineHash": "c13ea874a29e7a107d0e91b7b88cb72ca67ca2ee49d2fdf018b8cd2c54621b66",
+      "baseEngineHash": "720e144e5b479d940e6267c5129aee75ada6f0fd236bf9d01a474e1b20a12357",
+      "appHash": "5ccff9f3468dc1b8c54c9f4f723db0fe689c0310960c2e76d9a9c4cccd556ec3",
+      "changedEngineFiles": [
+        "src/core/planValidation.ts"
+      ],
+      "planValidationSha256": "66e5b4b28248d0f043a8d99dd254f4d673ee5a19a60d4d0dd7dfc7e920dac2db",
+      "artifacts": {
+        "assets/task-bench-CyQoobO3.js": "32bcd9c68ede219d15af9c9c89f1e05b18811d965ce759e43480ba22933b183a",
+        "assets/task-bench-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+        "task-bench.html": "19d1422a4eb50b7ae36db952cf18d803ab9fd8d5dbbe31f257496721250ce2d3"
+      }
+    },
+    {
+      "tag": "dr-cand-e9-a2",
+      "engineCommit": "a1b070f0a56fa783926be1d540370080f06edc27",
+      "appCommit": "a1b070f0a56fa783926be1d540370080f06edc27",
+      "patches": [
+        {
+          "file": "research/dirty-restore/candidate.patch",
+          "sha256": "1e0294706638803dc3fe4bc74a8c868a08bcac9ca3a87779e2d0fa8d13329b3e"
+        }
+      ],
+      "engineHash": "c13ea874a29e7a107d0e91b7b88cb72ca67ca2ee49d2fdf018b8cd2c54621b66",
+      "baseEngineHash": "720e144e5b479d940e6267c5129aee75ada6f0fd236bf9d01a474e1b20a12357",
+      "appHash": "aa2d8a1f705cfaa4251fec0e52dbda33fd22883820686deb875dc7d9e3a28fb0",
+      "changedEngineFiles": [
+        "src/core/planValidation.ts"
+      ],
+      "planValidationSha256": "66e5b4b28248d0f043a8d99dd254f4d673ee5a19a60d4d0dd7dfc7e920dac2db",
+      "artifacts": {
+        "assets/task-bench-Bt-0NF_r.js": "a882e17ed058eb59e7d3170da0bb9a2c708faf16571866a61de371014941beed",
+        "assets/task-bench-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+        "task-bench.html": "7e2d86882c1f4cb0d90026ed728749b3a0ac7bfe723b75eb56c57a0193a5ec04"
+      }
+    }
+  ],
+  "sabotage": {
+    "note": "Each line disabled in a throwaway copy, research test rerun. caught = at least one test failed.",
+    "caught": [
+      "DOM child position (dom !== node)",
+      "current ViewNode/VNode children",
+      "nextView ViewNode/VNode children",
+      "binding + reverse ref",
+      "command target not visited",
+      "command on root",
+      "command on non-element",
+      "trailing extra DOM child",
+      "nextView ref at position",
+      "host data incl. form policy",
+      "registry size",
+      "dispatch line removed (Map.set count assertion)"
+    ],
+    "impliedByOtherRetainedChecks": {
+      "duplicate ref": "a duplicated ref maps to one DOM node, which cannot sit at two DOM positions; position/registry checks reject first",
+      "DOM parentNode": "implied by the per-position sibling walk from parent.firstChild",
+      "compatible identity": "identity is part of equalData in the nextView VNode-children chain",
+      "next.length": "nextView extra child also fails the parent VNode-children check"
+    }
+  },
+  "review": {
+    "by": "independent code-reviewer pass (read-only)",
+    "verdict": "approve for research use; no state accepted by the fast path and rejected by the general path",
+    "findings": [
+      "LOW: sparse current-view arrays (holes) are rejected by the fast path (TypeError -> INVALID_PLAN) while the general path can accept; stricter direction, unreachable without mutating mount directly; documented, not changed",
+      "MEDIUM (test): dispatch was not proven -> fixed: Map.set counts per path; removing the dispatch line now fails 3 tests",
+      "LOW (test): six preamble-only mutations are vacuous for the walk -> labelled in the test",
+      "LOW (test): added valid duplicate SYNC_FORM, identity-only nextView change, write spies for checked/selectedIndex/textarea value"
+    ]
+  }
+}

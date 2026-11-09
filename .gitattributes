@@ -8,3 +8,6 @@
 /docs/validation/task-checklist-* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /docs/task-app-engine-candidate.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /scripts/preserve-stopped-task-run.mjs -text
+
+# Research patches are applied byte-exactly to LF Git blobs.
+/research/dirty-restore/*.patch -text

@@ -30,7 +30,7 @@ for (const file of engineFiles) { const data = git(['show', `${engineCommit}:${f
 const patchRecords = patches.map(file => {
   const data = readFileSync(file);
   const relative = path.relative(process.cwd(), source).replaceAll('\\', '/');
-  git(['apply', '--unsafe-paths', `--directory=${relative}`, '--whitespace=nowarn', path.resolve(file)]);
+  git(['-c', 'core.autocrlf=false', 'apply', '--unsafe-paths', `--directory=${relative}`, '--whitespace=nowarn', path.resolve(file)]);
   return { file: file.replaceAll('\\', '/'), sha256: sha(data) };
 });
 for (const file of engineFiles) {
