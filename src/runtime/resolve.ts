@@ -3,6 +3,7 @@ import { booleanAttrs, validateTree } from '../core/validate';
 import { freezeBoundaryNode, freezeOwnedNode, identity, unwrap } from '../core/vdom';
 import { normalizeKey } from './expression';
 import { pureComputation } from './hooks';
+import { isMemoComponent, sameProps } from './memo';
 
 export interface EvaluationRecord {
   readonly expression: RenderValue;
@@ -61,6 +62,12 @@ export function evaluateExpression(value: RenderValue, previous: EvaluationState
     if (typeof value === 'string' || typeof value === 'number') return makeRecord(value, { kind: 'text', identity: identity(), text: String(value) });
     const expr = value as ElementExpr | ComponentExpr;
     if (expr.kind === 'component-expr') {
+      // Explicit memo(): `old` already has the same component type and key here. The
+      // previous record comes from the last committed evaluation, so a failed render
+      // never leaves a reusable record behind.
+      if (reuse && old && isMemoComponent(expr.type) && sameProps((old.expression as ComponentExpr).props, expr.props)) {
+        reusedExpressions++; onComponent?.({ path, reused: true, memo: true }); return old;
+      }
       componentExecutions++; onComponent?.({ path, reused: false, name: expr.type.name || 'anonymous', key: expr.key });
       const result = resolveOne(pureComputation(() => expr.type(expr.props)), old?.result, tracing ? `${path}/result` : '');
       const child = result.vnode;
