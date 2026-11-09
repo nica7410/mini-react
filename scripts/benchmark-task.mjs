@@ -13,14 +13,19 @@ const tag = args.get('tag'), tags = (args.get('builds') ?? '').split(','), smoke
 const allow10000 = args.get('allow-10000') === 'true';
 const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000')).split(',').map(Number);
 // Wall-clock cap: checked before each build/condition. On expiry the run stops, keeps raw data, and starts nothing else.
-const maxMinutes = Number(args.get('max-minutes') ?? 60), deadline = Date.now() + maxMinutes * 60000;
+const maxMinutes = Number(args.get('max-minutes') ?? 60);
+const sharedDeadline = Number(args.get('deadline-epoch-ms') ?? Infinity);
+const deadline = Math.min(Date.now() + maxMinutes * 60000, sharedDeadline);
 const workloads = (args.get('workloads') ?? 'draft,counter,search,filter,sort,move,crud,dirty,equal').split(',');
 const regimes = (args.get('regimes') ?? 'persistent,fresh').split(',');
 const sessions = Number(args.get('sessions') ?? (smoke ? 1 : 3)), supplement = args.has('supplement');
+const alternatePairOrder = args.has('alternate-pair-order');
 assert(tag && [tag, ...tags].every(value => /^[a-z0-9-]+$/.test(value)) && new Set(tags).size === tags.length && tags.length <= 8);
 assert(sizes.every(size => [10, 100, 1000, 10000].includes(size)) && new Set(sizes).size === sizes.length);
 assert(allow10000 || !sizes.includes(10000), '10,000-item runs need explicit --allow-10000');
 assert(Number.isFinite(maxMinutes) && maxMinutes > 0, '--max-minutes must be positive');
+assert(!args.has('deadline-epoch-ms') || Number.isSafeInteger(sharedDeadline), '--deadline-epoch-ms must be an epoch timestamp in milliseconds');
+assert(!alternatePairOrder || tags.length === 2, '--alternate-pair-order needs exactly two builds');
 assert(workloads.every(value => ['draft', 'counter', 'search', 'filter', 'sort', 'move', 'crud', 'dirty', 'equal'].includes(value)));
 assert(regimes.every(value => ['persistent', 'fresh'].includes(value)) && Number.isInteger(sessions) && sessions >= 1);
 const output = `docs/bench/${tag}`, temporary = `.validation/task-runs/${tag}`;
@@ -41,6 +46,7 @@ mkdirSync(output, { recursive: true }); mkdirSync(temporary, { recursive: true }
 writeFileSync(`${output}/builds.json.gz`, gzipSync(JSON.stringify(archive)));
 for (const build of builds) copyFileSync(`.validation/task-builds/${build.tag}/sources.json.gz`, `${output}/${build.tag}.sources.json.gz`);
 const environment = { startedAt: new Date().toISOString(), status: 'running', smoke, supplement, sessions, sizes, workloads, regimes, maxMinutes,
+  deadlineAt: new Date(deadline).toISOString(), alternatePairOrder,
   builds, seed: 539365639, runnerCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   runnerSha256: sha(readFileSync('scripts/benchmark-task.mjs')), planSha256: sha(readFileSync('docs/task-app-comparison-plan.md')),
   node: process.version, cpu: os.cpus()[0]?.model, logicalCPUs: os.cpus().length, ramBytes: os.totalmem(),
@@ -79,7 +85,8 @@ try {
     if (session % 2 === 0) conditions.reverse();
     try {
       for (const [condition, item] of conditions.entries()) {
-        const offset = (condition + session - 1) % builds.length;
+        // With two builds, rotating by session as well would cancel the even-session reversal.
+        const offset = (condition + (alternatePairOrder ? 0 : session - 1)) % builds.length;
         const order = [...builds.slice(offset), ...builds.slice(0, offset)]; if (session % 2 === 0) order.reverse();
         for (const [orderPosition, build] of order.entries()) {
           if (Date.now() > deadline) throw Object.assign(new Error(`Time cap ${maxMinutes} min reached; stopped without follow-up`), { deadline: true });

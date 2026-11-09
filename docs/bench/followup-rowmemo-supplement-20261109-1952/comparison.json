@@ -1,0 +1,4551 @@
+{
+  "pairs": {
+    "app": {
+      "before": "task-e9-a0-v1",
+      "after": "task-e9-a2-v1",
+      "median": 0.5,
+      "p95": 1
+    },
+    "engine": {
+      "before": "task-e7-a0-v1",
+      "after": "task-e9-a0-v1",
+      "median": 1,
+      "p95": 2
+    }
+  },
+  "historicalConditions": {
+    "app": [
+      "persistent/counter/10",
+      "persistent/dirty/100",
+      "persistent/filter/1000",
+      "persistent/search/100"
+    ],
+    "engine": [
+      "fresh/equal/10",
+      "fresh/equal/100",
+      "fresh/equal/1000",
+      "persistent/counter/100",
+      "persistent/counter/1000",
+      "persistent/crud/10",
+      "persistent/crud/100",
+      "persistent/dirty/100",
+      "persistent/dirty/1000",
+      "persistent/draft/10",
+      "persistent/draft/100",
+      "persistent/draft/1000",
+      "persistent/equal/10",
+      "persistent/equal/100",
+      "persistent/equal/1000",
+      "persistent/filter/100",
+      "persistent/move/10",
+      "persistent/move/100",
+      "persistent/move/1000",
+      "persistent/search/100",
+      "persistent/sort/10",
+      "persistent/sort/100",
+      "persistent/sort/1000"
+    ]
+  },
+  "history": {
+    "v1": {
+      "app": {
+        "compared": 153,
+        "exceeded": [
+          {
+            "run": "v1",
+            "kind": "app",
+            "condition": "persistent/dirty/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,dirty,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.0999999940395355,
+              "q1": 2,
+              "q3": 2.3250000067055225,
+              "iqr": 0.32500000670552254,
+              "p95": 2.6999999888241293,
+              "min": 1.7999999970197678,
+              "max": 3.0999999940395355
+            },
+            "candidate": {
+              "key": "2,persistent,dirty,100,task-e9-a2-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 3.350000001490116,
+              "q1": 2.900000002235174,
+              "q3": 4.099999997764826,
+              "iqr": 1.1999999955296516,
+              "p95": 5.010000000149011,
+              "min": 2,
+              "max": 7.200000002980232
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.2500000074505806,
+                "deltaPercent": 59.52381004754649,
+                "allowanceMs": 0.5,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 2.310000011324882,
+                "deltaPercent": 85.55555632912815,
+                "allowanceMs": 1,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "app",
+            "condition": "persistent/dirty/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,dirty,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.1999999955296516,
+              "q1": 2,
+              "q3": 2.3999999910593033,
+              "iqr": 0.3999999910593033,
+              "p95": 2.725000002980231,
+              "min": 1.7999999970197678,
+              "max": 3.699999988079071
+            },
+            "candidate": {
+              "key": "3,persistent,dirty,100,task-e9-a2-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.4000000059604645,
+              "q1": 2.2999999970197678,
+              "q3": 2.8500000089406967,
+              "iqr": 0.550000011920929,
+              "p95": 4.12999999374151,
+              "min": 1.9000000059604645,
+              "max": 6.200000002980232
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.20000001043081284,
+                "deltaPercent": 9.090909583509461,
+                "allowanceMs": 0.5,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 1.4049999907612793,
+                "deltaPercent": 51.55963263209847,
+                "allowanceMs": 1,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "app",
+            "condition": "persistent/filter/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,filter,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 88.10000000149012,
+              "q1": 65.52499999850988,
+              "q3": 99.55000000819564,
+              "iqr": 34.025000009685755,
+              "p95": 120.62000000551342,
+              "min": 54,
+              "max": 147.59999999403954
+            },
+            "candidate": {
+              "key": "3,persistent,filter,1000,task-e9-a2-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 80.95000000298023,
+              "q1": 56.37500000372529,
+              "q3": 110.52500000223517,
+              "iqr": 54.149999998509884,
+              "p95": 136.48999999985094,
+              "min": 38.29999999701977,
+              "max": 194.69999998807907
+            },
+            "gate": {
+              "median": {
+                "deltaMs": -7.149999998509884,
+                "deltaPercent": -8.115777523710499,
+                "allowanceMs": 4.405000000074506,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 15.869999994337519,
+                "deltaPercent": 13.157022047431703,
+                "allowanceMs": 12.062000000551343,
+                "exceeded": true
+              }
+            }
+          }
+        ]
+      },
+      "engine": {
+        "compared": 153,
+        "exceeded": [
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 11.100000016391277,
+              "q1": 10.299999997019768,
+              "q3": 12.149999987334013,
+              "iqr": 1.8499999903142452,
+              "p95": 15.909999991953372,
+              "min": 9.200000002980232,
+              "max": 17.80000002682209
+            },
+            "candidate": {
+              "key": "1,persistent,crud,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 13.349999986588955,
+              "q1": 11.675000000745058,
+              "q3": 15.000000029802322,
+              "iqr": 3.3250000290572643,
+              "p95": 22.205000016093255,
+              "min": 9.099999994039536,
+              "max": 24.69999998807907
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 2.2499999701976776,
+                "deltaPercent": 20.27026997184794,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 6.295000024139883,
+                "deltaPercent": 39.566310668281815,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/10",
+            "scope": "action-1-add",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,10,task-e7-a0-v1,action-1-add,totalCpuMs",
+              "n": 60,
+              "median": 3.1500000059604645,
+              "q1": 2.800000011920929,
+              "q3": 3.500000014901161,
+              "iqr": 0.7000000029802322,
+              "p95": 4.415000005811452,
+              "min": 2.5,
+              "max": 5.299999997019768
+            },
+            "candidate": {
+              "key": "1,persistent,crud,10,task-e9-a0-v1,action-1-add,totalCpuMs",
+              "n": 60,
+              "median": 3.4000000059604645,
+              "q1": 3.1000000089406967,
+              "q3": 4.450000002980232,
+              "iqr": 1.3499999940395355,
+              "p95": 6.810000011324882,
+              "min": 2.4000000059604645,
+              "max": 9.299999997019768
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.25,
+                "deltaPercent": 7.9365079214903895,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.39500000551343,
+                "deltaPercent": 54.24688567068853,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/equal/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,equal,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 1.6499999985098839,
+              "q1": 1.2000000029802322,
+              "q3": 2.324999999254942,
+              "iqr": 1.1249999962747097,
+              "p95": 3.9200000055134283,
+              "min": 1.0999999940395355,
+              "max": 5.5
+            },
+            "candidate": {
+              "key": "1,persistent,equal,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 3.2499999925494194,
+              "q1": 2.3750000037252903,
+              "q3": 3.8999999910593033,
+              "iqr": 1.524999987334013,
+              "p95": 4.804999996721744,
+              "min": 1.5999999940395355,
+              "max": 5.799999997019768
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.5999999940395355,
+                "deltaPercent": 96.9696966960301,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 0.8849999912083155,
+                "deltaPercent": 22.576530356213638,
+                "allowanceMs": 2,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "fresh/equal/10",
+            "scope": "initialization",
+            "metric": "cpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,fresh,equal,10,task-e7-a0-v1,initialization,cpuMs",
+              "n": 30,
+              "median": 7.149999998509884,
+              "q1": 6.649999991059303,
+              "q3": 7.675000004470348,
+              "iqr": 1.025000013411045,
+              "p95": 10.870000004023309,
+              "min": 5.100000008940697,
+              "max": 11.600000008940697
+            },
+            "candidate": {
+              "key": "1,fresh,equal,10,task-e9-a0-v1,initialization,cpuMs",
+              "n": 30,
+              "median": 7.449999995529652,
+              "q1": 6.425000004470348,
+              "q3": 9.600000005215406,
+              "iqr": 3.175000000745058,
+              "p95": 14.99000000506639,
+              "min": 4.399999991059303,
+              "max": 18.50000001490116
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.29999999701976776,
+                "deltaPercent": 4.195804154997065,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 4.120000001043081,
+                "deltaPercent": 37.90248389621111,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "fresh/equal/10",
+            "scope": "lifecycle",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,fresh,equal,10,task-e7-a0-v1,lifecycle,totalCpuMs",
+              "n": 30,
+              "median": 9.599999986588955,
+              "q1": 8.974999986588955,
+              "q3": 9.975000001490116,
+              "iqr": 1.0000000149011612,
+              "p95": 13.285000000894067,
+              "min": 7.100000008940697,
+              "max": 14.200000002980232
+            },
+            "candidate": {
+              "key": "1,fresh,equal,10,task-e9-a0-v1,lifecycle,totalCpuMs",
+              "n": 30,
+              "median": 10.650000013411045,
+              "q1": 8.425000008195639,
+              "q3": 12.675000000745058,
+              "iqr": 4.249999992549419,
+              "p95": 18.784999979287385,
+              "min": 6.0999999940395355,
+              "max": 20.700000017881393
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.0500000268220901,
+                "deltaPercent": 10.937500294676283,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 5.499999978393317,
+                "deltaPercent": 41.40007510743826,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/counter/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,counter,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 9.049999997019768,
+              "q1": 8.600000005215406,
+              "q3": 11.150000005960464,
+              "iqr": 2.550000000745058,
+              "p95": 15.609999994188547,
+              "min": 7.5999999940395355,
+              "max": 17.200000002980232
+            },
+            "candidate": {
+              "key": "1,persistent,counter,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 9.5,
+              "q1": 8.899999991059303,
+              "q3": 12.024999998509884,
+              "iqr": 3.1250000074505806,
+              "p95": 18.664999993890522,
+              "min": 7.699999988079071,
+              "max": 26.100000008940697
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.45000000298023224,
+                "deltaPercent": 4.972375725175918,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 3.054999999701975,
+                "deltaPercent": 19.570787961815004,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/search/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,search,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 9.849999994039536,
+              "q1": 8.12500000372529,
+              "q3": 11.225000001490116,
+              "iqr": 3.099999997764826,
+              "p95": 12.90500000566244,
+              "min": 6.299999997019768,
+              "max": 18.700000002980232
+            },
+            "candidate": {
+              "key": "1,persistent,search,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 10.299999997019768,
+              "q1": 8.900000002235174,
+              "q3": 12.349999997764826,
+              "iqr": 3.4499999955296516,
+              "p95": 18.70500000268221,
+              "min": 6.700000002980232,
+              "max": 19.299999997019768
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.45000000298023224,
+                "deltaPercent": 4.568527951802413,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 5.799999997019768,
+                "deltaPercent": 44.94382018190508,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/move/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,move,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 11.25,
+              "q1": 10.074999995529652,
+              "q3": 13.099999994039536,
+              "iqr": 3.024999998509884,
+              "p95": 15.339999996870754,
+              "min": 8.199999988079071,
+              "max": 17.69999998807907
+            },
+            "candidate": {
+              "key": "1,persistent,move,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 16.100000008940697,
+              "q1": 11.475000005215406,
+              "q3": 22.724999997764826,
+              "iqr": 11.24999999254942,
+              "p95": 32.53500000536441,
+              "min": 9.599999994039536,
+              "max": 40.29999999701977
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 4.850000008940697,
+                "deltaPercent": 43.11111119058397,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 17.195000008493658,
+                "deltaPercent": 112.09256852673606,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 67.30000000447035,
+              "q1": 60.3500000089407,
+              "q3": 84.6499999910593,
+              "iqr": 24.299999982118607,
+              "p95": 100.5300000011921,
+              "min": 51.3999999910593,
+              "max": 107.00000001490116
+            },
+            "candidate": {
+              "key": "1,persistent,crud,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 96.29999999701977,
+              "q1": 77.72499997913837,
+              "q3": 126.64999997243285,
+              "iqr": 48.92499999329448,
+              "p95": 171.55999996587627,
+              "min": 58.50000001490116,
+              "max": 314.5
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 28.99999999254942,
+                "deltaPercent": 43.09063891623049,
+                "allowanceMs": 3.3650000002235174,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 71.02999996468418,
+                "deltaPercent": 70.65552567774984,
+                "allowanceMs": 10.05300000011921,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/100",
+            "scope": "action-0-draft",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,100,task-e7-a0-v1,action-0-draft,totalCpuMs",
+              "n": 60,
+              "median": 10.050000004470348,
+              "q1": 8.675000004470348,
+              "q3": 11.774999991059303,
+              "iqr": 3.099999986588955,
+              "p95": 16.67499999999999,
+              "min": 7.600000008940697,
+              "max": 23.900000005960464
+            },
+            "candidate": {
+              "key": "1,persistent,crud,100,task-e9-a0-v1,action-0-draft,totalCpuMs",
+              "n": 60,
+              "median": 13.50000000745058,
+              "q1": 10.324999995529652,
+              "q3": 18.824999999254942,
+              "iqr": 8.50000000372529,
+              "p95": 27.334999997168776,
+              "min": 7.899999991059303,
+              "max": 40
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 3.4500000029802322,
+                "deltaPercent": 34.32835822333965,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 10.659999997168786,
+                "deltaPercent": 63.92803596503024,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/100",
+            "scope": "action-1-add",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,100,task-e7-a0-v1,action-1-add,totalCpuMs",
+              "n": 60,
+              "median": 19.149999998509884,
+              "q1": 16.62500000372529,
+              "q3": 22.724999994039536,
+              "iqr": 6.099999990314245,
+              "p95": 27.97500000596046,
+              "min": 14.399999991059303,
+              "max": 35.69999998807907
+            },
+            "candidate": {
+              "key": "1,persistent,crud,100,task-e9-a0-v1,action-1-add,totalCpuMs",
+              "n": 60,
+              "median": 24.849999994039536,
+              "q1": 21.399999991059303,
+              "q3": 34.55000000447035,
+              "iqr": 13.150000013411045,
+              "p95": 49.96500000506639,
+              "min": 16.799999997019768,
+              "max": 93.90000000596046
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 5.699999995529652,
+                "deltaPercent": 29.765013033802536,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 21.989999999105933,
+                "deltaPercent": 78.60589810338038,
+                "allowanceMs": 2.797500000596046,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/100",
+            "scope": "action-2-rename",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,100,task-e7-a0-v1,action-2-rename,totalCpuMs",
+              "n": 60,
+              "median": 10,
+              "q1": 8.299999997019768,
+              "q3": 11.899999994784594,
+              "iqr": 3.599999997764826,
+              "p95": 14.824999997019766,
+              "min": 6.9000000059604645,
+              "max": 22.799999997019768
+            },
+            "candidate": {
+              "key": "1,persistent,crud,100,task-e9-a0-v1,action-2-rename,totalCpuMs",
+              "n": 60,
+              "median": 14.550000004470348,
+              "q1": 10.800000008195639,
+              "q3": 17.075000006705523,
+              "iqr": 6.274999998509884,
+              "p95": 30.445000004768367,
+              "min": 7.799999997019768,
+              "max": 49.400000005960464
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 4.550000004470348,
+                "deltaPercent": 45.500000044703484,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 15.620000007748601,
+                "deltaPercent": 105.36256331122193,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/100",
+            "scope": "action-3-toggle",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,100,task-e7-a0-v1,action-3-toggle,totalCpuMs",
+              "n": 60,
+              "median": 9.599999994039536,
+              "q1": 8.074999995529652,
+              "q3": 11.424999993294477,
+              "iqr": 3.349999997764826,
+              "p95": 16.505000014603137,
+              "min": 6.700000002980232,
+              "max": 20.600000008940697
+            },
+            "candidate": {
+              "key": "1,persistent,crud,100,task-e9-a0-v1,action-3-toggle,totalCpuMs",
+              "n": 60,
+              "median": 13.800000004470348,
+              "q1": 10.275000009685755,
+              "q3": 18.849999997764826,
+              "iqr": 8.574999988079071,
+              "p95": 29.42499999180436,
+              "min": 7.4000000059604645,
+              "max": 47.8999999910593
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 4.200000010430813,
+                "deltaPercent": 43.75000013581787,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 12.919999977201222,
+                "deltaPercent": 78.27930909282028,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/100",
+            "scope": "action-4-delete",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,100,task-e7-a0-v1,action-4-delete,totalCpuMs",
+              "n": 60,
+              "median": 18.00000000745058,
+              "q1": 15.649999991059303,
+              "q3": 23.700000002980232,
+              "iqr": 8.050000011920929,
+              "p95": 31.020000005513424,
+              "min": 13.799999997019768,
+              "max": 40.400000005960464
+            },
+            "candidate": {
+              "key": "1,persistent,crud,100,task-e9-a0-v1,action-4-delete,totalCpuMs",
+              "n": 60,
+              "median": 26.549999997019768,
+              "q1": 20.599999990314245,
+              "q3": 34.974999994039536,
+              "iqr": 14.37500000372529,
+              "p95": 54.9950000144541,
+              "min": 16,
+              "max": 83.29999999701977
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 8.549999989569187,
+                "deltaPercent": 47.49999992238978,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 23.975000008940675,
+                "deltaPercent": 77.28884592095233,
+                "allowanceMs": 3.1020000005513424,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/dirty/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,dirty,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2,
+              "q1": 1.8999999910593033,
+              "q3": 2.2000000029802322,
+              "iqr": 0.30000001192092896,
+              "p95": 2.5,
+              "min": 1.7000000029802322,
+              "max": 2.9000000059604645
+            },
+            "candidate": {
+              "key": "1,persistent,dirty,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.8999999910593033,
+              "q1": 2.4000000059604645,
+              "q3": 3.4000000059604645,
+              "iqr": 1,
+              "p95": 4.599999994784594,
+              "min": 2.2000000029802322,
+              "max": 5.0999999940395355
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.8999999910593033,
+                "deltaPercent": 44.999999552965164,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.0999999947845938,
+                "deltaPercent": 83.99999979138374,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/counter/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,counter,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 91.94999999552965,
+              "q1": 87.05000000074506,
+              "q3": 101.57499999925494,
+              "iqr": 14.524999998509884,
+              "p95": 117.09499999955295,
+              "min": 80.59999999403954,
+              "max": 132.29999999701977
+            },
+            "candidate": {
+              "key": "1,persistent,counter,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 125.25,
+              "q1": 104.44999999552965,
+              "q3": 148.47499999403954,
+              "iqr": 44.024999998509884,
+              "p95": 205.04000000581144,
+              "min": 84,
+              "max": 261.30000001192093
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 33.30000000447035,
+                "deltaPercent": 36.215334427503315,
+                "allowanceMs": 4.597499999776483,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 87.94500000625848,
+                "deltaPercent": 75.10568342507727,
+                "allowanceMs": 11.709499999955296,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/dirty/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,dirty,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 21.149999998509884,
+              "q1": 20.075000006705523,
+              "q3": 22,
+              "iqr": 1.9249999932944775,
+              "p95": 25.395000000298,
+              "min": 18.900000005960464,
+              "max": 51
+            },
+            "candidate": {
+              "key": "1,persistent,dirty,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 22.80000000447035,
+              "q1": 21.699999999254942,
+              "q3": 24.649999994784594,
+              "iqr": 2.9499999955296516,
+              "p95": 28.004999999701976,
+              "min": 19.900000005960464,
+              "max": 33.69999998807907
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.6500000059604645,
+                "deltaPercent": 7.801418468447824,
+                "allowanceMs": 1.0574999999254941,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 2.609999999403975,
+                "deltaPercent": 10.277613701017316,
+                "allowanceMs": 2.5395000000298005,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/equal/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,equal,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 84.94999999552965,
+              "q1": 81.17500000074506,
+              "q3": 92.94999999552965,
+              "iqr": 11.774999994784594,
+              "p95": 132.58000000044703,
+              "min": 75,
+              "max": 153
+            },
+            "candidate": {
+              "key": "1,persistent,equal,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 90.29999999701977,
+              "q1": 83.92500000819564,
+              "q3": 98.625,
+              "iqr": 14.699999991804361,
+              "p95": 141.3699999973178,
+              "min": 76.79999999701977,
+              "max": 157.29999999701977
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 5.350000001490116,
+                "deltaPercent": 6.297822250466922,
+                "allowanceMs": 4.247499999776482,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 8.789999996870762,
+                "deltaPercent": 6.629959267492174,
+                "allowanceMs": 13.258000000044703,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "fresh/equal/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,fresh,equal,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 30,
+              "median": 82.69999999552965,
+              "q1": 80.82499999552965,
+              "q3": 88.125,
+              "iqr": 7.300000004470348,
+              "p95": 105.25999999865884,
+              "min": 77.79999999701977,
+              "max": 182.59999999403954
+            },
+            "candidate": {
+              "key": "2,fresh,equal,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 30,
+              "median": 90.14999999850988,
+              "q1": 83.79999999701977,
+              "q3": 99.07499999925494,
+              "iqr": 15.275000002235174,
+              "p95": 111.74500000625848,
+              "min": 80.69999998807907,
+              "max": 121
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 7.450000002980232,
+                "deltaPercent": 9.008464332990258,
+                "allowanceMs": 4.134999999776483,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 6.485000007599638,
+                "deltaPercent": 6.1609348353432125,
+                "allowanceMs": 10.525999999865885,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "fresh/equal/1000",
+            "scope": "initialization",
+            "metric": "cpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,fresh,equal,1000,task-e7-a0-v1,initialization,cpuMs",
+              "n": 30,
+              "median": 173.99999998509884,
+              "q1": 159.15000001341105,
+              "q3": 200.9750000089407,
+              "iqr": 41.82499999552965,
+              "p95": 227.45499997884028,
+              "min": 149.80000001192093,
+              "max": 241.5
+            },
+            "candidate": {
+              "key": "2,fresh,equal,1000,task-e9-a0-v1,initialization,cpuMs",
+              "n": 30,
+              "median": 191.20000000298023,
+              "q1": 166.7499999962747,
+              "q3": 209.0499999858439,
+              "iqr": 42.29999998956919,
+              "p95": 248.370000000298,
+              "min": 150.30000001192093,
+              "max": 258.1000000089407
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 17.200000017881393,
+                "deltaPercent": 9.885057482387575,
+                "allowanceMs": 8.699999999254942,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 20.91500002145773,
+                "deltaPercent": 9.195225439495026,
+                "allowanceMs": 22.74549999788403,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "fresh/equal/1000",
+            "scope": "lifecycle",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,fresh,equal,1000,task-e7-a0-v1,lifecycle,totalCpuMs",
+              "n": 30,
+              "median": 269.3999999910593,
+              "q1": 244.67499999329448,
+              "q3": 281.5250000022352,
+              "iqr": 36.8500000089407,
+              "p95": 323.30499998629085,
+              "min": 228.40000000596046,
+              "max": 419.9999999701977
+            },
+            "candidate": {
+              "key": "2,fresh,equal,1000,task-e9-a0-v1,lifecycle,totalCpuMs",
+              "n": 30,
+              "median": 287.7499999925494,
+              "q1": 251.47499998658895,
+              "q3": 307.20000000298023,
+              "iqr": 55.72500001639128,
+              "p95": 359.3050000078976,
+              "min": 234.1000000089407,
+              "max": 365.30000001192093
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 18.350000001490116,
+                "deltaPercent": 6.811432814439162,
+                "allowanceMs": 13.469999999552966,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 36.00000002160675,
+                "deltaPercent": 11.134996372816154,
+                "allowanceMs": 32.33049999862909,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/dirty/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,dirty,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 22.55000000447035,
+              "q1": 21.774999998509884,
+              "q3": 25.724999990314245,
+              "iqr": 3.9499999918043613,
+              "p95": 29.24000000283122,
+              "min": 19.400000005960464,
+              "max": 32.19999998807907
+            },
+            "candidate": {
+              "key": "2,persistent,dirty,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 25.850000001490116,
+              "q1": 23.700000002980232,
+              "q3": 27.149999998509884,
+              "iqr": 3.4499999955296516,
+              "p95": 31.470000006258484,
+              "min": 20.100000008940697,
+              "max": 43.6000000089407
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 3.2999999970197678,
+                "deltaPercent": 14.634146325346212,
+                "allowanceMs": 1.1275000002235174,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 2.2300000034272642,
+                "deltaPercent": 7.626538998670794,
+                "allowanceMs": 2.9240000002831223,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "fresh/equal/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,fresh,equal,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 30,
+              "median": 12.450000002980232,
+              "q1": 11.300000000745058,
+              "q3": 14.650000002235174,
+              "iqr": 3.350000001490116,
+              "p95": 19.8300000026822,
+              "min": 8.799999997019768,
+              "max": 21.799999997019768
+            },
+            "candidate": {
+              "key": "2,fresh,equal,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 30,
+              "median": 12.099999994039536,
+              "q1": 10.625,
+              "q3": 13.899999991059303,
+              "iqr": 3.2749999910593033,
+              "p95": 22.93000000566244,
+              "min": 8.800000011920929,
+              "max": 23.399999991059303
+            },
+            "gate": {
+              "median": {
+                "deltaMs": -0.3500000089406967,
+                "deltaPercent": -2.8112450510595592,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 3.100000002980238,
+                "deltaPercent": 15.632879488456544,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "fresh/equal/100",
+            "scope": "initialization",
+            "metric": "cpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,fresh,equal,100,task-e7-a0-v1,initialization,cpuMs",
+              "n": 30,
+              "median": 23.450000002980232,
+              "q1": 22.024999991059303,
+              "q3": 30.17500000447035,
+              "iqr": 8.150000013411045,
+              "p95": 37.72500001266598,
+              "min": 17.399999991059303,
+              "max": 39.00000001490116
+            },
+            "candidate": {
+              "key": "2,fresh,equal,100,task-e9-a0-v1,initialization,cpuMs",
+              "n": 30,
+              "median": 24.24999998509884,
+              "q1": 21.550000000745058,
+              "q3": 32.125,
+              "iqr": 10.574999999254942,
+              "p95": 44.479999994486555,
+              "min": 18.299999982118607,
+              "max": 49.30000001192093
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.7999999821186066,
+                "deltaPercent": 3.411513782588211,
+                "allowanceMs": 1.1725000001490116,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 6.754999981820575,
+                "deltaPercent": 17.90589789145823,
+                "allowanceMs": 3.7725000012665983,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "fresh/equal/100",
+            "scope": "lifecycle",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,fresh,equal,100,task-e7-a0-v1,lifecycle,totalCpuMs",
+              "n": 30,
+              "median": 36.8999999910593,
+              "q1": 32.80000001192093,
+              "q3": 47.20000000670552,
+              "iqr": 14.399999994784594,
+              "p95": 54.85500001385807,
+              "min": 29.200000017881393,
+              "max": 59.400000005960464
+            },
+            "candidate": {
+              "key": "2,fresh,equal,100,task-e9-a0-v1,lifecycle,totalCpuMs",
+              "n": 30,
+              "median": 35.54999998956919,
+              "q1": 33.19999999180436,
+              "q3": 48.74999998882413,
+              "iqr": 15.549999997019768,
+              "p95": 62.129999978095285,
+              "min": 27.099999994039536,
+              "max": 72.50000001490116
+            },
+            "gate": {
+              "median": {
+                "deltaMs": -1.3500000014901161,
+                "deltaPercent": -3.658536590290555,
+                "allowanceMs": 1.8449999995529653,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 7.274999964237217,
+                "deltaPercent": 13.26223673757967,
+                "allowanceMs": 5.485500001385807,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/equal/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,equal,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 10.700000002980232,
+              "q1": 10.024999994784594,
+              "q3": 11.600000001490116,
+              "iqr": 1.5750000067055225,
+              "p95": 15.409999991953372,
+              "min": 7.899999991059303,
+              "max": 17.5
+            },
+            "candidate": {
+              "key": "2,persistent,equal,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 9.600000001490116,
+              "q1": 8.699999999254942,
+              "q3": 14.425000004470348,
+              "iqr": 5.725000005215406,
+              "p95": 17.834999997168776,
+              "min": 7.9000000059604645,
+              "max": 24
+            },
+            "gate": {
+              "median": {
+                "deltaMs": -1.1000000014901161,
+                "deltaPercent": -10.280373842838666,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.425000005215404,
+                "deltaPercent": 15.736534759777184,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/sort/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,sort,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 27.299999997019768,
+              "q1": 25.30000000819564,
+              "q3": 29.599999997764826,
+              "iqr": 4.299999989569187,
+              "p95": 32.42500000298022,
+              "min": 21,
+              "max": 38.5
+            },
+            "candidate": {
+              "key": "2,persistent,sort,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 29.80000000447035,
+              "q1": 26.724999990314245,
+              "q3": 33.30000000074506,
+              "iqr": 6.575000010430813,
+              "p95": 40.56500000581144,
+              "min": 21.099999994039536,
+              "max": 50
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 2.5000000074505806,
+                "deltaPercent": 9.15750918580035,
+                "allowanceMs": 1.3649999998509885,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 8.140000002831222,
+                "deltaPercent": 25.104086359546844,
+                "allowanceMs": 3.242500000298022,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/filter/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,filter,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 11.850000001490116,
+              "q1": 10,
+              "q3": 15.5,
+              "iqr": 5.5,
+              "p95": 21.185000008344645,
+              "min": 6.9000000059604645,
+              "max": 28.5
+            },
+            "candidate": {
+              "key": "2,persistent,filter,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 16.149999998509884,
+              "q1": 12.949999999254942,
+              "q3": 19.12499999627471,
+              "iqr": 6.174999997019768,
+              "p95": 24.035000000149008,
+              "min": 8.600000008940697,
+              "max": 30.599999994039536
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 4.299999997019768,
+                "deltaPercent": 36.286919801510976,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 2.8499999918043635,
+                "deltaPercent": 13.45291475422122,
+                "allowanceMs": 2.1185000008344645,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/draft/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,draft,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 16.049999997019768,
+              "q1": 14.600000005215406,
+              "q3": 18.75,
+              "iqr": 4.149999994784594,
+              "p95": 21.700000002980232,
+              "min": 10.900000005960464,
+              "max": 26.600000008940697
+            },
+            "candidate": {
+              "key": "2,persistent,draft,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 18.299999989569187,
+              "q1": 16.57499999552965,
+              "q3": 21.050000000745058,
+              "iqr": 4.475000005215406,
+              "p95": 26.244999999552952,
+              "min": 11.700000002980232,
+              "max": 34.8999999910593
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 2.2499999925494194,
+                "deltaPercent": 14.018691544967036,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 4.54499999657272,
+                "deltaPercent": 20.944700442159075,
+                "allowanceMs": 2.1700000002980233,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,crud,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 12.50000000745058,
+              "q1": 11.450000002980232,
+              "q3": 13.625000014901161,
+              "iqr": 2.175000011920929,
+              "p95": 15.805000009387731,
+              "min": 9.599999979138374,
+              "max": 16.5
+            },
+            "candidate": {
+              "key": "2,persistent,crud,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 16.00000000745058,
+              "q1": 13.50000000745058,
+              "q3": 20.44999998807907,
+              "iqr": 6.9499999806284904,
+              "p95": 25.420000018924473,
+              "min": 9.5,
+              "max": 31.99999998509884
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 3.5,
+                "deltaPercent": 27.999999983310698,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 9.615000009536741,
+                "deltaPercent": 60.8351787651104,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/10",
+            "scope": "action-1-add",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,crud,10,task-e7-a0-v1,action-1-add,totalCpuMs",
+              "n": 60,
+              "median": 3.4500000029802322,
+              "q1": 3.199999988079071,
+              "q3": 3.7999999970197678,
+              "iqr": 0.6000000089406967,
+              "p95": 4.809999997168779,
+              "min": 2.5999999940395355,
+              "max": 6.0999999940395355
+            },
+            "candidate": {
+              "key": "2,persistent,crud,10,task-e9-a0-v1,action-1-add,totalCpuMs",
+              "n": 60,
+              "median": 4.5,
+              "q1": 3.5,
+              "q3": 5.5999999940395355,
+              "iqr": 2.0999999940395355,
+              "p95": 8.80999999642372,
+              "min": 2.5999999940395355,
+              "max": 12
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.0499999970197678,
+                "deltaPercent": 30.434782496021466,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 3.999999999254941,
+                "deltaPercent": 83.16008319354235,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/10",
+            "scope": "action-3-toggle",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,crud,10,task-e7-a0-v1,action-3-toggle,totalCpuMs",
+              "n": 60,
+              "median": 1.7999999970197678,
+              "q1": 1.5999999940395355,
+              "q3": 2.025000013411045,
+              "iqr": 0.42500001937150955,
+              "p95": 2.5100000001490113,
+              "min": 1.2999999970197678,
+              "max": 4
+            },
+            "candidate": {
+              "key": "2,persistent,crud,10,task-e9-a0-v1,action-3-toggle,totalCpuMs",
+              "n": 60,
+              "median": 2.3000000044703484,
+              "q1": 1.7999999970197678,
+              "q3": 3.0999999940395355,
+              "iqr": 1.2999999970197678,
+              "p95": 4.945000006258486,
+              "min": 1.2999999970197678,
+              "max": 5.999999985098839
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.5000000074505806,
+                "deltaPercent": 27.77777823769016,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.4350000061094743,
+                "deltaPercent": 97.0119524288811,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/10",
+            "scope": "action-4-delete",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,crud,10,task-e7-a0-v1,action-4-delete,totalCpuMs",
+              "n": 60,
+              "median": 3.6499999910593033,
+              "q1": 3.25,
+              "q3": 4.0999999940395355,
+              "iqr": 0.8499999940395355,
+              "p95": 4.805000010877848,
+              "min": 2.7999999970197678,
+              "max": 5.200000002980232
+            },
+            "candidate": {
+              "key": "2,persistent,crud,10,task-e9-a0-v1,action-4-delete,totalCpuMs",
+              "n": 60,
+              "median": 4.9000000059604645,
+              "q1": 3.975000001490116,
+              "q3": 6.124999992549419,
+              "iqr": 2.1499999910593033,
+              "p95": 7.5200000144541255,
+              "min": 2.7000000029802322,
+              "max": 9.299999997019768
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.2500000149011612,
+                "deltaPercent": 34.24657583460394,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 2.715000003576278,
+                "deltaPercent": 56.50364198605406,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/move/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,move,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.5999999940395355,
+              "q1": 2.2000000029802322,
+              "q3": 3.2999999970197678,
+              "iqr": 1.0999999940395355,
+              "p95": 5.479999991506333,
+              "min": 1.7999999970197678,
+              "max": 7.799999997019768
+            },
+            "candidate": {
+              "key": "2,persistent,move,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 3.5999999940395355,
+              "q1": 3.0749999955296516,
+              "q3": 4.425000004470348,
+              "iqr": 1.3500000089406967,
+              "p95": 8.925000005960463,
+              "min": 2.2000000029802322,
+              "max": 11.799999997019768
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1,
+                "deltaPercent": 38.46153854971101,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 3.4450000144541297,
+                "deltaPercent": 62.864963864848,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/sort/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,sort,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 4.700000002980232,
+              "q1": 4.200000002980232,
+              "q3": 6.125000007450581,
+              "iqr": 1.9250000044703484,
+              "p95": 8.640000005811439,
+              "min": 3,
+              "max": 15.400000005960464
+            },
+            "candidate": {
+              "key": "3,persistent,sort,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 6.200000002980232,
+              "q1": 4.800000008195639,
+              "q3": 8.12499999627471,
+              "iqr": 3.324999988079071,
+              "p95": 10.89999999180436,
+              "min": 3.5,
+              "max": 12.700000002980232
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.5,
+                "deltaPercent": 31.9148935967843,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 2.2599999859929216,
+                "deltaPercent": 26.157407227694442,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/crud/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,crud,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 14.75,
+              "q1": 13.649999991059303,
+              "q3": 16.349999994039536,
+              "iqr": 2.7000000029802322,
+              "p95": 20.799999997764825,
+              "min": 10.699999988079071,
+              "max": 23.599999994039536
+            },
+            "candidate": {
+              "key": "3,persistent,crud,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 16.05000001192093,
+              "q1": 14.274999991059303,
+              "q3": 18.149999998509884,
+              "iqr": 3.8750000074505806,
+              "p95": 21.51499999985099,
+              "min": 10.699999988079071,
+              "max": 28.80000002682209
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.300000011920929,
+                "deltaPercent": 8.813559402853755,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 0.715000002086164,
+                "deltaPercent": 3.437500010399029,
+                "allowanceMs": 2.0799999997764824,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/move/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,move,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 15.550000004470348,
+              "q1": 14.074999995529652,
+              "q3": 17.62500000745058,
+              "iqr": 3.550000011920929,
+              "p95": 19.960000005364414,
+              "min": 11.099999994039536,
+              "max": 24
+            },
+            "candidate": {
+              "key": "3,persistent,move,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 16.80000000447035,
+              "q1": 14,
+              "q3": 20.049999997019768,
+              "iqr": 6.049999997019768,
+              "p95": 24.71500000283122,
+              "min": 11.600000008940697,
+              "max": 29.80000001192093
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.25,
+                "deltaPercent": 8.038585206692266,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 4.754999997466808,
+                "deltaPercent": 23.822645271487286,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "fresh/equal/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,fresh,equal,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 30,
+              "median": 12.149999998509884,
+              "q1": 10.74999999627471,
+              "q3": 13.100000005215406,
+              "iqr": 2.3500000089406967,
+              "p95": 14.954999995976687,
+              "min": 9.400000005960464,
+              "max": 15.400000005960464
+            },
+            "candidate": {
+              "key": "3,fresh,equal,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 30,
+              "median": 12.350000001490116,
+              "q1": 10.949999995529652,
+              "q3": 13.799999997019768,
+              "iqr": 2.850000001490116,
+              "p95": 17.614999996125693,
+              "min": 9.299999997019768,
+              "max": 18.700000002980232
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.20000000298023224,
+                "deltaPercent": 1.6460905597099662,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.6600000001490063,
+                "deltaPercent": 17.786693419355537,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/draft/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,draft,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 89.00000000745058,
+              "q1": 84.87499999254942,
+              "q3": 97.00000000372529,
+              "iqr": 12.125000011175871,
+              "p95": 115.92499999180436,
+              "min": 80.5,
+              "max": 127.40000000596046
+            },
+            "candidate": {
+              "key": "3,persistent,draft,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 98.5,
+              "q1": 90.24999999627471,
+              "q3": 107.39999999850988,
+              "iqr": 17.150000002235174,
+              "p95": 135.42000000849364,
+              "min": 83,
+              "max": 148.19999998807907
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 9.49999999254942,
+                "deltaPercent": 10.674157294105767,
+                "allowanceMs": 4.450000000372529,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 19.49500001668929,
+                "deltaPercent": 16.81690749887215,
+                "allowanceMs": 11.592499999180436,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/counter/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,counter,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 95.84999999403954,
+              "q1": 88.65000000223517,
+              "q3": 105.2749999947846,
+              "iqr": 16.62499999254942,
+              "p95": 120.610000000149,
+              "min": 83,
+              "max": 149.1000000089407
+            },
+            "candidate": {
+              "key": "3,persistent,counter,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 118.75000000745058,
+              "q1": 93.1499999947846,
+              "q3": 132.8999999947846,
+              "iqr": 39.75,
+              "p95": 164.20500000342727,
+              "min": 83.79999999701977,
+              "max": 194.5
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 22.900000013411045,
+                "deltaPercent": 23.891497146411155,
+                "allowanceMs": 4.792499999701977,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 43.59500000327827,
+                "deltaPercent": 36.14542741333589,
+                "allowanceMs": 12.0610000000149,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/move/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,move,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 105.90000000596046,
+              "q1": 96.1000000089407,
+              "q3": 119.12499999627471,
+              "iqr": 23.024999987334013,
+              "p95": 154.7550000086426,
+              "min": 89.09999999403954,
+              "max": 211.29999999701977
+            },
+            "candidate": {
+              "key": "3,persistent,move,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 153.85000000149012,
+              "q1": 126.25000000372529,
+              "q3": 189.99999999254942,
+              "iqr": 63.74999998882413,
+              "p95": 239.61999998837703,
+              "min": 98.6000000089407,
+              "max": 290.5
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 47.94999999552965,
+                "deltaPercent": 45.27856467689409,
+                "allowanceMs": 5.295000000298024,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 84.86499997973442,
+                "deltaPercent": 54.83829276921261,
+                "allowanceMs": 15.475500000864262,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v1",
+            "kind": "engine",
+            "condition": "persistent/equal/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,equal,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 108.49999999254942,
+              "q1": 99.9750000052154,
+              "q3": 133.99999999254942,
+              "iqr": 34.02499998733401,
+              "p95": 158.9750000029802,
+              "min": 89.3999999910593,
+              "max": 168.79999999701977
+            },
+            "candidate": {
+              "key": "3,persistent,equal,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 110.15000000596046,
+              "q1": 102.22499999776483,
+              "q3": 140.12499999254942,
+              "iqr": 37.899999994784594,
+              "p95": 363.9599999912083,
+              "min": 88.29999999701977,
+              "max": 453.79999999701977
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.650000013411045,
+                "deltaPercent": 1.5207373396537778,
+                "allowanceMs": 5.424999999627471,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 204.98499998822808,
+                "deltaPercent": 128.94165748349448,
+                "allowanceMs": 15.897500000298022,
+                "exceeded": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "v2": {
+      "app": {
+        "compared": 153,
+        "exceeded": [
+          {
+            "run": "v2",
+            "kind": "app",
+            "condition": "persistent/counter/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,counter,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 1.5,
+              "q1": 1.2999999970197678,
+              "q3": 1.7000000029802322,
+              "iqr": 0.4000000059604645,
+              "p95": 2,
+              "min": 1.0999999940395355,
+              "max": 2.0999999940395355
+            },
+            "candidate": {
+              "key": "1,persistent,counter,10,task-e9-a2-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 1.6000000089406967,
+              "q1": 1.1750000044703484,
+              "q3": 2.2249999903142452,
+              "iqr": 1.0499999858438969,
+              "p95": 3.8999999918043615,
+              "min": 0.7999999970197678,
+              "max": 5.0999999940395355
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.10000000894069672,
+                "deltaPercent": 6.666667262713115,
+                "allowanceMs": 0.5,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 1.8999999918043615,
+                "deltaPercent": 94.99999959021808,
+                "allowanceMs": 1,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "app",
+            "condition": "persistent/search/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,search,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 8.650000005960464,
+              "q1": 7.474999997764826,
+              "q3": 9.925000004470348,
+              "iqr": 2.4500000067055225,
+              "p95": 11.879999997466799,
+              "min": 5.700000002980232,
+              "max": 15.799999997019768
+            },
+            "candidate": {
+              "key": "1,persistent,search,100,task-e9-a2-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 8.599999994039536,
+              "q1": 6.5999999940395355,
+              "q3": 10.849999997764826,
+              "iqr": 4.25000000372529,
+              "p95": 14.970000006258484,
+              "min": 3.9000000059604645,
+              "max": 28.900000005960464
+            },
+            "gate": {
+              "median": {
+                "deltaMs": -0.050000011920928955,
+                "deltaPercent": -0.5780348194968253,
+                "allowanceMs": 0.5,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 3.0900000087916855,
+                "deltaPercent": 26.010101089651293,
+                "allowanceMs": 1.18799999974668,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "app",
+            "condition": "persistent/dirty/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,dirty,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.2000000029802322,
+              "q1": 2,
+              "q3": 2.3999999910593033,
+              "iqr": 0.3999999910593033,
+              "p95": 2.7150000028312196,
+              "min": 1.8999999910593033,
+              "max": 3.5
+            },
+            "candidate": {
+              "key": "1,persistent,dirty,100,task-e9-a2-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.7000000029802322,
+              "q1": 2.274999998509884,
+              "q3": 3.225000001490116,
+              "iqr": 0.9500000029802322,
+              "p95": 6.804999997466802,
+              "min": 2,
+              "max": 8.599999994039536
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.5,
+                "deltaPercent": 22.727272696485205,
+                "allowanceMs": 0.5,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 4.0899999946355825,
+                "deltaPercent": 150.64456686447528,
+                "allowanceMs": 1,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "app",
+            "condition": "persistent/dirty/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,dirty,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.300000011920929,
+              "q1": 2.1000000089406967,
+              "q3": 2.5999999940395355,
+              "iqr": 0.4999999850988388,
+              "p95": 3.2000000029802322,
+              "min": 2,
+              "max": 4.299999997019768
+            },
+            "candidate": {
+              "key": "2,persistent,dirty,100,task-e9-a2-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.7000000029802322,
+              "q1": 2.5,
+              "q3": 3.25,
+              "iqr": 0.75,
+              "p95": 4.5,
+              "min": 2,
+              "max": 6.300000011920929
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.3999999910593033,
+                "deltaPercent": 17.391303868960794,
+                "allowanceMs": 0.5,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 1.2999999970197678,
+                "deltaPercent": 40.62499986903276,
+                "allowanceMs": 1,
+                "exceeded": true
+              }
+            }
+          }
+        ]
+      },
+      "engine": {
+        "compared": 153,
+        "exceeded": [
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/crud/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 16.950000002980232,
+              "q1": 15.19999998062849,
+              "q3": 20.900000020861626,
+              "iqr": 5.700000040233135,
+              "p95": 26.785000006854524,
+              "min": 10.499999985098839,
+              "max": 37.39999997615814
+            },
+            "candidate": {
+              "key": "1,persistent,crud,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 19.55000000447035,
+              "q1": 15.37499999627471,
+              "q3": 23.62500000372529,
+              "iqr": 8.25000000745058,
+              "p95": 27.59999997988343,
+              "min": 9.099999994039536,
+              "max": 29.200000002980232
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 2.600000001490116,
+                "deltaPercent": 15.339233044442308,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 0.8149999730289075,
+                "deltaPercent": 3.0427477051347456,
+                "allowanceMs": 2.6785000006854527,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/draft/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,draft,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 10.149999998509884,
+              "q1": 9.175000004470348,
+              "q3": 11.275000002235174,
+              "iqr": 2.099999997764826,
+              "p95": 15.735000002384183,
+              "min": 7.799999997019768,
+              "max": 19
+            },
+            "candidate": {
+              "key": "1,persistent,draft,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 11.550000004470348,
+              "q1": 10.099999994039536,
+              "q3": 18.5,
+              "iqr": 8.400000005960464,
+              "p95": 24.365000011771915,
+              "min": 7.799999997019768,
+              "max": 34.79999999701977
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.4000000059604645,
+                "deltaPercent": 13.79310350902461,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 8.630000009387732,
+                "deltaPercent": 54.84588502116369,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/sort/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,sort,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 19.849999994039536,
+              "q1": 19.099999994039536,
+              "q3": 21.699999999254942,
+              "iqr": 2.6000000052154064,
+              "p95": 25.36499999761581,
+              "min": 15.200000002980232,
+              "max": 27.099999994039536
+            },
+            "candidate": {
+              "key": "1,persistent,sort,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 23.700000010430813,
+              "q1": 20.324999999254942,
+              "q3": 32.20000000298023,
+              "iqr": 11.87500000372529,
+              "p95": 45.829999996721746,
+              "min": 14.600000008940697,
+              "max": 70.90000000596046
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 3.8500000163912773,
+                "deltaPercent": 19.3954660833619,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 20.464999999105935,
+                "deltaPercent": 80.68204218817088,
+                "allowanceMs": 2.536499999761581,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/move/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,move,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 14.500000014901161,
+              "q1": 12.5,
+              "q3": 18.025000002235174,
+              "iqr": 5.525000002235174,
+              "p95": 23.63000000864267,
+              "min": 9.600000008940697,
+              "max": 41.20000000298023
+            },
+            "candidate": {
+              "key": "1,persistent,move,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 13.399999991059303,
+              "q1": 11.400000005960464,
+              "q3": 16.50000000745058,
+              "iqr": 5.100000001490116,
+              "p95": 29.035000000149008,
+              "min": 9.400000005960464,
+              "max": 50.29999999701977
+            },
+            "gate": {
+              "median": {
+                "deltaMs": -1.100000023841858,
+                "deltaPercent": -7.586207053182241,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 5.404999991506337,
+                "deltaPercent": 22.873465888825468,
+                "allowanceMs": 2.3630000008642673,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/crud/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 72.59999999403954,
+              "q1": 64.84999999776483,
+              "q3": 77.25000001117587,
+              "iqr": 12.400000013411045,
+              "p95": 101.71499999538064,
+              "min": 56.19999998807907,
+              "max": 117.29999999701977
+            },
+            "candidate": {
+              "key": "1,persistent,crud,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 77.25000001490116,
+              "q1": 68.94999998435378,
+              "q3": 90.07500002160668,
+              "iqr": 21.125000037252903,
+              "p95": 98.79999999478459,
+              "min": 57.3999999910593,
+              "max": 113.39999997615814
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 4.650000020861626,
+                "deltaPercent": 6.40495870694682,
+                "allowanceMs": 3.629999999701977,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": -2.915000000596052,
+                "deltaPercent": -2.8658506618772415,
+                "allowanceMs": 10.171499999538064,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/crud/100",
+            "scope": "action-3-toggle",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,100,task-e7-a0-v1,action-3-toggle,totalCpuMs",
+              "n": 60,
+              "median": 9.549999997019768,
+              "q1": 8.5,
+              "q3": 10.900000005960464,
+              "iqr": 2.4000000059604645,
+              "p95": 13.505000000447035,
+              "min": 7.299999997019768,
+              "max": 14.799999997019768
+            },
+            "candidate": {
+              "key": "1,persistent,crud,100,task-e9-a0-v1,action-3-toggle,totalCpuMs",
+              "n": 60,
+              "median": 10.549999997019768,
+              "q1": 8.849999994039536,
+              "q3": 12.525000002235174,
+              "iqr": 3.6750000081956387,
+              "p95": 16.41499999165535,
+              "min": 7.399999991059303,
+              "max": 24.799999982118607
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1,
+                "deltaPercent": 10.471204191749383,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.9099999912083145,
+                "deltaPercent": 21.547574906419765,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/crud/100",
+            "scope": "action-4-delete",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,crud,100,task-e7-a0-v1,action-4-delete,totalCpuMs",
+              "n": 60,
+              "median": 19.299999997019768,
+              "q1": 17.349999994039536,
+              "q3": 22.50000000372529,
+              "iqr": 5.150000009685755,
+              "p95": 27.66999998092651,
+              "min": 14.800000011920929,
+              "max": 31.200000002980232
+            },
+            "candidate": {
+              "key": "1,persistent,crud,100,task-e9-a0-v1,action-4-delete,totalCpuMs",
+              "n": 60,
+              "median": 21.799999997019768,
+              "q1": 19.699999999254942,
+              "q3": 26.725000001490116,
+              "iqr": 7.025000002235174,
+              "p95": 32.070000000298016,
+              "min": 14.799999997019768,
+              "max": 41.20000000298023
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 2.5,
+                "deltaPercent": 12.953367877647878,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 4.400000019371507,
+                "deltaPercent": 15.901698671501684,
+                "allowanceMs": 2.766999998092651,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "fresh/equal/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,fresh,equal,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 30,
+              "median": 10.799999997019768,
+              "q1": 10.199999991804361,
+              "q3": 12.24999999627471,
+              "iqr": 2.0500000044703484,
+              "p95": 14.619999992102377,
+              "min": 9.400000005960464,
+              "max": 17.799999997019768
+            },
+            "candidate": {
+              "key": "1,fresh,equal,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 30,
+              "median": 16.25,
+              "q1": 15.024999991059303,
+              "q3": 17.600000005215406,
+              "iqr": 2.575000014156103,
+              "p95": 22.4000000052154,
+              "min": 11.200000002980232,
+              "max": 26.099999994039536
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 5.450000002980232,
+                "deltaPercent": 50.46296300448283,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 7.780000013113023,
+                "deltaPercent": 53.21477440024436,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "fresh/equal/100",
+            "scope": "initialization",
+            "metric": "cpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,fresh,equal,100,task-e7-a0-v1,initialization,cpuMs",
+              "n": 30,
+              "median": 21.100000001490116,
+              "q1": 19.925000000745058,
+              "q3": 22.62500000372529,
+              "iqr": 2.7000000029802322,
+              "p95": 24.619999994337558,
+              "min": 17.50000001490116,
+              "max": 26.700000002980232
+            },
+            "candidate": {
+              "key": "1,fresh,equal,100,task-e9-a0-v1,initialization,cpuMs",
+              "n": 30,
+              "median": 31.94999999552965,
+              "q1": 28.42500000447035,
+              "q3": 33.99999998882413,
+              "iqr": 5.574999984353781,
+              "p95": 36.97999999895691,
+              "min": 24.399999991059303,
+              "max": 38.900000005960464
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 10.849999994039536,
+                "deltaPercent": 51.42180091598716,
+                "allowanceMs": 1.055000000074506,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 12.360000004619355,
+                "deltaPercent": 50.20308695151128,
+                "allowanceMs": 2.461999999433756,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "fresh/equal/100",
+            "scope": "lifecycle",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,fresh,equal,100,task-e7-a0-v1,lifecycle,totalCpuMs",
+              "n": 30,
+              "median": 32.99999999254942,
+              "q1": 30.150000005960464,
+              "q3": 34.49999999627471,
+              "iqr": 4.349999990314245,
+              "p95": 38.14499999731778,
+              "min": 27.200000017881393,
+              "max": 39.70000000298023
+            },
+            "candidate": {
+              "key": "1,fresh,equal,100,task-e9-a0-v1,lifecycle,totalCpuMs",
+              "n": 30,
+              "median": 47.79999998956919,
+              "q1": 43.67500000819564,
+              "q3": 51.25,
+              "iqr": 7.574999991804361,
+              "p95": 59.99499999210237,
+              "min": 35.599999994039536,
+              "max": 62.20000001788139
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 14.799999997019768,
+                "deltaPercent": 44.84848484957952,
+                "allowanceMs": 1.649999999627471,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 21.84999999478459,
+                "deltaPercent": 57.28142612746363,
+                "allowanceMs": 3.8144999997317783,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/sort/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,sort,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 187.19999999552965,
+              "q1": 170.77500000223517,
+              "q3": 293.82499999552965,
+              "iqr": 123.04999999329448,
+              "p95": 375.1499999970192,
+              "min": 150.70000000298023,
+              "max": 597.7999999970198
+            },
+            "candidate": {
+              "key": "1,persistent,sort,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 200.79999999701977,
+              "q1": 183.69999999180436,
+              "q3": 217.17500000074506,
+              "iqr": 33.4750000089407,
+              "p95": 309.4799999974666,
+              "min": 148.59999999403954,
+              "max": 441.70000000298023
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 13.600000001490116,
+                "deltaPercent": 7.264957265926755,
+                "allowanceMs": 9.359999999776482,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": -65.6699999995526,
+                "deltaPercent": -17.50499800081951,
+                "allowanceMs": 37.51499999970192,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/move/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 1,
+            "baseline": {
+              "key": "1,persistent,move,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 138.45000000298023,
+              "q1": 129.52499999850988,
+              "q3": 150.29999999701977,
+              "iqr": 20.774999998509884,
+              "p95": 167.28499998822807,
+              "min": 107.90000000596046,
+              "max": 172.20000000298023
+            },
+            "candidate": {
+              "key": "1,persistent,move,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 136,
+              "q1": 104.8999999910593,
+              "q3": 171.75000001490116,
+              "iqr": 66.85000002384186,
+              "p95": 236.04999999999995,
+              "min": 84.80000001192093,
+              "max": 295.6000000089407
+            },
+            "gate": {
+              "median": {
+                "deltaMs": -2.4500000029802322,
+                "deltaPercent": -1.7695919125514585,
+                "allowanceMs": 6.922500000149012,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 68.76500001177189,
+                "deltaPercent": 41.106494913836215,
+                "allowanceMs": 16.72849999882281,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/dirty/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,dirty,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 30.650000005960464,
+              "q1": 28.975000001490116,
+              "q3": 32.44999999180436,
+              "iqr": 3.4749999903142452,
+              "p95": 35.765000002831215,
+              "min": 26.399999991059303,
+              "max": 37.400000005960464
+            },
+            "candidate": {
+              "key": "2,persistent,dirty,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 32.45000000298023,
+              "q1": 29.975000001490116,
+              "q3": 35.349999997764826,
+              "iqr": 5.37499999627471,
+              "p95": 39.40499999150634,
+              "min": 26.100000008940697,
+              "max": 40.900000005960464
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.7999999970197678,
+                "deltaPercent": 5.872756922250324,
+                "allowanceMs": 1.5325000002980234,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 3.6399999886751218,
+                "deltaPercent": 10.177547849537183,
+                "allowanceMs": 3.5765000002831218,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/sort/1000",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,sort,1000,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 238.10000000149012,
+              "q1": 222.10000000149012,
+              "q3": 250.6249999962747,
+              "iqr": 28.524999994784594,
+              "p95": 271.6449999943376,
+              "min": 193.5,
+              "max": 280.59999999403954
+            },
+            "candidate": {
+              "key": "2,persistent,sort,1000,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 241.80000000447035,
+              "q1": 230.0000000037253,
+              "q3": 261.7250000052154,
+              "iqr": 31.725000001490116,
+              "p95": 302.064999999851,
+              "min": 193.79999999701977,
+              "max": 411.5
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 3.7000000029802322,
+                "deltaPercent": 1.5539689218635349,
+                "allowanceMs": 11.905000000074507,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 30.42000000551343,
+                "deltaPercent": 11.198439141580934,
+                "allowanceMs": 27.164499999433758,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/equal/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,equal,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 12.549999997019768,
+              "q1": 11.37500000372529,
+              "q3": 14.5,
+              "iqr": 3.1249999962747097,
+              "p95": 18.859999997168774,
+              "min": 8.899999991059303,
+              "max": 22.600000008940697
+            },
+            "candidate": {
+              "key": "2,persistent,equal,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 14.799999997019768,
+              "q1": 13.550000008195639,
+              "q3": 16.725000001490116,
+              "iqr": 3.1749999932944775,
+              "p95": 18.840000011026856,
+              "min": 10.599999994039536,
+              "max": 20.299999997019768
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 2.25,
+                "deltaPercent": 17.92828685684705,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": -0.01999998614191867,
+                "deltaPercent": -0.10604446524348371,
+                "allowanceMs": 2,
+                "exceeded": false
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/sort/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,sort,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 4.0999999940395355,
+              "q1": 3.5749999955296516,
+              "q3": 4.899999991059303,
+              "iqr": 1.3249999955296516,
+              "p95": 6.60499999448657,
+              "min": 2.5,
+              "max": 7.600000008940697
+            },
+            "candidate": {
+              "key": "2,persistent,sort,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 4,
+              "q1": 3.5,
+              "q3": 4.9000000059604645,
+              "iqr": 1.4000000059604645,
+              "p95": 9.40500000566244,
+              "min": 2.9000000059604645,
+              "max": 10.599999994039536
+            },
+            "gate": {
+              "median": {
+                "deltaMs": -0.09999999403953552,
+                "deltaPercent": -2.4390242484125046,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.8000000111758707,
+                "deltaPercent": 42.39212738097095,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/draft/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 2,
+            "baseline": {
+              "key": "2,persistent,draft,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 1.8499999940395355,
+              "q1": 1.5999999940395355,
+              "q3": 2.2249999903142452,
+              "iqr": 0.6249999962747097,
+              "p95": 3.1099999949336046,
+              "min": 1.2000000029802322,
+              "max": 3.800000011920929
+            },
+            "candidate": {
+              "key": "2,persistent,draft,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 1.8999999910593033,
+              "q1": 1.6000000052154064,
+              "q3": 2.225000001490116,
+              "iqr": 0.6249999962747097,
+              "p95": 6.429999991506336,
+              "min": 1.2999999970197678,
+              "max": 8
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.04999999701976776,
+                "deltaPercent": 2.7027025503168316,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 3.3199999965727316,
+                "deltaPercent": 106.75241163926788,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/sort/10",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,sort,10,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 3.6499999910593033,
+              "q1": 3.1750000044703484,
+              "q3": 4.425000004470348,
+              "iqr": 1.25,
+              "p95": 5.314999997615813,
+              "min": 2.5,
+              "max": 5.9000000059604645
+            },
+            "candidate": {
+              "key": "3,persistent,sort,10,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 4.299999997019768,
+              "q1": 3.6000000052154064,
+              "q3": 5.600000008940697,
+              "iqr": 2.0000000037252903,
+              "p95": 10.710000002384184,
+              "min": 3.0999999940395355,
+              "max": 12.100000008940697
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.6500000059604645,
+                "deltaPercent": 17.80821938500393,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 5.395000004768371,
+                "deltaPercent": 101.50517417099611,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/search/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,search,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 12.100000001490116,
+              "q1": 10.774999998509884,
+              "q3": 14.099999997764826,
+              "iqr": 3.324999999254942,
+              "p95": 17.70000000894069,
+              "min": 7.0999999940395355,
+              "max": 27.200000002980232
+            },
+            "candidate": {
+              "key": "3,persistent,search,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 13,
+              "q1": 11.475000001490116,
+              "q3": 15.62500000745058,
+              "iqr": 4.1500000059604645,
+              "p95": 20.249999988824126,
+              "min": 8.099999994039536,
+              "max": 22.200000002980232
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.8999999985098839,
+                "deltaPercent": 7.438016515694618,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.5499999798834345,
+                "deltaPercent": 14.40677954008683,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/move/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,move,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 15.200000002980232,
+              "q1": 13.474999990314245,
+              "q3": 16.62499999627471,
+              "iqr": 3.1500000059604645,
+              "p95": 19.60499999448657,
+              "min": 10.100000008940697,
+              "max": 20.599999994039536
+            },
+            "candidate": {
+              "key": "3,persistent,move,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 15.849999994039536,
+              "q1": 14.475000001490116,
+              "q3": 17.62500000372529,
+              "iqr": 3.150000002235174,
+              "p95": 21.710000002384184,
+              "min": 11.200000002980232,
+              "max": 22.900000005960464
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 0.6499999910593033,
+                "deltaPercent": 4.276315729814863,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.1050000078976154,
+                "deltaPercent": 10.737056916549838,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/dirty/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,dirty,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.5999999940395355,
+              "q1": 2.3999999910593033,
+              "q3": 2.725000001490116,
+              "iqr": 0.32500001043081284,
+              "p95": 3.604999993741512,
+              "min": 1.8999999910593033,
+              "max": 4.800000011920929
+            },
+            "candidate": {
+              "key": "3,persistent,dirty,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 2.4000000059604645,
+              "q1": 2.2000000029802322,
+              "q3": 2.875,
+              "iqr": 0.6749999970197678,
+              "p95": 6.31999999731779,
+              "min": 2,
+              "max": 7.299999997019768
+            },
+            "gate": {
+              "median": {
+                "deltaMs": -0.19999998807907104,
+                "deltaPercent": -7.692307251444934,
+                "allowanceMs": 1,
+                "exceeded": false
+              },
+              "p95": {
+                "deltaMs": 2.7150000035762782,
+                "deltaPercent": 75.31206680415187,
+                "allowanceMs": 2,
+                "exceeded": true
+              }
+            }
+          },
+          {
+            "run": "v2",
+            "kind": "engine",
+            "condition": "persistent/equal/100",
+            "scope": "workload",
+            "metric": "totalCpuMs",
+            "session": 3,
+            "baseline": {
+              "key": "3,persistent,equal,100,task-e7-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 13.349999994039536,
+              "q1": 12.299999997019768,
+              "q3": 15.599999997764826,
+              "iqr": 3.300000000745058,
+              "p95": 18.31000001132488,
+              "min": 9.899999991059303,
+              "max": 18.599999994039536
+            },
+            "candidate": {
+              "key": "3,persistent,equal,100,task-e9-a0-v1,workload,totalCpuMs",
+              "n": 60,
+              "median": 14.350000001490116,
+              "q1": 12.074999995529652,
+              "q3": 17.649999994784594,
+              "iqr": 5.574999999254942,
+              "p95": 20.01499999985099,
+              "min": 9.400000005960464,
+              "max": 20.700000002980232
+            },
+            "gate": {
+              "median": {
+                "deltaMs": 1.0000000074505806,
+                "deltaPercent": 7.490636763273837,
+                "allowanceMs": 1,
+                "exceeded": true
+              },
+              "p95": {
+                "deltaMs": 1.704999988526108,
+                "deltaPercent": 9.311851378872484,
+                "allowanceMs": 2,
+                "exceeded": false
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "supplement": [
+    {
+      "tag": "followup-rowmemo-supplement-20261109-1952-1-dirty-100",
+      "status": "passed",
+      "rows": [
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/dirty/100",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,dirty,100,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 2.0499999970197678,
+            "q1": 2,
+            "q3": 2.2000000029802322,
+            "iqr": 0.20000000298023224,
+            "p95": 2.5999999940395355,
+            "min": 1.7000000029802322,
+            "max": 3.6000000089406967
+          },
+          "candidate": {
+            "key": "1,persistent,dirty,100,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 2.6000000089406967,
+            "q1": 2.2999999970197678,
+            "q3": 3.1000000089406967,
+            "iqr": 0.800000011920929,
+            "p95": 4.235000003129232,
+            "min": 1.7999999970197678,
+            "max": 9.299999997019768
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.550000011920929,
+              "deltaPercent": 26.829268913195293,
+              "allowanceMs": 0.5,
+              "exceeded": true
+            },
+            "p95": {
+              "deltaMs": 1.6350000090896968,
+              "deltaPercent": 62.88461587838123,
+              "allowanceMs": 1,
+              "exceeded": true
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/dirty/100",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,dirty,100,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 2.5999999940395355,
+            "q1": 2.274999998509884,
+            "q3": 3.3999999947845936,
+            "iqr": 1.1249999962747097,
+            "p95": 5.229999989271153,
+            "min": 1.7999999970197678,
+            "max": 9.5
+          },
+          "candidate": {
+            "key": "2,persistent,dirty,100,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 2.2000000029802322,
+            "q1": 2.0749999955296516,
+            "q3": 2.5,
+            "iqr": 0.42500000447034836,
+            "p95": 3.6000000089406967,
+            "min": 1.7999999970197678,
+            "max": 6.0999999940395355
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.3999999910593033,
+              "deltaPercent": -15.384615076011453,
+              "allowanceMs": 0.5,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -1.6299999803304566,
+              "deltaPercent": -31.166347680195912,
+              "allowanceMs": 1,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/dirty/100",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,dirty,100,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 2,
+            "q1": 1.9000000022351742,
+            "q3": 2.1000000089406967,
+            "iqr": 0.20000000670552254,
+            "p95": 2.504999999701975,
+            "min": 1.5999999940395355,
+            "max": 6
+          },
+          "candidate": {
+            "key": "3,persistent,dirty,100,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 2.5499999970197678,
+            "q1": 2.0999999940395355,
+            "q3": 3.225000001490116,
+            "iqr": 1.1250000074505806,
+            "p95": 6.029999999701967,
+            "min": 1.7999999970197678,
+            "max": 9.800000011920929
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.5499999970197678,
+              "deltaPercent": 27.499999850988388,
+              "allowanceMs": 0.5,
+              "exceeded": true
+            },
+            "p95": {
+              "deltaMs": 3.5249999999999915,
+              "deltaPercent": 140.71856289099273,
+              "allowanceMs": 1,
+              "exceeded": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "tag": "followup-rowmemo-supplement-20261109-1952-2-counter-10",
+      "status": "passed",
+      "rows": [
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/counter/10",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,counter,10,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 1.75,
+            "q1": 1.5,
+            "q3": 2.1000000089406967,
+            "iqr": 0.6000000089406967,
+            "p95": 3.204999988526104,
+            "min": 1.199999988079071,
+            "max": 4.299999997019768
+          },
+          "candidate": {
+            "key": "1,persistent,counter,10,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 0.7999999970197678,
+            "q1": 0.7000000029802322,
+            "q3": 0.9000000059604645,
+            "iqr": 0.20000000298023224,
+            "p95": 1.105000008642672,
+            "min": 0.5999999940395355,
+            "max": 2.2999999970197678
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.9500000029802322,
+              "deltaPercent": -54.28571445601327,
+              "allowanceMs": 0.5,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -2.099999979883432,
+              "deltaPercent": -65.52262051174506,
+              "allowanceMs": 1,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/counter/10",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,counter,10,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 1.4000000059604645,
+            "q1": 1.2999999970197678,
+            "q3": 1.5999999940395355,
+            "iqr": 0.29999999701976776,
+            "p95": 2,
+            "min": 1,
+            "max": 2.5999999940395355
+          },
+          "candidate": {
+            "key": "2,persistent,counter,10,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 1.0999999940395355,
+            "q1": 0.8999999910593033,
+            "q3": 1.5999999940395355,
+            "iqr": 0.7000000029802322,
+            "p95": 2.0999999947845938,
+            "min": 0.699999988079071,
+            "max": 3.199999988079071
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.30000001192092896,
+              "deltaPercent": -21.428572188834753,
+              "allowanceMs": 0.5,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.09999999478459376,
+              "deltaPercent": 4.999999739229688,
+              "allowanceMs": 1,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/counter/10",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,counter,10,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 1.5,
+            "q1": 1.2999999970197678,
+            "q3": 2.4000000059604645,
+            "iqr": 1.1000000089406967,
+            "p95": 3.1050000078976137,
+            "min": 1.0999999940395355,
+            "max": 4.299999997019768
+          },
+          "candidate": {
+            "key": "3,persistent,counter,10,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 0.9000000059604645,
+            "q1": 0.7999999970197678,
+            "q3": 1,
+            "iqr": 0.20000000298023224,
+            "p95": 1.7000000029802322,
+            "min": 0.5999999940395355,
+            "max": 2.3999999910593033
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.5999999940395355,
+              "deltaPercent": -39.9999996026357,
+              "allowanceMs": 0.5,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -1.4050000049173814,
+              "deltaPercent": -45.249597466787215,
+              "allowanceMs": 1,
+              "exceeded": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "tag": "followup-rowmemo-supplement-20261109-1952-3-search-100",
+      "status": "passed",
+      "rows": [
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/search/100",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,search,100,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 9.5,
+            "q1": 7.899999991059303,
+            "q3": 12.62500000745058,
+            "iqr": 4.725000016391277,
+            "p95": 17.40500000566244,
+            "min": 5.799999997019768,
+            "max": 22.900000005960464
+          },
+          "candidate": {
+            "key": "1,persistent,search,100,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 6,
+            "q1": 4.400000002235174,
+            "q3": 7.524999998509884,
+            "iqr": 3.1249999962747097,
+            "p95": 9.804999996721742,
+            "min": 3.3999999910593033,
+            "max": 15.200000002980232
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -3.5,
+              "deltaPercent": -36.84210526315789,
+              "allowanceMs": 0.5,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -7.6000000089406985,
+              "deltaPercent": -43.66561336666567,
+              "allowanceMs": 1.740500000566244,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/search/100",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,search,100,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 9.649999998509884,
+            "q1": 8.100000008940697,
+            "q3": 11.824999999254942,
+            "iqr": 3.7249999903142452,
+            "p95": 16.909999991208313,
+            "min": 6,
+            "max": 28.100000008940697
+          },
+          "candidate": {
+            "key": "2,persistent,search,100,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 6.200000002980232,
+            "q1": 5.149999991059303,
+            "q3": 8.399999994784594,
+            "iqr": 3.2500000037252903,
+            "p95": 11.815000011026854,
+            "min": 3.199999988079071,
+            "max": 16.099999994039536
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -3.4499999955296516,
+              "deltaPercent": -35.75129529598329,
+              "allowanceMs": 0.5,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -5.094999980181459,
+              "deltaPercent": -30.130100430694284,
+              "allowanceMs": 1.6909999991208313,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/search/100",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,search,100,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 10.199999988079071,
+            "q1": 8.199999999254942,
+            "q3": 12.725000005215406,
+            "iqr": 4.5250000059604645,
+            "p95": 20.134999994188536,
+            "min": 5.5,
+            "max": 28.599999994039536
+          },
+          "candidate": {
+            "key": "3,persistent,search,100,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 6,
+            "q1": 4.374999992549419,
+            "q3": 7.4249999932944775,
+            "iqr": 3.050000000745058,
+            "p95": 11.905000005662439,
+            "min": 3.2999999970197678,
+            "max": 19.399999991059303
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -4.199999988079071,
+              "deltaPercent": -41.17647051948715,
+              "allowanceMs": 0.5099999994039536,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -8.229999988526098,
+              "deltaPercent": -40.87409978098575,
+              "allowanceMs": 2.013499999418854,
+              "exceeded": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "tag": "followup-rowmemo-supplement-20261109-1952-4-filter-1000",
+      "status": "passed",
+      "rows": [
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/filter/1000",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,filter,1000,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 84.64999999850988,
+            "q1": 66.22499999776483,
+            "q3": 95.19999999552965,
+            "iqr": 28.974999997764826,
+            "p95": 138.28500000536428,
+            "min": 52.29999999701977,
+            "max": 173.09999999403954
+          },
+          "candidate": {
+            "key": "1,persistent,filter,1000,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 61.899999998509884,
+            "q1": 40.275000005960464,
+            "q3": 74.84999999776483,
+            "iqr": 34.57499999180436,
+            "p95": 100.14500000849365,
+            "min": 30.19999998807907,
+            "max": 202.80000001192093
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -22.75,
+              "deltaPercent": -26.875369167631984,
+              "allowanceMs": 4.232499999925494,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -38.13999999687063,
+              "deltaPercent": -27.58072097146554,
+              "allowanceMs": 13.82850000053643,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/filter/1000",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,filter,1000,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 80.50000000745058,
+            "q1": 62.775000002235174,
+            "q3": 95.45000000298023,
+            "iqr": 32.67500000074506,
+            "p95": 118.76000000014892,
+            "min": 49.79999999701977,
+            "max": 137.29999999701977
+          },
+          "candidate": {
+            "key": "2,persistent,filter,1000,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 60.99999999254942,
+            "q1": 39.649999998509884,
+            "q3": 68.77500000223517,
+            "iqr": 29.12500000372529,
+            "p95": 96.62000000849366,
+            "min": 30,
+            "max": 132.5
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -19.50000001490116,
+              "deltaPercent": -24.223602500740824,
+              "allowanceMs": 4.025000000372529,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -22.13999999165526,
+              "deltaPercent": -18.64264061268735,
+              "allowanceMs": 11.876000000014892,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "app",
+          "condition": "persistent/filter/1000",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,filter,1000,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 80.70000000298023,
+            "q1": 62.150000002235174,
+            "q3": 93.52500000596046,
+            "iqr": 31.37500000372529,
+            "p95": 120.09499999955294,
+            "min": 48.400000005960464,
+            "max": 168
+          },
+          "candidate": {
+            "key": "3,persistent,filter,1000,task-e9-a2-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 59.6499999910593,
+            "q1": 40.30000000447035,
+            "q3": 71.97499999403954,
+            "iqr": 31.674999989569187,
+            "p95": 99.61499999463558,
+            "min": 30.700000002980232,
+            "max": 126.20000000298023
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -21.05000001192093,
+              "deltaPercent": -26.084262715171697,
+              "allowanceMs": 4.035000000149012,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -20.480000004917358,
+              "deltaPercent": -17.05316624754869,
+              "allowanceMs": 12.009499999955295,
+              "exceeded": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "tag": "followup-rowmemo-supplement-20261109-1952-5-crud-10",
+      "status": "passed",
+      "rows": [
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,crud,10,task-e7-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 11.300000011920929,
+            "q1": 10.399999991059303,
+            "q3": 13.125000026077032,
+            "iqr": 2.725000035017729,
+            "p95": 18.499999971687792,
+            "min": 8.299999997019768,
+            "max": 38.99999997019768
+          },
+          "candidate": {
+            "key": "1,persistent,crud,10,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 11.25000000745058,
+            "q1": 10.099999994039536,
+            "q3": 12.850000020116568,
+            "iqr": 2.750000026077032,
+            "p95": 17.21000000312924,
+            "min": 8.500000029802322,
+            "max": 27.299999997019768
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.05000000447034836,
+              "deltaPercent": -0.4424779152000078,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -1.2899999685585506,
+              "deltaPercent": -6.972972813690557,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-0-draft",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,crud,10,task-e7-a0-v1,action-0-draft,totalCpuMs",
+            "n": 180,
+            "median": 1.5999999940395355,
+            "q1": 1.3999999910593033,
+            "q3": 1.7999999970197678,
+            "iqr": 0.4000000059604645,
+            "p95": 2.9049999915063363,
+            "min": 1,
+            "max": 4.0999999940395355
+          },
+          "candidate": {
+            "key": "1,persistent,crud,10,task-e9-a0-v1,action-0-draft,totalCpuMs",
+            "n": 180,
+            "median": 1.5,
+            "q1": 1.3999999910593033,
+            "q3": 1.7000000029802322,
+            "iqr": 0.30000001192092896,
+            "p95": 2.305000010877846,
+            "min": 1.199999988079071,
+            "max": 3.7000000029802322
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.09999999403953552,
+              "deltaPercent": -6.249999650754033,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -0.5999999806284904,
+              "deltaPercent": -20.654044143985384,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-1-add",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,crud,10,task-e7-a0-v1,action-1-add,totalCpuMs",
+            "n": 180,
+            "median": 3.2000000029802322,
+            "q1": 2.9000000059604645,
+            "q3": 3.8999999910593033,
+            "iqr": 0.9999999850988388,
+            "p95": 5.110000008344647,
+            "min": 2.199999988079071,
+            "max": 11.099999994039536
+          },
+          "candidate": {
+            "key": "1,persistent,crud,10,task-e9-a0-v1,action-1-add,totalCpuMs",
+            "n": 180,
+            "median": 3.199999988079071,
+            "q1": 2.8000000081956387,
+            "q3": 3.7000000029802322,
+            "iqr": 0.8999999947845936,
+            "p95": 5.299999997019768,
+            "min": 2.399999976158142,
+            "max": 8.5
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -1.4901161193847656e-8,
+              "deltaPercent": -4.656612868740584e-7,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.1899999886751207,
+              "deltaPercent": 3.718199380916831,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-2-rename",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,crud,10,task-e7-a0-v1,action-2-rename,totalCpuMs",
+            "n": 180,
+            "median": 1.5,
+            "q1": 1.2999999970197678,
+            "q3": 1.6999999918043613,
+            "iqr": 0.3999999947845936,
+            "p95": 2.305000010877846,
+            "min": 1.0999999940395355,
+            "max": 6.0999999940395355
+          },
+          "candidate": {
+            "key": "1,persistent,crud,10,task-e9-a0-v1,action-2-rename,totalCpuMs",
+            "n": 180,
+            "median": 1.4000000059604645,
+            "q1": 1.2999999970197678,
+            "q3": 1.7000000029802322,
+            "iqr": 0.4000000059604645,
+            "p95": 2.605000008642672,
+            "min": 1,
+            "max": 4.5999999940395355
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.09999999403953552,
+              "deltaPercent": -6.666666269302368,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.299999997764826,
+              "deltaPercent": 13.015184223386303,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-3-toggle",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,crud,10,task-e7-a0-v1,action-3-toggle,totalCpuMs",
+            "n": 180,
+            "median": 1.699999988079071,
+            "q1": 1.4000000059604645,
+            "q3": 1.999999988824129,
+            "iqr": 0.5999999828636646,
+            "p95": 3.809999997168776,
+            "min": 1.2000000029802322,
+            "max": 7.4000000059604645
+          },
+          "candidate": {
+            "key": "1,persistent,crud,10,task-e9-a0-v1,action-3-toggle,totalCpuMs",
+            "n": 180,
+            "median": 1.5999999940395355,
+            "q1": 1.4749999903142452,
+            "q3": 1.7999999970197678,
+            "iqr": 0.32500000670552254,
+            "p95": 2.804999996721743,
+            "min": 1.1000000089406967,
+            "max": 4.299999997019768
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.09999999403953552,
+              "deltaPercent": -5.8823526318098,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -1.005000000447033,
+              "deltaPercent": -26.377952787240204,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-4-delete",
+          "metric": "totalCpuMs",
+          "session": 1,
+          "baseline": {
+            "key": "1,persistent,crud,10,task-e7-a0-v1,action-4-delete,totalCpuMs",
+            "n": 180,
+            "median": 3.299999989569187,
+            "q1": 2.8999999910593033,
+            "q3": 3.8250000067055225,
+            "iqr": 0.9250000156462193,
+            "p95": 6.625000008940688,
+            "min": 2.4000000059604645,
+            "max": 11.899999991059303
+          },
+          "candidate": {
+            "key": "1,persistent,crud,10,task-e9-a0-v1,action-4-delete,totalCpuMs",
+            "n": 180,
+            "median": 3.2000000029802322,
+            "q1": 2.800000011920929,
+            "q3": 3.9000000059604645,
+            "iqr": 1.0999999940395355,
+            "p95": 5.7100000165402856,
+            "min": 2.4000000059604645,
+            "max": 8.200000002980232
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.09999998658895493,
+              "deltaPercent": -3.0303026334860643,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -0.9149999924004026,
+              "deltaPercent": -13.811320621367178,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,crud,10,task-e7-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 11.099999994039536,
+            "q1": 9.774999987334013,
+            "q3": 12.725000001490116,
+            "iqr": 2.950000014156103,
+            "p95": 15.435000005364406,
+            "min": 8.200000002980232,
+            "max": 22.700000032782555
+          },
+          "candidate": {
+            "key": "2,persistent,crud,10,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 11.400000020861626,
+            "q1": 10.299999997019768,
+            "q3": 13.299999997019768,
+            "iqr": 3,
+            "p95": 16.309999998658892,
+            "min": 8.299999997019768,
+            "max": 23.100000008940697
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.30000002682209015,
+              "deltaPercent": 2.7027029457944485,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.8749999932944856,
+              "deltaPercent": 5.668934194949019,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-0-draft",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,crud,10,task-e7-a0-v1,action-0-draft,totalCpuMs",
+            "n": 180,
+            "median": 1.5,
+            "q1": 1.2999999970197678,
+            "q3": 1.7000000029802322,
+            "iqr": 0.4000000059604645,
+            "p95": 2.2000000029802322,
+            "min": 1.0999999940395355,
+            "max": 3.5
+          },
+          "candidate": {
+            "key": "2,persistent,crud,10,task-e9-a0-v1,action-0-draft,totalCpuMs",
+            "n": 180,
+            "median": 1.5,
+            "q1": 1.300000011920929,
+            "q3": 1.7999999970197678,
+            "iqr": 0.4999999850988388,
+            "p95": 2.504999999701975,
+            "min": 1.1000000089406967,
+            "max": 3.2000000029802322
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0,
+              "deltaPercent": 0,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.30499999672174294,
+              "deltaPercent": 13.86363619584429,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-1-add",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,crud,10,task-e7-a0-v1,action-1-add,totalCpuMs",
+            "n": 180,
+            "median": 3.1000000089406967,
+            "q1": 2.7999999970197678,
+            "q3": 3.7000000029802322,
+            "iqr": 0.9000000059604645,
+            "p95": 5.004999999701975,
+            "min": 2.2999999821186066,
+            "max": 6.5999999940395355
+          },
+          "candidate": {
+            "key": "2,persistent,crud,10,task-e9-a0-v1,action-1-add,totalCpuMs",
+            "n": 180,
+            "median": 3.2000000029802322,
+            "q1": 2.9000000059604645,
+            "q3": 3.7999999970197678,
+            "iqr": 0.8999999910593033,
+            "p95": 4.804999995976685,
+            "min": 2.3999999910593033,
+            "max": 6.5999999940395355
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.09999999403953552,
+              "deltaPercent": 3.2258062500363214,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -0.20000000372529048,
+              "deltaPercent": -3.996004070673318,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-2-rename",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,crud,10,task-e7-a0-v1,action-2-rename,totalCpuMs",
+            "n": 180,
+            "median": 1.4000000059604645,
+            "q1": 1.2999999970197678,
+            "q3": 1.7000000029802322,
+            "iqr": 0.4000000059604645,
+            "p95": 2.2999999970197678,
+            "min": 1,
+            "max": 3.0999999940395355
+          },
+          "candidate": {
+            "key": "2,persistent,crud,10,task-e9-a0-v1,action-2-rename,totalCpuMs",
+            "n": 180,
+            "median": 1.5,
+            "q1": 1.3000000081956387,
+            "q3": 1.7000000029802322,
+            "iqr": 0.3999999947845936,
+            "p95": 2.3999999910593033,
+            "min": 1.0999999940395355,
+            "max": 3.800000011920929
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.09999999403953552,
+              "deltaPercent": 7.142856686699149,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.09999999403953552,
+              "deltaPercent": 4.347825833439601,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-3-toggle",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,crud,10,task-e7-a0-v1,action-3-toggle,totalCpuMs",
+            "n": 180,
+            "median": 1.6000000089406967,
+            "q1": 1.3999999910593033,
+            "q3": 1.8999999910593033,
+            "iqr": 0.5,
+            "p95": 2.5999999940395355,
+            "min": 1.0999999940395355,
+            "max": 4.700000017881393
+          },
+          "candidate": {
+            "key": "2,persistent,crud,10,task-e9-a0-v1,action-3-toggle,totalCpuMs",
+            "n": 180,
+            "median": 1.7000000029802322,
+            "q1": 1.5,
+            "q3": 1.999999988824129,
+            "iqr": 0.4999999888241291,
+            "p95": 3.5999999940395355,
+            "min": 1.199999988079071,
+            "max": 5.899999991059303
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.09999999403953552,
+              "deltaPercent": 6.249999592546375,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 1,
+              "deltaPercent": 38.46153854971101,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-4-delete",
+          "metric": "totalCpuMs",
+          "session": 2,
+          "baseline": {
+            "key": "2,persistent,crud,10,task-e7-a0-v1,action-4-delete,totalCpuMs",
+            "n": 180,
+            "median": 3.149999998509884,
+            "q1": 2.8000000081956387,
+            "q3": 3.5999999940395355,
+            "iqr": 0.7999999858438969,
+            "p95": 5.504999999701975,
+            "min": 2.2999999970197678,
+            "max": 7.899999991059303
+          },
+          "candidate": {
+            "key": "2,persistent,crud,10,task-e9-a0-v1,action-4-delete,totalCpuMs",
+            "n": 180,
+            "median": 3.2999999970197678,
+            "q1": 2.9000000059604645,
+            "q3": 3.7000000178813934,
+            "iqr": 0.800000011920929,
+            "p95": 5.504999999701975,
+            "min": 2.3999999910593033,
+            "max": 6.799999997019768
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.14999999850988388,
+              "deltaPercent": 4.76190471685212,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0,
+              "deltaPercent": 0,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "workload",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,crud,10,task-e7-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 10.999999970197678,
+            "q1": 9.974999986588955,
+            "q3": 12.700000006705523,
+            "iqr": 2.7250000201165676,
+            "p95": 15.61499999389052,
+            "min": 8.399999991059303,
+            "max": 18.100000023841858
+          },
+          "candidate": {
+            "key": "3,persistent,crud,10,task-e9-a0-v1,workload,totalCpuMs",
+            "n": 180,
+            "median": 11.25000000745058,
+            "q1": 10.200000029057264,
+            "q3": 12.725000020116568,
+            "iqr": 2.5249999910593033,
+            "p95": 15.72500000447034,
+            "min": 8.19999997317791,
+            "max": 19.799999967217445
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.250000037252903,
+              "deltaPercent": 2.272727617547533,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.1100000105798209,
+              "deltaPercent": 0.7044509165729055,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-0-draft",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,crud,10,task-e7-a0-v1,action-0-draft,totalCpuMs",
+            "n": 180,
+            "median": 1.5,
+            "q1": 1.300000011920929,
+            "q3": 1.7000000029802322,
+            "iqr": 0.3999999910593033,
+            "p95": 2.204999988526104,
+            "min": 1.0999999940395355,
+            "max": 3.0999999940395355
+          },
+          "candidate": {
+            "key": "3,persistent,crud,10,task-e9-a0-v1,action-0-draft,totalCpuMs",
+            "n": 180,
+            "median": 1.5,
+            "q1": 1.300000011920929,
+            "q3": 1.7250000014901161,
+            "iqr": 0.42499998956918716,
+            "p95": 2.2999999970197678,
+            "min": 1,
+            "max": 3
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0,
+              "deltaPercent": 0,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.09500000849366375,
+              "deltaPercent": 4.308390430294965,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-1-add",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,crud,10,task-e7-a0-v1,action-1-add,totalCpuMs",
+            "n": 180,
+            "median": 3.199999988079071,
+            "q1": 2.800000011920929,
+            "q3": 3.5999999940395355,
+            "iqr": 0.7999999821186066,
+            "p95": 4.5,
+            "min": 2.2999999970197678,
+            "max": 5.500000014901161
+          },
+          "candidate": {
+            "key": "3,persistent,crud,10,task-e9-a0-v1,action-1-add,totalCpuMs",
+            "n": 180,
+            "median": 3.1000000089406967,
+            "q1": 2.800000011920929,
+            "q3": 3.599999997764826,
+            "iqr": 0.7999999858438969,
+            "p95": 4.804999983310697,
+            "min": 2.2999999821186066,
+            "max": 5.9000000059604645
+          },
+          "gate": {
+            "median": {
+              "deltaMs": -0.09999997913837433,
+              "deltaPercent": -3.1249993597157277,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.30499998331069733,
+              "deltaPercent": 6.777777406904385,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-2-rename",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,crud,10,task-e7-a0-v1,action-2-rename,totalCpuMs",
+            "n": 180,
+            "median": 1.4000000059604645,
+            "q1": 1.2999999970197678,
+            "q3": 1.7000000029802322,
+            "iqr": 0.4000000059604645,
+            "p95": 2.105000008642672,
+            "min": 1,
+            "max": 3.199999988079071
+          },
+          "candidate": {
+            "key": "3,persistent,crud,10,task-e9-a0-v1,action-2-rename,totalCpuMs",
+            "n": 180,
+            "median": 1.4500000029802322,
+            "q1": 1.3000000081956387,
+            "q3": 1.7000000029802322,
+            "iqr": 0.3999999947845936,
+            "p95": 2.305000010877846,
+            "min": 1,
+            "max": 4.000000014901161
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.04999999701976776,
+              "deltaPercent": 3.5714283433495746,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.200000002235174,
+              "deltaPercent": 9.501187715630286,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-3-toggle",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,crud,10,task-e7-a0-v1,action-3-toggle,totalCpuMs",
+            "n": 180,
+            "median": 1.5999999940395355,
+            "q1": 1.4000000059604645,
+            "q3": 1.9000000059604645,
+            "iqr": 0.5,
+            "p95": 2.5,
+            "min": 1.199999988079071,
+            "max": 4.400000020861626
+          },
+          "candidate": {
+            "key": "3,persistent,crud,10,task-e9-a0-v1,action-3-toggle,totalCpuMs",
+            "n": 180,
+            "median": 1.6000000089406967,
+            "q1": 1.5,
+            "q3": 1.8999999910593033,
+            "iqr": 0.3999999910593033,
+            "p95": 2.5999999947845938,
+            "min": 1.0999999940395355,
+            "max": 6.5
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 1.4901161193847656e-8,
+              "deltaPercent": 9.313225780849255e-7,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": 0.09999999478459376,
+              "deltaPercent": 3.99999979138375,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        },
+        {
+          "run": "supplement",
+          "kind": "engine",
+          "condition": "persistent/crud/10",
+          "scope": "action-4-delete",
+          "metric": "totalCpuMs",
+          "session": 3,
+          "baseline": {
+            "key": "3,persistent,crud,10,task-e7-a0-v1,action-4-delete,totalCpuMs",
+            "n": 180,
+            "median": 3.1000000089406967,
+            "q1": 2.800000011920929,
+            "q3": 3.6999999918043613,
+            "iqr": 0.8999999798834324,
+            "p95": 5.099999994784594,
+            "min": 2.3999999910593033,
+            "max": 6.800000011920929
+          },
+          "candidate": {
+            "key": "3,persistent,crud,10,task-e9-a0-v1,action-4-delete,totalCpuMs",
+            "n": 180,
+            "median": 3.299999989569187,
+            "q1": 2.8999999910593033,
+            "q3": 3.7000000067055225,
+            "iqr": 0.8000000156462193,
+            "p95": 4.799999997764826,
+            "min": 2.3999999910593033,
+            "max": 7.499999985098839
+          },
+          "gate": {
+            "median": {
+              "deltaMs": 0.19999998062849045,
+              "deltaPercent": 6.451612259731335,
+              "allowanceMs": 1,
+              "exceeded": false
+            },
+            "p95": {
+              "deltaMs": -0.29999999701976776,
+              "deltaPercent": -5.8823528887560075,
+              "allowanceMs": 2,
+              "exceeded": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

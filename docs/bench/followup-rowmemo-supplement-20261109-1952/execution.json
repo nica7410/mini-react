@@ -1,0 +1,131 @@
+{
+  "startedAt": "2026-11-09T10:51:43.930Z",
+  "deadlineAt": "2026-11-09T11:06:43.930Z",
+  "budgetMs": 900000,
+  "status": "passed",
+  "runs": [
+    {
+      "kind": "app",
+      "workload": "dirty",
+      "size": 100,
+      "tag": "followup-rowmemo-supplement-20261109-1952-1-dirty-100",
+      "status": "passed",
+      "startedAt": "2026-11-09T10:51:43.935Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-rowmemo-supplement-20261109-1952-1-dirty-100",
+        "--builds=task-e9-a0-v1,task-e9-a2-v1",
+        "--sizes=100",
+        "--workloads=dirty",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=14.999916666666667",
+        "--deadline-epoch-ms=1794222403930"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T10:51:57.794Z"
+    },
+    {
+      "kind": "app",
+      "workload": "counter",
+      "size": 10,
+      "tag": "followup-rowmemo-supplement-20261109-1952-2-counter-10",
+      "status": "passed",
+      "startedAt": "2026-11-09T10:51:57.795Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-rowmemo-supplement-20261109-1952-2-counter-10",
+        "--builds=task-e9-a2-v1,task-e9-a0-v1",
+        "--sizes=10",
+        "--workloads=counter",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=14.768916666666666",
+        "--deadline-epoch-ms=1794222403930"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T10:52:07.383Z"
+    },
+    {
+      "kind": "app",
+      "workload": "search",
+      "size": 100,
+      "tag": "followup-rowmemo-supplement-20261109-1952-3-search-100",
+      "status": "passed",
+      "startedAt": "2026-11-09T10:52:07.384Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-rowmemo-supplement-20261109-1952-3-search-100",
+        "--builds=task-e9-a0-v1,task-e9-a2-v1",
+        "--sizes=100",
+        "--workloads=search",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=14.6091",
+        "--deadline-epoch-ms=1794222403930"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T10:52:31.307Z"
+    },
+    {
+      "kind": "app",
+      "workload": "filter",
+      "size": 1000,
+      "tag": "followup-rowmemo-supplement-20261109-1952-4-filter-1000",
+      "status": "passed",
+      "startedAt": "2026-11-09T10:52:31.309Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-rowmemo-supplement-20261109-1952-4-filter-1000",
+        "--builds=task-e9-a2-v1,task-e9-a0-v1",
+        "--sizes=1000",
+        "--workloads=filter",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=14.21035",
+        "--deadline-epoch-ms=1794222403930"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T10:54:51.684Z"
+    },
+    {
+      "kind": "engine",
+      "workload": "crud",
+      "size": 10,
+      "tag": "followup-rowmemo-supplement-20261109-1952-5-crud-10",
+      "status": "passed",
+      "startedAt": "2026-11-09T10:54:51.686Z",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=followup-rowmemo-supplement-20261109-1952-5-crud-10",
+        "--builds=task-e7-a0-v1,task-e9-a0-v1",
+        "--sizes=10",
+        "--workloads=crud",
+        "--regimes=persistent",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=11.870733333333334",
+        "--deadline-epoch-ms=1794222403930"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "endedAt": "2026-11-09T10:58:36.560Z"
+    }
+  ],
+  "endedAt": "2026-11-09T10:58:36.562Z",
+  "elapsedMs": 412632,
+  "overrunMs": 0
+}
