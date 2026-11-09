@@ -1,5 +1,5 @@
 import { afterEach, expect, it } from 'vitest';
-import { TaskApp, TaskAppWithRowMemo } from '../../src/app/tasks';
+import { TaskAppA0, TaskAppWithRowMemo } from '../../src/app/tasks';
 import { FunctionComponent, h, memo, useState } from '../../src/runtime';
 import { evaluateExpression } from '../../src/runtime/resolve';
 import type { PureComponent, StateSetter, TraceEvent, VElement } from '../../src/core/types';
@@ -63,7 +63,7 @@ it('T-M05: a failed render leaves no reusable record, so the retry re-evaluates 
   root.unmount();
 });
 
-async function mountApp(App: () => ReturnType<typeof TaskApp>) {
+async function mountApp(App: () => ReturnType<typeof TaskAppA0>) {
   const output = document.createElement('section'); document.body.append(output);
   const events: TraceEvent[] = []; let notify: (() => void) | undefined;
   const nextFlush = () => new Promise<void>(resolve => { notify = resolve; });
@@ -78,7 +78,7 @@ const click = (node: Element) => (node as HTMLElement).click();
 
 it('T-A06: A2 re-evaluates only the changed row for rename/toggle, none for draft/delete, and matches A0 output', async () => {
   const results: { html: string; values: [string, boolean][]; executions: number[] }[] = [];
-  for (const App of [TaskApp, TaskAppWithRowMemo]) {
+  for (const App of [TaskAppA0, TaskAppWithRowMemo]) {
     const app = await mountApp(App), executions: number[] = [];
     const keep = app.input('task-1 이름');
     executions.push(await app.act(() => type(app.input('새 항목'), '임시')));

@@ -62,9 +62,11 @@ const memoEachRow: ListStrategy = (visible, setItems) => {
  * fixed comparison builds and tests. Its repeated-reuse gain was measured, but
  * the pre-registered regression gates were exceeded (see docs/task-app-final-policy.md).
  */
-export function TaskApp() { return renderTaskApp(rebuildRows); }
+// Candidate (2026-11-09 ④): the default TaskApp is A2; A0 stays exported for comparison.
+export function TaskApp() { return renderTaskApp(memoEachRow); }
+export function TaskAppA0() { return renderTaskApp(rebuildRows); }
 export function TaskAppWithRowReuse() { return renderTaskApp(memoRows); }
-export function TaskAppWithRowMemo() { return renderTaskApp(memoEachRow); }
+export const TaskAppWithRowMemo = TaskApp;
 
 function renderTaskApp(listStrategy: ListStrategy) {
   const [items, setItems] = useState<Items>(initialTasks);

@@ -1,11 +1,11 @@
 import { expect, it } from 'vitest';
-import { TaskApp, TaskAppWithRowReuse } from '../../src/app/tasks';
+import { TaskAppA0, TaskAppWithRowMemo, TaskAppWithRowReuse } from '../../src/app/tasks';
 import { FunctionComponent } from '../../src/runtime';
 import { createTaskBenchmark } from '../../src/bench/task-app';
 import type { TraceEvent } from '../../src/core/types';
 import type { TaskWorkload } from '../../src/bench/task-model';
 
-it.each([true, false])('T-A04: default A0 app with engine reuse=%s preserves DOM, input and Effect while re-evaluating rows', async reuse => {
+it.each([true, false])('T-A04: default A2 app with engine reuse=%s preserves DOM, input and Effect; rows run only without reuse', async reuse => {
   const output = document.createElement('section'); document.body.append(output);
   const app = await createTaskBenchmark({ size: 10, seed: 539365639, mode: 'counts', reuse }, output);
   try {
@@ -13,8 +13,8 @@ it.each([true, false])('T-A04: default A0 app with engine reuse=%s preserves DOM
     for (const workload of ['draft', 'counter', 'equal'] as const) {
       const result = (await app.step(workload, 0)).actions[0];
       expect(result.counts!.primary.rootExecutions).toBe(1);
-      // A0 rebuilds row expressions; only the A1 comparison variant skips them.
-      expect(result.counts!.primary.taskRowExecutions).toBe(10);
+      // The default A2 app reuses memo rows; with engine reuse off every row runs.
+      expect(result.counts!.primary.taskRowExecutions).toBe(reuse ? 0 : 10);
       expect(result.counts!.total.effectSetups).toBe(0);
       expect(result.counts!.total.effectCleanups).toBe(0);
       expect(output.querySelector('li')).toBe(row);
@@ -44,9 +44,11 @@ it('T-A04/T-A05: reuse on/off gives the same sequence, State, native fields and 
 });
 
 it.each([
-  ['A0 TaskApp', TaskApp, true, 8],
+  ['A0 TaskAppA0', TaskAppA0, true, 8],
+  ['A2 TaskAppWithRowMemo', TaskAppWithRowMemo, true, 0],
   ['A1 TaskAppWithRowReuse', TaskAppWithRowReuse, true, 0],
-  ['A0 TaskApp', TaskApp, false, 8],
+  ['A0 TaskAppA0', TaskAppA0, false, 8],
+  ['A2 TaskAppWithRowMemo', TaskAppWithRowMemo, false, 8],
   ['A1 TaskAppWithRowReuse', TaskAppWithRowReuse, false, 8],
 ] as const)('T-A04: %s with engine reuse=%s row evaluation on unrelated draft/counter updates', async (_name, App, reuseVNode, rowExecutions) => {
   const output = document.createElement('section'); document.body.append(output);
@@ -71,7 +73,8 @@ it.each([
 });
 
 it.each([
-  ['A0 TaskApp', TaskApp],
+  ['A0 TaskAppA0', TaskAppA0],
+  ['A2 TaskAppWithRowMemo', TaskAppWithRowMemo],
   ['A1 TaskAppWithRowReuse', TaskAppWithRowReuse],
 ] as const)('T-A05: %s callbacks use the latest FIFO State across edits, completion, deletion and consecutive renders', async (_name, App) => {
   const output = document.createElement('section'); document.body.append(output);
