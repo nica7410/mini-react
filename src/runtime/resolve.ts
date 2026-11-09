@@ -30,9 +30,14 @@ function sameExpressionType(a: RenderValue, b: RenderValue): boolean {
 }
 
 const formTags = new Set(['input', 'textarea', 'select']);
-// Nested child arrays are appended in order to one output array.
+// Nested child arrays are appended in order to one output array. Holes in sparse
+// arrays are skipped, as Array.prototype.flatMap did before.
 function flattenInto(values: readonly RenderValue[], out: RenderValue[]): RenderValue[] {
-  for (const child of values) if (Array.isArray(child)) flattenInto(child, out); else out.push(child);
+  for (let i = 0; i < values.length; i++) {
+    if (!(i in values)) continue;
+    const child = values[i];
+    if (Array.isArray(child)) flattenInto(child, out); else out.push(child);
+  }
   return out;
 }
 // Each new VNode is sealed here, so a reused child is never walked again.

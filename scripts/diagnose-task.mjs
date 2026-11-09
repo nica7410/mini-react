@@ -13,7 +13,7 @@ const args = new Map(process.argv.slice(2).map(arg => { const [key, value = 'tru
 const tag = args.get('tag'), tags = (args.get('builds') ?? '').split(',');
 assert(tag && [tag, ...tags].every(value => /^[a-z0-9-]+$/.test(value)));
 // 10,000-item runs are stress tests and are off unless explicitly allowed (user policy 2026-11-09).
-const allow10000 = args.has('allow-10000');
+const allow10000 = args.get('allow-10000') === 'true';
 const sizes = (args.get('sizes') ?? '1000').split(',').map(Number);
 assert(allow10000 || !sizes.includes(10000), '10,000-item runs need explicit --allow-10000');
 const modes = (args.get('modes') ?? 'cpu,memory,visual').split(',');

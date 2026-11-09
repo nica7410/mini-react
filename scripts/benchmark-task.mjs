@@ -10,7 +10,7 @@ import os from 'node:os';
 const args = new Map(process.argv.slice(2).map(arg => { const [key, value = 'true'] = arg.replace(/^--/, '').split('='); return [key, value]; }));
 const tag = args.get('tag'), tags = (args.get('builds') ?? '').split(','), smoke = args.has('smoke');
 // 10,000-item runs are stress tests and are off unless explicitly allowed (user policy 2026-11-09).
-const allow10000 = args.has('allow-10000');
+const allow10000 = args.get('allow-10000') === 'true';
 const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000')).split(',').map(Number);
 // Wall-clock cap: checked before each build/condition. On expiry the run stops, keeps raw data, and starts nothing else.
 const maxMinutes = Number(args.get('max-minutes') ?? 60), deadline = Date.now() + maxMinutes * 60000;
@@ -71,6 +71,8 @@ async function bounded(promise, ms = 120000) {
 }
 try {
   for (let session = 1; session <= sessions; session++) {
+    // The cap is checked between sessions and before each build/condition; a started condition runs to its end.
+    if (Date.now() > deadline) throw Object.assign(new Error(`Time cap ${maxMinutes} min reached before session ${session}; stopped without follow-up`), { deadline: true });
     const raw = `${temporary}/session-${session}.jsonl`, metadata = { session, startedAt: new Date().toISOString(), processes: [] };
     writeFileSync(raw, '');
     const conditions = sizes.flatMap(size => regimes.flatMap(regime => workloads.filter(workload => regime === 'persistent' || workload === 'equal').map(workload => ({ size, regime, workload }))));
@@ -130,5 +132,5 @@ try {
     }
   }
   environment.status = 'passed'; console.log(`TASK_COMPLETE ${output}`);
-} catch (error) { environment.status = error.deadline ? 'stopped-deadline' : 'failed'; environment.error = String(error); if (!error.deadline) throw error; console.log(`TASK_STOPPED ${output}`); process.exitCode = 3; }
+} catch (error) { environment.status = error.deadline ? 'stopped-deadline' : 'failed'; environment.error = String(error); if (error.deadline) environment.stoppedAt = new Date().toISOString(); if (!error.deadline) throw error; console.log(`TASK_STOPPED ${output}`); process.exitCode = 3; }
 finally { environment.endedAt = new Date().toISOString(); writeFileSync(`${output}/environment.json`, JSON.stringify(environment, null, 2)); await new Promise(resolve => server.close(resolve)); }

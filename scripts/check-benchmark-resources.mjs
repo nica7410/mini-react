@@ -4,7 +4,9 @@ import { chromium } from '@playwright/test';
 import { preview } from 'vite';
 
 // Diagnostic only: forced GC and CDP sampling must never run in the timing experiment.
-const output = process.argv[2] ?? 'docs/validation/benchmark-resources.json';
+// This resource check is fixed at 10,000 items; it is off unless explicitly allowed (user policy 2026-11-09).
+if (!process.argv.includes('--allow-10000')) throw new Error('10,000-item resource checks need explicit --allow-10000');
+const output = process.argv.slice(2).find(arg => !arg.startsWith('--')) ?? 'docs/validation/benchmark-resources.json';
 const server = await preview({ preview: { host: '127.0.0.1', port: 4175, strictPort: true } });
 const browserServer = await chromium.launchServer({ headless: true, host: '127.0.0.1', timeout: 30000 });
 const report = { startedAt: new Date().toISOString(), diagnosticOnly: true, forcedGC: true, snapshots: [] };

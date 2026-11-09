@@ -12,7 +12,7 @@ const smoke = args.has('smoke'), profiled = args.has('profile');
 const tags = (args.get('builds') ?? '').split(',');
 const tag = args.get('tag'), sessions = Number(args.get('sessions') ?? (smoke || profiled ? 1 : 3));
 // 10,000-item runs are stress tests and are off unless explicitly allowed (user policy 2026-11-09).
-const allow10000 = args.has('allow-10000');
+const allow10000 = args.get('allow-10000') === 'true';
 const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000')).split(',').map(Number);
 if (!allow10000 && sizes.includes(10000)) throw new Error('10,000-item runs need explicit --allow-10000');
 const payloads = (args.get('payloads') ?? 'light,stateful').split(',');

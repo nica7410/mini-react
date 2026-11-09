@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest';
-import type { RenderValue, VRoot } from '../../src/core/types';
+import type { RenderValue, VElement, VRoot } from '../../src/core/types';
 import { validateTree } from '../../src/core/validate';
 import { h } from '../../src/runtime/expression';
 import { resolveExpression } from '../../src/runtime/resolve';
@@ -23,4 +23,12 @@ it('T-V05: duplicate keys report the second sibling; an empty root and top-level
   expect(validateTree({ kind: 'root', children: [] }).ok).toBe(true);
   const top = mutable(h('div', null)); (top.children[0] as any).tag = 'blink';
   expect(validateTree(top)).toMatchObject({ ok: false, diagnostics: [{ path: 'root/0' }] });
+});
+
+it('T-V05: holes in sparse nested child arrays are skipped, keeping keyed matching', () => {
+  const rows: RenderValue[] = []; rows[1] = h('li', { key: 'b' }, 'B');
+  const tree = resolveExpression(h('ul', null, rows));
+  const list = tree.children[0] as VElement;
+  expect(list.children).toHaveLength(1);
+  expect(list.children[0].identity.key).toBe('b');
 });

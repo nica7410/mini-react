@@ -6,7 +6,7 @@ export function traceActive(sink: TraceSink | undefined): sink is TraceSink {
 }
 /** True when the sink records and also wants VDOM/patch/identity snapshots. */
 export function traceDetailed(sink: TraceSink | undefined): boolean {
-  return traceActive(sink) && sink.detailed === true;
+  return traceActive(sink) && !!sink.detailed;
 }
 export function emitTrace(sink: TraceSink | undefined, event: TraceEvent): void {
   if (!traceActive(sink)) return;
