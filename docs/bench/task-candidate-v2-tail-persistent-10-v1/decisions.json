@@ -1,0 +1,437 @@
+[
+  {
+    "key": "A1: E1 -> E2,persistent,sort,10,workload",
+    "comparison": "A1: E1 -> E2",
+    "kind": "engine",
+    "regime": "persistent",
+    "workload": "sort",
+    "size": 10,
+    "scope": "workload",
+    "before": "task-e1-a1-v1",
+    "after": "task-e2-a1-v1",
+    "sessions": [
+      {
+        "session": 1,
+        "n": 180,
+        "baseline": {
+          "key": "1,persistent,sort,10,task-e1-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 5.299999997019768,
+          "q1": 4.274999998509884,
+          "q3": 7,
+          "iqr": 2.725000001490116,
+          "p95": 9.205000003427266,
+          "min": 3,
+          "max": 12.799999997019768
+        },
+        "candidate": {
+          "key": "1,persistent,sort,10,task-e2-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4.300000011920929,
+          "q1": 3.9000000059604645,
+          "q3": 5.199999991804361,
+          "iqr": 1.2999999858438969,
+          "p95": 8.020000000298017,
+          "min": 3.199999988079071,
+          "max": 13.5
+        },
+        "delta": {
+          "median": {
+            "ms": -0.9999999850988388,
+            "percent": -18.867924257757483
+          },
+          "p95": {
+            "ms": -1.1850000031292485,
+            "percent": -12.873438377925496
+          }
+        },
+        "medianAllowanceMs": 1,
+        "p95AllowanceMs": 2,
+        "medianExceeded": false,
+        "p95Exceeded": false,
+        "reuseTarget": false,
+        "medianGainAtLeast10Percent": true
+      },
+      {
+        "session": 2,
+        "n": 180,
+        "baseline": {
+          "key": "2,persistent,sort,10,task-e1-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4.200000002980232,
+          "q1": 3.7999999970197678,
+          "q3": 4.899999991059303,
+          "iqr": 1.0999999940395355,
+          "p95": 6.4000000059604645,
+          "min": 2.7000000029802322,
+          "max": 11.799999997019768
+        },
+        "candidate": {
+          "key": "2,persistent,sort,10,task-e2-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4.450000002980232,
+          "q1": 4.074999995529652,
+          "q3": 5.299999997019768,
+          "iqr": 1.2250000014901161,
+          "p95": 7.404999991506337,
+          "min": 2.8999999910593033,
+          "max": 11.599999994039536
+        },
+        "delta": {
+          "median": {
+            "ms": 0.25,
+            "percent": 5.952380948157265
+          },
+          "p95": {
+            "ms": 1.0049999855458722,
+            "percent": 15.703124759529574
+          }
+        },
+        "medianAllowanceMs": 1,
+        "p95AllowanceMs": 2,
+        "medianExceeded": false,
+        "p95Exceeded": false,
+        "reuseTarget": false,
+        "medianGainAtLeast10Percent": false
+      },
+      {
+        "session": 3,
+        "n": 180,
+        "baseline": {
+          "key": "3,persistent,sort,10,task-e1-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4,
+          "q1": 3.5999999940395355,
+          "q3": 4.799999997019768,
+          "iqr": 1.2000000029802322,
+          "p95": 6.599999994784594,
+          "min": 2.7999999970197678,
+          "max": 8.400000005960464
+        },
+        "candidate": {
+          "key": "3,persistent,sort,10,task-e2-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 5.049999997019768,
+          "q1": 4.299999997019768,
+          "q3": 5.700000002980232,
+          "iqr": 1.4000000059604645,
+          "p95": 7.4000000059604645,
+          "min": 2.7000000029802322,
+          "max": 9.600000008940697
+        },
+        "delta": {
+          "median": {
+            "ms": 1.0499999970197678,
+            "percent": 26.249999925494194
+          },
+          "p95": {
+            "ms": 0.8000000111758707,
+            "percent": 12.121212300121842
+          }
+        },
+        "medianAllowanceMs": 1,
+        "p95AllowanceMs": 2,
+        "medianExceeded": true,
+        "p95Exceeded": false,
+        "reuseTarget": false,
+        "medianGainAtLeast10Percent": false
+      }
+    ],
+    "reuseTarget": false,
+    "gainsOf10Percent": 1,
+    "medianGateExceedances": 1,
+    "p95GateExceedances": 0,
+    "needsFinalPolicyTailSupplement": false,
+    "conclusion": "gate exceeded; investigate, supplement or restrict policy"
+  },
+  {
+    "key": "A1: E1 -> E4,persistent,sort,10,workload",
+    "comparison": "A1: E1 -> E4",
+    "kind": "engine",
+    "regime": "persistent",
+    "workload": "sort",
+    "size": 10,
+    "scope": "workload",
+    "before": "task-e1-a1-v1",
+    "after": "task-e4-a1-v1",
+    "sessions": [
+      {
+        "session": 1,
+        "n": 180,
+        "baseline": {
+          "key": "1,persistent,sort,10,task-e1-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 5.299999997019768,
+          "q1": 4.274999998509884,
+          "q3": 7,
+          "iqr": 2.725000001490116,
+          "p95": 9.205000003427266,
+          "min": 3,
+          "max": 12.799999997019768
+        },
+        "candidate": {
+          "key": "1,persistent,sort,10,task-e4-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 3.9500000029802322,
+          "q1": 3.5,
+          "q3": 4.625000007450581,
+          "iqr": 1.1250000074505806,
+          "p95": 6.304999997466801,
+          "min": 2.7999999970197678,
+          "max": 13.099999994039536
+        },
+        "delta": {
+          "median": {
+            "ms": -1.3499999940395355,
+            "percent": -25.47169801506889
+          },
+          "p95": {
+            "ms": -2.9000000059604645,
+            "percent": -31.50461710897031
+          }
+        },
+        "medianAllowanceMs": 1,
+        "p95AllowanceMs": 2,
+        "medianExceeded": false,
+        "p95Exceeded": false,
+        "reuseTarget": false,
+        "medianGainAtLeast10Percent": true
+      },
+      {
+        "session": 2,
+        "n": 180,
+        "baseline": {
+          "key": "2,persistent,sort,10,task-e1-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4.200000002980232,
+          "q1": 3.7999999970197678,
+          "q3": 4.899999991059303,
+          "iqr": 1.0999999940395355,
+          "p95": 6.4000000059604645,
+          "min": 2.7000000029802322,
+          "max": 11.799999997019768
+        },
+        "candidate": {
+          "key": "2,persistent,sort,10,task-e4-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 3.9000000059604645,
+          "q1": 3.5,
+          "q3": 4.600000008940697,
+          "iqr": 1.1000000089406967,
+          "p95": 6.910000005364415,
+          "min": 2.5999999940395355,
+          "max": 8.800000011920929
+        },
+        "delta": {
+          "median": {
+            "ms": -0.29999999701976776,
+            "percent": -7.1428570668308105
+          },
+          "p95": {
+            "ms": 0.5099999994039504,
+            "percent": 7.968749983265244
+          }
+        },
+        "medianAllowanceMs": 1,
+        "p95AllowanceMs": 2,
+        "medianExceeded": false,
+        "p95Exceeded": false,
+        "reuseTarget": false,
+        "medianGainAtLeast10Percent": false
+      },
+      {
+        "session": 3,
+        "n": 180,
+        "baseline": {
+          "key": "3,persistent,sort,10,task-e1-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4,
+          "q1": 3.5999999940395355,
+          "q3": 4.799999997019768,
+          "iqr": 1.2000000029802322,
+          "p95": 6.599999994784594,
+          "min": 2.7999999970197678,
+          "max": 8.400000005960464
+        },
+        "candidate": {
+          "key": "3,persistent,sort,10,task-e4-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4,
+          "q1": 3.6000000089406967,
+          "q3": 4.5,
+          "iqr": 0.8999999910593033,
+          "p95": 5.809999997168776,
+          "min": 2.7999999970197678,
+          "max": 8.600000008940697
+        },
+        "delta": {
+          "median": {
+            "ms": 0,
+            "percent": 0
+          },
+          "p95": {
+            "ms": -0.7899999976158174,
+            "percent": -11.969696943031604
+          }
+        },
+        "medianAllowanceMs": 1,
+        "p95AllowanceMs": 2,
+        "medianExceeded": false,
+        "p95Exceeded": false,
+        "reuseTarget": false,
+        "medianGainAtLeast10Percent": false
+      }
+    ],
+    "reuseTarget": false,
+    "gainsOf10Percent": 1,
+    "medianGateExceedances": 0,
+    "p95GateExceedances": 0,
+    "needsFinalPolicyTailSupplement": false,
+    "conclusion": "within preregistered gates in this run"
+  },
+  {
+    "key": "E4: A0 -> A1,persistent,sort,10,workload",
+    "comparison": "E4: A0 -> A1",
+    "kind": "app",
+    "regime": "persistent",
+    "workload": "sort",
+    "size": 10,
+    "scope": "workload",
+    "before": "task-e4-a0-v1",
+    "after": "task-e4-a1-v1",
+    "sessions": [
+      {
+        "session": 1,
+        "n": 180,
+        "baseline": {
+          "key": "1,persistent,sort,10,task-e4-a0-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4.5,
+          "q1": 3.975000001490116,
+          "q3": 5.62499999627471,
+          "iqr": 1.6499999947845936,
+          "p95": 8.205000002682207,
+          "min": 2.7999999970197678,
+          "max": 12.799999997019768
+        },
+        "candidate": {
+          "key": "1,persistent,sort,10,task-e4-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 3.9500000029802322,
+          "q1": 3.5,
+          "q3": 4.625000007450581,
+          "iqr": 1.1250000074505806,
+          "p95": 6.304999997466801,
+          "min": 2.7999999970197678,
+          "max": 13.099999994039536
+        },
+        "delta": {
+          "median": {
+            "ms": -0.5499999970197678,
+            "percent": -12.222222155994844
+          },
+          "p95": {
+            "ms": -1.9000000052154054,
+            "percent": -23.15661187805359
+          }
+        },
+        "medianAllowanceMs": 0.5,
+        "p95AllowanceMs": 1,
+        "medianExceeded": false,
+        "p95Exceeded": false,
+        "reuseTarget": false,
+        "medianGainAtLeast10Percent": true
+      },
+      {
+        "session": 2,
+        "n": 180,
+        "baseline": {
+          "key": "2,persistent,sort,10,task-e4-a0-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 3.899999998509884,
+          "q1": 3.475000001490116,
+          "q3": 4.4000000059604645,
+          "iqr": 0.9250000044703484,
+          "p95": 5.205000002682207,
+          "min": 2.5,
+          "max": 7.799999997019768
+        },
+        "candidate": {
+          "key": "2,persistent,sort,10,task-e4-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 3.9000000059604645,
+          "q1": 3.5,
+          "q3": 4.600000008940697,
+          "iqr": 1.1000000089406967,
+          "p95": 6.910000005364415,
+          "min": 2.5999999940395355,
+          "max": 8.800000011920929
+        },
+        "delta": {
+          "median": {
+            "ms": 7.450580596923828e-9,
+            "percent": 1.9104053894380968e-7
+          },
+          "p95": {
+            "ms": 1.7050000026822074,
+            "percent": 32.75696449190389
+          }
+        },
+        "medianAllowanceMs": 0.5,
+        "p95AllowanceMs": 1,
+        "medianExceeded": false,
+        "p95Exceeded": true,
+        "reuseTarget": false,
+        "medianGainAtLeast10Percent": false
+      },
+      {
+        "session": 3,
+        "n": 180,
+        "baseline": {
+          "key": "3,persistent,sort,10,task-e4-a0-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4.299999997019768,
+          "q1": 3.7999999970197678,
+          "q3": 5.0999999940395355,
+          "iqr": 1.2999999970197678,
+          "p95": 7.200000002980232,
+          "min": 2.7999999970197678,
+          "max": 9.700000002980232
+        },
+        "candidate": {
+          "key": "3,persistent,sort,10,task-e4-a1-v1,workload,totalCpuMs",
+          "n": 180,
+          "median": 4,
+          "q1": 3.6000000089406967,
+          "q3": 4.5,
+          "iqr": 0.8999999910593033,
+          "p95": 5.809999997168776,
+          "min": 2.7999999970197678,
+          "max": 8.600000008940697
+        },
+        "delta": {
+          "median": {
+            "ms": -0.29999999701976776,
+            "percent": -6.976744121574208
+          },
+          "p95": {
+            "ms": -1.3900000058114559,
+            "percent": -19.305555628279247
+          }
+        },
+        "medianAllowanceMs": 0.5,
+        "p95AllowanceMs": 1,
+        "medianExceeded": false,
+        "p95Exceeded": false,
+        "reuseTarget": false,
+        "medianGainAtLeast10Percent": false
+      }
+    ],
+    "reuseTarget": false,
+    "gainsOf10Percent": 1,
+    "medianGateExceedances": 0,
+    "p95GateExceedances": 1,
+    "needsFinalPolicyTailSupplement": false,
+    "conclusion": "gate exceeded; investigate, supplement or restrict policy"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-11-08T21:23:25.518Z",
+  "status": "definitions verified from unchanged harness",
+  "boundaryDefinition": "../task-matrix-v1/measurement-boundaries.json",
+  "boundaryDefinitionSha256": "7a1c7b95358d5d32057d697514531c9b1c51c890f9b4fb6032b94bb782e88d67",
+  "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+  "comparisonDefinition": "../../task-app-bounded-candidate.md",
+  "builds": [
+    "task-e1-a1-v1",
+    "task-e2-a1-v1",
+    "task-e4-a0-v1",
+    "task-e4-a1-v1"
+  ],
+  "note": "Same boundary addendum for all four E4 candidate-run builds. Clocks, adapters, functional builds, seed, gates and sample policy remain unchanged. Formal E4 results have not been analyzed. No tests, builds, profiling or heavy analysis run alongside timing; only lightweight documentation/progress work."
+}

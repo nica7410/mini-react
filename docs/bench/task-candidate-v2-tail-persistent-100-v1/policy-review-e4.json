@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "createdAt": "2026-11-09T05:35:59.418Z",
+  "engine": "E4",
+  "totals": [
+    {
+      "comparison": "A1: E1 -> E4",
+      "conditions": 8,
+      "medianExceeded": 2,
+      "p95Exceeded": 1,
+      "anyExceeded": 3
+    },
+    {
+      "comparison": "E4: A0 -> A1",
+      "conditions": 8,
+      "medianExceeded": 0,
+      "p95Exceeded": 1,
+      "anyExceeded": 1
+    }
+  ],
+  "reuseConditions": [],
+  "exceededConditions": [
+    "A1: E1 -> E4,persistent,search,100,workload",
+    "A1: E1 -> E4,persistent,crud,100,action-2-rename",
+    "A1: E1 -> E4,persistent,crud,100,action-3-toggle",
+    "E4: A0 -> A1,persistent,crud,100,action-3-toggle"
+  ],
+  "inputDecisionsSha256": "8582d72ad3b0f328683ae775103f3b690773bc2b14a32421b41f290b4f71f7b8",
+  "statisticsAuditSha256": "d527073aff8444d4c2998aa3eff09276f44c9dd7d8a8ab009d8418bffafbe8f0",
+  "scriptSha256": "97911c4cd1bb8ed9a53367387fa03ae4de80c8be707e19d18a5304c0516b2a97",
+  "policyAuditSha256": "45b49ae392918e5d00832a8b26d214de008923ca42f0a104012bd3c02fa117af",
+  "reportSha256": "414c5b4723dc0b3e420b43b621c73ad0e29d29f4fd4b4d33832cb9a8f07c9426",
+  "note": "All gate-exceeding conditions from the independently audited input were rendered. This is evidence formatting, not an adoption decision."
+}

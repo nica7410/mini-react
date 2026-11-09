@@ -1,0 +1,283 @@
+{
+  "status": "preserved-and-auto-followups-disabled",
+  "recordedAt": "2026-11-09T05:38:06.269Z",
+  "reason": "Current E4 stress supplement and every automatic follow-up. Do not restart measurements without a new explicit user instruction.",
+  "processCheckReceipt": "process-check-receipt.json",
+  "copied": [
+    {
+      "source": ".validation/e4-supplement-driver.mjs",
+      "archive": "e4-supplement-driver.original.mjs",
+      "bytes": 3074,
+      "sha256": "3a429ae4f23b6c97b3e91b136ce7749d939c279f760ffd3cf5fb37a78d454064"
+    },
+    {
+      "source": ".validation/e4-supplement-run.log",
+      "archive": "e4-supplement-run.log",
+      "bytes": 2286,
+      "sha256": "b63bb7046f41ea867b62f8964d87d08d544aefa884bb4000890544a819438967"
+    },
+    {
+      "source": ".validation/e4-supplement-error.log",
+      "archive": "e4-supplement-error.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": ".validation/e4-supplement-user-stop.json",
+      "archive": "earlier-stop-receipt.json",
+      "bytes": 341,
+      "sha256": "5ea05d865e14f6caab9be1d3eecfda59a317b9693acd46f46d40e359565405a4"
+    },
+    {
+      "source": "docs/bench/task-candidate-v2/user-stop-control-20261109.json",
+      "archive": "process-check-receipt.json",
+      "bytes": 498,
+      "sha256": "8ec147e9d19f5562d2f572c15d01a72076c955a25c9b2d20e62ac81fae5bc22e"
+    },
+    {
+      "source": "docs/bench/task-candidate-v2/tail-supplement-plan-e4.json",
+      "archive": "original-tail-plan.json",
+      "bytes": 5607,
+      "sha256": "c9e9a7d587ee73f214dab62a8b5ee459c31851b8b19fd03809a3732ae66bd546"
+    }
+  ],
+  "runs": [
+    {
+      "tag": "task-candidate-v2-tail-persistent-100-v1",
+      "size": 100,
+      "environmentStatus": "passed",
+      "environmentSha256": "651e953437834ea759ecb41d5a1aa8051255bf5213606cfc4faf4fae2aafb6fb",
+      "status": "completed-before-final-stop-verification",
+      "sessions": [
+        {
+          "session": 1,
+          "raw": ".validation/task-runs/task-candidate-v2-tail-persistent-100-v1/session-1.jsonl",
+          "archive": "docs/bench/task-candidate-v2-tail-persistent-100-v1/session-1.jsonl.gz",
+          "rawBytes": 3891283,
+          "rawSha256": "10008d8178943cf5ba15ad28cc9ed43990e23dc5e2b6aa8bdbca51ad4539e321",
+          "archiveSha256": "b4e5dae931b417ba96bad5257f9ac41b355bb9135391773fb0b68e6dd99ce57f",
+          "rows": 2304,
+          "counts": {
+            "counts": 12,
+            "initialization": 12,
+            "warmup": 120,
+            "sample": 2160
+          },
+          "lastRecorded": {
+            "build": "task-e2-a1-v1",
+            "size": 100,
+            "workload": "crud",
+            "sampleKind": "sample",
+            "index": 179
+          },
+          "hasCompletedSessionMetadata": true
+        },
+        {
+          "session": 2,
+          "raw": ".validation/task-runs/task-candidate-v2-tail-persistent-100-v1/session-2.jsonl",
+          "archive": "docs/bench/task-candidate-v2-tail-persistent-100-v1/session-2.jsonl.gz",
+          "rawBytes": 3894330,
+          "rawSha256": "c8865ede7ad886175daefbe761f9d403d1c9472fc869728449472ad0b23aa0bf",
+          "archiveSha256": "1e413cb4981ce72118c0f4df2020e10d76ab1f8319a3dc1de37b7a746c8a34b2",
+          "rows": 2304,
+          "counts": {
+            "counts": 12,
+            "initialization": 12,
+            "warmup": 120,
+            "sample": 2160
+          },
+          "lastRecorded": {
+            "build": "task-e4-a1-v1",
+            "size": 100,
+            "workload": "search",
+            "sampleKind": "sample",
+            "index": 179
+          },
+          "hasCompletedSessionMetadata": true
+        },
+        {
+          "session": 3,
+          "raw": ".validation/task-runs/task-candidate-v2-tail-persistent-100-v1/session-3.jsonl",
+          "archive": "docs/bench/task-candidate-v2-tail-persistent-100-v1/session-3.jsonl.gz",
+          "rawBytes": 3894974,
+          "rawSha256": "74ceadad1c449ec220100ffd1c7ab54d98b712097178585b0d8dc8e4b00bfcd8",
+          "archiveSha256": "443b73b3298b84186f9c22e4f055ac6e76253f20937d24dd893234bd1b7cf0d0",
+          "rows": 2304,
+          "counts": {
+            "counts": 12,
+            "initialization": 12,
+            "warmup": 120,
+            "sample": 2160
+          },
+          "lastRecorded": {
+            "build": "task-e4-a1-v1",
+            "size": 100,
+            "workload": "crud",
+            "sampleKind": "sample",
+            "index": 179
+          },
+          "hasCompletedSessionMetadata": true
+        }
+      ]
+    },
+    {
+      "tag": "task-candidate-v2-tail-persistent-10000-v1",
+      "size": 10000,
+      "environmentStatus": "running",
+      "environmentSha256": "2fdaaa5661fe964822ce3e48ffa56f2732dbe74e0e577dc1f4a2312a9631f89b",
+      "status": "stopped-incomplete-not-for-policy",
+      "sessions": [
+        {
+          "session": 1,
+          "raw": ".validation/task-runs/task-candidate-v2-tail-persistent-10000-v1/session-1.jsonl",
+          "archive": "docs/bench/task-candidate-v2-tail-persistent-10000-v1/session-1.partial.jsonl.gz",
+          "rawBytes": 98239,
+          "rawSha256": "186ad3ca8e68491e93a4ab4f9ec4de1511a9d99bd76df4bd83fa7ace31c50a87",
+          "archiveSha256": "39337129fa52410f5c325c14c7595e9fe99c79c64305d3ef2a1976027c59748f",
+          "rows": 102,
+          "counts": {
+            "counts": 1,
+            "initialization": 1,
+            "warmup": 5,
+            "sample": 95
+          },
+          "lastRecorded": {
+            "build": "task-e1-a1-v1",
+            "size": 10000,
+            "workload": "move",
+            "sampleKind": "sample",
+            "index": 94
+          },
+          "hasCompletedSessionMetadata": false
+        }
+      ]
+    },
+    {
+      "tag": "task-candidate-v2-tail-persistent-10-v1",
+      "size": 10,
+      "environmentStatus": "passed",
+      "environmentSha256": "2c55e08957ae7c60c2989c65e4db4222716c1a01256a2b46e8556af3804e2516",
+      "status": "completed-before-final-stop-verification",
+      "sessions": [
+        {
+          "session": 1,
+          "raw": ".validation/task-runs/task-candidate-v2-tail-persistent-10-v1/session-1.jsonl",
+          "archive": "docs/bench/task-candidate-v2-tail-persistent-10-v1/session-1.jsonl.gz",
+          "rawBytes": 648268,
+          "rawSha256": "941f58cb533f2762f1127bbcff329961b27cb5077fdcf812f3b8f4b5dbd28827",
+          "archiveSha256": "0bd3c93338fdf636319c7470ede8130571c4af1a6172d24e7a8af495fe557ac1",
+          "rows": 768,
+          "counts": {
+            "counts": 4,
+            "initialization": 4,
+            "warmup": 40,
+            "sample": 720
+          },
+          "lastRecorded": {
+            "build": "task-e4-a1-v1",
+            "size": 10,
+            "workload": "sort",
+            "sampleKind": "sample",
+            "index": 179
+          },
+          "hasCompletedSessionMetadata": true
+        },
+        {
+          "session": 2,
+          "raw": ".validation/task-runs/task-candidate-v2-tail-persistent-10-v1/session-2.jsonl",
+          "archive": "docs/bench/task-candidate-v2-tail-persistent-10-v1/session-2.jsonl.gz",
+          "rawBytes": 649571,
+          "rawSha256": "75871af309208f29abfee7c9148a59551f230f99af62ad88083730014744b05a",
+          "archiveSha256": "6aff68815984328b14c4da2ac950fae95a65ac66c5021b32546f4efbd93aa430",
+          "rows": 768,
+          "counts": {
+            "counts": 4,
+            "initialization": 4,
+            "warmup": 40,
+            "sample": 720
+          },
+          "lastRecorded": {
+            "build": "task-e2-a1-v1",
+            "size": 10,
+            "workload": "sort",
+            "sampleKind": "sample",
+            "index": 179
+          },
+          "hasCompletedSessionMetadata": true
+        },
+        {
+          "session": 3,
+          "raw": ".validation/task-runs/task-candidate-v2-tail-persistent-10-v1/session-3.jsonl",
+          "archive": "docs/bench/task-candidate-v2-tail-persistent-10-v1/session-3.jsonl.gz",
+          "rawBytes": 649648,
+          "rawSha256": "114ddd57a2a51ed1e7d9f31a4ffd8ce6a1dea2bf143c748e59f386527ae95387",
+          "archiveSha256": "d2e109b6acc4917ddf737320c21084573414742289d8f348b62cfad0c32ebf09",
+          "rows": 768,
+          "counts": {
+            "counts": 4,
+            "initialization": 4,
+            "warmup": 40,
+            "sample": 720
+          },
+          "lastRecorded": {
+            "build": "task-e2-a1-v1",
+            "size": 10,
+            "workload": "sort",
+            "sampleKind": "sample",
+            "index": 179
+          },
+          "hasCompletedSessionMetadata": true
+        }
+      ]
+    }
+  ],
+  "automaticExecution": {
+    "marker": ".validation/e4-all-followups-cancelled-20261109.json",
+    "markerSha256": "039b2183ba11b9a9c00a1e9583db37ebbd874831e506a321ad713277395e1827",
+    "driver": ".validation/e4-supplement-driver.mjs",
+    "originalDriverSha256": "3a429ae4f23b6c97b3e91b136ce7749d939c279f760ffd3cf5fb37a78d454064",
+    "disabledDriverSha256": "59054567005ef763f22ad5939a0675689c704a9cba043f63cf367678484df5aa"
+  },
+  "note": "Original environment.json and all measured raw bytes are unchanged. The stress environment still says running because its process was externally stopped before finally; stopped-run-inventory.json and stop receipts define the actual stopped status. Incomplete stress data are not a distribution or PASS. No new timing or functional tests were run by this preservation script.",
+  "completedMainRun": {
+    "tag": "task-candidate-v2",
+    "status": "passed",
+    "sessions": [
+      {
+        "session": 1,
+        "raw": ".validation/task-runs/task-candidate-v2/session-1.jsonl",
+        "archive": "docs/bench/task-candidate-v2/session-1.jsonl.gz",
+        "bytes": 12546561,
+        "rawSha256": "d722a275a3d967586f480bf5f83a577b6cc39743f9f734366d72e7df267455e1",
+        "archiveSha256": "74e0d7b04c5719e1320bf6409af1e5f9115e4c51ea7db4888c54a43891980292"
+      },
+      {
+        "session": 2,
+        "raw": ".validation/task-runs/task-candidate-v2/session-2.jsonl",
+        "archive": "docs/bench/task-candidate-v2/session-2.jsonl.gz",
+        "bytes": 12546102,
+        "rawSha256": "c76b86d30db69b443833b2c8e3d777733d63cbbef6d331a62248c1956d059fa7",
+        "archiveSha256": "a290102d98d4865c579758706aa9c15bb8b46cc8ce262b2ad7198b6ed15af381"
+      },
+      {
+        "session": 3,
+        "raw": ".validation/task-runs/task-candidate-v2/session-3.jsonl",
+        "archive": "docs/bench/task-candidate-v2/session-3.jsonl.gz",
+        "bytes": 12549894,
+        "rawSha256": "c8f6fffdb2d03374ffa75c9a6bd16cde965d682a43c0aaa6817a5433f3c59dfd",
+        "archiveSha256": "5ab3bf8751d85aeb3e6ce3c2f1cf19e99f70c482a98174c7e1b0438c181ab92b"
+      }
+    ]
+  },
+  "handoffBefore": {
+    "path": "C:/Users/nica7/Desktop/리액트 조사/Mini_React_Claude_Code_인계서_2026-11-09.md",
+    "archive": "handoff-before-stop.md",
+    "sha256": "9efc41a003ecb3b8e48bb5068ffd6fc30e2065a469326500104624dbfeb53ac0"
+  },
+  "functionalSourceHashes": {
+    "src/app/tasks.ts": "1751a643ae8f5f3f802b8cae3cb9286fc2c0ec79a23938cf331b4821f12556e5",
+    "src/core/vdom.ts": "006f83c927aa7c713423e322333e14b5902fbf0bd1d4fb696eb2409198e55899",
+    "scripts/benchmark-task.mjs": "db8d7aa124c383e27beac039f87ae26b25fd5f4dc4e7bf11f68c8fdff9e097af",
+    "docs/task-app-comparison-plan.md": "a8a31034c2988af1ae4c94f4a8f7bb7a8a8c49302b520c2a307c02006e871012"
+  }
+}

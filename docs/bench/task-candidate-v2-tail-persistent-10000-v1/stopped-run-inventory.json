@@ -1,0 +1,39 @@
+{
+  "status": "stopped-at-user-request",
+  "requestedAt": "2026-11-09T05:34:53.4840615+00:00",
+  "completedAt": "2026-11-09T05:34:54.0375795+00:00",
+  "tag": "task-candidate-v2-tail-persistent-10000-v1",
+  "driverPid": 10584,
+  "runnerPid": 21240,
+  "capturedDescendantPids": [
+    22760,
+    16696,
+    21236,
+    22624
+  ],
+  "preservedAt": "2026-11-09T05:35:57.299Z",
+  "environmentSha256": "2fdaaa5661fe964822ce3e48ffa56f2732dbe74e0e577dc1f4a2312a9631f89b",
+  "runnerEnvironmentStatusAtStop": "running",
+  "completedSessions": 0,
+  "recordedPassedConditions": 0,
+  "partialSession": 1,
+  "partialCondition": {
+    "build": "task-e1-a1-v1",
+    "workload": "move",
+    "size": 10000,
+    "regime": "persistent"
+  },
+  "plannedSamplesInPartialCondition": 180,
+  "rawRows": 102,
+  "counts": {
+    "counts": 1,
+    "initialization": 1,
+    "warmup": 5,
+    "sample": 95
+  },
+  "archive": "session-1.partial.jsonl.gz",
+  "rawSha256": "186ad3ca8e68491e93a4ab4f9ec4de1511a9d99bd76df4bd83fa7ace31c50a87",
+  "archiveSha256": "39337129fa52410f5c325c14c7595e9fe99c79c64305d3ef2a1976027c59748f",
+  "usedForPolicy": false,
+  "note": "Interrupted by the user. Original environment and partial raw preserved. No 10,000-item supplementary distribution or policy result."
+}

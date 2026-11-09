@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "createdAt": "2026-11-09T05:36:00.465Z",
+  "engine": "E4",
+  "totals": [
+    {
+      "comparison": "A1: E1 -> E4",
+      "conditions": 1,
+      "medianExceeded": 0,
+      "p95Exceeded": 0,
+      "anyExceeded": 0
+    },
+    {
+      "comparison": "E4: A0 -> A1",
+      "conditions": 1,
+      "medianExceeded": 0,
+      "p95Exceeded": 1,
+      "anyExceeded": 1
+    }
+  ],
+  "reuseConditions": [],
+  "exceededConditions": [
+    "E4: A0 -> A1,persistent,sort,10,workload"
+  ],
+  "inputDecisionsSha256": "4c5541cb22303b3411f609db68db69d9efdf41f1211d3220232bc59c08c9a2e1",
+  "statisticsAuditSha256": "0d2424135d2824fe87cde62e71c3b9fb713ca7a685fbf322aab7caa3279c606d",
+  "scriptSha256": "97911c4cd1bb8ed9a53367387fa03ae4de80c8be707e19d18a5304c0516b2a97",
+  "policyAuditSha256": "9b110fe21c70e9dba12702ae4ca17b3d06701ce90c0e19d6d8636e88254b9fc1",
+  "reportSha256": "d99943f613cd12e7181fc904c52b2f4c38c96b81b40f5a919d3f90658e53470d",
+  "note": "All gate-exceeding conditions from the independently audited input were rendered. This is evidence formatting, not an adoption decision."
+}

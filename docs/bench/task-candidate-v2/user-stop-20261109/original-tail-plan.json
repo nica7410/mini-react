@@ -1,0 +1,183 @@
+{
+  "status": "planned, not executed; final policy selection remains separate",
+  "createdAt": "2026-11-09T05:15:28.399Z",
+  "engine": "E4",
+  "sourceRun": "task-candidate-v2",
+  "sourceEnvironmentSha256": "9f0af5c4ecbac93e522ae91a45ab2732dbd9f7a39225aa0f44c6a89101051c64",
+  "sourceDecisionsSha256": "d5c46d91f8694366aae560f165b0d03de671f9dfe5030072e7e89052253e70c0",
+  "statisticsAuditSha256": "7ee9b2201248048d292b2f15c3cb119858e3e6fcc69311efb9189e9054c4964f",
+  "policyAuditSha256": "bff762c02cc766e8f4353e019a58ef69aeb1c87a63013504eca09ffde1c38469",
+  "plannerSha256": "8096c02c8a9e9053ca3748c7aaf18026e07013d254448e832c02df00ef480944",
+  "comparisons": [
+    "A1: E1 -> E4",
+    "E4: A0 -> A1"
+  ],
+  "inspectedConditions": 136,
+  "selectedConditions": [
+    {
+      "key": "A1: E1 -> E4,persistent,crud,100,action-2-rename",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 0,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "A1: E1 -> E4,persistent,crud,100,action-3-toggle",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "A1: E1 -> E4,persistent,crud,100,workload",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 0,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "A1: E1 -> E4,persistent,crud,10000,action-1-add",
+      "medianGateExceedances": 0,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "A1: E1 -> E4,persistent,crud,10000,action-2-rename",
+      "medianGateExceedances": 0,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "A1: E1 -> E4,persistent,crud,10000,action-3-toggle",
+      "medianGateExceedances": 0,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "E4: A0 -> A1,persistent,sort,10,workload",
+      "medianGateExceedances": 0,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "E4: A0 -> A1,persistent,search,100,workload",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 0,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "E4: A0 -> A1,persistent,sort,100,workload",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 0,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "E4: A0 -> A1,persistent,move,10000,workload",
+      "medianGateExceedances": 1,
+      "p95GateExceedances": 0,
+      "affectedSessions": [
+        3
+      ]
+    },
+    {
+      "key": "E4: A0 -> A1,persistent,crud,10000,action-2-rename",
+      "medianGateExceedances": 0,
+      "p95GateExceedances": 1,
+      "affectedSessions": [
+        3
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "tag": "task-candidate-v2-tail-persistent-100-v1",
+      "regime": "persistent",
+      "size": 100,
+      "workloads": [
+        "search",
+        "sort",
+        "crud"
+      ],
+      "reasons": [
+        "A1: E1 -> E4,persistent,crud,100,action-2-rename",
+        "A1: E1 -> E4,persistent,crud,100,action-3-toggle",
+        "A1: E1 -> E4,persistent,crud,100,workload",
+        "E4: A0 -> A1,persistent,search,100,workload",
+        "E4: A0 -> A1,persistent,sort,100,workload"
+      ],
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=task-candidate-v2-tail-persistent-100-v1",
+        "--builds=task-e1-a1-v1,task-e2-a1-v1,task-e4-a0-v1,task-e4-a1-v1",
+        "--sizes=100",
+        "--regimes=persistent",
+        "--workloads=search,sort,crud",
+        "--sessions=3",
+        "--supplement"
+      ]
+    },
+    {
+      "tag": "task-candidate-v2-tail-persistent-10000-v1",
+      "regime": "persistent",
+      "size": 10000,
+      "workloads": [
+        "move",
+        "crud"
+      ],
+      "reasons": [
+        "A1: E1 -> E4,persistent,crud,10000,action-1-add",
+        "A1: E1 -> E4,persistent,crud,10000,action-2-rename",
+        "A1: E1 -> E4,persistent,crud,10000,action-3-toggle",
+        "E4: A0 -> A1,persistent,move,10000,workload",
+        "E4: A0 -> A1,persistent,crud,10000,action-2-rename"
+      ],
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=task-candidate-v2-tail-persistent-10000-v1",
+        "--builds=task-e1-a1-v1,task-e2-a1-v1,task-e4-a0-v1,task-e4-a1-v1",
+        "--sizes=10000",
+        "--regimes=persistent",
+        "--workloads=move,crud",
+        "--sessions=3",
+        "--supplement"
+      ]
+    },
+    {
+      "tag": "task-candidate-v2-tail-persistent-10-v1",
+      "regime": "persistent",
+      "size": 10,
+      "workloads": [
+        "sort"
+      ],
+      "reasons": [
+        "E4: A0 -> A1,persistent,sort,10,workload"
+      ],
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=task-candidate-v2-tail-persistent-10-v1",
+        "--builds=task-e1-a1-v1,task-e2-a1-v1,task-e4-a0-v1,task-e4-a1-v1",
+        "--sizes=10",
+        "--regimes=persistent",
+        "--workloads=sort",
+        "--sessions=3",
+        "--supplement"
+      ]
+    }
+  ],
+  "note": "All median/p95 gate exceedances for the proposed final engine and its app pair are retained, including initialization/lifecycle and individual CRUD actions. One exceeding session is sufficient, covering mixed tail pass/fail judgments. Workload reruns also retain all subordinate actions; all original comparators, warm-ups, harness, seed and oracles stay fixed. Three new sessions each with n=180; no pooling with initial runs. This plan is not an adoption or a claim that nonselected conditions improved."
+}
