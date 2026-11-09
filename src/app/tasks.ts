@@ -39,7 +39,7 @@ const MemoTaskRow = memo(TaskRow);
 const taskList = (visible: Items, actions: RowActions, Row: PureComponent<RowProps> = TaskRow) => h('ul', { attrs: { class: 'task-list', 'aria-label': '학습 항목 목록' } },
   visible.map(item => h(Row, { key: item.id, item, ...actions })));
 type ListStrategy = (visible: Items, setItems: StateSetter<Items>) => RenderValue;
-// A0 (default app): row callbacks and row expressions are rebuilt on every root render.
+// A0 (comparison, `TaskAppA0`): row callbacks and row expressions are rebuilt on every root render.
 const rebuildRows: ListStrategy = (visible, setItems) => taskList(visible, rowActionsFor(setItems));
 // A1 (comparison build only): the list expression and callbacks are memoized in
 // root Hook slots, so draft/counter updates skip TaskRow evaluation. Each strategy
@@ -58,9 +58,9 @@ const memoEachRow: ListStrategy = (visible, setItems) => {
 };
 
 /**
- * Final policy: the default TaskApp is A0. A1 is kept as `TaskAppWithRowReuse` for
- * fixed comparison builds and tests. Its repeated-reuse gain was measured, but
- * the pre-registered regression gates were exceeded (see docs/task-app-final-policy.md).
+ * 2026-11-09 final policy (9b52323) made A0 the default; the ④ candidate below
+ * makes A2 the default for measurement. A1 stays `TaskAppWithRowReuse` for fixed
+ * comparison builds. See docs/task-app-final-policy.md and docs/followup-row-memo.md.
  */
 // Candidate (2026-11-09 ④): the default TaskApp is A2; A0 stays exported for comparison.
 export function TaskApp() { return renderTaskApp(memoEachRow); }

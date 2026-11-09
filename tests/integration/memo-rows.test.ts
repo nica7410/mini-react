@@ -113,3 +113,49 @@ it('T-A06: a reused A2 row restores a dirty controlled input and keeps calling h
   expect(app.root.errors).toEqual([]);
   app.root.unmount();
 });
+
+it('T-M05: memo equality edge cases, positional rows, component roots, nesting and delete-then-reinsert', () => {
+  const run = <P,>(component: PureComponent<P>) => counting(component);
+  const leaf = run((props: Record<PropertyKey, unknown>) => h('span', null, String(props.v)));
+  const Leaf = memo(leaf.counted);
+  const symbol = Symbol('s');
+  const cases: [Record<PropertyKey, unknown>, Record<PropertyKey, unknown>, boolean][] = [
+    [{ v: NaN }, { v: NaN }, true],
+    [{ v: 0 }, { v: -0 }, false],
+    [{ v: 1 }, { v: 1, extra: undefined }, false],
+    [{ v: 1, extra: undefined }, { v: 1, other: undefined }, false],
+    [{ v: 1, [symbol]: 'a' }, { v: 1, [symbol]: 'b' }, false],
+    [{ v: 1, [symbol]: 'a' }, { v: 1, [symbol]: 'a' }, true],
+  ];
+  for (const [before, after, reused] of cases) {
+    const first = evaluateExpression(h(Leaf, before), null, true);
+    const second = evaluateExpression(h(Leaf, after), first.nextState, true);
+    expect([second.memoReuses, second.componentExecutions]).toEqual(reused ? [1, 0] : [0, 1]);
+  }
+  // Unkeyed (positional) memo rows are reused by position.
+  const list = (labels: string[]) => h('ul', null, ...labels.map(v => h(Leaf, { v })));
+  const a = evaluateExpression(list(['x', 'y']), null, true);
+  expect(evaluateExpression(list(['x', 'z']), a.nextState, true)).toMatchObject({ memoReuses: 1, componentExecutions: 1 });
+  // A memo component as another component's root keeps the boundary chain and key.
+  const outer = run((props: { v: string }) => h(Leaf, { v: props.v, key: 'inner' }));
+  const Outer = memo(outer.counted);
+  const r1 = evaluateExpression(h('div', null, h(Outer, { v: 'q', key: 'o' })), null, true);
+  const r2 = evaluateExpression(h('div', null, h(Outer, { v: 'q', key: 'o' })), r1.nextState, true);
+  const node = (r: typeof r1) => (r.snapshot.children[0] as VElement).children[0];
+  expect(r2.memoReuses).toBe(1); expect(node(r2)).toBe(node(r1));
+  expect(node(r2).identity).toMatchObject({ key: 'o', renderedRootKey: null });
+  expect(node(r2).identity.boundaries.map(boundary => boundary.key)).toEqual(['o', 'inner']);
+  // Nested: the outer changes, the inner memo still matches and is reused.
+  outer.calls.length = 0; leaf.calls.length = 0;
+  const wrap = run((props: { tag: string; v: string }) => h('section', { attrs: { title: props.tag } }, h(Leaf, { v: props.v })));
+  const Wrap = memo(wrap.counted);
+  const n1 = evaluateExpression(h(Wrap, { tag: 'a', v: 'same' }), null, true);
+  const n2 = evaluateExpression(h(Wrap, { tag: 'b', v: 'same' }), n1.nextState, true);
+  expect([n2.componentExecutions, n2.memoReuses]).toEqual([1, 1]); expect(leaf.calls).toHaveLength(1);
+  // Delete, then reinsert the same key in a later commit: the row runs again.
+  const keyed = (keys: string[]) => h('ul', null, ...keys.map(key => h(Leaf, { key, v: key })));
+  const k1 = evaluateExpression(keyed(['a', 'b']), null, true);
+  const k2 = evaluateExpression(keyed(['a']), k1.nextState, true);
+  expect(evaluateExpression(keyed(['a', 'b']), k2.nextState, true)).toMatchObject({ memoReuses: 1, componentExecutions: 1 });
+  expect(() => memo(null as unknown as PureComponent)).toThrow('memo');
+});

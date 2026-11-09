@@ -17,6 +17,8 @@ export interface EvaluationResult {
   readonly nextState: EvaluationState;
   readonly componentExecutions: number;
   readonly reusedExpressions: number;
+  /** Records reused by memo() props equality (counted apart from identical expressions). */
+  readonly memoReuses: number;
 }
 function keyOf(value: RenderValue): string | null {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
@@ -47,7 +49,7 @@ function makeRecord(expression: RenderValue, vnode: VNode, children: readonly Ev
 }
 
 export function evaluateExpression(value: RenderValue, previous: EvaluationState | null, reuse: boolean, onComponent?: (detail: Record<string, unknown>) => void): EvaluationResult {
-  let componentExecutions = 0, reusedExpressions = 0;
+  let componentExecutions = 0, reusedExpressions = 0, memoReuses = 0;
   // Logical paths exist only for the trace callback; without it no path string is built.
   const tracing = !!onComponent;
   function resolveOne(value: RenderValue, old: EvaluationRecord | undefined, path: string): EvaluationRecord {
@@ -66,7 +68,7 @@ export function evaluateExpression(value: RenderValue, previous: EvaluationState
       // previous record comes from the last committed evaluation, so a failed render
       // never leaves a reusable record behind.
       if (reuse && old && isMemoComponent(expr.type) && sameProps((old.expression as ComponentExpr).props, expr.props)) {
-        reusedExpressions++; onComponent?.({ path, reused: true, memo: true }); return old;
+        memoReuses++; onComponent?.({ path, reused: true, memo: true, name: expr.type.name || 'anonymous', key: expr.key }); return old;
       }
       componentExecutions++; onComponent?.({ path, reused: false, name: expr.type.name || 'anonymous', key: expr.key });
       const result = resolveOne(pureComputation(() => expr.type(expr.props)), old?.result, tracing ? `${path}/result` : '');
@@ -122,7 +124,7 @@ export function evaluateExpression(value: RenderValue, previous: EvaluationState
   const root = resolveOne(value, previous?.root, 'root');
   const snapshot = freezeOwnedNode<VRoot>({ kind: 'root', children: [root.vnode] });
   unwrap(validateTree(snapshot));
-  return { snapshot, nextState: { root }, componentExecutions, reusedExpressions };
+  return { snapshot, nextState: { root }, componentExecutions, reusedExpressions, memoReuses };
 }
 
 export function resolveExpression(value: RenderValue): VRoot { return evaluateExpression(value, null, false).snapshot; }
