@@ -4,7 +4,7 @@
 
 - 목표: 실제 TaskApp 표현 재사용과 E0/E1/E2 × A0/A1 비교, 측정에 따른 생성 비용·캐시 정책 개선, 최종 재검증·문서화·단계별 로컬 커밋.
 - 작업 시작 브랜치: **phase1**. 같은 브랜치에서 계속한다.
-- 현재 단계: **TaskApp 후속 작업 진행 중. 시작 phase1 / 4d5a66f(clean), A1 앱 변경 5ed7f34. 여섯 조합의 정식 3세션·원자료 감사와 별도 진단 24개 조건을 dfd20dc에 보존했다. E3 후보 ff9e24e는 전체 단위·통합 203개·타입·build와 기존 비교군을 포함한 새 정식 3세션 480개 조건·통계 감사·별도 진단 36개를 통과했다. 11개 초과 조건의 보충과 최종 엔진 정책·인수는 아직 완료하지 않았다.** [사전 계획](task-app-comparison-plan.md), [작업 기록](task-app-followup.md), [앱 변경 원리](task-app-reuse.md).
+- 현재 단계: **TaskApp 후속 작업 완료(2026-11-09).** 최종 정책은 엔진 E1 방식의 매회 검증 + 동결 안전 조건, 기본 앱 A0, 비교용 A1(`TaskAppWithRowReuse`)이다. 기능 소스 `9b52323`에서 typecheck·단위/통합 213개·build·기본 Chromium+Firefox 33개 × 3회를 통과했다. [최종 정책·검증](task-app-final-policy.md)
 - 외부 확인: M0 팀 합의/일정, 다른 후보, 팀원 설명/변경 연습, 원격 CI 실행은 확인되지 않았다. 실제 IME는 2026-11-07의 사용자 직접 확인 PASS이며 브라우저명·버전은 미제공이다. 이번 후보 소스의 새 수동 IME PASS로 재기록하지 않는다.
 - 원격 push/PR 병합/원격 배포는 요청 범위 밖이다. 최종 산출물은 로컬 데모와 재현 절차다.
 
@@ -15,10 +15,10 @@
 | A | 완료, 6c3fa1f | 세 엔진 Git 소스 고정, 사전 반복·채택 기준, 실제 TaskApp/모델 하네스, baseline smoke |
 | B | 구현·관련 정확성 검증 완료, 5ed7f34 | 루트 useMemo의 목록 표현·함수형 callback, [64개 테스트/앱 browser 8개](validation/task-app-b/result.json) |
 | C | 완료, dfd20dc | task-matrix-v1의 720/720 조건, raw 48,294 / 측정 작업 41,040 / 통계 12,024 / 그래프 240점 검산 통과. 진단 24/24, 진단 smoke 최초 분석 실패와 수정도 보존. [첫 결과 해석](task-app-baseline-results.md) |
-| D | E3/A1 일반 채택 기각, E4 정식 비교 준비 | E3 기각·완료/중단 보충과 A0/A1 진단 8개는 642746e에 보존. [E4 2a21ec7](task-app-bounded-candidate.md)는 호출당 새 인증 최대 64개로 보관 범위를 제한하며, 관련 14/전체 205/type/build와 작은 40개·stress 10개 smoke 원자료 감사를 통과했다. task-candidate-v2의 고정 A1 엔진 비교·E4 A0/A1 새 3세션 및 최종 인수는 남음 |
-| E | 최종 코드 결정 뒤 예정 | 전체 unit/integration/type/build, 기본 Chromium+Firefox fresh 3회, 원본·문서·외부 체크리스트 hash·clean 감사 |
+| D | 완료. E3·E4 일반 채택 기각, 최종 정책 E1 + A0 | E3 기각 증거 642746e. E4 `2a21ec7` 정식 480/480조건과 10개·100개 n=180 보충의 원자료·통계·판정 감사를 51b7def에 보존. 10,000개 보충은 사용자 요청으로 중단(95/180 표본, 완료 조건 0)하고 판정에 쓰지 않음. 정책 적용 코드 9b52323. [최종 정책](task-app-final-policy.md) |
+| E | 완료 | 9b52323에서 typecheck, 단위·통합 213/213, build, 기본 Chromium+Firefox 33/33을 새 서버·브라우저로 3회(125.4/87.1/89.2초). [검증 결과](validation/task-final-20261109-v1/result.json). 문서·외부 체크리스트 v1.12·hash는 결과 커밋에 연결 |
 
-저장소 밖 원본 체크리스트는 **v1.11(진행 중)**로 갱신했다. E3 일반 채택 기각, 완료한 1,000개 보충, 중단한 stress/미실행 작은 보충, E4 후보의 정확성 검증을 구분했다. 최종 정책·새 정식 비교·전체 브라우저 인수는 미완료다. v1.8~v1.11의 정확한 압축 사본과 SHA-256·외부 경로는 [현재 영수증](validation/task-checklist-bounded-candidate.json) 및 연결된 이전 영수증에 있다. 원본 Desktop 파일 자체가 Git 커밋에 포함되는 것은 아니다. [목표 항목별 대조](task-app-completion-audit.md)도 최종 인수 전 상태로 유지한다.
+저장소 밖 원본 체크리스트는 **v1.12(TaskApp 후속 완료)**로 갱신했다. 최종 정책, E4 기각 근거, 중단한 10,000개 보충의 미확인 상태, 최종 검증을 기록했다. v1.8~v1.12의 정확한 압축 사본과 SHA-256·외부 경로는 [최종 영수증](validation/task-checklist-final.json) 및 연결된 이전 영수증에 있다. 원본 Desktop 파일 자체가 Git 커밋에 포함되는 것은 아니다. [목표 항목별 대조](task-app-completion-audit.md)
 
 아래 M0–M8 및 no-op 후속 완료 수치는 해당 시점의 역사적 검증이다. 현재 A1 이후 최종 검증 결과로 재인용하지 않는다.
 

@@ -1,6 +1,6 @@
 # 공통 엔진 구조와 지원 계약
 
-최초 M8 기능 소스는 `3190268`, no-op 후속 엔진 소스는 `c4a2fe1`이다. 실제 TaskApp의 표현 재사용 변경은 `5ed7f34`이며, 현재 엔진 정책 재측정과 최종 전체 검증은 진행 중이다. 문서·CI·실험 결과의 커밋은 별도로 [진행 기록](progress.md)에 남긴다. API 타입의 원본은 [types.ts](../src/core/types.ts)다.
+최초 M8 기능 소스는 `3190268`, no-op 후속 엔진 소스는 `c4a2fe1`이다. 실제 TaskApp의 표현 재사용 변경은 `5ed7f34`다. 2026-11-09 최종 정책으로 엔진은 E1 방식의 매회 검증을, 기본 앱은 A0를 사용한다. A1은 비교용 `TaskAppWithRowReuse`로 남긴다. [최종 정책과 검증](task-app-final-policy.md) 문서·CI·실험 결과의 커밋은 별도로 [진행 기록](progress.md)에 남긴다. API 타입의 원본은 [types.ts](../src/core/types.ts)다.
 
 ## 두 Phase, 하나의 쓰기 경로
 
@@ -55,13 +55,20 @@ preflight 거절은 DOM 쓰기 0회다. 실제 DOM API가 실행 도중 예외�
 
 후속 최적화에서는 preflight가 비교용 host 객체 두 개를 매 노드마다 복사하지 않는다. 같은 VNode 참조는 동등하고, 다른 참조는 기존과 같은 own host 필드를 직접 비교한다. identity/children 검사는 따로 유지한다. 명령 모의 실행과 **현재 DOM 객체·parent·형제 순서·양방향 binding 검사**는 매 commit에 수행한다. DOM 쓰기가 0이어도 외부에서 같은 HTML의 다른 Node를 끼워 넣으면 거절한다.
 
-`freezeTree`는 엔진이 소유한 plain object/array의 data property를 재귀 동결하고 그 증거를 WeakSet에 기록한다. `Object.isFrozen(outer)`만 보고 하위 객체까지 동결됐다고 가정하지 않는다. getter/setter나 사용자 정의 prototype이 있는 객체는 증명 집합에 넣지 않으며, 함수는 identity로 취급하고 함수 자체나 호출자의 props/state를 동결하지 않는다. 순환 데이터는 거절한다.
+**최종 정책(2026-11-09): E1 방식의 매회 검증.** `validateTree`는 호출될 때마다 전체 VRoot를 검사한다. 같은 VRoot 참조가 다시 와도 이전 결과를 재사용하지 않는다. 그래서 형제 중복 key, form/radio 그룹, select/option 소유 문맥이 언제나 현재 root 기준으로 확인된다. 검증 결과나 불변성 인증을 호출 사이에 보관하지 않는다. [결정과 근거](task-app-final-policy.md)
 
-E3 `ff9e24e`부터 먼저 각 객체를 동결한 뒤 최종 prototype/descriptor를 검사한다. Proxy의 동결 전 상태로 증명하지 않으며, 자식 증명은 boolean으로 전달한다. 모든 보조 객체를 깊게 검사하되 장기 인증은 명시적인 freezeTree 인수와 VNode/root 경계에만 보관한다. 임시 재귀 Set은 finally에서 제거한다. [E3의 일반 채택은 추가 측정 뒤 기각](task-app-tail-results.md)했으며, 현재 [E4 후보](task-app-bounded-candidate.md)는 이 정확성 수정을 유지하면서 freezeTree 한 번당 **새 인증 최대 64개**만 보관한다. 한도 소진은 깊은 검사 종료를 뜻하지 않는다. 외부 kind나 예약된 슬롯만으로 인증하지 않고 모든 하위 증명 성공 뒤 등록한다. 앱·작업 이름에 따른 예외나 기능 제한은 없으며 성능 정책 채택은 새 비교 뒤 결정한다.
+`freezeTree`는 엔진이 소유한 plain object/array의 data property를 재귀 동결한다. 동결의 목적은 History와 이전 VDOM이 이후 갱신으로 변형되지 않게 하는 것(I-01)이며, 검증 생략의 근거로 쓰지 않는다. 안전 조건은 다음과 같다.
 
-트리 검증은 **검증을 성공한 동일 immutable VRoot 객체**에만 캐시한다. 캐시 키가 VNode/subtree가 아닌 전체 root이므로 형제 중복 key, form/radio 그룹, select/option 소유 문맥을 포함한다. 다른 root를 만들거나 부모 문맥을 바꾸면 전체 검사를 다시 한다. mutable·얕은 동결·accessor 데이터는 결과를 재사용하지 않는다. 고정된 HTML/폼 검증 정책 아래의 내부 데이터 캐시이며, DOM·MountView·PatchPlan·revision·binding에는 적용하지 않는다. WeakSet이므로 보관 수명이 끝난 snapshot을 강하게 붙잡지 않는다.
+- 먼저 `Object.freeze`한 뒤 동결 후의 own data descriptor만 따라간다. Proxy의 동결 trap이 최종 참조를 바꿔도 실제로 남은 값을 동결한다.
+- getter/setter는 실행하지 않는다. accessor가 돌려주는 값은 매 검증에서 다시 읽는다.
+- 순환과 재진입은 `순환 데이터` 오류로 거절한다. 진행 중 표시는 finally에서 지운다. 같은 호출 안의 공유 참조만 그 호출의 WeakSet으로 한 번 방문한다.
+- 함수는 identity로 취급하고 동결하지 않는다. 상속 prototype의 데이터와 호출자의 props/state도 동결하지 않는다.
 
-필요한 view 갱신, dirty controlled 복원, Effect, focus/IME 단계는 그대로 실행한다. 이 비용은 최초 트리 생성 시 깊은 불변성 증명으로 일부 이동한다. 새 트리를 매번 만드는 경우의 생성 비용 증가와 실제 cycle 이득을 모두 [후속 측정](benchmark-results.md)에 기록했다. 별도 CPU 진단은 일부 긴 render에서 freezeTree 등록 비용을, trace는 일부 긴 재배치에서 GC/weak 처리 비용을 확인했다. WeakSet이 강한 참조를 남기지 않는다는 성질과 관리·수거 비용이 없다는 주장은 다르다.
+resolver는 각 VNode를 만드는 시점에 `freezeOwnedNode`로 봉인한다. 노드의 자체 데이터(identity·attrs·style·events·form)를 깊게 동결하고 `children` 배열은 얕게 동결한다. children의 항목은 생성될 때 이미 봉인된 엔진 VNode다. 컴포넌트 경계 노드는 `freezeBoundaryNode`로 새 identity만 동결한다. 자식이 봉인되지 않았으면 오류로 거절한다(건너뛰기가 아닌 전제 확인). 따라서 재사용한 하위 트리를 다시 순회하지 않고 새 노드만 동결한다. E1 고정 build의 `Object.isFrozen` 건너뛰기는 얕게 동결된 wrapper나 Proxy를 놓칠 수 있어 사용하지 않는다.
+
+E2(`c4a2fe1`)~E4(`2a21ec7`)는 깊은 불변성 인증과 동일 root 검증 캐시를 실험한 후보다. E3는 Proxy 반례를 고쳤고, E4는 호출당 새 인증을 64개로 제한했다. 반복 재사용 조건의 이득은 확인했지만 사전 회귀 허용 범위를 넘는 조건이 반복돼 기본 경로에서 제외했다. 이 후보들은 고정 비교 build와 [후보 기록](task-app-bounded-candidate.md)에만 남는다.
+
+필요한 view 갱신, dirty controlled 복원, Effect, focus/IME 단계는 no-op에서도 그대로 실행한다. 캐시 후보의 생성 비용 증가와 반복 이득은 [성능 보고서](benchmark-results.md)에 기록했다.
 
 ## Root Hooks와 FIFO Batching
 
@@ -83,7 +90,7 @@ sync 비교 모드는 외부 setter마다 flush한다. 순수 action의 최종 S
 
 재사용은 검증을 없애지 않는다. 안전성 검사는 여전히 전체 트리를 방문할 수 있으므로 `visitedNodes` 감소를 전체 시간 감소와 같다고 해석하지 않는다.
 
-실제 TaskApp은 루트에서 `[setItems]`에 의존하는 rename/toggle/remove 콜백 묶음과 `[visible, rowActions]`에 의존하는 목록 표현을 useMemo로 보관한다. 콜백은 `setItems(previous => ...)`로 최신 FIFO 후보 상태를 읽는다. 따라서 draft·카운터만 바뀌면 루트는 실행해도 기존 TaskRow는 다시 평가하지 않는다. items·검색·필터·정렬이 바뀌면 목록 표현을 새로 만들고 자식을 평가한다. 모든 행의 props를 자동 비교하는 정책은 아니다.
+기본 `TaskApp`(A0)은 매 루트 render마다 행 콜백과 TaskRow 표현을 다시 만든다. DOM identity는 keyed Diff가 유지한다. 비교용 `TaskAppWithRowReuse`(A1)는 루트에서 `[setItems]`에 의존하는 rename/toggle/remove 콜백 묶음과 `[visible, rowActions]`에 의존하는 목록 표현을 useMemo로 보관한다. 콜백은 `setItems(previous => ...)`로 최신 FIFO 후보 상태를 읽는다. 따라서 draft·카운터만 바뀌면 루트는 실행해도 기존 TaskRow는 다시 평가하지 않는다. items·검색·필터·정렬이 바뀌면 목록 표현을 새로 만들고 자식을 평가한다. 모든 행의 props를 자동 비교하는 정책은 아니다.
 
 추가 callback은 draft·nextId를 읽으므로 render별 closure를 유지한다. items 변경의 기존 40ms Effect와 총개수 동기화도 유지하며, 그 후속 render에서 동일 목록 표현을 재사용한다. Hook은 루트의 고정 순서에만 있고 자식은 props 순수 함수다. [앱 원리·실행 횟수 근거](task-app-reuse.md), [실제 앱 비교 경계](task-app-followup.md)를 참고한다.
 

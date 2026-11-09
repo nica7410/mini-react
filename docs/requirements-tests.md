@@ -8,13 +8,15 @@
 
 | ID / 측정 계약 | 증명하는 동작 | 실제 테스트 |
 |---|---|---|
-| T-A04 | draft/counter/equal에서 행 평가 생략, reuse on/off의 State·입력·Effect 결과 일치 | [TaskApp reuse](../tests/integration/task-reuse.test.ts) |
+| T-A04 | A1에서 draft/counter/equal의 행 평가 생략과 A0의 재평가 비교, reuse on/off의 State·입력·Effect 결과 일치 | [TaskApp reuse](../tests/integration/task-reuse.test.ts) |
 | T-A05 | 유지한 콜백의 최신 FIFO State 처리, 수정·완료·삭제·추가 이후 identity·live value·focus·selection | [TaskApp reuse](../tests/integration/task-reuse.test.ts), [실제 브라우저](../tests/browser/tasks.spec.ts) |
 | 실제 앱 측정 oracle | 9개 작업의 독립 모델·순서·입력 복원·key identity·실제 Effect 후속 갱신, 중첩 시간 합산 방지 | [TaskApp benchmark](../tests/integration/task-benchmark.test.ts), [사전 비교 계획](task-app-comparison-plan.md) |
 
 E3 후보 `ff9e24e`는 T-N06의 Proxy 동결 전 prototype과 동결 중 자식 교체 반례를 수정했다. 변경 전 두 실패, 수정 후 관련 19개·전체 203개·타입·build의 새 실행은 [후보 정확성 기록](validation/task-e3-correctness/result.json)에 있다. 최종 성능 정책 및 전체 브라우저 인수는 별도다.
 
 E4 후보는 인증 보관 상한과 한도 이후의 완전한 검사를 확인하는 T-N08을 추가했다(현재 계약 ID 79개). E3에서 새 상한 반례가 실패했고 E4의 불변성 관련 14개·전체 단위/통합 205개·typecheck/build는 통과했다. [변경 전 실패](validation/task-e4-correctness/red.json), [후보 검증](validation/task-e4-correctness/result.json). 최종 성능 및 전체 브라우저 인수를 대신하는 수치가 아니다.
+
+최종 정책(2026-11-09)은 E1 방식의 매회 검증과 기본 앱 A0다. 인증·검증 캐시를 제거하면서 T-N06/T-N08의 인증 여부 단언을 동결 상태·accessor 미실행·매 호출 재검증 단언으로 바꿨다. T-A04에는 A0의 행 재평가와 A1(`TaskAppWithRowReuse`)의 생략을 직접 비교하는 테스트를 더했고, T-A05의 최신 FIFO callback 테스트는 A0·A1 모두에서 실행한다. 계약 ID는 79개 그대로이며 전체 단위·통합 테스트는 213개다. [최종 정책](task-app-final-policy.md)
 
 ## no-op 후속 회귀 (당시 추가 7개 ID, 전체 76개)
 
@@ -25,9 +27,9 @@ E4 후보는 인증 보관 상한과 한도 이후의 완전한 검사를 확인
 | T-N03 | no-op의 다른 mount/stale revision/위조 view/registry 거절 | [no-op contracts](../tests/integration/noop-contracts.test.ts), [anchor/parent 회귀](../tests/integration/plan-validation.test.ts) |
 | T-N04 | DOM이 같아도 Effect 실행, preflight 실패 후보 State/Effect 미확정, unmount 정리 | [no-op contracts](../tests/integration/noop-contracts.test.ts) |
 | T-N05 | no-op 이후 handler 교체/제거, 같은 노드의 폼 소유 변경 거절 | [no-op contracts](../tests/integration/noop-contracts.test.ts) |
-| T-N06 | mutable/얕은 freeze/accessor/prototype 경계, Proxy의 최종 구조 증명, 순환·재진입·오류 후 재시도, 함수 비동결 | [immutable validation](../tests/unit/immutable-validation.test.ts), [proof regression](../tests/unit/immutable-proof-regression.test.ts) |
+| T-N06 | mutable/얕은 freeze/accessor/prototype 경계, Proxy의 동결 후 최종 참조 동결, 순환·재진입 거절과 오류 후 재시도, 함수 비동결 | [immutable validation](../tests/unit/immutable-validation.test.ts), [proof regression](../tests/unit/immutable-proof-regression.test.ts) |
 | T-N07 | 공유 subtree를 새 root/form/radio/select 문맥에 놓을 때 다시 검증 | [immutable validation](../tests/unit/immutable-validation.test.ts) |
-| T-N08 | 큰 트리의 새 인증 보관 상한, 한도 이후 깊은 동결 및 accessor 인증 거절 | [retention budget](../tests/unit/immutable-retention-budget.test.ts) |
+| T-N08 | 최종 정책: 넓은 트리 전체 동결과 같은 root의 매 호출 재검증(결과 미보관), 늦은 accessor 미실행·변경 거절, resolver 봉인 노드(재사용 keyed 자식·컴포넌트 경계 포함)의 렌더 간 깊은 동결, handler 비동결, 봉인 전제 위반 거절. E4 당시에는 새 인증 보관 상한을 확인했다 | [per-call freeze/validation](../tests/unit/immutable-per-call.test.ts) |
 
 기존 T-H04/H05, T-P06, T-K01~K07, T-B01~B04도 유지한다. 새 harness [12개 counts/oracle 회귀](../tests/integration/noop-benchmark.test.ts)는 controlled dirty·uncontrolled 보존·재배치·Effect·자원 정리를 별도 확인한다. 실제 Windows IME 수동 확인은 이전 사용자 보고이며, 이번 자동 검증과 시점을 혼동하지 않는다.
 

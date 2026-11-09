@@ -1,0 +1,278 @@
+{
+  "status": "passed",
+  "startedAt": "2026-11-09T06:15:22.501Z",
+  "branch": "phase1",
+  "commit": "9b523238cdc3545c46a61fa6ba6f2a5220941df1",
+  "sourceSha256": {
+    "package.json": "dfe52536553fa789514ae8196dde93297c5fe64a6fe4922e1d24f5ec5452f5d8",
+    "playwright.config.ts": "362778c69f76f438a37a3f936f0bcac452b2c0fc42ccc48ae732bc86fcc72857",
+    "pnpm-lock.yaml": "2057fbbf450943c652548e72ea06ea539c9b20a044e373f55c2c7b7d1e16681c",
+    "scripts/browser-server.mjs": "869fa20a7ce2d6a2ee543354ba4ca8b6563c971692f5f89aad09aad4e4b16640",
+    "src/app/counter.ts": "e56f050cddf03a2755938a1c28fe23db5137084b5f0bc4a60d36b7d6a7c24834",
+    "src/app/lab.ts": "f70943cb5849cc9894e4b42639c4fa2d248002f3051247ca2cda36a8708998f2",
+    "src/app/main.ts": "6a5c580b50be9cb4d0634b5e76d13faf337d80f6b6ba709fa57a5837223383a3",
+    "src/app/style.css": "6ff1e004f62403a3c997cea8fbea6c1f0c7deb42161cb59aad4d5ef141283526",
+    "src/app/tasks.ts": "a0e71a0d473fb2de6b8e867ae9e6de34ed84bbfe374a88e4029328c4d35d3587",
+    "src/bench/fixtures.ts": "225ab845cf80f2d6c70bf3e0eb02e71ad2ceca8f45fe5540a876d4a4325132c4",
+    "src/bench/harness.ts": "619428490ed4bc170d572ca90815c4ec772929dadb9ada07729fd370e10d679e",
+    "src/bench/noop.ts": "f76171ea93dacd59a088b8463d8ec47bf20e43ea44e1bc303c0742ef6141f45b",
+    "src/bench/noopProfile.ts": "69f0703131027bb8bfa6e73bd6e530ae2d375c661b205bd01df6bd6bd7a2dcbd",
+    "src/bench/page.ts": "2128ba6b96b2f8f33fabf91c569078481e58f0686e74bcf03c10f34016fba466",
+    "src/bench/statistics.ts": "9bbe2fea650668459bd0cb6b7b3add6f4e74a930b28593248b28875fc10fca12",
+    "src/bench/task-app.ts": "03412f7d24d7a621b0d1a80392bf7406e7c920cc329de4ea3be191b81b0d290c",
+    "src/bench/task-model.ts": "90a16dc23b18a49fdd69d1f07398c6bb483bf58e1b4d78e418eb969b416a09f1",
+    "src/core/capture.ts": "bb67da1eb02d36e28f1fd33876399695d19e7bd2c4bd37632cde947086946e8b",
+    "src/core/host/browserState.ts": "218603ca2a25629a388f1247ce08f9cb8675bc14755aad27e266934ede88ea77",
+    "src/core/host/events.ts": "1dee6410d07328fcd0384fe2572f45da33c6d0dbf291039ada158da7d5289ee8",
+    "src/core/host/forms.ts": "576d34c2f11bb60b05fa8524906a21b5f85c14eb5aa9e9c23839d6e0a1deb2e6",
+    "src/core/host/inputs.ts": "37d165382aff0209da74434fd7955ec87b82588fb60e21f138e4592bd8d8d82b",
+    "src/core/keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+    "src/core/mount.ts": "98db1dececa432877bc19efd765c706c009b762ab74754cebabf2c41e415a039",
+    "src/core/patch.ts": "77f8c59f94dfeb1ed0fd289c7523d98c05758ed51325308cfa1af1c2f19230ef",
+    "src/core/planValidation.ts": "ebb754eb4b3688abc3513b064fcadf9a0c29151c8e1c3d76ed2f4d2fde56fa31",
+    "src/core/reconcile.ts": "c8b971061b1cabaaba295041b3dfb960425b8d737c775c13522c861b094750ae",
+    "src/core/types.ts": "6cb4f8d46700baf0ee03a6311a258243dbcff396de225201d8f9784e16c17b62",
+    "src/core/validate.ts": "2d6b8608c532371d21c7fd7e34156f4a2a17f0413ec4c9bf87bb6c2cdf209546",
+    "src/core/vdom.ts": "ef4d0c6c53b30c44ff4e61afa3e3dc38c73782a6510a9befa216c0891e2ecdd0",
+    "src/editor/controller.ts": "839cf161c54e6554fd6e44843a104c3fdba3e27885e71d633e8196afba0dfeed",
+    "src/editor/history.ts": "3b111825709eea00f1318fe5e95bb2d822242e067d2b8b7f8dc3a6af672b277b",
+    "src/editor/inputPolicy.ts": "3a64b56b50354684097f6a1ac8f520373499a77fe1b3d853970b206d060428e3",
+    "src/observe/inspector.ts": "ff8e32e8e90ddeb026d1be9d22d3b388e66317a17aad3ae7c26c1da7e97a3af5",
+    "src/observe/recorder.ts": "2fac724581b0d57d7ff1882a564142cc26cc98620bda1cf4796d17a231375566",
+    "src/observe/trace.ts": "509b61c504c88078b3cfd243917aceb8e2bace996143995683bc3c4dc487d10b",
+    "src/runtime/FunctionComponent.ts": "8c9dcaba691544641e90a8da37af67138dc46b1d0d3795ff2bcec4ce4c2c48b6",
+    "src/runtime/expression.ts": "497e4d36029975216cc0924bb90d1c02f7df3c701122b9e764303a301169a031",
+    "src/runtime/hooks.ts": "7563a2fa137b281230754feafd9d2bb8673201690005aa76928a05fcc5ea8d3f",
+    "src/runtime/index.ts": "3935b4f807ac3b05a6404b3eaa38780239104403cb4299780f5706570734dc3e",
+    "src/runtime/resolve.ts": "e8bc44e2c893ba23809498feac189f4b81fd078f80d5383d547dca01d8fed7c2",
+    "src/runtime/stateGuard.ts": "4fea31d3bc4f290e7e65683a8a812ab4c2a76f6c1dad1c77b7466d4abf96c369",
+    "src/runtime/updateQueue.ts": "adda868ec42fd02d33fd80a1c5e4b9b11ff72c88d3e6e55548ed981b44d06fbe",
+    "tests/browser/batching.spec.ts": "107a126e0db7946ee5bd8f8b9cbac71062efda5259936bcaaa317bb781cf5661",
+    "tests/browser/browser-state.spec.ts": "6f2d5b83364e8df4c3039c38fdd471e0bd3715bade6b648c359dc5a390471c01",
+    "tests/browser/fixtures.ts": "5a905c58d1af2f650af6e5d1e8db56250d4e547e505d3792c9db7024767d83d6",
+    "tests/browser/inspector.spec.ts": "688cb4796974e49ed4696f9a101a7c4591989f834dc5ad1b5a132232279b9fd4",
+    "tests/browser/keyed.spec.ts": "82a70dde977df72117c69bdbd94b5720c3a891f9259ba454c5f0a6074d8504cd",
+    "tests/browser/m1.spec.ts": "4028f10a3c2b984cfbac59308e18453a1f93a8bc939ec9d5c3fefbef6bc742c6",
+    "tests/browser/m3.spec.ts": "c9c97af3c346c13bb4e2fa2d34e4896fae195cca33333aeadb6433e10cd5ed3f",
+    "tests/browser/tasks.spec.ts": "739ae2a29b22e30be168deade78cb837e1c7b19c009e788ccbcfa478b816117a",
+    "tests/browser/timingReporter.ts": "88a3aec3700575056d37bd4bf67afd9f6547419eb9b42c0a9b4335b49626c082",
+    "tests/fixtures/helpers.ts": "ab8459632242109aaa68b52e6624d1e6e6ae8b91aef50165ccb5862b39478aa5",
+    "tests/fixtures/keyed-model.ts": "adb3ac6a18c039daebcdcdc63f4376b664ba502f800df3d5dbb7e57b620d034b",
+    "tests/fixtures/sync-root.ts": "45ebff3848edb795566708fa68e2e762570bfbf54354c8afcfe3d811a98fff65",
+    "tests/integration/batching.test.ts": "c8b6e82292de87cfdedaceab431457b5ede99fe4ecadffa251f0d4e63f3d0aef",
+    "tests/integration/benchmark.test.ts": "d872eea41a25613d62a20981ee7de5ec8adee374ebefd80e1e11f447f1fd24ba",
+    "tests/integration/browser-state.test.ts": "2ece7bd8cce82a85c0d9f546ae811b254c90536d9b8e1b0853dc903d9871607c",
+    "tests/integration/forms.test.ts": "d15b0760737817f707d1e4d08937d1de0e824e9d2fa40194fcd3b55af67865aa",
+    "tests/integration/history.test.ts": "fc9d45ebcfb9b22930eb495d725cb4f58d54686055f0b08d894f6158463cdba7",
+    "tests/integration/hooks.test.ts": "567688ec3e0446e3be0def8d91d8a14495567458cfde68e6169dee5e31fb7b5d",
+    "tests/integration/keyed.test.ts": "0695a30e8d160458e64b34f305d5ed5d773444694dc2577c6eb357b213989f7d",
+    "tests/integration/noop-benchmark.test.ts": "a9e8340e4b76f27fdcdbd4e6532f99fee0ae244e3f81a08c165830b7bfcf9948",
+    "tests/integration/noop-contracts.test.ts": "f25dc060092c609cbe26ac36fb953c20cd6bafae4973a74d0063e76c5f3f7c8b",
+    "tests/integration/observe.test.ts": "a5809416be966309dd22a439edf563288e086abeee8bd7b97f7a0a4acc3ed7a5",
+    "tests/integration/patch.test.ts": "60b1f0a4ea5def0750e2c7a52ab13a42d7e827113c2d5708428fbbb4b394e5a5",
+    "tests/integration/plan-validation.test.ts": "175eab24cb60409e3f1e220aca5242759aaf7859169a8ebbdf0d61ac8d0265df",
+    "tests/integration/reuse.test.ts": "2bea18ecdf8f129222f3ec80f16799aaa4dc05fb2f4347058fe9aa750d70c96f",
+    "tests/integration/task-benchmark.test.ts": "8a20ed9ade33bd4763e456c6c6d5e0c84ed4728bf0fce0114f4c36a0c7cef4b3",
+    "tests/integration/task-reuse.test.ts": "e8009f7afb17dd0dc00dc05fce89d1d8b3917a9be25a7b62af67129440c830cf",
+    "tests/unit/diff.test.ts": "33b7a044b6dee3b9375e773a74b6d91a931bbcb3d67718e9c0f6e91f3bc7bc21",
+    "tests/unit/immutable-per-call.test.ts": "00474128a622a40da3f22997e46f760af88c6d6985622c2b4cef4bb482601293",
+    "tests/unit/immutable-proof-regression.test.ts": "3968d452209142cfaf904d5f7bd3058c277907a86b79d06b98b3cb0548afeb80",
+    "tests/unit/immutable-validation.test.ts": "a0206471f930787b09f9c69f36f76d9809db9593aa52e3964a0d0a42311944cc",
+    "tests/unit/keyed-exhaustive.test.ts": "7b1d9f7eb112f021ce34fc43d97e5ec9cc6a1524e5a0dbffddf16ca7b7880c55",
+    "tests/unit/vdom.test.ts": "73a53f428f930530ec36827c69f95cc9c82b408082a621b56e262ae8d8ba7207",
+    "tsconfig.json": "8665b6b6b1f5314f854e4659bfef23cf3747031bc647352909dfc7674ce60840",
+    "vite.config.ts": "5b00d649efe4d80430c1c1a88aefca01e461a9f97b6de7c16cb835a4a0255b90",
+    "vitest.config.ts": "bc9916e26fd72b7971e67e930d18be927dda501e6ca3ac36b8b6fa42a0f07420"
+  },
+  "validatorSha256": "73a3c8e425c3e1869517b12d192b99723d50f80c65768cb43ccd7a7f74ced83a",
+  "node": "v24.22.2",
+  "platform": "win32",
+  "arch": "x64",
+  "startingStatus": "M README.md\n M docs/architecture.md\n M docs/benchmark-results.md\n M docs/m8-acceptance.md\n M docs/progress.md\n M docs/requirements-tests.md\n M docs/task-app-bounded-candidate.md\n M docs/task-app-completion-audit.md\n M docs/task-app-followup.md\n M docs/task-app-reuse.md",
+  "commands": [
+    {
+      "name": "typecheck",
+      "args": [
+        "typecheck"
+      ],
+      "startedAt": "2026-11-09T06:15:22.536Z",
+      "endedAt": "2026-11-09T06:15:24.212Z",
+      "exitCode": 0
+    },
+    {
+      "name": "unit",
+      "args": [
+        "test",
+        "--reporter=json",
+        "--outputFile=.validation/task-final-20261109-v1-unit.json"
+      ],
+      "startedAt": "2026-11-09T06:15:24.213Z",
+      "endedAt": "2026-11-09T06:15:31.622Z",
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "args": [
+        "build"
+      ],
+      "startedAt": "2026-11-09T06:15:31.631Z",
+      "endedAt": "2026-11-09T06:15:33.293Z",
+      "exitCode": 0
+    },
+    {
+      "name": "browser-1",
+      "args": [
+        "test:browser"
+      ],
+      "startedAt": "2026-11-09T06:15:33.304Z",
+      "endedAt": "2026-11-09T06:17:41.140Z",
+      "exitCode": 0
+    },
+    {
+      "name": "browser-2",
+      "args": [
+        "test:browser"
+      ],
+      "startedAt": "2026-11-09T06:17:41.177Z",
+      "endedAt": "2026-11-09T06:19:09.878Z",
+      "exitCode": 0
+    },
+    {
+      "name": "browser-3",
+      "args": [
+        "test:browser"
+      ],
+      "startedAt": "2026-11-09T06:19:09.924Z",
+      "endedAt": "2026-11-09T06:20:40.857Z",
+      "exitCode": 0
+    }
+  ],
+  "browserRuns": [
+    {
+      "run": 1,
+      "stats": {
+        "startTime": "2026-11-09T06:15:35.709Z",
+        "duration": 125358.906,
+        "expected": 33,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "argv": [
+        "C:\\Users\\nica7\\AppData\\Local\\Programs\\Node.js\\node-v24.22.2-win-x64\\node.exe",
+        "C:\\Github\\mini-react\\node_modules\\@playwright\\test\\cli.js",
+        "test"
+      ],
+      "workers": 2,
+      "projects": [
+        {
+          "name": "chromium",
+          "timeout": 30000,
+          "retries": 0
+        },
+        {
+          "name": "firefox",
+          "timeout": 30000,
+          "retries": 0
+        }
+      ],
+      "server": {
+        "pid": 23600,
+        "startedAt": "2026-11-09T06:15:35.943Z"
+      },
+      "commandExit": 0
+    },
+    {
+      "run": 2,
+      "stats": {
+        "startTime": "2026-11-09T06:17:42.701Z",
+        "duration": 87102.733,
+        "expected": 33,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "argv": [
+        "C:\\Users\\nica7\\AppData\\Local\\Programs\\Node.js\\node-v24.22.2-win-x64\\node.exe",
+        "C:\\Github\\mini-react\\node_modules\\@playwright\\test\\cli.js",
+        "test"
+      ],
+      "workers": 2,
+      "projects": [
+        {
+          "name": "chromium",
+          "timeout": 30000,
+          "retries": 0
+        },
+        {
+          "name": "firefox",
+          "timeout": 30000,
+          "retries": 0
+        }
+      ],
+      "server": {
+        "pid": 17536,
+        "startedAt": "2026-11-09T06:17:43.021Z"
+      },
+      "commandExit": 0
+    },
+    {
+      "run": 3,
+      "stats": {
+        "startTime": "2026-11-09T06:19:11.546Z",
+        "duration": 89238.716,
+        "expected": 33,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "argv": [
+        "C:\\Users\\nica7\\AppData\\Local\\Programs\\Node.js\\node-v24.22.2-win-x64\\node.exe",
+        "C:\\Github\\mini-react\\node_modules\\@playwright\\test\\cli.js",
+        "test"
+      ],
+      "workers": 2,
+      "projects": [
+        {
+          "name": "chromium",
+          "timeout": 30000,
+          "retries": 0
+        },
+        {
+          "name": "firefox",
+          "timeout": 30000,
+          "retries": 0
+        }
+      ],
+      "server": {
+        "pid": 24556,
+        "startedAt": "2026-11-09T06:19:11.805Z"
+      },
+      "commandExit": 0
+    }
+  ],
+  "manualIME": {
+    "status": "previous user report, not rerun for this source",
+    "date": "2026-11-07",
+    "answer": "직접 확인 완료 — 문제 없음",
+    "browser": "not supplied",
+    "current": "synthetic composition tests in the full browser suite"
+  },
+  "unit": {
+    "passed": 213,
+    "total": 213,
+    "files": 21,
+    "pending": 0,
+    "todo": 0
+  },
+  "productionAssets": {
+    "dist/assets/app-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+    "dist/assets/app-UnKnj14w.js": "4fec016c65d7a8c88250ca3e47984d1b9fe108ed39876b6548522a7716ad7e98",
+    "dist/assets/benchmark-BOrQ7_wr.js": "fb77e3900ded1d02916f94c1d3fbaed3c1345e52cee352294654a3ed82354e0c",
+    "dist/assets/fixtures-C1xHnmC4.js": "87d7376251b4c3786d284b1131148d746c1fa3659c31c3d7339eb93d46997a1d",
+    "dist/benchmark.html": "657cb65bf948b5fcdf631aac976d68261eb32f0db3f240e66b0a762f50b29f70",
+    "dist/index.html": "fc543c62352b827aa825ef09bc12d0e7f987428d49bd24e960ec73c328b1608f"
+  },
+  "sourceUnchanged": true,
+  "endedAt": "2026-11-09T06:20:40.950Z"
+}

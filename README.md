@@ -7,7 +7,7 @@ Vanilla TypeScript로 만든 학습용 Mini React입니다. DOM 편집기와 루
 - **B안:** 지원되는 keyed 형제의 LIS 기본 경로와 Greedy 비교, FIFO microtask Batching, 같은 expression의 위치별 재사용, Inspector·seed 재실행·독립 benchmark.
 - **입력:** snapshot/controlled/uncontrolled, no-op 복원, focus/selection 보정, composition 충돌 plan 보류.
 
-현재 실제 TaskApp의 목록 표현·콜백 재사용을 개선하는 후속 작업을 진행 중입니다. E0/E1/E2 × 변경 전후 앱의 정식 3세션 비교 720개 조건과 별도 진단 24개 조건을 완료했습니다. E3 후보는 단위·통합 203개, typecheck/build와 기존 비교군을 포함한 새 정식 3세션 480개 조건·원자료 감사·별도 진단 36개를 통과했습니다. 초과 조건의 보충, 최종 정책·전체 브라우저 3회 인수는 남아 있습니다. [후속 진행](docs/task-app-followup.md), [앱 원리](docs/task-app-reuse.md), [첫 비교 결과](docs/task-app-baseline-results.md), [후보 정의·회귀 조건](docs/task-app-engine-candidate.md)를 참고하세요.
+실제 TaskApp 후속 작업은 2026-11-09에 끝났습니다. E0/E1/E2 × A0/A1 비교 720조건, E3·E4 후보의 정식 3세션 480조건씩과 n=180 보충을 감사한 결과, 캐시 후보(E2~E4)와 목록 표현 재사용 앱(A1)은 반복 재사용 이득에도 사전 회귀 허용 범위를 넘는 조건이 남아 기본값으로 채택하지 않았습니다. **최종 기본 경로는 E1 방식의 매회 VDOM 검증 + 동결 안전 조건, 기본 앱 A0**이며 A1은 비교용 `TaskAppWithRowReuse`로 남겼습니다. 최종 소스는 typecheck·단위/통합 213개·build·Chromium+Firefox 33개 × 3회를 통과했습니다. 10,000개 E4 보충은 중단했으며 그 stress 회귀는 미확인입니다. [최종 정책과 검증](docs/task-app-final-policy.md), [성능 보고서](docs/benchmark-results.md), [후속 진행](docs/task-app-followup.md)을 참고하세요.
 
 이전 no-op 기능 소스의 자동 검증은 **184개 단위·통합 + Chromium 20개 + Firefox 11개**, 브라우저 전체 3회 연속 통과입니다. 최초 M8의 측정 51,480개와 후속 no-op의 3세션·측정 23,760개는 각각 당시 코드의 결과로 보존합니다. 실제 Windows 한글 IME는 이전 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). [역사적 후속 검증](docs/browser-noop-followup.md), [성능 결과](docs/benchmark-results.md), [인수 상태](docs/m8-acceptance.md)를 참고하세요. 팀 활동과 원격 CI 실행은 미확인입니다.
 

@@ -1,0 +1,39 @@
+{
+  "status": "complete; E4 rejected; final policy E1 per-call validation with freeze safety and default app A0 applied and accepted",
+  "updatedAt": "2026-11-09T06:22:21.760Z",
+  "externalPath": "C:/Users/nica7/Desktop/리액트 조사/Mini_React_B안_구현명세_체크리스트.md",
+  "version": "1.12",
+  "beforeSha256": "be6f67b546aacd96790f44b6a76ae5fd2d1ea334a19a07df3ca8f0061846ac8e",
+  "afterSha256": "cc29db2beef2f15409d50162f3115df5f7945ad8b4a16a4bc4bf183a8f10774b",
+  "archives": {
+    "before": "docs/validation/task-checklist-v1.11.md.gz",
+    "after": "docs/validation/task-checklist-v1.12.md.gz"
+  },
+  "previousReceipt": "docs/validation/task-checklist-bounded-candidate.json",
+  "finalFunctionalCommit": "9b523238cdc3545c46a61fa6ba6f2a5220941df1",
+  "evidenceCommit": "51b7def",
+  "evidence": {
+    "finalPolicy": "docs/task-app-final-policy.md",
+    "finalValidation": "docs/validation/task-final-20261109-v1/result.json",
+    "e4Policy": "docs/bench/task-candidate-v2/policy-audit.json",
+    "e4Statistics": "docs/bench/task-candidate-v2/statistics-audit.json",
+    "supplement100Policy": "docs/bench/task-candidate-v2-tail-persistent-100-v1/policy-audit.json",
+    "supplement10Policy": "docs/bench/task-candidate-v2-tail-persistent-10-v1/policy-audit.json",
+    "stopped10000": "docs/bench/task-candidate-v2-tail-persistent-10000-v1/stopped-run-inventory.json"
+  },
+  "evidenceSha256": {
+    "finalPolicy": "17ec135a30001d5e156a95ea1762c68d3e83850cd34b74af2e6ad9b1b6764a0c",
+    "finalValidation": "ad06cd76003f9a7b82b38d1240251191178d3f93fb562d8e517e7e7722a2be50",
+    "e4Policy": "bff762c02cc766e8f4353e019a58ef69aeb1c87a63013504eca09ffde1c38469",
+    "e4Statistics": "7ee9b2201248048d292b2f15c3cb119858e3e6fcc69311efb9189e9054c4964f",
+    "supplement100Policy": "45b49ae392918e5d00832a8b26d214de008923ca42f0a104012bd3c02fa117af",
+    "supplement10Policy": "9b110fe21c70e9dba12702ae4ca17b3d06701ce90c0e19d6d8636e88254b9fc1",
+    "stopped10000": "97a886d434de575660a4a7ad37302172111739a9e35f4a5200a0ec9707f4d6a1"
+  },
+  "notCompleted": [
+    "E4 10,000-item supplement stopped by the user (95/180 samples, 0 completed conditions); not run again without explicit user permission",
+    "team agreement, other candidates, team explanation/practice/presentation, remote CI",
+    "no new timing of the final source"
+  ],
+  "note": "Desktop original is outside Git. Repository stores exact snapshots and version/hash evidence."
+}

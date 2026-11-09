@@ -1,0 +1,7025 @@
+{
+  "pid": 17536,
+  "startedAt": "2026-11-09T06:17:43.021Z",
+  "elapsedMs": 86637.19209999999,
+  "events": [
+    {
+      "phase": "listening",
+      "atMs": 108.53240000000002
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 159.8864,
+      "durationMs": 53.011300000000006
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 149.82719999999998,
+      "durationMs": 230.82680000000005
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 164.7091,
+      "durationMs": 218.81350000000003
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 158.85119999999998,
+      "durationMs": 224.97260000000006
+    },
+    {
+      "url": "/src/core/types.ts",
+      "status": 200,
+      "atMs": 164.44840000000002,
+      "durationMs": 219.88800000000003
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 164.80800000000002,
+      "durationMs": 220.40729999999996
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 164.99910000000003,
+      "durationMs": 221.02679999999998
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 165.321,
+      "durationMs": 221.3874
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 165.7125,
+      "durationMs": 221.62879999999996
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 166.44840000000002,
+      "durationMs": 221.38429999999994
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 166.6194,
+      "durationMs": 234.50079999999997
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 146.67510000000001,
+      "durationMs": 273.62100000000004
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 148.95880000000002,
+      "durationMs": 272.0360999999999
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 149.40040000000002,
+      "durationMs": 272.09659999999997
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 158.5348,
+      "durationMs": 265.886
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 150.07180000000002,
+      "durationMs": 274.68670000000003
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 149.60350000000003,
+      "durationMs": 275.69339999999994
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 163.68409999999997,
+      "durationMs": 262.21530000000007
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 164.02439999999999,
+      "durationMs": 262.9831
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 163.54530000000003,
+      "durationMs": 264.025
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 163.80069999999998,
+      "durationMs": 264.14590000000004
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 164.1417,
+      "durationMs": 264.388
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 164.2623,
+      "durationMs": 264.85720000000003
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 164.58470000000003,
+      "durationMs": 264.9792
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 163.91119999999998,
+      "durationMs": 266.045
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 165.1127,
+      "durationMs": 265.3249
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 164.9034,
+      "durationMs": 265.7479
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 165.2173,
+      "durationMs": 265.65760000000006
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 165.41920000000002,
+      "durationMs": 266.2248
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 165.8061,
+      "durationMs": 266.3041
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 165.5175,
+      "durationMs": 266.8485
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 165.6176,
+      "durationMs": 267.8539
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 162.484,
+      "durationMs": 422.3534
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 163.2963,
+      "durationMs": 3088.7129999999997
+    },
+    {
+      "phase": "ready",
+      "atMs": 3254.4024000000004,
+      "warmupMs": 3144.6498,
+      "modules": 34
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 5185.661,
+      "durationMs": 9.362600000000384
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 5186.6784,
+      "durationMs": 13.772600000000239
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 5209.5155,
+      "durationMs": 12.11409999999978
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 5222.2880000000005,
+      "durationMs": 11.922599999999875
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 5235.7401,
+      "durationMs": 0.4952000000002954
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 5236.6829,
+      "durationMs": 0.34240000000045256
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 5237.1427,
+      "durationMs": 0.7354999999997744
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 5240.8523000000005,
+      "durationMs": 0.6322999999993044
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 5241.8261,
+      "durationMs": 0.30090000000018335
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 5236.398700000001,
+      "durationMs": 6.651099999999133
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 5234.9244,
+      "durationMs": 8.14180000000033
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 5243.4249,
+      "durationMs": 0.3148000000001048
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 5244.037,
+      "durationMs": 0.1477999999997337
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 5244.4462,
+      "durationMs": 0.17069999999966967
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 5244.8797,
+      "durationMs": 0.30270000000018626
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 5245.3313,
+      "durationMs": 0.576600000000326
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 5246.106,
+      "durationMs": 0.3702000000002954
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 5246.6803,
+      "durationMs": 0.3301000000001295
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 5247.1547,
+      "durationMs": 0.48649999999997817
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 5247.8328,
+      "durationMs": 0.5448999999998705
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 5248.577200000001,
+      "durationMs": 0.4510999999993146
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 5249.2902,
+      "durationMs": 0.6598999999996522
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 5250.1112,
+      "durationMs": 0.5083999999997104
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 5250.7932,
+      "durationMs": 0.5401000000001659
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 5257.4861,
+      "durationMs": 0.6585000000004584
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 5258.3967,
+      "durationMs": 0.815599999999904
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 5259.6215,
+      "durationMs": 0.8185000000003129
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 5260.7423,
+      "durationMs": 0.5023000000001048
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 5261.3928000000005,
+      "durationMs": 0.2919999999994616
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 5261.7913,
+      "durationMs": 0.31199999999989814
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 5264.5372,
+      "durationMs": 0.54070000000047
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 5265.2426000000005,
+      "durationMs": 0.2918999999992593
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 5265.6462,
+      "durationMs": 0.7181000000000495
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 5266.5634,
+      "durationMs": 0.40610000000015134
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 5267.0816,
+      "durationMs": 0.24470000000019354
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 5267.400900000001,
+      "durationMs": 0.19459999999980937
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 5330.0131,
+      "durationMs": 0.6579000000001543
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 5330.9605,
+      "durationMs": 0.5520999999998821
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 5331.7498000000005,
+      "durationMs": 0.4958999999998923
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 5332.726000000001,
+      "durationMs": 0.5841999999993277
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 5333.5492,
+      "durationMs": 0.33539999999993597
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 5334.2149,
+      "durationMs": 0.32780000000002474
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 5339.726900000001,
+      "durationMs": 0.7136000000000422
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 5340.6951,
+      "durationMs": 0.9789000000000669
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 5341.970600000001,
+      "durationMs": 0.6774999999997817
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 5342.9666,
+      "durationMs": 0.6819000000004962
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 5344.0555,
+      "durationMs": 0.7582999999995081
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 5345.0562,
+      "durationMs": 0.4535999999998239
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 5345.6767,
+      "durationMs": 0.2750000000005457
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 5346.0901,
+      "durationMs": 0.2933999999995649
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 5346.5686000000005,
+      "durationMs": 0.5209999999997308
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 5347.2664,
+      "durationMs": 0.4705999999996493
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 5347.895100000001,
+      "durationMs": 0.507699999999204
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 5348.6033,
+      "durationMs": 0.4603000000006432
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 5349.272,
+      "durationMs": 0.49949999999989814
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 5350.08,
+      "durationMs": 0.5732000000007247
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 5350.8628,
+      "durationMs": 0.3953000000001339
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 5351.4157000000005,
+      "durationMs": 0.49289999999928114
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 5352.0758000000005,
+      "durationMs": 0.41789999999946303
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 5352.6706,
+      "durationMs": 0.6811999999999898
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 5353.6230000000005,
+      "durationMs": 0.5581999999994878
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 5354.3819,
+      "durationMs": 0.4025999999994383
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 5354.9678,
+      "durationMs": 0.31639999999970314
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 5355.4187,
+      "durationMs": 0.22270000000025902
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 5358.8893,
+      "durationMs": 0.9840000000003783
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 5360.2569,
+      "durationMs": 0.582300000000032
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 5366.799300000001,
+      "durationMs": 0.45649999999932334
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 5367.4492,
+      "durationMs": 0.2790999999997439
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 6157.1643,
+      "durationMs": 6.26720000000023
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 6174.7062000000005,
+      "durationMs": 8.02809999999954
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 6184.2595,
+      "durationMs": 0.5275000000001455
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 6184.9762,
+      "durationMs": 0.32670000000052823
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 6256.0822,
+      "durationMs": 0.7563000000000102
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 6261.7345000000005,
+      "durationMs": 0.5100999999995111
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 6262.653200000001,
+      "durationMs": 0.3039999999991778
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 6263.6555,
+      "durationMs": 0.2937000000001717
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 6264.0594,
+      "durationMs": 0.2977000000000771
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 6264.4489,
+      "durationMs": 0.32079999999950815
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 6264.8614,
+      "durationMs": 0.4361000000008062
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 6265.4407,
+      "durationMs": 0.3757999999997992
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 6263.2273000000005,
+      "durationMs": 8.23109999999997
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 6271.6498,
+      "durationMs": 0.28250000000025466
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 6272.0216,
+      "durationMs": 0.32070000000021537
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 6272.4325,
+      "durationMs": 2.592800000000352
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 6275.316,
+      "durationMs": 0.7391000000006898
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 6276.286,
+      "durationMs": 0.5928000000003522
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 6277.0554,
+      "durationMs": 0.45640000000003056
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 6277.6972000000005,
+      "durationMs": 0.7222999999994499
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 6278.8086,
+      "durationMs": 3.2280000000000655
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 6282.5785000000005,
+      "durationMs": 0.9215999999996711
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 6283.8994,
+      "durationMs": 0.8085000000000946
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 6285.4534,
+      "durationMs": 0.7965999999996711
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 6286.4404,
+      "durationMs": 1.5789999999997235
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 6288.7005,
+      "durationMs": 0.39800000000013824
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 6289.2101,
+      "durationMs": 0.2524999999995998
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 6290.0976,
+      "durationMs": 1.2269999999998618
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 6292.0226,
+      "durationMs": 7.725400000000263
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 6300.3693,
+      "durationMs": 1.1406999999999243
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 6302.5476,
+      "durationMs": 1.0010000000002037
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 6303.8126,
+      "durationMs": 0.38799999999991996
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 6304.3572,
+      "durationMs": 0.8049999999993815
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 6305.3675,
+      "durationMs": 0.8787999999995009
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 6306.4559,
+      "durationMs": 0.44280000000071595
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 6307.0928,
+      "durationMs": 0.42599999999947613
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 6308.0896,
+      "durationMs": 1.0163999999995212
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 6309.3695,
+      "durationMs": 0.5536000000001877
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 6382.1159,
+      "durationMs": 1.394100000000435
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 6384.1589,
+      "durationMs": 1.291599999999562
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 6386.1826,
+      "durationMs": 0.5343000000002576
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 6388.7082,
+      "durationMs": 0.4916000000002896
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 6389.3381,
+      "durationMs": 0.2316000000000713
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 6389.6864000000005,
+      "durationMs": 0.5318999999999505
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 6390.339,
+      "durationMs": 0.46230000000014115
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 6390.9588,
+      "durationMs": 1.0729999999994106
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 6397.5115000000005,
+      "durationMs": 0.5976000000000568
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 6399.4613,
+      "durationMs": 0.6782000000002881
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 6400.3126,
+      "durationMs": 0.663499999999658
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 6401.1297,
+      "durationMs": 0.5246999999999389
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 6401.7807,
+      "durationMs": 0.33650000000034197
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 6402.2664,
+      "durationMs": 0.1823999999996886
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 6405.6826,
+      "durationMs": 0.7134000000005472
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 6407.2785,
+      "durationMs": 0.7761000000000422
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 6408.2016,
+      "durationMs": 0.3876000000000204
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 6408.7585,
+      "durationMs": 0.4338000000007014
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 6409.2918,
+      "durationMs": 0.3085000000000946
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 6409.724200000001,
+      "durationMs": 0.35419999999976426
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 6410.1701,
+      "durationMs": 0.2518000000000029
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 6410.5607,
+      "durationMs": 0.33770000000004075
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 6411.0027,
+      "durationMs": 0.43910000000050786
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 6414.0029,
+      "durationMs": 0.6559999999999491
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 6414.9704,
+      "durationMs": 0.495600000000195
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 6416.0296,
+      "durationMs": 0.3371000000006461
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 6416.5238,
+      "durationMs": 0.5646999999999025
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 6417.2496,
+      "durationMs": 0.22180000000025757
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 6426.7252,
+      "durationMs": 0.6594000000004598
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 6427.6304,
+      "durationMs": 0.3161000000000058
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 7522.008400000001,
+      "durationMs": 4.103299999999763
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 7536.359,
+      "durationMs": 5.596700000000055
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 7542.7854,
+      "durationMs": 0.4140000000006694
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 7543.328100000001,
+      "durationMs": 0.37119999999958964
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 7544.1834,
+      "durationMs": 4.505200000000514
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 7548.9959,
+      "durationMs": 0.6105999999999767
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 7549.9792,
+      "durationMs": 0.3074000000005981
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 7551.5818,
+      "durationMs": 0.6750000000001819
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 7554.2883,
+      "durationMs": 0.551300000000083
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 7555.0722000000005,
+      "durationMs": 0.7253000000000611
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 7555.9767,
+      "durationMs": 0.4128000000000611
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 7556.5526,
+      "durationMs": 0.5961999999999534
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 7557.3131,
+      "durationMs": 0.7430999999996857
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 7561.9907,
+      "durationMs": 6.263500000000022
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 7569.214300000001,
+      "durationMs": 0.5334999999995489
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 7570.04,
+      "durationMs": 0.658900000000358
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 7576.3123000000005,
+      "durationMs": 0.7280000000000655
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 7577.966,
+      "durationMs": 0.416599999999562
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 7580.8361,
+      "durationMs": 0.32449999999971624
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 7582.7762,
+      "durationMs": 0.4194999999999709
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 7583.3661,
+      "durationMs": 0.46410000000014406
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 7583.973300000001,
+      "durationMs": 0.3813000000000102
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 7584.5231,
+      "durationMs": 0.8117000000002008
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 7585.5857000000005,
+      "durationMs": 1.10779999999977
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 7591.1344,
+      "durationMs": 0.37010000000009313
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 7591.7088,
+      "durationMs": 0.29100000000016735
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 7592.0693,
+      "durationMs": 0.34690000000045984
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 7592.849200000001,
+      "durationMs": 0.777499999999236
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 7593.870800000001,
+      "durationMs": 0.5487999999995736
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 7595.3427,
+      "durationMs": 0.4135999999998603
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 7598.515,
+      "durationMs": 0.5864999999994325
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 7599.5052000000005,
+      "durationMs": 1.6070999999992637
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 7601.5449,
+      "durationMs": 0.8289000000004307
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 7602.6333,
+      "durationMs": 0.6647999999995591
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 7603.652300000001,
+      "durationMs": 0.7175999999999476
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 7605.5830000000005,
+      "durationMs": 0.5775999999996202
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 7651.3246,
+      "durationMs": 0.5223000000005413
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 7652.005,
+      "durationMs": 0.3290999999999258
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 7652.4525,
+      "durationMs": 0.27489999999943393
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 7652.8632,
+      "durationMs": 0.7427999999999884
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 7653.7752,
+      "durationMs": 0.3415000000004511
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 7654.2446,
+      "durationMs": 0.21410000000014406
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 7656.623500000001,
+      "durationMs": 0.5773999999992157
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 7657.3917,
+      "durationMs": 0.48220000000037544
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 7658.0121,
+      "durationMs": 0.23590000000058353
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 7658.3439,
+      "durationMs": 0.29130000000077416
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 7658.7238,
+      "durationMs": 0.3868000000002212
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 7659.2172,
+      "durationMs": 0.33430000000043947
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 7661.83,
+      "durationMs": 0.8082000000003973
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 7662.9613,
+      "durationMs": 0.414400000000569
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 7663.5095,
+      "durationMs": 0.4877999999998792
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 7664.1237,
+      "durationMs": 0.18580000000019936
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 7664.3981,
+      "durationMs": 0.18779999999969732
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 7664.6718,
+      "durationMs": 0.23880000000008295
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 7666.3313,
+      "durationMs": 0.3975000000000364
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 7666.871700000001,
+      "durationMs": 0.44989999999961583
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 7671.0819,
+      "durationMs": 0.37989999999990687
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 7673.8821,
+      "durationMs": 0.6607000000003609
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 7688.3199,
+      "durationMs": 0.5416999999997643
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 7689.645100000001,
+      "durationMs": 0.8863999999994121
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 7690.9801,
+      "durationMs": 0.5512000000007902
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 7691.7097,
+      "durationMs": 0.40200000000004366
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 7692.3268,
+      "durationMs": 0.42780000000038854
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 7692.8628,
+      "durationMs": 0.21960000000035507
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 7694.6589,
+      "durationMs": 0.7138999999997395
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 7695.5551000000005,
+      "durationMs": 0.35789999999997235
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 7696.0607,
+      "durationMs": 0.29539999999997235
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 7696.554700000001,
+      "durationMs": 0.35969999999997526
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 8574.0656,
+      "durationMs": 2.920799999999872
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 8589.2347,
+      "durationMs": 6.631199999999808
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 8596.524300000001,
+      "durationMs": 0.4398000000001048
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 8597.0787,
+      "durationMs": 0.401400000000649
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 8681.3221,
+      "durationMs": 0.7672000000002299
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 8683.057200000001,
+      "durationMs": 0.9938999999994849
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 8684.604,
+      "durationMs": 0.37520000000040454
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 8686.8848,
+      "durationMs": 0.5130000000008295
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 8687.7404,
+      "durationMs": 0.6270000000004075
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 8688.5317,
+      "durationMs": 0.34720000000015716
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 8688.9987,
+      "durationMs": 0.5995999999995547
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 8689.806,
+      "durationMs": 1.2606999999989057
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 8694.6414,
+      "durationMs": 0.4959999999991851
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 8695.353000000001,
+      "durationMs": 0.4278999999987718
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 8695.902,
+      "durationMs": 0.36119999999937136
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 8696.3617,
+      "durationMs": 0.36630000000150176
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 8697.2047,
+      "durationMs": 0.5274000000008527
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 8698.5939,
+      "durationMs": 0.38990000000012515
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 8700.4976,
+      "durationMs": 0.4705999999987398
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 8701.1261,
+      "durationMs": 0.7138000000013562
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 8702.0087,
+      "durationMs": 0.4014999999999418
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 8702.5568,
+      "durationMs": 0.35740000000078
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 8703.3423,
+      "durationMs": 0.6813000000001921
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 8704.298,
+      "durationMs": 0.6183000000000902
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 8706.58,
+      "durationMs": 0.4416000000001077
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 8707.864,
+      "durationMs": 0.504399999999805
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 8708.598,
+      "durationMs": 0.6000000000003638
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 8709.3896,
+      "durationMs": 0.5679999999993015
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 8710.1274,
+      "durationMs": 1.039600000000064
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 8712.5702,
+      "durationMs": 0.5614999999997963
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 8713.3035,
+      "durationMs": 0.6661000000003696
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 8714.1193,
+      "durationMs": 0.26519999999982247
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 8725.9981,
+      "durationMs": 0.7475999999987835
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 8727.0306,
+      "durationMs": 0.36959999999999127
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 8901.6999,
+      "durationMs": 5.341400000001158
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 8923.4237,
+      "durationMs": 8.32260000000133
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 8932.7419,
+      "durationMs": 1.1217999999989843
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 8934.1593,
+      "durationMs": 0.685300000001007
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 9041.688900000001,
+      "durationMs": 1.049299999998766
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 9043.8232,
+      "durationMs": 1.1998999999996158
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 9046.670900000001,
+      "durationMs": 0.7181000000000495
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 9050.2613,
+      "durationMs": 0.8919000000005326
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 9051.518,
+      "durationMs": 1.1728000000002794
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 9053.0026,
+      "durationMs": 0.6755000000011933
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 9054.0566,
+      "durationMs": 1.0326999999997497
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 9055.4044,
+      "durationMs": 0.8633000000008906
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 9056.569300000001,
+      "durationMs": 0.5054000000000087
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 9059.4059,
+      "durationMs": 0.7882000000008702
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 9060.4357,
+      "durationMs": 0.5805999999993219
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 9061.1921,
+      "durationMs": 0.48910000000068976
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 9061.807200000001,
+      "durationMs": 0.32589999999981956
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 9063.6826,
+      "durationMs": 0.5578000000004977
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 9064.4802,
+      "durationMs": 0.44390000000021246
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 9066.625,
+      "durationMs": 1.233299999999872
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 9068.1557,
+      "durationMs": 0.5369000000009692
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 9068.8971,
+      "durationMs": 1.001800000000003
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 9070.0722,
+      "durationMs": 0.5385000000005675
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 9070.884900000001,
+      "durationMs": 0.7476999999998952
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 9083.2576,
+      "durationMs": 0.8127999999996973
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 9084.6848,
+      "durationMs": 0.49879999999939173
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 9085.4801,
+      "durationMs": 1.047099999999773
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 9086.7904,
+      "durationMs": 0.5657000000010157
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 9088.1537,
+      "durationMs": 0.8357999999989261
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 9089.2057,
+      "durationMs": 0.4643999999989319
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 9091.7695,
+      "durationMs": 0.8850000000002183
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 9093.402,
+      "durationMs": 0.6781000000009954
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 9094.3537,
+      "durationMs": 0.3827000000001135
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 9094.9418,
+      "durationMs": 0.3297999999995227
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 10688.2117,
+      "durationMs": 6.195999999999913
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 10708.8809,
+      "durationMs": 8.011599999999817
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 10718.217700000001,
+      "durationMs": 0.7694999999985157
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 10719.2184,
+      "durationMs": 0.6900999999998021
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 10720.070600000001,
+      "durationMs": 5.500500000000102
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 10740.183500000001,
+      "durationMs": 5.624299999999494
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 10746.6512,
+      "durationMs": 0.4547000000002299
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 10747.2657,
+      "durationMs": 0.5640999999995984
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 10805.9433,
+      "durationMs": 0.47849999999925785
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 10807.1539,
+      "durationMs": 0.30640000000130385
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 10808.0653,
+      "durationMs": 0.709500000000844
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 10810.6844,
+      "durationMs": 0.3708999999998923
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 10811.1753,
+      "durationMs": 0.3252999999986059
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 10811.5965,
+      "durationMs": 0.3077000000012049
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 10812.0154,
+      "durationMs": 0.40049999999973807
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 10812.5017,
+      "durationMs": 0.32740000000012515
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 10818.501400000001,
+      "durationMs": 0.31569999999919673
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 10818.9242,
+      "durationMs": 0.24020000000018626
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 10819.2379,
+      "durationMs": 0.29470000000037544
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 10819.616,
+      "durationMs": 0.27660000000105356
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 10820.2687,
+      "durationMs": 0.20969999999942956
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 10820.8771,
+      "durationMs": 0.14620000000104483
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 10825.098100000001,
+      "durationMs": 0.5559999999986758
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 10825.8606,
+      "durationMs": 0.7494000000006054
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 10826.8737,
+      "durationMs": 0.5804000000007363
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 10827.6609,
+      "durationMs": 0.43959999999970023
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 10828.4187,
+      "durationMs": 0.5851999999995314
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 10830.298,
+      "durationMs": 0.4642999999996391
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 10830.9415,
+      "durationMs": 0.49909999999908905
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 10831.9592,
+      "durationMs": 0.566000000000713
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 10832.9925,
+      "durationMs": 0.38580000000001746
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 10835.1981,
+      "durationMs": 0.9074000000000524
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 10836.406,
+      "durationMs": 1.0460999999995693
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 10837.9427,
+      "durationMs": 0.6383999999998196
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 10838.9905,
+      "durationMs": 0.7898999999997613
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 10840.042800000001,
+      "durationMs": 0.6638999999995576
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 10840.901100000001,
+      "durationMs": 0.32079999999950815
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 10841.4141,
+      "durationMs": 0.3404000000009546
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 10841.8741,
+      "durationMs": 0.35829999999987194
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 10842.357100000001,
+      "durationMs": 0.2945999999992637
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 10842.8508,
+      "durationMs": 0.9284999999999854
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 10844.0489,
+      "durationMs": 0.6434000000008382
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 10844.952,
+      "durationMs": 0.4596000000001368
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 10845.5923,
+      "durationMs": 0.2980999999999767
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 10846.0456,
+      "durationMs": 0.41740000000027067
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 10846.6072,
+      "durationMs": 0.4948999999996886
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 10847.2169,
+      "durationMs": 0.3900000000012369
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 10847.7278,
+      "durationMs": 0.3184000000001106
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 10848.1431,
+      "durationMs": 0.21050000000104774
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 10848.4555,
+      "durationMs": 0.6337000000003172
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 10849.2849,
+      "durationMs": 0.5944999999992433
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 10850.215900000001,
+      "durationMs": 0.43809999999939464
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 10850.8081,
+      "durationMs": 0.25319999999919673
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 10851.1737,
+      "durationMs": 0.7270000000007713
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 10852.1256,
+      "durationMs": 0.49400000000059663
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 10852.818800000001,
+      "durationMs": 0.399199999999837
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 10853.368,
+      "durationMs": 0.38910000000032596
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 10853.8845,
+      "durationMs": 0.38700000000062573
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 10861.5325,
+      "durationMs": 0.31490000000121654
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 10861.9465,
+      "durationMs": 0.20280000000093423
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 10862.2176,
+      "durationMs": 0.1944999999996071
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 10865.9768,
+      "durationMs": 0.6041999999997643
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 10867.2426,
+      "durationMs": 0.4374000000007072
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 10867.8041,
+      "durationMs": 0.28760000000147556
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 10868.636,
+      "durationMs": 0.3061999999990803
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 10869.1131,
+      "durationMs": 0.28470000000015716
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 10869.555,
+      "durationMs": 0.2780000000002474
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 10872.3044,
+      "durationMs": 0.7856999999985419
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 11910.7526,
+      "durationMs": 3.539700000001176
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 11931.2299,
+      "durationMs": 8.464200000000346
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 11941.1735,
+      "durationMs": 0.5506999999997788
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 11941.9717,
+      "durationMs": 0.506600000000617
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 11946.817000000001,
+      "durationMs": 1.16150000000016
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 11949.1471,
+      "durationMs": 0.5578999999997905
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 11951.5748,
+      "durationMs": 0.3929000000007363
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 11953.5897,
+      "durationMs": 0.7934000000004744
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 11954.6597,
+      "durationMs": 0.6427000000003318
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 11955.486,
+      "durationMs": 0.5898999999990338
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 11956.267,
+      "durationMs": 0.6784000000006927
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 11957.1202,
+      "durationMs": 0.5099000000009255
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 12049.3178,
+      "durationMs": 0.49239999999917927
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 12052.942000000001,
+      "durationMs": 0.7141999999985273
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 12054.003200000001,
+      "durationMs": 0.6274999999986903
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 12055.9642,
+      "durationMs": 0.5774999999994179
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 12056.784,
+      "durationMs": 0.47410000000127184
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 12057.3636,
+      "durationMs": 0.29320000000006985
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 12061.727,
+      "durationMs": 0.5229999999992287
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 12064.6243,
+      "durationMs": 1.3626000000003842
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 12067.0515,
+      "durationMs": 0.4922000000005937
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 12067.7437,
+      "durationMs": 0.4011999999984255
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 12068.2861,
+      "durationMs": 0.4422000000013213
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 12068.8644,
+      "durationMs": 0.35169999999925494
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 12069.3414,
+      "durationMs": 0.301500000001397
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 12071.2201,
+      "durationMs": 0.6455999999998312
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 12072.499600000001,
+      "durationMs": 1.143000000000029
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 12076.1959,
+      "durationMs": 0.8884999999991123
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 12077.3797,
+      "durationMs": 0.5228000000006432
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 12078.0805,
+      "durationMs": 0.6005999999997584
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 12078.963,
+      "durationMs": 0.8912000000000262
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 12080.1195,
+      "durationMs": 0.4466999999986001
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 12080.8718,
+      "durationMs": 0.4375999999992928
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 12081.6236,
+      "durationMs": 0.525099999998929
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 12283.6252,
+      "durationMs": 2.3742999999994936
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 12296.7093,
+      "durationMs": 5.153500000000349
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 12302.7219,
+      "durationMs": 0.47659999999996217
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 12303.3204,
+      "durationMs": 0.29650000000037835
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 12369.8074,
+      "durationMs": 0.4477999999999156
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 12371.6169,
+      "durationMs": 0.297099999999773
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 12372.7093,
+      "durationMs": 0.27959999999984575
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 12374.0739,
+      "durationMs": 0.42820000000028813
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 12374.6672,
+      "durationMs": 0.33070000000043365
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 12375.0805,
+      "durationMs": 0.25209999999970023
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 12375.4056,
+      "durationMs": 0.40200000000004366
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 12375.917,
+      "durationMs": 0.35610000000087894
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 12380.958700000001,
+      "durationMs": 0.35539999999855354
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 12381.479,
+      "durationMs": 0.28920000000107393
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 12381.854,
+      "durationMs": 0.301500000001397
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 12382.2423,
+      "durationMs": 0.31600000000071304
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 12382.6641,
+      "durationMs": 0.34580000000096334
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 12383.2166,
+      "durationMs": 0.29490000000078
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 12386.4709,
+      "durationMs": 0.4166000000004715
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 12387.0054,
+      "durationMs": 0.47919999999976426
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 12387.6104,
+      "durationMs": 0.256600000000617
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 12387.9548,
+      "durationMs": 0.2761000000009517
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 12388.355300000001,
+      "durationMs": 0.25269999999909487
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 12388.95,
+      "durationMs": 0.2932999999993626
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 12392.258600000001,
+      "durationMs": 0.5513999999984662
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 12392.9964,
+      "durationMs": 0.42480000000068685
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 12393.5654,
+      "durationMs": 0.5306000000000495
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 12396.2489,
+      "durationMs": 0.6304999999993015
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 12396.9807,
+      "durationMs": 0.2842000000000553
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 12397.3681,
+      "durationMs": 0.3918000000012398
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 12398.7906,
+      "durationMs": 0.6959999999999127
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 12399.6847,
+      "durationMs": 0.254399999999805
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 12401.3741,
+      "durationMs": 0.408899999998539
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 12401.9496,
+      "durationMs": 0.20360000000073342
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 13143.0181,
+      "durationMs": 1.8299000000006345
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 13154.1668,
+      "durationMs": 4.867599999999584
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 13159.4933,
+      "durationMs": 0.1944999999996071
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 13159.788,
+      "durationMs": 0.26380000000062864
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 13164.2572,
+      "durationMs": 0.6352999999999156
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 13165.4835,
+      "durationMs": 0.19110000000000582
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 13166.0193,
+      "durationMs": 0.14620000000104483
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 13167.651600000001,
+      "durationMs": 0.28739999999925203
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 13168.032000000001,
+      "durationMs": 0.34689999999864085
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 13168.471300000001,
+      "durationMs": 0.3275999999987107
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 13168.9244,
+      "durationMs": 1.1925000000010186
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 13170.3763,
+      "durationMs": 0.6975000000002183
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 13251.9952,
+      "durationMs": 1.1167000000004919
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 13253.4873,
+      "durationMs": 0.5285000000003492
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 13254.2004,
+      "durationMs": 0.5141999999996187
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 13254.9162,
+      "durationMs": 0.5416999999997643
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 13255.5862,
+      "durationMs": 0.32550000000082946
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 13256.077,
+      "durationMs": 0.279500000000553
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 13258.0641,
+      "durationMs": 0.23700000000098953
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 13258.3755,
+      "durationMs": 0.49680000000080327
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 13259.0062,
+      "durationMs": 0.341099999999642
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 13259.6454,
+      "durationMs": 0.5820000000003347
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 13260.452800000001,
+      "durationMs": 0.5693999999984953
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 13261.1648,
+      "durationMs": 0.40209999999933643
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 13263.3513,
+      "durationMs": 0.30680000000029395
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 13263.7569,
+      "durationMs": 0.25499999999919964
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 13264.0884,
+      "durationMs": 0.25929999999971187
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 13264.4184,
+      "durationMs": 0.3447999999989406
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 13264.9364,
+      "durationMs": 0.5525999999990745
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 13265.7109,
+      "durationMs": 0.34989999999925203
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 13268.6752,
+      "durationMs": 0.876299999999901
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 13269.7795,
+      "durationMs": 0.25879999999961
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 13276.7295,
+      "durationMs": 0.43879999999990105
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 13277.3686,
+      "durationMs": 0.46260000000074797
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 13363.4424,
+      "durationMs": 3.3399000000008527
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 13378.3671,
+      "durationMs": 3.927900000000591
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 13382.7562,
+      "durationMs": 0.4236000000000786
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 13383.3436,
+      "durationMs": 0.41339999999945576
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 13461.2686,
+      "durationMs": 1.004800000000614
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 13463.5231,
+      "durationMs": 0.4405000000006112
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 13465.199700000001,
+      "durationMs": 0.4272999999993772
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 13467.2757,
+      "durationMs": 0.42820000000028813
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 13468.08,
+      "durationMs": 0.5202000000008411
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 13468.7246,
+      "durationMs": 0.23480000000017753
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 13469.0323,
+      "durationMs": 0.3213999999989028
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 13469.434000000001,
+      "durationMs": 0.24749999999949068
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 13471.9432,
+      "durationMs": 0.34350000000085856
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 13472.5217,
+      "durationMs": 0.34030000000166183
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 13473.4139,
+      "durationMs": 0.4477000000006228
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 13473.9743,
+      "durationMs": 0.47409999999945285
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 13474.6134,
+      "durationMs": 0.439700000000812
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 13475.5195,
+      "durationMs": 1.0273999999990338
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 13478.511,
+      "durationMs": 0.5118000000002212
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 13479.1988,
+      "durationMs": 0.7062999999998283
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 13480.058,
+      "durationMs": 0.3341000000000349
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 13480.5159,
+      "durationMs": 0.38249999999970896
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 13480.9864,
+      "durationMs": 0.4205000000001746
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 13481.553600000001,
+      "durationMs": 0.631599999998798
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 13482.3802,
+      "durationMs": 0.7448999999996886
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 13485.582,
+      "durationMs": 0.5771999999997206
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 13486.9134,
+      "durationMs": 0.4144000000014785
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 13488.5559,
+      "durationMs": 1.1735000000007858
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 13489.9921,
+      "durationMs": 0.6912000000011176
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 13491.6081,
+      "durationMs": 0.4864000000015949
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 13492.6042,
+      "durationMs": 0.8445000000010623
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 13493.6419,
+      "durationMs": 0.285200000000259
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 13501.3864,
+      "durationMs": 0.354300000000876
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 13501.8932,
+      "durationMs": 0.327900000000227
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 14127.3327,
+      "durationMs": 3.9560999999994237
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 14145.3071,
+      "durationMs": 6.86449999999968
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 14152.9138,
+      "durationMs": 0.3644000000003871
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 14153.4128,
+      "durationMs": 0.38440000000082364
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 14240.8223,
+      "durationMs": 0.642600000001039
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 14243.1526,
+      "durationMs": 0.4378000000015163
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 14244.899300000001,
+      "durationMs": 0.4507999999987078
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 14247.9099,
+      "durationMs": 0.5241000000005442
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 14248.82,
+      "durationMs": 0.5238000000008469
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 14249.5516,
+      "durationMs": 0.42849999999998545
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 14250.1028,
+      "durationMs": 0.5871999999999389
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 14250.831900000001,
+      "durationMs": 0.34839999999894644
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 14253.2931,
+      "durationMs": 0.5440999999991618
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 14253.9557,
+      "durationMs": 0.2566999999999098
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 14254.3084,
+      "durationMs": 0.31819999999970605
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 14255.2662,
+      "durationMs": 0.5408000000006723
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 14255.9141,
+      "durationMs": 0.33480000000054133
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 14257.0769,
+      "durationMs": 0.37739999999939755
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 14260.7884,
+      "durationMs": 0.6115000000008877
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 14261.6123,
+      "durationMs": 0.663300000000163
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 14262.4311,
+      "durationMs": 0.43220000000110304
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 14263.038700000001,
+      "durationMs": 0.6719999999986612
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 14263.9439,
+      "durationMs": 0.9068000000006577
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 14265.2312,
+      "durationMs": 0.6069000000006781
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 14266.556,
+      "durationMs": 0.7127000000000407
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 14269.4537,
+      "durationMs": 0.7145999999993364
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 14271.2418,
+      "durationMs": 0.5657000000010157
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 14275.1815,
+      "durationMs": 0.771999999999025
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 14276.1209,
+      "durationMs": 0.3078000000004977
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 14276.6338,
+      "durationMs": 0.43260000000009313
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 14277.413700000001,
+      "durationMs": 0.6539999999986321
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 14278.214100000001,
+      "durationMs": 0.2778999999991356
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 14280.7229,
+      "durationMs": 0.599899999999252
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 14281.5131,
+      "durationMs": 0.27080000000023574
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 14666.8838,
+      "durationMs": 2.2775000000001455
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 14681.5844,
+      "durationMs": 4.918900000000576
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 14687.0141,
+      "durationMs": 0.2363999999997759
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 14687.3122,
+      "durationMs": 0.2415999999993801
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 14770.7341,
+      "durationMs": 0.5697000000000116
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 14772.6973,
+      "durationMs": 0.5491000000001804
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 14774.4789,
+      "durationMs": 0.8026000000008935
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 14777.9512,
+      "durationMs": 0.5834000000013475
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 14778.7715,
+      "durationMs": 0.450699999999415
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 14779.331900000001,
+      "durationMs": 0.2605999999996129
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 14779.6809,
+      "durationMs": 0.5631000000012136
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 14780.476,
+      "durationMs": 0.839799999999741
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 14783.918,
+      "durationMs": 0.6574000000000524
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 14784.7558,
+      "durationMs": 0.4264000000002852
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 14785.288700000001,
+      "durationMs": 0.47919999999976426
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 14785.866,
+      "durationMs": 0.24350000000049477
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 14786.7035,
+      "durationMs": 0.3265000000010332
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 14788.6357,
+      "durationMs": 0.4248999999999796
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 14791.0954,
+      "durationMs": 0.28369999999995343
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 14791.4955,
+      "durationMs": 0.4304999999985739
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 14792.0111,
+      "durationMs": 0.17970000000059372
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 14792.2459,
+      "durationMs": 0.27330000000074506
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 14792.9765,
+      "durationMs": 0.26119999999900756
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 14793.9979,
+      "durationMs": 1.0957999999991443
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 14798.7988,
+      "durationMs": 0.32300000000032014
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 14799.379500000001,
+      "durationMs": 0.4026999999987311
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 14799.9444,
+      "durationMs": 0.45279999999911524
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 14800.5361,
+      "durationMs": 0.3087000000014086
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 14801.163700000001,
+      "durationMs": 0.8453999999983353
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 14803.877700000001,
+      "durationMs": 0.33039999999891734
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 14804.312100000001,
+      "durationMs": 0.5427999999992608
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 14804.9276,
+      "durationMs": 0.16259999999965657
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 14813.2373,
+      "durationMs": 0.3668999999990774
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 14813.7578,
+      "durationMs": 0.19200000000091677
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 15954.5749,
+      "durationMs": 3.353500000001077
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 15972.7364,
+      "durationMs": 7.9223000000001775
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 15981.8579,
+      "durationMs": 0.6229999999995925
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 15982.6697,
+      "durationMs": 1.0645999999997002
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 16096.6953,
+      "durationMs": 0.6266000000014174
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 16097.8394,
+      "durationMs": 0.2451999999993859
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 16098.3865,
+      "durationMs": 0.169899999998961
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 16101.879500000001,
+      "durationMs": 0.5293000000001484
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 16103.4339,
+      "durationMs": 0.16010000000096625
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 16103.6524,
+      "durationMs": 0.22040000000015425
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 16103.9205,
+      "durationMs": 0.24660000000039872
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 16104.2116,
+      "durationMs": 0.18169999999918218
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 16106.0557,
+      "durationMs": 0.3675999999995838
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 16107.4386,
+      "durationMs": 0.4217000000007829
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 16108.036900000001,
+      "durationMs": 0.13599999999860302
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 16108.3023,
+      "durationMs": 0.24940000000060536
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 16108.6538,
+      "durationMs": 0.24029999999947904
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 16109.3796,
+      "durationMs": 0.20360000000073342
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 16112.109,
+      "durationMs": 0.33100000000013097
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 16112.5612,
+      "durationMs": 0.6273999999993976
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 16113.4921,
+      "durationMs": 0.4985000000015134
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 16114.146200000001,
+      "durationMs": 0.45789999999942665
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 16114.9237,
+      "durationMs": 0.548400000001493
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 16115.9145,
+      "durationMs": 0.37479999999959546
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 16118.4079,
+      "durationMs": 0.5334999999995489
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 16119.1204,
+      "durationMs": 0.2510000000002037
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 16119.4506,
+      "durationMs": 0.4359999999996944
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 16123.3552,
+      "durationMs": 0.5063000000009197
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 16124.420900000001,
+      "durationMs": 0.5247999999992317
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 16126.6483,
+      "durationMs": 0.45349999999962165
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 16128.3087,
+      "durationMs": 0.8820000000014261
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 16130.4121,
+      "durationMs": 0.4210000000002765
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 16134.7657,
+      "durationMs": 0.6918000000005122
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 16135.6941,
+      "durationMs": 0.3364000000001397
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 16227.451400000002,
+      "durationMs": 2.458099999999831
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 16241.094000000001,
+      "durationMs": 4.5099000000009255
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 16246.891899999999,
+      "durationMs": 0.3559000000022934
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 16247.3708,
+      "durationMs": 0.39760000000023865
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 16319.543700000002,
+      "durationMs": 0.4320999999981723
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 16320.909800000001,
+      "durationMs": 0.2765999999974156
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 16323.352600000002,
+      "durationMs": 0.2725999999966007
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 16325.0943,
+      "durationMs": 0.3227999999980966
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 16325.5341,
+      "durationMs": 0.32630000000062864
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 16325.9343,
+      "durationMs": 0.22329999999783468
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 16326.224300000002,
+      "durationMs": 0.3533999999999651
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 16326.6558,
+      "durationMs": 0.3338000000003376
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 16328.4094,
+      "durationMs": 0.28540000000066357
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 16328.802200000002,
+      "durationMs": 0.5014999999984866
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 16329.4162,
+      "durationMs": 0.6193000000021129
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 16330.125500000002,
+      "durationMs": 0.25089999999909196
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 16330.439900000001,
+      "durationMs": 0.13819999999759602
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 16330.6241,
+      "durationMs": 0.09939999999915017
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 16332.350699999999,
+      "durationMs": 0.33179999999993015
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 16332.8239,
+      "durationMs": 0.5540000000000873
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 16333.513900000002,
+      "durationMs": 0.35749999999825377
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 16335.025700000002,
+      "durationMs": 0.451599999996688
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 16340.5366,
+      "durationMs": 0.52730000000156
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 16341.2078,
+      "durationMs": 0.297099999999773
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 16346.696500000002,
+      "durationMs": 0.49619999999777065
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 16347.8108,
+      "durationMs": 0.43839999999909196
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 16348.4248,
+      "durationMs": 0.506600000000617
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 16349.0632,
+      "durationMs": 0.36530000000129803
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 16349.563900000001,
+      "durationMs": 0.7605999999977939
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 16351.610700000001,
+      "durationMs": 0.6866999999983818
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 16354.0507,
+      "durationMs": 0.3562000000019907
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 16354.5616,
+      "durationMs": 0.28659999999945285
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 16354.945800000001,
+      "durationMs": 0.19099999999889405
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 16355.226600000002,
+      "durationMs": 0.2117999999973108
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 17402.2659,
+      "durationMs": 2.836800000000949
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 17417.3874,
+      "durationMs": 4.583699999999226
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 17422.404300000002,
+      "durationMs": 0.18229999999675783
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 17422.6521,
+      "durationMs": 0.23480000000199652
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 17426.3618,
+      "durationMs": 0.5961999999999534
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 17428.3572,
+      "durationMs": 0.2790000000022701
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 17429.229,
+      "durationMs": 0.16120000000228174
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 17431.458,
+      "durationMs": 0.36260000000038417
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 17431.9747,
+      "durationMs": 0.4436999999998079
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 17432.5628,
+      "durationMs": 0.4519000000000233
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 17433.1301,
+      "durationMs": 0.5768000000025495
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 17433.8873,
+      "durationMs": 0.7180000000007567
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 17440.2566,
+      "durationMs": 0.47880000000077416
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 17440.8909,
+      "durationMs": 0.2841000000007625
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 17441.2506,
+      "durationMs": 0.26450000000113505
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 17441.5829,
+      "durationMs": 0.31190000000060536
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 17442.5225,
+      "durationMs": 0.3274999999994179
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 17443.3825,
+      "durationMs": 0.17840000000069267
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 17446.0677,
+      "durationMs": 0.4426999999996042
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 17446.6562,
+      "durationMs": 0.6225999999987835
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 17447.4347,
+      "durationMs": 0.36750000000029104
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 17447.8944,
+      "durationMs": 0.29680000000007567
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 17448.2603,
+      "durationMs": 0.19579999999768916
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 17448.5127,
+      "durationMs": 0.1834000000017113
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 17523.6573,
+      "durationMs": 0.4949000000015076
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 17524.8748,
+      "durationMs": 0.23409999999785214
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 17525.1762,
+      "durationMs": 0.18479999999908614
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 17526.0835,
+      "durationMs": 0.19319999999788706
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 17526.8437,
+      "durationMs": 0.3047999999980675
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 17527.2245,
+      "durationMs": 0.1706000000012864
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 17528.8965,
+      "durationMs": 0.4282999999995809
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 17529.4054,
+      "durationMs": 0.10840000000098371
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 17529.5761,
+      "durationMs": 0.10640000000057626
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 17529.7587,
+      "durationMs": 0.11300000000119326
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 21592.3563,
+      "durationMs": 4.124100000000908
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 21609.7731,
+      "durationMs": 6.874400000000605
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 21617.3428,
+      "durationMs": 0.3337000000028638
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 21617.837,
+      "durationMs": 0.3580000000001746
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 21697.9911,
+      "durationMs": 0.7502999999996973
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 21700.1573,
+      "durationMs": 0.3657999999995809
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 21701.1174,
+      "durationMs": 0.2577000000019325
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 21705.6141,
+      "durationMs": 0.44510000000082073
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 21706.2162,
+      "durationMs": 0.4753000000018801
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 21706.846700000002,
+      "durationMs": 0.41419999999925494
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 21707.4112,
+      "durationMs": 0.6177999999999884
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 21708.155600000002,
+      "durationMs": 0.4382999999979802
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 21710.5922,
+      "durationMs": 1.1451000000015483
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 21712.0236,
+      "durationMs": 0.4363000000012107
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 21712.6163,
+      "durationMs": 0.42989999999917927
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 21713.6212,
+      "durationMs": 0.6144999999996799
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 21714.4019,
+      "durationMs": 0.4050999999999476
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 21715.4444,
+      "durationMs": 0.36639999999897555
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 21719.3408,
+      "durationMs": 0.5305999999982305
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 21720.0687,
+      "durationMs": 0.6094000000011874
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 21720.8615,
+      "durationMs": 0.35540000000037253
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 21721.3275,
+      "durationMs": 0.3021000000007916
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 21721.7161,
+      "durationMs": 0.3565999999991618
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 21722.1824,
+      "durationMs": 0.3011999999980617
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 21729.309400000002,
+      "durationMs": 0.5538999999989755
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 21730.027000000002,
+      "durationMs": 0.37079999999696156
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 21730.5133,
+      "durationMs": 0.39910000000236323
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 21734.7746,
+      "durationMs": 0.7815999999984342
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 21735.7611,
+      "durationMs": 0.3533999999999651
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 21736.2291,
+      "durationMs": 0.22199999999793363
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 21739.6186,
+      "durationMs": 0.8721999999979744
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 21740.7359,
+      "durationMs": 0.3352999999988242
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 21749.1515,
+      "durationMs": 0.3967000000011467
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 21749.7749,
+      "durationMs": 0.325700000001234
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 22596.2399,
+      "durationMs": 2.3597999999983585
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 22609.6417,
+      "durationMs": 5.457800000000134
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 22615.8903,
+      "durationMs": 0.26420000000143773
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 22616.2429,
+      "durationMs": 0.2942000000002736
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 22688.1661,
+      "durationMs": 0.538300000000163
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 22690.0007,
+      "durationMs": 0.9949000000015076
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 22691.9891,
+      "durationMs": 0.45500000000174623
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 22695.2888,
+      "durationMs": 0.3977000000013504
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 22695.8326,
+      "durationMs": 0.333199999997305
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 22696.2458,
+      "durationMs": 0.23430000000007567
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 22696.5507,
+      "durationMs": 0.5625
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 22697.3572,
+      "durationMs": 0.5460000000020955
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 22699.1148,
+      "durationMs": 0.31929999999920256
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 22699.6562,
+      "durationMs": 0.28800000000046566
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 22700.0517,
+      "durationMs": 0.3389999999999418
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 22700.6389,
+      "durationMs": 0.24380000000019209
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 22701.8587,
+      "durationMs": 0.1915999999982887
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 22702.1643,
+      "durationMs": 0.1320000000014261
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 22704.2226,
+      "durationMs": 0.667699999998149
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 22705.1108,
+      "durationMs": 0.5781000000024505
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 22705.8302,
+      "durationMs": 0.2802000000010594
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 22707.121,
+      "durationMs": 0.3698000000003958
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 22707.6218,
+      "durationMs": 0.37489999999888823
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 22708.1041,
+      "durationMs": 0.32589999999981956
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 22723.6766,
+      "durationMs": 0.37950000000273576
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 22724.704,
+      "durationMs": 0.7083999999995285
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 22725.6007,
+      "durationMs": 0.45750000000043656
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 22726.195200000002,
+      "durationMs": 0.5673999999999069
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 22727.0719,
+      "durationMs": 0.32080000000132713
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 22728.0049,
+      "durationMs": 0.21500000000014552
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 22730.7762,
+      "durationMs": 0.6807000000007974
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 22731.6674,
+      "durationMs": 0.6497000000017579
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 22732.4777,
+      "durationMs": 0.3025999999990745
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 22732.9055,
+      "durationMs": 0.24569999999948777
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 30702.8062,
+      "durationMs": 7.113400000002002
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 30901.8099,
+      "durationMs": 16.357899999999063
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 30918.8208,
+      "durationMs": 0.350800000000163
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 30919.3759,
+      "durationMs": 0.5652000000009139
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 31074.5572,
+      "durationMs": 0.4989999999997963
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 31075.1787,
+      "durationMs": 0.26599999999962165
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 31075.5247,
+      "durationMs": 0.23989999999685097
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 31076.0938,
+      "durationMs": 0.23730000000068685
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 31076.4658,
+      "durationMs": 0.33179999999993015
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 31077.3182,
+      "durationMs": 0.5099999999983993
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 31077.9241,
+      "durationMs": 0.3868000000002212
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 31078.398400000002,
+      "durationMs": 0.29019999999945867
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 31149.5583,
+      "durationMs": 0.7857000000003609
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 31150.513,
+      "durationMs": 0.24980000000141445
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 31150.8393,
+      "durationMs": 0.13999999999941792
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 31151.0761,
+      "durationMs": 0.2621000000035565
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 31151.8013,
+      "durationMs": 0.23099999999976717
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 31152.0935,
+      "durationMs": 0.14320000000225264
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 31152.3023,
+      "durationMs": 0.13780000000042492
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 31161.2862,
+      "durationMs": 0.640400000000227
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 31162.2404,
+      "durationMs": 1.0336000000024796
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 31163.5106,
+      "durationMs": 0.3451999999997497
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 31166.155,
+      "durationMs": 0.26990000000296277
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 31166.5107,
+      "durationMs": 0.19170000000303844
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 31228.8374,
+      "durationMs": 0.6025000000008731
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 31229.7448,
+      "durationMs": 0.4709000000002561
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 31230.4523,
+      "durationMs": 0.650099999998929
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 31231.3235,
+      "durationMs": 1.0201000000015483
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 31232.7861,
+      "durationMs": 0.8387999999977183
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 31233.9271,
+      "durationMs": 0.503099999998085
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 31235.7405,
+      "durationMs": 0.9850000000005821
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 31236.9139,
+      "durationMs": 0.23289999999906286
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 31237.2474,
+      "durationMs": 0.22769999999945867
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 31237.5841,
+      "durationMs": 0.17840000000069267
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 31396.5012,
+      "durationMs": 1.0548000000017055
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 31458.5611,
+      "durationMs": 7.04660000000149
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 31689.2356,
+      "durationMs": 9.68210000000181
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 31699.5916,
+      "durationMs": 0.2616999999991094
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 31699.959,
+      "durationMs": 0.29030000000057044
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 31768.8504,
+      "durationMs": 0.6314999999995052
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 31913.128,
+      "durationMs": 0.9265999999988708
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 31914.2743,
+      "durationMs": 0.26759999999922
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 31914.6619,
+      "durationMs": 0.18950000000040745
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 31914.9369,
+      "durationMs": 0.18400000000110595
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 31916.2769,
+      "durationMs": 0.6345000000001164
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 31917.146,
+      "durationMs": 0.3948999999993248
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 31931.368,
+      "durationMs": 0.7831000000005588
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 32023.0166,
+      "durationMs": 1.522000000000844
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 32025.168700000002,
+      "durationMs": 1.0033999999977823
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 32026.3864,
+      "durationMs": 0.5852000000013504
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 32027.5327,
+      "durationMs": 0.5551999999988766
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 32028.5194,
+      "durationMs": 0.45089999999981956
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 32029.0602,
+      "durationMs": 0.18310000000201399
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 32029.3253,
+      "durationMs": 0.19029999999838765
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 32032.4519,
+      "durationMs": 0.5096000000012282
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 32033.0799,
+      "durationMs": 0.20399999999790452
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 32033.3555,
+      "durationMs": 0.20319999999992433
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 32034.5649,
+      "durationMs": 0.4323000000003958
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 32035.1222,
+      "durationMs": 0.2971999999972468
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 32101.6314,
+      "durationMs": 0.5503000000026077
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 32111.943,
+      "durationMs": 0.37700000000040745
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 32112.4301,
+      "durationMs": 0.28409999999712454
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 32112.8219,
+      "durationMs": 0.17330000000220025
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 32113.3136,
+      "durationMs": 0.5620999999991909
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 32114.7211,
+      "durationMs": 0.4091000000007625
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 32115.325100000002,
+      "durationMs": 0.7545999999965716
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 32116.3599,
+      "durationMs": 0.3791000000019267
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 32116.8583,
+      "durationMs": 0.20300000000133878
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 32117.1627,
+      "durationMs": 0.180899999999383
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 32264.5173,
+      "durationMs": 0.8342000000011467
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 39460.1998,
+      "durationMs": 5.5318999999944936
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 39526.5622,
+      "durationMs": 5.1261000000013155
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 39532.3397,
+      "durationMs": 0.2991000000038184
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 39532.7489,
+      "durationMs": 0.3297999999995227
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 39576.0732,
+      "durationMs": 0.30649999999877764
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 39576.4857,
+      "durationMs": 0.22470000000612345
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 39580.6408,
+      "durationMs": 0.3724000000001979
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 39584.8748,
+      "durationMs": 0.44280000000435393
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 39585.4545,
+      "durationMs": 0.28220000000146683
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 39585.8871,
+      "durationMs": 0.9311999999990803
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 39587.1845,
+      "durationMs": 0.5151999999943655
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 39587.8861,
+      "durationMs": 0.5689999999958673
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 39623.3769,
+      "durationMs": 0.3040999999939231
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 39623.8047,
+      "durationMs": 0.22709999999642605
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 39624.6273,
+      "durationMs": 0.19460000000253785
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 39624.9077,
+      "durationMs": 0.3592999999964377
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 39625.3443,
+      "durationMs": 0.2819000000017695
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 39625.7226,
+      "durationMs": 0.14280000000144355
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 39626.78,
+      "durationMs": 0.24250000000029104
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 39627.1201,
+      "durationMs": 0.5780000000013388
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 39629.5073,
+      "durationMs": 0.6582000000053085
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 39630.3744,
+      "durationMs": 0.3805999999967753
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 39631.0547,
+      "durationMs": 0.39689999999973224
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 39631.5654,
+      "durationMs": 0.28240000000369037
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 39680.5892,
+      "durationMs": 0.33439999999973224
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 39681.0351,
+      "durationMs": 0.18519999999989523
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 39681.3008,
+      "durationMs": 0.3013000000064494
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 39681.7049,
+      "durationMs": 0.22660000000178115
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 39682.0157,
+      "durationMs": 0.2294999999940046
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 39682.453,
+      "durationMs": 0.1849000000001979
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 39682.742,
+      "durationMs": 0.12570000000414439
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 39682.9427,
+      "durationMs": 0.559399999998277
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 39684.243800000004,
+      "durationMs": 0.5864999999976135
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 39685.0199,
+      "durationMs": 0.27189999999973224
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 39784.0133,
+      "durationMs": 0.463900000002468
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 40259.4894,
+      "durationMs": 4.784800000001269
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 40355.2168,
+      "durationMs": 6.127699999997276
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 40361.9305,
+      "durationMs": 0.268499999998312
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 40362.2978,
+      "durationMs": 0.2569999999977881
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 40375.361600000004,
+      "durationMs": 0.5434999999997672
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 40402.7674,
+      "durationMs": 0.5184000000008382
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 40403.4639,
+      "durationMs": 0.26640000000043074
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 40409.8954,
+      "durationMs": 0.6667000000015832
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 40410.9706,
+      "durationMs": 0.25460000000020955
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 40415.0785,
+      "durationMs": 0.9123999999937951
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 40416.1795,
+      "durationMs": 0.3162000000011176
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 40416.5938,
+      "durationMs": 0.3676999999952386
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 40458.1048,
+      "durationMs": 0.42599999999947613
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 40458.6956,
+      "durationMs": 0.4121999999988475
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 40459.2548,
+      "durationMs": 0.5313999999998487
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 40459.894,
+      "durationMs": 0.38610000000335276
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 40460.3958,
+      "durationMs": 0.3101999999998952
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 40461.5554,
+      "durationMs": 0.4879000000000815
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 40462.2117,
+      "durationMs": 0.36080000000220025
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 40462.7355,
+      "durationMs": 0.5950999999986379
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 40463.4489,
+      "durationMs": 0.3011999999944237
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 40476.4997,
+      "durationMs": 0.5903000000034808
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 40484.1301,
+      "durationMs": 0.6019999999989523
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 40484.8965,
+      "durationMs": 0.3129999999946449
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 40532.2798,
+      "durationMs": 0.8372000000017579
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 40533.4741,
+      "durationMs": 0.5233999999982188
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 40534.1916,
+      "durationMs": 0.40890000000217697
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 40534.757,
+      "durationMs": 0.26920000000245636
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 40535.1423,
+      "durationMs": 0.455999999998312
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 40535.7494,
+      "durationMs": 0.24539999999979045
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 40536.3517,
+      "durationMs": 1.2455000000045402
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 40538.2955,
+      "durationMs": 0.8329999999987194
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 40539.4089,
+      "durationMs": 0.39319999999861466
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 40540.0067,
+      "durationMs": 0.32510000000183936
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 40640.1534,
+      "durationMs": 0.6064999999944121
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 44932.6593,
+      "durationMs": 4.7137000000002445
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 44992.9831,
+      "durationMs": 7.69550000000163
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 45001.349,
+      "durationMs": 0.31339999999909196
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 45001.831,
+      "durationMs": 0.4209000000046217
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 45041.2769,
+      "durationMs": 0.5932000000029802
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 45046.9811,
+      "durationMs": 0.5406000000002678
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 45047.904,
+      "durationMs": 0.36309999999502907
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 45048.4282,
+      "durationMs": 0.19759999999951106
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 45048.7179,
+      "durationMs": 0.1695999999938067
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 45048.9482,
+      "durationMs": 0.24979999999777647
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 45049.5013,
+      "durationMs": 0.3153999999994994
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 45050.1552,
+      "durationMs": 0.5224999999991269
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 45090.2833,
+      "durationMs": 0.4813999999969383
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 45090.991,
+      "durationMs": 0.43479999999544816
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 45091.5514,
+      "durationMs": 0.4499000000068918
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 45092.1146,
+      "durationMs": 0.33150000000023283
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 45092.5655,
+      "durationMs": 0.377200000002631
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 45093.0927,
+      "durationMs": 0.46929999999701977
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 45093.7091,
+      "durationMs": 0.29909999999654246
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 45094.1137,
+      "durationMs": 0.6235000000015134
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 45094.8392,
+      "durationMs": 0.2933999999950174
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 45095.2481,
+      "durationMs": 1.115300000004936
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 45097.1937,
+      "durationMs": 0.5815000000002328
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 45099.8257,
+      "durationMs": 1.1354999999966822
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 45157.6641,
+      "durationMs": 0.34470000000146683
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 45158.1,
+      "durationMs": 0.18170000000100117
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 45158.3364,
+      "durationMs": 0.18940000000293367
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 45158.5822,
+      "durationMs": 0.16040000000066357
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 45158.7941,
+      "durationMs": 0.2566999999980908
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 45159.1098,
+      "durationMs": 0.1764000000039232
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 45159.3605,
+      "durationMs": 0.3952999999964959
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 45159.8668,
+      "durationMs": 0.19389999999839347
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 45160.3667,
+      "durationMs": 0.24250000000029104
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 45160.7227,
+      "durationMs": 0.17459999999846332
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 45257.198300000004,
+      "durationMs": 0.4732999999978347
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 49454.872,
+      "durationMs": 2.941099999996368
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 49505.5245,
+      "durationMs": 3.457699999999022
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 49509.5202,
+      "durationMs": 0.37800000000424916
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 49510.1189,
+      "durationMs": 1.0029999999969732
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 49534.453,
+      "durationMs": 0.4202000000004773
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 49551.4121,
+      "durationMs": 1.4530000000013388
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 49555.2799,
+      "durationMs": 0.26429999999527354
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 49555.6293,
+      "durationMs": 0.11970000000292202
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 49555.8137,
+      "durationMs": 0.14170000000012806
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 49556.0222,
+      "durationMs": 0.27709999999933643
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 49557.7381,
+      "durationMs": 0.5041999999957625
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 49558.5012,
+      "durationMs": 1.2285000000047148
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 49599.9902,
+      "durationMs": 0.8923999999969965
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 49601.1509,
+      "durationMs": 0.42409999999654246
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 49601.7445,
+      "durationMs": 0.44470000000001164
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 49602.6895,
+      "durationMs": 0.39209999999729916
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 49603.3246,
+      "durationMs": 0.2514000000010128
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 49603.6726,
+      "durationMs": 0.1341000000029453
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 49603.8613,
+      "durationMs": 0.131600000000617
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 49604.0435,
+      "durationMs": 0.35689999999885913
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 49604.4768,
+      "durationMs": 0.2429000000047381
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 49604.9925,
+      "durationMs": 0.28029999999853317
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 49605.6253,
+      "durationMs": 0.3562999999994645
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 49608.3878,
+      "durationMs": 0.8773000000001048
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 49658.8322,
+      "durationMs": 0.30120000000169966
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 49659.2383,
+      "durationMs": 0.19300000000657747
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 49660.5356,
+      "durationMs": 0.3422999999966123
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 49660.977100000004,
+      "durationMs": 0.18629999999393476
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 49661.2616,
+      "durationMs": 0.4304000000047381
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 49661.7957,
+      "durationMs": 0.5018999999956577
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 49662.436200000004,
+      "durationMs": 1.7069999999948777
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 49664.5249,
+      "durationMs": 0.2833000000027823
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 49665.631,
+      "durationMs": 0.46480000000155997
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 49666.2763,
+      "durationMs": 0.3522000000011758
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 49758.0787,
+      "durationMs": 0.49230000000534346
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 51434.7003,
+      "durationMs": 3.3175000000046566
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 51481.5697,
+      "durationMs": 4.344599999996717
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 51486.9339,
+      "durationMs": 0.23449999999866122
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 51487.2649,
+      "durationMs": 0.24549999999726424
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 51519.3946,
+      "durationMs": 0.48430000000371365
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 51519.9857,
+      "durationMs": 0.14800000000104774
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 51520.1896,
+      "durationMs": 0.09580000000278233
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 51520.3364,
+      "durationMs": 0.10960000000341097
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 51520.4896,
+      "durationMs": 0.22260000000096625
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 51521.1458,
+      "durationMs": 0.18160000000352738
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 51521.3961,
+      "durationMs": 0.41510000000562286
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 51522.4431,
+      "durationMs": 0.3544000000038068
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 51570.6522,
+      "durationMs": 0.2868000000016764
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 51571.0364,
+      "durationMs": 0.20890000000508735
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 51571.3242,
+      "durationMs": 0.2647999999971944
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 51571.66,
+      "durationMs": 0.2978999999977532
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 51572.0393,
+      "durationMs": 0.26510000000416767
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 51572.5244,
+      "durationMs": 0.4327999999950407
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 51573.1605,
+      "durationMs": 0.4717999999993481
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 51573.8473,
+      "durationMs": 0.6956999999965774
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 51574.6864,
+      "durationMs": 0.27840000000287546
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 51575.0526,
+      "durationMs": 0.23700000000098953
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 51575.3729,
+      "durationMs": 0.3330999999961932
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 51575.8045,
+      "durationMs": 0.29209999999875436
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 51633.5983,
+      "durationMs": 0.31920000000536675
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 51634.0202,
+      "durationMs": 0.26810000000114087
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 51634.3935,
+      "durationMs": 0.4510999999984051
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 51635.0875,
+      "durationMs": 0.5028000000020256
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 51635.7399,
+      "durationMs": 0.6175999999977648
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 51636.5124,
+      "durationMs": 0.3738000000012107
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 51637.0174,
+      "durationMs": 0.689700000002631
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 51637.82,
+      "durationMs": 0.20799999999871943
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 51638.1333,
+      "durationMs": 0.2117999999973108
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 51638.4336,
+      "durationMs": 0.17840000000433065
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 51738.3852,
+      "durationMs": 1.1839000000036322
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 54057.789,
+      "durationMs": 3.3598000000056345
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 54108.9862,
+      "durationMs": 3.0040999999982887
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 54112.616500000004,
+      "durationMs": 0.25539999999455176
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 54112.9757,
+      "durationMs": 0.22309999999561114
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 54129.5006,
+      "durationMs": 1.3925000000017462
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 54153.7932,
+      "durationMs": 0.4429999999993015
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 54160.171800000004,
+      "durationMs": 0.2930999999953201
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 54163.153,
+      "durationMs": 0.7295999999987544
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 54164.1693,
+      "durationMs": 0.36789999999746215
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 54164.673,
+      "durationMs": 0.4298999999955413
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 54165.2244,
+      "durationMs": 0.3378999999986263
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 54166.2934,
+      "durationMs": 0.6431000000011409
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 54204.4925,
+      "durationMs": 1.0327000000033877
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 54205.8065,
+      "durationMs": 0.4114000000045053
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 54206.3658,
+      "durationMs": 0.6022999999986496
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 54207.3024,
+      "durationMs": 0.33400000000256114
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 54207.9865,
+      "durationMs": 0.27470000000175787
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 54208.3561,
+      "durationMs": 0.1591000000044005
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 54209.5349,
+      "durationMs": 0.3165999999982887
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 54209.9479,
+      "durationMs": 0.4307000000044354
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 54210.4852,
+      "durationMs": 0.32929999999760184
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 54213.993,
+      "durationMs": 0.569100000000617
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 54217.5672,
+      "durationMs": 1.59150000000227
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 54221.9509,
+      "durationMs": 0.5190999999977066
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 54265.1936,
+      "durationMs": 0.408000000003085
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 54265.8088,
+      "durationMs": 0.3274999999994179
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 54266.2529,
+      "durationMs": 0.3919999999998254
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 54266.7715,
+      "durationMs": 0.5627999999996973
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 54267.5064,
+      "durationMs": 0.5996000000013737
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 54268.2485,
+      "durationMs": 0.2984999999971478
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 54268.6697,
+      "durationMs": 0.5169000000023516
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 54269.3113,
+      "durationMs": 0.23550000000250293
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 54269.6742,
+      "durationMs": 0.19479999999748543
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 54269.9678,
+      "durationMs": 0.17250000000058208
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 54363.5527,
+      "durationMs": 1.1719999999986612
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 57682.9723,
+      "durationMs": 4.99659999999858
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 57750.4322,
+      "durationMs": 5.260899999993853
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 57756.3778,
+      "durationMs": 0.44099999999889405
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 57756.9485,
+      "durationMs": 0.3290000000051805
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 57794.4944,
+      "durationMs": 1.6529999999984284
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 57796.505,
+      "durationMs": 0.6801000000050408
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 57800.8998,
+      "durationMs": 0.45270000000164146
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 57802.6335,
+      "durationMs": 0.3662999999942258
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 57805.3732,
+      "durationMs": 0.4933000000019092
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 57806.0806,
+      "durationMs": 0.4691000000020722
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 57806.7119,
+      "durationMs": 0.31489999999757856
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 57807.1481,
+      "durationMs": 0.49940000000060536
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 57844.6107,
+      "durationMs": 0.4864000000015949
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 57845.6715,
+      "durationMs": 0.25720000000001164
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 57846.9393,
+      "durationMs": 0.2842000000018743
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 57847.349,
+      "durationMs": 0.38220000000001164
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 57847.806,
+      "durationMs": 0.2723000000041793
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 57848.3126,
+      "durationMs": 0.144800000001851
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 57848.6576,
+      "durationMs": 0.2180999999982305
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 57848.9614,
+      "durationMs": 0.4357000000018161
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 57849.4978,
+      "durationMs": 0.2739000000001397
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 57849.8923,
+      "durationMs": 0.3775000000023283
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 57854.7805,
+      "durationMs": 0.369700000002922
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 57855.2626,
+      "durationMs": 0.2448999999978696
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 57912.4641,
+      "durationMs": 0.9985000000015134
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 57913.7397,
+      "durationMs": 0.3600000000005821
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 57914.2533,
+      "durationMs": 0.37180000000080327
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 57914.7526,
+      "durationMs": 0.3286000000007334
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 57915.2035,
+      "durationMs": 0.3911999999982072
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 57915.965000000004,
+      "durationMs": 0.23559999999997672
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 57916.3008,
+      "durationMs": 0.17740000000048894
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 57916.5897,
+      "durationMs": 0.2944000000061351
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 57917.0237,
+      "durationMs": 0.3073000000003958
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 57917.4728,
+      "durationMs": 0.5821999999971013
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 58036.7544,
+      "durationMs": 0.5042000000030384
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 58920.7011,
+      "durationMs": 3.1108000000022002
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 58964.4389,
+      "durationMs": 2.7833000000027823
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 58968.3994,
+      "durationMs": 0.6628999999957159
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 58969.288,
+      "durationMs": 0.5918999999994412
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 58981.5018,
+      "durationMs": 0.8770000000004075
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 59019.4624,
+      "durationMs": 0.5921000000016647
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 59020.1585,
+      "durationMs": 0.15669999999954598
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 59020.9437,
+      "durationMs": 0.15769999999611173
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 59021.1805,
+      "durationMs": 0.14429999999993015
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 59021.377,
+      "durationMs": 0.23030000000289874
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 59021.6572,
+      "durationMs": 0.14540000000124564
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 59021.8518,
+      "durationMs": 0.2385000000067521
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 59061.9765,
+      "durationMs": 0.36860000000160653
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 59063.8172,
+      "durationMs": 0.2989999999990687
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 59064.2129,
+      "durationMs": 0.16930000000138534
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 59064.4472,
+      "durationMs": 0.35169999999925494
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 59064.8928,
+      "durationMs": 0.44769999999698484
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 59065.5055,
+      "durationMs": 0.41920000000391155
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 59066.4142,
+      "durationMs": 0.32850000000325963
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 59066.8868,
+      "durationMs": 0.3580000000001746
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 59067.6699,
+      "durationMs": 0.47370000000228174
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 59068.2795,
+      "durationMs": 0.3312000000005355
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 59068.719,
+      "durationMs": 0.39719999999942956
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 59069.2454,
+      "durationMs": 0.3286999999982072
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 59122.9859,
+      "durationMs": 0.5671000000002095
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 59124.5002,
+      "durationMs": 0.3313999999954831
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 59124.9266,
+      "durationMs": 0.3099000000001979
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 59125.3039,
+      "durationMs": 0.17859999999927823
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 59126.1357,
+      "durationMs": 0.21770000000105938
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 59127.362,
+      "durationMs": 0.37410000000090804
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 59127.841,
+      "durationMs": 0.7437999999965541
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 59129.647,
+      "durationMs": 0.3227000000042608
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 59132.5786,
+      "durationMs": 0.2941999999966356
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 59133.7869,
+      "durationMs": 0.32379999999830034
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 59216.2594,
+      "durationMs": 0.42480000000068685
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 68522.94039999999,
+      "durationMs": 3.655299999998533
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 68583.0095,
+      "durationMs": 6.783199999990757
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 68590.62449999999,
+      "durationMs": 0.3209999999962747
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 68591.0241,
+      "durationMs": 0.29469999999855645
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 68625.88179999999,
+      "durationMs": 0.5373000000108732
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 68633.43509999999,
+      "durationMs": 0.6820000000006985
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 68637.65539999999,
+      "durationMs": 0.38880000000062864
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 68640.73809999999,
+      "durationMs": 0.3775000000023283
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 68643.68519999999,
+      "durationMs": 0.5761000000056811
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 68644.46489999999,
+      "durationMs": 0.43540000000211876
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 68646.1319,
+      "durationMs": 0.68399999999383
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 68647.03099999999,
+      "durationMs": 0.6524000000063097
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 68681.0762,
+      "durationMs": 0.5331000000005588
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 68681.74789999999,
+      "durationMs": 0.24770000000717118
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 68682.068,
+      "durationMs": 0.28719999999157153
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 68682.6611,
+      "durationMs": 0.45949999999720603
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 68683.58469999999,
+      "durationMs": 0.6217000000033295
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 68686.09039999999,
+      "durationMs": 0.5597000000125263
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 68686.9748,
+      "durationMs": 0.21349999999802094
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 68687.27089999999,
+      "durationMs": 0.43140000000130385
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 68687.80729999999,
+      "durationMs": 0.2435000000114087
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 68690.3054,
+      "durationMs": 0.8531999999977415
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 68694.4479,
+      "durationMs": 0.5865999999950873
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 68695.5266,
+      "durationMs": 0.5388999999995576
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 68738.4543,
+      "durationMs": 0.45029999999678694
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 68740.37899999999,
+      "durationMs": 0.4950000000098953
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 68741.60969999999,
+      "durationMs": 0.2995000000082655
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 68742.0158,
+      "durationMs": 0.2069000000046799
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 68742.4053,
+      "durationMs": 0.500899999999092
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 68743.07459999999,
+      "durationMs": 0.6205000000045402
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 68743.77919999999,
+      "durationMs": 0.1444000000046799
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 68743.9864,
+      "durationMs": 0.1750999999931082
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 68744.24819999999,
+      "durationMs": 0.146100000012666
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 68745.1881,
+      "durationMs": 0.2699999999895226
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 68835.00039999999,
+      "durationMs": 0.3761999999987893
+    },
+    {
+      "url": "/index.html",
+      "status": 200,
+      "atMs": 72287.36839999999,
+      "durationMs": 3.769700000004377
+    },
+    {
+      "url": "/@vite/client",
+      "status": 200,
+      "atMs": 72376.15049999999,
+      "durationMs": 8.285600000002887
+    },
+    {
+      "url": "/src/app/style.css",
+      "status": 200,
+      "atMs": 72386.0005,
+      "durationMs": 0.7278999999980442
+    },
+    {
+      "url": "/src/app/main.ts",
+      "status": 200,
+      "atMs": 72387.06349999999,
+      "durationMs": 0.739000000001397
+    },
+    {
+      "url": "/node_modules/.pnpm/vite@8.3.6_@types+node@26.6.6/node_modules/vite/dist/client/env.mjs",
+      "status": 200,
+      "atMs": 72423.32209999999,
+      "durationMs": 0.6739999999990687
+    },
+    {
+      "url": "/src/editor/controller.ts",
+      "status": 200,
+      "atMs": 72441.3669,
+      "durationMs": 1.028200000000652
+    },
+    {
+      "url": "/src/editor/inputPolicy.ts",
+      "status": 200,
+      "atMs": 72442.7808,
+      "durationMs": 0.5068999999930384
+    },
+    {
+      "url": "/src/runtime/index.ts",
+      "status": 200,
+      "atMs": 72443.5729,
+      "durationMs": 0.3184999999939464
+    },
+    {
+      "url": "/src/app/counter.ts",
+      "status": 200,
+      "atMs": 72444.7294,
+      "durationMs": 0.7102999999915482
+    },
+    {
+      "url": "/src/observe/inspector.ts",
+      "status": 200,
+      "atMs": 72446.1687,
+      "durationMs": 0.7301000000006752
+    },
+    {
+      "url": "/src/app/lab.ts",
+      "status": 200,
+      "atMs": 72447.1647,
+      "durationMs": 0.7060000000055879
+    },
+    {
+      "url": "/src/app/tasks.ts",
+      "status": 200,
+      "atMs": 72448.53689999999,
+      "durationMs": 1.3019999999960419
+    },
+    {
+      "url": "/src/core/mount.ts",
+      "status": 200,
+      "atMs": 72502.7714,
+      "durationMs": 0.7926000000006752
+    },
+    {
+      "url": "/src/core/capture.ts",
+      "status": 200,
+      "atMs": 72503.9142,
+      "durationMs": 0.5179999999963911
+    },
+    {
+      "url": "/src/core/reconcile.ts",
+      "status": 200,
+      "atMs": 72504.6323,
+      "durationMs": 0.5346999999892432
+    },
+    {
+      "url": "/src/core/patch.ts",
+      "status": 200,
+      "atMs": 72505.58439999999,
+      "durationMs": 0.5069999999977881
+    },
+    {
+      "url": "/src/core/vdom.ts",
+      "status": 200,
+      "atMs": 72506.23959999999,
+      "durationMs": 0.32660000000032596
+    },
+    {
+      "url": "/src/editor/history.ts",
+      "status": 200,
+      "atMs": 72506.67959999999,
+      "durationMs": 0.19860000000335276
+    },
+    {
+      "url": "/src/runtime/expression.ts",
+      "status": 200,
+      "atMs": 72507.16299999999,
+      "durationMs": 0.1972000000096159
+    },
+    {
+      "url": "/src/runtime/FunctionComponent.ts",
+      "status": 200,
+      "atMs": 72507.4381,
+      "durationMs": 0.6419999999925494
+    },
+    {
+      "url": "/src/runtime/hooks.ts",
+      "status": 200,
+      "atMs": 72508.23079999999,
+      "durationMs": 0.40679999999701977
+    },
+    {
+      "url": "/src/observe/recorder.ts",
+      "status": 200,
+      "atMs": 72521.83459999999,
+      "durationMs": 0.47370000000228174
+    },
+    {
+      "url": "/src/runtime/resolve.ts",
+      "status": 200,
+      "atMs": 72530.2839,
+      "durationMs": 1.2825000000011642
+    },
+    {
+      "url": "/src/bench/fixtures.ts",
+      "status": 200,
+      "atMs": 72532.2579,
+      "durationMs": 0.5620999999955529
+    },
+    {
+      "url": "/src/core/host/events.ts",
+      "status": 200,
+      "atMs": 72595.5207,
+      "durationMs": 0.4863000000041211
+    },
+    {
+      "url": "/src/core/host/inputs.ts",
+      "status": 200,
+      "atMs": 72596.18629999999,
+      "durationMs": 0.40820000000530854
+    },
+    {
+      "url": "/src/core/host/browserState.ts",
+      "status": 200,
+      "atMs": 72596.693,
+      "durationMs": 0.2755999999935739
+    },
+    {
+      "url": "/src/core/host/forms.ts",
+      "status": 200,
+      "atMs": 72597.1819,
+      "durationMs": 0.2795999999943888
+    },
+    {
+      "url": "/src/core/validate.ts",
+      "status": 200,
+      "atMs": 72597.58189999999,
+      "durationMs": 0.4709000000002561
+    },
+    {
+      "url": "/src/core/planValidation.ts",
+      "status": 200,
+      "atMs": 72598.1718,
+      "durationMs": 0.6157999999995809
+    },
+    {
+      "url": "/src/observe/trace.ts",
+      "status": 200,
+      "atMs": 72598.9313,
+      "durationMs": 0.2566999999980908
+    },
+    {
+      "url": "/src/core/keyed.ts",
+      "status": 200,
+      "atMs": 72599.29699999999,
+      "durationMs": 0.28699999999662396
+    },
+    {
+      "url": "/src/runtime/stateGuard.ts",
+      "status": 200,
+      "atMs": 72599.7079,
+      "durationMs": 0.22019999999611173
+    },
+    {
+      "url": "/src/runtime/updateQueue.ts",
+      "status": 200,
+      "atMs": 72600.41119999999,
+      "durationMs": 0.852100000003702
+    },
+    {
+      "url": "/favicon.ico",
+      "status": 404,
+      "atMs": 72711.22989999999,
+      "durationMs": 1.7154000000009546
+    }
+  ]
+}

@@ -41,3 +41,9 @@ E3와 E4가 서로 다른 정식 실행에 있으면 그 절대 시간이나 개
 ```powershell
 node scripts/benchmark-task.mjs --tag=task-candidate-v2 --builds=task-e1-a1-v1,task-e2-a1-v1,task-e4-a0-v1,task-e4-a1-v1
 ```
+
+2026-11-09 06:17 KST(`2026-11-08T21:17:47.970Z`)에 위 정식 실행을 시작해 11:13 KST에 480/480조건으로 끝났다. runner commit은 `ae155cc3ea2982af7ac0365f6f62fc3ae5a03eb4`, 기능 엔진 E4는 `2a21ec7`의 고정 build다. [실행 환경](bench/task-candidate-v2/environment.json) · [판정 근거](bench/task-candidate-v2/policy-review-e4.md)
+
+## 결과: 일반 채택 기각
+
+반복 재사용 조건의 median 목표는 3/3세션 모두 달성했지만, 엔진 비교 68조건 중 6개와 앱 비교 68조건 중 5개가 사전 허용 범위를 넘었다. 새 3세션 n=180 100개 보충에서도 이름 수정·완료 상태 변경의 median 초과가 재현됐다. 10개 정렬의 앱 p95 초과도 재현됐다. 10,000개 보충은 사용자 요청으로 중단했으며 판정에 쓰지 않는다. 최종 기본 경로는 E1 방식의 매회 검증과 A0 앱이다. 이 문서의 64개 보관 상한은 고정 비교 build에만 남는다. [최종 정책](task-app-final-policy.md) · [100개 보충](bench/task-candidate-v2-tail-persistent-100-v1/policy-review-e4.md) · [10개 보충](bench/task-candidate-v2-tail-persistent-10-v1/policy-review-e4.md)

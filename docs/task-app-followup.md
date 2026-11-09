@@ -38,7 +38,7 @@ E0/E1/E2 × A0/A1의 10개 작은 조건 smoke는 120개 측정 작업/168개 ac
 
 기존 no-op 성능 보고서는 [역사적 사본](benchmark-results-noop.md)에 원문을 보존했다. 시작 시 파일과 사본의 SHA-256은 모두 `6292559a91d65b6bf9e6730979f5d1bb3e5898efff9823ab623871c8a5b6d75b`다. 줄바꿈까지 동일한 원본 gzip과 Git 출처는 [보존 영수증](validation/task-app-previous-report.json)에 있다. 현행 보고서를 새 결과로 갱신하더라도 이전 원문·원자료를 대체하지 않는다.
 
-## D — 증명 보관 방식 수정, 정식 비교 감사 완료·진단/보충 진행
+## D — 증명 보관 방식 수정, E3 기각과 E4 비교
 
 단계 C의 결과를 `dfd20dc`에 커밋한 뒤, `src/core/vdom.ts`만 바꾼 E3 후보 `ff9e24e`를 만들었다. 동결 이후의 최종 구조를 검사하고 자식 증명을 boolean으로 전달하며, 장기 인증을 모든 보조 객체 대신 명시적인 인수와 VNode/root 경계에 보관한다. 전체 root의 문맥 검증 캐시와 실제 DOM/plan/폼/Effect 검사는 유지한다. [후보 원리와 비교 정의](task-app-engine-candidate.md).
 
@@ -48,11 +48,15 @@ E0/E1/E2 × A0/A1의 10개 작은 조건 smoke는 120개 측정 작업/168개 ac
 
 세 세션 각각 160개 조건, 전체 480개 조건의 수집과 종료가 통과했다. raw 32,196행, 측정 작업 27,360회/action 38,880개, 통계·비교 각 8,016개, 누적 경로 29,700점, 그림 480점을 독립 재계산했다. 네 PNG를 실제로 확인했고 PNG/SVG hash도 일치했다. 새 판정 감사 도구는 비교 누락·중복과 모든 사전 gate를 확인하며, 의도적으로 뒤집은 p95 판정도 거절했다. 먼저 기존 E3 작은 smoke에서 도구를 확인한 뒤 정식 결과에 적용했다. [통계 감사](bench/task-candidate-v1/statistics-audit.json), [판정 감사](bench/task-candidate-v1/policy-audit.json), [그림 확인](bench/task-candidate-v1/plot-validation.json).
 
-반복 재사용의 median 목표는 충족했지만 엔진 비교 5개·앱 비교 6개 조건이 사전 범위를 한 번 이상 넘었다. 특히 S1 stress 검색/정렬, 이동 p95, CRUD 하위 toggle과 작은 입력 복원을 제외하지 않았다. [모든 초과 조건](bench/task-candidate-v1/policy-review-e3.md), [보충 계획](bench/task-candidate-v1/tail-supplement-plan-e3.json). 같은 네 비교군의 새 3세션 n=180 보충 대상은 100개 search/filter/dirty, 1,000개 CRUD, 10,000개 search/sort/move/CRUD다. 원래 표본과 합치지 않는다.
+반복 재사용의 median 목표는 충족했지만 엔진 비교 5개·앱 비교 6개 조건이 사전 범위를 한 번 이상 넘었다. 특히 S1 stress 검색/정렬, 이동 p95, CRUD 하위 toggle과 작은 입력 복원을 제외하지 않았다. [모든 초과 조건](bench/task-candidate-v1/policy-review-e3.md), [당시 보충 계획](bench/task-candidate-v1/tail-supplement-plan-e3.json). 같은 네 비교군의 새 3세션 n=180 보충 대상으로 100개 search/filter/dirty, 1,000개 CRUD, 10,000개 search/sort/move/CRUD를 정했다. 이후 1,000개 보충에서 반복 회귀가 확인돼 E3의 일반 채택을 기각했고, 아래 기록처럼 남은 보충을 중단·미실행 상태로 보존했다. 원래 표본과 보충 표본을 합치지 않았다.
 
-정식 수집 종료 뒤 `task-diagnostic-candidate-v1`에서 고정 A1의 E1/E2/E3 CPU·할당·GC·메모리·Paint 진단 36개 조건의 수집·분석·기능 소스 hash 감사를 완료했다. E3는 E2보다 동결·증명 self 비중과 보유 heap이 줄었지만 allocation 추정량은 줄지 않았고, dispose 뒤 heap은 E1보다 컸다. 정의한 Paint 경계의 move에서도 불리한 관측을 보존했다. [진단 결과](bench/task-diagnostic-candidate-v1/diagnostics.md), [후보 해석](task-app-engine-candidate.md). 보충 실행과 최종 캐시 정책 선택은 남아 있다. 프로파일링을 정식 timing과 병행하지 않았다.
+정식 수집 종료 뒤 `task-diagnostic-candidate-v1`에서 고정 A1의 E1/E2/E3 CPU·할당·GC·메모리·Paint 진단 36개 조건의 수집·분석·기능 소스 hash 감사를 완료했다. E3는 E2보다 동결·증명 self 비중과 보유 heap이 줄었지만 allocation 추정량은 줄지 않았고, dispose 뒤 heap은 E1보다 컸다. 정의한 Paint 경계의 move에서도 불리한 관측을 보존했다. [진단 결과](bench/task-diagnostic-candidate-v1/diagnostics.md), [후보 해석](task-app-engine-candidate.md). 이후 보충·E3 기각과 별도 앱 진단은 [후속 결과](task-app-tail-results.md)에 있다. 최종 캐시 정책 선택은 아직 남아 있다. 프로파일링을 정식 timing과 병행하지 않았다.
 
-## 남은 단계
+## E — 최종 정책 적용과 인수 (완료)
+
+E4 정식 480조건과 10개·100개 n=180 보충의 감사를 마친 뒤 E4의 일반 채택을 기각했다. 최종 정책은 엔진 E1 방식의 매회 검증 + 동결 안전 조건, 기본 앱 A0, 비교용 A1(`TaskAppWithRowReuse`)이다. 10,000개 보충은 사용자 요청으로 중단했으며 사용자가 다시 허락하기 전까지 실행하지 않는다. 코드는 `9b52323`, 검증은 typecheck·단위/통합 213/213·build·기본 Chromium+Firefox 33/33 × 3회다. [최종 정책과 검증](task-app-final-policy.md)
+
+## 이전 단계의 남은 작업 기록(당시 시점)
 
 원본 체크리스트는 진행 상태 **v1.11**로 갱신했다. E3의 반복 회귀와 일반 채택 기각, 완료/중단/미실행 보충 및 E4 후보 정확성을 구분했다. 최종 정책·새 정식 비교·전체 브라우저 인수는 아직 미완료다. [버전·전후 SHA-256·압축 사본](validation/task-checklist-bounded-candidate.json)을 이전 영수증과 함께 보존한다. 실제 Desktop 원본은 저장소 밖에 있다.
 
@@ -62,4 +66,4 @@ E0/E1/E2 × A0/A1의 10개 작은 조건 smoke는 120개 측정 작업/168개 ac
 - D: 후보의 정식 3세션·원자료/판정/그림 감사와 별도 진단 36개는 완료하고 93bc38c에 보존했다. [새 n=180 보충](task-app-tail-results.md)의 1,000개 CRUD 12개 조건·원자료/판정 감사를 완료했지만 toggle 회귀가 세 세션 모두 남아 현재 E3/A1의 일반 채택을 기각했다. 10,000개 보충은 첫 세션 완료 뒤 중단해 모든 raw와 종료/보존 기록을 남겼고, 100개 보충은 미실행이다. 이 불완전한 보충을 PASS로 사용하지 않는다. 고정 E3 A0/A1의 별도 진단 뒤 보수적 적용 범위 조정과 최종 인수를 진행한다.
 - E: 최종 소스에서 전체 단위·통합·타입·build·기본 브라우저 3회, 문서/원본 체크리스트·hash/커밋/clean 감사.
 
-E4 후보 `2a21ec7`는 호출당 새 증명 인증을 64개까지 보관하며 예산 소진 뒤에도 전체 깊은 검사를 계속한다. E3의 Proxy 수정과 앱 A1은 유지했다. 관련 14개·전체 205개·typecheck/build 및 작은 40개/stress 10개 smoke·원자료 감사를 통과했다. [후보 원리·새 비교 계획](task-app-bounded-candidate.md). 새 정식 실행은 `task-candidate-v2`이며 최종 채택 전 상태다.
+E4 후보 `2a21ec7`는 호출당 새 증명 인증을 64개까지 보관하며 예산 소진 뒤에도 전체 깊은 검사를 계속한다. E3의 Proxy 수정과 앱 A1은 유지했다. 관련 14개·전체 205개·typecheck/build 및 작은 40개/stress 10개 smoke·원자료 감사를 통과했다. [후보 원리·새 비교 계획](task-app-bounded-candidate.md). 새 정식 실행 `task-candidate-v2`는 2026-11-09 06:17 KST에 시작해 수집 중이며 최종 채택 전 상태다. 이 실행의 통계·판정 감사와 분리 진단은 수집이 끝난 뒤 수행한다.

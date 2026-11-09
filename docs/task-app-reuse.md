@@ -1,6 +1,6 @@
 # TaskApp 목록 표현을 재사용하는 원리
 
-이번 앱 변경은 `5ed7f34`에 있다. 성능 채택 여부는 별도의 [사전 계획](task-app-comparison-plan.md)에 따라 측정한다. 함수 실행을 줄였다는 사실과 실제 실행 시간이 줄었다는 결론을 구분한다.
+이번 앱 변경은 `5ed7f34`에 있다. **2026-11-09 최종 정책에서는 기본 `TaskApp`을 A0로 두고, 아래 A1 방식은 비교용 `TaskAppWithRowReuse`로만 남겼다.** 반복 재사용 이득은 확인했지만 사전 회귀 허용 범위를 넘는 조건이 남았기 때문이다. [최종 정책](task-app-final-policy.md) 성능 채택 여부는 별도의 [사전 계획](task-app-comparison-plan.md)에 따라 측정한다. 함수 실행을 줄였다는 사실과 실제 실행 시간이 줄었다는 결론을 구분한다.
 
 기존 앱은 `visible` 배열을 useMemo로 보관했지만, 그 배열로 `h(TaskRow, ...)` 표현을 만드는 map과 세 행 callback은 매번 실행했다. 따라서 새 항목 입력창만 수정해도 기존 행의 표현과 함수 props가 새로 만들어졌다. 기존 엔진은 동일한 표현 객체를 다시 받았을 때 평가 결과를 재사용하므로, 배열만 보관해서는 그 경로를 충분히 활용하지 못했다.
 
@@ -53,7 +53,7 @@ E2 엔진, 10개 seeded row의 독립 counts 실행에서 확인한 예다. 단�
 
 검증은 다음을 구분한다.
 
-- `tests/integration/task-reuse.test.ts`: reuse on/off의 실행 횟수, 동일한 사용자 작업 결과와 Effect 횟수, 최신 State에 대한 연속 callback과 FIFO 결과.
+- `tests/integration/task-reuse.test.ts`: A0의 행 재평가와 A1의 생략을 직접 비교, A0·A1 각각의 최신 FIFO callback, reuse on/off의 실행 횟수, 동일한 사용자 작업 결과와 Effect 횟수, 최신 State에 대한 연속 callback과 FIFO 결과.
 - `tests/integration/task-benchmark.test.ts`: 실제 TaskApp에 독립 모델을 적용한 모든 작업, 입력 복원, 키별 DOM identity, 실제 비동기 Effect.
 - `tests/browser/tasks.spec.ts`: Chromium·Firefox에서 연속 수정·완료·삭제·추가, live value와 identity, 활성 입력창의 focus·selection.
 - 시간 비교: 같은 앱으로 엔진만 바꾸거나 같은 엔진으로 앱만 바꾼다. 초기화·새 생성·유지한 앱의 반복 작업과 fresh mount를 별도로 기록한다.
