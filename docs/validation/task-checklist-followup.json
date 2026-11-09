@@ -1,0 +1,35 @@
+{
+  "status": "follow-up complete: measurement limits, trace/Inspector cost, resolve/validate temporaries adopted",
+  "updatedAt": "2026-11-09T07:39:27.426Z",
+  "externalPath": "C:/Users/nica7/Desktop/리액트 조사/Mini_React_B안_구현명세_체크리스트.md",
+  "version": "1.13",
+  "beforeSha256": "cc29db2beef2f15409d50162f3115df5f7945ad8b4a16a4bc4bf183a8f10774b",
+  "afterSha256": "30c88c40dc01498aceedb3c672f0184c54fed2ee9d663c714a0eca93279b495b",
+  "archives": {
+    "before": "docs/validation/task-checklist-v1.12.md.gz",
+    "after": "docs/validation/task-checklist-v1.13.md.gz"
+  },
+  "previousReceipt": "docs/validation/task-checklist-final.json",
+  "functionalCommit": "3e9a48c4e1fd57cec0fbf1b189b6f8cfb143df68",
+  "evidence": {
+    "report": "docs/followup-trace-alloc.md",
+    "plan": "docs/validation/followup-trace-alloc/timing-plan.md",
+    "validation": "docs/validation/task-followup-20261109-v1/result.json",
+    "confirm": "docs/bench/followup-alloc-confirm-v1/analysis.json",
+    "tail": "docs/bench/followup-alloc-confirm-v1-tail-10/analysis.json",
+    "diagnostic": "docs/bench/followup-alloc-diagnostic-v1/diagnostic-audit.json"
+  },
+  "evidenceSha256": {
+    "report": "bd32823396d683ef8333986fa0fe2ced95d1c870c85b9224db8f43ccda08ff18",
+    "plan": "812eb3b4868d88c1c66c95fbf4cbbb99e76c6550381ff127e0283371fe8238f1",
+    "validation": "71f5dffcfd5fbca5aa9995bf5311a106b11ee06ef562091af711a612294e2260",
+    "confirm": "e502de51ce4e7d98a0feb1dab69b3add08682cf8368c9083137f3970ac76b93e",
+    "tail": "ba92258cd37e0b0ee01800912ef817ab4ca49292511248d84e1e11ec4127de23",
+    "diagnostic": "02355166a59b090e357a9eb4a254e894f3d37382733c31d748301b936ef94db5"
+  },
+  "notCompleted": [
+    "research ③/④ not started (user decision)",
+    "10,000-item runs not executed (user policy)"
+  ],
+  "note": "Desktop original is outside Git."
+}

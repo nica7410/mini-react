@@ -70,6 +70,10 @@ E2(`c4a2fe1`)~E4(`2a21ec7`)는 깊은 불변성 인증과 동일 root 검증 캐
 
 필요한 view 갱신, dirty controlled 복원, Effect, focus/IME 단계는 no-op에서도 그대로 실행한다. 캐시 후보의 생성 비용 증가와 반복 이득은 [성능 보고서](benchmark-results.md)에 기록했다.
 
+### 추적 비용
+
+`TraceSink.enabled`가 false이면 엔진은 이벤트 객체·detail·identity Map·VDOM snapshot 참조·component 경로 문자열을 만들지 않는다. `enabled`가 없는 sink는 기록 중으로 본다. Inspector는 접힌 섹션을 처음 펼칠 때 만들고, 같은 run이 바뀌지 않으면 기존 DOM을 유지한다. 검증 walk는 index stack으로 첫 오류의 경로만 만든다. [후속 개선](followup-trace-alloc.md)
+
 ## Root Hooks와 FIFO Batching
 
 `FunctionComponent`는 루트 함수, `hooks` 배열, mount/update/unmount를 소유한다. 매 render의 Hook 호출 순서가 슬롯을 결정한다. setter는 슬롯에 고정되어 있고 렌더 당시 값의 closure와 다르다. 그래서 `setCount(count + 1)` 세 번은 같은 값 대체 요청인 반면 `setCount(n => n + 1)` 세 번은 앞 후보값에 차례로 적용된다.

@@ -1,0 +1,6504 @@
+{
+  "configuration": {
+    "workers": 2,
+    "projects": [
+      {
+        "name": "chromium",
+        "retries": 0,
+        "timeout": 30000
+      },
+      {
+        "name": "firefox",
+        "retries": 0,
+        "timeout": 30000
+      }
+    ]
+  },
+  "status": "passed",
+  "durationMs": 37293.718,
+  "tests": [
+    {
+      "id": "05a07057b0a7cfac56c0-e236c38fc08bf379d6eb",
+      "title": "T-S03/T-S05: real clicks batch three requests, while later clicks remain separate",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 6179,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 786,
+      "steps": [
+        {
+          "title": "Launch browser",
+          "category": "pw:api",
+          "durationMs": 88,
+          "parent": "Fixture \"browser\""
+        },
+        {
+          "title": "Fixture \"browser\"",
+          "category": "fixture",
+          "durationMs": 91,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 13,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 28,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 89,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 91,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 7,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 228
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 320,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 322
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 49,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 11,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 9,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 81
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 12
+        },
+        {
+          "title": "Click locator('#batch-probe button')",
+          "category": "pw:api",
+          "durationMs": 73
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#batch-probe button')",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Click locator('#batch-probe button')",
+          "category": "pw:api",
+          "durationMs": 56
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#batch-probe button')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 11
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 1
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 10,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 14,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 9,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 55,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 78
+        }
+      ]
+    },
+    {
+      "id": "05a07057b0a7cfac56c0-5055342997442772e9e4",
+      "title": "regression: capture setter cannot flush before the native parent bubble input handler",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 6195,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 652,
+      "steps": [
+        {
+          "title": "Launch browser",
+          "category": "pw:api",
+          "durationMs": 89,
+          "parent": "Fixture \"browser\""
+        },
+        {
+          "title": "Fixture \"browser\"",
+          "category": "fixture",
+          "durationMs": 93,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 12,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 23,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 76,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 78,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 6,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 211
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 307,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 310
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 51,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 11,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 15,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 96
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 15
+        },
+        {
+          "title": "Fill \"native new\" getByLabel('capture-probe')",
+          "category": "pw:api",
+          "durationMs": 31
+        },
+        {
+          "title": "Expect \"toHaveValue\" getByLabel('capture-probe')",
+          "category": "expect",
+          "durationMs": 16
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('capture-result')",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 14,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 17,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 5,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 40,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 64
+        }
+      ]
+    },
+    {
+      "id": "6551c06395e9cf6f98b5-76f9da16d08decc81d99",
+      "title": "T-B02/T-B03: browser preserves active node and range through unrelated writes/reorder and clamps changed values",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 6995,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 722,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 4,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 6,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 64,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 65,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 3,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 81
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 270,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 272
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 46,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 10,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 12,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 73
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 21
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 16
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 34
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 10
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('selection-title')",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Expect \"toBeFocused\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 12
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 1
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 9
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#selection-probe li').first()",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toBeFocused\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 15
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 8
+        },
+        {
+          "title": "Expect \"toHaveValue\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 19
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 1
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 17,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 20,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 7,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 46,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 73
+        }
+      ]
+    },
+    {
+      "id": "6551c06395e9cf6f98b5-6f0efdc34168a9d54384",
+      "title": "T-B03: removal/replacement do not refocus a new node, and explicit external focus wins",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 7105,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 656,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 4,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 7,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 51,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 52,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 3,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 68
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 287,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 289
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 53,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 10,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 8,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 75
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 11
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 22
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 12
+        },
+        {
+          "title": "Expect \"toHaveCount\" locator('#selection-probe textarea')",
+          "category": "expect",
+          "durationMs": 11
+        },
+        {
+          "title": "Expect \"not toBeFocused\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 11
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 12
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('selection-title')",
+          "category": "expect",
+          "durationMs": 15
+        },
+        {
+          "title": "Expect \"toBeFocused\" locator('#outside-focus')",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 15
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 8
+        },
+        {
+          "title": "Expect \"toHaveCount\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 6
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 6,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 9,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 3,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 52,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 68
+        }
+      ]
+    },
+    {
+      "id": "6551c06395e9cf6f98b5-b92248ce4b5ed3af6d84",
+      "title": "T-B04: synthetic composition defers ancestor move and latest plan, preserving input and Effects until end",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 7732,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 806,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 3,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 4,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 56,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 58,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 3,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 69
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 319,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 320
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 75,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 18,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 17,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 117
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 15
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 23
+        },
+        {
+          "title": "Dispatch \"compositionstart\" getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 32
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 19
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 10
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 11,
+          "parent": "Expect \"poll toBe\""
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0,
+          "parent": "Expect \"poll toBe\""
+        },
+        {
+          "title": "Expect \"poll toBe\"",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#selection-probe li').first()",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Expect \"toHaveValue\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('selection-title')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 6
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 7
+        },
+        {
+          "title": "Dispatch \"compositionend\" getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 9
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#selection-probe li').first()",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('selection-title')",
+          "category": "expect",
+          "durationMs": 11
+        },
+        {
+          "title": "Expect \"toHaveValue\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Expect \"toBeFocused\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 7
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 21,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 22,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 6,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 40,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 70
+        }
+      ]
+    },
+    {
+      "id": "6551c06395e9cf6f98b5-9b5ab51f33686b851d72",
+      "title": "T-B04: editor buttons are disabled throughout composition and re-enabled after end",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 7776,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 660,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 1,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 3,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 60,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 60,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 2,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 69
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 322,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 323
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 65,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 14,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 11,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 96
+        },
+        {
+          "title": "Dispatch \"compositionstart\" locator('#test')",
+          "category": "pw:api",
+          "durationMs": 35
+        },
+        {
+          "title": "Expect \"toBeDisabled\" getByRole('button', { name: 'Patch', exact: true })",
+          "category": "expect",
+          "durationMs": 20
+        },
+        {
+          "title": "Expect \"toBeDisabled\" getByRole('button', { name: '뒤로가기' })",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Dispatch \"compositionend\" locator('#test')",
+          "category": "pw:api",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toBeEnabled\" getByRole('button', { name: 'Patch', exact: true })",
+          "category": "expect",
+          "durationMs": 17
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 9,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 0,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 11,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 5,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 55,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 74
+        }
+      ]
+    },
+    {
+      "id": "a233f56b9daa8e69892b-9c985d28ef937729ec75",
+      "title": "T-Q01/T-Q02: Inspector reflects executor counts and highlights actual ref; replay/reset are deterministic",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 8461,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1217,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 2,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 5,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 60,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 61,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 3,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 76
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 277,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 279
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 47,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 12,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 9,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 71
+        },
+        {
+          "title": "Click getByRole('button', { name: '초기 상태에서 실행', exact: true })",
+          "category": "pw:api",
+          "durationMs": 57
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#lab-status')",
+          "category": "expect",
+          "durationMs": 8
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('[data-counter=\"movedRoots\"]')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Click getByRole('button', { name: /PLACE_BEFORE \\(move\\)/ })",
+          "category": "pw:api",
+          "durationMs": 52
+        },
+        {
+          "title": "Expect \"toHaveCount\" locator('.patch-highlight')",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Select option locator('#lab-strategy')",
+          "category": "pw:api",
+          "durationMs": 22
+        },
+        {
+          "title": "Click getByRole('button', { name: '초기 상태에서 실행', exact: true })",
+          "category": "pw:api",
+          "durationMs": 34
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#lab-status')",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('[data-counter=\"movedRoots\"]')",
+          "category": "expect",
+          "durationMs": 11
+        },
+        {
+          "title": "Select option locator('#lab-scenario')",
+          "category": "pw:api",
+          "durationMs": 17
+        },
+        {
+          "title": "Click getByRole('button', { name: '초기 상태에서 실행', exact: true })",
+          "category": "pw:api",
+          "durationMs": 55
+        },
+        {
+          "title": "Evaluate locator('#lab-output li')",
+          "category": "pw:api",
+          "durationMs": 28
+        },
+        {
+          "title": "Click getByText('입력 JSON 저장·실패 입력 재실행', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 48
+        },
+        {
+          "title": "Click getByRole('button', { name: 'JSON 입력 재실행' })",
+          "category": "pw:api",
+          "durationMs": 49
+        },
+        {
+          "title": "Evaluate locator('#lab-output li')",
+          "category": "pw:api",
+          "durationMs": 16
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 1
+        },
+        {
+          "title": "Click getByRole('button', { name: '실험 초기화' })",
+          "category": "pw:api",
+          "durationMs": 31
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#lab-output li').first()",
+          "category": "expect",
+          "durationMs": 30
+        },
+        {
+          "title": "Screenshot",
+          "category": "pw:api",
+          "durationMs": 213
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 14,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 17,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 4,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 51,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 77
+        }
+      ]
+    },
+    {
+      "id": "60e65b2bb40332919cbc-1becd6009daed78a462c",
+      "title": "T-K01~K03: Chromium의 seed 200개에서 두 전략의 순서·identity·uncontrolled 입력 보존",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 8558,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1064,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 3,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 5,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 56,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 57,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 2,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 70
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 276,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 277
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 40,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 10,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 9,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 61
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 603
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 8,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 11,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 6,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 44,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 64
+        }
+      ]
+    },
+    {
+      "id": "1c39409c6e78644cb110-0ac9c59f86158f24e82d",
+      "title": "M1 브라우저: 직접 편집 → Patch → 미확정 편집 → Undo/Redo",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 9653,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1083,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 3,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 5,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 55,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 56,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 19,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 87
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 261,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 263
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 63,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 13,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 12,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 93
+        },
+        {
+          "title": "Expect \"toBeDisabled\" getByRole('button', { name: '뒤로가기' })",
+          "category": "expect",
+          "durationMs": 22
+        },
+        {
+          "title": "Expect \"toHaveText\" getByRole('textbox', { name: '테스트 영역', exact: true })",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Click getByRole('textbox', { name: '테스트 영역', exact: true }).locator('p')",
+          "category": "pw:api",
+          "durationMs": 29
+        },
+        {
+          "title": "Press \"End\"",
+          "category": "pw:api",
+          "durationMs": 9
+        },
+        {
+          "title": "Type \" edited\"",
+          "category": "pw:api",
+          "durationMs": 25
+        },
+        {
+          "title": "Expect \"not toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 16
+        },
+        {
+          "title": "Click getByRole('button', { name: 'Patch', exact: true })",
+          "category": "pw:api",
+          "durationMs": 33
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Click getByText('HTML로 구조·속성 편집하기', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 48
+        },
+        {
+          "title": "Fill \"<p>uncommitted X</p>\" getByLabel('테스트 영역 HTML')",
+          "category": "pw:api",
+          "durationMs": 29
+        },
+        {
+          "title": "Click getByRole('button', { name: 'HTML을 테스트 영역에 반영' })",
+          "category": "pw:api",
+          "durationMs": 48
+        },
+        {
+          "title": "Click getByRole('button', { name: '뒤로가기' })",
+          "category": "pw:api",
+          "durationMs": 64
+        },
+        {
+          "title": "Expect \"not toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Expect \"not toContainText\" getByRole('textbox', { name: '테스트 영역', exact: true })",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Click getByRole('button', { name: '앞으로가기' })",
+          "category": "pw:api",
+          "durationMs": 46
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 26
+        },
+        {
+          "title": "Expect \"toHaveText\" getByRole('textbox', { name: '테스트 영역', exact: true })",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Click getByRole('button', { name: '편집기 초기화' })",
+          "category": "pw:api",
+          "durationMs": 53
+        },
+        {
+          "title": "Expect \"toBeDisabled\" getByRole('button', { name: '뒤로가기' })",
+          "category": "expect",
+          "durationMs": 20
+        },
+        {
+          "title": "Expect \"not toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 12,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 14,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 1,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 11,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 59,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 83
+        }
+      ]
+    },
+    {
+      "id": "1c39409c6e78644cb110-d614a179211ce8cdace4",
+      "title": "M1 브라우저: 루트 State, 순수 자식, Memo, Effect, 초기화",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 9700,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 803,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 2,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 4,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 72,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 72,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 4,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 84
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 265,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 266
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 55,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 12,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 9,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 80
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('카운트', { exact: true })",
+          "category": "expect",
+          "durationMs": 8
+        },
+        {
+          "title": "Wait for selector getByRole('textbox', { name: '카운터 이름' })",
+          "category": "pw:api",
+          "durationMs": 32
+        },
+        {
+          "title": "Fill \"민수\" getByRole('textbox', { name: '카운터 이름' })",
+          "category": "pw:api",
+          "durationMs": 28
+        },
+        {
+          "title": "Click getByRole('button', { name: '+1', exact: true })",
+          "category": "pw:api",
+          "durationMs": 62
+        },
+        {
+          "title": "Expect \"toHaveText\" getByTestId('summary')",
+          "category": "expect",
+          "durationMs": 11
+        },
+        {
+          "title": "Expect \"toHaveTitle\"",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 6
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Click getByRole('button', { name: '컴포넌트 초기화' })",
+          "category": "pw:api",
+          "durationMs": 51
+        },
+        {
+          "title": "Expect \"toHaveText\" getByTestId('summary')",
+          "category": "expect",
+          "durationMs": 28
+        },
+        {
+          "title": "Click getByRole('button', { name: '+1', exact: true })",
+          "category": "pw:api",
+          "durationMs": 51
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('카운트', { exact: true })",
+          "category": "expect",
+          "durationMs": 17
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 10,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 14,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 4,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 41,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 65
+        }
+      ]
+    },
+    {
+      "id": "1c39409c6e78644cb110-ff9c052c6871d3cd8ae4",
+      "title": "M1 브라우저: 미지원 HTML 입력은 기존 화면을 유지하고 오류를 표시한다",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 10517,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1007,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 2,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 4,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 66,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 67,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 2,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 77
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 369,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 371
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 81,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 16,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 18,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 120
+        },
+        {
+          "title": "Click getByText('HTML로 구조·속성 편집하기', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 93
+        },
+        {
+          "title": "Fill \"<img src=x onerror=\"document.title=123\">\" getByLabel('테스트 영역 HTML')",
+          "category": "pw:api",
+          "durationMs": 53
+        },
+        {
+          "title": "Click getByRole('button', { name: 'HTML을 테스트 영역에 반영' })",
+          "category": "pw:api",
+          "durationMs": 102
+        },
+        {
+          "title": "Expect \"toContainText\" getByRole('alert')",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 1
+        },
+        {
+          "title": "Expect \"toHaveTitle\"",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 16,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 0,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 19,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 13,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 74,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 103
+        }
+      ]
+    },
+    {
+      "id": "1c39409c6e78644cb110-66455a18dd883c542252",
+      "title": "M1 브라우저: 좁은 화면과 키보드로 조작할 수 있다",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 10754,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1075,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 7,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 14,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 102,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 104,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 5,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 135
+        },
+        {
+          "title": "Set viewport size",
+          "category": "pw:api",
+          "durationMs": 10
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 418,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 421
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 74,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 19,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 16,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 116
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Focus getByRole('button', { name: '+1', exact: true })",
+          "category": "pw:api",
+          "durationMs": 36
+        },
+        {
+          "title": "Press \"Enter\"",
+          "category": "pw:api",
+          "durationMs": 30
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('카운트', { exact: true })",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Expect \"toBeFocused\" getByRole('button', { name: '+1', exact: true })",
+          "category": "expect",
+          "durationMs": 15
+        },
+        {
+          "title": "Screenshot",
+          "category": "pw:api",
+          "durationMs": 210
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 13,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 17,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 8,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 48,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 75
+        }
+      ]
+    },
+    {
+      "id": "4a54508069b861ac02de-9952c0527efdd5595c07",
+      "title": "회귀: native input의 부모 bubble handler가 복원 전의 실제 입력값을 읽는다",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 11564,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 836,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 6,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 9,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 102,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 103,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 5,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 127
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 422,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 423
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 94,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 23,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 15,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 138
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 18
+        },
+        {
+          "title": "Fill \"new input\" getByLabel('parent-handler-input')",
+          "category": "pw:api",
+          "durationMs": 33
+        },
+        {
+          "title": "Expect \"toHaveValue\" getByLabel('parent-handler-input')",
+          "category": "expect",
+          "durationMs": 11
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('accepted-input')",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 15,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 20,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 6,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 53,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 83
+        }
+      ]
+    },
+    {
+      "id": "4a54508069b861ac02de-3aab8e714fe4dc5a8d30",
+      "title": "T-B01/T-P06: 실제 native 입력에서 controlled 거부/그룹 복원과 uncontrolled 보존",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 11864,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 991,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 4,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 10,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 113,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 114,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 5,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 139
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 387,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 389
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 63,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 9,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 9,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 86
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 16
+        },
+        {
+          "title": "Fill \"rejected\" locator('#form-probe').getByLabel('locked', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 33
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#form-probe').getByLabel('locked', { exact: true })",
+          "category": "expect",
+          "durationMs": 16
+        },
+        {
+          "title": "Fill \"user-owned\" locator('#form-probe').getByLabel('free', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 30
+        },
+        {
+          "title": "Click locator('#form-probe').getByLabel('locked-check')",
+          "category": "pw:api",
+          "durationMs": 52
+        },
+        {
+          "title": "Expect \"toBeChecked\" locator('#form-probe').getByLabel('locked-check')",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Click locator('#form-probe').getByLabel('radio-b')",
+          "category": "pw:api",
+          "durationMs": 51
+        },
+        {
+          "title": "Expect \"toBeChecked\" locator('#form-probe').getByLabel('radio-a')",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Expect \"not toBeChecked\" locator('#form-probe').getByLabel('radio-b')",
+          "category": "expect",
+          "durationMs": 8
+        },
+        {
+          "title": "Select option locator('#form-probe').getByLabel('locked-select')",
+          "category": "pw:api",
+          "durationMs": 16
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#form-probe').getByLabel('locked-select')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Click locator('#form-probe').getByRole('button', { name: 'rerender' })",
+          "category": "pw:api",
+          "durationMs": 35
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#form-probe').getByLabel('probe-count')",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#form-probe').getByLabel('free', { exact: true })",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 8,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 0,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 10,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 4,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 49,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 67
+        }
+      ]
+    },
+    {
+      "id": "4a54508069b861ac02de-8770e464fcb282063567",
+      "title": "T-V02/T-H02: native 폼 편집과 History가 속성/live property를 복원한다",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 12424,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1124,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 3,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 7,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 69,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 69,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 3,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 87
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 283,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 286
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 54,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 9,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 11,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 77
+        },
+        {
+          "title": "Click getByText('HTML로 구조·속성 편집하기', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 42
+        },
+        {
+          "title": "Fill \"<form><label>이름<input value=\"initial\"></label><label>메모<textarea>before</textarea></label><label>첫째<input type=\"radio\" name=\"pick\" checked></label><label>둘째<input type=\"radio\" name=\"pick\"></label><label>선택<select multiple><option value=\"a\" selected>A</option><option value=\"b\">B</option></select></label></form>\" getByLabel('테스트 영역 HTML')",
+          "category": "pw:api",
+          "durationMs": 30
+        },
+        {
+          "title": "Click getByRole('button', { name: 'HTML을 테스트 영역에 반영' })",
+          "category": "pw:api",
+          "durationMs": 79
+        },
+        {
+          "title": "Click getByRole('button', { name: 'Patch', exact: true })",
+          "category": "pw:api",
+          "durationMs": 49
+        },
+        {
+          "title": "Fill \"typed\" locator('#test').getByLabel('이름', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 22
+        },
+        {
+          "title": "Fill \"after\" locator('#test').getByLabel('메모')",
+          "category": "pw:api",
+          "durationMs": 44
+        },
+        {
+          "title": "Click locator('#test').getByLabel('둘째')",
+          "category": "pw:api",
+          "durationMs": 50
+        },
+        {
+          "title": "Select option locator('#test').getByLabel('선택')",
+          "category": "pw:api",
+          "durationMs": 29
+        },
+        {
+          "title": "Expect \"toBeChecked\" locator('#actual').getByLabel('첫째')",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#actual').getByLabel('이름', { exact: true })",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Click getByRole('button', { name: 'Patch', exact: true })",
+          "category": "pw:api",
+          "durationMs": 46
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#actual').getByLabel('이름', { exact: true })",
+          "category": "expect",
+          "durationMs": 21
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#actual').getByLabel('메모')",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Expect \"toBeChecked\" locator('#actual').getByLabel('둘째')",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Expect \"toHaveValues\" locator('#actual').getByLabel('선택')",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#actual').getByLabel('이름', { exact: true })",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Click getByRole('button', { name: '뒤로가기' })",
+          "category": "pw:api",
+          "durationMs": 47
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#actual').getByLabel('이름', { exact: true })",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#test').getByLabel('메모')",
+          "category": "expect",
+          "durationMs": 15
+        },
+        {
+          "title": "Expect \"toBeChecked\" locator('#actual').getByLabel('첫째')",
+          "category": "expect",
+          "durationMs": 11
+        },
+        {
+          "title": "Expect \"toHaveValues\" locator('#test').getByLabel('선택')",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 9,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 0,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 12,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 5,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 51,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 70
+        }
+      ]
+    },
+    {
+      "id": "4a54508069b861ac02de-1eaa5ee576c16e172dd7",
+      "title": "T-V05: 실제 file 선택을 잃어버리는 snapshot으로 확정하지 않는다",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 12875,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 890,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 4,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 5,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 69,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 69,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 6,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 85
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 324,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 326
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 60,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 12,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 10,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 86
+        },
+        {
+          "title": "Click getByText('HTML로 구조·속성 편집하기', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 55
+        },
+        {
+          "title": "Fill \"<input type=\"file\" aria-label=\"파일\">\" getByLabel('테스트 영역 HTML')",
+          "category": "pw:api",
+          "durationMs": 35
+        },
+        {
+          "title": "Click getByRole('button', { name: 'HTML을 테스트 영역에 반영' })",
+          "category": "pw:api",
+          "durationMs": 64
+        },
+        {
+          "title": "Click getByRole('button', { name: 'Patch', exact: true })",
+          "category": "pw:api",
+          "durationMs": 52
+        },
+        {
+          "title": "Set input files locator('#test').getByLabel('파일')",
+          "category": "pw:api",
+          "durationMs": 29
+        },
+        {
+          "title": "Click getByRole('button', { name: 'Patch', exact: true })",
+          "category": "pw:api",
+          "durationMs": 52
+        },
+        {
+          "title": "Expect \"toContainText\" getByRole('alert')",
+          "category": "expect",
+          "durationMs": 16
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#actual').getByLabel('파일')",
+          "category": "expect",
+          "durationMs": 17
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 8,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 11,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 5,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 44,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 63
+        }
+      ]
+    },
+    {
+      "id": "4a54508069b861ac02de-0e5a042ab45dd0bff07e",
+      "title": "T-E03: host 예외 후 초기화 버튼은 마지막 정상 History를 복구한다",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 13566,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1206,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 3,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 6,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 79,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 80,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 4,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 96
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 277,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 278
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 55,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 25,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 21,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 106
+        },
+        {
+          "title": "Click getByText('HTML로 구조·속성 편집하기', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 61
+        },
+        {
+          "title": "Fill \"<p>last committed</p>\" getByLabel('테스트 영역 HTML')",
+          "category": "pw:api",
+          "durationMs": 40
+        },
+        {
+          "title": "Click getByRole('button', { name: 'HTML을 테스트 영역에 반영' })",
+          "category": "pw:api",
+          "durationMs": 100
+        },
+        {
+          "title": "Click getByRole('button', { name: 'Patch', exact: true })",
+          "category": "pw:api",
+          "durationMs": 90
+        },
+        {
+          "title": "Fill \"<p>candidate</p><hr>\" getByLabel('테스트 영역 HTML')",
+          "category": "pw:api",
+          "durationMs": 30
+        },
+        {
+          "title": "Click getByRole('button', { name: 'HTML을 테스트 영역에 반영' })",
+          "category": "pw:api",
+          "durationMs": 53
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 17
+        },
+        {
+          "title": "Click getByRole('button', { name: 'Patch', exact: true })",
+          "category": "pw:api",
+          "durationMs": 83
+        },
+        {
+          "title": "Expect \"toContainText\" getByRole('alert')",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 10
+        },
+        {
+          "title": "Click getByRole('button', { name: '편집기 초기화' })",
+          "category": "pw:api",
+          "durationMs": 57
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 22
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#test')",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Expect \"toBeHidden\" getByRole('alert')",
+          "category": "expect",
+          "durationMs": 11
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 14,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 18,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 7,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 77,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 105
+        }
+      ]
+    },
+    {
+      "id": "d2d3f88df070d751ab05-ff5fd131ecbfe0055f06",
+      "title": "T-A01/T-A02: keyboard CRUD, search/filter/sort, counts and validation use the root engine",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 13791,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1855,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 3,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 7,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 64,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 66,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 2,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 84
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 356,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 357
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 82,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 18,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 17,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 123
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 17
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '항목 추가', exact: true })",
+          "category": "pw:api",
+          "durationMs": 89
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#task-app').getByRole('alert')",
+          "category": "expect",
+          "durationMs": 21
+        },
+        {
+          "title": "Press \"Alt+n\"",
+          "category": "pw:api",
+          "durationMs": 18
+        },
+        {
+          "title": "Expect \"toBeFocused\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "expect",
+          "durationMs": 33
+        },
+        {
+          "title": "Fill \"브라우저 검증\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 66
+        },
+        {
+          "title": "Press \"Enter\"",
+          "category": "pw:api",
+          "durationMs": 61
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#task-app').getByLabel('task-9 이름')",
+          "category": "expect",
+          "durationMs": 17
+        },
+        {
+          "title": "Expect \"toHaveCount\" locator('#task-app').getByRole('alert')",
+          "category": "expect",
+          "durationMs": 46
+        },
+        {
+          "title": "Fill \"수정한 학습\" locator('#task-app').getByLabel('task-9 이름')",
+          "category": "pw:api",
+          "durationMs": 58
+        },
+        {
+          "title": "Check locator('#task-app').getByLabel('task-9 완료')",
+          "category": "pw:api",
+          "durationMs": 127
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 30
+        },
+        {
+          "title": "Select option locator('#task-app').getByLabel('완료 필터')",
+          "category": "pw:api",
+          "durationMs": 64
+        },
+        {
+          "title": "Expect \"toHaveCount\" locator('#task-app').locator('li')",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Fill \"없는 입력\" locator('#task-app').getByLabel('항목 검색')",
+          "category": "pw:api",
+          "durationMs": 41
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#task-app').getByTestId('task-empty')",
+          "category": "expect",
+          "durationMs": 16
+        },
+        {
+          "title": "Fill \"\" locator('#task-app').getByLabel('항목 검색')",
+          "category": "pw:api",
+          "durationMs": 51
+        },
+        {
+          "title": "Select option locator('#task-app').getByLabel('완료 필터')",
+          "category": "pw:api",
+          "durationMs": 66
+        },
+        {
+          "title": "Select option locator('#task-app').getByLabel('목록 정렬')",
+          "category": "pw:api",
+          "durationMs": 81
+        },
+        {
+          "title": "Evaluate locator('#task-app').locator('li input[type=text]')",
+          "category": "pw:api",
+          "durationMs": 55
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-9 삭제')",
+          "category": "pw:api",
+          "durationMs": 96
+        },
+        {
+          "title": "Expect \"toHaveCount\" locator('#task-app').getByLabel('task-9 이름')",
+          "category": "expect",
+          "durationMs": 48
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-sync')",
+          "category": "expect",
+          "durationMs": 20
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 21,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 2,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 26,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 12,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 75,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 112
+        }
+      ]
+    },
+    {
+      "id": "d2d3f88df070d751ab05-1bd41971481ed1e98507",
+      "title": "T-A01/T-A02/T-S03: batching, reorder, bulk deletion and empty state",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 14805,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1726,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 5,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 9,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 96,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 97,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 7,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 120
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 415,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 418
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 79,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 19,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 18,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 122
+        },
+        {
+          "title": "Select option locator('#task-app').getByLabel('목록 정렬')",
+          "category": "pw:api",
+          "durationMs": 89
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '+1 세 번', exact: true })",
+          "category": "pw:api",
+          "durationMs": 95
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByLabel('Batching 카운트')",
+          "category": "expect",
+          "durationMs": 23
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '마지막 항목을 처음으로', exact: true })",
+          "category": "pw:api",
+          "durationMs": 91
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#task-app').locator('li').first()",
+          "category": "expect",
+          "durationMs": 19
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#task-app').getByLabel('목록 정렬')",
+          "category": "expect",
+          "durationMs": 21
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-1 삭제')",
+          "category": "pw:api",
+          "durationMs": 106
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-2 삭제')",
+          "category": "pw:api",
+          "durationMs": 128
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-3 삭제')",
+          "category": "pw:api",
+          "durationMs": 76
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-4 삭제')",
+          "category": "pw:api",
+          "durationMs": 66
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-5 삭제')",
+          "category": "pw:api",
+          "durationMs": 55
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-6 삭제')",
+          "category": "pw:api",
+          "durationMs": 30
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-7 삭제')",
+          "category": "pw:api",
+          "durationMs": 77
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-8 삭제')",
+          "category": "pw:api",
+          "durationMs": 62
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#task-app').getByTestId('task-empty')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Expect \"toBeDisabled\" locator('#task-app').getByRole('button', { name: '마지막 항목을 처음으로', exact: true })",
+          "category": "expect",
+          "durationMs": 15
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 18,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 21,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 1,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 4,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 65,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 94
+        }
+      ]
+    },
+    {
+      "id": "d2d3f88df070d751ab05-9312e7082490f9f4e8f2",
+      "title": "T-A03/T-B03: repeated reset cancels timers/listeners and focused keyed input survives one move",
+      "project": "chromium",
+      "worker": 1,
+      "startMs": 15667,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 3567,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 6,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 9,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 104,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 106,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 4,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 130
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 357,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 359
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 59,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 10,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 8,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 80
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '1.5초 뒤 마지막 항목 이동' })",
+          "category": "pw:api",
+          "durationMs": 83
+        },
+        {
+          "title": "Click getByRole('button', { name: '목록 앱 초기화' })",
+          "category": "pw:api",
+          "durationMs": 79
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '1.5초 뒤 마지막 항목 이동' })",
+          "category": "pw:api",
+          "durationMs": 62
+        },
+        {
+          "title": "Click getByRole('button', { name: '목록 앱 초기화' })",
+          "category": "pw:api",
+          "durationMs": 63
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '1.5초 뒤 마지막 항목 이동' })",
+          "category": "pw:api",
+          "durationMs": 54
+        },
+        {
+          "title": "Click getByRole('button', { name: '목록 앱 초기화' })",
+          "category": "pw:api",
+          "durationMs": 47
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '1.5초 뒤 마지막 항목 이동' })",
+          "category": "pw:api",
+          "durationMs": 68
+        },
+        {
+          "title": "Click getByRole('button', { name: '목록 앱 초기화' })",
+          "category": "pw:api",
+          "durationMs": 68
+        },
+        {
+          "title": "Wait for timeout",
+          "category": "pw:api",
+          "durationMs": 1718
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#task-app').locator('li').first()",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Focus locator('#task-app').getByLabel('task-8 이름')",
+          "category": "pw:api",
+          "durationMs": 29
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('task-8 이름')",
+          "category": "pw:api",
+          "durationMs": 61
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 42
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#task-app').locator('li').first()",
+          "category": "expect",
+          "durationMs": 21
+        },
+        {
+          "title": "Expect \"toBeFocused\" locator('#task-app').getByLabel('task-8 이름')",
+          "category": "expect",
+          "durationMs": 22
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('task-8 이름')",
+          "category": "pw:api",
+          "durationMs": 33
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 1
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Set viewport size",
+          "category": "pw:api",
+          "durationMs": 32
+        },
+        {
+          "title": "Screenshot",
+          "category": "pw:api",
+          "durationMs": 249
+        },
+        {
+          "title": "Screenshot locator('#task-app')",
+          "category": "pw:api",
+          "durationMs": 124
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 16
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 14,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 16,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 5,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 43,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 66
+        }
+      ]
+    },
+    {
+      "id": "d2d3f88df070d751ab05-0e3c94178f7c35763460",
+      "title": "T-A04/T-A05: stable list preserves focused draft and retained rows while handlers use current State",
+      "project": "chromium",
+      "worker": 0,
+      "startMs": 16549,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1351,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 2,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 5,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 55,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 55,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 2,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 66
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 330,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 332
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 65,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 15,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 16,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 99
+        },
+        {
+          "title": "Wait for selector locator('#task-app').getByLabel('task-1 이름')",
+          "category": "pw:api",
+          "durationMs": 39
+        },
+        {
+          "title": "Fill \"첫 이름\" locator('#task-app').getByLabel('task-1 이름')",
+          "category": "pw:api",
+          "durationMs": 29
+        },
+        {
+          "title": "Check locator('#task-app').getByLabel('task-1 완료')",
+          "category": "pw:api",
+          "durationMs": 77
+        },
+        {
+          "title": "Fill \"최신 이름\" locator('#task-app').getByLabel('task-1 이름')",
+          "category": "pw:api",
+          "durationMs": 31
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-2 삭제')",
+          "category": "pw:api",
+          "durationMs": 98
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#task-app').getByLabel('task-1 이름')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Expect \"toBeChecked\" locator('#task-app').getByLabel('task-1 완료')",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Fill \"임시 입력\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 38
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 24
+        },
+        {
+          "title": "Dispatch \"click\" locator('#task-app').getByRole('button', { name: '+1 세 번', exact: true })",
+          "category": "pw:api",
+          "durationMs": 30
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByLabel('Batching 카운트')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Expect \"toBeFocused\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('task-1 이름')",
+          "category": "pw:api",
+          "durationMs": 12
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Fill \"새 항목\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 22
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '항목 추가', exact: true })",
+          "category": "pw:api",
+          "durationMs": 62
+        },
+        {
+          "title": "Fill \"추가 후 수정\" locator('#task-app').getByLabel('task-9 이름')",
+          "category": "pw:api",
+          "durationMs": 35
+        },
+        {
+          "title": "Check locator('#task-app').getByLabel('task-9 완료')",
+          "category": "pw:api",
+          "durationMs": 73
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 10
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-9 삭제')",
+          "category": "pw:api",
+          "durationMs": 47
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 17
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 34
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 16,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 19,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 10,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 74,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 103
+        }
+      ]
+    },
+    {
+      "id": "6551c06395e9cf6f98b5-ea000b513c67bfb5e118",
+      "title": "T-B02/T-B03: browser preserves active node and range through unrelated writes/reorder and clamps changed values",
+      "project": "firefox",
+      "worker": 2,
+      "startMs": 19235,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4006,
+      "steps": [
+        {
+          "title": "Launch browser",
+          "category": "pw:api",
+          "durationMs": 898,
+          "parent": "Fixture \"browser\""
+        },
+        {
+          "title": "Fixture \"browser\"",
+          "category": "fixture",
+          "durationMs": 901,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 124,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 137,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 834,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 835,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 34,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 1927
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 864,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 866
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 119,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 73,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 60,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 271
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 100
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 166
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 165
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 17
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('selection-title')",
+          "category": "expect",
+          "durationMs": 31
+        },
+        {
+          "title": "Expect \"toBeFocused\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 26
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 72
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 3
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 33
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#selection-probe li').first()",
+          "category": "expect",
+          "durationMs": 24
+        },
+        {
+          "title": "Expect \"toBeFocused\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 41
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 85
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 83
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 35
+        },
+        {
+          "title": "Expect \"toHaveValue\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 23
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 218
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 29,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 2,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 35,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 584,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 663,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 707
+        }
+      ]
+    },
+    {
+      "id": "6551c06395e9cf6f98b5-287336bc3607cb3e4f7f",
+      "title": "T-B03: removal/replacement do not refocus a new node, and explicit external focus wins",
+      "project": "firefox",
+      "worker": 3,
+      "startMs": 19926,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4570,
+      "steps": [
+        {
+          "title": "Launch browser",
+          "category": "pw:api",
+          "durationMs": 728,
+          "parent": "Fixture \"browser\""
+        },
+        {
+          "title": "Fixture \"browser\"",
+          "category": "fixture",
+          "durationMs": 730,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 141,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 163,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 874,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 877,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 48,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 1831
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 1466,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 1471
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 100,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 49,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 39,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 205
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 849
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 90
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 56
+        },
+        {
+          "title": "Expect \"toHaveCount\" locator('#selection-probe textarea')",
+          "category": "expect",
+          "durationMs": 51
+        },
+        {
+          "title": "Expect \"not toBeFocused\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 43
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 64
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 24
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('selection-title')",
+          "category": "expect",
+          "durationMs": 57
+        },
+        {
+          "title": "Expect \"toBeFocused\" locator('#outside-focus')",
+          "category": "expect",
+          "durationMs": 75
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 193
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 38
+        },
+        {
+          "title": "Expect \"toHaveCount\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 29
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 25
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 2
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 47,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 52,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 22,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 129,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 198
+        }
+      ]
+    },
+    {
+      "id": "6551c06395e9cf6f98b5-9240404d15bafe2f9dd8",
+      "title": "T-B04: synthetic composition defers ancestor move and latest plan, preserving input and Effects until end",
+      "project": "firefox",
+      "worker": 2,
+      "startMs": 24200,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1880,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 20,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 24,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 311,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 312,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 20,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 361
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 779,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 781
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 72,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 15,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 16,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 107
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 24
+        },
+        {
+          "title": "Focus getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 35
+        },
+        {
+          "title": "Dispatch \"compositionstart\" getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 52
+        },
+        {
+          "title": "Evaluate getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 38
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 46
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 16,
+          "parent": "Expect \"poll toBe\""
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0,
+          "parent": "Expect \"poll toBe\""
+        },
+        {
+          "title": "Expect \"poll toBe\"",
+          "category": "expect",
+          "durationMs": 22
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#selection-probe li').first()",
+          "category": "expect",
+          "durationMs": 28
+        },
+        {
+          "title": "Expect \"toHaveValue\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 22
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('selection-title')",
+          "category": "expect",
+          "durationMs": 26
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 15
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 14
+        },
+        {
+          "title": "Dispatch \"compositionend\" getByLabel('selection-input')",
+          "category": "pw:api",
+          "durationMs": 18
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#selection-probe li').first()",
+          "category": "expect",
+          "durationMs": 29
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('selection-title')",
+          "category": "expect",
+          "durationMs": 26
+        },
+        {
+          "title": "Expect \"toHaveValue\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 30
+        },
+        {
+          "title": "Expect \"toBeFocused\" getByLabel('selection-input')",
+          "category": "expect",
+          "durationMs": 25
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 14
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 45,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 50,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 1,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 18,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 93,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 156
+        }
+      ]
+    },
+    {
+      "id": "6551c06395e9cf6f98b5-d6a798682472c6b78249",
+      "title": "T-B04: editor buttons are disabled throughout composition and re-enabled after end",
+      "project": "firefox",
+      "worker": 3,
+      "startMs": 25273,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1360,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 25,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 32,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 355,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 357,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 20,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 422
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 534,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 538
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 60,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 18,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 21,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 104
+        },
+        {
+          "title": "Dispatch \"compositionstart\" locator('#test')",
+          "category": "pw:api",
+          "durationMs": 58
+        },
+        {
+          "title": "Expect \"toBeDisabled\" getByRole('button', { name: 'Patch', exact: true })",
+          "category": "expect",
+          "durationMs": 39
+        },
+        {
+          "title": "Expect \"toBeDisabled\" getByRole('button', { name: '뒤로가기' })",
+          "category": "expect",
+          "durationMs": 65
+        },
+        {
+          "title": "Dispatch \"compositionend\" locator('#test')",
+          "category": "pw:api",
+          "durationMs": 26
+        },
+        {
+          "title": "Expect \"toBeEnabled\" getByRole('button', { name: 'Patch', exact: true })",
+          "category": "expect",
+          "durationMs": 40
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 14,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 17,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 12,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 52,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 79
+        }
+      ]
+    },
+    {
+      "id": "1c39409c6e78644cb110-cfcf40a8d31d9ce57e0f",
+      "title": "M1 브라우저: 직접 편집 → Patch → 미확정 편집 → Undo/Redo",
+      "project": "firefox",
+      "worker": 2,
+      "startMs": 26115,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 2060,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 6,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 12,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 350,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 351,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 17,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 390
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 454,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 457
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 72,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 24,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 22,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 125
+        },
+        {
+          "title": "Expect \"toBeDisabled\" getByRole('button', { name: '뒤로가기' })",
+          "category": "expect",
+          "durationMs": 62
+        },
+        {
+          "title": "Expect \"toHaveText\" getByRole('textbox', { name: '테스트 영역', exact: true })",
+          "category": "expect",
+          "durationMs": 29
+        },
+        {
+          "title": "Click getByRole('textbox', { name: '테스트 영역', exact: true }).locator('p')",
+          "category": "pw:api",
+          "durationMs": 137
+        },
+        {
+          "title": "Press \"End\"",
+          "category": "pw:api",
+          "durationMs": 24
+        },
+        {
+          "title": "Type \" edited\"",
+          "category": "pw:api",
+          "durationMs": 73
+        },
+        {
+          "title": "Expect \"not toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 27
+        },
+        {
+          "title": "Click getByRole('button', { name: 'Patch', exact: true })",
+          "category": "pw:api",
+          "durationMs": 83
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 26
+        },
+        {
+          "title": "Click getByText('HTML로 구조·속성 편집하기', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 73
+        },
+        {
+          "title": "Fill \"<p>uncommitted X</p>\" getByLabel('테스트 영역 HTML')",
+          "category": "pw:api",
+          "durationMs": 46
+        },
+        {
+          "title": "Click getByRole('button', { name: 'HTML을 테스트 영역에 반영' })",
+          "category": "pw:api",
+          "durationMs": 68
+        },
+        {
+          "title": "Click getByRole('button', { name: '뒤로가기' })",
+          "category": "pw:api",
+          "durationMs": 67
+        },
+        {
+          "title": "Expect \"not toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 16
+        },
+        {
+          "title": "Expect \"not toContainText\" getByRole('textbox', { name: '테스트 영역', exact: true })",
+          "category": "expect",
+          "durationMs": 17
+        },
+        {
+          "title": "Click getByRole('button', { name: '앞으로가기' })",
+          "category": "pw:api",
+          "durationMs": 72
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toHaveText\" getByRole('textbox', { name: '테스트 영역', exact: true })",
+          "category": "expect",
+          "durationMs": 21
+        },
+        {
+          "title": "Click getByRole('button', { name: '편집기 초기화' })",
+          "category": "pw:api",
+          "durationMs": 54
+        },
+        {
+          "title": "Expect \"toBeDisabled\" getByRole('button', { name: '뒤로가기' })",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Expect \"not toContainText\" locator('#actual')",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 13,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 16,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 1,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 12,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 51,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 75
+        }
+      ]
+    },
+    {
+      "id": "1c39409c6e78644cb110-e7bdd4bb3345e5c5ee82",
+      "title": "M1 브라우저: 루트 State, 순수 자식, Memo, Effect, 초기화",
+      "project": "firefox",
+      "worker": 3,
+      "startMs": 26674,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1575,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 15,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 21,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 388,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 389,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 24,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 446
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 495,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 498
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 66,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 19,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 22,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 111
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('카운트', { exact: true })",
+          "category": "expect",
+          "durationMs": 22
+        },
+        {
+          "title": "Wait for selector getByRole('textbox', { name: '카운터 이름' })",
+          "category": "pw:api",
+          "durationMs": 57
+        },
+        {
+          "title": "Fill \"민수\" getByRole('textbox', { name: '카운터 이름' })",
+          "category": "pw:api",
+          "durationMs": 74
+        },
+        {
+          "title": "Click getByRole('button', { name: '+1', exact: true })",
+          "category": "pw:api",
+          "durationMs": 119
+        },
+        {
+          "title": "Expect \"toHaveText\" getByTestId('summary')",
+          "category": "expect",
+          "durationMs": 17
+        },
+        {
+          "title": "Expect \"toHaveTitle\"",
+          "category": "expect",
+          "durationMs": 16
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 8
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Click getByRole('button', { name: '컴포넌트 초기화' })",
+          "category": "pw:api",
+          "durationMs": 59
+        },
+        {
+          "title": "Expect \"toHaveText\" getByTestId('summary')",
+          "category": "expect",
+          "durationMs": 11
+        },
+        {
+          "title": "Click getByRole('button', { name: '+1', exact: true })",
+          "category": "pw:api",
+          "durationMs": 56
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('카운트', { exact: true })",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 9,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 12,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 12,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 43,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 66
+        }
+      ]
+    },
+    {
+      "id": "1c39409c6e78644cb110-33e82162de458b66b386",
+      "title": "M1 브라우저: 미지원 HTML 입력은 기존 화면을 유지하고 오류를 표시한다",
+      "project": "firefox",
+      "worker": 2,
+      "startMs": 28195,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 2039,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 16,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 21,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 403,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 405,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 23,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 454
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 879,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 883
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 71,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 46,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 43,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 166
+        },
+        {
+          "title": "Click getByText('HTML로 구조·속성 편집하기', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 128
+        },
+        {
+          "title": "Fill \"<img src=x onerror=\"document.title=123\">\" getByLabel('테스트 영역 HTML')",
+          "category": "pw:api",
+          "durationMs": 52
+        },
+        {
+          "title": "Click getByRole('button', { name: 'HTML을 테스트 영역에 반영' })",
+          "category": "pw:api",
+          "durationMs": 81
+        },
+        {
+          "title": "Expect \"toContainText\" getByRole('alert')",
+          "category": "expect",
+          "durationMs": 39
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Expect \"toHaveTitle\"",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 20,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 23,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 11,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 112,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 141
+        }
+      ]
+    },
+    {
+      "id": "1c39409c6e78644cb110-d1d2f6fc5b7274d80f0c",
+      "title": "M1 브라우저: 좁은 화면과 키보드로 조작할 수 있다",
+      "project": "firefox",
+      "worker": 3,
+      "startMs": 28273,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1838,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 19,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 25,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 439,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 441,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 65,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 540
+        },
+        {
+          "title": "Set viewport size",
+          "category": "pw:api",
+          "durationMs": 71
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 677,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 681
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 64,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 19,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 27,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 116
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 19
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Focus getByRole('button', { name: '+1', exact: true })",
+          "category": "pw:api",
+          "durationMs": 60
+        },
+        {
+          "title": "Press \"Enter\"",
+          "category": "pw:api",
+          "durationMs": 37
+        },
+        {
+          "title": "Expect \"toHaveText\" getByLabel('카운트', { exact: true })",
+          "category": "expect",
+          "durationMs": 40
+        },
+        {
+          "title": "Expect \"toBeFocused\" getByRole('button', { name: '+1', exact: true })",
+          "category": "expect",
+          "durationMs": 56
+        },
+        {
+          "title": "Screenshot",
+          "category": "pw:api",
+          "durationMs": 143
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 26,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 28,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 15,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 41,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 77
+        }
+      ]
+    },
+    {
+      "id": "d2d3f88df070d751ab05-c68d5d798eaee81cb2e2",
+      "title": "T-A01/T-A02: keyboard CRUD, search/filter/sort, counts and validation use the root engine",
+      "project": "firefox",
+      "worker": 3,
+      "startMs": 30141,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 2087,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 7,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 12,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 228,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 229,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 8,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 258
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 558,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 559
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 68,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 28,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 24,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 125
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 24
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '항목 추가', exact: true })",
+          "category": "pw:api",
+          "durationMs": 136
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#task-app').getByRole('alert')",
+          "category": "expect",
+          "durationMs": 27
+        },
+        {
+          "title": "Press \"Alt+n\"",
+          "category": "pw:api",
+          "durationMs": 23
+        },
+        {
+          "title": "Expect \"toBeFocused\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "expect",
+          "durationMs": 19
+        },
+        {
+          "title": "Fill \"브라우저 검증\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 94
+        },
+        {
+          "title": "Press \"Enter\"",
+          "category": "pw:api",
+          "durationMs": 42
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#task-app').getByLabel('task-9 이름')",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Expect \"toHaveCount\" locator('#task-app').getByRole('alert')",
+          "category": "expect",
+          "durationMs": 40
+        },
+        {
+          "title": "Fill \"수정한 학습\" locator('#task-app').getByLabel('task-9 이름')",
+          "category": "pw:api",
+          "durationMs": 71
+        },
+        {
+          "title": "Check locator('#task-app').getByLabel('task-9 완료')",
+          "category": "pw:api",
+          "durationMs": 128
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 15
+        },
+        {
+          "title": "Select option locator('#task-app').getByLabel('완료 필터')",
+          "category": "pw:api",
+          "durationMs": 43
+        },
+        {
+          "title": "Expect \"toHaveCount\" locator('#task-app').locator('li')",
+          "category": "expect",
+          "durationMs": 20
+        },
+        {
+          "title": "Fill \"없는 입력\" locator('#task-app').getByLabel('항목 검색')",
+          "category": "pw:api",
+          "durationMs": 37
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#task-app').getByTestId('task-empty')",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Fill \"\" locator('#task-app').getByLabel('항목 검색')",
+          "category": "pw:api",
+          "durationMs": 34
+        },
+        {
+          "title": "Select option locator('#task-app').getByLabel('완료 필터')",
+          "category": "pw:api",
+          "durationMs": 45
+        },
+        {
+          "title": "Select option locator('#task-app').getByLabel('목록 정렬')",
+          "category": "pw:api",
+          "durationMs": 49
+        },
+        {
+          "title": "Evaluate locator('#task-app').locator('li input[type=text]')",
+          "category": "pw:api",
+          "durationMs": 52
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 1
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-9 삭제')",
+          "category": "pw:api",
+          "durationMs": 72
+        },
+        {
+          "title": "Expect \"toHaveCount\" locator('#task-app').getByLabel('task-9 이름')",
+          "category": "expect",
+          "durationMs": 12
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-sync')",
+          "category": "expect",
+          "durationMs": 39
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 8,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 0,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 10,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 10,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 39,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 57
+        }
+      ]
+    },
+    {
+      "id": "d2d3f88df070d751ab05-172a3ca5fdaa64fd80da",
+      "title": "T-A01/T-A02/T-S03: batching, reorder, bulk deletion and empty state",
+      "project": "firefox",
+      "worker": 2,
+      "startMs": 30260,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1943,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 5,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 9,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 283,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 284,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 22,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 320
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 494,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 496
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 68,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 19,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 25,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 117
+        },
+        {
+          "title": "Select option locator('#task-app').getByLabel('목록 정렬')",
+          "category": "pw:api",
+          "durationMs": 83
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '+1 세 번', exact: true })",
+          "category": "pw:api",
+          "durationMs": 130
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByLabel('Batching 카운트')",
+          "category": "expect",
+          "durationMs": 21
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '마지막 항목을 처음으로', exact: true })",
+          "category": "pw:api",
+          "durationMs": 86
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#task-app').locator('li').first()",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#task-app').getByLabel('목록 정렬')",
+          "category": "expect",
+          "durationMs": 15
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-1 삭제')",
+          "category": "pw:api",
+          "durationMs": 85
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-2 삭제')",
+          "category": "pw:api",
+          "durationMs": 102
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-3 삭제')",
+          "category": "pw:api",
+          "durationMs": 72
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-4 삭제')",
+          "category": "pw:api",
+          "durationMs": 58
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-5 삭제')",
+          "category": "pw:api",
+          "durationMs": 45
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-6 삭제')",
+          "category": "pw:api",
+          "durationMs": 56
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-7 삭제')",
+          "category": "pw:api",
+          "durationMs": 66
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-8 삭제')",
+          "category": "pw:api",
+          "durationMs": 62
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#task-app').getByTestId('task-empty')",
+          "category": "expect",
+          "durationMs": 13
+        },
+        {
+          "title": "Expect \"toBeDisabled\" locator('#task-app').getByRole('button', { name: '마지막 항목을 처음으로', exact: true })",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 21,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 2,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 24,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 10,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 41,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 72
+        }
+      ]
+    },
+    {
+      "id": "d2d3f88df070d751ab05-adcbc028529bac7946a7",
+      "title": "T-A03/T-B03: repeated reset cancels timers/listeners and focused keyed input survives one move",
+      "project": "firefox",
+      "worker": 2,
+      "startMs": 32217,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4181,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 20,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 25,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 223,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 224,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 9,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 262
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 536,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 538
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 69,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 19,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 28,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 123
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '1.5초 뒤 마지막 항목 이동' })",
+          "category": "pw:api",
+          "durationMs": 131
+        },
+        {
+          "title": "Click getByRole('button', { name: '목록 앱 초기화' })",
+          "category": "pw:api",
+          "durationMs": 132
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '1.5초 뒤 마지막 항목 이동' })",
+          "category": "pw:api",
+          "durationMs": 91
+        },
+        {
+          "title": "Click getByRole('button', { name: '목록 앱 초기화' })",
+          "category": "pw:api",
+          "durationMs": 96
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '1.5초 뒤 마지막 항목 이동' })",
+          "category": "pw:api",
+          "durationMs": 124
+        },
+        {
+          "title": "Click getByRole('button', { name: '목록 앱 초기화' })",
+          "category": "pw:api",
+          "durationMs": 94
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '1.5초 뒤 마지막 항목 이동' })",
+          "category": "pw:api",
+          "durationMs": 104
+        },
+        {
+          "title": "Click getByRole('button', { name: '목록 앱 초기화' })",
+          "category": "pw:api",
+          "durationMs": 99
+        },
+        {
+          "title": "Wait for timeout",
+          "category": "pw:api",
+          "durationMs": 1719
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#task-app').locator('li').first()",
+          "category": "expect",
+          "durationMs": 20
+        },
+        {
+          "title": "Focus locator('#task-app').getByLabel('task-8 이름')",
+          "category": "pw:api",
+          "durationMs": 35
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('task-8 이름')",
+          "category": "pw:api",
+          "durationMs": 83
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 40
+        },
+        {
+          "title": "Expect \"toHaveAttribute\" locator('#task-app').locator('li').first()",
+          "category": "expect",
+          "durationMs": 25
+        },
+        {
+          "title": "Expect \"toBeFocused\" locator('#task-app').getByLabel('task-8 이름')",
+          "category": "expect",
+          "durationMs": 21
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('task-8 이름')",
+          "category": "pw:api",
+          "durationMs": 32
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 17
+        },
+        {
+          "title": "Set viewport size",
+          "category": "pw:api",
+          "durationMs": 64
+        },
+        {
+          "title": "Screenshot",
+          "category": "pw:api",
+          "durationMs": 115
+        },
+        {
+          "title": "Screenshot locator('#task-app')",
+          "category": "pw:api",
+          "durationMs": 90
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 19
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 14,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 17,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 17,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 56,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 83
+        }
+      ]
+    },
+    {
+      "id": "d2d3f88df070d751ab05-5350e08a0ebcb4e57398",
+      "title": "T-A04/T-A05: stable list preserves focused draft and retained rows while handlers use current State",
+      "project": "firefox",
+      "worker": 3,
+      "startMs": 32247,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 2360,
+      "steps": [
+        {
+          "title": "Create context",
+          "category": "pw:api",
+          "durationMs": 20,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 23,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Create page",
+          "category": "pw:api",
+          "durationMs": 232,
+          "parent": "Fixture \"page\""
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 233,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 13,
+          "parent": "Before Hooks"
+        },
+        {
+          "title": "Before Hooks",
+          "category": "hook",
+          "durationMs": 277
+        },
+        {
+          "title": "Navigate to \"/\"",
+          "category": "pw:api",
+          "durationMs": 554,
+          "parent": "Load the prepared application"
+        },
+        {
+          "title": "Load the prepared application",
+          "category": "test.step",
+          "durationMs": 556
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 72,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toContainText\" locator('#history-status')",
+          "category": "expect",
+          "durationMs": 20,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 26,
+          "parent": "Confirm root application initialization"
+        },
+        {
+          "title": "Confirm root application initialization",
+          "category": "test.step",
+          "durationMs": 122
+        },
+        {
+          "title": "Wait for selector locator('#task-app').getByLabel('task-1 이름')",
+          "category": "pw:api",
+          "durationMs": 82
+        },
+        {
+          "title": "Fill \"첫 이름\" locator('#task-app').getByLabel('task-1 이름')",
+          "category": "pw:api",
+          "durationMs": 110
+        },
+        {
+          "title": "Check locator('#task-app').getByLabel('task-1 완료')",
+          "category": "pw:api",
+          "durationMs": 116
+        },
+        {
+          "title": "Fill \"최신 이름\" locator('#task-app').getByLabel('task-1 이름')",
+          "category": "pw:api",
+          "durationMs": 48
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-2 삭제')",
+          "category": "pw:api",
+          "durationMs": 121
+        },
+        {
+          "title": "Expect \"toHaveValue\" locator('#task-app').getByLabel('task-1 이름')",
+          "category": "expect",
+          "durationMs": 20
+        },
+        {
+          "title": "Expect \"toBeChecked\" locator('#task-app').getByLabel('task-1 완료')",
+          "category": "expect",
+          "durationMs": 33
+        },
+        {
+          "title": "Fill \"임시 입력\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 76
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 29
+        },
+        {
+          "title": "Dispatch \"click\" locator('#task-app').getByRole('button', { name: '+1 세 번', exact: true })",
+          "category": "pw:api",
+          "durationMs": 46
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByLabel('Batching 카운트')",
+          "category": "expect",
+          "durationMs": 18
+        },
+        {
+          "title": "Expect \"toBeFocused\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 22
+        },
+        {
+          "title": "Expect \"toEqual\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Evaluate locator('#task-app').getByLabel('task-1 이름')",
+          "category": "pw:api",
+          "durationMs": 43
+        },
+        {
+          "title": "Expect \"toBe\"",
+          "category": "expect",
+          "durationMs": 0
+        },
+        {
+          "title": "Fill \"새 항목\" locator('#task-app').getByLabel('새 항목', { exact: true })",
+          "category": "pw:api",
+          "durationMs": 80
+        },
+        {
+          "title": "Click locator('#task-app').getByRole('button', { name: '항목 추가', exact: true })",
+          "category": "pw:api",
+          "durationMs": 90
+        },
+        {
+          "title": "Fill \"추가 후 수정\" locator('#task-app').getByLabel('task-9 이름')",
+          "category": "pw:api",
+          "durationMs": 107
+        },
+        {
+          "title": "Check locator('#task-app').getByLabel('task-9 완료')",
+          "category": "pw:api",
+          "durationMs": 180
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Click locator('#task-app').getByLabel('task-9 삭제')",
+          "category": "pw:api",
+          "durationMs": 52
+        },
+        {
+          "title": "Expect \"toHaveText\" locator('#task-app').getByTestId('task-summary')",
+          "category": "expect",
+          "durationMs": 14
+        },
+        {
+          "title": "Expect \"toBeHidden\" locator('#error')",
+          "category": "expect",
+          "durationMs": 9
+        },
+        {
+          "title": "Evaluate",
+          "category": "pw:api",
+          "durationMs": 20,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Attach \"browser-diagnostics\"",
+          "category": "test.attach",
+          "durationMs": 1,
+          "parent": "Fixture \"diagnostics\""
+        },
+        {
+          "title": "Fixture \"diagnostics\"",
+          "category": "fixture",
+          "durationMs": 22,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Fixture \"page\"",
+          "category": "fixture",
+          "durationMs": 0,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "Close context",
+          "category": "pw:api",
+          "durationMs": 10,
+          "parent": "Fixture \"context\""
+        },
+        {
+          "title": "Fixture \"context\"",
+          "category": "fixture",
+          "durationMs": 36,
+          "parent": "After Hooks"
+        },
+        {
+          "title": "After Hooks",
+          "category": "hook",
+          "durationMs": 62
+        }
+      ]
+    }
+  ]
+}

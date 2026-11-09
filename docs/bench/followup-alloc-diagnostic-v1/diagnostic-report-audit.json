@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "createdAt": "2026-11-09T07:07:09.419Z",
+  "scriptSha256": "8e1b2c0e6476a7a7cb6fd48c99407833df856991a3c0c29cba222bbfe4a5d403",
+  "sourceSummarySha256": "9b6443f24fb45600571ec9ad6abf483ef6ed620f23e00404d3fa636919e2a9a5",
+  "reportSha256": "e362b2c6482330b22021654963460efd7963cfa05a6e7096d6eb28debf17c7ea",
+  "cpuRows": [
+    {
+      "name": "task-e5-a0-v1-1000-cpu-counter",
+      "totalMs": 1728.7139999999965,
+      "freezeSelfMs": 18.693,
+      "freezePercent": 1.0813240362489132,
+      "validationInclusiveMs": 438.22,
+      "primaryGcCategoryMs": 99.78099999999999,
+      "allocationEstimatedBytes": 1596810180,
+      "longtasks": 19,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e5-a0-v1-1000-cpu-sort",
+      "totalMs": 2672.194999999997,
+      "freezeSelfMs": 16.052999999999997,
+      "freezePercent": 0.6007420865617972,
+      "validationInclusiveMs": 437.5019999999997,
+      "primaryGcCategoryMs": 108.586,
+      "allocationEstimatedBytes": 1636455588,
+      "longtasks": 19,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e5-a0-v1-1000-cpu-crud",
+      "totalMs": 7444.649999999996,
+      "freezeSelfMs": 61.419000000000004,
+      "freezePercent": 0.8250085631963898,
+      "validationInclusiveMs": 1948.174,
+      "primaryGcCategoryMs": 319.598,
+      "allocationEstimatedBytes": 10483982748,
+      "longtasks": 87,
+      "windows": 60,
+      "negativeDeltas": 1
+    },
+    {
+      "name": "task-e6-a0-v1-1000-cpu-counter",
+      "totalMs": 1423.075000000002,
+      "freezeSelfMs": 14.148,
+      "freezePercent": 0.9941851272771975,
+      "validationInclusiveMs": 229.927,
+      "primaryGcCategoryMs": 96.562,
+      "allocationEstimatedBytes": 1264591464,
+      "longtasks": 19,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e6-a0-v1-1000-cpu-sort",
+      "totalMs": 2436.3990000000017,
+      "freezeSelfMs": 14.826999999999998,
+      "freezePercent": 0.6085620622894685,
+      "validationInclusiveMs": 247.396,
+      "primaryGcCategoryMs": 118.943,
+      "allocationEstimatedBytes": 1264938432,
+      "longtasks": 18,
+      "windows": 12,
+      "negativeDeltas": 0
+    },
+    {
+      "name": "task-e6-a0-v1-1000-cpu-crud",
+      "totalMs": 6169.445999999996,
+      "freezeSelfMs": 61.80699999999999,
+      "freezePercent": 1.0018241508232673,
+      "validationInclusiveMs": 998.734,
+      "primaryGcCategoryMs": 321.80499999999995,
+      "allocationEstimatedBytes": 8271462472,
+      "longtasks": 87,
+      "windows": 60,
+      "negativeDeltas": 0
+    }
+  ],
+  "memoryRows": [],
+  "visualRows": [],
+  "primarySelfAndWindowAccounting": true,
+  "note": "Report values derived from the archived audited summary; CPU and retained-heap/visual boundaries are intentionally separate."
+}

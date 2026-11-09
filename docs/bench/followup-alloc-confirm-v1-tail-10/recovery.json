@@ -1,0 +1,80 @@
+[
+  {
+    "key": "9b52323: E5 -> E7,1,persistent,crud,10",
+    "comparison": "9b52323: E5 -> E7",
+    "session": 1,
+    "workload": "crud",
+    "size": 10,
+    "initialDifferenceMs": -2.1000000089406967,
+    "firstObservedNonpositiveAt": 1,
+    "nonpositiveThroughObservedEndFrom": 1,
+    "observedUpdates": 190,
+    "finalDifferenceMs": -684.499999910593,
+    "note": "A pair of observed lifecycle trajectories, including warm-up. Updates count workload cycles: CRUD has five user actions, other workloads one. They are not root-render or flush counts. The crossing can be affected by JIT/GC/noise and is not a universal reuse threshold or an IID statistic."
+  },
+  {
+    "key": "9b52323: E5 -> E7,1,persistent,search,10",
+    "comparison": "9b52323: E5 -> E7",
+    "session": 1,
+    "workload": "search",
+    "size": 10,
+    "initialDifferenceMs": -0.699999988079071,
+    "firstObservedNonpositiveAt": 1,
+    "nonpositiveThroughObservedEndFrom": 1,
+    "observedUpdates": 190,
+    "finalDifferenceMs": -49.099999994039536,
+    "note": "A pair of observed lifecycle trajectories, including warm-up. Updates count workload cycles: CRUD has five user actions, other workloads one. They are not root-render or flush counts. The crossing can be affected by JIT/GC/noise and is not a universal reuse threshold or an IID statistic."
+  },
+  {
+    "key": "9b52323: E5 -> E7,2,persistent,search,10",
+    "comparison": "9b52323: E5 -> E7",
+    "session": 2,
+    "workload": "search",
+    "size": 10,
+    "initialDifferenceMs": -1.2999999970197678,
+    "firstObservedNonpositiveAt": 1,
+    "nonpositiveThroughObservedEndFrom": 1,
+    "observedUpdates": 190,
+    "finalDifferenceMs": -62.29999987781048,
+    "note": "A pair of observed lifecycle trajectories, including warm-up. Updates count workload cycles: CRUD has five user actions, other workloads one. They are not root-render or flush counts. The crossing can be affected by JIT/GC/noise and is not a universal reuse threshold or an IID statistic."
+  },
+  {
+    "key": "9b52323: E5 -> E7,2,persistent,crud,10",
+    "comparison": "9b52323: E5 -> E7",
+    "session": 2,
+    "workload": "crud",
+    "size": 10,
+    "initialDifferenceMs": -0.10000000894069672,
+    "firstObservedNonpositiveAt": 1,
+    "nonpositiveThroughObservedEndFrom": 1,
+    "observedUpdates": 190,
+    "finalDifferenceMs": -446.40000012516975,
+    "note": "A pair of observed lifecycle trajectories, including warm-up. Updates count workload cycles: CRUD has five user actions, other workloads one. They are not root-render or flush counts. The crossing can be affected by JIT/GC/noise and is not a universal reuse threshold or an IID statistic."
+  },
+  {
+    "key": "9b52323: E5 -> E7,3,persistent,crud,10",
+    "comparison": "9b52323: E5 -> E7",
+    "session": 3,
+    "workload": "crud",
+    "size": 10,
+    "initialDifferenceMs": 9.100000008940697,
+    "firstObservedNonpositiveAt": 5,
+    "nonpositiveThroughObservedEndFrom": 5,
+    "observedUpdates": 190,
+    "finalDifferenceMs": -634.6999998688698,
+    "note": "A pair of observed lifecycle trajectories, including warm-up. Updates count workload cycles: CRUD has five user actions, other workloads one. They are not root-render or flush counts. The crossing can be affected by JIT/GC/noise and is not a universal reuse threshold or an IID statistic."
+  },
+  {
+    "key": "9b52323: E5 -> E7,3,persistent,search,10",
+    "comparison": "9b52323: E5 -> E7",
+    "session": 3,
+    "workload": "search",
+    "size": 10,
+    "initialDifferenceMs": 0.30000001192092896,
+    "firstObservedNonpositiveAt": 1,
+    "nonpositiveThroughObservedEndFrom": 1,
+    "observedUpdates": 190,
+    "finalDifferenceMs": -73.59999978542328,
+    "note": "A pair of observed lifecycle trajectories, including warm-up. Updates count workload cycles: CRUD has five user actions, other workloads one. They are not root-render or flush counts. The crossing can be affected by JIT/GC/noise and is not a universal reuse threshold or an IID statistic."
+  }
+]

@@ -1,0 +1,502 @@
+{
+  "timeOrigin": 1794207919116.7,
+  "marks": [
+    {
+      "name": "task-diag:start:initialization:0",
+      "startTime": 93,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:1",
+      "startTime": 103.3999999910593,
+      "detail": {
+        "renderMs": 5.200000002980232,
+        "diffMs": 0.6000000089406967,
+        "commitMs": 3.699999988079071,
+        "flushMs": 9.799999997019768,
+        "effectMs": 0.09999999403953552
+      }
+    },
+    {
+      "name": "task-diag:flush:2",
+      "startTime": 228.29999999701977,
+      "detail": {
+        "renderMs": 62.099999994039536,
+        "diffMs": 14.900000005960464,
+        "commitMs": 47.29999999701977,
+        "flushMs": 124.40000000596046,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:flush:3",
+      "startTime": 500,
+      "detail": {
+        "renderMs": 73.70000000298023,
+        "diffMs": 40.70000000298023,
+        "commitMs": 40.5,
+        "flushMs": 154.90000000596046,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:initialization:0",
+      "startTime": 500.09999999403954,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-counter:4",
+      "startTime": 523.8999999910593,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:5",
+      "startTime": 647.8999999910593,
+      "detail": {
+        "renderMs": 48.5,
+        "diffMs": 35.099999994039536,
+        "commitMs": 39.400000005960464,
+        "flushMs": 123,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-counter:4",
+      "startTime": 648,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-counter:6",
+      "startTime": 666,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:7",
+      "startTime": 792.3999999910593,
+      "detail": {
+        "renderMs": 43.5,
+        "diffMs": 37,
+        "commitMs": 44.29999999701977,
+        "flushMs": 125,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-counter:6",
+      "startTime": 792.5999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-counter:8",
+      "startTime": 806.2999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:9",
+      "startTime": 924.2999999970198,
+      "detail": {
+        "renderMs": 50.79999999701977,
+        "diffMs": 28.799999997019768,
+        "commitMs": 37.400000005960464,
+        "flushMs": 117,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-counter:8",
+      "startTime": 924.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-counter:10",
+      "startTime": 936,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:11",
+      "startTime": 1043.699999988079,
+      "detail": {
+        "renderMs": 45.79999999701977,
+        "diffMs": 25.700000002980232,
+        "commitMs": 35.69999998807907,
+        "flushMs": 107.19999998807907,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-counter:10",
+      "startTime": 1043.7999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:warmup-primary-counter:12",
+      "startTime": 1056.0999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:13",
+      "startTime": 1163.2999999970198,
+      "detail": {
+        "renderMs": 46.599999994039536,
+        "diffMs": 26.900000005960464,
+        "commitMs": 33,
+        "flushMs": 106.5,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:warmup-primary-counter:12",
+      "startTime": 1163.2999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:14",
+      "startTime": 1177.699999988079,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:15",
+      "startTime": 1278.2999999970198,
+      "detail": {
+        "renderMs": 38.70000000298023,
+        "diffMs": 29.100000008940697,
+        "commitMs": 32.19999998807907,
+        "flushMs": 100,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:14",
+      "startTime": 1278.3999999910593,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:16",
+      "startTime": 1290.8999999910593,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:17",
+      "startTime": 1427.2999999970198,
+      "detail": {
+        "renderMs": 54.29999999701977,
+        "diffMs": 39.5,
+        "commitMs": 42.1000000089407,
+        "flushMs": 135.90000000596046,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:16",
+      "startTime": 1427.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:18",
+      "startTime": 1440,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:19",
+      "startTime": 1546.5,
+      "detail": {
+        "renderMs": 36.69999998807907,
+        "diffMs": 34.20000000298023,
+        "commitMs": 35,
+        "flushMs": 106,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:18",
+      "startTime": 1546.5999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:20",
+      "startTime": 1559.0999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:21",
+      "startTime": 1664.5,
+      "detail": {
+        "renderMs": 38.400000005960464,
+        "diffMs": 31.5,
+        "commitMs": 34.8999999910593,
+        "flushMs": 104.79999999701977,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:20",
+      "startTime": 1664.5999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:22",
+      "startTime": 1681.8999999910593,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:23",
+      "startTime": 1787.5999999940395,
+      "detail": {
+        "renderMs": 43.099999994039536,
+        "diffMs": 30.900000005960464,
+        "commitMs": 31,
+        "flushMs": 105,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:22",
+      "startTime": 1787.699999988079,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:24",
+      "startTime": 1797.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:25",
+      "startTime": 1909.699999988079,
+      "detail": {
+        "renderMs": 39.400000005960464,
+        "diffMs": 37.5,
+        "commitMs": 34.8999999910593,
+        "flushMs": 111.79999999701977,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:24",
+      "startTime": 1909.7999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:26",
+      "startTime": 1922.8999999910593,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:27",
+      "startTime": 2081.199999988079,
+      "detail": {
+        "renderMs": 41.8999999910593,
+        "diffMs": 45.80000001192093,
+        "commitMs": 70.09999999403954,
+        "flushMs": 157.79999999701977,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:26",
+      "startTime": 2081.199999988079,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:28",
+      "startTime": 2102.7999999970198,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:29",
+      "startTime": 2257.8999999910593,
+      "detail": {
+        "renderMs": 85.5,
+        "diffMs": 33,
+        "commitMs": 35.20000000298023,
+        "flushMs": 153.79999999701977,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:28",
+      "startTime": 2258,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:30",
+      "startTime": 2268,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:31",
+      "startTime": 2394.3999999910593,
+      "detail": {
+        "renderMs": 43.3999999910593,
+        "diffMs": 41.5,
+        "commitMs": 41,
+        "flushMs": 125.8999999910593,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:30",
+      "startTime": 2394.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:32",
+      "startTime": 2408.8999999910593,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:33",
+      "startTime": 2523.5,
+      "detail": {
+        "renderMs": 47.70000000298023,
+        "diffMs": 31.299999997019768,
+        "commitMs": 35.1000000089407,
+        "flushMs": 114.1000000089407,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:32",
+      "startTime": 2523.699999988079,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:34",
+      "startTime": 2536.8999999910593,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:35",
+      "startTime": 2637.3999999910593,
+      "detail": {
+        "renderMs": 46.79999999701977,
+        "diffMs": 25.900000005960464,
+        "commitMs": 27.299999997019768,
+        "flushMs": 100,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:34",
+      "startTime": 2637.5999999940395,
+      "detail": null
+    },
+    {
+      "name": "task-diag:start:sample-primary-counter:36",
+      "startTime": 2647.5,
+      "detail": null
+    },
+    {
+      "name": "task-diag:flush:37",
+      "startTime": 2747.699999988079,
+      "detail": {
+        "renderMs": 46.400000005960464,
+        "diffMs": 26.299999997019768,
+        "commitMs": 27.099999994039536,
+        "flushMs": 99.79999999701977,
+        "effectMs": 0
+      }
+    },
+    {
+      "name": "task-diag:end:sample-primary-counter:36",
+      "startTime": 2747.7999999970198,
+      "detail": null
+    }
+  ],
+  "longtasks": [
+    {
+      "startTime": 91.09999999403954,
+      "duration": 137,
+      "name": "self"
+    },
+    {
+      "startTime": 345,
+      "duration": 166,
+      "name": "self"
+    },
+    {
+      "startTime": 520.6999999880791,
+      "duration": 130,
+      "name": "self"
+    },
+    {
+      "startTime": 663.1999999880791,
+      "duration": 132,
+      "name": "self"
+    },
+    {
+      "startTime": 804.3999999910593,
+      "duration": 122,
+      "name": "self"
+    },
+    {
+      "startTime": 934.6999999880791,
+      "duration": 111,
+      "name": "self"
+    },
+    {
+      "startTime": 1054.2999999970198,
+      "duration": 111,
+      "name": "self"
+    },
+    {
+      "startTime": 1176.3999999910593,
+      "duration": 104,
+      "name": "self"
+    },
+    {
+      "startTime": 1289.3999999910593,
+      "duration": 141,
+      "name": "self"
+    },
+    {
+      "startTime": 1438.5,
+      "duration": 111,
+      "name": "self"
+    },
+    {
+      "startTime": 1557.699999988079,
+      "duration": 110,
+      "name": "self"
+    },
+    {
+      "startTime": 1679.7999999970198,
+      "duration": 110,
+      "name": "self"
+    },
+    {
+      "startTime": 1796.2999999970198,
+      "duration": 116,
+      "name": "self"
+    },
+    {
+      "startTime": 1921.3999999910593,
+      "duration": 165,
+      "name": "self"
+    },
+    {
+      "startTime": 2100.3999999910593,
+      "duration": 160,
+      "name": "self"
+    },
+    {
+      "startTime": 2266.7999999970198,
+      "duration": 130,
+      "name": "self"
+    },
+    {
+      "startTime": 2407,
+      "duration": 119,
+      "name": "self"
+    },
+    {
+      "startTime": 2535.5999999940395,
+      "duration": 104,
+      "name": "self"
+    },
+    {
+      "startTime": 2646,
+      "duration": 104,
+      "name": "self"
+    }
+  ]
+}

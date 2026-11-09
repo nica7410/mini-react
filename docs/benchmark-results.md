@@ -82,6 +82,10 @@ E1 A1/E2 A1/E4 A0/E4 A1의 정식 3세션 `task-candidate-v2`는 2026-11-09 06:1
 
 최종 소스는 E1 고정 build와 같지 않다. 동결 안전 조건과 resolver의 생성 시점 봉인을 더했다. 최종 소스로 새 timing을 측정하지 않았으므로, 위 E1 측정값을 최종 소스의 성능 수치로 주장하지 않는다. 최종 소스의 정확성 검증은 [최종 정책 문서](task-app-final-policy.md)에 있다. 검사 생략이나 생성 비용을 측정 구간 밖으로 옮기는 방식은 채택하지 않았다.
 
+## 후속 개선: VDOM 생성·검증 임시 할당
+
+최종 정책 소스 `9b52323`(E5) 대비 `3e9a48c`(E7)의 독립 3세션 비교에서 75개 판정 조건 중 73개가 세 세션 모두 median이 줄었다(대표: 1,000개 counter −13.8~−14.9%, 100개 이름 수정 −17.0~−21.1%, 1,000개 CRUD 전체 −17.1~−23.5%). 사전 엔진 허용 범위를 넘은 10개 CRUD p95 S1 1건은 n=180 보충에서 재현되지 않았다. 1,000개 진단에서 validateTree inclusive는 약 절반, 추정 할당은 21~23% 줄었다. 10,000개는 측정하지 않았다. [후속 개선 보고서](followup-trace-alloc.md)
+
 ## 재현·한계·인수 상태
 
 고정 소스/asset 복원과 새 tag 실행 명령은 [첫 결과의 재현 절차](task-app-baseline-results.md), 조건과 채택 기준은 [사전 계획](task-app-comparison-plan.md)에 있다. Node 통계 도구와 Python/matplotlib PNG·SVG를 사용한다. timing 4178, 별도 진단 4179 포트를 사용하며 테스트·build·profiling을 정식 시간 측정과 병행하지 않는다.

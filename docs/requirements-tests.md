@@ -18,6 +18,8 @@ E4 후보는 인증 보관 상한과 한도 이후의 완전한 검사를 확인
 
 최종 정책(2026-11-09)은 E1 방식의 매회 검증과 기본 앱 A0다. 인증·검증 캐시를 제거하면서 T-N06/T-N08의 인증 여부 단언을 동결 상태·accessor 미실행·매 호출 재검증 단언으로 바꿨다. T-A04에는 A0의 행 재평가와 A1(`TaskAppWithRowReuse`)의 생략을 직접 비교하는 테스트를 더했고, T-A05의 최신 FIFO callback 테스트는 A0·A1 모두에서 실행한다. 계약 ID는 79개 그대로이며 전체 단위·통합 테스트는 213개다. [최종 정책](task-app-final-policy.md)
 
+후속 개선(2026-11-09)에서 T-Q03(기록 OFF의 추적 작업 생략, Inspector 지연 생성·재사용: [trace-cost](../tests/integration/trace-cost.test.ts))과 T-V05 고정 회귀(첫 오류의 정확한 경로·sparse 자식 hole: [validate-path](../tests/unit/validate-path.test.ts))를 더했다. 전체 단위·통합 테스트는 219개다. [후속 개선](followup-trace-alloc.md)
+
 ## no-op 후속 회귀 (당시 추가 7개 ID, 전체 76개)
 
 | ID | 증명하는 동작 | 실제 테스트 |

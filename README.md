@@ -9,6 +9,8 @@ Vanilla TypeScript로 만든 학습용 Mini React입니다. DOM 편집기와 루
 
 실제 TaskApp 후속 작업은 2026-11-09에 끝났습니다. E0/E1/E2 × A0/A1 비교 720조건, E3·E4 후보의 정식 3세션 480조건씩과 n=180 보충을 감사한 결과, 캐시 후보(E2~E4)와 목록 표현 재사용 앱(A1)은 반복 재사용 이득에도 사전 회귀 허용 범위를 넘는 조건이 남아 기본값으로 채택하지 않았습니다. **최종 기본 경로는 E1 방식의 매회 VDOM 검증 + 동결 안전 조건, 기본 앱 A0**이며 A1은 비교용 `TaskAppWithRowReuse`로 남겼습니다. 최종 소스는 typecheck·단위/통합 213개·build·Chromium+Firefox 33개 × 3회를 통과했습니다. 10,000개 E4 보충은 중단했으며 그 stress 회귀는 미확인입니다. [최종 정책과 검증](docs/task-app-final-policy.md), [성능 보고서](docs/benchmark-results.md), [후속 진행](docs/task-app-followup.md)을 참고하세요.
 
+최종 정책 이후 후속 개선으로 측정 기본 범위를 10/100/1,000개로 제한하고(10,000개는 `--allow-10000` 필요), 기록 OFF의 추적 작업과 접힌 Inspector 생성을 없앴으며, VDOM 생성·검증의 임시 할당을 줄였습니다. 독립 3세션 비교에서 75개 조건 중 73개의 median이 세 세션 모두 줄었고(대표 작업 −13~−25%), 소스 `3e9a48c`는 단위·통합 219개와 Chromium+Firefox 33개 × 3회를 통과했습니다. [후속 개선](docs/followup-trace-alloc.md)
+
 이전 no-op 기능 소스의 자동 검증은 **184개 단위·통합 + Chromium 20개 + Firefox 11개**, 브라우저 전체 3회 연속 통과입니다. 최초 M8의 측정 51,480개와 후속 no-op의 3세션·측정 23,760개는 각각 당시 코드의 결과로 보존합니다. 실제 Windows 한글 IME는 이전 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). [역사적 후속 검증](docs/browser-noop-followup.md), [성능 결과](docs/benchmark-results.md), [인수 상태](docs/m8-acceptance.md)를 참고하세요. 팀 활동과 원격 CI 실행은 미확인입니다.
 
 ## 실행
