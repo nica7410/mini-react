@@ -1,0 +1,138 @@
+{
+  "dir": "docs/bench/engine-supp-20261109-2113-3-persistent-move-1000",
+  "envStatus": "passed",
+  "pair": {
+    "baseline": "task-e7-a0-v1",
+    "candidate": "dr-cand-e9-a0"
+  },
+  "sessions": [
+    {
+      "session": 1,
+      "processes": [
+        {
+          "build": "task-e7-a0-v1",
+          "status": "passed",
+          "disposed": true,
+          "order": 0,
+          "browser": "151.0.7922.34"
+        },
+        {
+          "build": "dr-cand-e9-a0",
+          "status": "passed",
+          "disposed": true,
+          "order": 1,
+          "browser": "151.0.7922.34"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "session": 2,
+      "processes": [
+        {
+          "build": "dr-cand-e9-a0",
+          "status": "passed",
+          "disposed": true,
+          "order": 0,
+          "browser": "151.0.7922.34"
+        },
+        {
+          "build": "task-e7-a0-v1",
+          "status": "passed",
+          "disposed": true,
+          "order": 1,
+          "browser": "151.0.7922.34"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "session": 3,
+      "processes": [
+        {
+          "build": "task-e7-a0-v1",
+          "status": "passed",
+          "disposed": true,
+          "order": 0,
+          "browser": "151.0.7922.34"
+        },
+        {
+          "build": "dr-cand-e9-a0",
+          "status": "passed",
+          "disposed": true,
+          "order": 1,
+          "browser": "151.0.7922.34"
+        }
+      ],
+      "complete": true
+    }
+  ],
+  "completeSessions": 3,
+  "oracle": {
+    "countsEqual": {
+      "1": true,
+      "2": true,
+      "3": true
+    },
+    "sampleFailures": 0,
+    "failureExamples": [],
+    "inPageOracle": "step() asserts State/DOM/form/identity/focus/Effect; a failure throws and marks the process failed"
+  },
+  "exceeded": [],
+  "rows": [
+    {
+      "session": 1,
+      "cond": "persistent/move/1000",
+      "scope": "workload",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 119.20000000298023,
+      "candMedian": 117.35000000149012,
+      "baseP95": 144.16000000014895,
+      "candP95": 141.02499999999998,
+      "dMedian": -1.8500000014901161,
+      "dP95": -3.1350000001489775,
+      "allowMedian": 5.960000000149012,
+      "allowP95": 14.416000000014897,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    },
+    {
+      "session": 2,
+      "cond": "persistent/move/1000",
+      "scope": "workload",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 107.55000000447035,
+      "candMedian": 111.25,
+      "baseP95": 135.43999999165533,
+      "candP95": 133.91000000610947,
+      "dMedian": 3.6999999955296516,
+      "dP95": -1.5299999855458566,
+      "allowMedian": 5.377500000223518,
+      "allowP95": 13.543999999165534,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    },
+    {
+      "session": 3,
+      "cond": "persistent/move/1000",
+      "scope": "workload",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 104.80000000447035,
+      "candMedian": 103.55000000447035,
+      "baseP95": 124.72000000327824,
+      "candP95": 124.32499999701976,
+      "dMedian": -1.25,
+      "dP95": -0.39500000625848486,
+      "allowMedian": 5.240000000223517,
+      "allowP95": 12.472000000327824,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    }
+  ]
+}

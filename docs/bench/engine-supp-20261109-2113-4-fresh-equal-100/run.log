@@ -1,0 +1,10 @@
+CMD node scripts/benchmark-task.mjs --tag=engine-supp-20261109-2113-4-fresh-equal-100 --builds=task-e7-a0-v1,dr-cand-e9-a0 --sizes=100 --workloads=equal --regimes=fresh --sessions=3 --supplement --alternate-pair-order --max-minutes=3.23015 --deadline-epoch-ms=1794227164918
+START 2026-11-09T12:22:51.109Z maxMin=3.230
+S1 fresh/equal/100 task-e7-a0-v1 PASS
+S1 fresh/equal/100 dr-cand-e9-a0 PASS
+S2 fresh/equal/100 dr-cand-e9-a0 PASS
+S2 fresh/equal/100 task-e7-a0-v1 PASS
+S3 fresh/equal/100 task-e7-a0-v1 PASS
+S3 fresh/equal/100 dr-cand-e9-a0 PASS
+TASK_COMPLETE docs/bench/engine-supp-20261109-2113-4-fresh-equal-100
+EXIT code=0 signal=null killed=false 2026-11-09T12:24:28.937Z

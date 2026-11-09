@@ -1,0 +1,10 @@
+CMD node scripts/benchmark-task.mjs --tag=engine-supp-20261109-2113-1-persistent-equal-1000 --builds=task-e7-a0-v1,dr-cand-e9-a0 --sizes=1000 --workloads=equal --regimes=persistent --sessions=3 --supplement --alternate-pair-order --max-minutes=12.105316666666667 --deadline-epoch-ms=1794227164918
+START 2026-11-09T12:13:58.599Z maxMin=12.105
+S1 persistent/equal/1000 task-e7-a0-v1 PASS
+S1 persistent/equal/1000 dr-cand-e9-a0 PASS
+S2 persistent/equal/1000 dr-cand-e9-a0 PASS
+S2 persistent/equal/1000 task-e7-a0-v1 PASS
+S3 persistent/equal/1000 task-e7-a0-v1 PASS
+S3 persistent/equal/1000 dr-cand-e9-a0 PASS
+TASK_COMPLETE docs/bench/engine-supp-20261109-2113-1-persistent-equal-1000
+EXIT code=0 signal=null killed=false 2026-11-09T12:16:09.267Z

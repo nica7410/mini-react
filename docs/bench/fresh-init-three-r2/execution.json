@@ -1,0 +1,99 @@
+{
+  "T0": "2026-11-09T13:36:52.109Z",
+  "measureEnd": "2026-11-09T13:48:52.109Z",
+  "finalEnd": "2026-11-09T13:51:52.109Z",
+  "runs": [
+    {
+      "id": 1,
+      "base": "task-e7-a0-v1",
+      "cand": "task-e9-a0-v1",
+      "tag": "fresh-init-three-r2-1",
+      "status": "complete",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=fresh-init-three-r2-1",
+        "--builds=task-e7-a0-v1,task-e9-a0-v1",
+        "--sizes=100",
+        "--workloads=equal",
+        "--regimes=fresh",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=3",
+        "--deadline-epoch-ms=1794232132109"
+      ],
+      "command": "node scripts/benchmark-task.mjs --tag=fresh-init-three-r2-1 --builds=task-e7-a0-v1,task-e9-a0-v1 --sizes=100 --workloads=equal --regimes=fresh --sessions=3 --supplement --alternate-pair-order --max-minutes=3 --deadline-epoch-ms=1794232132109",
+      "startedAt": "2026-11-09T13:36:57.321Z",
+      "exitCode": 0,
+      "signal": null,
+      "killedAtMeasureEnd": false,
+      "endedAt": "2026-11-09T13:38:40.951Z",
+      "elapsedMs": 103630,
+      "exceeded": [
+        "S1 lifecycle median ",
+        "S2 workload p95",
+        "S2 initialization p95",
+        "S2 lifecycle median p95"
+      ]
+    },
+    {
+      "id": 2,
+      "base": "task-e9-a0-v1",
+      "cand": "dr-cand-e9-a0",
+      "tag": "fresh-init-three-r2-2",
+      "status": "complete",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=fresh-init-three-r2-2",
+        "--builds=task-e9-a0-v1,dr-cand-e9-a0",
+        "--sizes=100",
+        "--workloads=equal",
+        "--regimes=fresh",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=3",
+        "--deadline-epoch-ms=1794232132109"
+      ],
+      "command": "node scripts/benchmark-task.mjs --tag=fresh-init-three-r2-2 --builds=task-e9-a0-v1,dr-cand-e9-a0 --sizes=100 --workloads=equal --regimes=fresh --sessions=3 --supplement --alternate-pair-order --max-minutes=3 --deadline-epoch-ms=1794232132109",
+      "startedAt": "2026-11-09T13:38:41.096Z",
+      "exitCode": 0,
+      "signal": null,
+      "killedAtMeasureEnd": false,
+      "endedAt": "2026-11-09T13:40:23.566Z",
+      "elapsedMs": 102470,
+      "exceeded": []
+    },
+    {
+      "id": 3,
+      "base": "task-e7-a0-v1",
+      "cand": "dr-cand-e9-a0",
+      "tag": "fresh-init-three-r2-3",
+      "status": "complete",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=fresh-init-three-r2-3",
+        "--builds=task-e7-a0-v1,dr-cand-e9-a0",
+        "--sizes=100",
+        "--workloads=equal",
+        "--regimes=fresh",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=3",
+        "--deadline-epoch-ms=1794232132109"
+      ],
+      "command": "node scripts/benchmark-task.mjs --tag=fresh-init-three-r2-3 --builds=task-e7-a0-v1,dr-cand-e9-a0 --sizes=100 --workloads=equal --regimes=fresh --sessions=3 --supplement --alternate-pair-order --max-minutes=3 --deadline-epoch-ms=1794232132109",
+      "startedAt": "2026-11-09T13:40:23.702Z",
+      "exitCode": 0,
+      "signal": null,
+      "killedAtMeasureEnd": false,
+      "endedAt": "2026-11-09T13:42:11.461Z",
+      "elapsedMs": 107759,
+      "exceeded": [
+        "S3 workload p95"
+      ]
+    }
+  ],
+  "endedAt": "2026-11-09T13:42:11.593Z"
+}

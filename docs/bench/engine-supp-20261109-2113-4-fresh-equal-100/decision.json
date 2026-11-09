@@ -1,0 +1,283 @@
+{
+  "dir": "docs/bench/engine-supp-20261109-2113-4-fresh-equal-100",
+  "envStatus": "passed",
+  "pair": {
+    "baseline": "task-e7-a0-v1",
+    "candidate": "dr-cand-e9-a0"
+  },
+  "sessions": [
+    {
+      "session": 1,
+      "processes": [
+        {
+          "build": "task-e7-a0-v1",
+          "status": "passed",
+          "disposed": true,
+          "order": 0,
+          "browser": "151.0.7922.34"
+        },
+        {
+          "build": "dr-cand-e9-a0",
+          "status": "passed",
+          "disposed": true,
+          "order": 1,
+          "browser": "151.0.7922.34"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "session": 2,
+      "processes": [
+        {
+          "build": "dr-cand-e9-a0",
+          "status": "passed",
+          "disposed": true,
+          "order": 0,
+          "browser": "151.0.7922.34"
+        },
+        {
+          "build": "task-e7-a0-v1",
+          "status": "passed",
+          "disposed": true,
+          "order": 1,
+          "browser": "151.0.7922.34"
+        }
+      ],
+      "complete": true
+    },
+    {
+      "session": 3,
+      "processes": [
+        {
+          "build": "task-e7-a0-v1",
+          "status": "passed",
+          "disposed": true,
+          "order": 0,
+          "browser": "151.0.7922.34"
+        },
+        {
+          "build": "dr-cand-e9-a0",
+          "status": "passed",
+          "disposed": true,
+          "order": 1,
+          "browser": "151.0.7922.34"
+        }
+      ],
+      "complete": true
+    }
+  ],
+  "completeSessions": 3,
+  "oracle": {
+    "countsEqual": {
+      "1": true,
+      "2": true,
+      "3": true
+    },
+    "sampleFailures": 0,
+    "failureExamples": [],
+    "inPageOracle": "step() asserts State/DOM/form/identity/focus/Effect; a failure throws and marks the process failed"
+  },
+  "exceeded": [
+    {
+      "session": 2,
+      "cond": "fresh/equal/100",
+      "scope": "initialization",
+      "metric": "cpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 20.849999994039536,
+      "candMedian": 21.650000005960464,
+      "baseP95": 23.910000020265574,
+      "candP95": 26.33500001057981,
+      "dMedian": 0.800000011920929,
+      "dP95": 2.4249999903142374,
+      "allowMedian": 1.0424999997019768,
+      "allowP95": 2.3910000020265576,
+      "medianExceeded": false,
+      "p95Exceeded": true
+    },
+    {
+      "session": 2,
+      "cond": "fresh/equal/100",
+      "scope": "lifecycle",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 31.600000001490116,
+      "candMedian": 32.650000005960464,
+      "baseP95": 35.92499997764825,
+      "candP95": 40.22499998956918,
+      "dMedian": 1.0500000044703484,
+      "dP95": 4.300000011920929,
+      "allowMedian": 1.5800000000745058,
+      "allowP95": 3.592499997764825,
+      "medianExceeded": false,
+      "p95Exceeded": true
+    }
+  ],
+  "rows": [
+    {
+      "session": 1,
+      "cond": "fresh/equal/100",
+      "scope": "workload",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 10.800000011920929,
+      "candMedian": 10.599999994039536,
+      "baseP95": 14.604999994486569,
+      "candP95": 13.205000002682207,
+      "dMedian": -0.20000001788139343,
+      "dP95": -1.3999999918043624,
+      "allowMedian": 1,
+      "allowP95": 2,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    },
+    {
+      "session": 1,
+      "cond": "fresh/equal/100",
+      "scope": "initialization",
+      "metric": "cpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 21.75000000745058,
+      "candMedian": 21.400000005960464,
+      "baseP95": 26.609999994188545,
+      "candP95": 24.404999991506337,
+      "dMedian": -0.3500000014901161,
+      "dP95": -2.2050000026822083,
+      "allowMedian": 1.087500000372529,
+      "allowP95": 2.6609999994188547,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    },
+    {
+      "session": 1,
+      "cond": "fresh/equal/100",
+      "scope": "lifecycle",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 32.94999999552965,
+      "candMedian": 32.30000000447035,
+      "baseP95": 41.10500000864267,
+      "candP95": 37.00500001311302,
+      "dMedian": -0.6499999910593033,
+      "dP95": -4.09999999552965,
+      "allowMedian": 1.6474999997764828,
+      "allowP95": 4.110500000864267,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    },
+    {
+      "session": 2,
+      "cond": "fresh/equal/100",
+      "scope": "workload",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 10.300000011920929,
+      "candMedian": 10.699999995529652,
+      "baseP95": 13.099999994784593,
+      "candP95": 14.225000002980224,
+      "dMedian": 0.3999999836087227,
+      "dP95": 1.1250000081956308,
+      "allowMedian": 1,
+      "allowP95": 2,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    },
+    {
+      "session": 2,
+      "cond": "fresh/equal/100",
+      "scope": "initialization",
+      "metric": "cpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 20.849999994039536,
+      "candMedian": 21.650000005960464,
+      "baseP95": 23.910000020265574,
+      "candP95": 26.33500001057981,
+      "dMedian": 0.800000011920929,
+      "dP95": 2.4249999903142374,
+      "allowMedian": 1.0424999997019768,
+      "allowP95": 2.3910000020265576,
+      "medianExceeded": false,
+      "p95Exceeded": true
+    },
+    {
+      "session": 2,
+      "cond": "fresh/equal/100",
+      "scope": "lifecycle",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 31.600000001490116,
+      "candMedian": 32.650000005960464,
+      "baseP95": 35.92499997764825,
+      "candP95": 40.22499998956918,
+      "dMedian": 1.0500000044703484,
+      "dP95": 4.300000011920929,
+      "allowMedian": 1.5800000000745058,
+      "allowP95": 3.592499997764825,
+      "medianExceeded": false,
+      "p95Exceeded": true
+    },
+    {
+      "session": 3,
+      "cond": "fresh/equal/100",
+      "scope": "workload",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 11.149999998509884,
+      "candMedian": 10.950000002980232,
+      "baseP95": 14.309999997168775,
+      "candP95": 13.50999999940395,
+      "dMedian": -0.19999999552965164,
+      "dP95": -0.7999999977648251,
+      "allowMedian": 1,
+      "allowP95": 2,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    },
+    {
+      "session": 3,
+      "cond": "fresh/equal/100",
+      "scope": "initialization",
+      "metric": "cpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 21.899999998509884,
+      "candMedian": 21.700000002980232,
+      "baseP95": 26.305000011622905,
+      "candP95": 24.430000020563593,
+      "dMedian": -0.19999999552965164,
+      "dP95": -1.8749999910593118,
+      "allowMedian": 1.0949999999254942,
+      "allowP95": 2.6305000011622908,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    },
+    {
+      "session": 3,
+      "cond": "fresh/equal/100",
+      "scope": "lifecycle",
+      "metric": "totalCpuMs",
+      "nBase": 180,
+      "nCand": 180,
+      "baseMedian": 33.5,
+      "candMedian": 32.79999999701977,
+      "baseP95": 39.51500000059604,
+      "candP95": 37.6149999924004,
+      "dMedian": -0.7000000029802322,
+      "dP95": -1.90000000819564,
+      "allowMedian": 1.675,
+      "allowP95": 3.951500000059604,
+      "medianExceeded": false,
+      "p95Exceeded": false
+    }
+  ]
+}

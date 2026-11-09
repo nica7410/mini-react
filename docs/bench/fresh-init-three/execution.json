@@ -1,0 +1,92 @@
+{
+  "T0": "2026-11-09T13:26:05.885Z",
+  "measureEnd": "2026-11-09T13:38:05.885Z",
+  "finalEnd": "2026-11-09T13:41:05.885Z",
+  "runs": [
+    {
+      "id": 1,
+      "base": "task-e7-a0-v1",
+      "cand": "task-e9-a0-v1",
+      "tag": "fresh-init-three-1",
+      "status": "complete",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=fresh-init-three-1",
+        "--builds=task-e7-a0-v1,task-e9-a0-v1",
+        "--sizes=100",
+        "--workloads=equal",
+        "--regimes=fresh",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=3",
+        "--deadline-epoch-ms=1794231485885"
+      ],
+      "command": "node scripts/benchmark-task.mjs --tag=fresh-init-three-1 --builds=task-e7-a0-v1,task-e9-a0-v1 --sizes=100 --workloads=equal --regimes=fresh --sessions=3 --supplement --alternate-pair-order --max-minutes=3 --deadline-epoch-ms=1794231485885",
+      "startedAt": "2026-11-09T13:26:25.785Z",
+      "exitCode": 0,
+      "signal": null,
+      "killedAtMeasureEnd": false,
+      "endedAt": "2026-11-09T13:28:05.168Z",
+      "elapsedMs": 99383,
+      "exceeded": []
+    },
+    {
+      "id": 2,
+      "base": "task-e9-a0-v1",
+      "cand": "dr-cand-e9-a0",
+      "tag": "fresh-init-three-2",
+      "status": "complete",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=fresh-init-three-2",
+        "--builds=task-e9-a0-v1,dr-cand-e9-a0",
+        "--sizes=100",
+        "--workloads=equal",
+        "--regimes=fresh",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=3",
+        "--deadline-epoch-ms=1794231485885"
+      ],
+      "command": "node scripts/benchmark-task.mjs --tag=fresh-init-three-2 --builds=task-e9-a0-v1,dr-cand-e9-a0 --sizes=100 --workloads=equal --regimes=fresh --sessions=3 --supplement --alternate-pair-order --max-minutes=3 --deadline-epoch-ms=1794231485885",
+      "startedAt": "2026-11-09T13:28:05.310Z",
+      "exitCode": 0,
+      "signal": null,
+      "killedAtMeasureEnd": false,
+      "endedAt": "2026-11-09T13:29:44.264Z",
+      "elapsedMs": 98954,
+      "exceeded": []
+    },
+    {
+      "id": 3,
+      "base": "task-e7-a0-v1",
+      "cand": "dr-cand-e9-a0",
+      "tag": "fresh-init-three-3",
+      "status": "complete",
+      "args": [
+        "scripts/benchmark-task.mjs",
+        "--tag=fresh-init-three-3",
+        "--builds=task-e7-a0-v1,dr-cand-e9-a0",
+        "--sizes=100",
+        "--workloads=equal",
+        "--regimes=fresh",
+        "--sessions=3",
+        "--supplement",
+        "--alternate-pair-order",
+        "--max-minutes=3",
+        "--deadline-epoch-ms=1794231485885"
+      ],
+      "command": "node scripts/benchmark-task.mjs --tag=fresh-init-three-3 --builds=task-e7-a0-v1,dr-cand-e9-a0 --sizes=100 --workloads=equal --regimes=fresh --sessions=3 --supplement --alternate-pair-order --max-minutes=3 --deadline-epoch-ms=1794231485885",
+      "startedAt": "2026-11-09T13:29:44.402Z",
+      "exitCode": 0,
+      "signal": null,
+      "killedAtMeasureEnd": false,
+      "endedAt": "2026-11-09T13:31:25.674Z",
+      "elapsedMs": 101272,
+      "exceeded": []
+    }
+  ],
+  "endedAt": "2026-11-09T13:31:25.824Z"
+}

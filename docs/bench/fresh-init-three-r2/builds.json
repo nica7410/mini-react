@@ -1,0 +1,53 @@
+{
+  "verifiedAt": "2026-11-09T13:36:52.109Z",
+  "assetHashesMatched": true,
+  "builds": {
+    "task-e7-a0-v1": {
+      "engineCommit": "3e9a48c4e1fd57cec0fbf1b189b6f8cfb143df68",
+      "appCommit": "9b523238cdc3545c46a61fa6ba6f2a5220941df1",
+      "engineHash": "b6057cc98bd6591aed4c252419dba955b2628620f0fe089debf4d3d5dc2bff34",
+      "appHash": "5ccff9f3468dc1b8c54c9f4f723db0fe689c0310960c2e76d9a9c4cccd556ec3",
+      "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+      "dependencyHash": "ea8b1a2bcae3a1230d67321ff39dcb4037f0bc176b32684ade4d1cee29724f21",
+      "patches": [],
+      "artifacts": {
+        "assets/task-bench-BOEibV28.js": "4b2c160a6e0aec946955a5c4b36627294ac78c8a54b4a31875b6e652eff68c78",
+        "assets/task-bench-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+        "task-bench.html": "d86196e1153cb0e7cc1a9b29d1b26c80f860ada0e98899c7a5206f8ab90580d4"
+      }
+    },
+    "task-e9-a0-v1": {
+      "engineCommit": "a1b070f0a56fa783926be1d540370080f06edc27",
+      "appCommit": "9b523238cdc3545c46a61fa6ba6f2a5220941df1",
+      "engineHash": "720e144e5b479d940e6267c5129aee75ada6f0fd236bf9d01a474e1b20a12357",
+      "appHash": "5ccff9f3468dc1b8c54c9f4f723db0fe689c0310960c2e76d9a9c4cccd556ec3",
+      "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+      "dependencyHash": "ea8b1a2bcae3a1230d67321ff39dcb4037f0bc176b32684ade4d1cee29724f21",
+      "patches": [],
+      "artifacts": {
+        "assets/task-bench-DY4dc2D8.js": "df41994628b04dd38d07a610d5487db8ad9c2bf56a4f302aae36b9fcc9d0ad3e",
+        "assets/task-bench-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+        "task-bench.html": "55045bb3ce4d4af1bc8efe7e47ee7f25c9f0909fa82d2439a983c058937b0a81"
+      }
+    },
+    "dr-cand-e9-a0": {
+      "engineCommit": "a1b070f0a56fa783926be1d540370080f06edc27",
+      "appCommit": "9b523238cdc3545c46a61fa6ba6f2a5220941df1",
+      "engineHash": "c13ea874a29e7a107d0e91b7b88cb72ca67ca2ee49d2fdf018b8cd2c54621b66",
+      "appHash": "5ccff9f3468dc1b8c54c9f4f723db0fe689c0310960c2e76d9a9c4cccd556ec3",
+      "harnessHash": "3eab1f4b92fbbfae06313bde46eff416293ecd737a41ee614683683f1dda8d55",
+      "dependencyHash": "ea8b1a2bcae3a1230d67321ff39dcb4037f0bc176b32684ade4d1cee29724f21",
+      "patches": [
+        {
+          "file": "research/dirty-restore/candidate.patch",
+          "sha256": "1e0294706638803dc3fe4bc74a8c868a08bcac9ca3a87779e2d0fa8d13329b3e"
+        }
+      ],
+      "artifacts": {
+        "assets/task-bench-CyQoobO3.js": "32bcd9c68ede219d15af9c9c89f1e05b18811d965ce759e43480ba22933b183a",
+        "assets/task-bench-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+        "task-bench.html": "19d1422a4eb50b7ae36db952cf18d803ab9fd8d5dbbe31f257496721250ce2d3"
+      }
+    }
+  }
+}
