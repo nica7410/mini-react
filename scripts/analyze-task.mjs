@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { gunzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { distribution } from '../src/bench/statistics.ts';
 import { initialTaskModel, taskActions, applyTaskAction, visibleTasks } from '../src/bench/task-model.ts';
 
@@ -10,7 +11,9 @@ assert(directory, 'Usage: node scripts/analyze-task.mjs docs/bench/tag');
 const env = JSON.parse(readFileSync(`${directory}/environment.json`)); assert.equal(env.status, 'passed');
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 assert.equal(sha(readFileSync('docs/task-app-comparison-plan.md')), env.planSha256, 'Preregistered comparison plan changed');
-assert.equal(sha(readFileSync('scripts/benchmark-task.mjs')), env.runnerSha256, 'Timing runner differs from recorded source');
+// The runner may change after a run; verify it against the exact runner at the recorded commit instead.
+const runnerAtCommit = () => sha(execFileSync('git', ['show', `${env.runnerCommit}:scripts/benchmark-task.mjs`]));
+assert(sha(readFileSync('scripts/benchmark-task.mjs')) === env.runnerSha256 || runnerAtCommit() === env.runnerSha256, 'Timing runner differs from recorded source');
 assert.equal(sha(readFileSync('src/bench/task-model.ts')), env.builds[0].groups.harness['src/bench/task-model.ts'], 'Audit model differs from frozen harness');
 for (const build of env.builds) {
   const archive = JSON.parse(gunzipSync(readFileSync(`${directory}/${build.tag}.sources.json.gz`)));

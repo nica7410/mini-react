@@ -10,6 +10,8 @@ import { gzipSync } from 'node:zlib';
 import path from 'node:path';
 
 const tag = process.argv[2];
+// This diagnostic is fixed at 10,000 items; it is off unless explicitly allowed (user policy 2026-11-09).
+assert(process.argv.includes('--allow-10000'), '10,000-item diagnostics need explicit --allow-10000');
 assert(tag && /^[a-z0-9-]+$/.test(tag), 'Usage: node scripts/diagnose-noop-tails.mjs unique-tag');
 const cpuProfile = process.argv.includes('--cpu');
 const paths = (process.argv.find(arg => arg.startsWith('--paths='))?.slice(8) ?? 'form-update,reorder').split(',');

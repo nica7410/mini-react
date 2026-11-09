@@ -9,12 +9,18 @@ import os from 'node:os';
 
 const args = new Map(process.argv.slice(2).map(arg => { const [key, value = 'true'] = arg.replace(/^--/, '').split('='); return [key, value]; }));
 const tag = args.get('tag'), tags = (args.get('builds') ?? '').split(','), smoke = args.has('smoke');
-const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000,10000')).split(',').map(Number);
+// 10,000-item runs are stress tests and are off unless explicitly allowed (user policy 2026-11-09).
+const allow10000 = args.has('allow-10000');
+const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000')).split(',').map(Number);
+// Wall-clock cap: checked before each build/condition. On expiry the run stops, keeps raw data, and starts nothing else.
+const maxMinutes = Number(args.get('max-minutes') ?? 60), deadline = Date.now() + maxMinutes * 60000;
 const workloads = (args.get('workloads') ?? 'draft,counter,search,filter,sort,move,crud,dirty,equal').split(',');
 const regimes = (args.get('regimes') ?? 'persistent,fresh').split(',');
 const sessions = Number(args.get('sessions') ?? (smoke ? 1 : 3)), supplement = args.has('supplement');
 assert(tag && [tag, ...tags].every(value => /^[a-z0-9-]+$/.test(value)) && new Set(tags).size === tags.length && tags.length <= 8);
 assert(sizes.every(size => [10, 100, 1000, 10000].includes(size)) && new Set(sizes).size === sizes.length);
+assert(allow10000 || !sizes.includes(10000), '10,000-item runs need explicit --allow-10000');
+assert(Number.isFinite(maxMinutes) && maxMinutes > 0, '--max-minutes must be positive');
 assert(workloads.every(value => ['draft', 'counter', 'search', 'filter', 'sort', 'move', 'crud', 'dirty', 'equal'].includes(value)));
 assert(regimes.every(value => ['persistent', 'fresh'].includes(value)) && Number.isInteger(sessions) && sessions >= 1);
 const output = `docs/bench/${tag}`, temporary = `.validation/task-runs/${tag}`;
@@ -34,7 +40,7 @@ for (const build of builds) {
 mkdirSync(output, { recursive: true }); mkdirSync(temporary, { recursive: true });
 writeFileSync(`${output}/builds.json.gz`, gzipSync(JSON.stringify(archive)));
 for (const build of builds) copyFileSync(`.validation/task-builds/${build.tag}/sources.json.gz`, `${output}/${build.tag}.sources.json.gz`);
-const environment = { startedAt: new Date().toISOString(), status: 'running', smoke, supplement, sessions, sizes, workloads, regimes,
+const environment = { startedAt: new Date().toISOString(), status: 'running', smoke, supplement, sessions, sizes, workloads, regimes, maxMinutes,
   builds, seed: 539365639, runnerCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   runnerSha256: sha(readFileSync('scripts/benchmark-task.mjs')), planSha256: sha(readFileSync('docs/task-app-comparison-plan.md')),
   node: process.version, cpu: os.cpus()[0]?.model, logicalCPUs: os.cpus().length, ramBytes: os.totalmem(),
@@ -74,6 +80,7 @@ try {
         const offset = (condition + session - 1) % builds.length;
         const order = [...builds.slice(offset), ...builds.slice(0, offset)]; if (session % 2 === 0) order.reverse();
         for (const [orderPosition, build] of order.entries()) {
+          if (Date.now() > deadline) throw Object.assign(new Error(`Time cap ${maxMinutes} min reached; stopped without follow-up`), { deadline: true });
           const processInfo = { ...item, build: build.tag, orderPosition, startedAt: new Date().toISOString() }; metadata.processes.push(processInfo);
           const browserServer = await chromium.launchServer({ headless: true, host: '127.0.0.1', timeout: 30000 }); processInfo.pid = browserServer.process().pid;
           let lastInput;
@@ -123,5 +130,5 @@ try {
     }
   }
   environment.status = 'passed'; console.log(`TASK_COMPLETE ${output}`);
-} catch (error) { environment.status = 'failed'; environment.error = String(error); throw error; }
+} catch (error) { environment.status = error.deadline ? 'stopped-deadline' : 'failed'; environment.error = String(error); if (!error.deadline) throw error; console.log(`TASK_STOPPED ${output}`); process.exitCode = 3; }
 finally { environment.endedAt = new Date().toISOString(); writeFileSync(`${output}/environment.json`, JSON.stringify(environment, null, 2)); await new Promise(resolve => server.close(resolve)); }

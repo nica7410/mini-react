@@ -10,7 +10,10 @@ import { distribution } from '../src/bench/statistics.ts';
 
 const args = new Map(process.argv.slice(2).map(arg => { const [key, value = 'true'] = arg.replace(/^--/, '').split('='); return [key, value]; }));
 const smoke = args.has('smoke'), seed = Number(args.get('seed') ?? 539365639);
-const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000,10000')).split(',').map(Number);
+// 10,000-item runs are stress tests and are off unless explicitly allowed (user policy 2026-11-09).
+const allow10000 = args.has('allow-10000');
+const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000')).split(',').map(Number);
+if (!allow10000 && sizes.some(n => n >= 10000)) throw new Error('10,000-item runs need explicit --allow-10000');
 const allScenarios = ['noop', 'one-change', 'prepend', 'delete-middle', 'last-to-front', 'first-to-back', 'reverse', 'adjacent', 'swap-ends', 'shuffle', 'mixed'];
 const scenarios = (args.get('scenarios') ?? allScenarios.join(',')).split(',');
 const payloads = (args.get('payloads') ?? 'light,stateful').split(',');

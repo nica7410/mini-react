@@ -11,7 +11,10 @@ const args = new Map(process.argv.slice(2).map(arg => { const [key, value = 'tru
 const smoke = args.has('smoke'), profiled = args.has('profile');
 const tags = (args.get('builds') ?? '').split(',');
 const tag = args.get('tag'), sessions = Number(args.get('sessions') ?? (smoke || profiled ? 1 : 3));
-const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000,10000')).split(',').map(Number);
+// 10,000-item runs are stress tests and are off unless explicitly allowed (user policy 2026-11-09).
+const allow10000 = args.has('allow-10000');
+const sizes = (args.get('sizes') ?? (smoke ? '10' : '10,100,1000')).split(',').map(Number);
+if (!allow10000 && sizes.includes(10000)) throw new Error('10,000-item runs need explicit --allow-10000');
 const payloads = (args.get('payloads') ?? 'light,stateful').split(',');
 const allPaths = ['same-ref', 'equal-fresh', 'memo-unrelated', 'dirty-controlled', 'reorder', 'form-update'];
 const paths = (args.get('paths') ?? allPaths.join(',')).split(',');
