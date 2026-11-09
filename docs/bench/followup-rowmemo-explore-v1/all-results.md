@@ -1,0 +1,60 @@
+# TaskApp — 세션별 전체 작업 결과
+
+단위 ms. steady-state workload 합계와 fresh 초기화 포함 lifecycle을 구분한다. 상세 action/render/diff/commit/Effect는 summary.csv/JSON에 있다.
+
+| session/regime/workload/size/build/scope | n | median | IQR | p95 |
+|---|---:|---:|---:|---:|
+| 1,persistent,draft,10,task-e7-a0-v1,workload | 60 | 1.600 | 0.525 | 2.405 |
+| 1,persistent,draft,10,task-e8-a0-v1,workload | 60 | 1.700 | 0.500 | 2.505 |
+| 1,persistent,draft,10,task-e8-a2-v1,workload | 60 | 1.100 | 0.400 | 2.300 |
+| 1,persistent,counter,10,task-e8-a0-v1,workload | 60 | 3.100 | 1.400 | 4.800 |
+| 1,persistent,counter,10,task-e8-a2-v1,workload | 60 | 0.950 | 0.250 | 1.505 |
+| 1,persistent,counter,10,task-e7-a0-v1,workload | 60 | 1.500 | 0.500 | 2.225 |
+| 1,persistent,crud,10,task-e8-a2-v1,workload | 60 | 7.100 | 1.650 | 11.115 |
+| 1,persistent,crud,10,task-e7-a0-v1,workload | 60 | 11.600 | 2.275 | 19.510 |
+| 1,persistent,crud,10,task-e8-a0-v1,workload | 60 | 13.150 | 4.375 | 20.215 |
+| 1,persistent,search,10,task-e7-a0-v1,workload | 60 | 1.700 | 0.425 | 2.830 |
+| 1,persistent,search,10,task-e8-a0-v1,workload | 60 | 1.700 | 0.925 | 3.935 |
+| 1,persistent,search,10,task-e8-a2-v1,workload | 60 | 1.500 | 0.700 | 3.145 |
+| 1,persistent,sort,10,task-e8-a0-v1,workload | 60 | 3.100 | 0.700 | 4.530 |
+| 1,persistent,sort,10,task-e8-a2-v1,workload | 60 | 2.250 | 0.400 | 3.415 |
+| 1,persistent,sort,10,task-e7-a0-v1,workload | 60 | 3.300 | 0.925 | 4.625 |
+| 1,persistent,move,10,task-e8-a2-v1,workload | 60 | 1.400 | 0.400 | 2.205 |
+| 1,persistent,move,10,task-e7-a0-v1,workload | 60 | 2.300 | 0.725 | 4.505 |
+| 1,persistent,move,10,task-e8-a0-v1,workload | 60 | 2.700 | 0.875 | 9.590 |
+| 1,persistent,draft,100,task-e7-a0-v1,workload | 60 | 11.900 | 3.025 | 18.400 |
+| 1,persistent,draft,100,task-e8-a0-v1,workload | 60 | 11.700 | 4.275 | 17.580 |
+| 1,persistent,draft,100,task-e8-a2-v1,workload | 60 | 3.600 | 0.700 | 5.205 |
+| 1,persistent,counter,100,task-e8-a0-v1,workload | 60 | 12.450 | 5.525 | 22.755 |
+| 1,persistent,counter,100,task-e8-a2-v1,workload | 60 | 3.300 | 0.800 | 6.535 |
+| 1,persistent,counter,100,task-e7-a0-v1,workload | 60 | 12.000 | 3.800 | 19.880 |
+| 1,persistent,crud,100,task-e8-a2-v1,workload | 60 | 23.650 | 7.125 | 35.355 |
+| 1,persistent,crud,100,task-e7-a0-v1,workload | 60 | 79.400 | 15.375 | 107.130 |
+| 1,persistent,crud,100,task-e8-a0-v1,workload | 60 | 74.450 | 14.700 | 109.195 |
+| 1,persistent,search,100,task-e7-a0-v1,workload | 60 | 11.650 | 4.525 | 19.430 |
+| 1,persistent,search,100,task-e8-a0-v1,workload | 60 | 11.500 | 3.875 | 16.530 |
+| 1,persistent,search,100,task-e8-a2-v1,workload | 60 | 8.000 | 3.875 | 14.615 |
+| 1,persistent,sort,100,task-e8-a0-v1,workload | 60 | 21.650 | 5.200 | 40.460 |
+| 1,persistent,sort,100,task-e8-a2-v1,workload | 60 | 14.200 | 2.500 | 19.015 |
+| 1,persistent,sort,100,task-e7-a0-v1,workload | 60 | 19.900 | 2.850 | 24.900 |
+| 1,persistent,move,100,task-e8-a2-v1,workload | 60 | 4.800 | 1.125 | 9.025 |
+| 1,persistent,move,100,task-e7-a0-v1,workload | 60 | 14.250 | 4.025 | 26.420 |
+| 1,persistent,move,100,task-e8-a0-v1,workload | 60 | 13.300 | 3.175 | 18.985 |
+| 1,persistent,draft,1000,task-e7-a0-v1,workload | 60 | 88.500 | 9.700 | 114.320 |
+| 1,persistent,draft,1000,task-e8-a0-v1,workload | 60 | 90.750 | 11.850 | 115.625 |
+| 1,persistent,draft,1000,task-e8-a2-v1,workload | 60 | 25.450 | 2.300 | 29.105 |
+| 1,persistent,counter,1000,task-e8-a0-v1,workload | 60 | 89.500 | 15.075 | 121.665 |
+| 1,persistent,counter,1000,task-e8-a2-v1,workload | 60 | 31.350 | 11.900 | 55.445 |
+| 1,persistent,counter,1000,task-e7-a0-v1,workload | 60 | 88.900 | 11.800 | 122.030 |
+| 1,persistent,crud,1000,task-e8-a2-v1,workload | 60 | 171.950 | 17.575 | 200.845 |
+| 1,persistent,crud,1000,task-e7-a0-v1,workload | 60 | 841.450 | 458.950 | 1452.725 |
+| 1,persistent,crud,1000,task-e8-a0-v1,workload | 60 | 972.150 | 321.925 | 1383.735 |
+| 1,persistent,search,1000,task-e7-a0-v1,workload | 60 | 138.750 | 36.875 | 176.625 |
+| 1,persistent,search,1000,task-e8-a0-v1,workload | 60 | 130.600 | 30.275 | 174.995 |
+| 1,persistent,search,1000,task-e8-a2-v1,workload | 60 | 87.300 | 39.150 | 123.165 |
+| 1,persistent,sort,1000,task-e8-a0-v1,workload | 60 | 292.900 | 47.075 | 382.125 |
+| 1,persistent,sort,1000,task-e8-a2-v1,workload | 60 | 175.050 | 27.125 | 223.585 |
+| 1,persistent,sort,1000,task-e7-a0-v1,workload | 60 | 300.100 | 36.950 | 375.815 |
+| 1,persistent,move,1000,task-e8-a2-v1,workload | 60 | 49.300 | 7.925 | 67.930 |
+| 1,persistent,move,1000,task-e7-a0-v1,workload | 60 | 160.900 | 23.450 | 186.620 |
+| 1,persistent,move,1000,task-e8-a0-v1,workload | 60 | 173.450 | 40.600 | 223.055 |

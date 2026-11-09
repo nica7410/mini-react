@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "createdAt": "2026-11-09T09:15:42.301Z",
+  "scriptSha256": "3bc63319d5a2ce0ee890ca33f409a9497bb113e44b350a8163164c38f5f5dc73",
+  "environmentSha256": "04cd8d7510cd2f5069f7af656b2413a2c3a51b4d6129cb9999a67bea7e14d683",
+  "summarySha256": "9945f922ea9a36c64afc1eba80fa1b86b2597b1b3d08bebf6e01bf3bf16bfcb8",
+  "pairs": [
+    {
+      "kind": "engine",
+      "label": "9b52323: E7 -> E9",
+      "before": "task-e7-a0-v1",
+      "after": "task-e9-a0-v1"
+    }
+  ],
+  "contrasts": 1503,
+  "decisionConditions": 0,
+  "amortizationPoints": 5670,
+  "note": "Lifecycle trajectories include initialization and warm-up; these correlated points are not an IID sample distribution. Gate failures and low-n tails are retained; final policy needs interpretation and prescribed supplementary sessions."
+}
