@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest';
 import type { VElement, VRoot } from '../../src/core/types';
-import { freezeTree, isImmutableData } from '../../src/core/vdom';
+import { freezeTree } from '../../src/core/vdom';
 import { validateTree } from '../../src/core/validate';
 import { h } from '../../src/runtime/expression';
 import { resolveExpression } from '../../src/runtime/resolve';
@@ -11,34 +11,34 @@ it.each([false, true])('T-N06: mutable descendants are revalidated even when out
   const tree = mutable(); if (frozen) Object.freeze(tree);
   expect(validateTree(tree).ok).toBe(true);
   const attrs = (tree.children[0] as VElement).attrs as Record<string, string>; attrs.onclick = 'unsupported';
-  expect(validateTree(tree).ok).toBe(false); expect(isImmutableData(tree)).toBe(false);
+  expect(validateTree(tree).ok).toBe(false);
 });
 
 it('T-N06: owned freezing descends through a previously shallow-frozen wrapper', () => {
   const tree = mutable(); Object.freeze(tree); freezeTree(tree);
-  expect(isImmutableData(tree)).toBe(true); expect(validateTree(tree).ok).toBe(true);
+  expect(Object.isFrozen(tree.children)).toBe(true); expect(validateTree(tree).ok).toBe(true);
   expect(Object.isFrozen((tree.children[0] as VElement).attrs)).toBe(true);
   expect(() => { ((tree.children[0] as VElement).attrs as Record<string, string>).onclick = 'bad'; }).toThrow();
   expect(validateTree(tree).ok).toBe(true);
 });
 
-it('T-N06: frozen accessors are not immutable certificates and changed values are rejected', () => {
-  const original = mutable().children[0] as VElement; let attrs: Record<string, string> = { title: 'safe' };
-  const node = { ...original, get attrs() { return attrs; } };
+it('T-N06: frozen accessors are never invoked by freezing and changed values are rejected', () => {
+  const original = mutable().children[0] as VElement; let attrs: Record<string, string> = { title: 'safe' }, reads = 0;
+  const node = { ...original, get attrs() { reads++; return attrs; } };
   const tree = freezeTree<VRoot>({ kind: 'root', children: [node] });
-  expect(isImmutableData(tree)).toBe(false); expect(validateTree(tree).ok).toBe(true);
+  expect(reads).toBe(0); expect(Object.isFrozen(attrs)).toBe(false); expect(validateTree(tree).ok).toBe(true);
   attrs = { onclick: 'bad' }; expect(validateTree(tree).ok).toBe(false);
 });
 
-it('T-N06: data with a custom prototype is not certified and functions remain opaque/unfrozen', () => {
-  const attrs = Object.create({ inherited: 'mutable' }) as Record<string, string>; attrs.title = 'safe';
-  expect(isImmutableData(freezeTree(attrs))).toBe(false);
+it('T-N06: inherited data of a custom prototype and functions remain caller-owned and unfrozen', () => {
+  const prototype = { inherited: 'mutable' }, attrs = Object.create(prototype) as Record<string, string>; attrs.title = 'safe';
+  expect(Object.isFrozen(freezeTree(attrs))).toBe(true); expect(Object.isFrozen(prototype)).toBe(false);
   const handler = () => undefined;
   const tree = resolveExpression(h('button', { events: { click: handler } }, 'safe'));
-  expect(isImmutableData(tree)).toBe(true); expect(Object.isFrozen(handler)).toBe(false);
+  expect(Object.isFrozen(tree.children[0])).toBe(true); expect(Object.isFrozen(handler)).toBe(false);
 });
 
-it('T-N07: cached roots do not certify a snapshot radio moved outside its form', () => {
+it('T-N07: per-call validation rejects a snapshot radio moved outside its form', () => {
   const tree = resolveExpression(h('form', null, h('input', { attrs: { type: 'radio', name: 'r' }, form: { mode: 'snapshot', checked: true } })));
   expect(validateTree(tree).ok).toBe(true);
   const radio = (tree.children[0] as VElement).children[0];

@@ -20,7 +20,8 @@ describe('actual TaskApp measurement adapter and oracle', () => {
       if (workload === 'counter') {
         expect(second.actions[0].validation.counter).toBe(6);
         expect(first.actions[0].counts!.primary.rootExecutions).toBe(1);
-        expect(first.actions[0].counts!.primary.taskRowExecutions).toBe(0);
+        // The adapter mounts the default A0 app; A1 row skipping is tested in task-reuse.
+        expect(first.actions[0].counts!.primary.taskRowExecutions).toBe(10);
       }
     } finally { app.dispose(); output.remove(); }
     expect(output.childNodes.length).toBe(0);

@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest';
 import type { VElement, VRoot } from '../../src/core/types';
-import { freezeTree, isImmutableData } from '../../src/core/vdom';
+import { freezeTree } from '../../src/core/vdom';
 import { validateTree } from '../../src/core/validate';
 import { h } from '../../src/runtime/expression';
 import { resolveExpression } from '../../src/runtime/resolve';
@@ -20,8 +20,8 @@ it('T-N06: a Proxy cannot hide inherited mutable children behind its pre-freeze 
   // Inherited data is not engine-owned data to freeze on the caller's behalf.
   expect(Object.isFrozen(inherited.children)).toBe(false);
   ((inherited.children[0] as VElement).attrs as Record<string, string>).onclick = 'unsupported';
+  // No validation result is cached, so the same root is checked again.
   expect(validateTree(tree).ok).toBe(false);
-  expect(isImmutableData(tree)).toBe(false);
 });
 
 it('T-N06: the final child reference installed by a freeze trap must be deeply frozen', () => {
@@ -41,7 +41,7 @@ it('T-N06: the final child reference installed by a freeze trap must be deeply f
   expect(validateTree(tree).ok).toBe(true);
 });
 
-it('T-N06: an interrupted proof leaves the same object eligible for a later complete proof', () => {
+it('T-N06: an interrupted freeze leaves no state behind and a later call freezes the whole value', () => {
   let interrupt = true;
   const value = new Proxy({ nested: { value: 1 } }, {
     ownKeys(object) {
@@ -50,10 +50,10 @@ it('T-N06: an interrupted proof leaves the same object eligible for a later comp
     },
   });
   expect(() => freezeTree(value)).toThrow('proof interrupted');
-  expect(isImmutableData(value)).toBe(false);
+  expect(Object.isFrozen(value.nested)).toBe(false);
   interrupt = false;
   expect(freezeTree(value)).toBe(value);
-  expect(isImmutableData(value)).toBe(true);
+  expect(Object.isFrozen(value)).toBe(true);
   expect(Object.isFrozen(value.nested)).toBe(true);
 });
 
@@ -71,5 +71,5 @@ it('T-N06: cyclic and reentrant proofs reject deliberately instead of overflowin
   expect(() => freezeTree(value)).toThrow('순환 데이터');
   reenter = false;
   expect(freezeTree(value)).toBe(value);
-  expect(isImmutableData(value)).toBe(true);
+  expect(Object.isFrozen(value)).toBe(true);
 });

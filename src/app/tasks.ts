@@ -1,4 +1,5 @@
 import { h, useEffect, useMemo, useState } from '../runtime';
+import type { RenderValue, StateSetter } from '../core/types';
 
 export interface Task { readonly id: string; readonly label: string; readonly done: boolean }
 type Filter = 'all' | 'active' | 'done';
@@ -24,8 +25,38 @@ function TaskSummary(props: { total: number; done: number }) {
   return h('p', { attrs: { 'data-testid': 'task-summary', 'aria-live': 'polite' } }, `전체 ${props.total} · 완료 ${props.done} · 남음 ${props.total - props.done}`);
 }
 
-export function TaskApp() {
-  const [items, setItems] = useState<readonly Task[]>(initialTasks);
+type Items = readonly Task[];
+interface RowActions { rename: (id: string, label: string) => void; toggle: (id: string) => void; remove: (id: string) => void }
+// State setters keep their identity. Functional actions read the latest FIFO
+// candidate, so these callbacks do not capture a particular items array.
+const rowActionsFor = (setItems: StateSetter<Items>): RowActions => ({
+  rename: (id, label) => setItems(previous => previous.map(item => item.id === id ? { ...item, label } : item)),
+  toggle: id => setItems(previous => previous.map(item => item.id === id ? { ...item, done: !item.done } : item)),
+  remove: id => setItems(previous => previous.filter(item => item.id !== id)),
+});
+const taskList = (visible: Items, actions: RowActions) => h('ul', { attrs: { class: 'task-list', 'aria-label': '학습 항목 목록' } },
+  visible.map(item => h(TaskRow, { key: item.id, item, ...actions })));
+type ListStrategy = (visible: Items, setItems: StateSetter<Items>) => RenderValue;
+// A0 (default app): row callbacks and row expressions are rebuilt on every root render.
+const rebuildRows: ListStrategy = (visible, setItems) => taskList(visible, rowActionsFor(setItems));
+// A1 (comparison build only): the list expression and callbacks are memoized in
+// root Hook slots, so draft/counter updates skip TaskRow evaluation. Each strategy
+// always calls the same Hooks in the same order.
+const memoRows: ListStrategy = (visible, setItems) => {
+  const actions = useMemo(() => rowActionsFor(setItems), [setItems]);
+  return useMemo(() => taskList(visible, actions), [visible, actions]);
+};
+
+/**
+ * Final policy: the default TaskApp is A0. A1 is kept as `TaskAppWithRowReuse` for
+ * fixed comparison builds and tests. Its repeated-reuse gain was measured, but
+ * the pre-registered regression gates were exceeded (see docs/task-app-final-policy.md).
+ */
+export function TaskApp() { return renderTaskApp(rebuildRows); }
+export function TaskAppWithRowReuse() { return renderTaskApp(memoRows); }
+
+function renderTaskApp(listStrategy: ListStrategy) {
+  const [items, setItems] = useState<Items>(initialTasks);
   const [nextId, setNextId] = useState(9);
   const [draft, setDraft] = useState(''), [query, setQuery] = useState('');
   const [filter, setFilter] = useState<Filter>('all'), [sort, setSort] = useState<Sort>('manual');
@@ -57,15 +88,7 @@ export function TaskApp() {
     const timer = setTimeout(() => { setSort('manual'); setItems(moveLast); }, 1500);
     return () => clearTimeout(timer);
   }, [delayedMove]);
-  // State setters keep their identity. Functional actions read the latest FIFO
-  // candidate, so these callbacks do not capture a particular items array.
-  const rowActions = useMemo(() => ({
-    rename: (id: string, label: string) => setItems(previous => previous.map(item => item.id === id ? { ...item, label } : item)),
-    toggle: (id: string) => setItems(previous => previous.map(item => item.id === id ? { ...item, done: !item.done } : item)),
-    remove: (id: string) => setItems(previous => previous.filter(item => item.id !== id)),
-  }), [setItems]);
-  const list = useMemo(() => h('ul', { attrs: { class: 'task-list', 'aria-label': '학습 항목 목록' } },
-    visible.map(item => h(TaskRow, { key: item.id, item, ...rowActions }))), [visible, rowActions]);
+  const list = listStrategy(visible, setItems);
   const add = (event: Event) => {
     event.preventDefault(); const label = draft.trim();
     if (!label) { setError('추가할 항목 이름을 입력하세요.'); return; }

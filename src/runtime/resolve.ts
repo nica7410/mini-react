@@ -1,6 +1,6 @@
 import type { ComponentExpr, ElementExpr, EventBinding, RenderValue, StyleValue, VNode, VRoot } from '../core/types';
 import { booleanAttrs, validateTree } from '../core/validate';
-import { freezeTree, identity, unwrap } from '../core/vdom';
+import { freezeBoundaryNode, freezeOwnedNode, identity, unwrap } from '../core/vdom';
 import { normalizeKey } from './expression';
 import { pureComputation } from './hooks';
 
@@ -36,7 +36,9 @@ export function evaluateExpression(value: RenderValue, previous: EvaluationState
     if (reuse && old && value && typeof value === 'object' && old.expression === value) {
       reusedExpressions++; onComponent?.({ path, reused: true }); return old;
     }
-    const record = (vnode: VNode, children: readonly EvaluationRecord[] = [], result?: EvaluationRecord): EvaluationRecord => ({ expression: value, vnode, children, result });
+    // Each new VNode is sealed here, so a reused child is never walked again.
+    const record = (vnode: VNode, children: readonly EvaluationRecord[] = [], result?: EvaluationRecord): EvaluationRecord =>
+      ({ expression: value, vnode: result ? freezeBoundaryNode(vnode, result.vnode) : freezeOwnedNode(vnode), children, result });
     if (Array.isArray(value)) throw new Error('컴포넌트는 하나의 root만 반환해야 합니다.');
     if (value === null || value === undefined || typeof value === 'boolean') {
       return record({ kind: 'comment', identity: identity(), text: '', placeholder: true });
@@ -84,7 +86,7 @@ export function evaluateExpression(value: RenderValue, previous: EvaluationState
     }, children);
   }
   const root = resolveOne(value, previous?.root, 'root');
-  const snapshot = freezeTree<VRoot>({ kind: 'root', children: [root.vnode] });
+  const snapshot = freezeOwnedNode<VRoot>({ kind: 'root', children: [root.vnode] });
   unwrap(validateTree(snapshot));
   return { snapshot, nextState: { root }, componentExecutions, reusedExpressions };
 }
