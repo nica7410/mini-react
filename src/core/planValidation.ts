@@ -1,4 +1,4 @@
-import type { MountHandle, PatchPlan, Result, VElement, VNode, ViewNode } from './types';
+import type { FormPolicy, MountHandle, PatchPlan, Result, VElement, VNode, ViewNode } from './types';
 import { compatible, equalData, fail, ok } from './vdom';
 import { validateTree } from './validate';
 
@@ -30,6 +30,82 @@ function equalHostData(a: VNode, b: VNode): boolean {
 // Patch의 preflight. DOM 쓰기 없이 현재 구조와 명령을 검증한다.
 // 형제 연결은 이중 연결 목록으로 모의 실행해, 재배치마다 배열을 검색/복사하지 않는다.
 export function validatePlan(mount: MountHandle, plan: PatchPlan): Result<PatchPlan> {
+  return validatePlanWith(mount, plan, true);
+}
+/** Research/test hook: the same preflight forced through the general graph path only. */
+export function validatePlanGeneral(mount: MountHandle, plan: PatchPlan): Result<PatchPlan> {
+  return validatePlanWith(mount, plan, false);
+}
+/**
+ * Eligibility for the SYNC_FORM-only walk, nothing more: the target is the committed
+ * snapshot object and every command is a controlled SYNC_FORM. It proves nothing by
+ * itself; every check of the general path still runs in validateSyncFormOnly.
+ */
+export function isSyncFormOnlyPlan(mount: MountHandle, plan: PatchPlan): boolean {
+  if (plan.target !== mount.view.snapshot || plan.operations.length === 0) return false;
+  for (const op of plan.operations) if (op.kind !== 'SYNC_FORM' || op.policy?.mode !== 'controlled') return false;
+  return true;
+}
+const noChildren: readonly VNode[] = Object.freeze([]);
+function viewMatchesVNode(tree: ViewNode): boolean {
+  const children = tree.vnode.kind === 'element' ? tree.vnode.children : noChildren;
+  if (tree.children.length !== children.length) return false;
+  for (let i = 0; i < children.length; i++) if (!equalData(tree.children[i].vnode, children[i])) return false;
+  return true;
+}
+// SYNC_FORM never changes structure, so the simulated graph of the general path equals the
+// current view. One walk over current view, nextView and DOM performs the same checks
+// (duplicate ref, ViewNode/VNode, binding + reverse ref, root, parent, type/tag, child order,
+// registry size, command targets, nextView order/ref/identity/host data incl. form policy)
+// without the per-node graph Map, PlannedNode objects, original Map and visited Set.
+// Still O(N): every node, binding and DOM child is checked on every call. Throws like the general path.
+function validateSyncFormOnly(mount: MountHandle, plan: PatchPlan): void {
+  const rootRef = mount.view.rootRef;
+  const policies = new Map<string, FormPolicy>();
+  for (const op of plan.operations) if (op.kind === 'SYNC_FORM') policies.set(op.node, op.policy);
+  const seen = new Set<string>([rootRef]);
+  const root = mount.nodes.get(rootRef);
+  if (!root || mount.refs.get(root) !== rootRef) throw new Error(`DOM binding 불일치: ${rootRef}`);
+  if (root !== mount.container) throw new Error('root binding이 container와 다릅니다.');
+  if (!equalData(plan.nextView.children.map(n => n.vnode), plan.target.children)) throw new Error('nextView와 target이 다릅니다.');
+  function walk(parent: Node, parentRef: string, current: readonly ViewNode[], next: readonly ViewNode[]): void {
+    let dom = parent.firstChild;
+    for (let i = 0; i < current.length; i++) {
+      const tree = current[i], ref = tree.ref, vnode = tree.vnode;
+      if (seen.has(ref)) throw new Error(`중복 ref: ${ref}`);
+      seen.add(ref);
+      if (!viewMatchesVNode(tree)) throw new Error('ViewNode와 VNode 자식이 다릅니다.');
+      const node = mount.nodes.get(ref);
+      if (!node || mount.refs.get(node) !== ref) throw new Error(`DOM binding 불일치: ${ref}`);
+      if (node.parentNode !== parent) throw new Error(`DOM parent 불일치: ${ref}`);
+      const expectedType = vnode.kind === 'element' ? 1 : vnode.kind === 'text' ? 3 : 8;
+      if (node.nodeType !== expectedType || (vnode.kind === 'element' && (node as Element).localName !== vnode.tag)) throw new Error(`DOM type 불일치: ${ref}`);
+      if (dom !== node) throw new Error(`DOM 자식 구조 변경: ${parentRef}`);
+      const expected = next[i];
+      if (!expected || expected.ref !== ref) throw new Error('계획 실행 결과와 nextView 순서/ref가 다릅니다.');
+      if (!compatible(vnode, expected.vnode)) throw new Error('호환되지 않는 identity를 재사용했습니다.');
+      const policy = policies.get(ref);
+      let host: VNode = vnode;
+      if (policy !== undefined) {
+        if (vnode.kind !== 'element') throw new Error('element 명령의 대상 type이 다릅니다.');
+        host = { ...vnode, form: policy };
+      }
+      if (!equalHostData(host, expected.vnode)) throw new Error('계획의 host 값이 nextView와 다릅니다.');
+      if (!viewMatchesVNode(expected)) throw new Error('nextView의 VNode와 자식 view가 다릅니다.');
+      walk(node, ref, tree.children, expected.children);
+      dom = node.nextSibling;
+    }
+    if (dom !== null) throw new Error(`DOM 자식 구조 변경: ${parentRef}`);
+    if (next.length !== current.length) throw new Error('계획 실행 후 여분의 자식이 남습니다.');
+  }
+  walk(root, rootRef, mount.view.children, plan.nextView.children);
+  if (seen.size !== mount.nodes.size) throw new Error('mount registry에 view 밖의 ref가 있습니다.');
+  for (const ref of policies.keys()) {
+    if (ref === rootRef) throw new Error('container 자체를 수정하는 명령은 허용하지 않습니다.');
+    if (!seen.has(ref)) throw new Error(`없는 ref: ${ref}`);
+  }
+}
+function validatePlanWith(mount: MountHandle, plan: PatchPlan, allowSyncFormPath: boolean): Result<PatchPlan> {
   if (mount.disposed || mount.faulted) return fail('MOUNT_UNAVAILABLE', '해제되었거나 오류 상태인 mount입니다.');
   if (plan.mountId !== mount.id || plan.baseRevision !== mount.revision) return fail('STALE_PLAN', '다른 mount 또는 오래된 revision의 계획입니다.');
   const valid = validateTree(plan.target);
@@ -39,6 +115,7 @@ export function validatePlan(mount: MountHandle, plan: PatchPlan): Result<PatchP
     if (plan.nextView.mountId !== mount.id || plan.nextView.rootRef !== mount.view.rootRef
       || plan.nextView.revision !== mount.revision + (changed ? 1 : 0)
       || !equalData(plan.nextView.snapshot, plan.target)) throw new Error('nextView의 mount/revision/target이 일치하지 않습니다.');
+    if (allowSyncFormPath && isSyncFormOnlyPlan(mount, plan)) { validateSyncFormOnly(mount, plan); return ok(plan); }
     const graph = new Map<string, PlannedNode>();
     const original = new Map<string, VNode>();
     const created = new Set<string>();

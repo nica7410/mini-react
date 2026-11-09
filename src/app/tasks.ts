@@ -1,5 +1,5 @@
-import { h, useEffect, useMemo, useState } from '../runtime';
-import type { RenderValue, StateSetter } from '../core/types';
+import { h, memo, useEffect, useMemo, useState } from '../runtime';
+import type { PureComponent, RenderValue, StateSetter } from '../core/types';
 
 export interface Task { readonly id: string; readonly label: string; readonly done: boolean }
 type Filter = 'all' | 'active' | 'done';
@@ -7,7 +7,8 @@ type Sort = 'manual' | 'name' | 'done';
 const initialTasks = (): Task[] => ['DOM 캡처', 'Diff 이해', 'Patch 적용', 'History 복원', 'Hook 추적', 'FIFO 확인', 'LIS 비교', '한글 입력'].map((label, i) => ({ id: `task-${i + 1}`, label, done: false }));
 const moveLast = (items: readonly Task[]): Task[] => items.length > 1 ? [items.at(-1)!, ...items.slice(0, -1)] : [...items];
 
-function TaskRow(props: { item: Task; rename: (id: string, label: string) => void; toggle: (id: string) => void; remove: (id: string) => void }) {
+type RowProps = { item: Task; rename: (id: string, label: string) => void; toggle: (id: string) => void; remove: (id: string) => void };
+function TaskRow(props: RowProps) {
   const { item } = props;
   return h('li', { attrs: { 'data-task-id': item.id, class: item.done ? 'task-row done' : 'task-row' } },
     h('label', { attrs: { class: 'task-check' } }, h('input', {
@@ -34,10 +35,11 @@ const rowActionsFor = (setItems: StateSetter<Items>): RowActions => ({
   toggle: id => setItems(previous => previous.map(item => item.id === id ? { ...item, done: !item.done } : item)),
   remove: id => setItems(previous => previous.filter(item => item.id !== id)),
 });
-const taskList = (visible: Items, actions: RowActions) => h('ul', { attrs: { class: 'task-list', 'aria-label': '학습 항목 목록' } },
-  visible.map(item => h(TaskRow, { key: item.id, item, ...actions })));
+const MemoTaskRow = memo(TaskRow);
+const taskList = (visible: Items, actions: RowActions, Row: PureComponent<RowProps> = TaskRow) => h('ul', { attrs: { class: 'task-list', 'aria-label': '학습 항목 목록' } },
+  visible.map(item => h(Row, { key: item.id, item, ...actions })));
 type ListStrategy = (visible: Items, setItems: StateSetter<Items>) => RenderValue;
-// A0 (default app): row callbacks and row expressions are rebuilt on every root render.
+// A0 (comparison, `TaskAppA0`): row callbacks and row expressions are rebuilt on every root render.
 const rebuildRows: ListStrategy = (visible, setItems) => taskList(visible, rowActionsFor(setItems));
 // A1 (comparison build only): the list expression and callbacks are memoized in
 // root Hook slots, so draft/counter updates skip TaskRow evaluation. Each strategy
@@ -47,13 +49,23 @@ const memoRows: ListStrategy = (visible, setItems) => {
   return useMemo(() => taskList(visible, actions), [visible, actions]);
 };
 
+// A2 (row reuse experiment): stable callbacks plus memo(TaskRow). The list expression
+// is rebuilt, but a row whose item object and callbacks are unchanged reuses its
+// previous evaluation, so editing one row re-evaluates only that row.
+const memoEachRow: ListStrategy = (visible, setItems) => {
+  const actions = useMemo(() => rowActionsFor(setItems), [setItems]);
+  return taskList(visible, actions, MemoTaskRow);
+};
+
 /**
- * Final policy: the default TaskApp is A0. A1 is kept as `TaskAppWithRowReuse` for
- * fixed comparison builds and tests. Its repeated-reuse gain was measured, but
- * the pre-registered regression gates were exceeded (see docs/task-app-final-policy.md).
+ * Adopted 2026-11-09 (④): the default TaskApp is A2 (stable callbacks + memo(TaskRow)).
+ * A0 stays `TaskAppA0` and A1 stays `TaskAppWithRowReuse` for comparison builds.
+ * Basis and limits: docs/row-memo-adoption.md (earlier A0 policy: docs/task-app-final-policy.md).
  */
-export function TaskApp() { return renderTaskApp(rebuildRows); }
+export function TaskApp() { return renderTaskApp(memoEachRow); }
+export function TaskAppA0() { return renderTaskApp(rebuildRows); }
 export function TaskAppWithRowReuse() { return renderTaskApp(memoRows); }
+export const TaskAppWithRowMemo = TaskApp;
 
 function renderTaskApp(listStrategy: ListStrategy) {
   const [items, setItems] = useState<Items>(initialTasks);
