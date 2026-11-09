@@ -1,0 +1,2052 @@
+{
+  "startedAt": "2026-11-09T11:30:11.680Z",
+  "node": "v24.22.2",
+  "size": 100,
+  "seed": 539365639,
+  "warmup": 10,
+  "samples": 60,
+  "loop": 300,
+  "rounds": 2,
+  "builds": [
+    {
+      "tag": "dr-diag-e9-a0",
+      "engineHash": "9b3d4cf171aee2705c98426fe4bfaf1987411a70b9e1dce2ba3450e897e543bf",
+      "appHash": "5ccff9f3468dc1b8c54c9f4f723db0fe689c0310960c2e76d9a9c4cccd556ec3",
+      "patches": [
+        {
+          "file": "research/dirty-restore/diag-instrumentation.patch",
+          "sha256": "cbeff945c8cc1d80944b1f7794ff667c176386db0549bfdd097ff52760d70df1"
+        }
+      ],
+      "artifacts": {
+        "assets/task-bench-DtZnqFjp.js": "c98646a5f0a971ed3b0b54d14010b548f7cb0e24ef6294630f6be2e257b71d51",
+        "assets/task-bench-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+        "task-bench.html": "aeab0e4c15ba863752568afefaa4c5ad28b6b2ab1ea7235751364ac0206e74e5"
+      }
+    },
+    {
+      "tag": "dr-diag-e9-a2",
+      "engineHash": "9b3d4cf171aee2705c98426fe4bfaf1987411a70b9e1dce2ba3450e897e543bf",
+      "appHash": "aa2d8a1f705cfaa4251fec0e52dbda33fd22883820686deb875dc7d9e3a28fb0",
+      "patches": [
+        {
+          "file": "research/dirty-restore/diag-instrumentation.patch",
+          "sha256": "cbeff945c8cc1d80944b1f7794ff667c176386db0549bfdd097ff52760d70df1"
+        }
+      ],
+      "artifacts": {
+        "assets/task-bench-4t-y8efd.js": "4bf1a210860948b162569a1ce4d0099fd57161797ab4ee3245b1384081bbbee9",
+        "assets/task-bench-hGYJdObu.css": "a89a2c348c2d9aa5a29771803b2668eff84d0f755c60e519efb5980921166371",
+        "task-bench.html": "f334a226d9f38b956ba258f1d7fda9b6de27d7bff7bb6fa4339d547b489abcf8"
+      }
+    }
+  ],
+  "runs": [
+    {
+      "round": 0,
+      "build": "dr-diag-e9-a0",
+      "browser": "151.0.7922.34",
+      "totals": [
+        {
+          "totalCpuMs": 3.300000011920929,
+          "diffMs": 1.2000000029802322,
+          "commitMs": 2,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.2000000029802322,
+          "diffMs": 1.6000000089406967,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7999999970197678,
+          "diffMs": 1,
+          "commitMs": 1.7999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.4000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 4.5,
+          "diffMs": 1.5,
+          "commitMs": 3,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.8999999910593033,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.2999999970197678,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 2.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.2999999970197678,
+          "diffMs": 1.699999988079071,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.5999999940395355,
+          "diffMs": 1.3999999910593033,
+          "commitMs": 2.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.800000011920929,
+          "diffMs": 1.4000000059604645,
+          "commitMs": 2.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.6000000089406967,
+          "diffMs": 1,
+          "commitMs": 1.6000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.2000000029802322,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 2.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.699999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 1.0999999940395355,
+          "commitMs": 1.1000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.800000011920929,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.5,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.800000011920929,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.1000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5,
+          "diffMs": 1,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7999999970197678,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.4000000059604645,
+          "diffMs": 1,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7000000029802322,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.300000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.800000011920929,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.1000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5,
+          "diffMs": 0.5,
+          "commitMs": 2,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        }
+      ],
+      "inflow": {
+        "t": {
+          "diff.validateBase": 24.900000020861626,
+          "diff.validateTarget": 21.50000011920929,
+          "diff.reconcileAndDirtyWalk": 2.9999999403953552,
+          "diff.finish": 0,
+          "vp.preambleValidateTree": 18.799999967217445,
+          "vp.nextView": 0.5999999791383743,
+          "vp.graphBuild": 12.700000032782555,
+          "vp.domCheck": 39.29999998211861,
+          "vp.simulateOps": 0,
+          "vp.compareNextView": 10.300000041723251,
+          "commit.validatePlan": 81.70000000298023,
+          "commit.composition": 0.20000000298023224,
+          "commit.saveSelection": 0.5999999791383743,
+          "commit.hostOps": 0.09999999403953552,
+          "commit.syncForm": 0.9000000059604645,
+          "commit.restoreSelection": 0.20000000298023224,
+          "commit.finish": 0
+        },
+        "n": {
+          "diff.calls": 60,
+          "diff.visitedNodes": 60,
+          "diff.syncDirtyNodes": 62820,
+          "diff.operations": 60,
+          "commit.calls": 60,
+          "vp.calls": 60,
+          "vp.graphEntries": 62880,
+          "vp.originalEntries": 62820,
+          "vp.domChildVisits": 62820,
+          "vp.visitedEntries": 62880,
+          "commit.propertyWrites": 60
+        }
+      },
+      "loops": {
+        "perCall": {
+          "diffMs": 0.7290000000099341,
+          "validatePlanMs": 1.2743333333233993,
+          "validateTreeMs": 0.2970000000298023
+        },
+        "phases": {
+          "diff.validateBase": 90.29999996721745,
+          "diff.validateTarget": 90.39999997615814,
+          "diff.reconcileAndDirtyWalk": 7.000000089406967,
+          "diff.finish": 0.6000000089406967,
+          "vp.preambleValidateTree": 90.70000003278255,
+          "vp.nextView": 0.19999998807907104,
+          "vp.graphBuild": 67.59999993443489,
+          "vp.domCheck": 157.40000009536743,
+          "vp.simulateOps": 0.29999999701976776,
+          "vp.compareNextView": 42.89999993145466
+        },
+        "counts": {
+          "diff.calls": 300,
+          "diff.visitedNodes": 300,
+          "diff.syncDirtyNodes": 314100,
+          "diff.operations": 300,
+          "vp.calls": 300,
+          "vp.graphEntries": 314400,
+          "vp.originalEntries": 314100,
+          "vp.domChildVisits": 314100,
+          "vp.visitedEntries": 314400
+        },
+        "plan": {
+          "operations": [
+            "SYNC_FORM"
+          ],
+          "visitedNodes": 1,
+          "reusedSubtrees": 1
+        },
+        "mountNodes": 1048,
+        "viewNodes": 1047,
+        "rootChildren": 1
+      }
+    },
+    {
+      "round": 0,
+      "build": "dr-diag-e9-a2",
+      "browser": "151.0.7922.34",
+      "totals": [
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.7000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7999999970197678,
+          "diffMs": 1.2999999970197678,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5999999940395355,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.699999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7000000029802322,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.7999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.4000000059604645,
+          "diffMs": 1,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3,
+          "diffMs": 1,
+          "commitMs": 2,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5,
+          "diffMs": 0.8999999910593033,
+          "commitMs": 1.6000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7000000029802322,
+          "diffMs": 1,
+          "commitMs": 1.6000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 1,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.300000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7999999970197678,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.1000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.0999999940395355,
+          "diffMs": 1.0999999940395355,
+          "commitMs": 1.800000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.300000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.4000000059604645,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.699999988079071,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.4000000059604645,
+          "diffMs": 1.0999999940395355,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7999999970197678,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7999999970197678,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7000000029802322,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.800000011920929,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7999999970197678,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7999999970197678,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3,
+          "diffMs": 1,
+          "commitMs": 1.7999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        }
+      ],
+      "inflow": {
+        "t": {
+          "diff.validateBase": 23.19999995827675,
+          "diff.validateTarget": 20.399999991059303,
+          "diff.reconcileAndDirtyWalk": 2.200000047683716,
+          "diff.finish": 0.20000000298023224,
+          "vp.preambleValidateTree": 18.700000002980232,
+          "vp.nextView": 0,
+          "vp.graphBuild": 12.599999979138374,
+          "vp.domCheck": 37.60000002384186,
+          "vp.simulateOps": 0.09999999403953552,
+          "vp.compareNextView": 9.999999970197678,
+          "commit.validatePlan": 79.19999997317791,
+          "commit.composition": 0,
+          "commit.saveSelection": 0.699999988079071,
+          "commit.hostOps": 0,
+          "commit.syncForm": 1.0999999791383743,
+          "commit.restoreSelection": 0.30000002682209015,
+          "commit.finish": 0
+        },
+        "n": {
+          "diff.calls": 60,
+          "diff.visitedNodes": 60,
+          "diff.syncDirtyNodes": 62820,
+          "diff.operations": 60,
+          "commit.calls": 60,
+          "vp.calls": 60,
+          "vp.graphEntries": 62880,
+          "vp.originalEntries": 62820,
+          "vp.domChildVisits": 62820,
+          "vp.visitedEntries": 62880,
+          "commit.propertyWrites": 60
+        }
+      },
+      "loops": {
+        "perCall": {
+          "diffMs": 0.626333333303531,
+          "validatePlanMs": 1.1140000000099342,
+          "validateTreeMs": 0.29833333333333334
+        },
+        "phases": {
+          "diff.validateBase": 89.00000008940697,
+          "diff.validateTarget": 88.49999998509884,
+          "diff.reconcileAndDirtyWalk": 7.600000008940697,
+          "diff.finish": 0.9000000357627869,
+          "vp.preambleValidateTree": 88.39999981224537,
+          "vp.nextView": 0.10000000894069672,
+          "vp.graphBuild": 67.60000017285347,
+          "vp.domCheck": 148.29999993741512,
+          "vp.simulateOps": 0.20000000298023224,
+          "vp.compareNextView": 41.69999994337559
+        },
+        "counts": {
+          "diff.calls": 300,
+          "diff.visitedNodes": 300,
+          "diff.syncDirtyNodes": 314100,
+          "diff.operations": 300,
+          "vp.calls": 300,
+          "vp.graphEntries": 314400,
+          "vp.originalEntries": 314100,
+          "vp.domChildVisits": 314100,
+          "vp.visitedEntries": 314400
+        },
+        "plan": {
+          "operations": [
+            "SYNC_FORM"
+          ],
+          "visitedNodes": 1,
+          "reusedSubtrees": 1
+        },
+        "mountNodes": 1048,
+        "viewNodes": 1047,
+        "rootChildren": 1
+      }
+    },
+    {
+      "round": 1,
+      "build": "dr-diag-e9-a2",
+      "browser": "151.0.7922.34",
+      "totals": [
+        {
+          "totalCpuMs": 2.5,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.7000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7000000029802322,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.9000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5999999940395355,
+          "diffMs": 1,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7000000029802322,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.1000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.0999999940395355,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 2.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7000000029802322,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.9000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.199999988079071,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7999999970197678,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.300000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.9000000059604645,
+          "diffMs": 1,
+          "commitMs": 1.9000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.300000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7000000029802322,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.1000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.8999999910593033,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.300000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.5,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.199999988079071,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.300000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7999999970197678,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.4000000059604645,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.4000000059604645,
+          "diffMs": 0.5999999940395355,
+          "commitMs": 1.7000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        }
+      ],
+      "inflow": {
+        "t": {
+          "diff.validateBase": 21.799999862909317,
+          "diff.validateTarget": 19.70000010728836,
+          "diff.reconcileAndDirtyWalk": 1.5,
+          "diff.finish": 0,
+          "vp.preambleValidateTree": 18.700000047683716,
+          "vp.nextView": 0.29999999701976776,
+          "vp.graphBuild": 12.69999997317791,
+          "vp.domCheck": 38.299999967217445,
+          "vp.simulateOps": 0.20000001788139343,
+          "vp.compareNextView": 9.800000011920929,
+          "commit.validatePlan": 80.1000000089407,
+          "commit.composition": 0.09999999403953552,
+          "commit.saveSelection": 0.7999999970197678,
+          "commit.hostOps": 0.10000000894069672,
+          "commit.syncForm": 1.0000000149011612,
+          "commit.restoreSelection": 0,
+          "commit.finish": 0
+        },
+        "n": {
+          "diff.calls": 60,
+          "diff.visitedNodes": 60,
+          "diff.syncDirtyNodes": 62820,
+          "diff.operations": 60,
+          "commit.calls": 60,
+          "vp.calls": 60,
+          "vp.graphEntries": 62880,
+          "vp.originalEntries": 62820,
+          "vp.domChildVisits": 62820,
+          "vp.visitedEntries": 62880,
+          "commit.propertyWrites": 60
+        }
+      },
+      "loops": {
+        "perCall": {
+          "diffMs": 0.6040000000099341,
+          "validatePlanMs": 1.1033333333333333,
+          "validateTreeMs": 0.29366666664679847
+        },
+        "phases": {
+          "diff.validateBase": 88.9999999254942,
+          "diff.validateTarget": 87.3000001758337,
+          "diff.reconcileAndDirtyWalk": 6.999999910593033,
+          "diff.finish": 0.3999999910593033,
+          "vp.preambleValidateTree": 87.19999985396862,
+          "vp.nextView": 0.10000000894069672,
+          "vp.graphBuild": 63.800000101327896,
+          "vp.domCheck": 148.49999991059303,
+          "vp.simulateOps": 0.20000000298023224,
+          "vp.compareNextView": 42.40000009536743
+        },
+        "counts": {
+          "diff.calls": 300,
+          "diff.visitedNodes": 300,
+          "diff.syncDirtyNodes": 314100,
+          "diff.operations": 300,
+          "vp.calls": 300,
+          "vp.graphEntries": 314400,
+          "vp.originalEntries": 314100,
+          "vp.domChildVisits": 314100,
+          "vp.visitedEntries": 314400
+        },
+        "plan": {
+          "operations": [
+            "SYNC_FORM"
+          ],
+          "visitedNodes": 1,
+          "reusedSubtrees": 1
+        },
+        "mountNodes": 1048,
+        "viewNodes": 1047,
+        "rootChildren": 1
+      }
+    },
+    {
+      "round": 1,
+      "build": "dr-diag-e9-a0",
+      "browser": "151.0.7922.34",
+      "totals": [
+        {
+          "totalCpuMs": 2.7000000029802322,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.8999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7000000029802322,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.7999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.5,
+          "diffMs": 1.1000000089406967,
+          "commitMs": 2.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7000000029802322,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.7999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.8999999910593033,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.800000011920929,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.1000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5,
+          "diffMs": 1,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.300000011920929,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.4000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7999999970197678,
+          "diffMs": 1.2999999970197678,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.300000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 1,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2999999970197678,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.300000011920929,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.9000000059604645,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5,
+          "diffMs": 1,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.699999988079071,
+          "diffMs": 1,
+          "commitMs": 1.699999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.3999999910593033,
+          "diffMs": 0.9000000059604645,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.0999999940395355,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.3999999910593033,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 3.4000000059604645,
+          "diffMs": 1.5,
+          "commitMs": 1.9000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.1000000089406967,
+          "diffMs": 0.6000000089406967,
+          "commitMs": 1.5,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.5999999940395355,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.9000000059604645,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 0.7999999970197678,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.7999999970197678,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.0999999940395355,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.7999999970197678,
+          "diffMs": 1.4000000059604645,
+          "commitMs": 1.2999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.6000000089406967,
+          "diffMs": 0.800000011920929,
+          "commitMs": 1.7999999970197678,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 1.8999999910593033,
+          "diffMs": 0.699999988079071,
+          "commitMs": 1.2000000029802322,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2.2000000029802322,
+          "diffMs": 1,
+          "commitMs": 1.1000000089406967,
+          "renderMs": 0,
+          "effectMs": 0
+        },
+        {
+          "totalCpuMs": 2,
+          "diffMs": 0.7000000029802322,
+          "commitMs": 1.199999988079071,
+          "renderMs": 0,
+          "effectMs": 0
+        }
+      ],
+      "inflow": {
+        "t": {
+          "diff.validateBase": 25.200000017881393,
+          "diff.validateTarget": 20.00000001490116,
+          "diff.reconcileAndDirtyWalk": 3.000000074505806,
+          "diff.finish": 0,
+          "vp.preambleValidateTree": 18.599999994039536,
+          "vp.nextView": 0.09999999403953552,
+          "vp.graphBuild": 11.899999991059303,
+          "vp.domCheck": 39.09999993443489,
+          "vp.simulateOps": 0.19999998807907104,
+          "vp.compareNextView": 9.500000044703484,
+          "commit.validatePlan": 79.69999992847443,
+          "commit.composition": 0,
+          "commit.saveSelection": 0.3999999910593033,
+          "commit.hostOps": 0,
+          "commit.syncForm": 0.7999999970197678,
+          "commit.restoreSelection": 0.5999999940395355,
+          "commit.finish": 0
+        },
+        "n": {
+          "diff.calls": 60,
+          "diff.visitedNodes": 60,
+          "diff.syncDirtyNodes": 62820,
+          "diff.operations": 60,
+          "commit.calls": 60,
+          "vp.calls": 60,
+          "vp.graphEntries": 62880,
+          "vp.originalEntries": 62820,
+          "vp.domChildVisits": 62820,
+          "vp.visitedEntries": 62880,
+          "commit.propertyWrites": 60
+        }
+      },
+      "loops": {
+        "perCall": {
+          "diffMs": 0.5989999999602635,
+          "validatePlanMs": 1.115,
+          "validateTreeMs": 0.28733333334326744
+        },
+        "phases": {
+          "diff.validateBase": 90.80000014603138,
+          "diff.validateTarget": 86.49999994039536,
+          "diff.reconcileAndDirtyWalk": 9.400000050663948,
+          "diff.finish": 0.5,
+          "vp.preambleValidateTree": 88.89999996125698,
+          "vp.nextView": 0.10000000894069672,
+          "vp.graphBuild": 65.09999991953373,
+          "vp.domCheck": 147.30000016093254,
+          "vp.simulateOps": 0.19999998807907104,
+          "vp.compareNextView": 42.499999821186066
+        },
+        "counts": {
+          "diff.calls": 300,
+          "diff.visitedNodes": 300,
+          "diff.syncDirtyNodes": 314100,
+          "diff.operations": 300,
+          "vp.calls": 300,
+          "vp.graphEntries": 314400,
+          "vp.originalEntries": 314100,
+          "vp.domChildVisits": 314100,
+          "vp.visitedEntries": 314400
+        },
+        "plan": {
+          "operations": [
+            "SYNC_FORM"
+          ],
+          "visitedNodes": 1,
+          "reusedSubtrees": 1
+        },
+        "mountNodes": 1048,
+        "viewNodes": 1047,
+        "rootChildren": 1
+      }
+    }
+  ],
+  "status": "passed",
+  "endedAt": "2026-11-09T11:30:19.621Z"
+}

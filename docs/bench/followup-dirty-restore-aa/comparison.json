@@ -1,0 +1,632 @@
+{
+  "directory": "docs/bench/followup-dirty-restore-aa",
+  "before": "dr-aa-e9-a0-x",
+  "after": "dr-aa-e9-a0-y",
+  "kind": "aa",
+  "rows": [
+    {
+      "session": 1,
+      "section": "workload",
+      "order": [
+        "dr-aa-e9-a0-x",
+        "dr-aa-e9-a0-y"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 2.0999999940395355,
+        "q1": 2,
+        "q3": 2.2999999970197678,
+        "iqr": 0.29999999701976776,
+        "p95": 2.7000000029802322,
+        "min": 1.7999999970197678,
+        "max": 3.2000000029802322
+      },
+      "after": {
+        "n": 180,
+        "median": 2.0999999940395355,
+        "q1": 2,
+        "q3": 2.2999999970197678,
+        "iqr": 0.29999999701976776,
+        "p95": 2.804999996721743,
+        "min": 1.7999999970197678,
+        "max": 5.4000000059604645
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0.1049999937415107,
+          "deltaPct": 3.8888886528004734,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 1,
+      "section": "diffMs",
+      "order": [
+        "dr-aa-e9-a0-x",
+        "dr-aa-e9-a0-y"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.9000000059604645,
+        "iqr": 0.20000000298023224,
+        "p95": 1.0999999947845935,
+        "min": 0.5999999940395355,
+        "max": 1.300000011920929
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.9000000059604645,
+        "iqr": 0.20000000298023224,
+        "p95": 1.199999988079071,
+        "min": 0.5999999940395355,
+        "max": 3
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0.09999999329447751,
+          "deltaPct": 9.090908524418667,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 1,
+      "section": "commitMs",
+      "order": [
+        "dr-aa-e9-a0-x",
+        "dr-aa-e9-a0-y"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 1.2000000029802322,
+        "q1": 1.1000000089406967,
+        "q3": 1.3999999910593033,
+        "iqr": 0.29999998211860657,
+        "p95": 1.7000000029802322,
+        "min": 1,
+        "max": 2.4000000059604645
+      },
+      "after": {
+        "n": 180,
+        "median": 1.2000000029802322,
+        "q1": 1.199999988079071,
+        "q3": 1.3999999910593033,
+        "iqr": 0.20000000298023224,
+        "p95": 1.804999996721743,
+        "min": 1,
+        "max": 2.300000011920929
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0.1049999937415107,
+          "deltaPct": 6.176470209261032,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 1,
+      "section": "renderEffectFollowupMs",
+      "order": [
+        "dr-aa-e9-a0-x",
+        "dr-aa-e9-a0-y"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "after": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": null,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 2,
+      "section": "workload",
+      "order": [
+        "dr-aa-e9-a0-y",
+        "dr-aa-e9-a0-x"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 2.0999999940395355,
+        "q1": 2,
+        "q3": 2.2999999970197678,
+        "iqr": 0.29999999701976776,
+        "p95": 2.704999988526104,
+        "min": 1.7000000029802322,
+        "max": 3.7999999970197678
+      },
+      "after": {
+        "n": 180,
+        "median": 2.1000000089406967,
+        "q1": 2,
+        "q3": 2.2999999970197678,
+        "iqr": 0.29999999701976776,
+        "p95": 2.7000000029802322,
+        "min": 1.7999999970197678,
+        "max": 4
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 1.4901161193847656e-8,
+          "deltaPct": 7.095791064829461e-7,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": -0.004999985545871777,
+          "deltaPct": -0.1848423499844878,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": -1.4901161193847656e-8,
+        "medianDropPct": -7.095791064829461e-7,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 2,
+      "section": "diffMs",
+      "order": [
+        "dr-aa-e9-a0-y",
+        "dr-aa-e9-a0-x"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.8999999910593033,
+        "iqr": 0.19999998807907104,
+        "p95": 1,
+        "min": 0.5999999940395355,
+        "max": 1.2999999970197678
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.8999999910593033,
+        "iqr": 0.19999998807907104,
+        "p95": 1,
+        "min": 0.5999999940395355,
+        "max": 2.2999999970197678
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 2,
+      "section": "commitMs",
+      "order": [
+        "dr-aa-e9-a0-y",
+        "dr-aa-e9-a0-x"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 1.2000000029802322,
+        "q1": 1.1749999932944775,
+        "q3": 1.3999999910593033,
+        "iqr": 0.22499999776482582,
+        "p95": 1.7999999970197678,
+        "min": 1,
+        "max": 2.7999999970197678
+      },
+      "after": {
+        "n": 180,
+        "median": 1.2000000029802322,
+        "q1": 1.2000000029802322,
+        "q3": 1.4000000059604645,
+        "iqr": 0.20000000298023224,
+        "p95": 1.7999999970197678,
+        "min": 1,
+        "max": 2.2000000029802322
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 2,
+      "section": "renderEffectFollowupMs",
+      "order": [
+        "dr-aa-e9-a0-y",
+        "dr-aa-e9-a0-x"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "after": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": null,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 3,
+      "section": "workload",
+      "order": [
+        "dr-aa-e9-a0-x",
+        "dr-aa-e9-a0-y"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 2.0999999940395355,
+        "q1": 2,
+        "q3": 2.2999999970197678,
+        "iqr": 0.29999999701976776,
+        "p95": 2.6999999888241293,
+        "min": 1.7999999970197678,
+        "max": 4.799999997019768
+      },
+      "after": {
+        "n": 180,
+        "median": 2.0999999940395355,
+        "q1": 2,
+        "q3": 2.2999999970197678,
+        "iqr": 0.29999999701976776,
+        "p95": 2.7050000026822074,
+        "min": 1.699999988079071,
+        "max": 3.5999999940395355
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0.005000013858078134,
+          "deltaPct": 0.18518569921386105,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 3,
+      "section": "diffMs",
+      "order": [
+        "dr-aa-e9-a0-x",
+        "dr-aa-e9-a0-y"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.9000000059604645,
+        "iqr": 0.20000000298023224,
+        "p95": 1.0999999940395355,
+        "min": 0.5999999940395355,
+        "max": 1.7999999970197678
+      },
+      "after": {
+        "n": 180,
+        "median": 0.7999999970197678,
+        "q1": 0.7000000029802322,
+        "q3": 0.8999999910593033,
+        "iqr": 0.19999998807907104,
+        "p95": 1,
+        "min": 0.5999999940395355,
+        "max": 1.5999999940395355
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": -0.09999999403953552,
+          "deltaPct": -9.090908598308719,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 3,
+      "section": "commitMs",
+      "order": [
+        "dr-aa-e9-a0-x",
+        "dr-aa-e9-a0-y"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 1.2000000029802322,
+        "q1": 1.1000000089406967,
+        "q3": 1.3999999910593033,
+        "iqr": 0.29999998211860657,
+        "p95": 1.7000000029802322,
+        "min": 1,
+        "max": 3.1000000089406967
+      },
+      "after": {
+        "n": 180,
+        "median": 1.2000000029802322,
+        "q1": 1.1000000089406967,
+        "q3": 1.3999999910593033,
+        "iqr": 0.29999998211860657,
+        "p95": 1.7050000034272654,
+        "min": 1,
+        "max": 2.5
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": 0,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0.005000000447033193,
+          "deltaPct": 0.29411767283928253,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": 0,
+        "met": false
+      },
+      "validations": 360
+    },
+    {
+      "session": 3,
+      "section": "renderEffectFollowupMs",
+      "order": [
+        "dr-aa-e9-a0-x",
+        "dr-aa-e9-a0-y"
+      ],
+      "n": [
+        180,
+        180
+      ],
+      "before": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "after": {
+        "n": 180,
+        "median": 0,
+        "q1": 0,
+        "q3": 0,
+        "iqr": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0
+      },
+      "gate": {
+        "median": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 0.5,
+          "exceeded": false
+        },
+        "p95": {
+          "deltaMs": 0,
+          "deltaPct": null,
+          "allowanceMs": 1,
+          "exceeded": false
+        }
+      },
+      "goal": {
+        "medianDropMs": 0,
+        "medianDropPct": null,
+        "met": false
+      },
+      "validations": 360
+    }
+  ]
+}
