@@ -141,7 +141,9 @@ export interface TraceEvent {
   readonly nodeRef?: NodeRef; readonly hookIndex?: number;
   readonly detail: Readonly<Record<string, unknown>>;
 }
-export interface TraceSink { readonly detailed?: boolean; emit(event: TraceEvent): void }
+// `enabled: false` means the sink records nothing, so emitters skip building events and detail data.
+// `detailed` asks for VDOM/patch/identity snapshots and is honored only while enabled.
+export interface TraceSink { readonly detailed?: boolean; readonly enabled?: boolean; emit(event: TraceEvent): void }
 export type StateAction<T> = T | ((previous: T) => T);
 export type StateSetter<T> = (action: StateAction<T>) => void;
 export type Deps = readonly unknown[] | undefined;

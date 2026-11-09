@@ -3,7 +3,7 @@ import { createMount, disposeMount } from '../core/mount';
 import { diff } from '../core/reconcile';
 import { applySnapshot, emptyCounters } from '../core/patch';
 import { errorDiagnostic } from '../core/vdom';
-import { emitTrace } from '../observe/trace';
+import { emitTrace, traceActive } from '../observe/trace';
 import { isComputing, pureComputation, renderWithHooks } from './hooks';
 import type { HookFrame } from './hooks';
 import { evaluateExpression } from './resolve';
@@ -59,6 +59,7 @@ export class FunctionComponent<P> {
   get hooks(): readonly HookSlot[] { return this.committedHooks; }
 
   private trace(phase: TraceEvent['phase'], detail: Record<string, unknown>, hookIndex?: number): void {
+    if (!traceActive(this.options.trace)) return;
     emitTrace(this.options.trace, { causeIds: this.host.traceCauses, mountId: this.host.id, commitId: this.host.revision, phase, detail, hookIndex });
   }
   private report(error: unknown): void {
@@ -74,7 +75,7 @@ export class FunctionComponent<P> {
     const causeId = this.host.eventCause ?? `${this.host.id}:update-${sequence}`;
     this.queue.push({ sequence, slot, action, causeId });
     this.blockedOnComposition = false;
-    emitTrace(this.options.trace, { causeIds: [causeId], mountId: this.host.id, phase: 'enqueue', detail: { sequence, slot } });
+    if (traceActive(this.options.trace)) emitTrace(this.options.trace, { causeIds: [causeId], mountId: this.host.id, phase: 'enqueue', detail: { sequence, slot } });
     if (this.mounted) this.requestFlush();
   };
 
@@ -167,12 +168,14 @@ export class FunctionComponent<P> {
         acknowledgeDirty();
         return measure(result);
       }
+      // Trace callbacks exist only while the sink records; otherwise no detail objects or paths are built.
+      const tracing = traceActive(this.options.trace);
       const frame: HookFrame = { previous, candidate, mounting, enqueue: this.enqueue, changedEffects, index: 0,
-        onMemo: (index, reused) => this.trace('memo', { reused }, index) };
-      this.trace('render', { mounting, pending: pending.length });
+        onMemo: tracing ? (index, reused) => this.trace('memo', { reused }, index) : undefined };
+      if (tracing) this.trace('render', { mounting, pending: pending.length });
       const renderStart = clock();
       const expression = renderWithHooks(frame, () => this.render(this.props));
-      const evaluation = evaluateExpression(expression, this.evaluation, this.options.reuseVNode !== false, detail => this.trace('component', detail));
+      const evaluation = evaluateExpression(expression, this.evaluation, this.options.reuseVNode !== false, tracing ? detail => this.trace('component', detail) : undefined);
       renderMs = clock() - renderStart;
       const result = patch(evaluation.snapshot, dirty);
       if (result.status === 'rejected') throw new Error(result.diagnostics.map(d => d.message).join('\n'));

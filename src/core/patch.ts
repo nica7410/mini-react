@@ -3,7 +3,7 @@ import { validatePlan } from './planValidation';
 import { clearEvents, setEvent } from './host/events';
 import { syncForm } from './host/forms';
 import { observeControlledInput } from './host/inputs';
-import { emitTrace } from '../observe/trace';
+import { emitTrace, traceActive, traceDetailed } from '../observe/trace';
 import { compositionConflict, isComposing, restoreSelection, saveSelection } from './host/browserState';
 
 export const emptyCounters = (): CommitCounters => ({
@@ -19,12 +19,12 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
   if (!valid.ok) return { status: 'rejected', diagnostics: valid.diagnostics };
   const conflicts = compositionConflict(mount, plan);
   if (conflicts.length) {
-    emitTrace(mount.trace, { causeIds: mount.traceCauses, mountId: mount.id, phase: 'deferred', detail: { planId: plan.id, reason: 'composition', refs: conflicts } });
+    if (traceActive(mount.trace)) emitTrace(mount.trace, { causeIds: mount.traceCauses, mountId: mount.id, phase: 'deferred', detail: { planId: plan.id, reason: 'composition', refs: conflicts } });
     return { status: 'deferred', reason: 'composition', refs: conflicts };
   }
   const selection = saveSelection(mount);
   const counters = emptyCounters();
-  const oldNodes = mount.trace?.detailed ? new Map(mount.nodes) : null;
+  const oldNodes = traceDetailed(mount.trace) ? new Map(mount.nodes) : null;
   const initialForms: { element: HTMLElement; tree: ViewNode }[] = [];
   const nodeAt = (ref: string): Node => {
     const node = mount.nodes.get(ref);
@@ -92,7 +92,7 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
     const identity = oldNodes ? [...mount.nodes].filter(([ref]) => ref !== mount.view.rootRef).map(([ref, node]) => ({
       ref, reused: oldNodes.get(ref) === node, kind: node.nodeType, tag: node.nodeType === 1 ? (node as Element).localName : null,
     })) : undefined;
-    emitTrace(mount.trace, { causeIds: mount.traceCauses, mountId: mount.id, commitId: mount.revision, phase: 'patch', detail: { planId: plan.id, status, ...counters, ...(identity ? { identity } : {}) } });
+    if (traceActive(mount.trace)) emitTrace(mount.trace, { causeIds: mount.traceCauses, mountId: mount.id, commitId: mount.revision, phase: 'patch', detail: { planId: plan.id, status, ...counters, ...(identity ? { identity } : {}) } });
     return { status, revision: mount.revision, counters };
   } catch (error) {
     mount.faulted = true;
@@ -102,10 +102,10 @@ export function commit(mount: MountHandle, plan: PatchPlan): CommitResult {
 
 export function applySnapshot(mount: MountHandle, plan: Result<PatchPlan>): CommitResult {
   if (!plan.ok) return { status: 'rejected', diagnostics: plan.diagnostics };
-  emitTrace(mount.trace, { causeIds: mount.traceCauses, mountId: mount.id, phase: 'diff', detail: {
+  if (traceActive(mount.trace)) emitTrace(mount.trace, { causeIds: mount.traceCauses, mountId: mount.id, phase: 'diff', detail: {
     planId: plan.value.id, operations: plan.value.operations.length, reconciliations: plan.value.reconciliations,
     visitedNodes: plan.value.visitedNodes, reusedSubtrees: plan.value.reusedSubtrees,
-    ...(mount.trace?.detailed ? { before: mount.view.children, after: plan.value.nextView.children, patches: plan.value.operations } : {}),
+    ...(traceDetailed(mount.trace) ? { before: mount.view.children, after: plan.value.nextView.children, patches: plan.value.operations } : {}),
   } });
   return commit(mount, plan.value);
 }

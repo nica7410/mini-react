@@ -26,8 +26,9 @@ export function traceData(value: unknown, ancestors = new Set<object>()): any {
 }
 
 export class TraceRecorder implements TraceSink {
-  readonly detailed = true;
   enabled = true;
+  // Detailed snapshots only while recording; when off, emitters build no Map/array/detail.
+  get detailed(): boolean { return this.enabled; }
   readonly runs: TraceRun[] = [];
   private pending = new Map<string, { events: TraceEvent[]; omitted: number }>();
   private current = new Map<string, TraceRun>();

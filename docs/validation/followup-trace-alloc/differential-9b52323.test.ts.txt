@@ -1,0 +1,71 @@
+import { expect, it } from 'vitest';
+import { evaluateExpression as newEval } from '../../src/runtime/resolve';
+import { evaluateExpression as oldEval } from '../../srcold.tmp/src/runtime/resolve';
+import { validateTree as newValidate } from '../../src/core/validate';
+import { validateTree as oldValidate } from '../../srcold.tmp/src/core/validate';
+import { h as newH } from '../../src/runtime/expression';
+import { diff as newDiff } from '../../src/core/reconcile';
+import { diff as oldDiff } from '../../srcold.tmp/src/core/reconcile';
+import { createMount as newMount } from '../../src/core/mount';
+import { createMount as oldMount } from '../../srcold.tmp/src/core/mount';
+import { applySnapshot as newApply } from '../../src/core/patch';
+import { applySnapshot as oldApply } from '../../srcold.tmp/src/core/patch';
+const h = newH;
+function rng(seed: number) { let s = seed >>> 0 || 1; return () => { s ^= s << 13; s ^= s >>> 17; s ^= s << 5; return (s >>> 0) / 4294967296; }; }
+const strip = (v: unknown): unknown => JSON.parse(JSON.stringify(v, (k, x) => typeof x === 'function' ? `fn:${x.name}` : x));
+function Row(p: { label: string; n: number }) { return h('li', { attrs: { title: p.label } }, p.label, p.n % 2 ? h('b', null, 'x') : null); }
+function tree(r: () => number, depth: number): any {
+  const n = Math.floor(r() * 5);
+  const keyedAll = r() < .5;
+  const kids = Array.from({ length: n }, (_, i) => {
+    const t = r();
+    const key = keyedAll ? `k${Math.floor(r() * 6)}` : r() < .3 ? `k${i}` : undefined;
+    if (t < .2) return `t${i}`;
+    if (t < .3) return r() < .5 ? null : [`a${i}`, [h('i', { key }, 'n')]];
+    if (t < .45) return h(Row, { key, label: `L${i}`, n: i });
+    const tags = ['div', 'span', 'p', 'input', 'select', 'option', 'form', 'textarea', 'bogus', 'img'];
+    const tag = tags[Math.floor(r() * tags.length)];
+    const attrs: any = r() < .5 ? { title: 'x', ...(r() < .1 ? { onclick: 'y' } : {}), ...(tag === 'input' && r() < .5 ? { type: r() < .5 ? 'radio' : 'checkbox', name: 'g' } : {}) } : undefined;
+    const form = ['input', 'select', 'textarea'].includes(tag) && r() < .7 ? (r() < .5 ? { mode: 'controlled', value: 'v', checked: r() < .5, ...(tag === 'select' ? { selectedIndices: [0] } : {}) } : { mode: 'uncontrolled', defaultValue: 'd' }) : undefined;
+    return h(tag, { key, attrs, form, style: r() < .2 ? { color: r() < .8 ? 'red' : 'expression(1)' } : undefined, events: r() < .3 ? { click: () => undefined } : undefined },
+      ...(depth > 0 && !['input', 'img'].includes(tag) ? [tree(r, depth - 1)] : []));
+  });
+  return h('div', null, ...kids);
+}
+const run = (fn: () => any) => { try { return { ok: true, v: fn() }; } catch (e) { return { ok: false, e: String(e) }; } };
+it('differential: resolve/validate/diff/patch equal to 9b52323', () => {
+  let compared = 0, invalid = 0;
+  for (let seed = 1; seed <= 1500; seed++) {
+    const r = rng(seed), a = tree(r, 3), b = r() < .5 ? a : tree(rng(seed + 99991), 3);
+    for (const reuse of [true, false]) {
+      const n1 = run(() => newEval(a, null, reuse)), o1 = run(() => oldEval(a, null, reuse));
+      expect(n1.ok).toBe(o1.ok); if (!n1.ok) { expect(n1.e).toBe(o1.e); invalid++; continue; }
+      expect(strip(n1.v.snapshot)).toEqual(strip(o1.v.snapshot));
+      const nt: unknown[] = [], ot: unknown[] = [];
+      run(() => newEval(b, n1.v.nextState, reuse, d => nt.push(strip(d)))); run(() => oldEval(b, o1.v.nextState, reuse, d => ot.push(strip(d))));
+      expect(nt).toEqual(ot);
+      const n2 = run(() => newEval(b, n1.v.nextState, reuse)), o2 = run(() => oldEval(b, o1.v.nextState, reuse));
+      expect(n2.ok).toBe(o2.ok); if (!n2.ok) { expect(n2.e).toBe(o2.e); continue; }
+      expect(strip(n2.v.snapshot)).toEqual(strip(o2.v.snapshot));
+      expect([n2.v.componentExecutions, n2.v.reusedExpressions]).toEqual([o2.v.componentExecutions, o2.v.reusedExpressions]);
+      const nm = newMount(document.createElement('div')), om = oldMount(document.createElement('div'));
+      newApply(nm, newDiff(nm.view, n1.v.snapshot)); oldApply(om, oldDiff(om.view, o1.v.snapshot));
+      const np = newDiff(nm.view, n2.v.snapshot), op = oldDiff(om.view, o2.v.snapshot);
+      expect(strip(np.ok ? np.value.operations : np)).toEqual(strip(op.ok ? op.value.operations : op));
+      const nr = newApply(nm, np), or = oldApply(om, op);
+      expect(strip(nr)).toEqual(strip(or)); expect(nm.container.innerHTML).toBe(om.container.innerHTML);
+      compared++;
+    }
+  }
+  // Raw invalid trees bypassing h()/resolve: same first problem and path.
+  for (let seed = 1; seed <= 1500; seed++) {
+    const r = rng(seed * 7);
+    const snap = strip(run(() => newEval(tree(r, 3), null, false)).v?.snapshot ?? { kind: 'root', children: [] }) as any;
+    const mutate = (nodes: any[]) => { for (const node of nodes) { if (node.kind !== 'element') continue; if (r() < .15) node.attrs.onload = 'x'; if (r() < .1) node.identity.key = 'dup'; if (r() < .05) node.tag = 'blink'; if (r() < .05 && node.form) node.form.mode = 'weird'; mutate(node.children); } };
+    mutate(snap.children);
+    const n = newValidate(snap), o = oldValidate(snap);
+    expect(n).toEqual(o); if (!n.ok) invalid++;
+  }
+  console.log(`DIFF compared=${compared} invalid=${invalid}`);
+  expect(compared).toBeGreaterThan(1000); expect(invalid).toBeGreaterThan(100);
+}, 300000);
