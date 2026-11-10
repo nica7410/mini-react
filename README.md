@@ -13,6 +13,8 @@ Vanilla TypeScript로 만든 학습용 Mini React입니다. DOM 편집기와 루
 
 2026-11-10에는 ④ 채택 뒤의 기본 경로에서 정확성 결함 두 가지를 재현해 수정했습니다(`ab5a9b8`): `null` 자리가 `memo()` 컴포넌트로 바뀔 때의 예외, 그리고 최종 상태는 유효하지만 뒤 명령이 가린 금지 Patch 명령(예: `SET_ATTR onclick` → `REMOVE_ATTR onclick`, 위조 `SYNC_FORM` 뒤의 정상 `SYNC_FORM`)을 사전 검증이 수락하던 문제입니다. 이어서 Keyed 형제의 앞뒤 일치 구간을 분리하는 planner 후보를 설계해 기존 planner와 같은 계획(이동 대상·DOM identity·명령 순서·IME 보류 포함)을 낸다는 것을 차등 검증·독립 모델·변이 4개로 확인했습니다. 목표 입력에서 planner의 Map 연산이 없어지고 planner 단독 시간 median이 줄었지만, 실제 TaskApp 전체 작업 시간에서는 이득을 보이지 못했고 `crud/100` 3세션 중 2세션이 경고 폭을 넘었습니다. 그래서 후보는 **기본값으로 채택하지 않고 연구용으로 보존**했습니다(`research/keyed-boundaries/`). 현재 기본 소스는 typecheck·단위/통합 407개·build·Chromium+Firefox 35개(1회)를 통과했습니다. [보고서](docs/followup-keyed-boundaries.md)
 
+같은 날 후속으로, 위 Keyed 후보가 보류된 원인을 `diff()` 시간 분해로 확인했습니다. planner는 전체 Diff의 약 4%뿐이고 약 85%가 두 번의 `validateTree`였습니다. 그래서 검증의 속성·이벤트 이름 정규식을 같은 판정을 내는 code unit 순회로 바꾼 후보(V1)를 만들어, 측정 전에 고정한 기준으로 같은 페이지 쌍 비교를 했습니다. 전체 `diff()`가 세 조건 모두 약 19~20% 줄어 **V1을 기본 소스에 채택**했습니다(`89dbc56`). 매 호출 전체 검증·결과 미보관 정책과 오류 메시지·경로는 그대로입니다. Keyed 후보는 V1 적용 뒤 다시 쟀을 때도 1~3% 감소에 그쳐 보류로 남았습니다. V1 적용 소스는 typecheck·단위/통합 417개·build·Chromium+Firefox 35개(1회)를 통과했습니다. [보고서](docs/followup-validate-names.md)
+
 이전 no-op 기능 소스의 자동 검증은 **184개 단위·통합 + Chromium 20개 + Firefox 11개**, 브라우저 전체 3회 연속 통과입니다. 최초 M8의 측정 51,480개와 후속 no-op의 3세션·측정 23,760개는 각각 당시 코드의 결과로 보존합니다. 실제 Windows 한글 IME는 이전 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). [역사적 후속 검증](docs/browser-noop-followup.md), [성능 결과](docs/benchmark-results.md), [인수 상태](docs/m8-acceptance.md)를 참고하세요. 팀 활동과 원격 CI 실행은 미확인입니다.
 
 ## 실행

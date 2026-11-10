@@ -37,6 +37,8 @@ E4 후보는 인증 보관 상한과 한도 이후의 완전한 검사를 확인
 
 2026-11-10 추가(기존 ID의 근거를 넓힌 것이며 새 기능 ID는 없다): T-M05에 [placeholder↔memo 전환](../tests/integration/memo-placeholder.test.ts), T-E01에 [명령 허용성 계약](../tests/integration/plan-command-contract.test.ts)(가려진 금지 명령을 첫 host 쓰기 전에 거절), T-K01~K05·T-L01~L04에 [planner 차등·독립 모델](../tests/unit/keyed-boundaries.test.ts)·[작업량](../tests/unit/keyed-boundary-counts.test.ts)·[전체 Diff 차등과 anchor](../tests/integration/keyed-boundaries.test.ts), T-B04/T-K03에 [이동 대상에 따른 IME 커밋/보류](../tests/browser/browser-state.spec.ts). Keyed 테스트는 기본 planner와 연구용 후보(`research/keyed-boundaries/`)를 함께 검사한다.
 
+2026-11-10 후속 추가(새 기능 ID 없음): T-V05·T-N08에 [검증 이름 검사 동등성](../tests/unit/validate-names.test.ts). 속성·이벤트 이름 판정과 `validateTree` 결과(메시지·경로 포함)를 `8ae389e` 사본과 비교하고, 수락 뒤 바뀐 이름을 다음 호출이 다시 판정하는지 확인한다.
+
 ## 기능 ID
 
 | 기능 ID | 실제 구현 | 검증/근거 |

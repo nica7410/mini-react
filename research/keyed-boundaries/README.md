@@ -16,3 +16,5 @@
 - 다음에 이어갈 한 지점: 한 페이지 안에서 같은 mount·같은 target에 두 planner의 `diff()`를 교대로 실행해 프로세스 단위 변동을 없앤 비교를 한 번 한다. 그 결과로 채택 여부를 다시 판정한다.
 
 후속 동일 페이지 비교를 완료했다. 전체 계획은 일치했지만 Diff 이득이 사전 기준만큼 반복되지 않아 C1 채택은 **보류**다. [판정과 분석](../../docs/followup-keyed-paired-diff.md) · [원자료와 실행 환경](../../docs/bench/keyed-paired-diff-20261110-7783ae5/)
+
+검증 이름 검사 V1을 기본 소스에 적용한 뒤(`89dbc56`) 표본을 4배로 늘려 한 번 더 쟀다. 9개 라운드 중앙값이 모두 감소 방향이었지만 전체 Diff의 1.0~2.9%(5~15 µs)로 기준 크기 20 µs에 못 미쳐 **보류**가 유지됐다. planner가 전체 Diff에서 차지하는 비중이 작아 planner만으로는 뚜렷한 개선이 될 수 없다는 것이 결론이다. [보고서](../../docs/followup-validate-names.md) · [원자료](../../docs/bench/paired-diff-planner-20261110-89dbc56/)

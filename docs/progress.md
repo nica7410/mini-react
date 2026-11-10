@@ -28,6 +28,10 @@
 | S2 Keyed 구간 분할 후보 | 구현·검증, `e382bd7` | B0와 같은 계획: 논증, B0 차등, 독립 모델, 생성 2,000쌍(seed 20261110), 변이 4개 검출, IME 사례(jsdom, Chromium·Firefox 합성 이벤트) |
 | S3 측정·판정 | **연구용 보존(B)**, `e547ff8` | planner Map 연산 0·단독 시간 median 21/21 감소. TaskApp 전체 시간 이득 미입증, `crud/100` 2/3 세션 경고 초과·A/A 폭 밖. 기본 planner는 B0 유지 |
 | 검증 | 완료 | 최종 소스: typecheck·407/407·build·Chromium+Firefox 35/35(1회). 독립 검토 확정 결함 없음 |
+| 검증 보완 | 수정, `8ae389e` | 정책이 없는 `SYNC_FORM`이 뒤의 정상 정책에 가려지던 사전 검증 빈틈 수정. 관련 4개 파일 102/102, typecheck |
+| 같은 페이지 전체 Diff 비교 | C1 **보류**, `bdf7a51` | 같은 페이지·같은 입력의 B0/C1 `diff()` 교대 비교. 감소 폭이 사전 기준에 못 미침. [기록](followup-keyed-paired-diff.md) |
+| 검증 이름 검사 V1 | **채택**, `89dbc56` | `diff()`의 약 85%가 `validateTree`임을 확인. 이름 정규식을 code unit 순회로 교체(판정·메시지·경로·E1 정책 동일). 쌍 비교 A/B/C −19.2%/−20.2%/−20.0%, 3라운드·두 순서 전부 사전 기준 통과. typecheck·417/417·build·Chromium+Firefox 35/35(1회) |
+| C1 재측정 (V1 적용 뒤) | **보류** | 표본 4배. 9개 라운드 중앙값 모두 감소 방향이나 −1.0~−2.9%로 기준 크기 20 µs 미만. 기본 planner는 B0 유지 |
 
 [보고서](followup-keyed-boundaries.md) · [측정 전 계획](validation/followup-keyed-boundaries/plan.md) · [검증 기록](validation/followup-keyed-boundaries/validation.json). 10,000개 측정, 실제 한글 IME, 원격 CI는 이번에 실행·확인하지 않았다.
 
@@ -91,3 +95,5 @@
 | 0d1cfea | M6·M8 | 전체 3세션 raw·통계·그래프·해석 인수. 624 counts / 10,140 warm-up / 51,480 timing, 4,368 구간 통계 일치 |
 
 전체 benchmark 원본과 필수 구현·검증을 대조해 M8 기술 인수를 충족했다. [최종 감사](validation/m8.json)를 확인한다. 팀 합의·다른 후보·팀원 설명/연습/실제 발표·원격 CI 실행은 완료로 표시하지 않았다. 최종 인수 문서 커밋은 이 기록 이후의 `git log`에서 확인할 수 있다. 모든 작업은 phase1의 로컬 커밋이며 push·PR·원격 배포는 하지 않았다.
+
+2026-11-10 후속의 현재 기본 소스는 `89dbc56`이다(위 `ab5a9b8`에 `8ae389e` 검증 보완과 검증 이름 검사 V1을 더한 것). [V1 채택과 C1 재판정 보고서](followup-validate-names.md) · [측정 전 계획](validation/followup-validate-names/plan.md) · [검증 기록](validation/followup-validate-names/validation.json)

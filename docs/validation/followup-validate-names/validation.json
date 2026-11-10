@@ -1,0 +1,194 @@
+{
+  "recordedAt": "2026-11-10T11:34:16.159Z",
+  "startHead": "bdf7a5132aa664acb53a97a1ae53217df4b45837",
+  "commits": {
+    "planCandidateHarness": "32cb65927e13f58881e0060f07444ef076a313ca",
+    "v1Adopted": "89dbc5626c5fdb088e8c469c2f95bee925639841"
+  },
+  "decision": {
+    "V1": "adopted as the default validation (src/core/validate.ts)",
+    "C1": "on hold; default planner stays B0"
+  },
+  "policyUnchanged": "E1: validateTree walks the whole root on every call; no result, name or verdict is kept between calls.",
+  "blobs": {
+    "src/core/validate.ts": "22fc0c19c91d2853f6b9fbcf6b842b95e8eefeb8",
+    "tests/fixtures/validate-baseline.ts": "a4a2e85022f7acfcb4b67f3d7e4b56b665b2065c",
+    "baseline 8ae389e:src/core/validate.ts": "6744d6f5a818105f6deff3881f35d0aa12956bda",
+    "src/core/keyed.ts": "f28a1419883bd6cf86d76f6cfd69561deaa6b8b2"
+  },
+  "verification": [
+    {
+      "source": "32cb659 (candidate file, default source = B0)",
+      "typecheck": "pass",
+      "equivalenceTest": "16/16 (default and candidate, 8 each)",
+      "mutants": "4/4 killed on the candidate file",
+      "chromiumPreflight": "pass (validate variant)"
+    },
+    {
+      "source": "89dbc56 (V1 adopted)",
+      "typecheck": "pass",
+      "unitIntegration": "417/417",
+      "build": "pass",
+      "browser": "Chromium+Firefox 35/35, one run",
+      "mutants": "4/4 killed on the default source",
+      "chromiumPreflight": "pass (planner variant)"
+    },
+    {
+      "source": "final tree",
+      "note": "git diff 89dbc56 -- src tests scripts research is empty; later changes are documents and the Experiment P raw data."
+    }
+  ],
+  "generatedChecks": {
+    "seed": 20261110,
+    "codeUnits": 65536,
+    "attributeShapes": 8,
+    "eventShapes": 6,
+    "generatedNames": 30000,
+    "generatedTrees": 2000,
+    "failures": 0
+  },
+  "experiments": {
+    "V": {
+      "tag": "paired-diff-validate-20261110-32cb659",
+      "runnerCommit": "32cb65927e13f58881e0060f07444ef076a313ca",
+      "status": "completed",
+      "startedAt": "2026-11-10T08:20:36.487Z",
+      "elapsedSeconds": 80.196,
+      "measuredPairs": 2880,
+      "warmupPairs": 120,
+      "chromium": "151.0.7922.34",
+      "verdict": "adopt",
+      "aaReferenceUs": 25,
+      "conditions": {
+        "A": {
+          "b0MedianUs": 650,
+          "pairedMedianUs": -125,
+          "relative": -19.2,
+          "roundMediansUs": [
+            -130,
+            -135,
+            -120
+          ],
+          "orderMediansUs": [
+            -150,
+            -105
+          ],
+          "thresholdUs": 25,
+          "baseRule": true,
+          "worseningRounds": 0
+        },
+        "B": {
+          "b0MedianUs": 645,
+          "pairedMedianUs": -130,
+          "relative": -20.2,
+          "roundMediansUs": [
+            -130,
+            -130,
+            -125
+          ],
+          "orderMediansUs": [
+            -150,
+            -110
+          ],
+          "thresholdUs": 25,
+          "baseRule": true,
+          "worseningRounds": 0
+        },
+        "C": {
+          "b0MedianUs": 650,
+          "pairedMedianUs": -130,
+          "relative": -20,
+          "roundMediansUs": [
+            -125,
+            -130,
+            -130
+          ],
+          "orderMediansUs": [
+            -150,
+            -105
+          ],
+          "thresholdUs": 25,
+          "baseRule": true,
+          "worseningRounds": 0
+        }
+      }
+    },
+    "P": {
+      "tag": "paired-diff-planner-20261110-89dbc56",
+      "runnerCommit": "89dbc5626c5fdb088e8c469c2f95bee925639841",
+      "status": "completed",
+      "startedAt": "2026-11-10T08:24:31.357Z",
+      "elapsedSeconds": 70.013,
+      "measuredPairs": 2880,
+      "warmupPairs": 120,
+      "chromium": "151.0.7922.34",
+      "verdict": "hold",
+      "aaReferenceUs": 20,
+      "conditions": {
+        "A": {
+          "b0MedianUs": 525,
+          "pairedMedianUs": -10,
+          "relative": -1.9,
+          "roundMediansUs": [
+            -15,
+            -10,
+            -10
+          ],
+          "orderMediansUs": [
+            -30,
+            5
+          ],
+          "thresholdUs": 20,
+          "baseRule": false,
+          "worseningRounds": 0
+        },
+        "B": {
+          "b0MedianUs": 525,
+          "pairedMedianUs": -15,
+          "relative": -2.9,
+          "roundMediansUs": [
+            -15,
+            -10,
+            -20
+          ],
+          "orderMediansUs": [
+            -35,
+            5
+          ],
+          "thresholdUs": 20,
+          "baseRule": false,
+          "worseningRounds": 0
+        },
+        "C": {
+          "b0MedianUs": 525,
+          "pairedMedianUs": -5,
+          "relative": -1,
+          "roundMediansUs": [
+            -5,
+            -5,
+            -5
+          ],
+          "orderMediansUs": [
+            -25,
+            17.5
+          ],
+          "thresholdUs": 20,
+          "baseRule": false,
+          "worseningRounds": 0
+        }
+      }
+    }
+  },
+  "exploratory": "Node-only attribution and prototype timings were run before the plan was fixed (not used for the decision; numbers in plan.md and the report). No paired Chromium sample was taken before commit 32cb659.",
+  "independentReview": "Read-only review of 89dbc56 by a separate agent: no confirmed defect. Notes: non-string names are unreachable; the analyzer does not compute the reject rule (not applicable: no worsening round); one round median equal to the threshold is not counted as exceeding.",
+  "notVerified": [
+    "whole TaskApp user-action time",
+    "Patch/paint/GC cost",
+    "10 and 1,000 rows",
+    "10,000 rows (not allowed)",
+    "Firefox timing",
+    "real Korean IME",
+    "remote CI",
+    "separate timing of resolve/validatePlan/capture paths"
+  ]
+}
