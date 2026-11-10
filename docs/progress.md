@@ -30,9 +30,11 @@
 | 검증 | 완료 | 최종 소스: typecheck·407/407·build·Chromium+Firefox 35/35(1회). 독립 검토 확정 결함 없음 |
 | 검증 보완 | 수정, `8ae389e` | 정책이 없는 `SYNC_FORM`이 뒤의 정상 정책에 가려지던 사전 검증 빈틈 수정. 관련 4개 파일 102/102, typecheck |
 | 같은 페이지 전체 Diff 비교 | C1 **보류**, `bdf7a51` | 같은 페이지·같은 입력의 B0/C1 `diff()` 교대 비교. 감소 폭이 사전 기준에 못 미침. [기록](followup-keyed-paired-diff.md) |
-| 검증 이름 검사 V1 | **채택**, `89dbc56` | `diff()`의 약 85%가 `validateTree`임을 확인. 이름 정규식을 code unit 순회로 교체(판정·메시지·경로·E1 정책 동일). 쌍 비교 A/B/C −19.2%/−20.2%/−20.0%, 3라운드·두 순서 전부 사전 기준 통과. typecheck·417/417·build·Chromium+Firefox 35/35(1회) |
-| C1 재측정 (V1 적용 뒤) | **보류** | 표본 4배. 9개 라운드 중앙값 모두 감소 방향이나 −1.0~−2.9%로 기준 크기 20 µs 미만. 기본 planner는 B0 유지 |
-| 속성 맵 표현 R1 | **채택**, `2d92347` | null prototype을 유지한 채 V8 fast 속성으로 만드는 builder(`src/core/attrMap.ts`). 완성된 맵의 모습은 동일. 쌍 비교 `diff()` A/B/C −25.7%/−25.0%/−26.9%, 한 행 재렌더링+`diff()` −20.2%, 100행 새 렌더링 악화 없음. typecheck·432/432·build·Chromium+Firefox 35/35(1회) |
+| 검증 이름 검사 V1 | **채택**, `89dbc56` | Node 24의 100행 A2 탐색에서 전체 검증이 큰 비용으로 추정되어 후보 선정(Chromium의 확정 비중 아님). 이름 정규식을 code unit 순회로 교체(판정·메시지·경로·E1 정책 동일). 쌍 비교 A/B/C −19.2%/−20.2%/−20.0%, 3라운드·두 순서 전부 사전 기준 통과. typecheck·417/417·build·Chromium+Firefox 35/35(1회) |
+| C1 재측정 (V1 적용 후·R1 적용 전) | **보류** | 표본 4배. 9개 라운드 중앙값 모두 감소 방향이나 전체 −1.0~−2.9%로 사전 크기·라운드·실행 순서 기준을 충족하지 못함. 기본 planner는 LIS를 지원하는 B0 유지 |
+| 속성 맵 표현 R1 | **채택**, `2d92347` | null prototype 계약을 유지하고 해당 Node 탐색에서 fast properties로 관찰된 생성 방식 적용. 쌍 비교 `diff()` A/B/C −25.7%/−25.0%/−26.9%, 한 행 재렌더링+`diff()` −20.2% 관측. 후보가 셋째 iframe에 고정된 한계가 있으며 100행 새 렌더링은 해당 사전 기준에서 회귀 미관측. typecheck·432/432·build·Chromium+Firefox 35/35(1회) |
+| R1 검토 후 테스트 보강 | 완료, `490c463` | typecheck·433/433·속성 맵 변이 4/4 검출. `2d92347` 뒤 변경은 테스트·문서뿐이며 build·브라우저 suite는 재실행하지 않음 |
+| 후속 성능 연구 가치 검토 | 추가 구현 종료, 문서 해석 정정 | Oracle(GPT-6 Pro) 자문 및 코드 검토. 동결·Patch 복사의 개선 여지는 현재 적용 범위와 검증·실험 비용에 비해 우선순위가 낮음. V1+R1+A2+B0 유지. [검토 기록](followup-attr-maps.md#6-주장-범위와-남은-것) |
 
 [보고서](followup-keyed-boundaries.md) · [측정 전 계획](validation/followup-keyed-boundaries/plan.md) · [검증 기록](validation/followup-keyed-boundaries/validation.json). 10,000개 측정, 실제 한글 IME, 원격 CI는 이번에 실행·확인하지 않았다.
 
@@ -97,6 +99,10 @@
 
 전체 benchmark 원본과 필수 구현·검증을 대조해 M8 기술 인수를 충족했다. [최종 감사](validation/m8.json)를 확인한다. 팀 합의·다른 후보·팀원 설명/연습/실제 발표·원격 CI 실행은 완료로 표시하지 않았다. 최종 인수 문서 커밋은 이 기록 이후의 `git log`에서 확인할 수 있다. 모든 작업은 phase1의 로컬 커밋이며 push·PR·원격 배포는 하지 않았다.
 
-2026-11-10 후속의 현재 기본 소스는 `89dbc56`이다(위 `ab5a9b8`에 `8ae389e` 검증 보완과 검증 이름 검사 V1을 더한 것). [V1 채택과 C1 재판정 보고서](followup-validate-names.md) · [측정 전 계획](validation/followup-validate-names/plan.md) · [검증 기록](validation/followup-validate-names/validation.json)
+2026-11-10 V1 적용 시점의 기본 소스는 `89dbc56`이다(위 `ab5a9b8`에 `8ae389e` 검증 보완과 검증 이름 검사 V1을 더한 것). [V1 채택과 C1 재판정 보고서](followup-validate-names.md) · [측정 전 계획](validation/followup-validate-names/plan.md) · [검증 기록](validation/followup-validate-names/validation.json)
 
 R1 적용 뒤의 현재 기본 소스는 `2d92347`이다. [R1 채택 보고서](followup-attr-maps.md) · [측정 전 계획](validation/followup-attr-maps/plan.md) · [검증 기록](validation/followup-attr-maps/validation.json)
+
+2026-11-10 `490c463` 이후 후속 가치 검토에서 새 VNode 동결의 임시 자료구조 생성, 내부 문자열 attrs 동결 절차, Patch 사전 검증의 반복 복사를 검토했다. 안전하게 좁힐 수 있는 동결 후보는 새 렌더링에 효과가 집중되고 A2의 한 행 갱신에서는 적용 범위가 제한적이다. Patch 복사 후보는 현재 측정 범위 밖이며 해당 앱 입력에서 지배적인 비용이라는 근거가 없다. 현재 목표와 검증·실험 비용을 기준으로 추가 성능 구현은 진행하지 않는다.
+
+이번 변경은 보고서 해석 정정에 한정한다. 기본 V1+R1+A2+B0와 E1 정책, 기존 채택·보류 판정 및 원자료·사전 계획을 보존했다. 새 테스트·빌드·벤치마크는 실행하지 않았으며 팀 확인·원격 CI·실제 한글 IME·10,000개 측정의 미확인·보류 상태도 변경하지 않았다.
