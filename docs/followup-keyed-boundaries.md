@@ -347,3 +347,7 @@ git apply research/keyed-boundaries/candidate.patch
 ```
 
 실패 반례가 생기면 `.validation/keyed-boundaries-failure.json`에 원본·축소본·seed·명령·차이가 저장된다. 이번 회차에서 후보의 실패 반례는 없었다.
+
+## 후속 측정 결과 (2026-11-10)
+
+`8ae389e` 엔진에서 동일 페이지·동일 입력의 전체 `diff()`를 교대로 비교했다. 계획은 일치했지만 대표 조건의 감소 폭이 사전 기준을 여러 라운드에서 넘지 못해 C1 채택은 **보류**다. [판정과 분석](followup-keyed-paired-diff.md) · [원자료와 실행 환경](bench/keyed-paired-diff-20261110-7783ae5/)

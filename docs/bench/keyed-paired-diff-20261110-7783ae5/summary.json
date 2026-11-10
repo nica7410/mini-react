@@ -1,0 +1,1262 @@
+{
+  "status": "completed",
+  "elapsedMs": 21999.4505,
+  "accumulatedBatchMs": 20287.300000071526,
+  "otherLabel": {
+    "AA": "B0-repeat",
+    "A": "C1",
+    "B": "C1",
+    "C": "C1"
+  },
+  "aaReferenceUs": 19.999999552965164,
+  "groups": [
+    {
+      "condition": "A",
+      "round": "all",
+      "first": "all",
+      "n": 180,
+      "B0": {
+        "batchMedianMs": 12.699999988079071,
+        "batchP95Ms": 16.40500000566244,
+        "perCallMedianUs": 634.9999994039536,
+        "perCallP95Us": 820.2500002831221
+      },
+      "other": {
+        "batchMedianMs": 12.5,
+        "batchP95Ms": 15.305000011622903,
+        "perCallMedianUs": 625,
+        "perCallP95Us": 765.2500005811452
+      },
+      "pairedDeltaUs": {
+        "q25": -35.0000012665987,
+        "median": -10.000001639127731,
+        "q75": 6.25000074505806,
+        "negative": 120,
+        "ties": 3,
+        "positive": 57
+      }
+    },
+    {
+      "condition": "A",
+      "round": "all",
+      "first": "B0",
+      "n": 90,
+      "B0": {
+        "batchMedianMs": 12.750000014901161,
+        "batchP95Ms": 16.554999996721744,
+        "perCallMedianUs": 637.5000007450581,
+        "perCallP95Us": 827.7499998360872
+      },
+      "other": {
+        "batchMedianMs": 12.450000002980232,
+        "batchP95Ms": 15.009999999403952,
+        "perCallMedianUs": 622.5000001490116,
+        "perCallP95Us": 750.4999999701976
+      },
+      "pairedDeltaUs": {
+        "q25": -50,
+        "median": -20.000000298023224,
+        "q75": -1.2499995529651642,
+        "negative": 67,
+        "ties": 1,
+        "positive": 22
+      }
+    },
+    {
+      "condition": "A",
+      "round": "all",
+      "first": "C1",
+      "n": 90,
+      "B0": {
+        "batchMedianMs": 12.699999988079071,
+        "batchP95Ms": 15.320000010728835,
+        "perCallMedianUs": 634.9999994039536,
+        "perCallP95Us": 766.0000005364417
+      },
+      "other": {
+        "batchMedianMs": 12.599999994039536,
+        "batchP95Ms": 15.730000002682207,
+        "perCallMedianUs": 629.9999997019768,
+        "perCallP95Us": 786.5000001341103
+      },
+      "pairedDeltaUs": {
+        "q25": -28.749999031424522,
+        "median": -5.0000011920928955,
+        "q75": 28.750000149011612,
+        "negative": 53,
+        "ties": 2,
+        "positive": 35
+      }
+    },
+    {
+      "condition": "A",
+      "round": 1,
+      "first": "all",
+      "n": 60,
+      "B0": {
+        "batchMedianMs": 12.5,
+        "batchP95Ms": 15,
+        "perCallMedianUs": 625,
+        "perCallP95Us": 750
+      },
+      "other": {
+        "batchMedianMs": 12.200000017881393,
+        "batchP95Ms": 14.40999997705221,
+        "perCallMedianUs": 610.0000008940697,
+        "perCallP95Us": 720.4999988526105
+      },
+      "pairedDeltaUs": {
+        "q25": -35.00000089406967,
+        "median": -10.000000149011612,
+        "q75": 4.999998584389687,
+        "negative": 43,
+        "ties": 0,
+        "positive": 17
+      }
+    },
+    {
+      "condition": "A",
+      "round": 1,
+      "first": "B0",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.600000008940697,
+        "batchP95Ms": 15.824999999999996,
+        "perCallMedianUs": 630.0000004470348,
+        "perCallP95Us": 791.2499999999998
+      },
+      "other": {
+        "batchMedianMs": 12.25,
+        "batchP95Ms": 14.304999998211857,
+        "perCallMedianUs": 612.5,
+        "perCallP95Us": 715.2499999105928
+      },
+      "pairedDeltaUs": {
+        "q25": -62.49999925494194,
+        "median": -10.000001639127731,
+        "q75": -4.999998584389687,
+        "negative": 23,
+        "ties": 0,
+        "positive": 7
+      }
+    },
+    {
+      "condition": "A",
+      "round": 1,
+      "first": "C1",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.400000005960464,
+        "batchP95Ms": 13.675000005960463,
+        "perCallMedianUs": 620.0000002980232,
+        "perCallP95Us": 683.7500002980231
+      },
+      "other": {
+        "batchMedianMs": 12.200000017881393,
+        "batchP95Ms": 14.399999976158142,
+        "perCallMedianUs": 610.0000008940697,
+        "perCallP95Us": 719.9999988079071
+      },
+      "pairedDeltaUs": {
+        "q25": -30.000001192092896,
+        "median": -5.0000011920928955,
+        "q75": 13.749999552965164,
+        "negative": 20,
+        "ties": 0,
+        "positive": 10
+      }
+    },
+    {
+      "condition": "A",
+      "round": 2,
+      "first": "all",
+      "n": 60,
+      "B0": {
+        "batchMedianMs": 13.5,
+        "batchP95Ms": 16.899999977648257,
+        "perCallMedianUs": 675,
+        "perCallP95Us": 844.9999988824129
+      },
+      "other": {
+        "batchMedianMs": 13.250000014901161,
+        "batchP95Ms": 16.410000005364417,
+        "perCallMedianUs": 662.5000007450581,
+        "perCallP95Us": 820.5000002682209
+      },
+      "pairedDeltaUs": {
+        "q25": -42.500000074505806,
+        "median": -10.000000149011612,
+        "q75": 17.500001192092896,
+        "negative": 36,
+        "ties": 0,
+        "positive": 24
+      }
+    },
+    {
+      "condition": "A",
+      "round": 2,
+      "first": "B0",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 13.599999994039536,
+        "batchP95Ms": 16.764999984204767,
+        "perCallMedianUs": 679.9999997019768,
+        "perCallP95Us": 838.2499992102382
+      },
+      "other": {
+        "batchMedianMs": 13.199999988079071,
+        "batchP95Ms": 15.615000012516973,
+        "perCallMedianUs": 659.9999994039536,
+        "perCallP95Us": 780.7500006258485
+      },
+      "pairedDeltaUs": {
+        "q25": -50,
+        "median": -22.499999403953552,
+        "q75": 8.749999478459358,
+        "negative": 21,
+        "ties": 0,
+        "positive": 9
+      }
+    },
+    {
+      "condition": "A",
+      "round": 2,
+      "first": "C1",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 13.400000005960464,
+        "batchP95Ms": 16.540000000596045,
+        "perCallMedianUs": 670.0000002980232,
+        "perCallP95Us": 827.0000000298023
+      },
+      "other": {
+        "batchMedianMs": 13.399999991059303,
+        "batchP95Ms": 17.755000007152553,
+        "perCallMedianUs": 669.9999995529652,
+        "perCallP95Us": 887.7500003576276
+      },
+      "pairedDeltaUs": {
+        "q25": -25.00000111758709,
+        "median": -7.450580596923828e-7,
+        "q75": 44.999998807907104,
+        "negative": 15,
+        "ties": 0,
+        "positive": 15
+      }
+    },
+    {
+      "condition": "A",
+      "round": 3,
+      "first": "all",
+      "n": 60,
+      "B0": {
+        "batchMedianMs": 12.450000002980232,
+        "batchP95Ms": 15.509999999403952,
+        "perCallMedianUs": 622.5000001490116,
+        "perCallP95Us": 775.4999999701976
+      },
+      "other": {
+        "batchMedianMs": 12.25,
+        "batchP95Ms": 14.529999999701975,
+        "perCallMedianUs": 612.5,
+        "perCallP95Us": 726.4999999850987
+      },
+      "pairedDeltaUs": {
+        "q25": -35.00000014901161,
+        "median": -14.999999850988388,
+        "q75": 1.2500006705522537,
+        "negative": 41,
+        "ties": 3,
+        "positive": 16
+      }
+    },
+    {
+      "condition": "A",
+      "round": 3,
+      "first": "B0",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.450000002980232,
+        "batchP95Ms": 15.339999982714652,
+        "perCallMedianUs": 622.5000001490116,
+        "perCallP95Us": 766.9999991357325
+      },
+      "other": {
+        "batchMedianMs": 12.100000008940697,
+        "batchP95Ms": 14.559999985992905,
+        "perCallMedianUs": 605.0000004470348,
+        "perCallP95Us": 727.9999992996452
+      },
+      "pairedDeltaUs": {
+        "q25": -42.500000819563866,
+        "median": -20.000000298023224,
+        "q75": -5.0000011920928955,
+        "negative": 23,
+        "ties": 1,
+        "positive": 6
+      }
+    },
+    {
+      "condition": "A",
+      "round": 3,
+      "first": "C1",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.400000005960464,
+        "batchP95Ms": 15.320000010728835,
+        "perCallMedianUs": 620.0000002980232,
+        "perCallP95Us": 766.0000005364417
+      },
+      "other": {
+        "batchMedianMs": 12.400000005960464,
+        "batchP95Ms": 14.454999989271164,
+        "perCallMedianUs": 620.0000002980232,
+        "perCallP95Us": 722.7499994635582
+      },
+      "pairedDeltaUs": {
+        "q25": -23.750000074505806,
+        "median": -12.5,
+        "q75": 8.749999850988388,
+        "negative": 18,
+        "ties": 2,
+        "positive": 10
+      }
+    },
+    {
+      "condition": "B",
+      "round": "all",
+      "first": "all",
+      "n": 180,
+      "B0": {
+        "batchMedianMs": 13.950000002980232,
+        "batchP95Ms": 19.210000017285342,
+        "perCallMedianUs": 697.5000001490116,
+        "perCallP95Us": 960.5000008642671
+      },
+      "other": {
+        "batchMedianMs": 13.149999991059303,
+        "batchP95Ms": 19.515000000596043,
+        "perCallMedianUs": 657.4999995529652,
+        "perCallP95Us": 975.7500000298021
+      },
+      "pairedDeltaUs": {
+        "q25": -76.2499999254942,
+        "median": -20.000000298023224,
+        "q75": 30.000001192092896,
+        "negative": 116,
+        "ties": 1,
+        "positive": 63
+      }
+    },
+    {
+      "condition": "B",
+      "round": "all",
+      "first": "B0",
+      "n": 90,
+      "B0": {
+        "batchMedianMs": 14.450000002980232,
+        "batchP95Ms": 19.45500000268221,
+        "perCallMedianUs": 722.5000001490116,
+        "perCallP95Us": 972.7500001341105
+      },
+      "other": {
+        "batchMedianMs": 13.199999988079071,
+        "batchP95Ms": 18.28499999940395,
+        "perCallMedianUs": 659.9999994039536,
+        "perCallP95Us": 914.2499999701975
+      },
+      "pairedDeltaUs": {
+        "q25": -112.50000074505806,
+        "median": -40.00000059604645,
+        "q75": 9.999999031424522,
+        "negative": 63,
+        "ties": 0,
+        "positive": 27
+      }
+    },
+    {
+      "condition": "B",
+      "round": "all",
+      "first": "C1",
+      "n": 90,
+      "B0": {
+        "batchMedianMs": 13.850000008940697,
+        "batchP95Ms": 17.25499999821186,
+        "perCallMedianUs": 692.5000004470348,
+        "perCallP95Us": 862.749999910593
+      },
+      "other": {
+        "batchMedianMs": 13.099999994039536,
+        "batchP95Ms": 19.96500000208616,
+        "perCallMedianUs": 654.9999997019768,
+        "perCallP95Us": 998.2500001043079
+      },
+      "pairedDeltaUs": {
+        "q25": -43.74999925494194,
+        "median": -7.500000298023224,
+        "q75": 45.000001043081284,
+        "negative": 53,
+        "ties": 1,
+        "positive": 36
+      }
+    },
+    {
+      "condition": "B",
+      "round": 1,
+      "first": "all",
+      "n": 60,
+      "B0": {
+        "batchMedianMs": 13.099999994039536,
+        "batchP95Ms": 17.35000001043081,
+        "perCallMedianUs": 654.9999997019768,
+        "perCallP95Us": 867.5000005215406
+      },
+      "other": {
+        "batchMedianMs": 12.950000002980232,
+        "batchP95Ms": 18.169999994337555,
+        "perCallMedianUs": 647.5000001490116,
+        "perCallP95Us": 908.4999997168777
+      },
+      "pairedDeltaUs": {
+        "q25": -48.749999701976776,
+        "median": -5.000000447034836,
+        "q75": 47.5000012665987,
+        "negative": 33,
+        "ties": 0,
+        "positive": 27
+      }
+    },
+    {
+      "condition": "B",
+      "round": 1,
+      "first": "B0",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 13.450000002980232,
+        "batchP95Ms": 18.904999995231627,
+        "perCallMedianUs": 672.5000001490116,
+        "perCallP95Us": 945.2499997615814
+      },
+      "other": {
+        "batchMedianMs": 12.950000002980232,
+        "batchP95Ms": 17.39499999284744,
+        "perCallMedianUs": 647.5000001490116,
+        "perCallP95Us": 869.7499996423719
+      },
+      "pairedDeltaUs": {
+        "q25": -111.24999932944775,
+        "median": -35.00000014901161,
+        "q75": 18.75000037252903,
+        "negative": 20,
+        "ties": 0,
+        "positive": 10
+      }
+    },
+    {
+      "condition": "B",
+      "round": 1,
+      "first": "C1",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 13,
+        "batchP95Ms": 15.455000002682208,
+        "perCallMedianUs": 650,
+        "perCallP95Us": 772.7500001341105
+      },
+      "other": {
+        "batchMedianMs": 12.899999991059303,
+        "batchP95Ms": 19.66500000655651,
+        "perCallMedianUs": 644.9999995529652,
+        "perCallP95Us": 983.2500003278255
+      },
+      "pairedDeltaUs": {
+        "q25": -17.500000447034836,
+        "median": 22.499999403953552,
+        "q75": 81.24999925494194,
+        "negative": 13,
+        "ties": 0,
+        "positive": 17
+      }
+    },
+    {
+      "condition": "B",
+      "round": 2,
+      "first": "all",
+      "n": 60,
+      "B0": {
+        "batchMedianMs": 14.549999997019768,
+        "batchP95Ms": 20.634999988973117,
+        "perCallMedianUs": 727.4999998509884,
+        "perCallP95Us": 1031.749999448656
+      },
+      "other": {
+        "batchMedianMs": 14.450000002980232,
+        "batchP95Ms": 20.985000005364412,
+        "perCallMedianUs": 722.5000001490116,
+        "perCallP95Us": 1049.2500002682204
+      },
+      "pairedDeltaUs": {
+        "q25": -89.99999836087227,
+        "median": -17.500000447034836,
+        "q75": 24.99999888241291,
+        "negative": 39,
+        "ties": 1,
+        "positive": 20
+      }
+    },
+    {
+      "condition": "B",
+      "round": 2,
+      "first": "B0",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 15.400000005960464,
+        "batchP95Ms": 24.67000000327823,
+        "perCallMedianUs": 770.0000002980232,
+        "perCallP95Us": 1233.5000001639114
+      },
+      "other": {
+        "batchMedianMs": 14.450000002980232,
+        "batchP95Ms": 21.07000000476836,
+        "perCallMedianUs": 722.5000001490116,
+        "perCallP95Us": 1053.5000002384181
+      },
+      "pairedDeltaUs": {
+        "q25": -127.49999947845936,
+        "median": -30.000001192092896,
+        "q75": 8.749998733401299,
+        "negative": 21,
+        "ties": 0,
+        "positive": 9
+      }
+    },
+    {
+      "condition": "B",
+      "round": 2,
+      "first": "C1",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 14.200000002980232,
+        "batchP95Ms": 19.614999996125693,
+        "perCallMedianUs": 710.0000001490116,
+        "perCallP95Us": 980.7499998062847
+      },
+      "other": {
+        "batchMedianMs": 14.450000002980232,
+        "batchP95Ms": 20.720000003278255,
+        "perCallMedianUs": 722.5000001490116,
+        "perCallP95Us": 1036.0000001639128
+      },
+      "pairedDeltaUs": {
+        "q25": -56.24999925494194,
+        "median": -7.500000298023224,
+        "q75": 37.50000037252903,
+        "negative": 18,
+        "ties": 1,
+        "positive": 11
+      }
+    },
+    {
+      "condition": "B",
+      "round": 3,
+      "first": "all",
+      "n": 60,
+      "B0": {
+        "batchMedianMs": 14.100000008940697,
+        "batchP95Ms": 18.029999999701975,
+        "perCallMedianUs": 705.0000004470348,
+        "perCallP95Us": 901.4999999850986
+      },
+      "other": {
+        "batchMedianMs": 12.900000005960464,
+        "batchP95Ms": 16.90500000566244,
+        "perCallMedianUs": 645.0000002980232,
+        "perCallP95Us": 845.2500002831221
+      },
+      "pairedDeltaUs": {
+        "q25": -79.99999970197678,
+        "median": -39.99999910593033,
+        "q75": 6.25000074505806,
+        "negative": 44,
+        "ties": 0,
+        "positive": 16
+      }
+    },
+    {
+      "condition": "B",
+      "round": 3,
+      "first": "B0",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 14.200000002980232,
+        "batchP95Ms": 18.874999994039534,
+        "perCallMedianUs": 710.0000001490116,
+        "perCallP95Us": 943.7499997019768
+      },
+      "other": {
+        "batchMedianMs": 12.849999994039536,
+        "batchP95Ms": 16.505000002682205,
+        "perCallMedianUs": 642.4999997019768,
+        "perCallP95Us": 825.2500001341102
+      },
+      "pairedDeltaUs": {
+        "q25": -102.49999985098839,
+        "median": -50.00000149011612,
+        "q75": 1.2500002980232239,
+        "negative": 22,
+        "ties": 0,
+        "positive": 8
+      }
+    },
+    {
+      "condition": "B",
+      "round": 3,
+      "first": "C1",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 14.100000008940697,
+        "batchP95Ms": 16.75999998748302,
+        "perCallMedianUs": 705.0000004470348,
+        "perCallP95Us": 837.999999374151
+      },
+      "other": {
+        "batchMedianMs": 13.049999997019768,
+        "batchP95Ms": 16.22500000596046,
+        "perCallMedianUs": 652.4999998509884,
+        "perCallP95Us": 811.250000298023
+      },
+      "pairedDeltaUs": {
+        "q25": -54.999999701976776,
+        "median": -30.000000447034836,
+        "q75": 21.249999850988388,
+        "negative": 22,
+        "ties": 0,
+        "positive": 8
+      }
+    },
+    {
+      "condition": "C",
+      "round": "all",
+      "first": "all",
+      "n": 180,
+      "B0": {
+        "batchMedianMs": 12.700000017881393,
+        "batchP95Ms": 16.92499997764825,
+        "perCallMedianUs": 635.0000008940697,
+        "perCallP95Us": 846.2499988824123
+      },
+      "other": {
+        "batchMedianMs": 12.700000017881393,
+        "batchP95Ms": 16.100000023841858,
+        "perCallMedianUs": 635.0000008940697,
+        "perCallP95Us": 805.0000011920929
+      },
+      "pairedDeltaUs": {
+        "q25": -39.99999798834324,
+        "median": -4.999999701976776,
+        "q75": 29.999998584389687,
+        "negative": 94,
+        "ties": 5,
+        "positive": 81
+      }
+    },
+    {
+      "condition": "C",
+      "round": "all",
+      "first": "B0",
+      "n": 90,
+      "B0": {
+        "batchMedianMs": 12.700000017881393,
+        "batchP95Ms": 17.174999992549417,
+        "perCallMedianUs": 635.0000008940697,
+        "perCallP95Us": 858.7499996274707
+      },
+      "other": {
+        "batchMedianMs": 12.75,
+        "batchP95Ms": 15.700000004470349,
+        "perCallMedianUs": 637.5,
+        "perCallP95Us": 785.0000002235174
+      },
+      "pairedDeltaUs": {
+        "q25": -44.999998807907104,
+        "median": -10.000000894069672,
+        "q75": 20.000000298023224,
+        "negative": 51,
+        "ties": 2,
+        "positive": 37
+      }
+    },
+    {
+      "condition": "C",
+      "round": "all",
+      "first": "C1",
+      "n": 90,
+      "B0": {
+        "batchMedianMs": 12.799999997019768,
+        "batchP95Ms": 16.754999984800815,
+        "perCallMedianUs": 639.9999998509884,
+        "perCallP95Us": 837.7499992400408
+      },
+      "other": {
+        "batchMedianMs": 12.700000002980232,
+        "batchP95Ms": 16.320000010728833,
+        "perCallMedianUs": 635.0000001490116,
+        "perCallP95Us": 816.0000005364416
+      },
+      "pairedDeltaUs": {
+        "q25": -24.99999962747097,
+        "median": 0,
+        "q75": 38.749999552965164,
+        "negative": 43,
+        "ties": 3,
+        "positive": 44
+      }
+    },
+    {
+      "condition": "C",
+      "round": 1,
+      "first": "all",
+      "n": 60,
+      "B0": {
+        "batchMedianMs": 12.199999988079071,
+        "batchP95Ms": 15.005000001192093,
+        "perCallMedianUs": 609.9999994039536,
+        "perCallP95Us": 750.2500000596046
+      },
+      "other": {
+        "batchMedianMs": 12.350000008940697,
+        "batchP95Ms": 13.809999983012675,
+        "perCallMedianUs": 617.5000004470348,
+        "perCallP95Us": 690.4999991506337
+      },
+      "pairedDeltaUs": {
+        "q25": -26.250000670552254,
+        "median": -4.999999701976776,
+        "q75": 19.999999180436134,
+        "negative": 33,
+        "ties": 3,
+        "positive": 24
+      }
+    },
+    {
+      "condition": "C",
+      "round": 1,
+      "first": "B0",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.149999991059303,
+        "batchP95Ms": 15.320000010728835,
+        "perCallMedianUs": 607.4999995529652,
+        "perCallP95Us": 766.0000005364417
+      },
+      "other": {
+        "batchMedianMs": 12.350000008940697,
+        "batchP95Ms": 13.75499999821186,
+        "perCallMedianUs": 617.5000004470348,
+        "perCallP95Us": 687.7499999105929
+      },
+      "pairedDeltaUs": {
+        "q25": -29.999999329447746,
+        "median": -10.000000149011612,
+        "q75": 8.750000968575478,
+        "negative": 17,
+        "ties": 1,
+        "positive": 12
+      }
+    },
+    {
+      "condition": "C",
+      "round": 1,
+      "first": "C1",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.25,
+        "batchP95Ms": 13.810000011324881,
+        "perCallMedianUs": 612.5,
+        "perCallP95Us": 690.500000566244
+      },
+      "other": {
+        "batchMedianMs": 12.350000008940697,
+        "batchP95Ms": 13.909999991953372,
+        "perCallMedianUs": 617.5000004470348,
+        "perCallP95Us": 695.4999995976685
+      },
+      "pairedDeltaUs": {
+        "q25": -20.000001415610313,
+        "median": -4.999998956918716,
+        "q75": 23.749999701976776,
+        "negative": 16,
+        "ties": 2,
+        "positive": 12
+      }
+    },
+    {
+      "condition": "C",
+      "round": 2,
+      "first": "all",
+      "n": 60,
+      "B0": {
+        "batchMedianMs": 12.699999988079071,
+        "batchP95Ms": 15.814999982714653,
+        "perCallMedianUs": 634.9999994039536,
+        "perCallP95Us": 790.7499991357327
+      },
+      "other": {
+        "batchMedianMs": 12.549999997019768,
+        "batchP95Ms": 15.205000016093253,
+        "perCallMedianUs": 627.4999998509884,
+        "perCallP95Us": 760.2500008046626
+      },
+      "pairedDeltaUs": {
+        "q25": -44.999998807907104,
+        "median": -7.499999552965164,
+        "q75": 36.250000447034836,
+        "negative": 31,
+        "ties": 2,
+        "positive": 27
+      }
+    },
+    {
+      "condition": "C",
+      "round": 2,
+      "first": "B0",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.699999988079071,
+        "batchP95Ms": 15.035000000894065,
+        "perCallMedianUs": 634.9999994039536,
+        "perCallP95Us": 751.7500000447033
+      },
+      "other": {
+        "batchMedianMs": 12.649999991059303,
+        "batchP95Ms": 15.25499999821186,
+        "perCallMedianUs": 632.4999995529652,
+        "perCallP95Us": 762.7499999105929
+      },
+      "pairedDeltaUs": {
+        "q25": -34.99999940395355,
+        "median": -7.499999552965164,
+        "q75": 40.00000059604645,
+        "negative": 15,
+        "ties": 1,
+        "positive": 14
+      }
+    },
+    {
+      "condition": "C",
+      "round": 2,
+      "first": "C1",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.649999991059303,
+        "batchP95Ms": 15.919999991357326,
+        "perCallMedianUs": 632.4999995529652,
+        "perCallP95Us": 795.9999995678663
+      },
+      "other": {
+        "batchMedianMs": 12.350000008940697,
+        "batchP95Ms": 14.78499999940395,
+        "perCallMedianUs": 617.5000004470348,
+        "perCallP95Us": 739.2499999701975
+      },
+      "pairedDeltaUs": {
+        "q25": -44.999999925494194,
+        "median": -7.499999552965164,
+        "q75": 29.999999329447746,
+        "negative": 16,
+        "ties": 1,
+        "positive": 13
+      }
+    },
+    {
+      "condition": "C",
+      "round": 3,
+      "first": "all",
+      "n": 60,
+      "B0": {
+        "batchMedianMs": 13.799999997019768,
+        "batchP95Ms": 18.07000000029802,
+        "perCallMedianUs": 689.9999998509884,
+        "perCallP95Us": 903.5000000149009
+      },
+      "other": {
+        "batchMedianMs": 14.150000005960464,
+        "batchP95Ms": 17.040000000596045,
+        "perCallMedianUs": 707.5000002980232,
+        "perCallP95Us": 852.0000000298023
+      },
+      "pairedDeltaUs": {
+        "q25": -59.99999977648258,
+        "median": 0,
+        "q75": 44.999999552965164,
+        "negative": 30,
+        "ties": 0,
+        "positive": 30
+      }
+    },
+    {
+      "condition": "C",
+      "round": 3,
+      "first": "B0",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 14.099999994039536,
+        "batchP95Ms": 17.775,
+        "perCallMedianUs": 704.9999997019768,
+        "perCallP95Us": 888.75
+      },
+      "other": {
+        "batchMedianMs": 13.950000002980232,
+        "batchP95Ms": 16.299999982118607,
+        "perCallMedianUs": 697.5000001490116,
+        "perCallP95Us": 814.9999991059303
+      },
+      "pairedDeltaUs": {
+        "q25": -83.75000096857548,
+        "median": -17.499998956918716,
+        "q75": 10.000000521540642,
+        "negative": 19,
+        "ties": 0,
+        "positive": 11
+      }
+    },
+    {
+      "condition": "C",
+      "round": 3,
+      "first": "C1",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 13.449999988079071,
+        "batchP95Ms": 18.71000000983476,
+        "perCallMedianUs": 672.4999994039536,
+        "perCallP95Us": 935.5000004917381
+      },
+      "other": {
+        "batchMedianMs": 14.249999985098839,
+        "batchP95Ms": 17.935000009834763,
+        "perCallMedianUs": 712.4999992549419,
+        "perCallP95Us": 896.7500004917381
+      },
+      "pairedDeltaUs": {
+        "q25": -5.000000819563866,
+        "median": 7.500000298023224,
+        "q75": 67.49999970197678,
+        "negative": 11,
+        "ties": 0,
+        "positive": 19
+      }
+    },
+    {
+      "condition": "AA",
+      "round": "all",
+      "first": "all",
+      "n": 90,
+      "B0": {
+        "batchMedianMs": 12.5,
+        "batchP95Ms": 17.284999985992908,
+        "perCallMedianUs": 625,
+        "perCallP95Us": 864.2499992996454
+      },
+      "other": {
+        "batchMedianMs": 12.550000011920929,
+        "batchP95Ms": 17.660000009834764,
+        "perCallMedianUs": 627.5000005960464,
+        "perCallP95Us": 883.0000004917381
+      },
+      "pairedDeltaUs": {
+        "q25": -38.749999552965164,
+        "median": -4.999998956918716,
+        "q75": 28.75000089406967,
+        "negative": 49,
+        "ties": 3,
+        "positive": 38
+      }
+    },
+    {
+      "condition": "AA",
+      "round": "all",
+      "first": "B0",
+      "n": 45,
+      "B0": {
+        "batchMedianMs": 12.699999988079071,
+        "batchP95Ms": 15.360000002384183,
+        "perCallMedianUs": 634.9999994039536,
+        "perCallP95Us": 768.0000001192091
+      },
+      "other": {
+        "batchMedianMs": 12.5,
+        "batchP95Ms": 16.31999999284744,
+        "perCallMedianUs": 625,
+        "perCallP95Us": 815.9999996423719
+      },
+      "pairedDeltaUs": {
+        "q25": -39.99999910593033,
+        "median": -19.999998807907104,
+        "q75": 25,
+        "negative": 30,
+        "ties": 0,
+        "positive": 15
+      }
+    },
+    {
+      "condition": "AA",
+      "round": "all",
+      "first": "B0-repeat",
+      "n": 45,
+      "B0": {
+        "batchMedianMs": 12.400000005960464,
+        "batchP95Ms": 17.620000004768368,
+        "perCallMedianUs": 620.0000002980232,
+        "perCallP95Us": 881.0000002384184
+      },
+      "other": {
+        "batchMedianMs": 12.699999988079071,
+        "batchP95Ms": 18.279999995231623,
+        "perCallMedianUs": 634.9999994039536,
+        "perCallP95Us": 913.9999997615812
+      },
+      "pairedDeltaUs": {
+        "q25": -14.999999105930328,
+        "median": 4.999999701976776,
+        "q75": 30.000001192092896,
+        "negative": 19,
+        "ties": 3,
+        "positive": 23
+      }
+    },
+    {
+      "condition": "AA",
+      "round": 1,
+      "first": "all",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.599999994039536,
+        "batchP95Ms": 14.054999996721744,
+        "perCallMedianUs": 629.9999997019768,
+        "perCallP95Us": 702.7499998360872
+      },
+      "other": {
+        "batchMedianMs": 12.600000008940697,
+        "batchP95Ms": 13.5,
+        "perCallMedianUs": 630.0000004470348,
+        "perCallP95Us": 675
+      },
+      "pairedDeltaUs": {
+        "q25": -19.999998807907104,
+        "median": -5.000000447034836,
+        "q75": 26.250001043081284,
+        "negative": 18,
+        "ties": 2,
+        "positive": 10
+      }
+    },
+    {
+      "condition": "AA",
+      "round": 1,
+      "first": "B0",
+      "n": 15,
+      "B0": {
+        "batchMedianMs": 12.699999988079071,
+        "batchP95Ms": 14.02999999821186,
+        "perCallMedianUs": 634.9999994039536,
+        "perCallP95Us": 701.499999910593
+      },
+      "other": {
+        "batchMedianMs": 12.5,
+        "batchP95Ms": 13.920000001788138,
+        "perCallMedianUs": 625,
+        "perCallP95Us": 696.0000000894069
+      },
+      "pairedDeltaUs": {
+        "q25": -34.99999940395355,
+        "median": -9.999999403953552,
+        "q75": 32.500001043081284,
+        "negative": 10,
+        "ties": 0,
+        "positive": 5
+      }
+    },
+    {
+      "condition": "AA",
+      "round": 1,
+      "first": "B0-repeat",
+      "n": 15,
+      "B0": {
+        "batchMedianMs": 12.5,
+        "batchP95Ms": 14.519999992847438,
+        "perCallMedianUs": 625,
+        "perCallP95Us": 725.9999996423719
+      },
+      "other": {
+        "batchMedianMs": 12.700000017881393,
+        "batchP95Ms": 13.36000000834465,
+        "perCallMedianUs": 635.0000008940697,
+        "perCallP95Us": 668.0000004172325
+      },
+      "pairedDeltaUs": {
+        "q25": -10.000000894069672,
+        "median": -4.999999701976776,
+        "q75": 10.000000894069672,
+        "negative": 8,
+        "ties": 2,
+        "positive": 5
+      }
+    },
+    {
+      "condition": "AA",
+      "round": 2,
+      "first": "all",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.500000014901161,
+        "batchP95Ms": 14.364999994635582,
+        "perCallMedianUs": 625.0000007450581,
+        "perCallP95Us": 718.2499997317791
+      },
+      "other": {
+        "batchMedianMs": 12.299999982118607,
+        "batchP95Ms": 13.51000001579523,
+        "perCallMedianUs": 614.9999991059303,
+        "perCallP95Us": 675.5000007897614
+      },
+      "pairedDeltaUs": {
+        "q25": -43.75000186264515,
+        "median": -19.999999552965164,
+        "q75": 9.999999031424522,
+        "negative": 19,
+        "ties": 1,
+        "positive": 10
+      }
+    },
+    {
+      "condition": "AA",
+      "round": 2,
+      "first": "B0",
+      "n": 15,
+      "B0": {
+        "batchMedianMs": 13.200000017881393,
+        "batchP95Ms": 15.429999998211857,
+        "perCallMedianUs": 660.0000008940697,
+        "perCallP95Us": 771.4999999105928
+      },
+      "other": {
+        "batchMedianMs": 12.5,
+        "batchP95Ms": 13.460000011324881,
+        "perCallMedianUs": 625,
+        "perCallP95Us": 673.000000566244
+      },
+      "pairedDeltaUs": {
+        "q25": -67.49999821186066,
+        "median": -39.99999910593033,
+        "q75": -29.999998956918716,
+        "negative": 13,
+        "ties": 0,
+        "positive": 2
+      }
+    },
+    {
+      "condition": "AA",
+      "round": 2,
+      "first": "B0-repeat",
+      "n": 15,
+      "B0": {
+        "batchMedianMs": 12.200000017881393,
+        "batchP95Ms": 13.719999995827674,
+        "perCallMedianUs": 610.0000008940697,
+        "perCallP95Us": 685.9999997913837
+      },
+      "other": {
+        "batchMedianMs": 12.299999982118607,
+        "batchP95Ms": 14.979999989271159,
+        "perCallMedianUs": 614.9999991059303,
+        "perCallP95Us": 748.999999463558
+      },
+      "pairedDeltaUs": {
+        "q25": -14.999999850988388,
+        "median": 9.999997913837433,
+        "q75": 27.499999850988388,
+        "negative": 6,
+        "ties": 1,
+        "positive": 8
+      }
+    },
+    {
+      "condition": "AA",
+      "round": 3,
+      "first": "all",
+      "n": 30,
+      "B0": {
+        "batchMedianMs": 12.350000008940697,
+        "batchP95Ms": 18.47499998807907,
+        "perCallMedianUs": 617.5000004470348,
+        "perCallP95Us": 923.7499994039536
+      },
+      "other": {
+        "batchMedianMs": 13.250000014901161,
+        "batchP95Ms": 18.710000003874303,
+        "perCallMedianUs": 662.5000007450581,
+        "perCallP95Us": 935.5000001937151
+      },
+      "pairedDeltaUs": {
+        "q25": -23.750001564621925,
+        "median": 9.999999403953552,
+        "q75": 68.74999962747097,
+        "negative": 12,
+        "ties": 0,
+        "positive": 18
+      }
+    },
+    {
+      "condition": "AA",
+      "round": 3,
+      "first": "B0",
+      "n": 15,
+      "B0": {
+        "batchMedianMs": 12.200000017881393,
+        "batchP95Ms": 16.30999999642372,
+        "perCallMedianUs": 610.0000008940697,
+        "perCallP95Us": 815.499999821186
+      },
+      "other": {
+        "batchMedianMs": 13.400000005960464,
+        "batchP95Ms": 18.590000012516974,
+        "perCallMedianUs": 670.0000002980232,
+        "perCallP95Us": 929.5000006258488
+      },
+      "pairedDeltaUs": {
+        "q25": -25.00000074505806,
+        "median": 9.999999403953552,
+        "q75": 75,
+        "negative": 7,
+        "ties": 0,
+        "positive": 8
+      }
+    },
+    {
+      "condition": "AA",
+      "round": 3,
+      "first": "B0-repeat",
+      "n": 15,
+      "B0": {
+        "batchMedianMs": 12.5,
+        "batchP95Ms": 21.819999998807894,
+        "perCallMedianUs": 625,
+        "perCallP95Us": 1090.9999999403947
+      },
+      "other": {
+        "batchMedianMs": 13.100000023841858,
+        "batchP95Ms": 18.659999999403954,
+        "perCallMedianUs": 655.0000011920929,
+        "perCallP95Us": 932.9999999701977
+      },
+      "pairedDeltaUs": {
+        "q25": -17.500000447034836,
+        "median": 9.999999403953552,
+        "q75": 67.50000044703484,
+        "negative": 5,
+        "ties": 0,
+        "positive": 10
+      }
+    }
+  ]
+}
