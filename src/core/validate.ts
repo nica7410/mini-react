@@ -5,9 +5,25 @@ export const htmlTags = new Set(('a abbr address area article aside audio b bdi 
 export const voidTags = new Set('area br col hr img input source track wbr'.split(' '));
 export const booleanAttrs = new Set('allowfullscreen async autofocus autoplay checked controls default defer disabled formnovalidate hidden inert ismap itemscope loop multiple muted nomodule novalidate open playsinline readonly required reversed selected'.split(' '));
 
+const blockedAttrs = new Set(['srcdoc', 'is', 'xmlns', 'form']);
+const urlAttrs = new Set(['href', 'src', 'action', 'formaction', 'poster', 'cite', 'xlink:href']);
+
 export function attributeProblem(name: string, value: string): string | null {
-  if (!/^[a-z_][a-z0-9_.:-]*$/i.test(name)) return `잘못된 속성 이름: ${name}`;
-  if (/^on/i.test(name) || ['srcdoc', 'is', 'xmlns', 'form'].includes(name)) return `지원하지 않는 속성: ${name}`;
+  // Name shape: the verdict of /^[a-z_][a-z0-9_.:-]*$/i as one scan over UTF-16 code units.
+  // Without the u flag, /i never lets a non-ASCII code unit match an ASCII letter, and $
+  // only matches at the very end. So a name passes exactly when it is not empty, starts with
+  // A-Z a-z _ and continues with those or 0-9 . : - (digits and ':' are the units 48..58).
+  const length = name.length;
+  let wellFormed = length > 0;
+  for (let i = 0; i < length; i++) {
+    const c = name.charCodeAt(i);
+    if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90) || c === 95) continue;
+    if (i > 0 && ((c >= 48 && c <= 58) || c === 45 || c === 46)) continue;
+    wellFormed = false; break;
+  }
+  if (!wellFormed) return `잘못된 속성 이름: ${name}`;
+  // The verdict of /^on/i: o or O, then n or N (c | 32 folds the ASCII case of a letter).
+  if ((length >= 2 && (name.charCodeAt(0) | 32) === 111 && (name.charCodeAt(1) | 32) === 110) || blockedAttrs.has(name)) return `지원하지 않는 속성: ${name}`;
   if (name === 'srcset') {
     for (const candidate of value.split(',')) {
       const [url, ...descriptors] = candidate.trim().split(/\s+/);
@@ -15,7 +31,7 @@ export function attributeProblem(name: string, value: string): string | null {
       if (problem || descriptors.length > 1 || descriptors.some(d => !/^(\d+w|(?:\d*\.)?\d+x)$/.test(d))) return problem ?? '잘못된 srcset 후보입니다.';
     }
   }
-  if (['href', 'src', 'action', 'formaction', 'poster', 'cite', 'xlink:href'].includes(name)) {
+  if (urlAttrs.has(name)) {
     const compact = value.replace(/[\u0000-\u0020\u007f]/g, '');
     const scheme = /^([a-z][a-z0-9+.-]*):/i.exec(compact)?.[1].toLowerCase();
     if (scheme && !['https', 'http', 'mailto', 'tel'].includes(scheme)) return `허용하지 않는 URL: ${name}`;
@@ -36,7 +52,17 @@ const choiceTypes = new Set(['checkbox', 'radio']);
 const valueLessTypes = new Set(['checkbox', 'radio', 'file']);
 const formModes = new Set(['snapshot', 'controlled', 'uncontrolled']);
 const currentValueAttrs = ['value', 'checked', 'selected'];
-export const eventNameProblem = (name: string): boolean => !/^[a-z][a-z0-9]*$/.test(name) || name.startsWith('on');
+// The verdict of `!/^[a-z][a-z0-9]*$/.test(name) || name.startsWith('on')` as one code-unit scan.
+// tests/unit/validate-names.test.ts compares these scans with the regular-expression versions.
+export function eventNameProblem(name: string): boolean {
+  const length = name.length;
+  if (length === 0) return true;
+  for (let i = 0; i < length; i++) {
+    const c = name.charCodeAt(i);
+    if (!((c >= 97 && c <= 122) || (i > 0 && c >= 48 && c <= 57))) return true;
+  }
+  return length >= 2 && name.charCodeAt(0) === 111 && name.charCodeAt(1) === 110;
+}
 const countOptions = (nodes: readonly VNode[]): number => {
   let count = 0;
   for (const child of nodes) if (child.kind === 'element') count += child.tag === 'option' ? 1 : countOptions(child.children);
@@ -97,7 +123,8 @@ export function validateTree(tree: VRoot): Result<VRoot> {
       if (form && !formTags.has(node.tag)) reject('폼 정책은 input/textarea/select에만 사용합니다.');
       if (form && !formModes.has(form.mode)) reject('잘못된 폼 소유 모드입니다.');
       if (form && form.mode !== 'snapshot') {
-        if (currentValueAttrs.some(k => Object.hasOwn(attrs, k))) reject('현재 폼 값은 form 필드로만 지정합니다.');
+        // The own-property tests of currentValueAttrs, in that order, without a closure.
+        if (Object.hasOwn(attrs, 'value') || Object.hasOwn(attrs, 'checked') || Object.hasOwn(attrs, 'selected')) reject('현재 폼 값은 form 필드로만 지정합니다.');
         if (node.tag === 'textarea' && node.children.length) reject('textarea 값은 form 필드로 지정합니다.');
         if (form.mode === 'uncontrolled' && (form.value !== undefined || form.checked !== undefined)) reject('uncontrolled의 초기 값은 defaultValue/defaultChecked를 사용합니다.');
         if (form.mode === 'controlled' && (form.defaultValue !== undefined || form.defaultChecked !== undefined)) reject('controlled에는 default 값을 함께 지정할 수 없습니다.');

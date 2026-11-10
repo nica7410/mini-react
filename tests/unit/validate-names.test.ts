@@ -5,9 +5,9 @@ import { describe, expect, it } from 'vitest';
 import type { FormPolicy, VElement, VNode, VRoot } from '../../src/core/types';
 import * as baseline from '../fixtures/validate-baseline';
 import * as current from '../../src/core/validate';
-import * as candidate from '../../research/validate-names/validate.candidate';
 
-const implementations = { 'default validation': current, 'candidate V1': candidate };
+// Before adoption (commit 32cb659) the research candidate was listed here as well.
+const implementations = { 'default validation': current };
 const SEED = 20261110;
 
 function random(seed: number) {

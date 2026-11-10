@@ -1,0 +1,140 @@
+{
+  "hashAlgorithm": "SHA-256 (working-tree bytes)",
+  "variant": "validate",
+  "otherLabel": "V1",
+  "sourceCommit": "32cb65927e13f58881e0060f07444ef076a313ca",
+  "sourceTree": "e9f3b45ee40e22818d31beb574a356276c9d7164",
+  "workingTreeClean": true,
+  "node": "v24.22.2",
+  "vite": "8.3.6",
+  "entry": "scripts/keyed-paired-diff/index.html",
+  "files": {
+    "package.json": "dfe52536553fa789514ae8196dde93297c5fe64a6fe4922e1d24f5ec5452f5d8",
+    "pnpm-lock.yaml": "2057fbbf450943c652548e72ea06ea539c9b20a044e373f55c2c7b7d1e16681c",
+    "research/validate-names/validate.candidate.ts": "b6fcfef4e8f5b71ccc7f1a79505a686abbf1535c47876edab702131553d26b6b",
+    "scripts/keyed-paired-diff/analyze.mjs": "b9620b8362a955f7ee1a076e3084a6d694a9c7b368da21797050a60bbecccbd0",
+    "scripts/keyed-paired-diff/build.mjs": "d7a5933f9451de0a92c4c4fca6bcbf48261457316bc0753d188808e146189b3f",
+    "scripts/keyed-paired-diff/index.html": "acf839e78902ff227ed763750546fae15dd1c53ad0708aab61a522ddde074f2d",
+    "scripts/keyed-paired-diff/run.mjs": "0bdd8967e096efd0e0a148e7af82c092f4697fa7076347aee9e3eb4a868c31a6",
+    "scripts/paired-diff-variants/analyze.mjs": "4c56f7fab76e4715f1cd831f706bb62edb8cd9d95fdd414bf716557bec788fa4",
+    "scripts/paired-diff-variants/build.mjs": "027eeac4fdce99fa03dc75bd0140622208841faaf5f141c3ff8e9401c63b53c7",
+    "scripts/paired-diff-variants/run.mjs": "0e3e84f95a329ab9cc996a26dae9a004370e0977a36142eec8544e0dffc0dc6e",
+    "src/app/counter.ts": "e56f050cddf03a2755938a1c28fe23db5137084b5f0bc4a60d36b7d6a7c24834",
+    "src/app/lab.ts": "f70943cb5849cc9894e4b42639c4fa2d248002f3051247ca2cda36a8708998f2",
+    "src/app/main.ts": "6a5c580b50be9cb4d0634b5e76d13faf337d80f6b6ba709fa57a5837223383a3",
+    "src/app/style.css": "6ff1e004f62403a3c997cea8fbea6c1f0c7deb42161cb59aad4d5ef141283526",
+    "src/app/tasks.ts": "9fd3c9d8826da35f00b0bed1d8e29f41a52d39ecfc42efd71da607ffc186e0a8",
+    "src/bench/fixtures.ts": "225ab845cf80f2d6c70bf3e0eb02e71ad2ceca8f45fe5540a876d4a4325132c4",
+    "src/bench/harness.ts": "619428490ed4bc170d572ca90815c4ec772929dadb9ada07729fd370e10d679e",
+    "src/bench/keyed-paired-diff-modules.d.ts": "75c6779fcbfe949648b49975c1e0f33de373c472769df29fc0e0351b5073a693",
+    "src/bench/keyed-paired-diff.ts": "0eec6f9d21b39ba6c8080f8be919c8b1baeb32691647cf98bb3cfe5f76e3bd76",
+    "src/bench/noop.ts": "f76171ea93dacd59a088b8463d8ec47bf20e43ea44e1bc303c0742ef6141f45b",
+    "src/bench/noopProfile.ts": "69f0703131027bb8bfa6e73bd6e530ae2d375c661b205bd01df6bd6bd7a2dcbd",
+    "src/bench/page.ts": "2128ba6b96b2f8f33fabf91c569078481e58f0686e74bcf03c10f34016fba466",
+    "src/bench/statistics.ts": "9bbe2fea650668459bd0cb6b7b3add6f4e74a930b28593248b28875fc10fca12",
+    "src/bench/task-app.ts": "03412f7d24d7a621b0d1a80392bf7406e7c920cc329de4ea3be191b81b0d290c",
+    "src/bench/task-model.ts": "90a16dc23b18a49fdd69d1f07398c6bb483bf58e1b4d78e418eb969b416a09f1",
+    "src/core/capture.ts": "bb67da1eb02d36e28f1fd33876399695d19e7bd2c4bd37632cde947086946e8b",
+    "src/core/host/browserState.ts": "218603ca2a25629a388f1247ce08f9cb8675bc14755aad27e266934ede88ea77",
+    "src/core/host/events.ts": "d1e820d9e57a9c35e5497bb81f8a0d0a5dbbc03c1997f777a16a4dab8f86818a",
+    "src/core/host/forms.ts": "576d34c2f11bb60b05fa8524906a21b5f85c14eb5aa9e9c23839d6e0a1deb2e6",
+    "src/core/host/inputs.ts": "37d165382aff0209da74434fd7955ec87b82588fb60e21f138e4592bd8d8d82b",
+    "src/core/keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+    "src/core/mount.ts": "98db1dececa432877bc19efd765c706c009b762ab74754cebabf2c41e415a039",
+    "src/core/patch.ts": "e8fe6fbdac3493fd054a4befc7f9318a33fd5bccf3f5ee22de34a161a80d2464",
+    "src/core/planValidation.ts": "e969ee350ea932e77c712542c242143bd1f1ce2f32969458d15b572a30db45d3",
+    "src/core/reconcile.ts": "c8b971061b1cabaaba295041b3dfb960425b8d737c775c13522c861b094750ae",
+    "src/core/types.ts": "6ea90f9e4fa0b9d036ff7dd9b5cc0607fb27ded3918b678b205d6a5302e6099b",
+    "src/core/validate.ts": "04376484958a16a78ec4e5a8ffae5826878d55f7a3455a38fd38b91203a77f91",
+    "src/core/vdom.ts": "ef4d0c6c53b30c44ff4e61afa3e3dc38c73782a6510a9befa216c0891e2ecdd0",
+    "src/editor/controller.ts": "839cf161c54e6554fd6e44843a104c3fdba3e27885e71d633e8196afba0dfeed",
+    "src/editor/history.ts": "3b111825709eea00f1318fe5e95bb2d822242e067d2b8b7f8dc3a6af672b277b",
+    "src/editor/inputPolicy.ts": "3a64b56b50354684097f6a1ac8f520373499a77fe1b3d853970b206d060428e3",
+    "src/observe/inspector.ts": "e016c1254d607141c36fe13afbf77f816ce1ee1754d342eb26bd452d88937251",
+    "src/observe/recorder.ts": "2f03ac3a688488407c46771271347e8c5a531c2ae837da705848f80ae64c01c6",
+    "src/observe/trace.ts": "f9979a54159292178461c29283e29988f6f0fad89f4f703c68765be55bfae9b8",
+    "src/runtime/FunctionComponent.ts": "e01fc5408e4e6260d57412942d712796a07928f17bd74b95705c7e81c96b3212",
+    "src/runtime/expression.ts": "497e4d36029975216cc0924bb90d1c02f7df3c701122b9e764303a301169a031",
+    "src/runtime/hooks.ts": "7563a2fa137b281230754feafd9d2bb8673201690005aa76928a05fcc5ea8d3f",
+    "src/runtime/index.ts": "37e9cfdb0c0e8034f9bf26c38547083302fb2bac075d1214e7e5596db1050f50",
+    "src/runtime/memo.ts": "e6e5d4709c19d5a4a55630cb2674e1d7308c8f1952a4c388b2fb941f7a0d7070",
+    "src/runtime/resolve.ts": "300f61ab2302e9d79aeac2cfdbffb545c89263d0743d806d22bca69af9addfa8",
+    "src/runtime/stateGuard.ts": "4fea31d3bc4f290e7e65683a8a812ab4c2a76f6c1dad1c77b7466d4abf96c369",
+    "src/runtime/updateQueue.ts": "adda868ec42fd02d33fd80a1c5e4b9b11ff72c88d3e6e55548ed981b44d06fbe",
+    "vite.config.ts": "5b00d649efe4d80430c1c1a88aefca01e461a9f97b6de7c16cb835a4a0255b90"
+  },
+  "reconcileChange": {
+    "file": "src/core/reconcile.ts",
+    "original": "import { validateTree } from './validate';",
+    "replacement": "import { validateTree } from '/research/validate-names/validate.candidate.ts';",
+    "B0": "c8b971061b1cabaaba295041b3dfb960425b8d737c775c13522c861b094750ae",
+    "V1": "313543080b2d5b6a5f107a13a0812ea8b115ef236799c492d3eedaa891ad7663"
+  },
+  "builds": {
+    "timing": {
+      "settings": {
+        "mode": "production",
+        "production": true,
+        "target": [
+          "chrome111",
+          "edge111",
+          "firefox114",
+          "safari16.4",
+          "ios16.4"
+        ],
+        "minify": "oxc"
+      },
+      "imports": {
+        "B0": [
+          "src/core/keyed.ts",
+          "src/core/validate.ts",
+          "src/core/vdom.ts"
+        ],
+        "V1": [
+          "research/validate-names/validate.candidate.ts",
+          "src/core/keyed.ts",
+          "src/core/vdom.ts"
+        ]
+      },
+      "auditHooks": [],
+      "artifacts": {
+        "assets/index-BeDx22Xb.js": "bd2d22600440a6ec0412827db0faa7905d44c99952ed6425f896b29aea994604",
+        "scripts/keyed-paired-diff/index.html": "87d9418c63c07537393eb7e87a94fef81f4a19c9f5266d5058f2c3bc253eee7a"
+      }
+    },
+    "audit": {
+      "settings": {
+        "mode": "production",
+        "production": true,
+        "target": [
+          "chrome111",
+          "edge111",
+          "firefox114",
+          "safari16.4",
+          "ios16.4"
+        ],
+        "minify": "oxc"
+      },
+      "imports": {
+        "B0": [
+          "src/core/keyed.ts",
+          "src/core/validate.ts",
+          "src/core/vdom.ts"
+        ],
+        "V1": [
+          "research/validate-names/validate.candidate.ts",
+          "src/core/keyed.ts",
+          "src/core/vdom.ts"
+        ]
+      },
+      "auditHooks": [
+        "B0",
+        "V1"
+      ],
+      "artifacts": {
+        "assets/index-BUNEJ3ya.js": "a9dfcb142270a578ad922b07f51c632560a5cd94793cb841b9bf12802a57dde9",
+        "scripts/keyed-paired-diff/index.html": "d1b994065e82081a320595db09b62f2d6b995b6d9a5473015a51a923253572d0"
+      }
+    }
+  }
+}
