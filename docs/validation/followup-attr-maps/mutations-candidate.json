@@ -1,0 +1,100 @@
+{
+  "stage": "candidate",
+  "files": {
+    "helper": "research/attr-maps/attrMap.ts",
+    "resolve": "research/attr-maps/resolve.candidate.ts",
+    "capture": "research/attr-maps/capture.candidate.ts"
+  },
+  "tests": [
+    "tests/unit/attr-maps.test.ts"
+  ],
+  "sourceSha256": {
+    "research/attr-maps/attrMap.ts": "906c8badc6706e4f8ea2f558023957a848446380",
+    "research/attr-maps/resolve.candidate.ts": "cf1897eeb50d9ebb99eb7674d1cc67563f142157",
+    "research/attr-maps/capture.candidate.ts": "b3e906361f5701f486653f40c3c4ac490d465d01"
+  },
+  "runs": [
+    {
+      "label": "unchanged source",
+      "exitCode": 0,
+      "total": 30,
+      "failed": 0,
+      "failedTests": [],
+      "ms": 1539,
+      "expected": "pass"
+    },
+    {
+      "label": "M1 the finished map keeps the builder prototype",
+      "exitCode": 1,
+      "total": 30,
+      "failed": 12,
+      "failedTests": [
+        "candidate R1: attribute maps built by the resolver ordinary names",
+        "candidate R1: attribute maps built by the resolver __proto__ between other names",
+        "candidate R1: attribute maps built by the resolver only __proto__",
+        "candidate R1: attribute maps built by the resolver names of Object.prototype members",
+        "candidate R1: attribute maps built by the resolver upper case collides with lower case (first position, last value)",
+        "candidate R1: attribute maps built by the resolver upper case after lower case",
+        "candidate R1: attribute maps built by the resolver boolean, null, undefined and number values",
+        "candidate R1: attribute maps built by the resolver no attributes",
+        "candidate R1: attribute maps built by the resolver many attributes",
+        "candidate R1: attribute maps built by the resolver names with every allowed punctuation",
+        "candidate R1: attribute maps built by the resolver does not read or write Object.prototype, even one with an accessor or a locked value for the name",
+        "candidate R1: attribute maps read from the DOM keeps the DOM order, drops style, and stores special names as own data"
+      ],
+      "ms": 1639,
+      "expected": "fail"
+    },
+    {
+      "label": "M2 the map is built on a plain object",
+      "exitCode": 1,
+      "total": 30,
+      "failed": 7,
+      "failedTests": [
+        "candidate R1: attribute maps built by the resolver __proto__ between other names",
+        "candidate R1: attribute maps built by the resolver only __proto__",
+        "candidate R1: attribute maps built by the resolver gives the same tree as the default resolver, node by node",
+        "candidate R1: attribute maps built by the resolver does not read or write Object.prototype, even one with an accessor or a locked value for the name",
+        "candidate R1: attribute maps built by the resolver special names reach the DOM and are removed again through diff and commit",
+        "candidate R1: attribute maps read from the DOM keeps the DOM order, drops style, and stores special names as own data",
+        "candidate R1: attribute maps read from the DOM does not touch a polluted Object.prototype while reading"
+      ],
+      "ms": 1555,
+      "expected": "fail"
+    },
+    {
+      "label": "M3 the resolver does not finish the map",
+      "exitCode": 1,
+      "total": 30,
+      "failed": 11,
+      "failedTests": [
+        "candidate R1: attribute maps built by the resolver ordinary names",
+        "candidate R1: attribute maps built by the resolver __proto__ between other names",
+        "candidate R1: attribute maps built by the resolver only __proto__",
+        "candidate R1: attribute maps built by the resolver names of Object.prototype members",
+        "candidate R1: attribute maps built by the resolver upper case collides with lower case (first position, last value)",
+        "candidate R1: attribute maps built by the resolver upper case after lower case",
+        "candidate R1: attribute maps built by the resolver boolean, null, undefined and number values",
+        "candidate R1: attribute maps built by the resolver no attributes",
+        "candidate R1: attribute maps built by the resolver many attributes",
+        "candidate R1: attribute maps built by the resolver names with every allowed punctuation",
+        "candidate R1: attribute maps built by the resolver does not read or write Object.prototype, even one with an accessor or a locked value for the name"
+      ],
+      "ms": 1622,
+      "expected": "fail"
+    },
+    {
+      "label": "M4 the DOM reader does not finish the map",
+      "exitCode": 1,
+      "total": 30,
+      "failed": 1,
+      "failedTests": [
+        "candidate R1: attribute maps read from the DOM keeps the DOM order, drops style, and stores special names as own data"
+      ],
+      "ms": 1563,
+      "expected": "fail"
+    }
+  ],
+  "restored": true,
+  "ok": true
+}

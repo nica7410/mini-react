@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <meta charset="utf-8">
+  <title>Attribute map paired comparison</title>
+  <!-- Three same-origin iframes on one thread: the default build twice (B0, B0-repeat) and the candidate build (R1). -->
+  <iframe id="b0" src="/b0/scripts/attr-map-paired/arm.html"></iframe>
+  <iframe id="b0r" src="/b0/scripts/attr-map-paired/arm.html"></iframe>
+  <iframe id="r1" src="/r1/scripts/attr-map-paired/arm.html"></iframe>
+  <script>
+    const controls = { AA: 'A', FF: 'F' };
+    const arm = id => document.getElementById(id).contentWindow.arm;
+    window.paired = {
+      ready: () => ['b0', 'b0r', 'r1'].every(id => typeof arm(id)?.batch === 'function'),
+      prepare() { for (const id of ['b0', 'b0r', 'r1']) arm(id).prepare(); },
+      verify: () => ({ B0: arm('b0').verify(), 'B0-repeat': arm('b0r').verify(), R1: arm('r1').verify() }),
+      // One pair: the same operation on two arms, back to back. Even samples run B0 first.
+      // Nothing is awaited, logged or read from the DOM inside a pair; each arm times its own batch.
+      pair(condition, sample, deadlineMs) {
+        if (performance.timeOrigin + performance.now() >= deadlineMs) return null;
+        const control = Object.hasOwn(controls, condition), operation = control ? controls[condition] : condition;
+        const other = arm(control ? 'b0r' : 'r1'), otherName = control ? 'B0-repeat' : 'R1', b0 = arm('b0');
+        const b0First = sample % 2 === 0;
+        const firstMs = (b0First ? b0 : other).batch(operation);
+        const secondMs = (b0First ? other : b0).batch(operation);
+        return { pair: sample, first: b0First ? 'B0' : otherName, batchSize: b0.batchSizes[operation],
+          b0Ms: b0First ? firstMs : secondMs, otherMs: b0First ? secondMs : firstMs };
+      },
+    };
+  </script>
+</html>
