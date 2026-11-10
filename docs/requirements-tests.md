@@ -35,6 +35,8 @@ E4 후보는 인증 보관 상한과 한도 이후의 완전한 검사를 확인
 
 기존 T-H04/H05, T-P06, T-K01~K07, T-B01~B04도 유지한다. 새 harness [12개 counts/oracle 회귀](../tests/integration/noop-benchmark.test.ts)는 controlled dirty·uncontrolled 보존·재배치·Effect·자원 정리를 별도 확인한다. 실제 Windows IME 수동 확인은 이전 사용자 보고이며, 이번 자동 검증과 시점을 혼동하지 않는다.
 
+2026-11-10 추가(기존 ID의 근거를 넓힌 것이며 새 기능 ID는 없다): T-M05에 [placeholder↔memo 전환](../tests/integration/memo-placeholder.test.ts), T-E01에 [명령 허용성 계약](../tests/integration/plan-command-contract.test.ts)(가려진 금지 명령을 첫 host 쓰기 전에 거절), T-K01~K05·T-L01~L04에 [planner 차등·독립 모델](../tests/unit/keyed-boundaries.test.ts)·[작업량](../tests/unit/keyed-boundary-counts.test.ts)·[전체 Diff 차등과 anchor](../tests/integration/keyed-boundaries.test.ts), T-B04/T-K03에 [이동 대상에 따른 IME 커밋/보류](../tests/browser/browser-state.spec.ts). Keyed 테스트는 기본 planner와 연구용 후보(`research/keyed-boundaries/`)를 함께 검사한다.
+
 ## 기능 ID
 
 | 기능 ID | 실제 구현 | 검증/근거 |

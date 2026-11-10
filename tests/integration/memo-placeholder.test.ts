@@ -74,6 +74,21 @@ it('memo props are compared only with a previous record of the same component ty
   expect(row.calls).toHaveLength(4); expect(state.memoReuses).toBe(1);
 });
 
+it('keyed child slot: a record of another kind under the same key is never used as a memo record', () => {
+  const row = counting((props: { label: string }) => h('li', null, props.label));
+  const Row = memo(row.counted);
+  const at = (value: RenderValue) => h('ul', null, h('li', { key: 'x' }, 'x'), value);
+  // Keyed siblings are matched by key, so the previous record for key 'a' is an element here.
+  let state = evaluateExpression(at(h('p', { key: 'a' }, 'el')), null, true);
+  state = evaluateExpression(at(h(Row, { key: 'a', label: 'a' })), state.nextState, true);
+  expect(row.calls).toHaveLength(1); expect(state.memoReuses).toBe(0);
+  state = evaluateExpression(at(h(Row, { key: 'a', label: 'a' })), state.nextState, true);
+  expect(row.calls).toHaveLength(1); expect(state.memoReuses).toBe(1);
+  state = evaluateExpression(at(h(Plain, { key: 'a', label: 'a' })), state.nextState, true); // same key, other component
+  state = evaluateExpression(at(h(Row, { key: 'a', label: 'a' })), state.nextState, true);
+  expect(row.calls).toHaveLength(2); expect(state.memoReuses).toBe(0);
+});
+
 for (const slot of ['root', 'child'] as const) {
   it(`${slot} slot through FunctionComponent: null <-> memo keeps DOM identity rules, latest callback, Hooks/Effects and failed-render retry`, async () => {
     const output = document.createElement('section'); document.body.append(output);

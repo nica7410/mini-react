@@ -10,6 +10,7 @@ import { diff } from '../../src/core/reconcile';
 import { applySnapshot, commit } from '../../src/core/patch';
 import { isSyncFormOnlyPlan, validatePlan, validatePlanGeneral } from '../../src/core/planValidation';
 import { unwrap } from '../../src/core/vdom';
+import { render, snapshot } from '../fixtures/helpers';
 import type { MountHandle, PatchOp, PatchPlan, VRoot } from '../../src/core/types';
 
 afterEach(() => { vi.restoreAllMocks(); document.body.replaceChildren(); });
@@ -204,4 +205,14 @@ it('planner plans keep their radio/option application order and are accepted by 
   expect(commit(mount, plan).status).toBe('committed');
   expect([field('text').value, field('ra').checked, field('rb').checked, (field('pick') as unknown as HTMLSelectElement).selectedIndex]).toEqual(['next', false, true, 2]);
   expect(root.querySelector('#box')!.getAttribute('class')).toBe('next'); expect(root.querySelector<HTMLElement>('#box')!.style.cssText).toBe('');
+});
+
+it('snapshot-mode select (Phase 1 capture): the planner may move the selected attribute between options', () => {
+  // The same attribute that is forbidden under a controlled select is part of a captured snapshot.
+  const { root, mount } = render(snapshot('<select><option>a</option><option selected>b</option></select>'));
+  const plan = unwrap(diff(mount.view, snapshot('<select><option selected>a</option><option>b</option></select>')));
+  expect(plan.operations.some(op => op.kind === 'SET_ATTR' && op.name === 'selected')).toBe(true);
+  expect(validatePlan(mount, plan).ok).toBe(true); expect(validatePlanGeneral(mount, plan).ok).toBe(true);
+  expect(commit(mount, plan).status).toBe('committed');
+  expect(root.querySelector('select')!.selectedIndex).toBe(0); expect(root.querySelectorAll('option')[0].hasAttribute('selected')).toBe(true);
 });

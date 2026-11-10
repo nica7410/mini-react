@@ -1,0 +1,86 @@
+{
+  "recordedAt": "2026-11-10T06:35:30.159Z",
+  "startHead": "c2dbbf6",
+  "commits": {
+    "b0CorrectnessFix": "ab5a9b81b85e555bd228f0a84b1036e3a5c51979",
+    "c1CandidateAsDefault": "e382bd7f1833727a057efb19c958323933b7f536",
+    "researchKept": "e547ff811bcffcef28dc5583c07d79d3749c44df"
+  },
+  "decision": "B: kept for research. Default planner is the B0 planner.",
+  "defaultSource": {
+    "note": "src equals ab5a9b8 (git diff ab5a9b8 -- src is empty).",
+    "blobs": {
+      "src/core/keyed.ts": "f28a1419883bd6cf86d76f6cfd69561deaa6b8b2",
+      "src/runtime/resolve.ts": "a3cfd3041d00cd83d3c7b36b6dd6a3a1d07a124a",
+      "src/core/validate.ts": "6744d6f5a818105f6deff3881f35d0aa12956bda",
+      "src/core/planValidation.ts": "94ea4cd2bc5b3be76557ba3f444129a2ca561fbc"
+    }
+  },
+  "candidate": {
+    "file": "research/keyed-boundaries/keyed.candidate.ts",
+    "blob": "03ec83ce4bc219b5055c32d3ecf6d9e69c935003",
+    "patch": "research/keyed-boundaries/candidate.patch",
+    "patchBlob": "d45c10c212f36eb710df722ea48562f507f8909b",
+    "asDefaultBlob": "be50a1e08769a21acc493adbf3aa831bfe59ec93",
+    "baselineBlob": "f28a1419883bd6cf86d76f6cfd69561deaa6b8b2",
+    "baselineSha256": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5"
+  },
+  "verification": [
+    {
+      "source": "ab5a9b8 (B0)",
+      "typecheck": "pass",
+      "unitIntegration": "330/330",
+      "build": "pass",
+      "browser": "Chromium+Firefox 33/33, one run"
+    },
+    {
+      "source": "e382bd7 (candidate as default)",
+      "typecheck": "pass",
+      "unitIntegration": "389/389",
+      "build": "pass",
+      "browser": "browser-state + keyed specs 11/11 (Chromium+Firefox), one run; full suite not run on this commit"
+    },
+    {
+      "source": "final tree (src = B0, research candidate, added tests)",
+      "typecheck": "pass",
+      "unitIntegration": "407/407",
+      "build": "pass",
+      "browser": "Chromium+Firefox 35/35, one run (run on e547ff8; later changes are two added jsdom tests and documents)"
+    }
+  ],
+  "generatedChecks": {
+    "seed": 20261110,
+    "plannerPairs": 1700,
+    "plannerPairsWithDuplicateKey": 89,
+    "wholeDiffPairs": 300,
+    "wrappedPairs": 38025,
+    "wrappedPermutations": 874,
+    "requiredInputs": 40,
+    "shrinkDemoEvaluations": 34,
+    "failures": 0
+  },
+  "mutations": "docs/validation/followup-keyed-boundaries/mutations.json (4 mutants killed; first run at e382bd7 also killed all 4 and passed on the B0 planner file)",
+  "measurement": {
+    "plan": "docs/validation/followup-keyed-boundaries/plan.md",
+    "counts": "docs/bench/followup-keyed-boundaries-counts",
+    "planner": "docs/bench/followup-keyed-boundaries-planner",
+    "taskApp": "docs/bench/followup-keyed-boundaries-task",
+    "aa": "docs/bench/followup-keyed-boundaries-aa",
+    "executionSeconds": {
+      "counts": 1,
+      "planner": 50,
+      "builds": 3,
+      "taskApp": 114,
+      "aa": 91
+    },
+    "capSeconds": 900
+  },
+  "independentReview": "Read-only review of the ab5a9b8 src changes and the candidate file by a separate agent: no confirmed defect. Two suggested tests were added.",
+  "notVerified": [
+    "real Korean IME",
+    "remote CI",
+    "timing at 10 and 1,000 items",
+    "10,000 items (not allowed)",
+    "whole-app time effect of the candidate"
+  ]
+}

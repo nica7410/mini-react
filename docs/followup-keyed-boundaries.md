@@ -37,7 +37,7 @@
 - 원인: `sameExpressionType`이 `typeof null === 'object'` 때문에 `null`과 컴포넌트 표현식을 같은 종류로 보았고, memo 분기가 이전 표현식이 컴포넌트인지 확인하지 않고 `props`를 읽었다.
 - 재현되지 않은 전환: `undefined`/boolean/text/number/element/다른 컴포넌트 → memo, 그리고 memo → 그 값들(역방향). `typeof` 또는 `kind`가 달라 이전 기록이 이미 버려졌다. reuse=off는 memo 분기에 들어가지 않는다.
 - 수정(`src/runtime/resolve.ts`): 표현식 객체(element/component)는 `null`·원시값·배열과 같은 종류가 아니다. memo props 비교는 이전 기록이 **같은 type·같은 key의 컴포넌트 표현식**임을 확인한 뒤에만 한다. memo를 끄거나 `null`의 출력을 바꾸지 않았다. State와 Hooks는 여전히 루트에만 있다.
-- 회귀 테스트(`tests/integration/memo-placeholder.test.ts`, 39개): 9종 값 × 루트/자식 슬롯 × reuse on/off의 `값 → memo → 같은 memo → 값 → memo`, type·key 변경, `FunctionComponent`에서 최종 DOM·identity·최신 callback·Effect 횟수·실패 렌더 후 재시도(실패 후보 미확정).
+- 회귀 테스트(`tests/integration/memo-placeholder.test.ts`, 40개): 9종 값 × 루트/자식 슬롯 × reuse on/off의 `값 → memo → 같은 memo → 값 → memo`, type·key 변경, keyed 자식 슬롯에서 같은 key의 다른 종류 기록, `FunctionComponent`에서 최종 DOM·identity·최신 callback·Effect 횟수·실패 렌더 후 재시도(실패 후보 미확정).
 
 ### 2.2 최종 target이 합법이어도 금지된 중간 명령은 거절
 
@@ -55,7 +55,7 @@
   4. **새로 만든 노드**: `CREATE_SUBTREE`의 노드는 주어진 그대로 host에 쓰이므로 같은 계획에서 수정할 수 없다(planner는 이런 명령을 만들지 않는다).
 - 만들지 않은 규칙: "모든 중간 상태가 최종 VDOM과 같아야 한다"는 규칙은 없다. `class=a → class=base`, `title 제거 → title 설정`, 이벤트 handler 교체, 동일한 `SYNC_FORM` 반복, planner가 만든 radio a→b 전환과 option 목록 변경은 그대로 수락된다(테스트로 고정). 명령마다 트리를 다시 검증하지 않는다. 외부에서 바뀐 속성값을 감시하지 않는다.
 - 수정: `src/core/validate.ts`의 `commandProblem`(규칙은 `validateTree`와 공유), `src/core/planValidation.ts`의 일반 경로와 SYNC_FORM 전용 경로.
-- 회귀 테스트(`tests/integration/plan-command-contract.test.ts`, 23개): 가려진 명령 20종 + 생성 후 정리 3종이 **두 경로 모두에서** 거절되고, `commit` 호출 동안 host 쓰기 spy 15종이 한 번도 호출되지 않으며 MutationObserver 기록이 없다. DOM 구조·텍스트·속성·스타일, value·checked·선택, 이벤트 binding, focus·selection, registry·view·revision·dirty/held가 그대로다. 합법 순차 계획 2종은 수락된다.
+- 회귀 테스트(`tests/integration/plan-command-contract.test.ts`, 24개): 가려진 명령 20종 + 생성 후 정리 3종이 **두 경로 모두에서** 거절되고, `commit` 호출 동안 host 쓰기 spy 15종이 한 번도 호출되지 않으며 MutationObserver 기록이 없다. DOM 구조·텍스트·속성·스타일, value·checked·선택, 이벤트 binding, focus·selection, registry·view·revision·dirty/held가 그대로다. 합법 순차 계획 2종과 snapshot 모드 select의 `selected` 속성 이동(planner 계획)은 수락된다.
 - 기존 테스트 변경 1건: `sync-form-validation.test.ts`의 "last policy wins" 제목을 새 계약("같은 정책은 수락, 다른 정책은 거절")으로 바꿨다. 단언은 그대로 통과한다.
 - 남은 범위 밖 사항: `attributeProblem`의 금지 이름 목록(`srcdoc` 등)과 `style` 검사는 소문자 이름 기준이다. resolver와 DOM 캡처는 이름을 소문자로 만들지만, 손으로 만든 VNode/명령의 대문자 이름은 `validateTree`와 명령 계약 모두에서 걸러지지 않는다. 이번 두 반례의 범위가 아니어서 고치지 않았다.
 
@@ -297,6 +297,11 @@ A/A (같은 B0 소스를 두 이름으로 빌드, crud/100, 한 차례):
 - 보존: 후보 코드 `research/keyed-boundaries/keyed.candidate.ts`, 적용용 `candidate.patch`, 후보 커밋 `e382bd7`, 계약 테스트(기본 planner와 후보를 함께 검사), 변이 스크립트, counts·planner·TaskApp·A/A 원자료.
 - 이 판정은 과거 ④ 채택을 취소하거나 과거 미측정 항목을 통과 처리하는 근거가 아니다. 실제 React와의 비교도 아니다.
 
+### 독립 검토와 최종 소스 검증
+
+- 작성과 분리된 읽기 전용 검토(별도 에이전트)가 `ab5a9b8`의 `src` 변경과 후보 파일을 살폈다. **확정 결함 없음.** 지적된 테스트 공백 두 가지(keyed 자식 슬롯의 memo 전환, snapshot select의 `selected` 허용)는 테스트로 보강했다. 불확실로 남긴 두 항목은 이번 수정이 만든 것이 아니다: 손으로 만든 VNode에서 input의 form이 `null`↔`uncontrolled`로 바뀌는 계획은 이전에도 거절됐고, `SET_EVENT`의 binding 형태는 `validateTree`도 검사하지 않는다.
+- 최종 기본 소스(`src`는 `ab5a9b8`와 같음)에서 typecheck, 단위·통합 407/407, production build, Chromium+Firefox 35/35(1회)를 통과했다. 브라우저 수가 33에서 35가 된 것은 IME 사례 테스트 1개가 두 브라우저에서 추가됐기 때문이다.
+
 ## 9. 남은 미검증·한계
 
 - 전체 작업 시간에서 후보의 효과(이득이든 악화든)는 확인되지 않았다. 프로세스 단위 변동을 없앤 비교(한 페이지 안에서 같은 입력에 두 planner의 `diff()`를 교대로 실행)가 없다.
@@ -311,7 +316,7 @@ A/A (같은 B0 소스를 두 이름으로 빌드, crud/100, 한 차례):
 
 | 항목 | 사용 | 상한 |
 |---|---|---|
-| 전체 작업(10:35 시작) | 약 70분 | 180분 |
+| 전체 작업(10:35 시작, 사용 한도로 11:23~15:31 중단. 중단 시간 제외) | 약 65분 | 180분 |
 | 성능 실험 실행(counts 1초, planner 50초, 빌드 3초, TaskApp 114초, A/A 91초) | 약 4분 20초 | 15분 |
 | 새 생성·차등 탐색 실행(계약 테스트 반복 실행과 변이 묶음 2회) | 약 2분(각 실행 1~5초, 변이 묶음 약 15~20초) | 5분 |
 

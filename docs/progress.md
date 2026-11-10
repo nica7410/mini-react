@@ -5,6 +5,7 @@
 - 목표: 실제 TaskApp 표현 재사용과 E0/E1/E2 × A0/A1 비교, 측정에 따른 생성 비용·캐시 정책 개선, 최종 재검증·문서화·단계별 로컬 커밋.
 - 작업 시작 브랜치: **phase1**. 같은 브랜치에서 계속한다.
 - 현재 단계: **TaskApp 후속 작업 완료(2026-11-09).** 최종 정책은 엔진 E1 방식의 매회 검증 + 동결 안전 조건, 기본 앱 A0, 비교용 A1(`TaskAppWithRowReuse`)이다. 기능 소스 `9b52323`에서 typecheck·단위/통합 213개·build·기본 Chromium+Firefox 33개 × 3회를 통과했다. [최종 정책·검증](task-app-final-policy.md)
+- 위 "현재 단계" 문장은 2026-11-09 ④ 채택 이전의 역사적 기록이다(기본 앱 A0). **2026-11-10 현재 기본 소스는 E9 memo 지원 + 기본 앱 A2 + `SYNC_FORM` 전용 사전 검증([채택 기록](row-memo-adoption.md))에 정확성 수정 `ab5a9b8`을 더한 상태다.** Keyed planner는 기존 것 그대로다.
 - 외부 확인: M0 팀 합의/일정, 다른 후보, 팀원 설명/변경 연습, 원격 CI 실행은 확인되지 않았다. 실제 IME는 2026-11-07의 사용자 직접 확인 PASS이며 브라우저명·버전은 미제공이다. 이번 후보 소스의 새 수동 IME PASS로 재기록하지 않는다.
 - 원격 push/PR 병합/원격 배포는 요청 범위 밖이다. 최종 산출물은 로컬 데모와 재현 절차다.
 
@@ -18,6 +19,17 @@
 | 검증 | 완료 | 3e9a48c: typecheck·219/219·build·Chromium+Firefox 33/33×3 |
 
 [후속 개선 보고서](followup-trace-alloc.md). 10,000개 측정은 실행하지 않았다.
+
+## ④ 채택 이후 후속 (2026-11-10)
+
+| 단계 | 상태 | 증거 |
+|---|---|---|
+| S1 정확성 보강 | 수정, `ab5a9b8` | `null`→memo 예외와 가려진 금지 Patch 명령을 `c2dbbf6`에서 재현 후 최소 수정. 회귀 테스트 40 + 24개. 이 커밋이 기준선 B0 |
+| S2 Keyed 구간 분할 후보 | 구현·검증, `e382bd7` | B0와 같은 계획: 논증, B0 차등, 독립 모델, 생성 2,000쌍(seed 20261110), 변이 4개 검출, IME 사례(jsdom, Chromium·Firefox 합성 이벤트) |
+| S3 측정·판정 | **연구용 보존(B)**, `e547ff8` | planner Map 연산 0·단독 시간 median 21/21 감소. TaskApp 전체 시간 이득 미입증, `crud/100` 2/3 세션 경고 초과·A/A 폭 밖. 기본 planner는 B0 유지 |
+| 검증 | 완료 | 최종 소스: typecheck·407/407·build·Chromium+Firefox 35/35(1회). 독립 검토 확정 결함 없음 |
+
+[보고서](followup-keyed-boundaries.md) · [측정 전 계획](validation/followup-keyed-boundaries/plan.md) · [검증 기록](validation/followup-keyed-boundaries/validation.json). 10,000개 측정, 실제 한글 IME, 원격 CI는 이번에 실행·확인하지 않았다.
 
 | ④ 행 단위 재사용(명시적 memo) | **채택(2026-11-09, 사용자 결정)**: a1b070f 엔진·A2 앱 + `SYNC_FORM` 전용 사전 검증. 근거·남은 초과는 [채택 기록](row-memo-adoption.md). 이전 상태: 보류, 0855612·b201f93·a1b070f → dcb2310에서 기본 소스 복원 | A0→A2는 두 번의 3세션 확인 모두 대부분 조건에서 큰 감소(예: 1,000개 counter −70~−77%)였지만, 같은 E7-A0 기준선이 이전보다 +23.5%/+40.7% 느려 사전 안정성 기준(±10%)을 넘었다. 사전 규칙대로 추가 측정 없이 보류하고 기본 경로는 A0 + 3e9a48c를 유지한다. [④ 보고서](followup-row-memo.md) |
 
