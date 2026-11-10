@@ -1,0 +1,143 @@
+{
+  "source": "src/core/keyed.ts",
+  "tests": [
+    "tests/unit/keyed-boundaries.test.ts",
+    "tests/unit/keyed-exhaustive.test.ts",
+    "tests/integration/keyed-boundaries.test.ts",
+    "tests/integration/keyed.test.ts"
+  ],
+  "sourceSha256": "be50a1e08769a21acc493adbf3aa831bfe59ec93",
+  "runs": [
+    {
+      "label": "candidate (unchanged)",
+      "exitCode": 0,
+      "total": 77,
+      "failed": 0,
+      "failedTests": [],
+      "ms": 3646,
+      "expected": "pass"
+    },
+    {
+      "label": "M1 suffix raises the Greedy maximum before the middle",
+      "exitCode": 1,
+      "total": 77,
+      "failed": 17,
+      "failedTests": [
+        "integration/keyed-boundaries.test.ts > greedy: swap neighbours inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > greedy: reverse inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > greedy: insert, remove and move gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > greedy: component rows moved inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > greedy: element row becomes a component row in the middle gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: element row becomes a component row in the middle gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > seed 20261110: 300 generated list pairs give the same plan as B0 and the expected DOM (both strategies)",
+        "integration/keyed-boundaries.test.ts > placement commands keep their order and whole-list anchors next to boundary runs",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (greedy, row B): the reorder commits during the composition",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (greedy, row D): the reorder commits during the composition",
+        "unit/keyed-boundaries.test.ts > required boundary inputs: candidate equals B0 and the independent model",
+        "unit/keyed-boundaries.test.ts > known decisions: Greedy keeps new-list order, LIS keeps its tie choice, indices are whole-list indices",
+        "unit/keyed-boundaries.test.ts > every partial pair of four keys inside unchanged, absent and incompatible boundary nodes",
+        "unit/keyed-boundaries.test.ts > every permutation of up to six keys between two-node boundary runs",
+        "unit/keyed-boundaries.test.ts > seed 20261110: 1700 generated pairs with boundary runs, identity changes and duplicate keys",
+        "unit/keyed-exhaustive.test.ts > T-K04/K05: planner의 key 검증, monotonic/no-reorder의 LIS 생략",
+        "unit/keyed-exhaustive.test.ts > 알려진 입력 ACBDEFGH의 이동 판정 Greedy=1 / LIS=1"
+      ],
+      "ms": 2323,
+      "expected": "fail"
+    },
+    {
+      "label": "M2 duplicate-key check skips the keys of the shared leading run",
+      "exitCode": 1,
+      "total": 77,
+      "failed": 3,
+      "failedTests": [
+        "unit/keyed-boundaries.test.ts > required boundary inputs: candidate equals B0 and the independent model",
+        "unit/keyed-boundaries.test.ts > seed 20261110: 1700 generated pairs with boundary runs, identity changes and duplicate keys",
+        "unit/keyed-exhaustive.test.ts > T-K04/K05: planner의 key 검증, monotonic/no-reorder의 LIS 생략"
+      ],
+      "ms": 3438,
+      "expected": "fail"
+    },
+    {
+      "label": "M3 middle Map stores middle-local old indices (offset error)",
+      "exitCode": 1,
+      "total": 77,
+      "failed": 34,
+      "failedTests": [
+        "integration/keyed-boundaries.test.ts > greedy: swap neighbours inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > greedy: reverse inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > greedy: insert, remove and move gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > greedy: component rows moved inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > greedy: element row becomes a component row in the middle gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: swap neighbours inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: reverse inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: insert, remove and move gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: component rows moved inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: element row becomes a component row in the middle gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > seed 20261110: 300 generated list pairs give the same plan as B0 and the expected DOM (both strategies)",
+        "integration/keyed-boundaries.test.ts > placement commands keep their order and whole-list anchors next to boundary runs",
+        "integration/keyed-boundaries.test.ts > sub-diffs of siblings run in new-list order, including the boundary rows",
+        "integration/keyed-boundaries.test.ts > IME in row A, LIS: A is not a move target, so the plan commits, only B and D move and A's form value is held until the composition ends",
+        "integration/keyed-boundaries.test.ts > IME in a moved row (greedy, row A): the whole plan is deferred and the latest State is applied after the composition ends",
+        "integration/keyed-boundaries.test.ts > IME in a moved row (lis, row B): the whole plan is deferred and the latest State is applied after the composition ends",
+        "integration/keyed-boundaries.test.ts > IME in a moved row (lis, row D): the whole plan is deferred and the latest State is applied after the composition ends",
+        "integration/keyed-boundaries.test.ts > IME in a moved row (greedy, row C): the whole plan is deferred and the latest State is applied after the composition ends",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (lis, row A): the reorder commits during the composition",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (lis, row C): the reorder commits during the composition",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (greedy, row B): the reorder commits during the composition",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (greedy, row D): the reorder commits during the composition",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (lis, row P): the reorder commits during the composition",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (greedy, row Q): the reorder commits during the composition",
+        "unit/keyed-boundaries.test.ts > required boundary inputs: candidate equals B0 and the independent model",
+        "unit/keyed-boundaries.test.ts > known decisions: Greedy keeps new-list order, LIS keeps its tie choice, indices are whole-list indices",
+        "unit/keyed-boundaries.test.ts > every partial pair of four keys inside unchanged, absent and incompatible boundary nodes",
+        "unit/keyed-boundaries.test.ts > every permutation of up to six keys between two-node boundary runs",
+        "unit/keyed-boundaries.test.ts > seed 20261110: 1700 generated pairs with boundary runs, identity changes and duplicate keys",
+        "unit/keyed-exhaustive.test.ts > T-L01: n=1~8의 모든 순열에서 실제 Greedy/LIS planner + 독립 배열 executor의 순서·identity 일치",
+        "unit/keyed-exhaustive.test.ts > T-L02: n≤7 BFS의 독립 최단 이동 oracle와 실제 LIS 이동 수 일치",
+        "unit/keyed-exhaustive.test.ts > T-L03: 4개 key의 모든 부분 순열 4,225쌍에서 삽입/삭제/이동과 oldIndex 0 보존",
+        "unit/keyed-exhaustive.test.ts > T-L04: type 변경 포함 seed 10,000쌍의 순서·identity 일치",
+        "unit/keyed-exhaustive.test.ts > 알려진 입력 ACBDEFGH의 이동 판정 Greedy=1 / LIS=1"
+      ],
+      "ms": 2059,
+      "expected": "fail"
+    },
+    {
+      "label": "M4 LIS scans right to left (another longest run on ties)",
+      "exitCode": 1,
+      "total": 77,
+      "failed": 17,
+      "failedTests": [
+        "integration/keyed-boundaries.test.ts > lis: swap neighbours inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: reverse inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: reverse gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: insert, remove and move gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > lis: component rows moved inside boundaries gives the same plan as B0 and the expected DOM",
+        "integration/keyed-boundaries.test.ts > seed 20261110: 300 generated list pairs give the same plan as B0 and the expected DOM (both strategies)",
+        "integration/keyed-boundaries.test.ts > placement commands keep their order and whole-list anchors next to boundary runs",
+        "integration/keyed-boundaries.test.ts > IME in row A, LIS: A is not a move target, so the plan commits, only B and D move and A's form value is held until the composition ends",
+        "integration/keyed-boundaries.test.ts > IME in a moved row (lis, row B): the whole plan is deferred and the latest State is applied after the composition ends",
+        "integration/keyed-boundaries.test.ts > IME in a moved row (lis, row D): the whole plan is deferred and the latest State is applied after the composition ends",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (lis, row A): the reorder commits during the composition",
+        "integration/keyed-boundaries.test.ts > IME in a kept row (lis, row C): the reorder commits during the composition",
+        "unit/keyed-boundaries.test.ts > required boundary inputs: candidate equals B0 and the independent model",
+        "unit/keyed-boundaries.test.ts > known decisions: Greedy keeps new-list order, LIS keeps its tie choice, indices are whole-list indices",
+        "unit/keyed-boundaries.test.ts > every partial pair of four keys inside unchanged, absent and incompatible boundary nodes",
+        "unit/keyed-boundaries.test.ts > every permutation of up to six keys between two-node boundary runs",
+        "unit/keyed-boundaries.test.ts > seed 20261110: 1700 generated pairs with boundary runs, identity changes and duplicate keys"
+      ],
+      "ms": 2249,
+      "expected": "fail"
+    },
+    {
+      "label": "baseline planner ab5a9b8",
+      "exitCode": 0,
+      "total": 77,
+      "failed": 0,
+      "failedTests": [],
+      "ms": 4770,
+      "expected": "pass"
+    }
+  ],
+  "restored": true,
+  "ok": true
+}

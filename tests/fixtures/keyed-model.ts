@@ -1,13 +1,31 @@
-import type { VElement, ViewNode } from '../../src/core/types';
+import type { PureComponent, VElement, ViewNode } from '../../src/core/types';
 import type { ReorderPlan } from '../../src/core/keyed';
 
-export interface Item { key: string; tag: string }
+// `owner`/`rendered` model a component boundary around the host element: the owner names a
+// component type and `rendered` is the key of the element the component returned.
+export interface Item { key: string; tag: string; owner?: string; rendered?: string }
 export const items = (keys: string): Item[] => Array.from(keys, key => ({ key, tag: 'li' }));
+const owners = new Map<string, PureComponent>();
+export function ownerType(name: string): PureComponent {
+  let type = owners.get(name);
+  if (!type) { type = () => null; Object.defineProperty(type, 'name', { value: name }); owners.set(name, type); }
+  return type;
+}
 export const vnode = (item: Item): VElement => ({
-  kind: 'element', identity: { key: item.key, renderedRootKey: null, boundaries: [] }, tag: item.tag,
+  kind: 'element',
+  identity: { key: item.key, renderedRootKey: item.rendered ?? null, boundaries: item.owner ? [{ type: ownerType(item.owner), key: item.key }] : [] },
+  tag: item.tag,
   attrs: { 'data-key': item.key }, style: {}, events: {}, form: null, children: [],
 });
 export const views = (values: readonly Item[]): ViewNode[] => values.map((item, i) => ({ ref: `old/${i}`, vnode: vnode(item), children: [] }));
+
+// The reuse contract written out independently of the engine's compatible()/equalData():
+// same key, same host tag, same rendered root key and the same component boundaries.
+export function sameModelIdentity(a: VElement, b: VElement): boolean {
+  if (a.identity.key !== b.identity.key || a.tag !== b.tag || a.identity.renderedRootKey !== b.identity.renderedRootKey) return false;
+  if (a.identity.boundaries.length !== b.identity.boundaries.length) return false;
+  return a.identity.boundaries.every((boundary, i) => boundary.type === b.identity.boundaries[i].type && boundary.key === b.identity.boundaries[i].key);
+}
 
 // production DOM executor와 독립된 배열 모델. stable set을 재계산하거나 LIS를 사용하지 않는다.
 export function executeModel(old: readonly ViewNode[], plan: ReorderPlan): ViewNode[] {
@@ -30,10 +48,10 @@ export function assertModel(old: readonly ViewNode[], target: readonly Item[], p
   const output = executeModel(old, plan);
   if (output.length !== target.length) throw new Error('Model length differs');
   target.forEach((item, i) => {
-    const node = output[i];
+    const node = output[i], expected = vnode(item);
     if (node.vnode.kind !== 'element' || node.vnode.identity.key !== item.key || node.vnode.tag !== item.tag) throw new Error(`Order/type differs at ${i}`);
-    // 정답 매칭은 planner의 slots를 사용하지 않고 key/tag 계약에서 별도로 계산한다.
-    const previous = old.find(entry => entry.vnode.identity.key === item.key && entry.vnode.kind === 'element' && entry.vnode.tag === item.tag);
+    // 정답 매칭은 planner의 slots를 사용하지 않고 key/tag/boundary 계약에서 별도로 계산한다.
+    const previous = old.find(entry => entry.vnode.kind === 'element' && sameModelIdentity(entry.vnode, expected));
     if (previous ? node !== previous : old.some(entry => entry.ref === node.ref)) throw new Error(`Identity differs at ${i}`);
   });
 }

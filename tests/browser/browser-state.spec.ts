@@ -75,3 +75,52 @@ test('T-B04: editor buttons are disabled throughout composition and re-enabled a
   await page.locator('#test').dispatchEvent('compositionend', { data: '한' });
   await expect(page.getByRole('button', { name: 'Patch', exact: true })).toBeEnabled();
 });
+
+// P A B C D Q -> P B A D C Q needs two moves with either strategy, but not of the same rows:
+// LIS moves B and D (A stays), Greedy moves A and C. The moved rows decide what an IME
+// composition in row A does to the plan (keyed boundary-run planner, 2026-11-10).
+test('T-B04/T-K03: composition in row A: LIS commits and holds only the form value, Greedy defers the plan; latest State after end', async ({ page }) => {
+  await openApp(page);
+  const result = await page.evaluate(async () => {
+    const modulePath = '/src/runtime/index.ts'; const { FunctionComponent, h, useState } = await import(modulePath);
+    const settle = () => new Promise(resolve => setTimeout(resolve, 30));
+    const run = async (strategy: string) => {
+      const output = document.createElement('div'); document.body.append(output);
+      let setOrder: any, setNote: any;
+      const root = new FunctionComponent(() => {
+        const [order, a] = useState('PABCDQ'), [note, b] = useState('n0'); setOrder = a; setNote = b;
+        return h('div', null, h('output', null, note), h('ul', null, ...Array.from(order as string, key => h('li', { key, attrs: { 'data-key': key } },
+          h('input', { attrs: { 'aria-label': `ime-${strategy}-${key}` }, form: { mode: 'controlled', value: `${key}:${note}` } }), h('span', null, `${key}:${note}`)))));
+      }, {}, output, { reconcile: strategy }); root.mount();
+      const list = output.querySelector('ul')!, input = output.querySelector(`[aria-label="ime-${strategy}-A"]`) as HTMLInputElement;
+      const order = () => Array.from(list.children, node => (node as HTMLElement).dataset.key).join('');
+      const state = () => ({ status: root.lastResult.status, order: order(), value: input.value, note: output.querySelector('output')!.textContent,
+        rowText: list.querySelector('[data-key="A"] span')!.textContent, held: root.host.heldForms.size, focused: document.activeElement === input });
+      input.focus();
+      input.dispatchEvent(new CompositionEvent('compositionstart', { bubbles: true, data: '' }));
+      input.value = '한'; input.dispatchEvent(new InputEvent('input', { bubbles: true, isComposing: true, data: '한' }));
+      await settle();
+      const nodes = Array.from(list.children), moved = new Set<string>();
+      const observer = new MutationObserver(records => { for (const record of records) for (const node of [...record.addedNodes, ...record.removedNodes]) moved.add((node as HTMLElement).dataset.key!); });
+      observer.observe(list, { childList: true });
+      setOrder('PBADCQ'); setNote('n1'); await settle();
+      const during = { ...state(), moved: [...moved].sort().join('') };
+      setNote('n2'); await settle();
+      const later = state();
+      input.dispatchEvent(new CompositionEvent('compositionend', { bubbles: true, data: '한' })); await settle();
+      observer.disconnect();
+      const after = { ...state(), moved: [...moved].sort().join(''), sameNodes: Array.from('PABCDQ').every((key, i) => list.querySelector(`[data-key="${key}"]`) === nodes[i]), errors: root.errors.length };
+      root.unmount(); output.remove();
+      return { during, later, after };
+    };
+    return { lis: await run('lis'), greedy: await run('greedy') };
+  });
+  // LIS: A is kept in place, so the reorder commits during the composition and only A's value is held.
+  expect(result.lis.during).toEqual({ status: 'committed', order: 'PBADCQ', value: '한', note: 'n1', rowText: 'A:n1', held: 1, focused: true, moved: 'BD' });
+  expect(result.lis.later).toEqual({ status: 'committed', order: 'PBADCQ', value: '한', note: 'n2', rowText: 'A:n2', held: 1, focused: true });
+  expect(result.lis.after).toEqual({ status: 'committed', order: 'PBADCQ', value: 'A:n2', note: 'n2', rowText: 'A:n2', held: 0, focused: true, moved: 'BD', sameNodes: true, errors: 0 });
+  // Greedy: A is a move target, so nothing is written until the composition ends; then the latest State wins.
+  expect(result.greedy.during).toEqual({ status: 'deferred', order: 'PABCDQ', value: '한', note: 'n0', rowText: 'A:n0', held: 1, focused: true, moved: '' });
+  expect(result.greedy.later).toEqual({ status: 'deferred', order: 'PABCDQ', value: '한', note: 'n0', rowText: 'A:n0', held: 1, focused: true });
+  expect(result.greedy.after).toEqual({ status: 'committed', order: 'PBADCQ', value: 'A:n2', note: 'n2', rowText: 'A:n2', held: 0, focused: true, moved: 'AC', sameNodes: true, errors: 0 });
+});
