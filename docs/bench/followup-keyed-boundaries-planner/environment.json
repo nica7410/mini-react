@@ -1,0 +1,45 @@
+{
+  "tag": "followup-keyed-boundaries-planner",
+  "startedAt": "2026-11-10T02:03:28.209Z",
+  "sources": {
+    "B0": {
+      "commit": "ab5a9b81b85e555bd228f0a84b1036e3a5c51979",
+      "files": {
+        "keyed.ts": "8de31c5b7ba2c404fd7bdcd7b0fce6c88c70897fa24bfabb388a1a627d4793b5",
+        "vdom.ts": "ef4d0c6c53b30c44ff4e61afa3e3dc38c73782a6510a9befa216c0891e2ecdd0",
+        "types.ts": "6ea90f9e4fa0b9d036ff7dd9b5cc0607fb27ded3918b678b205d6a5302e6099b"
+      }
+    },
+    "C1": {
+      "commit": "e382bd7f1833727a057efb19c958323933b7f536",
+      "files": {
+        "keyed.ts": "6dcf6977abbda8df6a97a4d82797ee1b05b4d78cb08e7a9e66a89281f2f5d7cd",
+        "vdom.ts": "ef4d0c6c53b30c44ff4e61afa3e3dc38c73782a6510a9befa216c0891e2ecdd0",
+        "types.ts": "6ea90f9e4fa0b9d036ff7dd9b5cc0607fb27ded3918b678b205d6a5302e6099b"
+      }
+    }
+  },
+  "bundleSha256": "7615a5387abdaa199f0a574170fa908ee90f5c8a0c7c1002c98724a5dcff9e86",
+  "node": "v24.22.2",
+  "vite": "8.3.6",
+  "cpu": "Intel(R) Core(TM) i7-10875H CPU @ 2.30GHz",
+  "logicalCPUs": 16,
+  "os": {
+    "platform": "win32",
+    "release": "10.0.19045",
+    "arch": "x64"
+  },
+  "protocol": {
+    "N": 100,
+    "BATCH": 200,
+    "WARMUP": 10,
+    "SAMPLES": 60,
+    "SEED": 539365639,
+    "SESSIONS": 3,
+    "strategy": "lis"
+  },
+  "runnerSha256": "790c4eff34f5153ca910a60a9f8b0b2d678efdc95dbdc5a9195e2ee986d2b17b",
+  "interval": "performance.now() around BATCH consecutive planner calls on one prepared input; fixtures and the result check are outside. Wall clock, not CPU usage.",
+  "endedAt": "2026-11-10T02:04:17.924Z",
+  "status": "passed"
+}

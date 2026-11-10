@@ -1,9 +1,11 @@
-// Keyed boundary-run planner (2026-11-10), whole Diff/Patch level.
-// The same diff() is built twice: with the candidate planner and with the B0 planner
-// (tests/fixtures/keyed-baseline.ts). Plans must be deeply equal (command order, anchors,
-// refs, decisions), and the committed DOM is checked against an independent expectation.
+// Keyed boundary-run study (2026-11-10), whole Diff/Patch level.
+// The engine is loaded twice: as it is (default planner = B0) and with the keyed planner replaced
+// by the research candidate C1 (research/keyed-boundaries/keyed.candidate.ts). Plans must be deeply
+// equal (command order, anchors, refs, decisions), the committed DOM is checked against an
+// independent expectation, and the IME cases run on both engines.
 import { afterEach, beforeAll, expect, it, vi } from 'vitest';
-import { FunctionComponent, h, memo, useEffect, useState } from '../../src/runtime';
+import * as defaultRuntime from '../../src/runtime';
+import { h, memo } from '../../src/runtime';
 import { resolveExpression } from '../../src/runtime/resolve';
 import { createMount } from '../../src/core/mount';
 import { diff } from '../../src/core/reconcile';
@@ -14,16 +16,17 @@ import { container } from '../fixtures/helpers';
 
 afterEach(() => { document.body.replaceChildren(); });
 
-let diffB0: typeof diff, baselineCalls = 0;
+let candidateDiff: typeof diff, candidateRuntime: typeof defaultRuntime, candidateCalls = 0;
 beforeAll(async () => {
   vi.resetModules();
   vi.doMock('../../src/core/keyed', async () => {
     const actual = await vi.importActual<typeof import('../../src/core/keyed')>('../../src/core/keyed');
-    const { planKeyedChildrenB0 } = await import('../fixtures/keyed-baseline');
-    const counted: typeof planKeyedChildrenB0 = (...args) => { baselineCalls++; return planKeyedChildrenB0(...args); };
+    const { planKeyedChildrenCandidate } = await import('../../research/keyed-boundaries/keyed.candidate');
+    const counted: typeof planKeyedChildrenCandidate = (...args) => { candidateCalls++; return planKeyedChildrenCandidate(...args); };
     return { ...actual, planKeyedChildren: counted };
   });
-  diffB0 = (await import('../../src/core/reconcile')).diff;
+  candidateDiff = (await import('../../src/core/reconcile')).diff;
+  candidateRuntime = await import('../../src/runtime');
   vi.doUnmock('../../src/core/keyed');
 });
 
@@ -47,13 +50,13 @@ function check(oldRows: readonly Row[], nextRows: readonly Row[], strategy: Reco
   const before = Array.from(list.children) as HTMLElement[];
   for (const node of before) node.querySelector('input')!.value = `typed-${node.dataset.key}`;
   const target = tree(nextRows, 'new', newHandler);
-  // A. differential: the whole plan with the candidate and with the B0 planner.
-  const called = baselineCalls;
-  const candidate = diff(mount.view, target, { strategy, planId: 'same' });
-  expect(baselineCalls, context).toBe(called);
-  const baseline = diffB0(mount.view, target, { strategy, planId: 'same' });
+  // A. differential: the whole plan with the default planner (B0) and with the candidate.
+  const called = candidateCalls;
+  const baseline = diff(mount.view, target, { strategy, planId: 'same' });
+  expect(candidateCalls, context).toBe(called);
+  const candidate = candidateDiff(mount.view, target, { strategy, planId: 'same' });
   // (Childless elements are keyed lists of size 0, so one diff may plan several lists.)
-  expect(baselineCalls, context).toBeGreaterThan(called);
+  expect(candidateCalls, context).toBeGreaterThan(called);
   expect(candidate, context).toEqual(baseline);
   const plan = unwrapPlan(candidate);
   // B. independent array model of the placement commands of this list (order and anchors).
@@ -114,10 +117,10 @@ const scenarios: [string, Row[], Row[]][] = [
   ['all inserted', [], rows('ABC')],
 ];
 for (const strategy of ['greedy', 'lis'] as const) {
-  it.each(scenarios)(`${strategy}: %s gives the same plan as B0 and the expected DOM`, (name, oldRows, nextRows) => { check(oldRows, nextRows, strategy, `${strategy}/${name}`); });
+  it.each(scenarios)(`${strategy}: %s gives the same plan with B0 and the candidate, and the expected DOM`, (name, oldRows, nextRows) => { check(oldRows, nextRows, strategy, `${strategy}/${name}`); });
 }
 
-it('seed 20261110: 300 generated list pairs give the same plan as B0 and the expected DOM (both strategies)', () => {
+it('seed 20261110: 300 generated list pairs give the same plan with B0 and the candidate, and the expected DOM (both strategies)', () => {
   const random = seededRandom(20261110), pool = Array.from('abcdefghijkl');
   const make = (key: string): Row => ({ key, ...(random() < 0.15 ? { tag: 'div' } : {}), ...(random() < 0.25 ? { owner: random() < 0.5 ? 'plain' as const : 'memo' as const, ...(random() < 0.3 ? { inner: random() < 0.5 ? 'x' : 'y' } : {}) } : {}) });
   for (let sample = 0; sample < 300; sample++) {
@@ -161,7 +164,10 @@ it('sub-diffs of siblings run in new-list order, including the boundary rows', (
 // P A B C D Q -> P B A D C Q moves two rows with either strategy, but not the same rows:
 // LIS moves B and D, Greedy moves A and C. With an IME composition in row A this decides
 // between "commit now and hold only A's form value" and "defer the whole plan".
-function composingList(strategy: ReconcileStrategy) {
+type Engine = 'default' | 'candidate';
+function composingList(engine: Engine, strategy: ReconcileStrategy) {
+  const { FunctionComponent, h, useEffect, useState } = engine === 'candidate' ? candidateRuntime : defaultRuntime;
+  const planned = candidateCalls;
   let setOrder!: StateSetter<string>, setNote!: StateSetter<string>;
   const output = container(); document.body.append(output); const effect = vi.fn();
   const root = new FunctionComponent(() => {
@@ -181,11 +187,14 @@ function composingList(strategy: ReconcileStrategy) {
     await flush();
   };
   const end = async (key: string) => { input(key).dispatchEvent(new CompositionEvent('compositionend', { bubbles: true, data: '한' })); await new Promise(resolve => setTimeout(resolve, 5)); await flush(); };
-  return { root, output, list, input, order, flush, compose, end, effect, setOrder: (value: string) => setOrder(value), setNote: (value: string) => setNote(value) };
+  // After an update: the candidate engine really planned with the candidate, the default engine never did.
+  const finish = () => { expect(candidateCalls > planned).toBe(engine === 'candidate'); root.unmount(); };
+  return { root, output, list, input, order, flush, compose, end, effect, finish, setOrder: (value: string) => setOrder(value), setNote: (value: string) => setNote(value) };
 }
 
-it('IME in row A, LIS: A is not a move target, so the plan commits, only B and D move and A\'s form value is held until the composition ends', async () => {
-  const env = composingList('lis'); await env.compose('A');
+const engines: Engine[] = ['default', 'candidate'];
+it.each(engines)('IME in row A, LIS (%s engine): A is not a move target, so the plan commits, only B and D move and A\'s form value is held until the composition ends', async engine => {
+  const env = composingList(engine, 'lis'); await env.compose('A');
   expect(env.input('A').value).toBe('ㅎ'); expect(env.root.host.heldForms.has(env.root.host.refs.get(env.input('A'))!)).toBe(true);
   const nodes = new Map(Array.from(env.list.children, node => [(node as HTMLElement).dataset.key!, node]));
   const records: MutationRecord[] = [];
@@ -206,11 +215,12 @@ it('IME in row A, LIS: A is not a move target, so the plan commits, only B and D
   expect(env.root.lastResult?.status).toBe('committed'); expect(env.input('A').value).toBe('ㅎ'); expect(env.input('C').value).toBe('C:n2');
   await env.end('A');
   expect(env.input('A').value).toBe('A:n2'); expect(env.root.host.heldForms.size).toBe(0); expect(env.root.host.dirtyForms.size).toBe(0);
-  expect(env.order()).toBe('PBADCQ'); expect(env.root.errors).toEqual([]); env.root.unmount();
+  expect(env.order()).toBe('PBADCQ'); expect(env.root.errors).toEqual([]); env.finish();
 });
 
-it.each([['greedy', 'A'], ['lis', 'B'], ['lis', 'D'], ['greedy', 'C']] as const)('IME in a moved row (%s, row %s): the whole plan is deferred and the latest State is applied after the composition ends', async (strategy, key) => {
-  const env = composingList(strategy); await env.compose(key);
+const both = <T extends readonly unknown[]>(cases: readonly T[]) => engines.flatMap(engine => cases.map(entry => [engine, ...entry] as const));
+it.each(both([['greedy', 'A'], ['lis', 'B'], ['lis', 'D'], ['greedy', 'C']] as const))('IME in a moved row (%s engine, %s, row %s): the whole plan is deferred and the latest State is applied after the composition ends', async (engine, strategy, key) => {
+  const env = composingList(engine, strategy); await env.compose(key);
   const nodes = new Map(Array.from(env.list.children, node => [(node as HTMLElement).dataset.key!, node]));
   const html = env.list.innerHTML, revision = env.root.host.revision, effects = env.effect.mock.calls.length;
   env.setOrder('PBADCQ'); env.setNote('n1'); await env.flush();
@@ -226,13 +236,13 @@ it.each([['greedy', 'A'], ['lis', 'B'], ['lis', 'D'], ['greedy', 'C']] as const)
   expect(env.order()).toBe('PBADCQ'); expect(env.output.querySelector('output')!.textContent).toBe('n2');
   for (const [name, node] of nodes) expect(env.list.querySelector(`[data-key="${name}"]`)).toBe(node);
   expect(env.input(key).value).toBe(`${key}:n2`); expect(env.root.host.heldForms.size).toBe(0);
-  expect(env.effect).toHaveBeenLastCalledWith('PBADCQ', 'n2'); expect(env.root.errors).toEqual([]); env.root.unmount();
+  expect(env.effect).toHaveBeenLastCalledWith('PBADCQ', 'n2'); expect(env.root.errors).toEqual([]); env.finish();
 });
 
-it.each([['lis', 'A'], ['lis', 'C'], ['greedy', 'B'], ['greedy', 'D'], ['lis', 'P'], ['greedy', 'Q']] as const)('IME in a kept row (%s, row %s): the reorder commits during the composition', async (strategy, key) => {
-  const env = composingList(strategy); await env.compose(key);
+it.each(both([['lis', 'A'], ['lis', 'C'], ['greedy', 'B'], ['greedy', 'D'], ['lis', 'P'], ['greedy', 'Q']] as const))('IME in a kept row (%s engine, %s, row %s): the reorder commits during the composition', async (engine, strategy, key) => {
+  const env = composingList(engine, strategy); await env.compose(key);
   env.setOrder('PBADCQ'); await env.flush();
   expect(env.root.lastResult).toMatchObject({ status: 'committed', counters: { movedRoots: 2 } });
   expect(env.order()).toBe('PBADCQ'); expect(env.input(key).value).toBe('ㅎ');
-  await env.end(key); expect(env.input(key).value).toBe(`${key}:n0`); env.root.unmount();
+  await env.end(key); expect(env.input(key).value).toBe(`${key}:n0`); env.finish();
 });

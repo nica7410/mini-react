@@ -23,49 +23,24 @@ export function keyedEligibility(old: readonly ViewNode[], next: readonly VNode[
 }
 
 // oldIndex=0은 유효한 기존 노드다. 신규 노드는 null로 구분한다.
-// Longest increasing run of oldIndex among slots[from, to). The scan order, the binary search
-// and the trace-back are those of the whole-list version, so the same members are chosen when
-// several longest runs exist (docs/followup-keyed-boundaries.md, "LIS 동률").
-function increasingPositions(slots: readonly MatchedSlot[], from: number, to: number): Set<number> {
-  const tails: number[] = [], predecessors = new Array<number>(to - from).fill(-1);
-  for (let index = from; index < to; index++) {
-    const slot = slots[index];
-    if (slot.oldIndex === null) continue;
+function increasingPositions(slots: readonly MatchedSlot[]): Set<number> {
+  const tails: number[] = [], predecessors = new Array<number>(slots.length).fill(-1);
+  slots.forEach((slot, index) => {
+    if (slot.oldIndex === null) return;
     let low = 0, high = tails.length;
     while (low < high) {
       const middle = (low + high) >>> 1;
       if (slots[tails[middle]].oldIndex! < slot.oldIndex) low = middle + 1; else high = middle;
     }
-    if (low > 0) predecessors[index - from] = tails[low - 1];
+    if (low > 0) predecessors[index] = tails[low - 1];
     tails[low] = index;
-  }
+  });
   const stable = new Set<number>();
   let current = tails.at(-1) ?? -1;
-  while (current !== -1) { stable.add(current); current = predecessors[current - from]; }
+  while (current !== -1) { stable.add(current); current = predecessors[current]; }
   return stable;
 }
 
-/**
- * Keyed matching with boundary runs (2026-11-10). After the unchanged whole-list eligibility
- * and key checks, the longest prefix and suffix whose nodes sit at the same distance from the
- * front/back with the same key and a compatible identity are matched directly. Only the
- * middle [prefix, end - suffix) gets a key Map and the reorder decision.
- *
- * Why the result equals the whole-list planner (N = list size, M = middle size):
- *  - keys are unique in each list, so a middle key can only match a middle old node and a
- *    boundary node is never looked up again; removed nodes are unmatched middle old nodes;
- *  - all indices stay whole-list indices (no local offset leaves this function);
- *  - Greedy: every prefix slot is a left-to-right maximum, so the middle scan starts with
- *    maximum = prefix - 1, the value the whole-list scan has there. The suffix is never
- *    folded in before the middle: its old indices are larger than every middle index, so it
- *    is stable and cannot change a decision made earlier in new-list order;
- *  - LIS: prefix old indices are smaller and suffix old indices larger than every middle
- *    index, so the whole-list patience run keeps the prefix tails untouched, treats the middle
- *    exactly like a middle-only run and appends every suffix slot. Its trace-back therefore
- *    selects prefix + (middle-only selection) + suffix.
- * Still O(N): eligibility, both key checks, the boundary comparisons and the N output slots.
- * Precondition as before: refs of `old` are unique (a committed view guarantees it).
- */
 export function planKeyedChildren(old: readonly ViewNode[], next: readonly VNode[], strategy: 'greedy' | 'lis'): Result<ReorderPlan> {
   if (keyedEligibility(old, next) !== 'keyed') return fail('NOT_KEYED', '양쪽 직접 자식이 모두 key가 있는 element여야 합니다.');
   for (const nodes of [old.map(node => node.vnode), next]) {
@@ -76,72 +51,26 @@ export function planKeyedChildren(old: readonly ViewNode[], next: readonly VNode
       keys.add(key);
     }
   }
-  const oldLength = old.length, newLength = next.length, shared = Math.min(oldLength, newLength);
-  // compatible() already implies an equal key; the key test only skips the deep comparison.
-  let prefix = 0;
-  while (prefix < shared && old[prefix].vnode.identity.key === next[prefix].identity.key && compatible(old[prefix].vnode, next[prefix])) prefix++;
-  let suffix = 0;
-  while (suffix < shared - prefix && old[oldLength - 1 - suffix].vnode.identity.key === next[newLength - 1 - suffix].identity.key
-    && compatible(old[oldLength - 1 - suffix].vnode, next[newLength - 1 - suffix])) suffix++;
-  const oldEnd = oldLength - suffix, newEnd = newLength - suffix;
-
-  const slots: MatchedSlot[] = [];
-  for (let index = 0; index < prefix; index++) slots.push({ newIndex: index, oldIndex: index, previous: old[index], vnode: next[index] });
-  const insertNewIndices: number[] = [];
-  let matched = 0, maximum = prefix - 1, monotonic = true;
-  if (newEnd > prefix) {
-    let byKey: Map<string, number> | null = null;
-    if (oldEnd > prefix) {
-      byKey = new Map();
-      for (let index = prefix; index < oldEnd; index++) byKey.set(old[index].vnode.identity.key!, index);
-    }
-    for (let newIndex = prefix; newIndex < newEnd; newIndex++) {
-      const vnode = next[newIndex], oldIndex = byKey?.get(vnode.identity.key!);
-      if (oldIndex === undefined || !compatible(old[oldIndex].vnode, vnode)) {
-        slots.push({ newIndex, oldIndex: null, previous: undefined, vnode }); insertNewIndices.push(newIndex);
-        continue;
-      }
-      slots.push({ newIndex, oldIndex, previous: old[oldIndex], vnode });
-      matched++;
-      // The whole-list Greedy test, in new-list order.
-      if (oldIndex < maximum) monotonic = false; else maximum = oldIndex;
-    }
+  const byKey = new Map(old.map((node, index) => [node.vnode.identity.key!, { node, index }]));
+  const reused = new Set<string>();
+  const slots = next.map((vnode, newIndex): MatchedSlot => {
+    const oldSlot = byKey.get(vnode.identity.key!);
+    if (!oldSlot || !compatible(oldSlot.node.vnode, vnode)) return { newIndex, oldIndex: null, previous: undefined, vnode };
+    reused.add(oldSlot.node.ref);
+    return { newIndex, oldIndex: oldSlot.index, previous: oldSlot.node, vnode };
+  });
+  let maximum = -1, monotonic = true;
+  const greedyStable = new Set<number>();
+  for (const slot of slots) if (slot.oldIndex !== null) {
+    if (slot.oldIndex < maximum) monotonic = false;
+    else { maximum = slot.oldIndex; greedyStable.add(slot.newIndex); }
   }
-  for (let offset = 0; offset < suffix; offset++) {
-    slots.push({ newIndex: newEnd + offset, oldIndex: oldEnd + offset, previous: old[oldEnd + offset], vnode: next[newEnd + offset] });
-  }
-
   const usedLIS = strategy === 'lis' && !monotonic;
-  const moveNewIndices: number[] = [];
-  if (usedLIS) {
-    const stable = increasingPositions(slots, prefix, newEnd);
-    for (let newIndex = prefix; newIndex < newEnd; newIndex++) if (slots[newIndex].oldIndex !== null && !stable.has(newIndex)) moveNewIndices.push(newIndex);
-  } else if (!monotonic) {
-    let greedyMaximum = prefix - 1;
-    for (let newIndex = prefix; newIndex < newEnd; newIndex++) {
-      const oldIndex = slots[newIndex].oldIndex;
-      if (oldIndex === null) continue;
-      if (oldIndex < greedyMaximum) moveNewIndices.push(newIndex); else greedyMaximum = oldIndex;
-    }
-  }
-  const removedRefs: string[] = [];
-  if (matched < oldEnd - prefix) {
-    const kept = new Uint8Array(oldEnd - prefix);
-    for (let newIndex = prefix; newIndex < newEnd; newIndex++) { const oldIndex = slots[newIndex].oldIndex; if (oldIndex !== null) kept[oldIndex - prefix] = 1; }
-    for (let index = prefix; index < oldEnd; index++) if (!kept[index - prefix]) removedRefs.push(old[index].ref);
-  }
-  // Every matched slot is either stable or moved. No engine code reads the stable set, so it
-  // is derived from that identity on first access instead of being built for every plan.
-  let stableNewIndices: Set<number> | undefined;
+  const stableNewIndices = usedLIS ? increasingPositions(slots) : greedyStable;
   return ok({
-    slots, usedLIS, moveNewIndices, insertNewIndices, removedRefs,
-    get stableNewIndices(): ReadonlySet<number> {
-      if (!stableNewIndices) {
-        const moved = new Set(moveNewIndices);
-        stableNewIndices = new Set();
-        for (const slot of slots) if (slot.oldIndex !== null && !moved.has(slot.newIndex)) stableNewIndices.add(slot.newIndex);
-      }
-      return stableNewIndices;
-    },
+    slots, stableNewIndices, usedLIS,
+    moveNewIndices: slots.filter(slot => slot.oldIndex !== null && !stableNewIndices.has(slot.newIndex)).map(slot => slot.newIndex),
+    insertNewIndices: slots.filter(slot => slot.oldIndex === null).map(slot => slot.newIndex),
+    removedRefs: old.filter(node => !reused.has(node.ref)).map(node => node.ref),
   });
 }

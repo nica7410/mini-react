@@ -1,16 +1,16 @@
-// Bounded mutation check for the keyed boundary-run planner (max 4 mutants, no campaign).
-// Each mutant edits src/core/keyed.ts in place, runs the keyed contract tests, and the
-// original file is restored afterwards. `baseline` runs the same tests with the B0 planner
-// file (git show <commit>:src/core/keyed.ts) to show the tests describe preserved behaviour.
-// Usage: node scripts/keyed-boundary-mutations.mjs [--baseline=<commit>] [--out=<file>]
+// Bounded mutation check for the keyed boundary-run candidate (max 4 mutants, no campaign).
+// Each mutant edits research/keyed-boundaries/keyed.candidate.ts in place, runs the keyed
+// contract tests, and the original file is restored afterwards. The same tests also run the
+// default planner (B0), so the unchanged run shows they describe behaviour B0 already has.
+// Usage: node scripts/keyed-boundary-mutations.mjs [--out=<file>]
 import { execFileSync, spawnSync } from 'node:child_process';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 
-const source = 'src/core/keyed.ts';
-const tests = ['tests/unit/keyed-boundaries.test.ts', 'tests/unit/keyed-exhaustive.test.ts', 'tests/integration/keyed-boundaries.test.ts', 'tests/integration/keyed.test.ts'];
+const source = 'research/keyed-boundaries/keyed.candidate.ts';
+const tests = ['tests/unit/keyed-boundaries.test.ts', 'tests/unit/keyed-boundary-counts.test.ts', 'tests/integration/keyed-boundaries.test.ts'];
 const argument = name => process.argv.find(value => value.startsWith(`--${name}=`))?.split('=')[1];
-const baseline = argument('baseline'), out = argument('out') ?? '.validation/keyed-boundary-mutations.json';
+const out = argument('out') ?? '.validation/keyed-boundary-mutations.json';
 const original = readFileSync(source, 'utf8');
 const edit = pairs => text => pairs.reduce((value, [from, to]) => {
   if (!value.includes(from)) throw new Error(`mutation anchor not found: ${from}`);
@@ -45,15 +45,10 @@ function run(label) {
 
 const results = { source, tests, sourceSha256: execFileSync('git', ['hash-object', source], { encoding: 'utf8' }).trim(), runs: [] };
 try {
-  results.runs.push({ ...run('candidate (unchanged)'), expected: 'pass' });
+  results.runs.push({ ...run('candidate and default planner (unchanged)'), expected: 'pass' });
   for (const mutant of mutants) {
     writeFileSync(source, mutant.apply(original));
     results.runs.push({ ...run(mutant.name), expected: 'fail' });
-  }
-  if (baseline) {
-    writeFileSync(source, execFileSync('git', ['show', `${baseline}:${source}`], { encoding: 'utf8' }));
-    // The mutation anchors do not apply to the B0 file; it only runs the behaviour tests.
-    results.runs.push({ ...run(`baseline planner ${baseline}`), expected: 'pass' });
   }
 } finally {
   writeFileSync(source, original);

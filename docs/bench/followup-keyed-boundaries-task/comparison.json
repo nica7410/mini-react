@@ -1,0 +1,1028 @@
+{
+  "directory": "docs/bench/followup-keyed-boundaries-task",
+  "baseline": "kb-b0-a2",
+  "candidate": "kb-c1-a2",
+  "builds": [
+    {
+      "tag": "kb-b0-a2",
+      "engineCommit": "ab5a9b81b85e555bd228f0a84b1036e3a5c51979",
+      "appCommit": "e382bd7f1833727a057efb19c958323933b7f536",
+      "engineHash": "a61dad709c800136e35b29a631d8ee90bd72b3caa3f595beb4c606d8356f4d10",
+      "appHash": "89e6ef3211fdd24253a845ff937ce414874c7e77483079cb1ea0df3201cda91c"
+    },
+    {
+      "tag": "kb-c1-a2",
+      "engineCommit": "e382bd7f1833727a057efb19c958323933b7f536",
+      "appCommit": "e382bd7f1833727a057efb19c958323933b7f536",
+      "engineHash": "ae773af07e4ca01ec47cea753a98ff80da26987c418b2ed48760d070e4066c07",
+      "appHash": "89e6ef3211fdd24253a845ff937ce414874c7e77483079cb1ea0df3201cda91c"
+    }
+  ],
+  "timerNote": "Chromium performance.now() is coarsened to 0.1 ms; totals are wall-clock sums, not CPU usage or paint time.",
+  "report": [
+    {
+      "condition": "crud/100",
+      "session": 1,
+      "metric": "totalCpuMs",
+      "baseline": {
+        "n": 60,
+        "median": 21.10000003874302,
+        "p95": 28.494999977946275,
+        "min": 18.80000001192093,
+        "max": 42.099999994039536
+      },
+      "candidate": {
+        "n": 60,
+        "median": 23.19999997317791,
+        "p95": 47.42000007927416,
+        "min": 19.099999964237213,
+        "max": 65.59999999403954
+      },
+      "delta": {
+        "medianMs": 2.0999999344348907,
+        "medianPercent": 9.952606306061384,
+        "p95Ms": 18.925000101327885,
+        "p95Percent": 66.41516096148412
+      },
+      "warning": {
+        "median": true,
+        "p95": true
+      }
+    },
+    {
+      "condition": "crud/100",
+      "session": 1,
+      "metric": "primaryMs",
+      "baseline": {
+        "n": 60,
+        "median": 15.400000005960464,
+        "p95": 21.129999992251395,
+        "min": 13.500000029802322,
+        "max": 35.39999997615814
+      },
+      "candidate": {
+        "n": 60,
+        "median": 16.600000008940697,
+        "p95": 35.96500000506639,
+        "min": 13.899999976158142,
+        "max": 50.599999994039536
+      },
+      "delta": {
+        "medianMs": 1.2000000029802322,
+        "medianPercent": 7.792207808544038,
+        "p95Ms": 14.835000012814998,
+        "p95Percent": 70.20823482373477
+      },
+      "warning": null
+    },
+    {
+      "condition": "crud/100",
+      "session": 1,
+      "metric": "diffMs",
+      "baseline": {
+        "n": 60,
+        "median": 4.299999967217445,
+        "p95": 5.610000023245811,
+        "min": 3.5,
+        "max": 8.100000023841858
+      },
+      "candidate": {
+        "n": 60,
+        "median": 4.400000020861626,
+        "p95": 9.06499994397163,
+        "min": 3.599999964237213,
+        "max": 15.699999988079071
+      },
+      "delta": {
+        "medianMs": 0.1000000536441803,
+        "medianPercent": 2.3255826606177976,
+        "p95Ms": 3.454999920725819,
+        "p95Percent": 61.58645109464438
+      },
+      "warning": null
+    },
+    {
+      "condition": "crud/100",
+      "session": 2,
+      "metric": "totalCpuMs",
+      "baseline": {
+        "n": 60,
+        "median": 25.799999997019768,
+        "p95": 47.275000016391274,
+        "min": 19.200000017881393,
+        "max": 53.39999994635582
+      },
+      "candidate": {
+        "n": 60,
+        "median": 20.849999994039536,
+        "p95": 44.08500001579521,
+        "min": 17.5,
+        "max": 83.69999998807907
+      },
+      "delta": {
+        "medianMs": -4.950000002980232,
+        "medianPercent": -19.18604652539543,
+        "p95Ms": -3.190000000596065,
+        "p95Percent": -6.747752510819716
+      },
+      "warning": {
+        "median": false,
+        "p95": false
+      }
+    },
+    {
+      "condition": "crud/100",
+      "session": 2,
+      "metric": "primaryMs",
+      "baseline": {
+        "n": 60,
+        "median": 18.600000008940697,
+        "p95": 36.13999996483326,
+        "min": 13.800000011920929,
+        "max": 37.19999998807907
+      },
+      "candidate": {
+        "n": 60,
+        "median": 14.94999997317791,
+        "p95": 32.89000003337857,
+        "min": 12.600000023841858,
+        "max": 62
+      },
+      "delta": {
+        "medianMs": -3.650000035762787,
+        "medianPercent": -19.623656096818788,
+        "p95Ms": -3.2499999314546884,
+        "p95Percent": -8.992805574480256
+      },
+      "warning": null
+    },
+    {
+      "condition": "crud/100",
+      "session": 2,
+      "metric": "diffMs",
+      "baseline": {
+        "n": 60,
+        "median": 4.749999955296516,
+        "p95": 9.820000042021274,
+        "min": 3.600000023841858,
+        "max": 11.599999994039536
+      },
+      "candidate": {
+        "n": 60,
+        "median": 4,
+        "p95": 8.33999998867511,
+        "min": 3.299999952316284,
+        "max": 16.799999982118607
+      },
+      "delta": {
+        "medianMs": -0.7499999552965164,
+        "medianPercent": -15.789472891683387,
+        "p95Ms": -1.4800000533461635,
+        "p95Percent": -15.071283574470652
+      },
+      "warning": null
+    },
+    {
+      "condition": "crud/100",
+      "session": 3,
+      "metric": "totalCpuMs",
+      "baseline": {
+        "n": 60,
+        "median": 21.100000008940697,
+        "p95": 33.029999998211856,
+        "min": 18.700000047683716,
+        "max": 41.89999997615814
+      },
+      "candidate": {
+        "n": 60,
+        "median": 23.74999998509884,
+        "p95": 35.47000003457069,
+        "min": 19.299999982118607,
+        "max": 46.400000005960464
+      },
+      "delta": {
+        "medianMs": 2.649999976158142,
+        "medianPercent": 12.559241587844827,
+        "p95Ms": 2.440000036358832,
+        "p95Percent": 7.387223846475699
+      },
+      "warning": {
+        "median": true,
+        "p95": false
+      }
+    },
+    {
+      "condition": "crud/100",
+      "session": 3,
+      "metric": "primaryMs",
+      "baseline": {
+        "n": 60,
+        "median": 15.649999976158142,
+        "p95": 24.054999999701973,
+        "min": 13.400000005960464,
+        "max": 32.59999996423721
+      },
+      "candidate": {
+        "n": 60,
+        "median": 17.049999967217445,
+        "p95": 28.54500000029802,
+        "min": 14.099999994039536,
+        "max": 31.700000017881393
+      },
+      "delta": {
+        "medianMs": 1.3999999910593033,
+        "medianPercent": 8.945686857457646,
+        "p95Ms": 4.490000000596048,
+        "p95Percent": 18.665558098739044
+      },
+      "warning": null
+    },
+    {
+      "condition": "crud/100",
+      "session": 3,
+      "metric": "diffMs",
+      "baseline": {
+        "n": 60,
+        "median": 4.299999967217445,
+        "p95": 6.399999949336052,
+        "min": 3.5,
+        "max": 9.199999988079071
+      },
+      "candidate": {
+        "n": 60,
+        "median": 4.450000017881393,
+        "p95": 7.2300000190734846,
+        "min": 3.599999964237213,
+        "max": 9.199999988079071
+      },
+      "delta": {
+        "medianMs": 0.15000005066394806,
+        "medianPercent": 3.488373297849434,
+        "p95Ms": 0.8300000697374328,
+        "p95Percent": 12.968751192311156
+      },
+      "warning": null
+    },
+    {
+      "condition": "counter/100",
+      "session": 1,
+      "metric": "totalCpuMs",
+      "baseline": {
+        "n": 60,
+        "median": 3.2999999821186066,
+        "p95": 4.099999995529652,
+        "min": 2.5,
+        "max": 8.5
+      },
+      "candidate": {
+        "n": 60,
+        "median": 4.799999982118607,
+        "p95": 11.114999994635582,
+        "min": 3,
+        "max": 15.900000005960464
+      },
+      "delta": {
+        "medianMs": 1.5,
+        "medianPercent": 45.45454570084564,
+        "p95Ms": 7.01499999910593,
+        "p95Percent": 171.09756114035574
+      },
+      "warning": {
+        "median": true,
+        "p95": true
+      }
+    },
+    {
+      "condition": "counter/100",
+      "session": 1,
+      "metric": "primaryMs",
+      "baseline": {
+        "n": 60,
+        "median": 3.2999999821186066,
+        "p95": 4.099999995529652,
+        "min": 2.5,
+        "max": 8.5
+      },
+      "candidate": {
+        "n": 60,
+        "median": 4.799999982118607,
+        "p95": 11.114999994635582,
+        "min": 3,
+        "max": 15.900000005960464
+      },
+      "delta": {
+        "medianMs": 1.5,
+        "medianPercent": 45.45454570084564,
+        "p95Ms": 7.01499999910593,
+        "p95Percent": 171.09756114035574
+      },
+      "warning": null
+    },
+    {
+      "condition": "counter/100",
+      "session": 1,
+      "metric": "diffMs",
+      "baseline": {
+        "n": 60,
+        "median": 0.7999999821186066,
+        "p95": 1.1050000220537184,
+        "min": 0.5999999940395355,
+        "max": 2
+      },
+      "candidate": {
+        "n": 60,
+        "median": 1,
+        "p95": 3.029999999701975,
+        "min": 0.5999999940395355,
+        "max": 5
+      },
+      "delta": {
+        "medianMs": 0.20000001788139343,
+        "medianPercent": 25.00000279396779,
+        "p95Ms": 1.9249999776482567,
+        "p95Percent": 174.20813929673162
+      },
+      "warning": null
+    },
+    {
+      "condition": "counter/100",
+      "session": 2,
+      "metric": "totalCpuMs",
+      "baseline": {
+        "n": 60,
+        "median": 3.3999999910593033,
+        "p95": 4,
+        "min": 2.9000000059604645,
+        "max": 4.300000011920929
+      },
+      "candidate": {
+        "n": 60,
+        "median": 3.1000000089406967,
+        "p95": 4.71000001579523,
+        "min": 2.5999999940395355,
+        "max": 5
+      },
+      "delta": {
+        "medianMs": -0.29999998211860657,
+        "medianPercent": -8.823528909043866,
+        "p95Ms": 0.71000001579523,
+        "p95Percent": 17.75000039488075
+      },
+      "warning": {
+        "median": false,
+        "p95": false
+      }
+    },
+    {
+      "condition": "counter/100",
+      "session": 2,
+      "metric": "primaryMs",
+      "baseline": {
+        "n": 60,
+        "median": 3.3999999910593033,
+        "p95": 4,
+        "min": 2.9000000059604645,
+        "max": 4.300000011920929
+      },
+      "candidate": {
+        "n": 60,
+        "median": 3.1000000089406967,
+        "p95": 4.71000001579523,
+        "min": 2.5999999940395355,
+        "max": 5
+      },
+      "delta": {
+        "medianMs": -0.29999998211860657,
+        "medianPercent": -8.823528909043866,
+        "p95Ms": 0.71000001579523,
+        "p95Percent": 17.75000039488075
+      },
+      "warning": null
+    },
+    {
+      "condition": "counter/100",
+      "session": 2,
+      "metric": "diffMs",
+      "baseline": {
+        "n": 60,
+        "median": 0.800000011920929,
+        "p95": 1.1050000220537184,
+        "min": 0.699999988079071,
+        "max": 1.199999988079071
+      },
+      "candidate": {
+        "n": 60,
+        "median": 0.7999999821186066,
+        "p95": 1.199999988079071,
+        "min": 0.5999999940395355,
+        "max": 1.5
+      },
+      "delta": {
+        "medianMs": -2.9802322387695312e-8,
+        "medianPercent": -0.000003725290242950763,
+        "p95Ms": 0.09499996602535266,
+        "p95Percent": 8.597281821659042
+      },
+      "warning": null
+    },
+    {
+      "condition": "counter/100",
+      "session": 3,
+      "metric": "totalCpuMs",
+      "baseline": {
+        "n": 60,
+        "median": 4,
+        "p95": 7.604999993741512,
+        "min": 2.9000000059604645,
+        "max": 8.200000017881393
+      },
+      "candidate": {
+        "n": 60,
+        "median": 3.3499999940395355,
+        "p95": 4.299999983608723,
+        "min": 2.899999976158142,
+        "max": 4.799999982118607
+      },
+      "delta": {
+        "medianMs": -0.6500000059604645,
+        "medianPercent": -16.250000149011612,
+        "p95Ms": -3.3050000101327885,
+        "p95Percent": -43.45825131956106
+      },
+      "warning": {
+        "median": false,
+        "p95": false
+      }
+    },
+    {
+      "condition": "counter/100",
+      "session": 3,
+      "metric": "primaryMs",
+      "baseline": {
+        "n": 60,
+        "median": 4,
+        "p95": 7.604999993741512,
+        "min": 2.9000000059604645,
+        "max": 8.200000017881393
+      },
+      "candidate": {
+        "n": 60,
+        "median": 3.3499999940395355,
+        "p95": 4.299999983608723,
+        "min": 2.899999976158142,
+        "max": 4.799999982118607
+      },
+      "delta": {
+        "medianMs": -0.6500000059604645,
+        "medianPercent": -16.250000149011612,
+        "p95Ms": -3.3050000101327885,
+        "p95Percent": -43.45825131956106
+      },
+      "warning": null
+    },
+    {
+      "condition": "counter/100",
+      "session": 3,
+      "metric": "diffMs",
+      "baseline": {
+        "n": 60,
+        "median": 0.8999999761581421,
+        "p95": 1.9100000053644175,
+        "min": 0.699999988079071,
+        "max": 2.100000023841858
+      },
+      "candidate": {
+        "n": 60,
+        "median": 0.7999999821186066,
+        "p95": 1,
+        "min": 0.5999999940395355,
+        "max": 1.0999999940395355
+      },
+      "delta": {
+        "medianMs": -0.09999999403953552,
+        "medianPercent": -11.111110743181197,
+        "p95Ms": -0.9100000053644175,
+        "p95Percent": -47.64397920463851
+      },
+      "warning": null
+    },
+    {
+      "condition": "sort/100",
+      "session": 1,
+      "metric": "totalCpuMs",
+      "baseline": {
+        "n": 60,
+        "median": 12.750000014901161,
+        "p95": 20.24000002294778,
+        "min": 9.799999982118607,
+        "max": 25.30000001192093
+      },
+      "candidate": {
+        "n": 60,
+        "median": 13.299999982118607,
+        "p95": 17.820000010728833,
+        "min": 10.5,
+        "max": 19.900000005960464
+      },
+      "delta": {
+        "medianMs": 0.5499999672174454,
+        "medianPercent": 4.31372522803648,
+        "p95Ms": -2.420000012218946,
+        "p95Percent": -11.956521785944608
+      },
+      "warning": {
+        "median": false,
+        "p95": false
+      }
+    },
+    {
+      "condition": "sort/100",
+      "session": 1,
+      "metric": "primaryMs",
+      "baseline": {
+        "n": 60,
+        "median": 12.750000014901161,
+        "p95": 20.24000002294778,
+        "min": 9.799999982118607,
+        "max": 25.30000001192093
+      },
+      "candidate": {
+        "n": 60,
+        "median": 13.299999982118607,
+        "p95": 17.820000010728833,
+        "min": 10.5,
+        "max": 19.900000005960464
+      },
+      "delta": {
+        "medianMs": 0.5499999672174454,
+        "medianPercent": 4.31372522803648,
+        "p95Ms": -2.420000012218946,
+        "p95Percent": -11.956521785944608
+      },
+      "warning": null
+    },
+    {
+      "condition": "sort/100",
+      "session": 1,
+      "metric": "diffMs",
+      "baseline": {
+        "n": 60,
+        "median": 1.4500000029802322,
+        "p95": 3.304999981820583,
+        "min": 0.8999999761581421,
+        "max": 4.300000011920929
+      },
+      "candidate": {
+        "n": 60,
+        "median": 1.5,
+        "p95": 2.5149999991059295,
+        "min": 0.7000000178813934,
+        "max": 3.2000000178813934
+      },
+      "delta": {
+        "medianMs": 0.04999999701976776,
+        "medianPercent": 3.4482756494483624,
+        "p95Ms": -0.7899999827146535,
+        "p95Percent": -23.903176613013965
+      },
+      "warning": null
+    },
+    {
+      "condition": "sort/100",
+      "session": 2,
+      "metric": "totalCpuMs",
+      "baseline": {
+        "n": 60,
+        "median": 13.300000011920929,
+        "p95": 25.764999988675115,
+        "min": 9.900000005960464,
+        "max": 31.400000005960464
+      },
+      "candidate": {
+        "n": 60,
+        "median": 13.450000002980232,
+        "p95": 24.345000010728832,
+        "min": 9.399999976158142,
+        "max": 28.400000005960464
+      },
+      "delta": {
+        "medianMs": 0.14999999105930328,
+        "medianPercent": 1.127819480638026,
+        "p95Ms": -1.4199999779462829,
+        "p95Percent": -5.51135252695687
+      },
+      "warning": {
+        "median": false,
+        "p95": false
+      }
+    },
+    {
+      "condition": "sort/100",
+      "session": 2,
+      "metric": "primaryMs",
+      "baseline": {
+        "n": 60,
+        "median": 13.300000011920929,
+        "p95": 25.764999988675115,
+        "min": 9.900000005960464,
+        "max": 31.400000005960464
+      },
+      "candidate": {
+        "n": 60,
+        "median": 13.450000002980232,
+        "p95": 24.345000010728832,
+        "min": 9.399999976158142,
+        "max": 28.400000005960464
+      },
+      "delta": {
+        "medianMs": 0.14999999105930328,
+        "medianPercent": 1.127819480638026,
+        "p95Ms": -1.4199999779462829,
+        "p95Percent": -5.51135252695687
+      },
+      "warning": null
+    },
+    {
+      "condition": "sort/100",
+      "session": 2,
+      "metric": "diffMs",
+      "baseline": {
+        "n": 60,
+        "median": 1.5999999940395355,
+        "p95": 3.7149999886751166,
+        "min": 0.800000011920929,
+        "max": 5
+      },
+      "candidate": {
+        "n": 60,
+        "median": 1.3500000089406967,
+        "p95": 3.304999981820583,
+        "min": 0.7999999821186066,
+        "max": 3.4000000059604645
+      },
+      "delta": {
+        "medianMs": -0.2499999850988388,
+        "medianPercent": -15.624999126885086,
+        "p95Ms": -0.4100000068545335,
+        "p95Percent": -11.036339383698145
+      },
+      "warning": null
+    },
+    {
+      "condition": "sort/100",
+      "session": 3,
+      "metric": "totalCpuMs",
+      "baseline": {
+        "n": 60,
+        "median": 12.599999994039536,
+        "p95": 16.415000005066393,
+        "min": 10,
+        "max": 18.100000023841858
+      },
+      "candidate": {
+        "n": 60,
+        "median": 12.450000002980232,
+        "p95": 16.009999999403952,
+        "min": 9.699999988079071,
+        "max": 17.69999998807907
+      },
+      "delta": {
+        "medianMs": -0.14999999105930328,
+        "medianPercent": -1.1904761200814407,
+        "p95Ms": -0.40500000566244054,
+        "p95Percent": -2.4672555926740114
+      },
+      "warning": {
+        "median": false,
+        "p95": false
+      }
+    },
+    {
+      "condition": "sort/100",
+      "session": 3,
+      "metric": "primaryMs",
+      "baseline": {
+        "n": 60,
+        "median": 12.599999994039536,
+        "p95": 16.415000005066393,
+        "min": 10,
+        "max": 18.100000023841858
+      },
+      "candidate": {
+        "n": 60,
+        "median": 12.450000002980232,
+        "p95": 16.009999999403952,
+        "min": 9.699999988079071,
+        "max": 17.69999998807907
+      },
+      "delta": {
+        "medianMs": -0.14999999105930328,
+        "medianPercent": -1.1904761200814407,
+        "p95Ms": -0.40500000566244054,
+        "p95Percent": -2.4672555926740114
+      },
+      "warning": null
+    },
+    {
+      "condition": "sort/100",
+      "session": 3,
+      "metric": "diffMs",
+      "baseline": {
+        "n": 60,
+        "median": 1.25,
+        "p95": 2.304999981820583,
+        "min": 0.800000011920929,
+        "max": 3.2999999821186066
+      },
+      "candidate": {
+        "n": 60,
+        "median": 1.2999999970197678,
+        "p95": 2.5999999955296516,
+        "min": 0.7999999821186066,
+        "max": 3.0999999940395355
+      },
+      "delta": {
+        "medianMs": 0.04999999701976776,
+        "medianPercent": 3.99999976158143,
+        "p95Ms": 0.2950000137090685,
+        "p95Percent": 12.798265337775216
+      },
+      "warning": null
+    }
+  ],
+  "counts": [
+    {
+      "condition": "crud/100",
+      "session": 1,
+      "identical": true,
+      "primary": [
+        {
+          "visitedNodes": 146,
+          "reusedSubtrees": 101,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 0
+        },
+        {
+          "visitedNodes": 148,
+          "reusedSubtrees": 100,
+          "createdNodes": 10,
+          "removedNodes": 0,
+          "insertedRoots": 1,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 1
+        },
+        {
+          "visitedNodes": 157,
+          "reusedSubtrees": 100,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 1
+        },
+        {
+          "visitedNodes": 157,
+          "reusedSubtrees": 100,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 1
+        },
+        {
+          "visitedNodes": 147,
+          "reusedSubtrees": 100,
+          "createdNodes": 0,
+          "removedNodes": 10,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 0,
+          "taskRowExecutions": 0
+        }
+      ]
+    },
+    {
+      "condition": "crud/100",
+      "session": 2,
+      "identical": true,
+      "primary": [
+        {
+          "visitedNodes": 146,
+          "reusedSubtrees": 101,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 0
+        },
+        {
+          "visitedNodes": 148,
+          "reusedSubtrees": 100,
+          "createdNodes": 10,
+          "removedNodes": 0,
+          "insertedRoots": 1,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 1
+        },
+        {
+          "visitedNodes": 157,
+          "reusedSubtrees": 100,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 1
+        },
+        {
+          "visitedNodes": 157,
+          "reusedSubtrees": 100,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 1
+        },
+        {
+          "visitedNodes": 147,
+          "reusedSubtrees": 100,
+          "createdNodes": 0,
+          "removedNodes": 10,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 0,
+          "taskRowExecutions": 0
+        }
+      ]
+    },
+    {
+      "condition": "crud/100",
+      "session": 3,
+      "identical": true,
+      "primary": [
+        {
+          "visitedNodes": 146,
+          "reusedSubtrees": 101,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 0
+        },
+        {
+          "visitedNodes": 148,
+          "reusedSubtrees": 100,
+          "createdNodes": 10,
+          "removedNodes": 0,
+          "insertedRoots": 1,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 1
+        },
+        {
+          "visitedNodes": 157,
+          "reusedSubtrees": 100,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 1
+        },
+        {
+          "visitedNodes": 157,
+          "reusedSubtrees": 100,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 1,
+          "taskRowExecutions": 1
+        },
+        {
+          "visitedNodes": 147,
+          "reusedSubtrees": 100,
+          "createdNodes": 0,
+          "removedNodes": 10,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 0,
+          "taskRowExecutions": 0
+        }
+      ]
+    },
+    {
+      "condition": "counter/100",
+      "session": 1,
+      "identical": true,
+      "primary": [
+        {
+          "visitedNodes": 146,
+          "reusedSubtrees": 101,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 0,
+          "taskRowExecutions": 0
+        }
+      ]
+    },
+    {
+      "condition": "counter/100",
+      "session": 2,
+      "identical": true,
+      "primary": [
+        {
+          "visitedNodes": 146,
+          "reusedSubtrees": 101,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 0,
+          "taskRowExecutions": 0
+        }
+      ]
+    },
+    {
+      "condition": "counter/100",
+      "session": 3,
+      "identical": true,
+      "primary": [
+        {
+          "visitedNodes": 146,
+          "reusedSubtrees": 101,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 0,
+          "skippedHostCalls": 0,
+          "taskRowExecutions": 0
+        }
+      ]
+    },
+    {
+      "condition": "sort/100",
+      "session": 1,
+      "identical": true,
+      "primary": [
+        {
+          "visitedNodes": 146,
+          "reusedSubtrees": 101,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 83,
+          "skippedHostCalls": 0,
+          "taskRowExecutions": 0
+        }
+      ]
+    },
+    {
+      "condition": "sort/100",
+      "session": 2,
+      "identical": true,
+      "primary": [
+        {
+          "visitedNodes": 146,
+          "reusedSubtrees": 101,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 83,
+          "skippedHostCalls": 0,
+          "taskRowExecutions": 0
+        }
+      ]
+    },
+    {
+      "condition": "sort/100",
+      "session": 3,
+      "identical": true,
+      "primary": [
+        {
+          "visitedNodes": 146,
+          "reusedSubtrees": 101,
+          "createdNodes": 0,
+          "removedNodes": 0,
+          "insertedRoots": 0,
+          "movedRoots": 83,
+          "skippedHostCalls": 0,
+          "taskRowExecutions": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+[
+  {
+    "input": "same",
+    "oldLength": 10,
+    "newLength": 10,
+    "prefix": 10,
+    "suffix": 0,
+    "middleOld": 0,
+    "middleNew": 0,
+    "moves": 0,
+    "inserts": 0,
+    "removes": 0,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 10,
+      "mapGet": 10,
+      "setAdd": 40,
+      "setHas": 40,
+      "compatible": 10
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 20,
+      "setHas": 20,
+      "compatible": 10
+    }
+  },
+  {
+    "input": "append",
+    "oldLength": 10,
+    "newLength": 11,
+    "prefix": 10,
+    "suffix": 0,
+    "middleOld": 0,
+    "middleNew": 1,
+    "moves": 0,
+    "inserts": 1,
+    "removes": 0,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 10,
+      "mapGet": 11,
+      "setAdd": 41,
+      "setHas": 41,
+      "compatible": 10
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 21,
+      "setHas": 21,
+      "compatible": 10
+    }
+  },
+  {
+    "input": "remove-last",
+    "oldLength": 10,
+    "newLength": 9,
+    "prefix": 9,
+    "suffix": 0,
+    "middleOld": 1,
+    "middleNew": 0,
+    "moves": 0,
+    "inserts": 0,
+    "removes": 1,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 10,
+      "mapGet": 9,
+      "setAdd": 37,
+      "setHas": 38,
+      "compatible": 9
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 19,
+      "setHas": 19,
+      "compatible": 9
+    }
+  },
+  {
+    "input": "insert-middle",
+    "oldLength": 10,
+    "newLength": 11,
+    "prefix": 5,
+    "suffix": 5,
+    "middleOld": 0,
+    "middleNew": 1,
+    "moves": 0,
+    "inserts": 1,
+    "removes": 0,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 10,
+      "mapGet": 11,
+      "setAdd": 41,
+      "setHas": 41,
+      "compatible": 10
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 21,
+      "setHas": 21,
+      "compatible": 10
+    }
+  },
+  {
+    "input": "same",
+    "oldLength": 100,
+    "newLength": 100,
+    "prefix": 100,
+    "suffix": 0,
+    "middleOld": 0,
+    "middleNew": 0,
+    "moves": 0,
+    "inserts": 0,
+    "removes": 0,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 100,
+      "mapGet": 100,
+      "setAdd": 400,
+      "setHas": 400,
+      "compatible": 100
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 200,
+      "setHas": 200,
+      "compatible": 100
+    }
+  },
+  {
+    "input": "append",
+    "oldLength": 100,
+    "newLength": 101,
+    "prefix": 100,
+    "suffix": 0,
+    "middleOld": 0,
+    "middleNew": 1,
+    "moves": 0,
+    "inserts": 1,
+    "removes": 0,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 100,
+      "mapGet": 101,
+      "setAdd": 401,
+      "setHas": 401,
+      "compatible": 100
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 201,
+      "setHas": 201,
+      "compatible": 100
+    }
+  },
+  {
+    "input": "remove-last",
+    "oldLength": 100,
+    "newLength": 99,
+    "prefix": 99,
+    "suffix": 0,
+    "middleOld": 1,
+    "middleNew": 0,
+    "moves": 0,
+    "inserts": 0,
+    "removes": 1,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 100,
+      "mapGet": 99,
+      "setAdd": 397,
+      "setHas": 398,
+      "compatible": 99
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 199,
+      "setHas": 199,
+      "compatible": 99
+    }
+  },
+  {
+    "input": "insert-middle",
+    "oldLength": 100,
+    "newLength": 101,
+    "prefix": 50,
+    "suffix": 50,
+    "middleOld": 0,
+    "middleNew": 1,
+    "moves": 0,
+    "inserts": 1,
+    "removes": 0,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 100,
+      "mapGet": 101,
+      "setAdd": 401,
+      "setHas": 401,
+      "compatible": 100
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 201,
+      "setHas": 201,
+      "compatible": 100
+    }
+  },
+  {
+    "input": "same",
+    "oldLength": 1000,
+    "newLength": 1000,
+    "prefix": 1000,
+    "suffix": 0,
+    "middleOld": 0,
+    "middleNew": 0,
+    "moves": 0,
+    "inserts": 0,
+    "removes": 0,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 1000,
+      "mapGet": 1000,
+      "setAdd": 4000,
+      "setHas": 4000,
+      "compatible": 1000
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 2000,
+      "setHas": 2000,
+      "compatible": 1000
+    }
+  },
+  {
+    "input": "append",
+    "oldLength": 1000,
+    "newLength": 1001,
+    "prefix": 1000,
+    "suffix": 0,
+    "middleOld": 0,
+    "middleNew": 1,
+    "moves": 0,
+    "inserts": 1,
+    "removes": 0,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 1000,
+      "mapGet": 1001,
+      "setAdd": 4001,
+      "setHas": 4001,
+      "compatible": 1000
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 2001,
+      "setHas": 2001,
+      "compatible": 1000
+    }
+  },
+  {
+    "input": "remove-last",
+    "oldLength": 1000,
+    "newLength": 999,
+    "prefix": 999,
+    "suffix": 0,
+    "middleOld": 1,
+    "middleNew": 0,
+    "moves": 0,
+    "inserts": 0,
+    "removes": 1,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 1000,
+      "mapGet": 999,
+      "setAdd": 3997,
+      "setHas": 3998,
+      "compatible": 999
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 1999,
+      "setHas": 1999,
+      "compatible": 999
+    }
+  },
+  {
+    "input": "insert-middle",
+    "oldLength": 1000,
+    "newLength": 1001,
+    "prefix": 500,
+    "suffix": 500,
+    "middleOld": 0,
+    "middleNew": 1,
+    "moves": 0,
+    "inserts": 1,
+    "removes": 0,
+    "usedLIS": false,
+    "lisInput": {
+      "B0": 0,
+      "C1": 0
+    },
+    "B0": {
+      "mapSet": 1000,
+      "mapGet": 1001,
+      "setAdd": 4001,
+      "setHas": 4001,
+      "compatible": 1000
+    },
+    "C1": {
+      "mapSet": 0,
+      "mapGet": 0,
+      "setAdd": 2001,
+      "setHas": 2001,
+      "compatible": 1000
+    }
+  }
+]

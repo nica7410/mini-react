@@ -1,0 +1,548 @@
+[
+  {
+    "session": 1,
+    "input": "same",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 16.80729999999994,
+      "batchP95Ms": 25.02170499999997,
+      "batchMinMs": 14.61999999999989,
+      "batchMaxMs": 28.388799999999947,
+      "perCallMedianUs": 84.0364999999997,
+      "perCallP95Us": 125.10852499999983
+    },
+    "C1": {
+      "batchMedianMs": 13.23514999999992,
+      "batchP95Ms": 17.812714999999866,
+      "batchMinMs": 11.332400000000234,
+      "batchMaxMs": 21.081900000000132,
+      "perCallMedianUs": 66.1757499999996,
+      "perCallP95Us": 89.06357499999933
+    },
+    "medianDeltaUsPerCall": -17.86075000000011,
+    "medianRatio": 0.7874643755986961,
+    "p95Ratio": 0.711890536636088
+  },
+  {
+    "session": 1,
+    "input": "append",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 15.910449999999628,
+      "batchP95Ms": 34.98264500000007,
+      "batchMinMs": 14.081200000000536,
+      "batchMaxMs": 43.41200000000026,
+      "perCallMedianUs": 79.55224999999814,
+      "perCallP95Us": 174.91322500000035
+    },
+    "C1": {
+      "batchMedianMs": 12.887650000000122,
+      "batchP95Ms": 32.069639999999936,
+      "batchMinMs": 11.082000000000335,
+      "batchMaxMs": 37.2826,
+      "perCallMedianUs": 64.43825000000061,
+      "perCallP95Us": 160.34819999999968
+    },
+    "medianDeltaUsPerCall": -15.113999999997532,
+    "medianRatio": 0.8100116590040145,
+    "p95Ratio": 0.9167299956878582
+  },
+  {
+    "session": 1,
+    "input": "remove-last",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 15.63045000000011,
+      "batchP95Ms": 29.89384500000028,
+      "batchMinMs": 13.902500000000146,
+      "batchMaxMs": 37.344200000000455,
+      "perCallMedianUs": 78.15225000000055,
+      "perCallP95Us": 149.4692250000014
+    },
+    "C1": {
+      "batchMedianMs": 12.305049999999937,
+      "batchP95Ms": 17.0281350000002,
+      "batchMinMs": 10.92370000000028,
+      "batchMaxMs": 28.355099999999766,
+      "perCallMedianUs": 61.52524999999969,
+      "perCallP95Us": 85.14067500000101
+    },
+    "medianDeltaUsPerCall": -16.627000000000862,
+    "medianRatio": 0.7872486076856298,
+    "p95Ratio": 0.5696201007264219
+  },
+  {
+    "session": 1,
+    "input": "insert-middle",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 15.256900000000314,
+      "batchP95Ms": 17.348520000000736,
+      "batchMinMs": 13.799599999999373,
+      "batchMaxMs": 18.448300000000017,
+      "perCallMedianUs": 76.28450000000157,
+      "perCallP95Us": 86.74260000000368
+    },
+    "C1": {
+      "batchMedianMs": 12.067200000000412,
+      "batchP95Ms": 15.094799999998804,
+      "batchMinMs": 10.890600000000632,
+      "batchMaxMs": 15.455700000000434,
+      "perCallMedianUs": 60.33600000000206,
+      "perCallP95Us": 75.47399999999402
+    },
+    "medianDeltaUsPerCall": -15.948499999999513,
+    "medianRatio": 0.7909339380870402,
+    "p95Ratio": 0.8700915121288827
+  },
+  {
+    "session": 1,
+    "input": "reverse",
+    "moves": 99,
+    "usedLIS": true,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 15.430099999999584,
+      "batchP95Ms": 17.69125500000118,
+      "batchMinMs": 13.95759999999973,
+      "batchMaxMs": 28.083300000000236,
+      "perCallMedianUs": 77.15049999999792,
+      "perCallP95Us": 88.45627500000592
+    },
+    "C1": {
+      "batchMedianMs": 14.39744999999948,
+      "batchP95Ms": 17.843549999999684,
+      "batchMinMs": 12.827300000000832,
+      "batchMaxMs": 20.7429000000011,
+      "perCallMedianUs": 71.9872499999974,
+      "perCallP95Us": 89.21774999999842
+    },
+    "medianDeltaUsPerCall": -5.163250000000517,
+    "medianRatio": 0.9330756119532517,
+    "p95Ratio": 1.0086084904659671
+  },
+  {
+    "session": 1,
+    "input": "shuffle",
+    "moves": 84,
+    "usedLIS": true,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 16.50864999999976,
+      "batchP95Ms": 29.101469999999967,
+      "batchMinMs": 14.82589999999982,
+      "batchMaxMs": 42.466599999999744,
+      "perCallMedianUs": 82.5432499999988,
+      "perCallP95Us": 145.50734999999983
+    },
+    "C1": {
+      "batchMedianMs": 15.250200000000405,
+      "batchP95Ms": 30.67580499999994,
+      "batchMinMs": 13.680899999999383,
+      "batchMaxMs": 36.56039999999848,
+      "perCallMedianUs": 76.25100000000202,
+      "perCallP95Us": 153.3790249999997
+    },
+    "medianDeltaUsPerCall": -6.292249999996784,
+    "medianRatio": 0.9237702658909496,
+    "p95Ratio": 1.0540981263145806
+  },
+  {
+    "session": 1,
+    "input": "last-to-first",
+    "moves": 1,
+    "usedLIS": true,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 19.418649999999616,
+      "batchP95Ms": 30.560499999999045,
+      "batchMinMs": 15.230000000001382,
+      "batchMaxMs": 32.8744999999999,
+      "perCallMedianUs": 97.09324999999808,
+      "perCallP95Us": 152.80249999999523
+    },
+    "C1": {
+      "batchMedianMs": 18.364200000000892,
+      "batchP95Ms": 28.09606499999954,
+      "batchMinMs": 14.220099999998638,
+      "batchMaxMs": 31.907799999999042,
+      "perCallMedianUs": 91.82100000000446,
+      "perCallP95Us": 140.48032499999772
+    },
+    "medianDeltaUsPerCall": -5.272249999993619,
+    "medianRatio": 0.9456991088464571,
+    "p95Ratio": 0.9193588128466621
+  },
+  {
+    "session": 2,
+    "input": "append",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 20.790799999999876,
+      "batchP95Ms": 39.59346500000003,
+      "batchMinMs": 15.498699999999872,
+      "batchMaxMs": 57.271400000000085,
+      "perCallMedianUs": 103.95399999999938,
+      "perCallP95Us": 197.96732500000013
+    },
+    "C1": {
+      "batchMedianMs": 17.289400000000114,
+      "batchP95Ms": 34.41279499999994,
+      "batchMinMs": 11.744200000000092,
+      "batchMaxMs": 44.65219999999999,
+      "perCallMedianUs": 86.44700000000057,
+      "perCallP95Us": 172.06397499999972
+    },
+    "medianDeltaUsPerCall": -17.50699999999881,
+    "medianRatio": 0.8315889720453382,
+    "p95Ratio": 0.8691534070079472
+  },
+  {
+    "session": 2,
+    "input": "remove-last",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 21.16235000000006,
+      "batchP95Ms": 32.062264999999925,
+      "batchMinMs": 13.438799999999901,
+      "batchMaxMs": 44.71569999999974,
+      "perCallMedianUs": 105.8117500000003,
+      "perCallP95Us": 160.3113249999996
+    },
+    "C1": {
+      "batchMedianMs": 17.41314999999986,
+      "batchP95Ms": 27.376134999999927,
+      "batchMinMs": 10.830399999999827,
+      "batchMaxMs": 35.180199999999786,
+      "perCallMedianUs": 87.0657499999993,
+      "perCallP95Us": 136.88067499999966
+    },
+    "medianDeltaUsPerCall": -18.746000000001004,
+    "medianRatio": 0.8228363107121757,
+    "p95Ratio": 0.853842827386025
+  },
+  {
+    "session": 2,
+    "input": "insert-middle",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 15.063250000000153,
+      "batchP95Ms": 19.4404750000006,
+      "batchMinMs": 13.857200000000375,
+      "batchMaxMs": 26.496100000000297,
+      "perCallMedianUs": 75.31625000000076,
+      "perCallP95Us": 97.202375000003
+    },
+    "C1": {
+      "batchMedianMs": 12.052400000000034,
+      "batchP95Ms": 18.86816499999945,
+      "batchMinMs": 10.84100000000035,
+      "batchMaxMs": 28.886099999999715,
+      "perCallMedianUs": 60.26200000000017,
+      "perCallP95Us": 94.34082499999725
+    },
+    "medianDeltaUsPerCall": -15.054250000000593,
+    "medianRatio": 0.8001194961246685,
+    "p95Ratio": 0.97056090450459
+  },
+  {
+    "session": 2,
+    "input": "reverse",
+    "moves": 99,
+    "usedLIS": true,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 14.959450000001198,
+      "batchP95Ms": 17.761055000001306,
+      "batchMinMs": 13.817900000000009,
+      "batchMaxMs": 19.492999999998574,
+      "perCallMedianUs": 74.79725000000599,
+      "perCallP95Us": 88.80527500000653
+    },
+    "C1": {
+      "batchMedianMs": 13.77009999999973,
+      "batchP95Ms": 17.774260000000048,
+      "batchMinMs": 12.540100000000166,
+      "batchMaxMs": 19.310300000001007,
+      "perCallMedianUs": 68.85049999999865,
+      "perCallP95Us": 88.87130000000023
+    },
+    "medianDeltaUsPerCall": -5.946750000007341,
+    "medianRatio": 0.9204950716770086,
+    "p95Ratio": 1.0007434806096114
+  },
+  {
+    "session": 2,
+    "input": "shuffle",
+    "moves": 84,
+    "usedLIS": true,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 15.629699999999502,
+      "batchP95Ms": 20.355720000000563,
+      "batchMinMs": 13.788399999999456,
+      "batchMaxMs": 23.525499999999738,
+      "perCallMedianUs": 78.14849999999751,
+      "perCallP95Us": 101.77860000000281
+    },
+    "C1": {
+      "batchMedianMs": 14.376199999999699,
+      "batchP95Ms": 18.40678999999982,
+      "batchMinMs": 12.586800000000949,
+      "batchMaxMs": 28.54160000000047,
+      "perCallMedianUs": 71.8809999999985,
+      "perCallP95Us": 92.0339499999991
+    },
+    "medianDeltaUsPerCall": -6.267499999999018,
+    "medianRatio": 0.9198001241226739,
+    "p95Ratio": 0.9042563957452406
+  },
+  {
+    "session": 2,
+    "input": "last-to-first",
+    "moves": 1,
+    "usedLIS": true,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 16.235750000000735,
+      "batchP95Ms": 20.457830000000012,
+      "batchMinMs": 13.864199999999983,
+      "batchMaxMs": 24.858699999998862,
+      "perCallMedianUs": 81.17875000000367,
+      "perCallP95Us": 102.28915000000006
+    },
+    "C1": {
+      "batchMedianMs": 15.019100000000435,
+      "batchP95Ms": 19.430825000000805,
+      "batchMinMs": 12.787200000000666,
+      "batchMaxMs": 33.97159999999894,
+      "perCallMedianUs": 75.09550000000218,
+      "perCallP95Us": 97.15412500000403
+    },
+    "medianDeltaUsPerCall": -6.083250000001499,
+    "medianRatio": 0.9250635172381784,
+    "p95Ratio": 0.9497989278433144
+  },
+  {
+    "session": 2,
+    "input": "same",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 15.31249999999909,
+      "batchP95Ms": 19.05233499999867,
+      "batchMinMs": 13.86069999999927,
+      "batchMaxMs": 21.732700000000477,
+      "perCallMedianUs": 76.56249999999545,
+      "perCallP95Us": 95.26167499999336
+    },
+    "C1": {
+      "batchMedianMs": 12.155700000000252,
+      "batchP95Ms": 15.162684999998692,
+      "batchMinMs": 10.372200000001612,
+      "batchMaxMs": 21.644899999999325,
+      "perCallMedianUs": 60.77850000000126,
+      "perCallP95Us": 75.81342499999347
+    },
+    "medianDeltaUsPerCall": -15.783999999994194,
+    "medianRatio": 0.7938416326531248,
+    "p95Ratio": 0.7958439214930743
+  },
+  {
+    "session": 3,
+    "input": "remove-last",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 16.063999999999965,
+      "batchP95Ms": 24.399715000000068,
+      "batchMinMs": 14.183899999999994,
+      "batchMaxMs": 37.91889999999967,
+      "perCallMedianUs": 80.31999999999982,
+      "perCallP95Us": 121.99857500000034
+    },
+    "C1": {
+      "batchMedianMs": 12.696750000000065,
+      "batchP95Ms": 18.597905000000083,
+      "batchMinMs": 11.115099999999984,
+      "batchMaxMs": 22.644500000000335,
+      "perCallMedianUs": 63.48375000000033,
+      "perCallP95Us": 92.98952500000041
+    },
+    "medianDeltaUsPerCall": -16.836249999999495,
+    "medianRatio": 0.7903853336653445,
+    "p95Ratio": 0.7622181242690758
+  },
+  {
+    "session": 3,
+    "input": "insert-middle",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 17.479750000000195,
+      "batchP95Ms": 34.04358499999982,
+      "batchMinMs": 13.95299999999952,
+      "batchMaxMs": 45.32940000000008,
+      "perCallMedianUs": 87.39875000000097,
+      "perCallP95Us": 170.2179249999991
+    },
+    "C1": {
+      "batchMedianMs": 14.17930000000024,
+      "batchP95Ms": 29.589214999999967,
+      "batchMinMs": 11.59309999999914,
+      "batchMaxMs": 40.86209999999983,
+      "perCallMedianUs": 70.8965000000012,
+      "perCallP95Us": 147.94607499999984
+    },
+    "medianDeltaUsPerCall": -16.502249999999776,
+    "medianRatio": 0.8111843704858526,
+    "p95Ratio": 0.8691568470241933
+  },
+  {
+    "session": 3,
+    "input": "reverse",
+    "moves": 99,
+    "usedLIS": true,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 15.606149999999616,
+      "batchP95Ms": 21.597700000000117,
+      "batchMinMs": 13.45049999999992,
+      "batchMaxMs": 30.939800000000105,
+      "perCallMedianUs": 78.03074999999808,
+      "perCallP95Us": 107.98850000000058
+    },
+    "C1": {
+      "batchMedianMs": 14.409149999999954,
+      "batchP95Ms": 19.581399999999576,
+      "batchMinMs": 12.578800000000228,
+      "batchMaxMs": 23.63090000000011,
+      "perCallMedianUs": 72.04574999999977,
+      "perCallP95Us": 97.90699999999788
+    },
+    "medianDeltaUsPerCall": -5.984999999998308,
+    "medianRatio": 0.9232994684787926,
+    "p95Ratio": 0.9066428369687267
+  },
+  {
+    "session": 3,
+    "input": "shuffle",
+    "moves": 84,
+    "usedLIS": true,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 17.481799999999566,
+      "batchP95Ms": 19.272195000000647,
+      "batchMinMs": 15.931300000000192,
+      "batchMaxMs": 19.605999999999767,
+      "perCallMedianUs": 87.40899999999783,
+      "perCallP95Us": 96.36097500000324
+    },
+    "C1": {
+      "batchMedianMs": 14.918399999999565,
+      "batchP95Ms": 17.785815000000003,
+      "batchMinMs": 13.289300000000367,
+      "batchMaxMs": 18.83810000000085,
+      "perCallMedianUs": 74.59199999999782,
+      "perCallP95Us": 88.92907500000001
+    },
+    "medianDeltaUsPerCall": -12.817000000000007,
+    "medianRatio": 0.8533675022022866,
+    "p95Ratio": 0.9228743793843621
+  },
+  {
+    "session": 3,
+    "input": "last-to-first",
+    "moves": 1,
+    "usedLIS": true,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 18.329499999999825,
+      "batchP95Ms": 21.90736000000006,
+      "batchMinMs": 15.808800000000701,
+      "batchMaxMs": 28.200600000000122,
+      "perCallMedianUs": 91.64749999999913,
+      "perCallP95Us": 109.53680000000031
+    },
+    "C1": {
+      "batchMedianMs": 15.357099999999264,
+      "batchP95Ms": 17.963305000000943,
+      "batchMinMs": 12.923099999999977,
+      "batchMaxMs": 25.589900000000853,
+      "perCallMedianUs": 76.78549999999632,
+      "perCallP95Us": 89.81652500000472
+    },
+    "medianDeltaUsPerCall": -14.862000000002809,
+    "medianRatio": 0.8378351837202003,
+    "p95Ratio": 0.8199666687360272
+  },
+  {
+    "session": 3,
+    "input": "same",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 17.723799999999756,
+      "batchP95Ms": 20.123184999999648,
+      "batchMinMs": 15.926100000000588,
+      "batchMaxMs": 22.118800000000192,
+      "perCallMedianUs": 88.61899999999878,
+      "perCallP95Us": 100.61592499999823
+    },
+    "C1": {
+      "batchMedianMs": 12.7429000000011,
+      "batchP95Ms": 14.677584999998999,
+      "batchMinMs": 10.971700000000055,
+      "batchMaxMs": 17.97360000000117,
+      "perCallMedianUs": 63.7145000000055,
+      "perCallP95Us": 73.387924999995
+    },
+    "medianDeltaUsPerCall": -24.904499999993277,
+    "medianRatio": 0.7189711010054998,
+    "p95Ratio": 0.7293867745090679
+  },
+  {
+    "session": 3,
+    "input": "append",
+    "moves": 0,
+    "usedLIS": false,
+    "n": 60,
+    "B0": {
+      "batchMedianMs": 16.566399999999703,
+      "batchP95Ms": 18.76694000000034,
+      "batchMinMs": 15.247199999999793,
+      "batchMaxMs": 22.33980000000156,
+      "perCallMedianUs": 82.83199999999852,
+      "perCallP95Us": 93.8347000000017
+    },
+    "C1": {
+      "batchMedianMs": 11.606200000000172,
+      "batchP95Ms": 12.970164999998724,
+      "batchMinMs": 10.418400000000474,
+      "batchMaxMs": 15.141399999998612,
+      "perCallMedianUs": 58.03100000000086,
+      "perCallP95Us": 64.85082499999362
+    },
+    "medianDeltaUsPerCall": -24.800999999997657,
+    "medianRatio": 0.7005867297662969,
+    "p95Ratio": 0.6911177315001001
+  }
+]

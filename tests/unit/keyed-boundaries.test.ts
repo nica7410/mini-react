@@ -1,6 +1,8 @@
 // @vitest-environment node
-// Keyed boundary-run planner (2026-11-10): the candidate in src/core/keyed.ts must preserve the
-// observable result of the baseline planner (B0, tests/fixtures/keyed-baseline.ts).
+// Keyed boundary-run study (2026-11-10). Two planners must preserve the observable result of the
+// baseline planner B0 (tests/fixtures/keyed-baseline.ts): the default planner in src/core/keyed.ts
+// and the research candidate C1 (research/keyed-boundaries/keyed.candidate.ts, kept for research:
+// docs/followup-keyed-boundaries.md).
 //   A. differential: every field of the plan against B0, for Greedy and LIS;
 //   B. independent model: array executor + matching/move oracles that never read the plan's
 //      slots or stable set as the answer and do not use the engine's compatible();
@@ -10,10 +12,12 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { planKeyedChildren } from '../../src/core/keyed';
 import type { VNode, ViewNode } from '../../src/core/types';
 import { planKeyedChildrenB0 } from '../fixtures/keyed-baseline';
+import { planKeyedChildrenCandidate } from '../../research/keyed-boundaries/keyed.candidate';
 import { assertModel, items, permutations, sameModelIdentity, seededRandom, shuffle, views, vnode } from '../fixtures/keyed-model';
 import type { Item } from '../fixtures/keyed-model';
 
 type Planner = typeof planKeyedChildren;
+const planners: [string, Planner][] = [['default', planKeyedChildren], ['candidate', planKeyedChildrenCandidate]];
 const SEED = 20261110, GENERATED = 1700, SHRINK_EVALUATIONS = 300, SHRINK_MS = 30000;
 const counts = { seed: SEED, required: 0, wrappedPairs: 0, wrappedPermutations: 0, generated: 0, generatedInvalid: 0, shrinkDemoEvaluations: 0 };
 afterAll(() => { mkdirSync('.validation', { recursive: true }); writeFileSync('.validation/keyed-boundaries-counts.json', JSON.stringify(counts, null, 2)); });
@@ -104,10 +108,13 @@ function shrink(planner: Planner, oldItems: readonly Item[], nextItems: readonly
   }
 }
 function verify(oldItems: readonly Item[], nextItems: readonly Item[], context: string) {
-  const found = difference(planKeyedChildren, oldItems, nextItems);
+  for (const [name, planner] of planners) verifyPlanner(name, planner, oldItems, nextItems, context);
+}
+function verifyPlanner(name: string, planner: Planner, oldItems: readonly Item[], nextItems: readonly Item[], context: string) {
+  const found = difference(planner, oldItems, nextItems);
   if (!found) return;
-  const fixture = { schemaVersion: 1, context, seed: SEED, command: 'pnpm exec vitest run tests/unit/keyed-boundaries.test.ts',
-    original: { oldItems, nextItems, difference: found }, shrunk: shrink(planKeyedChildren, oldItems, nextItems) };
+  const fixture = { schemaVersion: 1, planner: name, context, seed: SEED, command: 'pnpm exec vitest run tests/unit/keyed-boundaries.test.ts',
+    original: { oldItems, nextItems, difference: found }, shrunk: shrink(planner, oldItems, nextItems) };
   mkdirSync('.validation', { recursive: true }); writeFileSync('.validation/keyed-boundaries-failure.json', JSON.stringify(fixture, null, 2));
   throw new Error(JSON.stringify(fixture));
 }
@@ -156,14 +163,14 @@ const required: [string, Item[], Item[]][] = [
   ['duplicate inside an otherwise identical list', items('ABCB'), items('ABCB')],
 ];
 
-it('required boundary inputs: candidate equals B0 and the independent model', () => {
+it('required boundary inputs: default planner and candidate equal B0 and the independent model', () => {
   for (const [name, oldItems, nextItems] of required) { verify(oldItems, nextItems, `required/${name}`); counts.required++; }
   expect(counts.required).toBe(required.length);
 });
 
-it('known decisions: Greedy keeps new-list order, LIS keeps its tie choice, indices are whole-list indices', () => {
+it.each(planners)('known decisions (%s): Greedy keeps new-list order, LIS keeps its tie choice, indices are whole-list indices', (_name, planner) => {
   const plan = (oldKeys: string, nextKeys: string, strategy: 'greedy' | 'lis') => {
-    const result = planKeyedChildren(views(items(oldKeys)), items(nextKeys).map(vnode), strategy);
+    const result = planner(views(items(oldKeys)), items(nextKeys).map(vnode), strategy);
     if (!result.ok) throw new Error('unexpected failure');
     return result.value;
   };
@@ -184,7 +191,7 @@ it('known decisions: Greedy keeps new-list order, LIS keeps its tie choice, indi
   expect(plan('ABCDEF', 'ABCDEF', 'lis')).toMatchObject({ usedLIS: false, moveNewIndices: [], insertNewIndices: [], removedRefs: [] });
 });
 
-it('key validation and eligibility keep their whole-list scope and priority', () => {
+it.each(planners)('key validation and eligibility keep their whole-list scope and priority (%s)', (_name, planner) => {
   const text: VNode = { kind: 'text', identity: { key: null, renderedRootKey: null, boundaries: [] }, text: 't' };
   const keyless = { ...vnode({ key: 'x', tag: 'li' }), identity: { key: null, renderedRootKey: null, boundaries: [] } };
   const empty = { ...vnode({ key: 'x', tag: 'li' }), identity: { key: '', renderedRootKey: null, boundaries: [] } };
@@ -200,11 +207,11 @@ it('key validation and eligibility keep their whole-list scope and priority', ()
     ['old duplicate is reported before a new duplicate', [base[0], base[1], base[0]], [base[2], base[2]], 'DUPLICATE_KEY'],
   ];
   for (const [name, oldNodes, nextNodes, code] of cases) for (const strategy of ['greedy', 'lis'] as const) {
-    const expected = planKeyedChildrenB0(asView(oldNodes), nextNodes, strategy), actual = planKeyedChildren(asView(oldNodes), nextNodes, strategy);
+    const expected = planKeyedChildrenB0(asView(oldNodes), nextNodes, strategy), actual = planner(asView(oldNodes), nextNodes, strategy);
     expect(actual, name).toEqual(expected);
     expect(actual.ok ? 'ok' : actual.diagnostics[0].code, name).toBe(code);
   }
-  expect(difference(planKeyedChildren, [], [], asView([base[0], base[1], base[0]]), [base[2], base[2]])).toBeNull();
+  expect(difference(planner, [], [], asView([base[0], base[1], base[0]]), [base[2], base[2]])).toBeNull();
 });
 
 it('every partial pair of four keys inside unchanged, absent and incompatible boundary nodes', () => {
@@ -281,7 +288,7 @@ it(`seed ${SEED}: ${GENERATED} generated pairs with boundary runs, identity chan
 it('the harness reports and shrinks a wrong planner within its budget', () => {
   // A deliberately wrong planner: the suffix is counted as already placed before the middle (Greedy).
   const wrong: Planner = (old, next, strategy) => {
-    const result = planKeyedChildren(old, next, strategy);
+    const result = planKeyedChildrenCandidate(old, next, strategy);
     if (!result.ok || strategy !== 'greedy') return result;
     const plan = result.value, last = plan.slots.at(-1)?.oldIndex;
     if (last !== old.length - 1 || plan.slots.length < 2) return result;
@@ -295,7 +302,7 @@ it('the harness reports and shrinks a wrong planner within its budget', () => {
   const shrunk = shrink(wrong, failing!.old, failing!.next);
   counts.shrinkDemoEvaluations = shrunk.evaluations;
   expect(shrunk.evaluations).toBeLessThanOrEqual(SHRINK_EVALUATIONS);
-  expect(difference(wrong, shrunk.old, shrunk.next)).not.toBeNull(); expect(difference(planKeyedChildren, shrunk.old, shrunk.next)).toBeNull();
+  expect(difference(wrong, shrunk.old, shrunk.next)).not.toBeNull(); expect(difference(planKeyedChildrenCandidate, shrunk.old, shrunk.next)).toBeNull();
   expect(shrunk.old.length + shrunk.next.length).toBeLessThanOrEqual(failing!.old.length + failing!.next.length);
   if (shrunk.stopped === 'minimal') expect(shrunk.old.length).toBeLessThanOrEqual(3);
 });
