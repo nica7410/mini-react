@@ -1,0 +1,75 @@
+{
+  "source": "research/validate-names/validate.candidate.ts",
+  "tests": [
+    "tests/unit/validate-names.test.ts"
+  ],
+  "sourceSha256": "2c34b1ac56ca93dcbc1b393a4c538b38991f0875",
+  "runs": [
+    {
+      "label": "unchanged source",
+      "exitCode": 0,
+      "total": 16,
+      "failed": 0,
+      "failedTests": [],
+      "ms": 4168,
+      "expected": "pass"
+    },
+    {
+      "label": "M1 attribute name may start with a digit, dot, colon or hyphen",
+      "exitCode": 1,
+      "total": 16,
+      "failed": 4,
+      "failedTests": [
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem: every UTF-16 code unit in the first, second and later position",
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem: special names in every case form, with URL and srcset values",
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem and eventNameProblem: 30,000 generated names (fixed seed)",
+        "candidate V1: validateTree equals the 8ae389e validateTree 2,000 generated trees: same result, message and path; an accepted tree is returned as is"
+      ],
+      "ms": 3079,
+      "expected": "fail"
+    },
+    {
+      "label": "M2 attribute name loses the colon (48..57 instead of 48..58)",
+      "exitCode": 1,
+      "total": 16,
+      "failed": 4,
+      "failedTests": [
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem: every UTF-16 code unit in the first, second and later position",
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem: special names in every case form, with URL and srcset values",
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem and eventNameProblem: 30,000 generated names (fixed seed)",
+        "candidate V1: validateTree equals the 8ae389e validateTree 2,000 generated trees: same result, message and path; an accepted tree is returned as is"
+      ],
+      "ms": 3154,
+      "expected": "fail"
+    },
+    {
+      "label": "M3 the on-prefix test is case-sensitive for the second letter",
+      "exitCode": 1,
+      "total": 16,
+      "failed": 4,
+      "failedTests": [
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem: every UTF-16 code unit in the first, second and later position",
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem: special names in every case form, with URL and srcset values",
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem and eventNameProblem: 30,000 generated names (fixed seed)",
+        "candidate V1: validateTree equals the 8ae389e validateTree 2,000 generated trees: same result, message and path; an accepted tree is returned as is"
+      ],
+      "ms": 3173,
+      "expected": "fail"
+    },
+    {
+      "label": "M4 event name may start with a digit",
+      "exitCode": 1,
+      "total": 16,
+      "failed": 3,
+      "failedTests": [
+        "candidate V1: same verdict as the 8ae389e validation attributeProblem and eventNameProblem: 30,000 generated names (fixed seed)",
+        "candidate V1: same verdict as the 8ae389e validation eventNameProblem: every UTF-16 code unit in the first, second and later position, and named cases",
+        "candidate V1: validateTree equals the 8ae389e validateTree 2,000 generated trees: same result, message and path; an accepted tree is returned as is"
+      ],
+      "ms": 3591,
+      "expected": "fail"
+    }
+  ],
+  "restored": true,
+  "ok": true
+}
