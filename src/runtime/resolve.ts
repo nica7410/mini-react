@@ -1,6 +1,7 @@
 import type { ComponentExpr, ElementExpr, EventBinding, RenderValue, StyleValue, VNode, VRoot } from '../core/types';
 import { booleanAttrs, validateTree } from '../core/validate';
 import { freezeBoundaryNode, freezeOwnedNode, identity, unwrap } from '../core/vdom';
+import { createAttrMap, finishAttrMap } from '../core/attrMap';
 import { normalizeKey } from './expression';
 import { pureComputation } from './hooks';
 import { isMemoComponent, sameProps } from './memo';
@@ -93,13 +94,14 @@ export function evaluateExpression(value: RenderValue, previous: EvaluationState
     if (expr.kind !== 'element-expr') throw new Error('잘못된 render 결과입니다.');
     const props = expr.props;
     if (props.form?.selectedIndices !== undefined && !Array.isArray(props.form.selectedIndices)) throw new Error('selectedIndices는 index 배열이어야 합니다.');
-    const attrs: Record<string, string> = Object.create(null), style: Record<string, StyleValue> = {}, events: Record<string, EventBinding> = {};
+    const attrs = createAttrMap(), style: Record<string, StyleValue> = {}, events: Record<string, EventBinding> = {};
     if (props.attrs) for (const rawName of Object.keys(props.attrs)) {
       const input = props.attrs[rawName], name = rawName.toLowerCase();
       if (input === null || input === undefined) continue;
       if (booleanAttrs.has(name)) { if (input !== false) attrs[name] = ''; }
       else attrs[name] = String(input);
     }
+    finishAttrMap(attrs);
     if (props.style) for (const name of Object.keys(props.style)) { const value = props.style[name]; style[name] = typeof value === 'string' ? { value, priority: '' } : { ...value }; }
     if (props.events) for (const name of Object.keys(props.events)) { const binding = props.events[name]; events[name] = typeof binding === 'function' ? { handler: binding, capture: false } : { ...binding }; }
     const values = flattenInto(expr.children, []), oldChildren = old?.children ?? [];

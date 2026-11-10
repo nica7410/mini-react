@@ -1,0 +1,3506 @@
+{
+  "manifestHash": "335fc1fc4abfd0b8bb241b53fecffb68dd1178ee6ce84a7224c8ae0b22d42079",
+  "browser": "151.0.7922.34",
+  "modules": {
+    "b0": [
+      "src/app/tasks.ts",
+      "src/bench/attr-map-arm.ts",
+      "src/bench/task-model.ts",
+      "src/core/host/browserState.ts",
+      "src/core/host/events.ts",
+      "src/core/host/forms.ts",
+      "src/core/host/inputs.ts",
+      "src/core/keyed.ts",
+      "src/core/mount.ts",
+      "src/core/patch.ts",
+      "src/core/planValidation.ts",
+      "src/core/reconcile.ts",
+      "src/core/validate.ts",
+      "src/core/vdom.ts",
+      "src/observe/trace.ts",
+      "src/runtime/FunctionComponent.ts",
+      "src/runtime/expression.ts",
+      "src/runtime/hooks.ts",
+      "src/runtime/index.ts",
+      "src/runtime/memo.ts",
+      "src/runtime/resolve.ts",
+      "src/runtime/stateGuard.ts",
+      "src/runtime/updateQueue.ts"
+    ],
+    "r1": [
+      "research/attr-maps/attrMap.ts",
+      "research/attr-maps/resolve.candidate.ts",
+      "src/app/tasks.ts",
+      "src/bench/attr-map-arm.ts",
+      "src/bench/task-model.ts",
+      "src/core/host/browserState.ts",
+      "src/core/host/events.ts",
+      "src/core/host/forms.ts",
+      "src/core/host/inputs.ts",
+      "src/core/keyed.ts",
+      "src/core/mount.ts",
+      "src/core/patch.ts",
+      "src/core/planValidation.ts",
+      "src/core/reconcile.ts",
+      "src/core/validate.ts",
+      "src/core/vdom.ts",
+      "src/observe/trace.ts",
+      "src/runtime/FunctionComponent.ts",
+      "src/runtime/expression.ts",
+      "src/runtime/hooks.ts",
+      "src/runtime/index.ts",
+      "src/runtime/memo.ts",
+      "src/runtime/stateGuard.ts",
+      "src/runtime/updateQueue.ts"
+    ]
+  },
+  "arms": {
+    "B0": {
+      "baseDigest": {
+        "length": 186409,
+        "fnv1a": "8784d321"
+      },
+      "baseMaps": {
+        "elements": 727,
+        "nullPrototype": 727,
+        "frozen": 727,
+        "attributes": 1229
+      },
+      "plans": [
+        {
+          "condition": "A",
+          "operations": [
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SYNC_FORM"
+          ],
+          "operationsDigest": {
+            "length": 1159,
+            "fnv1a": "fb7bf019"
+          },
+          "reconciliations": [
+            {
+              "parent": "mount-paired/base/5",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/3",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/6",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/2",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/12",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/10",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/16",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/18",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/20",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/15",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/13",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/25",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/27",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/29",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/24",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/22",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/9",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/31",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/33",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/528",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/527",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/531",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/533",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/530",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/534",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/526",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/35",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 100,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1038",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1040",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1042",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1044",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1037",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 4,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1046",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 9,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/root",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            }
+          ],
+          "visitedNodes": 156,
+          "reusedSubtrees": 99,
+          "nextViewDigest": {
+            "length": 886500,
+            "fnv1a": "2e1c9356"
+          },
+          "targetDigest": {
+            "length": 186412,
+            "fnv1a": "9bb4872a"
+          }
+        },
+        {
+          "condition": "B",
+          "operations": [
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "PLACE_BEFORE"
+          ],
+          "operationsDigest": {
+            "length": 899,
+            "fnv1a": "281f0a6e"
+          },
+          "reconciliations": [
+            {
+              "parent": "mount-paired/base/5",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/3",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/6",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/2",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/12",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/10",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/16",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/18",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/20",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/15",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/13",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/25",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/27",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/29",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/24",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/22",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/9",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/31",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/33",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/35",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": true,
+              "reused": 100,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 1
+            },
+            {
+              "parent": "mount-paired/base/1038",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1040",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1042",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1044",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1037",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 4,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1046",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 9,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/root",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            }
+          ],
+          "visitedNodes": 147,
+          "reusedSubtrees": 100,
+          "nextViewDigest": {
+            "length": 886485,
+            "fnv1a": "466dcd1f"
+          },
+          "targetDigest": {
+            "length": 186409,
+            "fnv1a": "4e7a3789"
+          }
+        },
+        {
+          "condition": "C",
+          "operations": [
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE"
+          ],
+          "operationsDigest": {
+            "length": 14513,
+            "fnv1a": "fe6dff25"
+          },
+          "reconciliations": [
+            {
+              "parent": "mount-paired/base/5",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/3",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/6",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/2",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/12",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/10",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/16",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/18",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/20",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/15",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/13",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/25",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/27",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/29",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/24",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/22",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/9",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/31",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/33",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/35",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": true,
+              "reused": 100,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 99
+            },
+            {
+              "parent": "mount-paired/base/1038",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1040",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1042",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1044",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1037",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 4,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1046",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 9,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/root",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            }
+          ],
+          "visitedNodes": 147,
+          "reusedSubtrees": 100,
+          "nextViewDigest": {
+            "length": 886485,
+            "fnv1a": "ff425c2b"
+          },
+          "targetDigest": {
+            "length": 186409,
+            "fnv1a": "588e4469"
+          }
+        }
+      ],
+      "update": {
+        "targetDigest": {
+          "length": 186412,
+          "fnv1a": "9bb4872a"
+        },
+        "operations": [
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SYNC_FORM"
+        ],
+        "reusedSubtrees": 99
+      },
+      "fresh": {
+        "digest": {
+          "length": 186409,
+          "fnv1a": "8784d321"
+        },
+        "maps": {
+          "elements": 727,
+          "nullPrototype": 727,
+          "frozen": 727,
+          "attributes": 1229
+        },
+        "sameObjectAsBase": false
+      }
+    },
+    "B0-repeat": {
+      "baseDigest": {
+        "length": 186409,
+        "fnv1a": "8784d321"
+      },
+      "baseMaps": {
+        "elements": 727,
+        "nullPrototype": 727,
+        "frozen": 727,
+        "attributes": 1229
+      },
+      "plans": [
+        {
+          "condition": "A",
+          "operations": [
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SYNC_FORM"
+          ],
+          "operationsDigest": {
+            "length": 1159,
+            "fnv1a": "fb7bf019"
+          },
+          "reconciliations": [
+            {
+              "parent": "mount-paired/base/5",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/3",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/6",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/2",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/12",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/10",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/16",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/18",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/20",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/15",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/13",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/25",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/27",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/29",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/24",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/22",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/9",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/31",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/33",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/528",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/527",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/531",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/533",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/530",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/534",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/526",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/35",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 100,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1038",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1040",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1042",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1044",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1037",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 4,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1046",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 9,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/root",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            }
+          ],
+          "visitedNodes": 156,
+          "reusedSubtrees": 99,
+          "nextViewDigest": {
+            "length": 886500,
+            "fnv1a": "2e1c9356"
+          },
+          "targetDigest": {
+            "length": 186412,
+            "fnv1a": "9bb4872a"
+          }
+        },
+        {
+          "condition": "B",
+          "operations": [
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "PLACE_BEFORE"
+          ],
+          "operationsDigest": {
+            "length": 899,
+            "fnv1a": "281f0a6e"
+          },
+          "reconciliations": [
+            {
+              "parent": "mount-paired/base/5",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/3",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/6",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/2",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/12",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/10",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/16",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/18",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/20",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/15",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/13",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/25",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/27",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/29",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/24",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/22",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/9",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/31",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/33",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/35",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": true,
+              "reused": 100,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 1
+            },
+            {
+              "parent": "mount-paired/base/1038",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1040",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1042",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1044",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1037",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 4,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1046",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 9,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/root",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            }
+          ],
+          "visitedNodes": 147,
+          "reusedSubtrees": 100,
+          "nextViewDigest": {
+            "length": 886485,
+            "fnv1a": "466dcd1f"
+          },
+          "targetDigest": {
+            "length": 186409,
+            "fnv1a": "4e7a3789"
+          }
+        },
+        {
+          "condition": "C",
+          "operations": [
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE"
+          ],
+          "operationsDigest": {
+            "length": 14513,
+            "fnv1a": "fe6dff25"
+          },
+          "reconciliations": [
+            {
+              "parent": "mount-paired/base/5",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/3",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/6",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/2",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/12",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/10",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/16",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/18",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/20",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/15",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/13",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/25",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/27",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/29",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/24",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/22",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/9",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/31",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/33",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/35",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": true,
+              "reused": 100,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 99
+            },
+            {
+              "parent": "mount-paired/base/1038",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1040",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1042",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1044",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1037",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 4,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1046",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 9,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/root",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            }
+          ],
+          "visitedNodes": 147,
+          "reusedSubtrees": 100,
+          "nextViewDigest": {
+            "length": 886485,
+            "fnv1a": "ff425c2b"
+          },
+          "targetDigest": {
+            "length": 186409,
+            "fnv1a": "588e4469"
+          }
+        }
+      ],
+      "update": {
+        "targetDigest": {
+          "length": 186412,
+          "fnv1a": "9bb4872a"
+        },
+        "operations": [
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SYNC_FORM"
+        ],
+        "reusedSubtrees": 99
+      },
+      "fresh": {
+        "digest": {
+          "length": 186409,
+          "fnv1a": "8784d321"
+        },
+        "maps": {
+          "elements": 727,
+          "nullPrototype": 727,
+          "frozen": 727,
+          "attributes": 1229
+        },
+        "sameObjectAsBase": false
+      }
+    },
+    "R1": {
+      "baseDigest": {
+        "length": 186409,
+        "fnv1a": "8784d321"
+      },
+      "baseMaps": {
+        "elements": 727,
+        "nullPrototype": 727,
+        "frozen": 727,
+        "attributes": 1229
+      },
+      "plans": [
+        {
+          "condition": "A",
+          "operations": [
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SYNC_FORM"
+          ],
+          "operationsDigest": {
+            "length": 1159,
+            "fnv1a": "fb7bf019"
+          },
+          "reconciliations": [
+            {
+              "parent": "mount-paired/base/5",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/3",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/6",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/2",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/12",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/10",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/16",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/18",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/20",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/15",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/13",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/25",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/27",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/29",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/24",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/22",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/9",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/31",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/33",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/528",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/527",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/531",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/533",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/530",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/534",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/526",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/35",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 100,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1038",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1040",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1042",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1044",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1037",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 4,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1046",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 9,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/root",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            }
+          ],
+          "visitedNodes": 156,
+          "reusedSubtrees": 99,
+          "nextViewDigest": {
+            "length": 886500,
+            "fnv1a": "2e1c9356"
+          },
+          "targetDigest": {
+            "length": 186412,
+            "fnv1a": "9bb4872a"
+          }
+        },
+        {
+          "condition": "B",
+          "operations": [
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "PLACE_BEFORE"
+          ],
+          "operationsDigest": {
+            "length": 899,
+            "fnv1a": "281f0a6e"
+          },
+          "reconciliations": [
+            {
+              "parent": "mount-paired/base/5",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/3",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/6",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/2",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/12",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/10",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/16",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/18",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/20",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/15",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/13",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/25",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/27",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/29",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/24",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/22",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/9",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/31",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/33",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/35",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": true,
+              "reused": 100,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 1
+            },
+            {
+              "parent": "mount-paired/base/1038",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1040",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1042",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1044",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1037",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 4,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1046",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 9,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/root",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            }
+          ],
+          "visitedNodes": 147,
+          "reusedSubtrees": 100,
+          "nextViewDigest": {
+            "length": 886485,
+            "fnv1a": "466dcd1f"
+          },
+          "targetDigest": {
+            "length": 186409,
+            "fnv1a": "4e7a3789"
+          }
+        },
+        {
+          "condition": "C",
+          "operations": [
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "SET_EVENT",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE",
+            "PLACE_BEFORE"
+          ],
+          "operationsDigest": {
+            "length": 14513,
+            "fnv1a": "fe6dff25"
+          },
+          "reconciliations": [
+            {
+              "parent": "mount-paired/base/5",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/3",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/6",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/2",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/12",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 0,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/10",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/16",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/18",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/20",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/15",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/13",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/25",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/27",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/29",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/24",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/22",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 2,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/9",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 3,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/31",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/33",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/35",
+              "strategy": "lis",
+              "reason": "keyed",
+              "usedLIS": true,
+              "reused": 100,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 99
+            },
+            {
+              "parent": "mount-paired/base/1038",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1040",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1042",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1044",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1037",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 4,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1046",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/base/1",
+              "strategy": "positional",
+              "reason": "mixed-node-kinds",
+              "usedLIS": false,
+              "reused": 9,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            },
+            {
+              "parent": "mount-paired/root",
+              "strategy": "positional",
+              "reason": "missing-key",
+              "usedLIS": false,
+              "reused": 1,
+              "inserts": 0,
+              "removes": 0,
+              "moves": 0
+            }
+          ],
+          "visitedNodes": 147,
+          "reusedSubtrees": 100,
+          "nextViewDigest": {
+            "length": 886485,
+            "fnv1a": "ff425c2b"
+          },
+          "targetDigest": {
+            "length": 186409,
+            "fnv1a": "588e4469"
+          }
+        }
+      ],
+      "update": {
+        "targetDigest": {
+          "length": 186412,
+          "fnv1a": "9bb4872a"
+        },
+        "operations": [
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SET_EVENT",
+          "SYNC_FORM"
+        ],
+        "reusedSubtrees": 99
+      },
+      "fresh": {
+        "digest": {
+          "length": 186409,
+          "fnv1a": "8784d321"
+        },
+        "maps": {
+          "elements": 727,
+          "nullPrototype": 727,
+          "frozen": 727,
+          "attributes": 1229
+        },
+        "sameObjectAsBase": false
+      }
+    }
+  }
+}

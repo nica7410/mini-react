@@ -1,0 +1,99 @@
+{
+  "stage": "default",
+  "files": {
+    "helper": "src/core/attrMap.ts",
+    "resolve": "src/runtime/resolve.ts",
+    "capture": "src/core/capture.ts"
+  },
+  "tests": [
+    "tests/unit/attr-maps.test.ts"
+  ],
+  "sourceSha256": {
+    "src/core/attrMap.ts": "8c8195aead97d6adca51adaddc642c1f535b5706",
+    "src/runtime/resolve.ts": "6900212d934912873356330149b4a7ed69cdba89",
+    "src/core/capture.ts": "91222461c824f6b001e2127df86f063b6b03a782"
+  },
+  "runs": [
+    {
+      "label": "unchanged source",
+      "exitCode": 0,
+      "total": 15,
+      "failed": 0,
+      "failedTests": [],
+      "ms": 1550,
+      "expected": "pass"
+    },
+    {
+      "label": "M1 the finished map keeps the builder prototype",
+      "exitCode": 1,
+      "total": 15,
+      "failed": 12,
+      "failedTests": [
+        "default engine: attribute maps built by the resolver ordinary names",
+        "default engine: attribute maps built by the resolver __proto__ between other names",
+        "default engine: attribute maps built by the resolver only __proto__",
+        "default engine: attribute maps built by the resolver names of Object.prototype members",
+        "default engine: attribute maps built by the resolver upper case collides with lower case (first position, last value)",
+        "default engine: attribute maps built by the resolver upper case after lower case",
+        "default engine: attribute maps built by the resolver boolean, null, undefined and number values",
+        "default engine: attribute maps built by the resolver no attributes",
+        "default engine: attribute maps built by the resolver many attributes",
+        "default engine: attribute maps built by the resolver names with every allowed punctuation",
+        "default engine: attribute maps built by the resolver does not read or write Object.prototype, even one with an accessor or a locked value for the name",
+        "default engine: attribute maps read from the DOM keeps the DOM order, drops style, and stores special names as own data"
+      ],
+      "ms": 1585,
+      "expected": "fail"
+    },
+    {
+      "label": "M2 the map is built on a plain object",
+      "exitCode": 1,
+      "total": 15,
+      "failed": 6,
+      "failedTests": [
+        "default engine: attribute maps built by the resolver __proto__ between other names",
+        "default engine: attribute maps built by the resolver only __proto__",
+        "default engine: attribute maps built by the resolver does not read or write Object.prototype, even one with an accessor or a locked value for the name",
+        "default engine: attribute maps built by the resolver special names reach the DOM and are removed again through diff and commit",
+        "default engine: attribute maps read from the DOM keeps the DOM order, drops style, and stores special names as own data",
+        "default engine: attribute maps read from the DOM does not touch a polluted Object.prototype while reading"
+      ],
+      "ms": 1850,
+      "expected": "fail"
+    },
+    {
+      "label": "M3 the resolver does not finish the map",
+      "exitCode": 1,
+      "total": 15,
+      "failed": 11,
+      "failedTests": [
+        "default engine: attribute maps built by the resolver ordinary names",
+        "default engine: attribute maps built by the resolver __proto__ between other names",
+        "default engine: attribute maps built by the resolver only __proto__",
+        "default engine: attribute maps built by the resolver names of Object.prototype members",
+        "default engine: attribute maps built by the resolver upper case collides with lower case (first position, last value)",
+        "default engine: attribute maps built by the resolver upper case after lower case",
+        "default engine: attribute maps built by the resolver boolean, null, undefined and number values",
+        "default engine: attribute maps built by the resolver no attributes",
+        "default engine: attribute maps built by the resolver many attributes",
+        "default engine: attribute maps built by the resolver names with every allowed punctuation",
+        "default engine: attribute maps built by the resolver does not read or write Object.prototype, even one with an accessor or a locked value for the name"
+      ],
+      "ms": 1685,
+      "expected": "fail"
+    },
+    {
+      "label": "M4 the DOM reader does not finish the map",
+      "exitCode": 1,
+      "total": 15,
+      "failed": 1,
+      "failedTests": [
+        "default engine: attribute maps read from the DOM keeps the DOM order, drops style, and stores special names as own data"
+      ],
+      "ms": 1691,
+      "expected": "fail"
+    }
+  ],
+  "restored": true,
+  "ok": true
+}

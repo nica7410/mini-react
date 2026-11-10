@@ -1,0 +1,128 @@
+{
+  "tag": "attr-map-paired-20261110-d48332e",
+  "manifestHash": "335fc1fc4abfd0b8bb241b53fecffb68dd1178ee6ce84a7224c8ae0b22d42079",
+  "runnerCommit": "d48332eaffea50b2714a3f252cd105afe9269f99",
+  "node": "v24.22.2",
+  "cpu": "Intel(R) Core(TM) i7-10875H CPU @ 2.30GHz",
+  "logicalCPUs": 16,
+  "ramBytes": 16958476288,
+  "os": {
+    "platform": "win32",
+    "release": "10.0.19045",
+    "arch": "x64"
+  },
+  "chromium": {
+    "version": "151.0.7922.34",
+    "browserPid": 17476,
+    "headless": true,
+    "executable": "C:\\Users\\nica7\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe",
+    "playwright": "1.62.1"
+  },
+  "protocol": {
+    "order": [
+      [
+        "A",
+        "B",
+        "C",
+        "U",
+        "F",
+        "AA",
+        "FF"
+      ],
+      [
+        "B",
+        "C",
+        "U",
+        "F",
+        "A",
+        "AA",
+        "FF"
+      ],
+      [
+        "C",
+        "U",
+        "F",
+        "A",
+        "B",
+        "AA",
+        "FF"
+      ]
+    ],
+    "warmupPairs": 10,
+    "measuredPairs": 240,
+    "batchSizes": {
+      "A": 20,
+      "B": 20,
+      "C": 20,
+      "U": 20,
+      "F": 5,
+      "AA": 20,
+      "FF": 5
+    },
+    "rows": 100,
+    "budgetMs": 400000
+  },
+  "status": "completed",
+  "rounds": [
+    {
+      "round": 1,
+      "conditions": [
+        "A",
+        "B",
+        "C",
+        "U",
+        "F",
+        "AA",
+        "FF"
+      ],
+      "timeOrigin": 1794311681965.6,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "visibility": "visible",
+      "crossOriginIsolated": false,
+      "hardwareConcurrency": 16,
+      "completed": true
+    },
+    {
+      "round": 2,
+      "conditions": [
+        "B",
+        "C",
+        "U",
+        "F",
+        "A",
+        "AA",
+        "FF"
+      ],
+      "timeOrigin": 1794311735640.2,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "visibility": "visible",
+      "crossOriginIsolated": false,
+      "hardwareConcurrency": 16,
+      "completed": true
+    },
+    {
+      "round": 3,
+      "conditions": [
+        "C",
+        "U",
+        "F",
+        "A",
+        "B",
+        "AA",
+        "FF"
+      ],
+      "timeOrigin": 1794311788494.9,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+      "visibility": "visible",
+      "crossOriginIsolated": false,
+      "hardwareConcurrency": 16,
+      "completed": true
+    }
+  ],
+  "warmupPairs": 210,
+  "measuredPairs": 5040,
+  "accumulatedBatchMs": 147433.19999948144,
+  "startedAt": "2026-11-10T11:54:41.961Z",
+  "elapsedMs": 158548.7752,
+  "finishedAt": "2026-11-10T11:57:20.510Z"
+}

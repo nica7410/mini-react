@@ -2,6 +2,7 @@ import type { CaptureResult, MountHandle, MountView, Result, StyleValue, VNode, 
 import { readForm } from './host/forms';
 import { clearEvents } from './host/events';
 import { equalData, fail, freezeTree, identity, ok } from './vdom';
+import { createAttrMap, finishAttrMap } from './attrMap';
 import { validateTree } from './validate';
 
 export function readDOM(container: ParentNode): Result<VRoot> {
@@ -12,8 +13,9 @@ export function readDOM(container: ParentNode): Result<VRoot> {
     const element = node as HTMLElement;
     if (element.namespaceURI !== 'http://www.w3.org/1999/xhtml') throw new Error('HTML namespace만 지원합니다.');
     if (element.shadowRoot) throw new Error('Shadow DOM은 지원하지 않습니다.');
-    const attrs: Record<string, string> = Object.create(null);
+    const attrs = createAttrMap();
     for (const attr of element.attributes) if (attr.name !== 'style') attrs[attr.name] = attr.value;
+    finishAttrMap(attrs);
     const style: Record<string, StyleValue> = {};
     for (const name of element.style) style[name] = {
       value: element.style.getPropertyValue(name),

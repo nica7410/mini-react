@@ -8,13 +8,11 @@ import { unwrap } from '../../src/core/vdom';
 import { h } from '../../src/runtime/expression';
 import * as defaultResolve from '../../src/runtime/resolve';
 import * as defaultCapture from '../../src/core/capture';
-import * as candidateResolve from '../../research/attr-maps/resolve.candidate';
-import * as candidateCapture from '../../research/attr-maps/capture.candidate';
 import { apply, container, render } from '../fixtures/helpers';
 
+// Before adoption (commit d48332e) the research candidate was listed here as well.
 const implementations = {
   'default engine': { resolveExpression: defaultResolve.resolveExpression, readDOM: defaultCapture.readDOM },
-  'candidate R1': { resolveExpression: candidateResolve.resolveExpression, readDOM: candidateCapture.readDOM },
 };
 type Attrs = NonNullable<ElementInputProps['attrs']>;
 
