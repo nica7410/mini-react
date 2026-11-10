@@ -1,6 +1,6 @@
 import type { FormPolicy, MountHandle, PatchPlan, Result, VElement, VNode, ViewNode } from './types';
 import { compatible, equalData, fail, ok } from './vdom';
-import { validateTree } from './validate';
+import { commandProblem, validateTree } from './validate';
 
 interface PlannedNode {
   vnode: VNode | null;
@@ -47,6 +47,7 @@ export function isSyncFormOnlyPlan(mount: MountHandle, plan: PatchPlan): boolean
   return true;
 }
 const noChildren: readonly VNode[] = Object.freeze([]);
+const repeatedFormMessage = '같은 노드의 SYNC_FORM 정책이 서로 다릅니다.';
 function viewMatchesVNode(tree: ViewNode): boolean {
   const children = tree.vnode.kind === 'element' ? tree.vnode.children : noChildren;
   if (tree.children.length !== children.length) return false;
@@ -62,7 +63,12 @@ function viewMatchesVNode(tree: ViewNode): boolean {
 function validateSyncFormOnly(mount: MountHandle, plan: PatchPlan): void {
   const rootRef = mount.view.rootRef;
   const policies = new Map<string, FormPolicy>();
-  for (const op of plan.operations) if (op.kind === 'SYNC_FORM') policies.set(op.node, op.policy);
+  for (const op of plan.operations) if (op.kind === 'SYNC_FORM') {
+    // Every command is applied to the host, so an earlier policy is not hidden by a later one.
+    const earlier = policies.get(op.node);
+    if (earlier !== undefined && !equalData(earlier, op.policy)) throw new Error(repeatedFormMessage);
+    policies.set(op.node, op.policy);
+  }
   const seen = new Set<string>([rootRef]);
   const root = mount.nodes.get(rootRef);
   if (!root || mount.refs.get(root) !== rootRef) throw new Error(`DOM binding 불일치: ${rootRef}`);
@@ -174,6 +180,15 @@ function validatePlanWith(mount: MountHandle, plan: PatchPlan, allowSyncFormPath
       while (child) { const next = requireNode(child).next; erase(child); child = next; }
       graph.delete(ref);
     }
+    // The select that owns an option decides whether a `selected` attribute is allowed (as in validateTree).
+    const selectModeOf = (ref: string): FormPolicy['mode'] | null => {
+      for (let parent = requireNode(ref).parent; parent; parent = requireNode(parent).parent) {
+        const vnode = requireNode(parent).vnode;
+        if (vnode?.kind === 'element' && vnode.tag === 'select') return vnode.form?.mode ?? 'uncontrolled';
+      }
+      return null;
+    };
+    let formPolicies: Map<string, FormPolicy> | null = null;
     let lastPhase = 0;
     for (const op of plan.operations) {
       const phase = op.kind === 'CREATE_SUBTREE' ? 0 : op.kind === 'REMOVE_SUBTREE' ? 1 : op.kind === 'PLACE_BEFORE' ? 3 : op.kind === 'SYNC_FORM' ? 4 : 2;
@@ -201,12 +216,19 @@ function validatePlanWith(mount: MountHandle, plan: PatchPlan, allowSyncFormPath
         if (op.anchor) requireNode(op.anchor).previous = op.node; else parent.last = op.node;
         continue;
       }
+      // A created subtree is written to the host as it is given: no later command may repair it.
+      if (created.has(op.node)) throw new Error('새로 만든 노드는 같은 계획에서 수정할 수 없습니다.');
       if (op.kind === 'SET_TEXT' || op.kind === 'SET_COMMENT') {
         if (node.vnode.kind !== (op.kind === 'SET_TEXT' ? 'text' : 'comment')) throw new Error('텍스트/주석 명령의 대상 type이 다릅니다.');
+        if (typeof op.value !== 'string') throw new Error('텍스트/주석 값은 문자열이어야 합니다.');
         node.vnode = { ...node.vnode, text: op.value } as VNode; continue;
       }
       if (node.vnode.kind !== 'element') throw new Error('element 명령의 대상 type이 다릅니다.');
       const value: VElement = node.vnode;
+      // Each command is judged by itself: a later command that restores the final state does
+      // not undo the host write of a forbidden payload.
+      const problem = commandProblem(op, value, selectModeOf);
+      if (problem) throw new Error(problem);
       switch (op.kind) {
         case 'SET_ATTR': node.vnode = { ...value, attrs: { ...value.attrs, [op.name]: op.value } }; break;
         case 'REMOVE_ATTR': { const attrs = { ...value.attrs }; delete attrs[op.name]; node.vnode = { ...value, attrs }; break; }
@@ -217,7 +239,12 @@ function validatePlanWith(mount: MountHandle, plan: PatchPlan, allowSyncFormPath
           if (op.binding) events[op.name] = op.binding; else delete events[op.name];
           node.vnode = { ...value, events }; break;
         }
-        case 'SYNC_FORM': node.vnode = { ...value, form: op.policy }; break;
+        case 'SYNC_FORM': {
+          const earlier = (formPolicies ??= new Map()).get(op.node);
+          if (earlier !== undefined) { if (!equalData(earlier, op.policy)) throw new Error(repeatedFormMessage); }
+          else formPolicies.set(op.node, op.policy);
+          node.vnode = { ...value, form: op.policy }; break;
+        }
         default: throw new Error('알 수 없는 Patch 명령입니다.');
       }
     }

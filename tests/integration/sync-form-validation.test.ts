@@ -91,7 +91,9 @@ it.each([
   env.root.unmount();
 });
 
-it('duplicate SYNC_FORM commands on one node: last policy wins in both paths', () => {
+// Contract since 2026-11-10: every SYNC_FORM for one node must carry the same policy (all of them reach
+// the host). "Last policy wins" let a forged earlier policy through; see plan-command-contract.test.ts.
+it('duplicate SYNC_FORM commands on one node: identical policies are accepted, a differing one is rejected in both paths', () => {
   const env = setup(); edit(env, ['text']);
   const plan = dirtyPlan(env.mount, [env.ref('text')]);
   const twice: PatchPlan = { ...plan, operations: [...plan.operations, ...plan.operations] };

@@ -25,8 +25,13 @@ function keyOf(value: RenderValue): string | null {
   const expression = value as ElementExpr | ComponentExpr;
   return expression.kind === 'component-expr' ? expression.key : normalizeKey(expression.props.key);
 }
+const isExpression = (value: RenderValue): value is ElementExpr | ComponentExpr => !!value && typeof value === 'object' && !Array.isArray(value);
+// An expression object (element/component) never matches a primitive, null or an array,
+// even though `typeof null === 'object'`. Primitives keep matching by typeof as before.
 function sameExpressionType(a: RenderValue, b: RenderValue): boolean {
-  if (!a || !b || typeof a !== 'object' || typeof b !== 'object' || Array.isArray(a) || Array.isArray(b)) return typeof a === typeof b;
+  const aExpression = isExpression(a);
+  if (aExpression !== isExpression(b)) return false;
+  if (!aExpression) return typeof a === typeof b;
   const aa = a as ElementExpr | ComponentExpr, bb = b as ElementExpr | ComponentExpr;
   if (aa.kind !== bb.kind || keyOf(aa) !== keyOf(bb)) return false;
   return aa.kind === 'element-expr' ? bb.kind === 'element-expr' && aa.tag === bb.tag : bb.kind === 'component-expr' && aa.type === bb.type;
@@ -64,10 +69,13 @@ export function evaluateExpression(value: RenderValue, previous: EvaluationState
     if (typeof value === 'string' || typeof value === 'number') return makeRecord(value, { kind: 'text', identity: identity(), text: String(value) });
     const expr = value as ElementExpr | ComponentExpr;
     if (expr.kind === 'component-expr') {
-      // Explicit memo(): `old` already has the same component type and key here. The
-      // previous record comes from the last committed evaluation, so a failed render
-      // never leaves a reusable record behind.
-      if (reuse && old && isMemoComponent(expr.type) && sameProps((old.expression as ComponentExpr).props, expr.props)) {
+      // Explicit memo(): props are compared only after the previous record is confirmed to be
+      // a component expression of the same type and key (sameExpressionType alone is not
+      // relied on). The previous record comes from the last committed evaluation, so a
+      // failed render never leaves a reusable record behind.
+      const before = old?.expression;
+      if (reuse && old && isExpression(before) && before.kind === 'component-expr' && before.type === expr.type && before.key === expr.key
+        && isMemoComponent(expr.type) && sameProps(before.props, expr.props)) {
         memoReuses++; onComponent?.({ path, reused: true, memo: true, name: expr.type.name || 'anonymous', key: expr.key }); return old;
       }
       componentExecutions++; onComponent?.({ path, reused: false, name: expr.type.name || 'anonymous', key: expr.key });
