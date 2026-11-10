@@ -65,8 +65,8 @@ function validateSyncFormOnly(mount: MountHandle, plan: PatchPlan): void {
   const policies = new Map<string, FormPolicy>();
   for (const op of plan.operations) if (op.kind === 'SYNC_FORM') {
     // Every command is applied to the host, so an earlier policy is not hidden by a later one.
-    const earlier = policies.get(op.node);
-    if (earlier !== undefined && !equalData(earlier, op.policy)) throw new Error(repeatedFormMessage);
+    // Eligibility already guarantees a controlled policy object; Map.has keeps the same meaning as the general path.
+    if (policies.has(op.node) && !equalData(policies.get(op.node), op.policy)) throw new Error(repeatedFormMessage);
     policies.set(op.node, op.policy);
   }
   const seen = new Set<string>([rootRef]);
@@ -240,9 +240,12 @@ function validatePlanWith(mount: MountHandle, plan: PatchPlan, allowSyncFormPath
           node.vnode = { ...value, events }; break;
         }
         case 'SYNC_FORM': {
-          const earlier = (formPolicies ??= new Map()).get(op.node);
-          if (earlier !== undefined) { if (!equalData(earlier, op.policy)) throw new Error(repeatedFormMessage); }
-          else formPolicies.set(op.node, op.policy);
+          // A missing policy is rejected here, before any host work: commit reads policy.mode.
+          if (!op.policy || typeof op.policy !== 'object') throw new Error('SYNC_FORM에는 폼 정책 객체가 필요합니다.');
+          // Map.has, not the stored value, tells whether this node already had a SYNC_FORM.
+          const seenPolicies = formPolicies ??= new Map();
+          if (seenPolicies.has(op.node)) { if (!equalData(seenPolicies.get(op.node), op.policy)) throw new Error(repeatedFormMessage); }
+          else seenPolicies.set(op.node, op.policy);
           node.vnode = { ...value, form: op.policy }; break;
         }
         default: throw new Error('알 수 없는 Patch 명령입니다.');

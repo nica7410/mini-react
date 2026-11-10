@@ -133,6 +133,15 @@ const masked: Record<string, (env: Env) => PatchOp[]> = {
     { kind: 'SET_ATTR', node: e.box, name: 'title', value: 't' },
     { kind: 'SYNC_FORM', node: e.ref('[aria-label="rb"]'), policy: { mode: 'controlled', checked: true } },
     { kind: 'SYNC_FORM', node: e.ref('[aria-label="rb"]'), policy: { mode: 'controlled', checked: false } }],
+  // A missing policy must not look like "no earlier SYNC_FORM for this node": commit would read
+  // policy.mode of undefined and fault the mount instead of rejecting the plan.
+  'SYNC_FORM undefined policy -> SYNC_FORM original (general path)': e => [
+    { kind: 'SYNC_FORM', node: e.ref('[aria-label="text"]'), policy: undefined as never },
+    { kind: 'SYNC_FORM', node: e.ref('[aria-label="text"]'), policy: { mode: 'controlled', value: 'state' } }],
+  'legal SET_ATTR -> SYNC_FORM without a policy -> SYNC_FORM original (general path)': e => [
+    { kind: 'SET_ATTR', node: e.box, name: 'title', value: 't' },
+    { kind: 'SYNC_FORM', node: e.ref('[aria-label="text"]') } as never,
+    { kind: 'SYNC_FORM', node: e.ref('[aria-label="text"]'), policy: { mode: 'controlled', value: 'state' } }],
 };
 
 it.each(Object.keys(masked))('masked forbidden command "%s" is rejected before the first host write', name => {

@@ -15,7 +15,7 @@
 
 **결론 요약.**
 
-- 정확성 결함 두 종류를 `c2dbbf6`에서 재현하고 최소 수정했다(`ab5a9b8`, 이것이 새 기준선 B0이자 **현재 기본 소스**다).
+- 정확성 결함 두 종류를 `c2dbbf6`에서 재현하고 최소 수정했다(`ab5a9b8`, 이것이 측정 기준선 B0다). 이후 사전 검증의 빈틈 하나를 더 고쳤다(§8 "검증 보완"). 현재 기본 소스는 B0에 그 수정을 더한 것이다.
 - Keyed 구간 분할 후보 C1은 B0와 같은 계획을 낸다는 것을 논증·차등 검증·독립 모델·변이 4개로 확인했다. 목표 입력에서 planner의 Map 연산이 0이 되고 Set 연산이 절반이 되며, planner 단독 시간은 21개 비교 모두에서 줄었다(이득 입력 약 −20%).
 - 그러나 실제 TaskApp 전체 시간에서는 이득을 보이지 못했고, `crud/100`의 3세션 중 2세션에서 C1의 median이 경고 폭을 넘게 컸다(1세션은 더 크게 작았다). 측정 전에 적어 둔 기준("A/A 폭 안")을 충족하지 못했으므로 기준을 완화하지 않고 **연구용 보존(B)** 으로 판정했다.
 - 기본 planner는 B0 그대로다. 후보는 `research/keyed-boundaries/`에 코드·patch로, 계약 테스트와 측정 원자료와 함께 남겼다.
@@ -51,11 +51,11 @@
 - 계약(작게 유지):
   1. **단계 순서·대상 type**: 기존 규칙 그대로.
   2. **payload**: 값을 쓰는 명령(`SET_ATTR`/`SET_STYLE`/`SET_EVENT`)은 그 명령 하나만으로 `validateTree`가 같은 필드에 적용하는 규칙을 통과해야 한다(`attributeProblem`, `style` 속성 금지, style 규칙, 이벤트 이름 규칙, 비-snapshot 폼의 `value/checked/selected` 속성 금지, 비-snapshot select 아래 option의 `selected` 금지). 문자열이 아닌 값도 거절한다. 제거 명령은 payload가 없으므로 판정하지 않는다.
-  3. **SYNC_FORM**: 같은 ref의 모든 `SYNC_FORM` 정책은 서로 같아야 한다. 그러면 모든 정책이 최종 정책과 같고, 최종 정책은 target 전체 검증(라디오 그룹 포함)을 통과한 값이다. 폼 정책은 host에서 "마지막 값이 이긴다"가 성립하지 않기 때문에(위 radio 예) 속성과 다르게 다룬다.
+  3. **SYNC_FORM**: 같은 ref의 모든 `SYNC_FORM` 정책은 서로 같아야 한다. 그러면 모든 정책이 최종 정책과 같고, 최종 정책은 target 전체 검증(라디오 그룹 포함)을 통과한 값이다. 폼 정책은 host에서 "마지막 값이 이긴다"가 성립하지 않기 때문에(위 radio 예) 속성과 다르게 다룬다. 정책 객체가 없는 `SYNC_FORM`(`policy`가 `undefined`이거나 빠진 명령)은 그 명령만으로 거절한다(아래 "검증 보완").
   4. **새로 만든 노드**: `CREATE_SUBTREE`의 노드는 주어진 그대로 host에 쓰이므로 같은 계획에서 수정할 수 없다(planner는 이런 명령을 만들지 않는다).
 - 만들지 않은 규칙: "모든 중간 상태가 최종 VDOM과 같아야 한다"는 규칙은 없다. `class=a → class=base`, `title 제거 → title 설정`, 이벤트 handler 교체, 동일한 `SYNC_FORM` 반복, planner가 만든 radio a→b 전환과 option 목록 변경은 그대로 수락된다(테스트로 고정). 명령마다 트리를 다시 검증하지 않는다. 외부에서 바뀐 속성값을 감시하지 않는다.
 - 수정: `src/core/validate.ts`의 `commandProblem`(규칙은 `validateTree`와 공유), `src/core/planValidation.ts`의 일반 경로와 SYNC_FORM 전용 경로.
-- 회귀 테스트(`tests/integration/plan-command-contract.test.ts`, 24개): 가려진 명령 20종 + 생성 후 정리 3종이 **두 경로 모두에서** 거절되고, `commit` 호출 동안 host 쓰기 spy 15종이 한 번도 호출되지 않으며 MutationObserver 기록이 없다. DOM 구조·텍스트·속성·스타일, value·checked·선택, 이벤트 binding, focus·selection, registry·view·revision·dirty/held가 그대로다. 합법 순차 계획 2종과 snapshot 모드 select의 `selected` 속성 이동(planner 계획)은 수락된다.
+- 회귀 테스트(`tests/integration/plan-command-contract.test.ts`, 검증 보완 뒤 26개): 가려진 명령 22종 + 생성 후 정리 3종이 **두 경로 모두에서** 거절되고, `commit` 호출 동안 host 쓰기 spy 15종이 한 번도 호출되지 않으며 MutationObserver 기록이 없다. DOM 구조·텍스트·속성·스타일, value·checked·선택, 이벤트 binding, focus·selection, registry·view·revision·dirty/held가 그대로다. 합법 순차 계획 2종과 snapshot 모드 select의 `selected` 속성 이동(planner 계획)은 수락된다.
 - 기존 테스트 변경 1건: `sync-form-validation.test.ts`의 "last policy wins" 제목을 새 계약("같은 정책은 수락, 다른 정책은 거절")으로 바꿨다. 단언은 그대로 통과한다.
 - 남은 범위 밖 사항: `attributeProblem`의 금지 이름 목록(`srcdoc` 등)과 `style` 검사는 소문자 이름 기준이다. resolver와 DOM 캡처는 이름을 소문자로 만들지만, 손으로 만든 VNode/명령의 대문자 이름은 `validateTree`와 명령 계약 모두에서 걸러지지 않는다. 이번 두 반례의 범위가 아니어서 고치지 않았다.
 
@@ -269,7 +269,11 @@ A/A (같은 B0 소스를 두 이름으로 빌드, crud/100, 한 차례):
 
 읽는 법과 한계:
 
-- **전체 작업 시간의 개선은 보이지 않았다.** planner 절감(호출당 약 0.02 ms)은 timer 해상도 0.1 ms보다 작고 한 flush(counter 약 3 ms, crud 한 단계 약 21 ms)의 1% 안팎이다.
+- **기존 자료에서 앱 전체 작업 시간의 이득은 입증되지 않았다.** 두 측정은 단위와 환경이 다르므로 서로 나누어 비율을 만들지 않는다.
+  - 독립 planner 측정(§7.2, Node): 목표 입력에서 planner **한 번 호출**의 환산 median이 약 15~25 µs 줄었다.
+  - TaskApp 측정(§7.3, Chromium): `crud/100`의 약 21 ms는 한 단계에 들어 있는 **여러 사용자 동작(초안 입력·추가·이름 변경·완료·삭제)과 그 후속 갱신을 합친** 벽시계 값이다. planner 한 번이나 flush 한 번과 같은 단위가 아니다. `counter/100`의 약 3 ms는 동작 하나의 이벤트부터 주 flush·Effect까지의 구간이지만, 그 안의 planner 호출 수도 세지 않았다.
+  - 그 한 단계 동안 planner가 몇 번 호출되는지와 누적 절감량은 측정하지 않았다. 따라서 전체 작업 대비 절감 비율은 계산하지 않는다(이 자리에 있던 "1% 안팎"은 단위가 다른 값을 직접 나눈 것이어서 삭제했다).
+  - 한 호출의 절감량이 Chromium timer 해상도(0.1 ms)보다 작다는 사실만으로 앱 수준의 차이를 측정할 수 없다고 단정하지 않는다. 호출이 누적되고 표본이 60개씩이기 때문이다. 이번 자료에서 말할 수 있는 것은 "이득이 보이지 않았다"까지다.
 - **불리한 결과로 적는다(사전 규칙):** `crud/100`은 3세션 중 2세션에서 C1의 median이 경고 폭을 넘게 컸고, `counter/100`은 1세션에서 넘었다. 가장 나쁜 p95는 crud 세션 1의 +18.9 ms다.
 - 이 차이는 A/A에서 본 폭(median +0.2~+1.6 ms)보다 크다(+2.1, −4.95, +2.65). 그래서 "측정 변동 안"이라고 쓰지 않는다.
 - 동시에 이 차이를 planner 변경의 탓으로 돌릴 근거도 없다. 느렸던 두 crud 세션에서는 코드가 같은 구간이 함께 느렸다(세션 1: render 3.70→4.00, commit 7.00→7.70, 후속 5.80→6.25, diff 4.30→4.40. 세션 3도 같은 모양). 세션 2는 반대로 B0가 모든 구간에서 느렸다. 세 crud 세션 모두 **나중에 측정된 빌드가 느렸다**. 같은 코드의 A/A도 경고 기준을 넘었다. 작업량은 두 빌드가 같거나 C1이 적다.
@@ -301,6 +305,14 @@ A/A (같은 B0 소스를 두 이름으로 빌드, crud/100, 한 차례):
 
 - 작성과 분리된 읽기 전용 검토(별도 에이전트)가 `ab5a9b8`의 `src` 변경과 후보 파일을 살폈다. **확정 결함 없음.** 지적된 테스트 공백 두 가지(keyed 자식 슬롯의 memo 전환, snapshot select의 `selected` 허용)는 테스트로 보강했다. 불확실로 남긴 두 항목은 이번 수정이 만든 것이 아니다: 손으로 만든 VNode에서 input의 form이 `null`↔`uncontrolled`로 바뀌는 계획은 이전에도 거절됐고, `SET_EVENT`의 binding 형태는 `validateTree`도 검사하지 않는다.
 - 최종 기본 소스(`src`는 `ab5a9b8`와 같음)에서 typecheck, 단위·통합 407/407, production build, Chromium+Firefox 35/35(1회)를 통과했다. 브라우저 수가 33에서 35가 된 것은 IME 사례 테스트 1개가 두 브라우저에서 추가됐기 때문이다.
+
+### 검증 보완 (2026-11-10, `37ee4fc` 다음 커밋)
+
+- 빈틈: 일반 경로는 같은 ref의 이전 `SYNC_FORM` 정책을 `Map.get`으로 읽고 `undefined`이면 "이전 명령 없음"으로 보았다. 그래서 `SYNC_FORM(policy 없음)` → `SYNC_FORM(정상 정책)`이 최종 상태 비교만으로 통과했다. `commit`은 모든 `SYNC_FORM`을 실행하므로 `syncForm()`이 `policy.mode`를 읽는 자리에서 예외가 나고, 사전 거절 대신 mount가 faulted가 될 수 있는 경로다. 리뷰의 정적 분석으로 지적됐고, 사전 검증이 이 계획을 수락한다는 것을 회귀 테스트로 재현했다(commit까지 실행해 faulted를 직접 관찰하지는 않았다).
+- 수정(`src/core/planValidation.ts`): 정책 객체가 없는 `SYNC_FORM`은 host 작업 전에 거절한다. 이전 명령의 존재 여부는 저장된 값이 아니라 `Map.has`로 판단한다(일반 경로와 SYNC_FORM 전용 경로 모두). `undefined` 정책은 전용 경로의 대상이 아니므로 일반 경로에서 거절된다. 같은 정책의 반복 허용과 다른 정책의 거절은 그대로다.
+- 회귀 테스트 2개(`plan-command-contract.test.ts`): `policy: undefined` → 정상 정책, 그리고 합법적인 `SET_ATTR` 뒤에 정책이 빠진 `SYNC_FORM` → 정상 정책. 두 검증 경로 모두 거절, `commit`은 `rejected`(faulted 아님), host 쓰기 없음, DOM·폼 값·registry·view·revision·dirty/held 보존, 거절 뒤 정상 계획 처리.
+- 이번 수정에서 실행한 검사는 **제한된 범위**다: `plan-command-contract`·`sync-form-validation`·`plan-validation`·`forms` 4개 파일 102/102, typecheck 통과. 전체 단위·통합 suite, 브라우저 suite, production build는 이번 수정 뒤에 다시 실행하지 않았다. 위의 407/407·35/35는 `37ee4fc` 시점의 기록이다.
+- §7의 성능 수치는 모두 이 수정 이전 빌드(B0 `ab5a9b8`, C1 `e382bd7`)의 측정이다. 이번 수정 뒤에는 어떤 성능 측정도 하지 않았다.
 
 ## 9. 남은 미검증·한계
 
