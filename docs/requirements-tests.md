@@ -39,6 +39,8 @@ E4 후보는 인증 보관 상한과 한도 이후의 완전한 검사를 확인
 
 2026-11-10 후속 추가(새 기능 ID 없음): T-V05·T-N08에 [검증 이름 검사 동등성](../tests/unit/validate-names.test.ts). 속성·이벤트 이름 판정과 `validateTree` 결과(메시지·경로 포함)를 `8ae389e` 사본과 비교하고, 수락 뒤 바뀐 이름을 다음 호출이 다시 판정하는지 확인한다.
 
+2026-11-10 후속 추가 2(새 기능 ID 없음): T-V01·T-V05에 [속성 맵 계약](../tests/unit/attr-maps.test.ts). resolver와 DOM reader가 만든 속성 맵의 null prototype·own 키 순서·서술자, `__proto__`·`constructor` 이름, 오염된 `Object.prototype`과의 무관함, DOM 왕복을 확인한다.
+
 ## 기능 ID
 
 | 기능 ID | 실제 구현 | 검증/근거 |

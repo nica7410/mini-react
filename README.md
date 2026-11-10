@@ -15,6 +15,8 @@ Vanilla TypeScript로 만든 학습용 Mini React입니다. DOM 편집기와 루
 
 같은 날 후속으로, 위 Keyed 후보가 보류된 원인을 `diff()` 시간 분해로 확인했습니다. planner는 전체 Diff의 약 4%뿐이고 약 85%가 두 번의 `validateTree`였습니다. 그래서 검증의 속성·이벤트 이름 정규식을 같은 판정을 내는 code unit 순회로 바꾼 후보(V1)를 만들어, 측정 전에 고정한 기준으로 같은 페이지 쌍 비교를 했습니다. 전체 `diff()`가 세 조건 모두 약 19~20% 줄어 **V1을 기본 소스에 채택**했습니다(`89dbc56`). 매 호출 전체 검증·결과 미보관 정책과 오류 메시지·경로는 그대로입니다. Keyed 후보는 V1 적용 뒤 다시 쟀을 때도 1~3% 감소에 그쳐 보류로 남았습니다. V1 적용 소스는 typecheck·단위/통합 417개·build·Chromium+Firefox 35개(1회)를 통과했습니다. [보고서](docs/followup-validate-names.md)
 
+이어서 속성 맵(`attrs`) 표현을 바꿨습니다(R1, `2d92347`). 엔진이 만드는 속성 맵은 `__proto__` 같은 이름을 안전하게 다루려고 null prototype인데, `Object.create(null)`로 만들면 V8이 항상 느린 사전 방식으로 둡니다. 빈 동결 prototype 위에서 채운 뒤 prototype을 null로 되돌리면 완성된 맵의 모습은 같으면서 순회가 빨라집니다. 측정 전에 고정한 기준으로 같은 페이지 쌍 비교를 했고, `diff()`가 세 조건에서 약 25~27%, 한 행 재렌더링 + `diff()`가 약 20% 줄어 **기본 소스에 채택**했습니다. 100행 새 렌더링은 나빠지지 않았습니다. R1 적용 소스는 typecheck·단위/통합 432개·build·Chromium+Firefox 35개(1회)를 통과했습니다. [보고서](docs/followup-attr-maps.md)
+
 이전 no-op 기능 소스의 자동 검증은 **184개 단위·통합 + Chromium 20개 + Firefox 11개**, 브라우저 전체 3회 연속 통과입니다. 최초 M8의 측정 51,480개와 후속 no-op의 3세션·측정 23,760개는 각각 당시 코드의 결과로 보존합니다. 실제 Windows 한글 IME는 이전 사용자 직접 확인에서 문제 없음으로 보고되었습니다(브라우저명 미제공). [역사적 후속 검증](docs/browser-noop-followup.md), [성능 결과](docs/benchmark-results.md), [인수 상태](docs/m8-acceptance.md)를 참고하세요. 팀 활동과 원격 CI 실행은 미확인입니다.
 
 ## 실행

@@ -137,3 +137,7 @@ node scripts/paired-diff-variants/analyze.mjs docs/bench/paired-diff-planner-<un
 node node_modules/vitest/vitest.mjs run tests/unit/validate-names.test.ts
 node scripts/validate-name-mutations.mjs
 ```
+
+## 후속 (2026-11-10)
+
+6절의 "다음 지점"(속성 맵 표현)을 진행해 채택했다. [속성 맵 표현 R1 채택](followup-attr-maps.md)

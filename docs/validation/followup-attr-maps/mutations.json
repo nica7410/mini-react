@@ -17,17 +17,17 @@
     {
       "label": "unchanged source",
       "exitCode": 0,
-      "total": 15,
+      "total": 16,
       "failed": 0,
       "failedTests": [],
-      "ms": 1550,
+      "ms": 1457,
       "expected": "pass"
     },
     {
       "label": "M1 the finished map keeps the builder prototype",
       "exitCode": 1,
-      "total": 15,
-      "failed": 12,
+      "total": 16,
+      "failed": 14,
       "failedTests": [
         "default engine: attribute maps built by the resolver ordinary names",
         "default engine: attribute maps built by the resolver __proto__ between other names",
@@ -39,33 +39,36 @@
         "default engine: attribute maps built by the resolver no attributes",
         "default engine: attribute maps built by the resolver many attributes",
         "default engine: attribute maps built by the resolver names with every allowed punctuation",
+        "default engine: attribute maps built by the resolver form elements, siblings and parents each get their own expected map",
+        "default engine: attribute maps built by the resolver a value whose string conversion throws aborts the render and leaves later renders intact",
         "default engine: attribute maps built by the resolver does not read or write Object.prototype, even one with an accessor or a locked value for the name",
         "default engine: attribute maps read from the DOM keeps the DOM order, drops style, and stores special names as own data"
       ],
-      "ms": 1585,
+      "ms": 1550,
       "expected": "fail"
     },
     {
       "label": "M2 the map is built on a plain object",
       "exitCode": 1,
-      "total": 15,
-      "failed": 6,
+      "total": 16,
+      "failed": 7,
       "failedTests": [
         "default engine: attribute maps built by the resolver __proto__ between other names",
         "default engine: attribute maps built by the resolver only __proto__",
+        "default engine: attribute maps built by the resolver form elements, siblings and parents each get their own expected map",
         "default engine: attribute maps built by the resolver does not read or write Object.prototype, even one with an accessor or a locked value for the name",
         "default engine: attribute maps built by the resolver special names reach the DOM and are removed again through diff and commit",
         "default engine: attribute maps read from the DOM keeps the DOM order, drops style, and stores special names as own data",
         "default engine: attribute maps read from the DOM does not touch a polluted Object.prototype while reading"
       ],
-      "ms": 1850,
+      "ms": 1562,
       "expected": "fail"
     },
     {
       "label": "M3 the resolver does not finish the map",
       "exitCode": 1,
-      "total": 15,
-      "failed": 11,
+      "total": 16,
+      "failed": 13,
       "failedTests": [
         "default engine: attribute maps built by the resolver ordinary names",
         "default engine: attribute maps built by the resolver __proto__ between other names",
@@ -77,20 +80,22 @@
         "default engine: attribute maps built by the resolver no attributes",
         "default engine: attribute maps built by the resolver many attributes",
         "default engine: attribute maps built by the resolver names with every allowed punctuation",
+        "default engine: attribute maps built by the resolver form elements, siblings and parents each get their own expected map",
+        "default engine: attribute maps built by the resolver a value whose string conversion throws aborts the render and leaves later renders intact",
         "default engine: attribute maps built by the resolver does not read or write Object.prototype, even one with an accessor or a locked value for the name"
       ],
-      "ms": 1685,
+      "ms": 1589,
       "expected": "fail"
     },
     {
       "label": "M4 the DOM reader does not finish the map",
       "exitCode": 1,
-      "total": 15,
+      "total": 16,
       "failed": 1,
       "failedTests": [
         "default engine: attribute maps read from the DOM keeps the DOM order, drops style, and stores special names as own data"
       ],
-      "ms": 1691,
+      "ms": 1573,
       "expected": "fail"
     }
   ],

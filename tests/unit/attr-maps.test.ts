@@ -72,13 +72,25 @@ describe.each(Object.entries(implementations))('%s: attribute maps built by the 
     expectSameMap(elementOf(tree).attrs, Object.create(null), `${label} (parent without attrs)`);
   });
 
-  it('gives the same tree as the default resolver, node by node', () => {
+  it('form elements, siblings and parents each get their own expected map', () => {
     for (const [label, attrs] of propCases) {
-      const expression = h('section', { attrs: { id: 's' } }, h('input', { attrs: { ...attrs, type: 'text' }, form: { mode: 'controlled', value: 'v' } }), h('p', { attrs }, 'text'));
-      const actual = engine.resolveExpression(expression), expected = defaultResolve.resolveExpression(expression);
-      expect(actual, label).toEqual(expected);
-      expect(JSON.stringify(actual), label).toBe(JSON.stringify(expected));
+      const inputAttrs = { ...attrs, type: 'text' };
+      const tree = engine.resolveExpression(h('section', { attrs: { id: 's' } }, h('input', { attrs: inputAttrs, form: { mode: 'controlled', value: 'v' } }), h('p', { attrs }, 'text')));
+      expectSameMap(elementOf(tree).attrs, expectedFromProps({ id: 's' }), `${label}: parent`);
+      expectSameMap(elementOf(tree, 0).attrs, expectedFromProps(inputAttrs), `${label}: input`);
+      expectSameMap(elementOf(tree, 1).attrs, expectedFromProps(attrs), `${label}: sibling`);
+      expect(elementOf(tree, 0).attrs).not.toBe(elementOf(tree, 1).attrs);
+      // The same tree as the default resolver (an identity check once the candidate is the default).
+      expect(JSON.stringify(tree), label).toBe(JSON.stringify(defaultResolve.resolveExpression(h('section', { attrs: { id: 's' } },
+        h('input', { attrs: inputAttrs, form: { mode: 'controlled', value: 'v' } }), h('p', { attrs }, 'text')))));
     }
+  });
+
+  it('a value whose string conversion throws aborts the render and leaves later renders intact', () => {
+    const explosive = { toString() { throw new Error('conversion failed'); } } as unknown as string;
+    expect(() => engine.resolveExpression(h('div', { attrs: { title: 't', 'data-x': explosive, id: 'late' } }, 'x'))).toThrow('conversion failed');
+    const attrs = { title: 't', id: 'late' };
+    expectSameMap(elementOf(engine.resolveExpression(h('div', { attrs }, 'x'))).attrs, expectedFromProps(attrs), 'render after a failed one');
   });
 
   it('does not read or write Object.prototype, even one with an accessor or a locked value for the name', () => {

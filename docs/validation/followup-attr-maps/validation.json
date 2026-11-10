@@ -1,0 +1,159 @@
+{
+  "recordedAt": "2026-11-10T12:03:59.663Z",
+  "startHead": "9055157582cf9eaf44245ebbe6f56012891a65e8",
+  "commits": {
+    "planCandidateHarness": "d48332eaffea50b2714a3f252cd105afe9269f99",
+    "r1Adopted": "2d923478515d8badd1af3d1eb9f0621d28d8067f"
+  },
+  "decision": "R1 adopted: engine-built attribute maps keep a null prototype and V8 fast properties (src/core/attrMap.ts).",
+  "blobs": {
+    "src/core/attrMap.ts": "8c8195aead97d6adca51adaddc642c1f535b5706",
+    "src/runtime/resolve.ts": "6900212d934912873356330149b4a7ed69cdba89",
+    "src/core/capture.ts": "91222461c824f6b001e2127df86f063b6b03a782",
+    "tests/unit/attr-maps.test.ts": "8d1c7a93faa780c9bf8b2656d7a47861c7f2da81"
+  },
+  "verification": [
+    {
+      "source": "d48332e (candidate files, default source unchanged)",
+      "typecheck": "pass",
+      "attrMapTest": "30/30 (default and candidate, 15 each)",
+      "mutants": "4/4 killed on the candidate files",
+      "chromiumPreflight": "pass"
+    },
+    {
+      "source": "2d92347 (R1 adopted)",
+      "typecheck": "pass",
+      "attrMapTest": "15/15",
+      "mutants": "4/4 killed on the default source",
+      "unitIntegration": "432/432",
+      "build": "pass",
+      "browser": "Chromium+Firefox 35/35, one run"
+    },
+    {
+      "source": "final tree (test strengthened after review)",
+      "typecheck": "pass",
+      "attrMapTest": "16/16",
+      "mutants": "4/4 killed on the default source",
+      "unitIntegration": "433/433",
+      "note": "build and browser suite were not run again; only the test file and documents changed after 2d92347"
+    }
+  ],
+  "commandExecution": "Test, build and benchmark commands were executed by a runner subagent (Haiku) that only ran the given commands and returned their output; code, documents and the decision are the author's.",
+  "experiment": {
+    "tag": "attr-map-paired-20261110-d48332e",
+    "runnerCommit": "d48332eaffea50b2714a3f252cd105afe9269f99",
+    "status": "completed",
+    "startedAt": "2026-11-10T11:54:41.961Z",
+    "elapsedSeconds": 158.549,
+    "measuredPairs": 5040,
+    "warmupPairs": 210,
+    "chromium": "151.0.7922.34",
+    "verdict": "adopt",
+    "references": {
+      "AA": {
+        "referenceUs": 19.999998807907104,
+        "orderReferenceUs": 19.999998807907104
+      },
+      "FF": {
+        "referenceUs": 110.00000238418579,
+        "orderReferenceUs": 110.00000238418579
+      }
+    },
+    "rules": {
+      "baseRule": true,
+      "clearImprovement": true,
+      "repeatedWorseningInC": false,
+      "freshNotWorse": true
+    },
+    "conditions": {
+      "A": {
+        "b0MedianUs": 545,
+        "pairedMedianUs": -140,
+        "relative": -25.7,
+        "roundMediansUs": [
+          -152.5,
+          -140,
+          -135
+        ],
+        "orderMediansUs": [
+          -155,
+          -120
+        ],
+        "thresholdUs": 20
+      },
+      "B": {
+        "b0MedianUs": 540,
+        "pairedMedianUs": -135,
+        "relative": -25,
+        "roundMediansUs": [
+          -145,
+          -142.5,
+          -120
+        ],
+        "orderMediansUs": [
+          -155,
+          -115
+        ],
+        "thresholdUs": 20
+      },
+      "C": {
+        "b0MedianUs": 540,
+        "pairedMedianUs": -145,
+        "relative": -26.9,
+        "roundMediansUs": [
+          -150,
+          -135,
+          -145
+        ],
+        "orderMediansUs": [
+          -155,
+          -120
+        ],
+        "thresholdUs": 20
+      },
+      "U": {
+        "b0MedianUs": 1065,
+        "pairedMedianUs": -215,
+        "relative": -20.2,
+        "roundMediansUs": [
+          -220,
+          -200,
+          -220
+        ],
+        "orderMediansUs": [
+          -235,
+          -195
+        ],
+        "thresholdUs": 20
+      },
+      "F": {
+        "b0MedianUs": 3600,
+        "pairedMedianUs": -160,
+        "relative": -4.4,
+        "roundMediansUs": [
+          -120,
+          -200,
+          -180
+        ],
+        "orderMediansUs": [
+          -280,
+          -60
+        ],
+        "thresholdUs": 110
+      }
+    }
+  },
+  "exploratory": "A Node-only micro measurement of four ways to build the map was run before the plan was fixed (numbers in plan.md). No paired Chromium sample was taken before commit d48332e.",
+  "independentReview": "Read-only review of 2d92347 by a separate agent: no behavioural counterexample; decision recomputed from pairs.jsonl. Two test weaknesses were fixed afterwards.",
+  "notVerified": [
+    "whole TaskApp user-action time",
+    "Patch/paint/GC cost",
+    "other row counts",
+    "10,000 rows (not allowed)",
+    "Firefox timing",
+    "capture.ts timing",
+    "real Korean IME",
+    "remote CI",
+    "fast-property mode inside Chromium (seen only as time)"
+  ]
+}
